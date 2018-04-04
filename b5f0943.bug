@@ -1,0 +1,72 @@
+title: Converting Nodes to Nodelets
+
+description:
+     ROS provides the concepts of node and nodelet. Nodes are the main
+     entities, using OS processes and communicating through the
+     network.  Nodelets are an optimization construct meant for nodes
+     that are tightly coupled. They use threads instead, managed by a
+     process called the nodelet manager.
+
+     The big advantage of nodelets is that communication can happen by
+     sharing references to the messages in memory, instead of going
+     through serialization of every message sent.
+
+     Kobuki features a number of nodes that are tightly coupled, and
+     communicate at a reasonable frequency. Thus, it makes sense to
+     take advantage of this feature to improve performance.
+
+classification: Inefficient communication (no CWE)
+
+keywords: nodelet
+
+system: kobuki
+
+severity: minor-issue
+
+links: http://wiki.ros.org/nodelet
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: ROS-specific
+
+  architectural-location: application-specific code
+
+  application: mobile robot
+
+  task: N/A
+
+  subsystem: driver
+
+  package: yujinrobot/kobuki/kobuki_node | yujinrobot/kobuki/kobuki_safety_controller
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: https://github.com/yujinrobot/kobuki/issues/166
+
+  time-reported: 2012-11-15 (09:12)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: 09059257fa3f5d0f475712ea7700f1d3dca9fe37 | 1f5e8b0ad3ec4aaf49fd52bd0b85d1480bee3c9f | c830670377746302ca09aa1d484efcc0739a223c | b5f0943df63721e77ce137e73cb0537d19790d54 | 2fd8f8717e45604b06abf3df39e18b79a895f30c
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: kobuki_node/include/kobuki_node/kobuki_ros.hpp | kobuki_node/launch/kobuki_node.launch | kobuki_node/launch/kobuki_nodelet.launch | kobuki_node/manifest.xml | kobuki_node/plugins/nodelet_plugins.xml | kobuki_node/src/CMakeLists.txt | kobuki_node/src/library/CMakeLists.txt | kobuki_node/src/library/diagnostics.cpp | kobuki_node/src/library/kobuki_ros.cpp | kobuki_node/src/library/odometry.cpp | kobuki_node/src/library/slot_callbacks.cpp | kobuki_node/src/library/subscriber_callbacks.cpp | kobuki_node/src/node/kobuki_node.cpp | kobuki_node/src/nodelet/CMakeLists.txt | kobuki_node/src/nodelet/kobuki_nodelet.cpp | kobuki_safety_controller/include/kobuki_safety_controller/safety_controller.hpp | kobuki_safety_controller/src/nodelet.cpp
+
+  languages: C++ | CMake | Package XML
+
+  time: 2012-12-03 (08:25)

@@ -1,0 +1,8 @@
+<launch>
+    <node name="cmd_vel_mux" pkg="rostopic" type="rostopic" args="pub /cmd_vel_mux/output std_msgs/Empty -l -r 2">
+        <remap from="cmd_vel_mux/mux_cmd_vel" to="mobile_base/commands/velocity" />
+    </node>
+
+    <node name="mobile_base" pkg="rostopic" type="rostopic" output="screen" args="echo /mobile_base/commands/velocity">
+    </node>
+</launch>

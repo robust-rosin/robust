@@ -1,0 +1,62 @@
+title: Python script not included in debian build
+
+description: 
+     The file 'move_to_joint.py' is available when building the motoman
+     package from source, but it's missing when installing the package
+     as a binary install.
+
+classification: Missing Installation Dependencies (no CWE)
+
+keywords: CMakeLists.txt | Debian
+
+system: motoman
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: deployment-time
+  
+  specificity: general-issue
+  
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: ros-industrial/motoman/
+
+  languages: N/A
+
+  detected-by: user
+
+  reported-by: member developer
+
+  issue: https://github.com/ros-industrial/motoman/issues/129
+
+  time-reported: 2016-09-06 (17:48)
+
+  reproducibility: always
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/gavanderhoorn/motoman
+
+  hash: 5a10873b8d0ee01f457996840dde8d2d2daaf24f
+
+  pull-request: 
+
+  license: N/A
+
+  fix-in: motoman_driver/CMakeLists.txt
+
+  languages: CMake
+
+  time: 2016-09-06 (18:10)

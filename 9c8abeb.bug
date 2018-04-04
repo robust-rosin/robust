@@ -1,0 +1,65 @@
+title: Use of Deprecated and Removed Features
+
+description:
+     Kobuki's source code was using some features of the Boost
+     libraries related to type casting that were marked as deprecated,
+     and were later removed in a newer version of the libraries. This
+     upgrade caused builds to fail. The fix was essentially a find and
+     replace, since other (recommended) constructs existed to replace
+     the deprecated ones.
+
+classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+
+keywords: deprecation | boost | type cast
+
+system: kobuki
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: compile-time
+
+  specificity: general-issue
+
+  architectural-location: application-specific code
+
+  application:
+
+  task: simulation
+
+  subsystem: simulation plugins
+
+  package: yujinrobot/kobuki_desktop/kobuki_gazebo_plugins
+
+  languages: C++
+
+  detected-by: compiler
+
+  reported-by: guest user
+
+  issue: https://github.com/yujinrobot/kobuki_desktop/issues/25 | https://github.com/yujinrobot/kobuki_desktop/issues/27
+
+  time-reported: 2014-02-28 (00:52)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki_desktop
+
+  hash: 9c8abeb81acb2d18a086ac18cd88a8cf6dd9e200
+
+  pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/26
+
+  license: BSD
+
+  fix-in: kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp
+
+  languages: C++
+
+  time: 2014-03-02 (15:03)

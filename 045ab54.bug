@@ -1,0 +1,62 @@
+title: Missing dependency on Motoman Messages
+
+description:
+     The motoman driver package depends on its own special message
+     type: 'motoman_msgs'.  The dependencies to this message type is
+     missing for the motoman package.
+
+classification: Missing Include / Dependency (no CWE)
+
+keywords: dependencies | motoman | messages
+
+system: motoman
+
+severity: error
+
+links: 
+
+bug: 
+  
+  phase: compile-time
+
+  specificity: general-issue
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: ros-industrial/motoman | ros-industrial/motoman/motoman_driver
+
+  languages: CMake
+
+  detected-by: compiler
+
+  reported-by: contributor
+
+  issue: https://github.com/ros-industrial/motoman/issues/62
+
+  time-reported: 2015-04-14 (01:37)
+
+  reproducibility: always
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/JeremyZoss/motoman | https://github.com/ros-industrial/motoman
+
+  hash: 
+
+  pull-request: 63
+
+  license: BSD
+
+  fix-in: motoman_driver/CMakeLists.txt
+
+  languages: CMake
+
+  time: 2015-04-14 (01:48)

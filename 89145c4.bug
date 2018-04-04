@@ -1,0 +1,84 @@
+title: Self-collisions break planning when full joint space is used 
+
+description:
+     The state space of the elbow joint of UR5 and UR10 is set to be
+     [2pi;+2pi] in accordance with manufacturers
+     documentation. However the if the joint is close to Pi or -Pi
+     then the robot enters a self-collision due to a design
+     limitation.  This causes problems with planning as either the
+     robots stops during some plans, or the planning mechanism detects
+     a self collision and stops.
+
+     The proposed solution is to limit the elbow joint to (-pi,pi) so
+     that the plans cannot cross through the collision zone.
+
+     The linked issue shows diagrams and pictures explaining the
+     problem.
+
+     The issue has not been fixed to the best of our knowledge (on the
+     date of collecting the data, the pull request is not merged;
+     although it has rather many supporters, the maintainer is
+     hesitant).
+
+     This is a robot modeling issue, that could appear in any robotics
+     project with planning; not particularly ROS-specific.
+
+classification: Dangerous behavior: Self-collision (no CWE) #PHYSICAL
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords: moveit | kinematics | urdf | xacro | driver
+
+system: universal_robot
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: robotics-specific
+
+  architectural-location: platform-code
+
+  application: N/A
+
+  task: planning
+
+  subsystem: driver
+
+  package: error reported by a planner but unclear by which package
+
+  languages: 
+
+  detected-by: developer
+
+  reported-by: guest user
+
+  issue: https://github.com/ros-industrial/universal_robot/issues/265
+
+  time-reported: 2016-10-11 (05:02)
+
+  reproducibility: sometimes
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot
+
+  hash: 89145c420d9b6bbfb4d385d43205708d45cc9449
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/268 | https://github.com/ros-industrial/universal_robot/pull/302
+
+  license: BSD
+
+  fix-in: ur_description/urdf/ur10.urdf.xacro | ur_description/urdf/ur5.urdf.xacro
+
+  languages: xacro
+
+  time: unfixed

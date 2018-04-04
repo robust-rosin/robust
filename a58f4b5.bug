@@ -1,0 +1,89 @@
+title:  urX_moveit_config packages depende on meta-package moveit_plugin
+
+description:
+     The UR moveit config packages, which are proper packages, depend
+     on a meta-package (just a grouping package) moveit_plugins, which
+     is not allowed by ROS packaging standards.  Instead they should
+     depend on concrete packages that they actually use.  See REP-127
+     linked below; "Catkin packages must depend directly on the
+     packages they use, not on any metapackages." (section
+     <metapackage/>). This causes the build error with the current
+     version of catkin that enforces this rule.
+
+     The bug is fixed by removing the runtime dependency on
+     moveit_plugins and replacing it with a dependency on controller
+     managers.
+
+     Meta-packages in ROS are used to install a number of packages
+     working together (and having actual contents) to be conveniently
+     installed together, while tracking all dependencies.  They cannot
+     export dependencies further, so they should only be used to
+     install groups of packages together by a package manager, not by
+     other packages to depend on them.
+
+     The issue is ROS-specific as it appears in ROS-specific
+     package.xml files.  Moreover it arises due to the enforcement of
+     a ROS-specific packaging decision.
+
+     (This essentially the same bug as '0c34123'.)
+
+classification: run-time dependency issue (no CWE)
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords:  meta-package | catkin
+
+system: universal_robot
+
+severity: error
+
+links: http://www.ros.org/reps/rep-0127.html | https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118
+
+bug:
+  
+  phase: build-time
+
+  specificity:  ROS-specific
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: driver
+
+  package: ros-industrial/universal_robot/ur10_moveit_config | ros-industrial/universal_robot/ur3_moveit_config | ros-industrial/universal_robot/ur5_moveit_config
+
+  languages: package.xml
+
+  detected-by: build system
+
+  reported-by: unreported
+
+  issue: N/A
+
+  time-reported: unreported
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot
+
+  hash: a58f4b506ae8bd774829fb6b7ceede1c1b812d15
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/261
+
+  license: BSD
+
+  fix-in: ur10_moveit_config/package.xml | ur3_moveit_config/package.xml | ur5_moveit_config/package.xml
+
+  languages: package.xml
+
+  time: 2016-09-02 (01:02)
+

@@ -1,0 +1,11 @@
+<launch>
+    <arg name="depth_registration" default="true"/>
+    <arg name="depth" value="depth_registered" if="$(arg depth_registration)" />
+    <arg name="depth" value="depth" unless="$(arg depth_registration)" />
+
+    <node name="openni_camera" pkg="rostopic" type="rostopic" args="pub /camera/$(arg depth)/image_raw std_msgs/Empty -l -r 2">
+    </node>
+
+    <node name="depthimage_to_laserscan" pkg="rostopic" type="rostopic" output="screen" args="echo /camera/depth/image_raw">
+    </node>
+</launch>

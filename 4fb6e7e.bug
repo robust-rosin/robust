@@ -1,0 +1,81 @@
+title: Missing bounds checking code in legacy mode
+
+description:
+     The "UAS::orientation_from_str" function accepts a string that
+     gives the name of one of 39 pre-defined orientations (e.g.,
+     "NONE", "YAW_45", "ROLL_90_PITCH_90"), and returns an integer,
+     giving the index of the corresponding OrientationPair object for
+     that orientation (stored in the "sensor_orientations" array). The
+     function is also intended to implement a fallback behaviour (for
+     legacy code that operates using indices directly, instead of
+     indirectly via strings) for cases in which the string does not
+     match one of the pre-defined orientations. This fallback
+     behaviour attempts to convert the string to an integer and
+     returns the result. In cases where the string encodes a legal
+     index, this behaviour operates as intended. However, the buggy
+     implementation fails to account for cases where the string can be
+     converted to an integer, but that integer does not represent a
+     legal index (i.e., 0 <= i < 39). The bug fix introduces error
+     checking code that ensures that the integer is within the
+     expected range, and if not, it reports an error to ROS and
+     returns -1, indicating failure.
+  
+     Note, a test case is added to
+     "mavros/test/test_sensor_orientation.cpp" to demonstrate this
+     bug.
+
+classification: CWE-20: Improper Input Validation
+
+keywords: missing input validation
+
+system: mavros
+
+severity: error
+
+links:
+
+bug:
+
+  phase: runtime-initialization
+
+  specificity: UNCLEAR
+
+  architectural-location: N/A
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: mavlink/mavros
+
+  languages: C++
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: N/A
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/mavlink/mavros
+
+  hash: 4fb6e7e8190145ba6fa49fa6e13cc49730885b7f
+
+  pull-request: N/A
+
+  license: BSD | GPLv3 | LGPLv3
+
+  fix-in: mavros/src/lib/uas_sensor_orientation.cpp
+
+  languages: C++
+
+  time: 2015-08-02 (00:00)

@@ -1,0 +1,68 @@
+title: Incorrect parsing of RAPID record data
+
+description:
+     When using Robot Web Services (RWS) to read RAPID record data,
+     then the values are represented in a string format contatined
+     between '[' and ']' and delimited by ',' characters. E.g. [TRUE,
+     "text string 1", 0.1] The problem occurs when the text string
+     contains e.g. delimiter characters.
+
+classification: Incorrect Data Parsing (no CWE)
+
+internal classification (cause): incorrect parsing of text strings
+
+internal classification (effect): data will not be parsed correctly
+
+keywords: parsing | RWS
+
+system: confidential
+
+severity: bad-smell
+
+links: http://developercenter.robotstudio.com/webservice/api_reference
+
+bug:
+
+  phase: runtime-operation
+	
+  specificity: application specific
+
+  architectural location: application-specific code
+
+  application: RWS interface
+
+  tasks: parsing data from strings
+
+  subsystem: driver
+
+  package: N/A
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: N/A
+
+  time-reported: 2017-06-01 (09:14)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repository: CONFIDENTIAL
+
+  hash: N/A
+
+  pull-request: N/A
+
+  license: closed source
+
+  fix-in: CONFIDENTIAL
+
+  languages: C++
+
+  time: unfixed

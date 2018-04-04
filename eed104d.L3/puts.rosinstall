@@ -1,0 +1,8 @@
+#- tar:
+#    local-name: kobuki_ftdi
+#    uri: https://github.com/yujinrobot-release/kobuki_core-release/archive/release/kinetic/kobuki_ftdi/0.7.4-0.tar.gz
+#    version: kobuki_core-release-release-kinetic-kobuki_ftdi-0.7.4-0
+- git:
+    local-name: kobuki_core
+    uri: https://github.com/yujinrobot/kobuki_core.git
+    version: 61f4b66366a1084a4fa5c621cedf7bca314468f8

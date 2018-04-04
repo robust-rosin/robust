@@ -1,0 +1,12 @@
+FROM ubuntu:16.04
+
+# TODO: these are not tied to particular versions!
+RUN apt-get update && \
+    apt-get install -y g++ build-essential
+
+RUN mkdir -p /bug
+WORKDIR /bug
+ADD L1/tcp.cpp tcp.cpp
+ADD L1/build.sh build.sh
+
+RUN ./build.sh

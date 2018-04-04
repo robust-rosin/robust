@@ -1,0 +1,68 @@
+title: Missing type conversion in u8->hex conversion
+
+description:
+     The "array_to_hex_string" helper function in "sys_status.cpp"
+     accepts an array of uint8_t (along with an argument specifying
+     its size), and returns a hexadecimal string describing the
+     contents of the array. The faulty implementation of this function
+     performs this conversion by passing the raw uint8_t to an
+     ostringstream object; the ostringstream operates on the bits of
+     uint8_t as if it were an int, producing an incorrect result. The
+     fixed version of this function explicitly converts the uint8_t to
+     an int before passing it to the ostringstream.
+
+classification: CWE-704: Incorrect Type Conversion or Cast
+
+keywords: type conversion | signedness
+
+system: mavros
+
+severity: error
+
+links:
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: general issue: missing type conversion
+
+  architectural-location: N/A
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: mavlink/mavros
+
+  languages: 
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: N/A
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/mavlink/mavros
+
+  hash: a67d81d05776a5431e9c0e77f51602ce7987fc7b
+
+  pull-request: 
+
+  license: BSD | GPLv3 | LGPLv3
+
+  fix-in:
+
+  languages: 
+
+  time: unfixed

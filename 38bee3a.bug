@@ -1,0 +1,63 @@
+title: Cannot Retrieve Version Information From Robot
+
+description:
+     Sometimes the driver would fail to retrieve version information
+     from the robot's firmware. This issue was fixed using a kind of
+     flag, that, under the failing scenarios, would indicate that the
+     driver should explicitly request version information again.
+
+classification: Missing Version Information (no CWE)
+
+keywords: version | driver | firmware
+
+system: kobuki
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: robotics-specific
+
+  architectural-location: application-specific code
+
+  application: 
+
+  task: N/A
+
+  subsystem: driver
+
+  package: yujinrobot/kobuki/kobuki_driver
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: https://github.com/yujinrobot/kobuki/issues/169
+
+  time-reported: 2012-11-21 (00:03)
+
+  reproducibility: sometimes
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: 38bee3acd7cf36960a4ce2bef821421db27a57f4
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: kobuki_driver/include/kobuki_driver/kobuki.hpp | kobuki_driver/src/driver/kobuki.cpp
+
+  languages: C++
+
+  time: 2012-11-21 (00:38)

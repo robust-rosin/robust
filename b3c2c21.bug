@@ -1,0 +1,82 @@
+title: Robot jumps to the first point of the new trajectory
+
+description:
+     The problem was caused by using absolute, instead of relative
+     time, when resetting the old trajectory to a new goal.  On_goal()
+     function of the trajectory action server in the ur_driver
+     driver.py file, the sample_traj() function was not being called
+     correctly. It used the absolute time (from time.time()) instead
+     of the offset into the previous trajectory which is used in every
+     other call of this particular function.
+
+     As a result the robot would attempt to perform an abrupt fast
+     jump to a new trajectory.
+
+     The bug is an improper contract fullfillment although it was not
+     an 'abuse', as it was not intentional.  The problem can appear is
+     any continous control or planning application, and as that it is
+     not ROS-specific, but robotics-specific.
+
+     The second pull request is a case of porting up of the same bug
+     fix to a newer development branch (indigo).
+
+classification: Dangerous behavior: abrupt arm jump #PHYSICAL
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords: planning | trajectory | absolute time | relative time
+
+system: universal_robot
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: robotics-specific
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: manipulation
+
+  subsystem: driver
+
+  package: ros-industrial/universal_robot/ur_driver
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: sometimes
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot
+
+  hash: b3c2c215b4fc46bb66ca61e6e693920540d0daef 
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/157 | https://github.com/ros-industrial/universal_robot/pull/189
+
+  license: BSD
+
+  fix-in: ur_driver/src/ur_driver/driver.py
+
+  languages: python
+
+  time: 2015-03-12 (14:44)
+

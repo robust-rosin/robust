@@ -1,0 +1,76 @@
+title: package ur_kinematics fails to build
+
+description:
+     The moveit sub-project has factored out kinematics solvers to a
+     separate package moveit_kinematics. This cuased the current
+     version of ur_kinmaitics to fail at compile time, as it did not
+     depend on the new package.  Concretely, a header file was now
+     missing (not installed) to complete C++ compilation.
+
+     The bug is general -- a missing header file. Could appear in any
+     C/C++ codebase. The fix is ROS-specific, as it is addressed in a
+     ROS-specific build system.
+
+     The bug was found by ROS build farm, and reported by one of the
+     member developers overseeing the build farm. In TOS the actual
+     creation of an issue is made by a human.
+
+classification: Missing Build Dependency (no CWE) #EVOLUTION
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords:  catkin | moveit | dependencies | package.xml
+
+system: universal_robot
+
+severity: error
+
+links: https://github.com/ros-planning/moveit/pull/247 
+
+bug:
+  
+  phase: compile-time
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: driver
+
+  package: ros-industrial/universal_robot/ur_kinematics
+
+  languages: C++
+
+  detected-by: compiler
+
+  reported-by: automatic
+
+  issue: https://github.com/ros-industrial/universal_robot/issues/274
+
+  time-reported: 2016-12-29 (14:09)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot/
+
+  hash: f8d175b09ea955ebe83aecbe19105c28f0225524
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/275
+
+  license: BSD
+
+  fix-in: ur_kinematics/CMakeLists.txt | ur_kinematics/package.xml
+
+  languages: CMake | package.xml
+
+  time: 2016-12-29 (20:34)

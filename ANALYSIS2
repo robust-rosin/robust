@@ -1,0 +1,190 @@
+// -- LOGICAL ERRORS --------------------------------------------------
+0000000.bug:classification: Wrong behavior (no CWE) #EVOLUTION CWE-439 #PHYSICAL
+6c89ebf.bug:classification: Wrong behavior (no CWE) #PHYSICAL
+acd5bfb.bug:classification: Wrong behavior (no CWE) #PHYSICAL
+acd5eab.bug:classification: Wrong behavior (no CWE) #PHYSICAL
+5a44ead.bug:classification: Wrong behavior: Exit too soon (no CWE) #PHYSICAL
+0416c81.bug:classification: Wrong behavior (no CWE) #CWE-344 #PHYSICAL
+3f260cb.bug:classification: Dangerous behavior: move after stop (no CWE) #PHYSICAL
+89145c4.bug:classification: Dangerous behavior: Self-collision (no CWE) #PHYSICAL
+b1b6fcb.bug:classification: Dangerous behavior: resume from paused state (no CWE) #PHYSICAL
+e45b2b6.bug:classification: Dangerous behavior: operation during off (no CWE) #PHYSICAL
+473ab5e.bug:classification: Dangerous behavior: wrong position from joystick (no CWE) #PHYSICAL
+b3c2c21.bug:classification: Dangerous behavior: abrupt arm jump #PHYSICAL
+18ffa89.bug:classification: Wrong Robot Model (no CWE) #PHYSICAL
+21b86f6.bug:classification: Wrong Robot Model (no CWE) #PHYSICAL
+493e3f9.bug:classification: Wrong Robot Model (no CWE) #PHYSICAL
+4ea5ea7.bug:classification: Wrong Robot Model (no CWE) #PHYSICAL
+1ec8ca1.bug:classification: Wrong constant (no CWE) #PHYSICAL
+2d42582.bug:classification: Wrong constant (no CWE) #PHYSICAL
+9bf25ea.bug:classification: Wrong constant (no CWE) #PHYSICAL
+22e4e4f.bug:classification: CWE-137 Representation Errors #PHYSICAL
+b96bf67.bug:classification: CWE-137 Representation Errors #PHYSICAL
+2998e9f.bug:classification: CWE-137 Representation Errors
+564f935.bug:classification: CWE-628: Function Call with Incorrectly Specified Arguments
+5ee65b0.bug:classification: CWE-628: Function Call with Incorrectly Specified Arguments
+c6791f0.bug:classification: CWE-628: Function Call with Incorrectly Specified Arguments
+dd40270.bug:classification: CWE-628: Function Call with Incorrectly Specified Arguments
+e1a8005.bug:classification: CWE-628: Function Call with Incorrectly Specified Arguments
+ff581a0.bug:classification: CWE-628: Function Call with Incorrectly Specified Arguments
+282c9be.bug:classification: CWE-628: Function Call with Incorrectly Specified Arguments
+27e85fc.bug:classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+9c8abeb.bug:classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+6a7a506.bug:classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+fa64ec6.bug:classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+b18f559.bug:classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+95b24e8.bug:classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+ad906f0.bug:classification: CWE-682: Incorrect Calculation
+af7946f.bug:classification: CWE-682: Incorrect Calculation
+e964bbb.bug:classification: CWE-682: Incorrect Calculation
+2f647af.bug:classification: CWE-682: Incorrect Calculation
+1e0904c.bug:classification: CWE-172: Encoding Error
+0829607.bug:classification: CWE-172: Encoding Error
+377d7be.bug:classification: CWE-172: Encoding Error (Unix vs Windows line breaks)
+eadbcb8.bug:classification: CWE-172: Encoding Error
+c159041.bug:classification: CWE-20: Improper Input Validation
+4fb6e7e.bug:classification: CWE-20: Improper Input Validation
+3c7cc54.bug:classification: CWE-20: Improper Input Validation
+7b11629.bug:classification: Incorrect Data Parsing (no CWE)
+81d0a3c:bug:classification: Incorrect Data Parsing (no CWE)
+86cb680.bug:classification: Incorrect Data Parsing (no CWE)
+38dce2a.bug:classification: CWE-404: Improper Resource Shutdown or Release
+6e748c1.bug:classification: CWE-404: Improper Resource Shutdown or Release
+c5dc9de.bug:classification: CWE-404: Improper Resource Shutdown or Release
+8163705.bug:classification: CWE-703: Improper Check or Handling of Exceptional Conditions
+c04eae5.bug:classification: CWE-754: Improper Check for Unusual or Exceptional Conditions
+f548cc7.bug:classification: CWE-248: Uncaught Exception
+86255ba.bug:classification: CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')
+e34428d.bug:classification: CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')
+96e2c6c.bug:classification: CWE-440: Expected Behavior Violation
+bd1fce5.bug:classification: CWE-440: Expected Behavior Violation
+599c588.bug:classification: CWE-393: Return of Wrong Status Code
+841720a.bug:classification: CWE-393: Return of Wrong Status Code
+215010d.bug:classification: CWE-193: Off-by-one Error
+cda133d.bug:classification: CWE-193: Off-by-one Error
+2688e7a.bug:classification: CWE-664: Improper Control of a Resource Through its Lifetime
+e9e7fd8.bug:classification: CWE-664: Improper Control of a Resource Through its Lifetime
+9397c6b.bug:classification: CWE-125: Out-of-bounds Read
+62a38a9.bug:classification: CWE-672: Operation on a Resource after Expiration or Release
+359a2e9.bug:classification: CWE-805: Buffer Access with Incorrect Length Value
+6bb2672.bug:classification: CWE-670: Always-Incorrect Control Flow Implementation
+a794de9.bug:classification: CWE-617: Reachable Assertion Violation
+1a746c3.bug:classification: CWE-480: Use of Incorrect Operator
+de2cc36.bug:classification: CWE-252: Unchecked Return Value #EVOLUTION
+496aac8.bug:classification: Missing Features (no CWE)
+248cb38.bug:classification: No CWE: Missing Frame Conversion
+d9aa656.bug:classification: Wrong Parameter Value (no CWE)
+606b8b9.bug:classification: Use of Wrong Interface (no CWE)
+38bee3a.bug:classification: Missing Version Information (no CWE)
+b166c93.bug:classification: Changed macro to function call #EVOLUTION
+332f09f.bug:classification: Incorrect Handling of Accessing Unavailable Features (no CWE) #EVOLUTION
+84264f0.bug:classification: Incorrect use of ROS namespacing (no CWE)
+263650d.bug:classification: Incorrect (String-Based) Parameter Name (no CWE)
+bb3c7ec.bug:classification: Looking for Wrong Name (no CWE)
+dab1b8a.bug:classification: Incorrect Class Name (no CWE)
+65e7ee6.bug:classification: Naming Convention Violation (no CWE)
+9682b9a.bug:classification: Misinterpretation of relative paths (no CWE)
+c172409.bug:classification: Assignment to wrong identifier (no CWE)
+eab0d3c.bug:classification: CWE-233: Improper Handling of Parameters
+dbcdb12.bug:classification: Creating Unnecessary Copies of Objects (no CWE)
+
+
+// -- STATIC DEPENDENCY & BUILD SYSTEM ERRORS --------------------------------------------------
+9de9690.bug:classification: Missing Dependency (no CWE)
+eed104d.bug:classification: Missing Dependency (no CWE)
+891cb68.bug:classification: Missing Dependency (no CWE)
+9df36cb.bug:classification: Missing Dependency (no CWE)
+eb99671.bug:classification: Missing Dependency (no CWE)
+ac6a181.bug:classification: Missing Dependency (no CWE)
+f01d952.bug:classification: Missing Dependency (no CWE)
+105dc16.bug:classification: Missing Dependency (no CWE)
+942eb3b.bug:classification: Missing Dependency (no CWE)
+c8091b6.bug:classification: Missing Dependency (no CWE)
+ca7b536.bug:classification: Missing Dependency (no CWE)
+dc1327f.bug:classification: Missing Dependency (no CWE)
+e9ed0f8.bug:classification: Missing Dependency (no CWE)
+3ea2c30.bug:classification: Missing Dependency (no CWE)
+e05c71a.bug:classification: Missing Dependency (no CWE)
+0c34123.bug:classification: Run-time dependency issue (no CWE)
+082dcf1.bug:classification: Run-time dependency issue (no CWE)
+dda2f60.bug:classification: Run-time dependency issue (no CWE)
+3a48064.bug:classification: Run-time dependency issue (no CWE)
+58790ba.bug:classification: Run-time dependency issue (no CWE)
+a58f4b5.bug:classification: Run-time dependency issue (no CWE)
+cd273dd.bug:classification: Run-time dependency issue (no CWE)
+e122ccc.bug:classification: Run-time dependency issue (no CWE)
+56cf07f.bug:classification: Missing Installation Dependencies (no CWE)
+259b468.bug:classification: Missing Installation Dependencies (no CWE)
+3236783.bug:classification: Missing Installation Dependencies (no CWE)
+27e7db9.bug:classification: Missing Installation Dependencies (no CWE) #EVOLUTION CWE-439
+79867c8.bug:classification: Missing Installation Dependencies (no CWE) #EVOLUTION: CWE-439
+9299530.bug:classification: API Incompatibility (no CWE)
+3c7f92a.bug:classification: API Incompatibility (no CWE)
+55e84a6.bug:classification: API Incompatibility (no CWE)
+5abe7d4.bug:classification: API Incompatibility (no CWE)
+61a75df.bug:classification: API Incompatibility (no CWE)
+045ab54.bug:classification: Missing Include / Dependency (no CWE)
+0027b57.bug:classification: Missing Include / Dependency (no CWE)
+17560e9.bug:classification: Missing Include / Dependency (no CWE)
+28c23cd.bug:classification: Missing Include / Dependency (no CWE)
+928306b.bug:classification: OS-library incompatibility (no CWE)
+31ad11d.bug:classification: OS-library incompatibility (no CWE)
+a4f35ee.bug:classification: OS-library incompatibility (no CWE)
+fbe70c7.bug:classification: Wrong Remappings (no CWE)
+35682ec.bug:classification: Wrong Remappings (no CWE)
+3e32933.bug:classification: Wrong Remappings (no CWE)
+1518978.bug:classification: Use of Global Names (no CWE)
+9ffffca.bug:classification: Use of Global Names (no CWE)
+a482f82.bug:classification: Use of Global Names (no CWE)
+040fd11.bug:classification: Missing Build Dependency (no CWE)
+f8d175b.bug:classification: Missing Build Dependency (no CWE)
+3390789.bug:classification: Circular Dependencies (no CWE)
+f95c384.bug:classification: Circular Dependencies (no CWE)
+ddc6f36.bug:classification: Linking error (no CWE)
+3e88010.bug:classification: Linking error (no CWE)
+fd6b589.bug:classification: Wrong Dependencies (no CWE)
+08cd181.bug:classification: Missing header (no CWE)
+8c30446.bug:classification: External Dependency (no CWE)
+101c09b.bug:classification: Wrong Inclusion Directive (no CWE)
+45ee84a.bug:classification: Exporting Non-Existent Libraries (no CWE)
+c0067f9.bug:classification: Import of Missing Module (no CWE)
+e3c9bbc.bug:classification: Missing Package Documentation (no CWE)
+
+
+// -- COMPILER ERRORS --------------------------------------------------
+90a9464.bug:classification: Undeclared Identifier (no CWE)
+bdda1fa.bug:classification: Undeclared Identifier (no CWE) #EVOLUTION: CWE-439
+778c1ac.bug:classification: Undeclared Identifier (no CWE) #EVOLUTION
+a67d81d.bug:classification: CWE-704: Incorrect Type Conversion or Cast
+1c141a5.bug:classification: CWE-704: Incorrect Type Conversion or Cast
+292b5cc.bug:classification: CWE-704: Incorrect Type Conversion or Cast
+39eb24f.bug:classification: Syntax Error (no CWE)
+b213df3.bug:classification: Syntax Error (no CWE)
+b6b9754.bug:classification: Syntax Error (no CWE)
+594978d.bug:classification: CWE-456: Missing Initialization of a Variable
+753226d.bug:classification: CWE-456: Missing Initialization of a Variable
+fcf9cd9.bug:classification: CWE-456: Missing Initialization of a Variable
+c4e1187.bug:classification: Type error (no CWE) #EVOLUTION: CWE-439
+c779432.bug:classification: Type error (no CWE) #EVOLUTION: CWE-439
+5353982.bug:classification: CWE-685: Wrong Number of Function Arguments #EVOLUTION
+b826eae.bug:classification: CWE-685: Wrong Number of Function Arguments #EVOLUTION
+054c753.bug:classification: CWE-908: Use of Uninitialized Resource
+
+
+// -- CONCURRENCY --------------------------------------------------
+03660af.bug:classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+1f01916.bug:classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+29af3a3.bug:classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+3c4c399.bug:classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+400949c.bug:classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+4115400.bug:classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+
+
+// -- MISC --------------------------------------------------
+43705f7.bug:classification: inconsistent naming
+91072e8.bug:classification: inconsistent naming
+8a729db.bug:classification: Inconsistent naming (no CWE) #EVOLUTION: CWE-439
+0e2ea0c.bug:classification: Inefficient use of library function (no CWE)
+b5f0943.bug:classification: Inefficient communication (no CWE)
+4089660.bug:classification: CWE-563: Assignment to Variable without Use (Unused Variable)
+7c6514d.bug:classification: CWE-561: Dead Code

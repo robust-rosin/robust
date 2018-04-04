@@ -1,0 +1,65 @@
+title: Incorrect response from FS100 to a control request
+
+description:
+     The FS100 is one of the robot controllers by Motoman that are
+     open to be used with ROS. From ROS side one can send a request
+     for a motion and the controller will respond within a
+     MOTO_MOTION_CTRL message. In some cases the field robot_id and
+     sequence are set to -1. This is from the controller interpreted
+     as unsigned leading to response as 0xFFFFFFFF.
+
+classification: CWE-704: Incorrect Type Conversion or Cast
+
+keywords: FS100 controller | movement request | motoman
+
+system: motoman
+
+severity: error
+
+links: N/A
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: general-issue
+
+  architectural-location: application-specific
+
+  application: industrial robot arm
+
+  task: planning
+
+  subsystem: motoplus pluging for the controller
+
+  package: ros-industrial/motoman
+
+  languages: C
+
+  detected-by: user | developer
+
+  reported-by: member developer
+
+  issue: https://github.com/ros-industrial/motoman/issues/1
+
+  time-reported: 2013-06-12 (20:01)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/motoman/
+
+  hash: 292b5cc8a10a640a8b364a529e3eadffffc9b56b
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: fs100/MotoPlus/MotionServer.c | fs100/MotoPlus/SimpleMessage.c | fs100/MotoPlus/output/MPRosFS100.out
+
+  languages: C
+
+  time: 2013-06-18 (21:23)

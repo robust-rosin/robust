@@ -1,0 +1,70 @@
+title: Robot Getting Stuck When Auto-docking
+
+description:
+     Kobuki is a mobile robot base that is used mainly for version 2
+     of Turtlebot, but there are some other uses for it with heavier
+     payloads.
+
+     The movement speeds were hard-coded for the auto-docking
+     algorithm, and worked well for regular Kobuki and Turtlebot, but
+     were too slow for heavier robots, causing them to get stuck.
+
+     To solve this issue, the minimum speed limits had to be
+     configurable.
+
+classification: Wrong behavior (no CWE) #CWE-344 #PHYSICAL
+
+keywords: hard-coded values | auto-docking | speed
+
+system: kobuki
+
+severity: minor-issue
+
+links: 
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: robotics-specific
+
+  architectural-location: application-specific code
+
+  application: auto-docking
+
+  task: auto-docking
+
+  subsystem: specific application component
+
+  package: yujinrobot/kobuki/kobuki_auto_docking
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: https://github.com/yujinrobot/kobuki/issues/262
+
+  time-reported: 2013-05-24 (01:29)
+
+  reproducibility: sometimes
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: 0416c81e5d08466477c5806443a580a142d0d465
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp | kobuki_auto_docking/src/auto_docking_ros.cpp | kobuki_auto_docking/src/dock_drive.cpp
+
+  languages: C++
+
+  time: 2013-05-24 (07:28)
+

@@ -1,0 +1,62 @@
+title: Multiple Warnings When Unable to Check Battery Level
+
+description:
+     When a laptop battery monitor script was not able to check the
+     laptop's battery (e.g. the laptop is operating without one) it
+     would repeatedly print warnings, instead of warning just once.
+
+classification: CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')
+
+keywords: laptop | battery | power
+
+system: kobuki
+
+severity: minor-issue
+
+links: 
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: robotics-specific
+
+  architectural-location: application-specific code
+
+  application: 
+
+  task: diagnostics
+
+  subsystem: specific application component
+
+  package: yujinrobot/kobuki/kobuki_node
+
+  languages: Python
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: https://github.com/yujinrobot/kobuki/issues/123
+
+  time-reported: 2012-06-04 (01:55)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: e34428db1df893b36e604f17156837af3ab380cb
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: kobuki_node/scripts/laptop_battery.py
+
+  languages: Python
+
+  time: 2012-06-07 (00:55)

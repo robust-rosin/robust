@@ -1,0 +1,74 @@
+title: Missing parameter in ROS service call
+
+description:
+     The "do_long" function in the "mavcmd" script accepts an object
+     that describes a MAVLink command.  Command objects are supplied
+     with seven arguments, which may be used or ignored by the command
+     handler depending on the type of command. The "do_long" function
+     dispatches this command object to the "mavros.command.long"
+     function. which forwards the command to MAVLink. Rather than
+     accepting positional arguments, the "mavros.command.long" accepts
+     all of its arguments as keywords. Missing keywords are assumed to
+     be irrelevant and substituted by a nominal placeholder value.
+  
+     The buggy implementation of this function fails to pass along the
+     seventh argument during the call to "mavros.command.long",
+     causing incorrect information to be forwarded to MAVLink. This
+     bug will only manifest for commands which utilise all seven
+     arguments.
+
+classification: CWE-628: Function Call with Incorrectly Specified Arguments
+
+keywords: missing argument | service call
+
+system: mavros
+
+severity: error
+
+links:
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: general issue: missing a keyword argument (to a ROS service call)
+
+  architectural-location: N/A
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: mavlink/mavros
+
+  languages: Python
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: N/A
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/mavlink/mavros
+
+  hash: c6791f0f232e85f51cbb9e12d32f791588f5c93a
+
+  pull-request: N/A
+
+  license: BSD | GPLv3 | LGPLv3
+
+  fix-in: mavros/scripts/mavcmd
+
+  languages: Python
+
+  time: 2015-12-04 (00:00)

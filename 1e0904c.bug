@@ -1,0 +1,85 @@
+title: Syntax error in a robot script
+
+description:
+     The bug occurs in the code running on the robot that is uploaded
+     there by ROS.  This code is written in a prioprietary language
+     URScript. The entire program (ur_driver/prog) consists of one
+     top-level function 'driverProg'.  After this program, there was
+     one toplevel call to this function, which was not required
+     (indeed not allowed) by the syntax of URScript.  The language's
+     semantics by default performs this call to the only existing
+     function upon function definition.
+
+     The parser for URScript produces a parsing error, but the
+     language is permissive and the program continuous to execute as
+     if the line was not there.  Thus the impact on the execution of
+     the robot is negligible (just a message).
+
+     This is an encoding error in the sense that the program sent to
+     UR robot is incorrect sytnactically (so this is analogous to
+     sending any other malformed message), but note that this program
+     is not synthesized by the driver, but coded statically.
+
+     Malformed script execution in a dynamic interpreted language is a
+     general software defect that could appear in many other
+     languages.
+
+classification: CWE-172: Encoding Error
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords: URScript | syntax error
+
+system: universal_robot
+
+severity: minor-issue
+
+links: 
+
+bug:
+  
+  phase: runtime-initialization
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: driver
+
+  package: ros-industrial/universal_robot/ur_driver
+
+  languages: URScript
+
+  detected-by: compiler
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot/
+
+  hash: 1e0904c38934fe09c9647825caf3b58dda2636f9
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/165
+
+  license: BSD
+
+  fix-in: ur_driver/prog
+
+  languages: URScript
+
+  time: 2015-02-20 (11:24)

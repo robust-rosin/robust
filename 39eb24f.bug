@@ -1,0 +1,79 @@
+title: Name clashes when using boost and ur_kin.h
+
+description:
+     Robot parameters for UR5 and UR10 have been declared as
+     preprocessor symbols in a header file ur_kin.h. The names of the
+     macros are very generic (for instance 'd1', 'a2'), which
+     apparently clashes with names used in the boost library.  When
+     boost headers are included some side renamings take place and the
+     compiler fails with an error.
+
+     The fix has moved the preprocessor symbols to the C++ file
+     (ur_kin.cpp) and defined them in C++ (not in the preprocessor
+     language) as constant named values.  Apparently the symbols are
+     not use outside this files. Also defining them using the C++
+     namespacing mechanisms protects them better from accidental
+     conflicts.
+
+     This issue is not related to robotics per se.  It is an issue
+     that could appear in any large C/C++ project.
+
+classification: Syntax Error (no CWE)
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords: header file | boost | constants | ur | parameters
+
+system: universal_robot
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: compile-time
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem:  driver
+
+  package: ros-industrial/universal_robot/ur_kinematics
+
+  languages: C++
+
+  detected-by: compiler
+
+  reported-by: member developer
+
+  issue: https://github.com/ros-industrial/universal_robot/issues/217
+
+  time-reported: 2015-09-21 (05:18)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot/
+
+  hash: 39eb24f3a8ff0e358c210e87f1f3798755444f44
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/218 | https://github.com/ros-industrial/universal_robot/pull/222
+
+  license: BSD
+
+  fix-in: ur_kinematics/include/ur_kinematics/ur_kin.h | ur_kinematics/src/ur_kin.cpp
+
+  languages: cpp
+
+  time: 2015-09-21 (12:45)

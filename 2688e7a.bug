@@ -1,0 +1,69 @@
+title: Incorrect handling of network communication failure
+
+description:
+     The POCO C++ libraries that are utilized (for interacting with
+     Robot Web Services (RWS) from ABB Robotics) requires that the
+     communication streams are reset, if an error has occurred on the
+     network. E.g. if the RWS server has been terminated
+     unexpectedly. If the streams are not reset, then it is not
+     possible to reuse them.
+
+classification: CWE-664: Improper Control of a Resource Through its Lifetime #RESOURCE
+
+internal classification (cause): reset not called after network failure
+
+internal classification (effect): not possible to reuse network connections
+
+keywords: network | communication | RWS | POCO
+
+system: confidential
+
+severity: bad-smell
+
+links: http://developercenter.robotstudio.com/webservice/api_reference | https://pocoproject.org/
+
+bug:
+
+  phase: runtime-operation
+	
+  specificity: application specific
+
+  architectural location: application-specific code
+
+  application: RWS interface
+
+  tasks: network communication
+
+  subsystem: driver
+
+  package: N/A
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: N/A
+
+  time-reported: 2017-05-03 (14:36)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repository: CONFIDENTIAL
+
+  hash: N/A
+
+  pull-request: N/A
+
+  license: closed source
+
+  fix-in: CONFIDENTIAL
+
+  languages: C++
+
+  time: 2017-05-04 (10:16)

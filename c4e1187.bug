@@ -1,0 +1,75 @@
+title: Using a Boost type instead of a C++11 type
+
+description:
+     The urdf_model package started to use C++11 features, more
+     precisely the shared pointer type that clashes with a similar
+     type in the Boost library. The (single) call to this package
+     needs to be updated from boost::shared_ptr to std::shared_ptr as
+     otherwise the compiler fails with a type error.
+
+     This issue is caused by the dependent upon packages switching to
+     a newer programmin language version.  This issue could appear in
+     any complex projects which mixes versions of the programming
+     language (here C++).
+
+     (At the time of analysis of this bug, the fix was not merged.)
+
+classification: Type error (no CWE) #EVOLUTION: CWE-439
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords: C++11 | boost | pointer
+
+system: universal_robot
+
+severity: error
+
+links: see also bug '94927ae'
+
+bug:
+  
+  phase: compile-time
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem:  driver
+
+  package: ros-industrial/universal_robot/ur_kinematics
+
+  languages: C++
+
+  detected-by: compile-time
+
+  reported-by: N/A
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot/
+
+  hash: c4e118757123ef243d0f3c2e14a6c3d63549f20d
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/303
+
+  license: BSD
+
+  fix-in: ur_kinematics/src/ur_moveit_plugin.cpp
+
+  languages: C++
+
+  time: unfixed

@@ -1,0 +1,4 @@
+ - tar:
+    local-name: cob_hardware_config
+    uri: https://github.com/ipa320/cob_robots-release/archive/release/indigo/cob_hardware_config/0.6.6-0.tar.gz
+    version: cob_robots-release-release-indigo-cob_hardware_config-0.6.6-0

@@ -1,0 +1,91 @@
+title: SIA20D Mesh Arm Navigation Package not following naming conventions
+
+description:
+     The package name "SIA20D_Mesh_arm_navigation" does not follow the
+     naming conventions. It should start with a lower case letter and
+     only contain lower case letters, digits and underscores.
+
+classification: Naming Convention Violation (no CWE)
+
+keywords: naming conventions | catkin_make
+
+system: motoman
+
+severity: bad-style
+
+links: 
+
+bug:
+  
+  phase: compile-time
+
+  specificity: ROS-specific
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: ros-industrial/motoman | ros-industrial/motoman/motoman_sia20d_support
+	
+  languages: XML
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: https://github.com/ros-industrial/motoman/issues/4
+
+  time-reported: 2013-08-02 (10:58)
+
+  reproducibility: always
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/ros-industrial/motoman/
+
+  hash: N/A
+
+  pull-request: 15
+
+  license: BSD
+
+  fix-in: # 29 files:
+    - SIA20D_Mesh_arm_navigation/launch/SIA20D_Mesh_arm_navigation.launch
+	- SIA20D_Mesh_arm_navigation/launch/move_groups.launch
+	- motoman/package.xml
+	- motoman_config/cfg/sia20d_mesh.xacro
+	- motoman_config/cfg/sia20d_mesh.xml
+	- sia10d_mesh_arm_navigation/launch/constraint_aware_kinematics.launch
+	- SIA20D_Mesh_arm_navigation/CMakeLists.txt → sia20d_mesh_arm_navigation/CMakeLists.txt
+	- ...h_arm_navigation/config/joint_limits.yaml → ...h_arm_navigation/config/joint_limits.yaml
+	- ..._arm_navigation/config/ompl_planning.yaml → ..._arm_navigation/config/ompl_planning.yaml
+	- ...onfig/planning_components_visualizer.rviz → ...onfig/planning_components_visualizer.rviz
+	- ...config/planning_components_visualizer.vcg → ...config/planning_components_visualizer.vcg
+	- ...nfig/planning_scene_warehouse_viewer.rviz → ...nfig/planning_scene_warehouse_viewer.rviz
+	- ...onfig/planning_scene_warehouse_viewer.vcg → ...onfig/planning_scene_warehouse_viewer.vcg
+	- ...fig/SIA20D_Mesh_planning_description.yaml → ...fig/sia20d_mesh_planning_description.yaml
+	- ...esh_arm_navigation/kinematics_plugins.xml → ...esh_arm_navigation/kinematics_plugins.xml
+	- ...launch/constraint_aware_kinematics.launch → ...launch/constraint_aware_kinematics.launch
+	- sia20d_mesh_arm_navigation/launch/move_groups.launch
+	- ...navigation/launch/move_manipulator.launch → ...navigation/launch/move_manipulator.launch
+	- ...rm_navigation/launch/ompl_planning.launch → ...rm_navigation/launch/ompl_planning.launch	
+	- ...nch/planning_components_visualizer.launch → ...nch/planning_components_visualizer.launch
+	- ...scene_warehouse_viewer_SIA20D_Mesh.launch → ...scene_warehouse_viewer_sia20d_mesh.launch
+	- ..._warehouse_viewer_sia20d_mesh_real.launch → ..._warehouse_viewer_sia20d_mesh_real.launch
+	- sia20d_mesh_arm_navigation/launch/sia20d_mesh_arm_navigation.launch
+	- ...h/SIA20D_Mesh_planning_environment.launch → ...h/sia20d_mesh_planning_environment.launch
+	- ...on/launch/trajectory_filter_server.launch → ...on/launch/trajectory_filter_server.launch
+	- SIA20D_Mesh_arm_navigation/mainpage.dox → sia20d_mesh_arm_navigation/mainpage.dox
+	- SIA20D_Mesh_arm_navigation/package.xml → sia20d_mesh_arm_navigation/package.xml
+	- ...SIA20D_Mesh_manipulator_ikfast_output.cpp → ...sia20d_mesh_manipulator_ikfast_output.cpp
+	- ...SIA20D_Mesh_manipulator_ikfast_plugin.cpp → ...sia20d_mesh_manipulator_ikfast_plugin.cpp
+	
+  languages: XML | CMake | yaml | C++
+
+  time: 2013-09-13 (21:34)

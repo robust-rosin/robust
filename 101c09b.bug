@@ -1,0 +1,60 @@
+title: Typo in include headers
+
+description:
+     Include headers were incorrectly stated. Quotation marks were used instead of <> causing compilation errors.
+
+classification: Wrong Inclusion Directive (no CWE)
+
+keywords: incorrect headers
+
+system: mavros
+
+severity: error
+
+links:
+
+bug:
+
+  phase: compile-time
+
+  specificity: general issue: typo
+
+  architectural-location: N/A
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: mavlink/mavros
+
+  languages: C++
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: N/A
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/mavlink/mavros
+
+  hash: 101c09b7047eac18a2d9989b09c5916181a49cd5
+
+  pull-request: N/A
+
+  license: BSD | GPLv3 | LGPLv3
+
+  fix-in: test/test_mavconn.cpp
+  
+  languages: C++
+
+  time: 2013-06-30 (00:00)

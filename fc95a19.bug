@@ -1,0 +1,91 @@
+title: Path planning exceeding velocity limits of ur5
+
+description:
+     This problem is caused by inconsistency between parameters in
+     different parts of the driver (or application).
+
+     The ROS planner (MoveIt!) plans with the velocity limits
+     specified in joint_limits.yaml, which are retried from a physical
+     description of the robot in URDF files (see limit tag for
+     instance in
+     https://github.com/ros-industrial/universal_robot/blob/hydro-devel/ur_description/urdf/ur5.urdf.xacro#L105).
+     This velocities are specified per joint.
+
+     The driver (ur_driver) has its own velocity limit.  This limit is
+     specified globally. It has been introduced privately and used for
+     testing and debugging purposes.  The driver stops the motion if
+     the velocity exceeds the maximum.
+
+     In the reported issue the planner finds plan that exceed join
+     veloctity of 2 rad/s which was the default limit in the
+     ur_driver.  As a fix the developers set the internal driver limit
+     to to infinite (10 rad/s is considered much higher than the
+     actual velocity physically possible with UR5).
+
+     This allows the faster plans to be executed.  If safety is
+     violated, the safety function of the robot performs a safety stop
+     (on the robot side).
+
+     Also a possibility of setting the parameter from the launch file
+     has been added (but this is additional functionality, not a bug
+     fix).
+    
+classification: Wrong behavior (no CWE) #PHYSICAL
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords: robot description | xacro | launch | joint | velocity
+
+system: universal_robot
+
+severity: error
+
+links: http://moveit.ros.org/
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: robotics-specific
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: manipulation
+
+  subsystem: driver
+
+  package: ros-industrial/universal_robot/ur_driver
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: guest user
+
+  issue: http://answers.ros.org/question/194667/path-planning-exceeding-velocity-limits-of-ur5/ | https://github.com/ros-industrial/universal_robot/issues/124
+
+  time-reported: 2014-10-10 (02:34)
+
+  reproducibility: sometimes
+
+  trace:
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot/
+
+  hash: fc95a19ac913e31c09ab52666405be0f5aacc24e
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/136
+
+  license: BSD
+
+  fix-in: ur_driver/src/ur_driver/driver.py
+
+  languages: python
+
+  time: 2014-11-03 (16:30)

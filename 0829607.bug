@@ -1,0 +1,63 @@
+title: SDA10f model meshes are malformed
+
+description: 
+     When loading the SDA10F robot model in rviz, it shows the warning
+     that the single meshes are 'malformed', because they start with
+     the word 'solid' to indicate it is an ASCII file, but it does not
+     contain the word 'endsolid'.
+
+classification: CWE-172: Encoding Error
+
+keywords: SDA10F | mesh | visualization
+
+system: motoman
+
+severity: warning
+
+links: 
+
+bug:
+  
+  phase: runtime-initialization
+  
+  specificity: general-issue
+  
+  architectural-location: platform code
+
+  application: N/A
+
+  task: simulation
+
+  subsystem: visualization
+
+  package: ros-industrial/motoman/motoman_sda10f_support
+
+  languages: N/A
+
+  detected-by: runtime detection
+
+  reported-by: member developer
+
+  issue: https://github.com/ros-industrial/motoman/issues/123
+
+  time-reported: 2016-08-24 (20:28)
+
+  reproducibility: always
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/gavanderhoorn/motoman
+
+  hash: 57b7a995dfdcf025d6394123eb87896853a6aadf
+
+  pull-request: 
+
+  license: N/A
+
+  fix-in: motoman_sda10f_support/meshes/sda10f/visual/motoman_axis_b1.stl | motoman_sda10f_support/meshes/sda10f/visual/motoman_base.stl
+
+  languages: N/A
+
+  time: 2016-08-29 (13:15)

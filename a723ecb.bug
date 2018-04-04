@@ -1,0 +1,63 @@
+title: The installation of the TF2 library is not a dependency of the devel build
+
+description: 
+   Due to a typing mistake (likely a copy-paste) the tf2 library is not included in the build of the devel target The target that is used as a dependency of software packages that depend on this library.  This causes build errors.
+
+   The bug was detected by a jenkins build whose output is no longer available. Such bugs can appear in building other dependent packages, but in this case it appears that it was detecte when building the tf2 package itself.
+
+classification: 
+  Missing Dependency (no CWE)
+
+keywords: build | depency | devel 
+
+system: core component
+
+severity: error
+
+links: 
+
+bug:
+
+  phase: build-time
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package: ros/geometry2/tf2_ros
+
+  languages: C++
+
+  detected-by:  build system
+
+  reported-by: automatic
+
+  issue: https://github.com/ros/geometry2/issues/5
+
+  time-reported: Feb 14, 2013, 9:39 AM GMT+1
+
+  reproducibility: always
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: a723ecb68f72d52e538f9e9bdbca3e66f7a69444
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: tf2/CMakeLists.txt
+
+  languages: CMake
+
+  time: Feb 15, 2013, 12:37 GMT +1

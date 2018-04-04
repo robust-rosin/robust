@@ -1,0 +1,60 @@
+title: Missing mavros dependency 
+
+description:
+     Missing list of dependency for "gcs_bridge" in "CMakeLists.txt"
+
+classification: Missing Dependency (no CWE)
+
+keywords: missing dependencies 
+
+system: mavros
+
+severity: error
+
+links:
+
+bug:
+
+  phase: build-time
+
+  specificity: general issue: missing dependency
+
+  architectural-location: N/A
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: mavlink/mavros
+
+  languages: 
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: N/A
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/mavlink/mavros
+
+  hash: 942eb3b173b97c66c8cb8df213acf01d32642002
+
+  pull-request: N/A
+
+  license: BSD | GPLv3 | LGPLv3
+
+  fix-in: mavros/CMakeLists.txt
+
+  languages: 
+
+  time: 2014-11-02 (00:00)

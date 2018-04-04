@@ -1,0 +1,73 @@
+title: Driver locks without discovering that a trajectory has been realized or failed
+
+description:
+     The python driver is not detecting that a robot arm has reached a
+     goal point of a trajectory planned.  It never sends an
+     information that the final point has been reached and locks.
+
+     The fix relies on distinguishing two situations: whether the robot
+     got stuck due to planning errors, or whether it has reached the
+     final destination (and the final location has been communicated).
+
+     The deadlocks are intermittent, probably dependent on numerical
+     proximity of the goal and the present position, or on timing.
+
+classification: CWE-440: Expected Behavior Violation #PHYSICAL
+
+internal classification (cause):
+
+internal classification (effect):
+
+keywords: trajectory | ur | driver | locked | planning
+
+system: universal_robot
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: robotics-specific
+
+  architectural-location: platform-code
+
+  application: 
+
+  task: manipulation (motion)
+
+  subsystem: driver
+
+  package: ros-industrial/universal_robot/ur_driver
+
+  languages: N/A
+
+  detected-by: runtime detection
+
+  reported-by: member developer
+
+  issue: https://github.com/ros-industrial/universal_robot/issues/35
+
+  time-reported: 2014-02-03 (23:23)
+  
+  reproducibility: sometimes
+
+  trace: 
+
+fix:
+
+  repo: https://github.com/ros-industrial/universal_robot
+
+  hash: bd1fce5b225aecc4862e824b674eebb4c40be255
+
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/37
+
+  license: BSD
+
+  fix-in: ur_driver/src/ur_driver/driver.py
+
+  languages: python
+
+  time: 2014-02-08 (03:30)

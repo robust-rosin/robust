@@ -1,0 +1,70 @@
+title: Battery Charge Was Not Showing on Android Applications
+
+description:
+     Turtlebot features some Android applications to control the robot
+     (e.g. teleoperation, or make a map of the surroundings). These
+     applications have a battery indicator to let the user know how
+     much battery the robot has left. However, this indicator was
+     displaying no information at all.
+
+     The reason was that the application listens for the robot's
+     diagnostics and looks for a specific name in the diagnostics
+     fields, but the robot was emitting diagnostics with a prefix
+     attached to the names.  Changing the diagnostics parameter file
+     to indicate that the prefix should be removed fixes the issue.
+
+classification: Looking for Wrong Name (no CWE)
+
+keywords: diagnostics | power | android | battery
+
+system: kobuki
+
+severity: minor-issue
+
+links:
+
+bug:
+  
+  phase: runtime-initialization
+
+  specificity: ROS-specific
+
+  architectural-location: application-specific code
+
+  application: 
+
+  task: diagnostics
+
+  subsystem: generic task component
+
+  package: yujinrobot/kobuki/kobuki_node | yujinrobot/kobuki/kobuki_bringup
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: https://github.com/yujinrobot/kobuki/issues/136
+
+  time-reported: 2012-06-20 (03:51)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: bb3c7ec8a7e656aa7e75753864351c27d571db47
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: kobuki_bringup/resources/yaml/diagnostics.yaml | kobuki_node/src/node/diagnostics.cpp
+
+  languages: C++ | YAML
+
+  time: 2012-06-20 (04:01)

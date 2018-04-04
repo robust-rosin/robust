@@ -1,0 +1,83 @@
+title: Process Hanging in Shutdown Sequence
+
+description:
+     ROS provides the concept of node (a process) and nodelet -- a
+     lightweight implementation using a thread instead. Nodelets can
+     be aggregated under a manager process, and this enables nodelets
+     under the same manager to share messages by reference, avoiding
+     the cost of copy and serialization.
+
+     The Kobuki base nodelet spawns an additional thread for its
+     operation: one thread publishes messages at a specific rate, and
+     another processes event callbacks.
+
+     When the user requested shutdown by killing both the manager and
+     the nodelet, no problems arose. If the user tried to shutdown
+     just the nodelet, then it would hang in the shutdown sequence.
+
+     The reason behind this behaviour was that the nodelet manager
+     would try to destroy the nodelet object, but the destructor
+     waited for the additional thread to finish. However, no signal
+     would be sent to the helper thread, and it would keep working
+     indefinitely.
+
+     The solution for this problem was to add a "shutdown requested"
+     flag that would be shared between threads. When the manager tries
+     to destroy the nodelet object, the destructor signals the other
+     thread through the flag and only then proceeds to wait.
+
+classification: CWE-404: Improper Resource Shutdown or Release #RESOURCE
+
+keywords: concurrency | shutdown
+
+system: kobuki
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: general-issue
+
+  architectural-location: application-specific code
+
+  application: mobile robot
+
+  task: N/A
+
+  subsystem: driver
+
+  package: yujinrobot/kobuki/kobuki_node
+
+  languages: C++
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: https://github.com/yujinrobot/kobuki/issues/324
+
+  time-reported: 2014-04-21 (07:32)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: 6e748c1df1024847de91d899506ae872759d1094
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: kobuki_node/src/nodelet/kobuki_nodelet.cpp
+
+  languages: C++
+
+  time: 2014-04-21 (07:38)

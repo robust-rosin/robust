@@ -1,0 +1,66 @@
+title: Missing tcpclient lock
+
+description:
+     The "MAVConnTCPServer::client_closed" method is responsible for
+     safely closing a given client's connection to the TCP server. In
+     the buggy implementation of this method, the lock for the
+     client (represented as a pointer to an MAVConnTCPClient
+     instance) was not acquired before closing the connection,
+     leading to a possible race condition that can result in
+     deadlocking or a segmentation fault.
+
+classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE
+
+keywords: client delition | tcp
+
+system: mavros
+
+severity: error
+
+links:
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: general issue: missing lock
+
+  architectural-location: N/A
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: mavlink/mavros
+
+  languages: C++
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: mavconn transmission hangs on high packet count
+
+  time-reported: 2014-07-31 (00:00)
+
+  reproducibility: N/A
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/mavlink/mavros
+
+  hash: 1f019166ccedf8ce5151944f5e33302afaf82679
+
+  pull-request: N/A
+
+  license: BSD | GPLv3 | LGPLv3
+
+  fix-in: src/mavconn/mavconn_tcp.cpp | include/mavros/mavconn_tcp.h
+
+  languages: C++
+
+  time: 2014-08-04 (00:00)

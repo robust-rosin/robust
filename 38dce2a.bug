@@ -1,0 +1,74 @@
+title: Nodelets Hanging on Shutdown
+
+description:
+     Under certain scenarios, when shutdown was requested (by pressing
+     Ctrl+C), the various Kobuki nodelets would not properly shutdown.
+
+     For instance, when launching a minimal configuration (the nodelet
+     manager plus the driver nodelet) and, in another terminal,
+     launching extra nodelets (teleoperation), the system would hang
+     if the second launch sequence was terminated first.
+
+     This is due to some nodelets spawning additional threads and
+     relying solely on `ros::ok()` to detect termination. However, the
+     nodelet documentation clearly states that additional threads
+     spawned by the user have to be manually cleaned up. In short, the
+     termination signal was being ignored when the nodelet manager was
+     not terminated directly.
+
+classification: CWE-404: Improper Resource Shutdown or Release #RESOURCE
+
+keywords: threading | termination | synchronization | shutdown | nodelet
+
+system: kobuki
+
+severity: error
+
+links: http://wiki.ros.org/nodelet
+
+bug:
+  
+  phase: runtime-operation
+
+  specificity: ROS-specific
+
+  architectural-location: application-specific code
+
+  application: 
+
+  task: N/A
+
+  subsystem: safety controller
+
+  package: yujinrobot/kobuki/kobuki_safety_controller
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: https://github.com/yujinrobot/kobuki/issues/185
+
+  time-reported: 2012-12-01 (16:15)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: 38dce2aac9c4a519fbcec4032838a3451662e7b6
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: kobuki_safety_controller/src/nodelet.cpp
+
+  languages: C++
+
+  time: 2012-12-05 (03:43)
+

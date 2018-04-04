@@ -1,0 +1,62 @@
+title: Circular Package Dependencies Cause Build to Fail
+
+description:
+     Two packages, `kobuki_node` and `kobuki_capabilities` had launch
+     files with dependencies on the other package, causing a circular
+     dependency. This led to failure of the build process.
+
+classification: Circular Dependencies (no CWE)
+
+keywords: dependencies | packages | build
+
+system: kobuki
+
+severity: error
+
+links:
+
+bug:
+  
+  phase: build-time
+
+  specificity: ROS-specific
+
+  architectural-location: application-specific code
+
+  application: 
+
+  task: N/A
+
+  subsystem: 
+
+  package: yujinrobot/kobuki/kobuki_node | yujinrobot/kobuki/kobuki_capabilities
+
+  languages: Package XML
+
+  detected-by: build system
+
+  reported-by: contributor
+
+  issue: https://github.com/yujinrobot/kobuki/issues/331
+
+  time-reported: 2014-07-25 (00:23)
+
+  reproducibility: always
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/yujinrobot/kobuki
+
+  hash: f95c3847d97fba46b6317e00ffd78ce352ec376f
+
+  pull-request: https://github.com/yujinrobot/kobuki/pull/334
+
+  license: BSD
+
+  fix-in: kobuki_node/package.xml
+
+  languages: Package XML
+
+  time: 2014-08-08 (01:42)

@@ -1,0 +1,70 @@
+title: New features unavailable in older systems
+
+description:
+     When adding the possibility to use features that have been added
+     in new versions of Robot Web Services (RWS), then it will not be
+     possible to use them with older systems. Currently, if using an
+     older system version, then this will be attempted and reported as
+     a failed communication. It might be prudent to check the current
+     system's version and then report if a specific function is
+     unavailable.
+
+classification: Incorrect Handling of Accessing Unavailable Features (no CWE) #EVOLUTION
+
+internal classification (cause): attempting to access features added in newer versions
+
+internal classification (effect): possibly inconclusive information reported to user
+
+keywords: RWS
+
+system: confidential
+
+severity: bad-smell
+
+links: http://developercenter.robotstudio.com/webservice/api_reference
+
+bug:
+
+  phase: runtime-operation
+	
+  specificity: application specific
+
+  architectural location: application-specific code
+
+  application: RWS interface
+
+  tasks: accessing version-specific features
+
+  subsystem: driver
+
+  package: N/A
+
+  languages: N/A
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: N/A
+
+  time-reported: 2017-06-13 (11:41)
+
+  reproducibility: always
+
+  trace:
+
+fix:
+
+  repository: CONFIDENTIAL
+
+  hash: N/A
+
+  pull-request: N/A
+
+  license: closed source
+
+  fix-in: CONFIDENTIAL
+
+  languages: C++
+
+  time: unfixed

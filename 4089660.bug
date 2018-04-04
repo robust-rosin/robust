@@ -1,0 +1,62 @@
+title: Variable is assigned but never used
+
+description: 
+     In the Motoman driver a variable 'bHasPreviousData' is set to
+     different values, but it is never used in any case later.  It is
+     used just in a line, which is at that moment in a commit.
+
+classification: CWE-563: Assignment to Variable without Use (Unused Variable)
+
+keywords: driver | motoman
+
+system: motoman
+
+severity: error
+
+links: 
+
+bug:
+  
+  phase: compile-time
+  
+  specificity: general-issue
+  
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: ros-industrial/motoman/motoman_driver
+
+  languages: C++
+
+  detected-by: developer
+
+  reported-by: member developer
+
+  issue: https://github.com/ros-industrial/motoman/issues/138
+
+  time-reported: 2016-12-21 (00:00)
+
+  reproducibility: always
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/ros-industrial/motoman
+
+  hash: 
+
+  pull-request: 140
+
+  license: BSD
+
+  fix-in: motoman_driver/MotoPlus/Controller.c | motoman_driver/MotoPlus/Controller.h | motoman_driver/MotoPlus/MotionServer.c | motoman_driver/MotoPlus/MpRosAllControllers.VC.db | motoman_driver/MotoPlus/MpRosAllControllers.vcxproj.filters | motoman_driver/MotoPlus/RosSetupValidation.dnLib | motoman_driver/MotoPlus/RosSetupValidation.fsLib | motoman_driver/MotoPlus/RosSetupValidation.h | motoman_driver/MotoPlus/RosSetupValidation.mpLib | motoman_driver/MotoPlus/_buildLog/MotoROSDX100.log | motoman_driver/MotoPlus/mpMain.c | motoman_driver/MotoPlus/output/DX100/MotoRosDX100/MotoRosDX100.out | motoman_driver/MotoPlus/output/DX200/MotoRosDX200/MotoRosDX200.out | motoman_driver/MotoPlus/output/FS100/MotoRosFS100/MotoRosFS100.out
+
+  languages: N/A
+
+  time: 2016-12-30 (18:48)

@@ -1,0 +1,11 @@
+# tarbal as released
+# - tar:
+#    local-name: roscpp
+#    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/roscpp/1.11.17-0.tar.gz
+#    version: ros_comm-release-release-kinetic-roscpp-1.11.17-0
+
+# source: before merge of fix
+- git:
+    local-name: ros_comm
+    uri: https://github.com/ros/ros_comm.git
+    version: f08eafa98a5154027af32a342d11c211c7554cab

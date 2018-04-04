@@ -1,0 +1,68 @@
+title: Incorrect parameter names used to fetch values
+
+description:
+     Lines 311--313 are used to fetch the current x, y, and z
+     coordinates. The "ros::NodeHandle::param" function used to fetch
+     these values accepts the name of a parameter, a reference to the
+     variable to which its value should be written, and a default
+     value which should be written to the variable in the case that no
+     parameter can be found that matches the given name. Lines 312 and
+     313 incorrectly retrieve the "sensor_position/x" parameter,
+     rather than the "sensor_position/y" and "sensor_position/z"
+     parameters.
+
+classification: CWE-628: Function Call with Incorrectly Specified Arguments
+
+keywords: bad (string) parameter name
+
+system: mavros
+
+severity: error
+
+links:
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: general issue: incorrect parameter name
+
+  architectural-location: N/A
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: N/A
+
+  package: mavlink/mavros
+
+  languages: C++
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: N/A
+
+  time-reported: N/A
+
+  reproducibility: N/A
+
+  trace: N/A
+
+fix:
+
+  repo: https://github.com/mavlink/mavros
+
+  hash: ff581a0752107f7ad875c16f83f7b75ccd92f847
+
+  pull-request: N/A
+
+  license: BSD | GPLv3 | LGPLv3
+
+  fix-in: mavros_extras/src/plugins/distance_sensor.cpp
+
+  languages: C++
+
+  time: 2015-05-17 (00:00)
