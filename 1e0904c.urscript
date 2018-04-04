@@ -1,7 +1,0 @@
-def driverProg():
-    MSG_OUT = 1
-    socket_send_int(MSG_OUT)
-    socket_send_string("hello")
-    socket_send_string("~")
-end
-driverProg() # PARSE ERROR CAUSES WARNING HERE
