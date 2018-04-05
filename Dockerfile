@@ -1,12 +1,11 @@
 ARG ROS_DISTRO
 ARG UBUNTU_VERSION
-ARG USE_APT_OLD_RELEASES
-ARG IS_BUILD_FAILURE
 FROM ubuntu:${UBUNTU_VERSION}
 
 # fix the package sources list to use archival sources
 # https://askubuntu.com/questions/1000291/error-the-repository-xxx-does-not-have-a-release-file
 # https://askubuntu.com/questions/91815/how-to-install-software-or-upgrade-from-an-old-unsupported-release
+ARG USE_APT_OLD_RELEASES
 RUN if [ "${USE_APT_OLD_RELEASES}" = "yes" ]; then \
       sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' \
         /etc/apt/sources.list \
@@ -88,9 +87,11 @@ RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/puts.rosinstall
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
 # we use '--only-pkg-with-deps' to avoid building /everything/
-RUN /bin/bash -c '\
+ARG IS_BUILD_FAILURE
+ARG CATKIN_PKG
+RUN /bin/bash -c "\
          source /opt/ros/$ROS_DISTRO/setup.bash \
-      && catkin_make --only-pkg-with-deps=roscpp' \
+      && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" \
     || [ "${IS_BUILD_FAILURE}" == "yes" ]
 
 # # setup container entrypoints

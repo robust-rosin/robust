@@ -10,6 +10,7 @@ blueprints:
       USE_APT_OLD_RELEASES: no
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
+      CATKIN_PKG: roscpp
 
 bugs:
   - name: robust:ca23e58

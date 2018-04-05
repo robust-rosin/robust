@@ -2,20 +2,20 @@ version: '1.0'
 
 blueprints:
   - type: docker
-    tag: rosin/robust:b826eae
+    tag: rosin/robust:eed104d
     file: ../Dockerfile
-    context: b826eae.L3
+    context: eed104d.L3
     arguments:
       IS_BUILD_FAILURE: no
       USE_APT_OLD_RELEASES: no
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
-      CATKIN_PKG: cob_robots
+      CATKIN_PKG: kobuki_core
 
 bugs:
-  - name: robust:b826eae
-    image: rosin/robust:b826eae
-    program: care-o-bot
+  - name: robust:eed104d
+    image: rosin/robust:eed104d
+    program: kobuki
     dataset: robust
     # FIXME
     languages:
