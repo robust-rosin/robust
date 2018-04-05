@@ -1,0 +1,26 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: rosin/robust:ca23e58
+    file: ../Dockerfile
+    context: ca23e58
+    arguments:
+      IS_BUILD_FAILURE: no
+      USE_APT_OLD_RELEASES: no
+      UBUNTU_VERSION: xenial
+      ROS_DISTRO: kinetic
+
+bug:
+  - name: robust:ca23e58
+    program: ros_comm
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
