@@ -1,0 +1,28 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: rosin/robust:b826eae
+    file: ../Dockerfile
+    context: b826eae.L3
+    arguments:
+      IS_BUILD_FAILURE: no
+      USE_APT_OLD_RELEASES: no
+      UBUNTU_VERSION: xenial
+      ROS_DISTRO: kinetic
+
+bugs:
+  - name: robust:b826eae
+    image: rosin/robust:b826eae
+    program: ros_comm
+    dataset: robust
+    # FIXME
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
