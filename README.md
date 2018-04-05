@@ -18,3 +18,11 @@ or as a local source
 $ cd path/to/robust-rosin
 $ bugzoo source add robust .
 ```
+
+### Bug Installation
+
+```
+$ bugzoo bug build robust:ca23e58
+$ bugzoo bug build robust:b826eae
+$ bugzoo bug build robust:eed104d
+```
