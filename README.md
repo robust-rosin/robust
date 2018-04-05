@@ -31,4 +31,5 @@ $ bugzoo bug build robust:b4dc23c
 ## Anatomy
 
 * For bugs unrelated to the build process, `test.sh` is used to provide a test
-  case that manifests the bug.
+  case that manifests the bug. To prevent the need for multiple Dockerfiles,
+  a placeholder `test.sh` file is provided for build-related bugs.
