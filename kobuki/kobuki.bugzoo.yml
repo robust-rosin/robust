@@ -6,7 +6,7 @@ blueprints:
     file: ../Dockerfile
     context: eed104d.L3
     arguments:
-      IS_BUILD_FAILURE: no
+      IS_BUILD_FAILURE: yes
       USE_APT_OLD_RELEASES: no
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
