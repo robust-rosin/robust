@@ -11,8 +11,9 @@ blueprints:
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
 
-bug:
+bugs:
   - name: robust:ca23e58
+    image: rosin/robust:ca23e58
     program: ros_comm
     dataset: robust
     languages:
