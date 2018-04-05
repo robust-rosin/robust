@@ -1,0 +1,28 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: rosin/robust:b4dc23c
+    file: ../Dockerfile
+    context: b4dc23c.L3
+    arguments:
+      IS_BUILD_FAILURE: no
+      USE_APT_OLD_RELEASES: no
+      UBUNTU_VERSION: 14.04.5
+      ROS_DISTRO: indigo
+      CATKIN_PKG: tf2_ros
+
+bugs:
+  - name: robust:b4dc23c
+    image: rosin/robust:b4dc23c
+    program: tf2
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300

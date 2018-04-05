@@ -25,4 +25,5 @@ $ bugzoo source add robust .
 $ bugzoo bug build robust:ca23e58
 $ bugzoo bug build robust:b826eae
 $ bugzoo bug build robust:eed104d
+$ bugzoo bug build robust:b4dc23c
 ```
