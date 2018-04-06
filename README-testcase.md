@@ -9,11 +9,11 @@ These are the old commands for running the test on the buggy code and on the fix
 
 ```docker build -t b4dc23c . && docker run -it b4dc23c ./test-with-fix.sh``` ← should result in a pass (despite some nodes failing, as expected)
 
-# Preparation of the skeleton L3 repo #
+# Preparation of the skeleton repo #
 
-This is what happens before you start writing a test (these files should be in ``b4dc23c.L3``):
+This is what happens before you start writing a test (these files should be in [tf2/b4dc23c.L3](tf2/b4dc23c.L3)). The description is brief as this is not what you are doing:
 
-1. **pkgs.rosinstall** is a file produced by @gavanderhoorn following roughly this process <https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2> 
+1. The time machine is used to produce the lists of dependent sources: **deps.rosinstall** (all sources of packages that the package under test depends on) **put.rosinstall** (the source and commit which contains the bug) **puts_with_deps.rosinstall** (the concatanation of the previous two?). The procedure for producing this is roughly here: <https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2> 
 
 2. **Dockerfile** is created by @ChrisTimperley following roughly this: <https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1> (but Chris, please take all the extensions in the tail of the file from ``b4dc23c.L3/Dockerfile``). Note that Chris is using a single Dockerfile for all the bugs now, and the bugzoo infrastructure builds the bug images.
 
