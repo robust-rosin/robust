@@ -89,10 +89,13 @@ RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/puts.rosinstall
 # we use '--only-pkg-with-deps' to avoid building /everything/
 ARG IS_BUILD_FAILURE
 ARG CATKIN_PKG
-RUN /bin/bash -c "\
-         source /opt/ros/$ROS_DISTRO/setup.bash \
-      && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" \
-    || [ "${IS_BUILD_FAILURE}" == "yes" ]
+RUN if [ "${IS_BUILD_FAILURE}" = "no" ]; then \
+      /bin/bash -c "\
+           source /opt/ros/$ROS_DISTRO/setup.bash \
+        && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" \
+    ; fi
+
+ADD test.sh /ros_ws/
 
 # # setup container entrypoints
 # COPY ./ros_entrypoint.sh /
