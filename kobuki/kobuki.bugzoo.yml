@@ -4,7 +4,7 @@ blueprints:
   - type: docker
     tag: rosin/robust:eed104d
     file: ../Dockerfile
-    context: eed104d.L3
+    context: eed104d
     arguments:
       IS_BUILD_FAILURE: yes
       USE_APT_OLD_RELEASES: no
