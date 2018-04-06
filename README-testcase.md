@@ -1,5 +1,9 @@
 # TLDR #
-Everything is explainedwith b4dc23c as an example.  If you want to start from an end, then go to b4dc23c.L3/ and run (requires a docker installation):
+Everything is explained with b4dc23c as an example.  Go to [tf2/b4dc23c.L3/](tf2/b4dc23c.L3/) and run (requires a docker installation) to see the files. Run the following command to build the bug:
+
+```bugzoo bug build robust:b4dc23c```
+
+These are the old commands for running the test on the buggy code and on the fixed code (update pending).
 
 ```docker build -t b4dc23c . && docker run -it b4dc23c ./test.sh``` ← should result in a failed test
 
