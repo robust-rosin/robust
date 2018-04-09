@@ -3,7 +3,7 @@ Everything is explained with b4dc23c as an example.  Go to [tf2/b4dc23c.L3/](tf2
 
 ```bugzoo bug build robust:b4dc23c```
 
-These are the old commands for running the test on the buggy code and on the fixed code (update pending).
+(outdated) These are the old commands for running the test on the buggy code and on the fixed code (update pending).
 
 ```docker build -t b4dc23c . && docker run -it b4dc23c ./test.sh``` ← should result in a failed test
 
@@ -14,6 +14,8 @@ These are the old commands for running the test on the buggy code and on the fix
 This is what happens before you start writing a test (these files should be in [tf2/b4dc23c.L3](tf2/b4dc23c.L3)). The description is brief as this is not what you are doing:
 
 1. The time machine is used to produce the lists of dependent sources: **deps.rosinstall** (all sources of packages that the package under test depends on) **put.rosinstall** (the source and commit which contains the bug) **puts_with_deps.rosinstall** (the concatanation of the previous two?). The procedure for producing this is roughly here: <https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2> 
+
+2. The repository is forked to robust/b4dc23c_geometry2 (robust/HASH_repo).  The parent of the bug fixing commit is branched to ```robust_buggy``` and the fixed commit is branched to ``robust_fixed```.
 
 2. **Dockerfile** is created by @ChrisTimperley following roughly this: <https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1> (but Chris, please take all the extensions in the tail of the file from ``b4dc23c.L3/Dockerfile``). Note that Chris is using a single Dockerfile for all the bugs now, and the bugzoo infrastructure builds the bug images.
 
@@ -56,7 +58,7 @@ After getting a complete L3 directory with the above files  from Chris, identify
     
     This **has to be** (!) the same commit as used by @gavanderhoorn to create the pkgs.rosinstall file. 
 
-3. Create a branch "bug_witness" from that commit in your local repo (later you obviously push it to the github remote as well):
+3. [outdated] Create a branch "bug_witness" from that commit in your local repo (later you obviously push it to the github remote as well):
 
     ``git checkout -b bug_witness``
     
