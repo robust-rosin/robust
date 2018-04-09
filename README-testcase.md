@@ -1,5 +1,5 @@
 # TLDR #
-Everything is explained with b4dc23c as an example.  Go to [tf2/b4dc23c.L3/](tf2/b4dc23c.L3/) and run (requires a docker installation) to see the files. Run the following command to build the bug:
+Everything is explained with b4dc23c as an example.  Go to [tf2/b4dc23c.L3/](tf2/b4dc23c.L3/) and run (requires a docker installation): 
 
 ```bugzoo bug build robust:b4dc23c```
 
