@@ -55,3 +55,14 @@ which are located at `/ros_ws`:
   exit code if not.
 * `fix.sh`: applies the historical fix to the PUT.
 * `unfix.sh`: reverses the historical fix to the PUT.
+
+
+### Interacting with the bugs
+
+To launch a container for one of the bugs, execute the following:
+
+```
+$ bugzoo container launch robust:b4dc23c
+```
+
+where the `robust:b4dc23c` is replaced by the name of the bug.
