@@ -102,9 +102,14 @@ ADD test.sh /ros_ws/
 
 # add historical patch
 # TODO automatically generate (or avoid the need to do so)
-ADD fix.patch .
+COPY fix.patch .
 
-# # setup container entrypoints
-# COPY ./ros_entrypoint.sh /
-# ENTRYPOINT ["/ros_entrypoint.sh"]
-# CMD ["bash"]
+# setup container entrypoints
+RUN echo "#!/bin/bash \n\
+set -e \n\
+source \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \n\
+exec \"\$@\"" > /entrypoint.sh \
+ && chmod +x /entrypoint.sh
+# source \"devel/setup.bash\" \n\
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]
