@@ -56,7 +56,7 @@ test is executed.
 $ bugzoo container execute robust:b4dc23c ./fix.sh && ./build.sh && ./test.sh
 ```
 
-### Anatomy
+## Container Anatomy
 
 Each container provided by this repository contains the following files, all of
 which are located at `/ros_ws`:
@@ -74,3 +74,7 @@ which are located at `/ros_ws`:
   exit code if not.
 * `fix.sh`: applies the historical fix to the PUT.
 * `unfix.sh`: reverses the historical fix to the PUT.
+
+Note that `build.sh`, `fix.sh`, and `unfix.sh` are automatically generated
+during the BugZoo build process. `test.sh` and any files related to testing are
+hosted by the directory for each scenario.
