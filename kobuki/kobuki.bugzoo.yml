@@ -2,7 +2,7 @@ version: '1.0'
 
 blueprints:
   - type: docker
-    tag: rosin/robust:eed104d
+    tag: robust_rosin/robust:eed104d
     file: ../Dockerfile
     context: eed104d
     arguments:
@@ -14,7 +14,7 @@ blueprints:
 
 bugs:
   - name: robust:eed104d
-    image: rosin/robust:eed104d
+    image: robust_rosin/robust:eed104d
     program: kobuki
     dataset: robust
     # FIXME

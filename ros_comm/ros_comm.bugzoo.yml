@@ -2,7 +2,7 @@ version: '1.0'
 
 blueprints:
   - type: docker
-    tag: rosin/robust:ca23e58
+    tag: robust_rosin/robust:ca23e58
     file: ../Dockerfile
     context: ca23e58
     arguments:
@@ -14,7 +14,7 @@ blueprints:
 
 bugs:
   - name: robust:ca23e58
-    image: rosin/robust:ca23e58
+    image: robust_rosin/robust:ca23e58
     program: ros_comm
     dataset: robust
     languages:

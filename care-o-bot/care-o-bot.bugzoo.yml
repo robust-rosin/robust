@@ -2,7 +2,7 @@ version: '1.0'
 
 blueprints:
   - type: docker
-    tag: rosin/robust:b826eae
+    tag: robust_rosin/robust:b826eae
     file: ../Dockerfile
     context: b826eae.L3
     arguments:
@@ -14,7 +14,7 @@ blueprints:
 
 bugs:
   - name: robust:b826eae
-    image: rosin/robust:b826eae
+    image: robust_rosin/robust:b826eae
     program: care-o-bot
     dataset: robust
     # FIXME
