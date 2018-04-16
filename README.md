@@ -27,13 +27,14 @@ The following bugs are known to build correctly:
 $ bugzoo bug build robust:ca23e58
 $ bugzoo bug build robust:b826eae
 $ bugzoo bug build robust:eed104d
+$ bugzoo bug build robust:b4dc23c
 ```
 
 All bugs listed below do not build correctly; the issues causing their build
 processes to fail should be documented on the issue tracker.
 
 ```
-$ bugzoo bug build robust:b4dc23c
+
 ```
 
 ## Anatomy
