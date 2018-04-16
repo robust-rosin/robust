@@ -98,11 +98,12 @@ RUN patch -p1 -d src < bug_witness.patch
 # we use '--only-pkg-with-deps' to avoid building /everything/
 ARG IS_BUILD_FAILURE
 ARG CATKIN_PKG
-RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash \
+RUN echo "#!/bin/bash\n\
+          source /opt/ros/$ROS_DISTRO/setup.bash \
           && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" > build.sh \
  && chmod +x build.sh
-RUN if [ "${IS_BUILD_FAILURE}" = "no" ]; then ./build.sh ; fi
-ADD test.sh /ros_ws/
+RUN if [ "${IS_BUILD_FAILURE}" = "False" ]; then ./build.sh ; fi
+COPY test.sh .
 
 # add historical patch
 # TODO automatically generate (or avoid the need to do so)
@@ -115,6 +116,6 @@ set -e \n\
 source \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \n\
 exec \"\$@\"" > /entrypoint.sh \
  && chmod +x /entrypoint.sh
-# source \"devel/setup.bash\" \n\
+# source \"${ROS_WSPACE}/devel/setup.bash\" \n\
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]
