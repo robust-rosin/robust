@@ -2,7 +2,7 @@ version: '1.0'
 
 blueprints:
   - type: docker
-    tag: robust_rosin/robust:b4dc23c
+    tag: robustrosin/robust:b4dc23c
     file: ../Dockerfile
     context: b4dc23c.L3
     arguments:
@@ -14,7 +14,7 @@ blueprints:
 
 bugs:
   - name: robust:b4dc23c
-    image: robust_rosin/robust:b4dc23c
+    image: robustrosin/robust:b4dc23c
     program: tf2
     dataset: robust
     languages:
