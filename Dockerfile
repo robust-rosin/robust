@@ -83,6 +83,10 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
 ADD puts.rosinstall ${ROS_WSPACE}
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/puts.rosinstall
 
+# FIXME use branches or tags rather than patches
+COPY bug_witness.patch .
+RUN patch -p1 -d src < bug_witness.patch
+
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
 # to have correctly listed all dependencies ..
@@ -104,6 +108,7 @@ ADD test.sh /ros_ws/
 # TODO automatically generate (or avoid the need to do so)
 COPY fix.patch .
 
+# FIXME move to top of Dockerfile
 # setup container entrypoints
 RUN echo "#!/bin/bash \n\
 set -e \n\
