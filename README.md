@@ -37,7 +37,26 @@ processes to fail should be documented on the issue tracker.
 
 ```
 
-## Anatomy
+## Interacting with the bugs
+
+To launch an interactive container for one of the bugs, execute the following:
+
+```
+$ bugzoo container launch robust:b4dc23c
+```
+
+where the `robust:b4dc23c` is replaced by the name of the bug.
+
+The `bugzoo container execute` command can be used to perform headless
+interaction with the bugs. For instance, in the example below, the developer
+fix is applied to the source code, the package under test is rebuilt, and the
+test is executed.
+
+```
+$ bugzoo container execute robust:b4dc23c ./fix.sh && ./build.sh && ./test.sh
+```
+
+### Anatomy
 
 Each container provided by this repository contains the following files, all of
 which are located at `/ros_ws`:
@@ -55,14 +74,3 @@ which are located at `/ros_ws`:
   exit code if not.
 * `fix.sh`: applies the historical fix to the PUT.
 * `unfix.sh`: reverses the historical fix to the PUT.
-
-
-### Interacting with the bugs
-
-To launch a container for one of the bugs, execute the following:
-
-```
-$ bugzoo container launch robust:b4dc23c
-```
-
-where the `robust:b4dc23c` is replaced by the name of the bug.
