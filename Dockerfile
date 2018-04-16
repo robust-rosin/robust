@@ -45,6 +45,11 @@ WORKDIR ${ROS_WSPACE}
 ADD deps.rosinstall ${ROS_WSPACE}
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/deps.rosinstall
 
+# generate fix and unfix scripts
+RUN echo "patch -p1 -d '${ROS_WSPACE}/src' < fix.patch" > fix.sh \
+ && echo "patch -p1 -R -d '${ROS_WSPACE}/src' < fix.patch" > unfix.sh \
+ && chmod +x fix.sh unfix.sh
+
 # install system dependencies
 #
 #   E: Unable to locate package gazebo2
@@ -94,6 +99,10 @@ RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash \
  && chmod +x build.sh
 RUN if [ "${IS_BUILD_FAILURE}" = "no" ]; then ./build.sh ; fi
 ADD test.sh /ros_ws/
+
+# add historical patch
+# TODO automatically generate (or avoid the need to do so)
+ADD fix.patch .
 
 # # setup container entrypoints
 # COPY ./ros_entrypoint.sh /

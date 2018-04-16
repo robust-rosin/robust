@@ -53,3 +53,5 @@ which are located at `/ros_ws`:
   than `0`. The same behaviour should also apply to build-related issues; that
   is, `test.sh` should exit with `0` if the build was successful, and any other
   exit code if not.
+* `fix.sh`: applies the historical fix to the PUT.
+* `unfix.sh`: reverses the historical fix to the PUT.
