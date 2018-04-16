@@ -6,7 +6,7 @@ FROM ubuntu:${UBUNTU_VERSION}
 # https://askubuntu.com/questions/1000291/error-the-repository-xxx-does-not-have-a-release-file
 # https://askubuntu.com/questions/91815/how-to-install-software-or-upgrade-from-an-old-unsupported-release
 ARG USE_APT_OLD_RELEASES
-RUN if [ "${USE_APT_OLD_RELEASES}" = "yes" ]; then \
+RUN if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
       sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' \
         /etc/apt/sources.list \
       && apt-get update \
@@ -42,7 +42,7 @@ RUN apt-get update \
 
 # setup workspace and import packages
 WORKDIR ${ROS_WSPACE}
-ADD deps.rosinstall ${ROS_WSPACE}
+COPY deps.rosinstall .
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/deps.rosinstall
 
 # generate fix and unfix scripts
@@ -51,11 +51,6 @@ RUN echo "patch -p1 -d '${ROS_WSPACE}/src' < fix.patch" > fix.sh \
  && chmod +x fix.sh unfix.sh
 
 # install system dependencies
-#
-#   E: Unable to locate package gazebo2
-#   ERROR: the following rosdeps failed to install
-#     apt: command [apt-get install -y gazebo2] failed
-#
 RUN apt-get update \
  && rosdep init \
  && rosdep update \
@@ -80,7 +75,7 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/devel_isolated
 
 # download & build Package Under Test
-ADD puts.rosinstall ${ROS_WSPACE}
+COPY puts.rosinstall .
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/puts.rosinstall
 
 # FIXME use branches or tags rather than patches
