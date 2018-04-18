@@ -1,35 +1,51 @@
-# TLDR #
-Everything is explained with b4dc23c as an example.  Go to [tf2/b4dc23c.L3/](tf2/b4dc23c.L3/) and run (requires a docker installation): 
+# Introduction
+
+This file describes the procedure of reproduction of the bug in the ROBUST ROSIN repository. It is meant to be read by those who contribute to the repository.  Before reading this document, read about the general usage of the repository, anatomy and commands in [the top-level readme file](README.md). 
+
+We explain the process using the bug b4dc23c as an example.  Go to [tf2/b4dc23c.L3/](tf2/b4dc23c.L3/) and run (requires a docker installation). This bug is now implemented so that you can test whether you have all the prerequistes set up by invoking:
 
 ```bugzoo bug build robust:b4dc23c```
 
-(outdated) These are the old commands for running the test on the buggy code and on the fixed code (update pending).
+This command should build robust:b4dc23c and all dependencies (so be patient).
 
-```docker build -t b4dc23c . && docker run -it b4dc23c ./test.sh``` ← should result in a failed test
+Then you can run 
 
-```docker build -t b4dc23c . && docker run -it b4dc23c ./test-with-fix.sh``` ← should result in a pass (despite some nodes failing, as expected)
+```bugzoo container launch robust:b4dc23c```
 
-# Preparation of the skeleton repo #
+which opens the interactive shell inside the docker container, where you can try using your test cases.
 
-This is what happens before you start writing a test (these files should be in [tf2/b4dc23c.L3](tf2/b4dc23c.L3)). The description is brief as this is not what you are doing:
-
-1. The time machine is used to produce the lists of dependent sources: **deps.rosinstall** (all sources of packages that the package under test depends on) **put.rosinstall** (the source and commit which contains the bug) **puts_with_deps.rosinstall** (the concatanation of the previous two?). The procedure for producing this is roughly here: <https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2> 
-
-2. The repository is forked to robust/b4dc23c_geometry2 (robust/HASH_repo).  The parent of the bug fixing commit is branched to ```robust_buggy``` and the fixed commit is branched to ``robust_fixed```.
-
-2. **Dockerfile** is created by @ChrisTimperley following roughly this: <https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1> (but Chris, please take all the extensions in the tail of the file from ``b4dc23c.L3/Dockerfile``). Note that Chris is using a single Dockerfile for all the bugs now, and the bugzoo infrastructure builds the bug images.
-
-1. **Fork** the project under robust-rosin organization, with the bug hash prefixing the name, so here we would get  b4dc23c_geometry2 (the process was changed, so for this bug we still have an old repo here [git@github.com:wasowski/geometry2_167.git](mailto:git@github.com:wasowski/geometry2_167.git) that needs to be migrated). In this repo we will develop the test and generate the patch for the bug database. 
-
-3. **fix.patch **a patch extracted from the fixing commit of ``b4dc23c`` using the following git command in the checkout of the repository with the buggy package (ideally already included by @ChrisTimperley):
-``git format-patch -1 --src-prefix=a/geometry2/ --dst-prefix=b/geometry2/ b4dc23c54ba06a846c64215a2d8f944c5a1bd036 --stdout > path-to/b4dc23c/fix.patch``
-   Note on the 'parameters': 
-     * The hash is the hash of the fixing commit, from the ``b4dc23c.bug`` file (the bug description)
-     * The path is to wherever the patch should land in the bug data repo
-     * geometry2 (in two places) is the name of the repo that contains the bug (the directory name in the source space) - this simplifies the patch application later.
+TODO: so far the repositories are not cloned (Chris is working on this), so you need to clone your repo with the test and fix in there to experiment.
 
 
-4. **test.sh**: A script that builds the tests with catkin_make_isolated and then calls rostest with roughly this contents:
+TODO: write how to execute the test, and how to execute the test with fix on our case study.
+
+Now we are looking into how this is implemented. There are two major stages in the process: 
+
+1. Preparation of the docker container with all the necessary source code.
+2. Writing and deploying a test cases.
+
+We describe both of these below.
+
+# Preparation of the skeleton container #
+
+This part is a bit sketchy &mdash; people doing this know the details well. It mostly describes what happens **before you start writing a test**. All the relevant files should be  should be in [tf2/b4dc23c.L3](tf2/b4dc23c.L3)). 
+
+1. The [time machine](https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2) is used to produce the lists of dependent sources in the rosinstall format: 
+
+  * [deps.rosinstall](tf2/b4dc23c.L3/deps.rosinstall): all sources of packages that the package under test depends on
+
+  * [put.rosinstall](tf2/b4dc23c.L3/put.rosinstall): the source and commit which contains the bug 
+
+  * [puts_with_deps.rosinstall](tf2/b4dc23c.L3/puts_with_deps.rosinstall): the concatanation of the previous two
+
+
+2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, and named with the bug hash included as a prefix (robust/HASH_repo).  In this case we create [robust-rosin / b4dc23c_geometry2](https://github.com/robust-rosin/b4dc23c_geometry2).  The parent of the bug fixing commit is branched to ```robust_buggy``` and the fixed commit is branched to ```robust_fixed```.
+
+3. **Dockerfile** is created following [roughly this procedure]( https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1). A single [Dockerfile](Dockerfile) is used for all the bugs now, and the bugzoo infrastructure builds the bug images. We are exploiting the parameters in Dockerfiles (a relatively new feature).
+
+4. The bug specification for bugzoo is stored in a YAML file, one per system. The format is determined by the bugzoo project. Since b4dc23c is a geometry2 bug it is stored in [tf2.bugzoo.yml](tf2/tf2.bugzoo.yml).
+
+5. **test.sh**: A script that builds the tests with catkin_make_isolated and then calls rostest with roughly this contents:
 
     ```/ros_ws/src/catkin/bin/catkin_make_isolated --pkg tf2_ros --make-args tests```
 
@@ -37,11 +53,20 @@ This is what happens before you start writing a test (these files should be in [
    
     I suggest that bug_witness.test is a fixed name for our test launch file.  So only tf2_ros (the name of the offending package) is variable in that script. As you can see in ``b4dc23c/test.sh`` this file may need to be customized for the purpose of some tests (I need to make a script executable here). So you will likely be changing the generic file produced by @ChrisTimperley.
 
-5. **fix.sh**: A completely generic script that applies fix.patch, so that you can test both before and after fixing.  @Chris: you are welcomed to think how we can avoid keeping completely generic files in every L3 bug, and how to make more files generic (reuse).
+7. **fix.sh**: A completely generic script that applies fix.patch, so that you can test both before and after fixing.  @Chris: you are welcomed to think how we can avoid keeping completely generic files in every L3 bug, and how to make more files generic (reuse).
 
-6. **test-with-fix.sh **A completely generic file that first calls fix.sh and then test.sh so that you can quickly use it as a singly command with docker run.
+8. **test-with-fix.sh **A completely generic file that first calls fix.sh and then test.sh so that you can quickly use it as a singly command with docker run.
 
-7. **entrypoint.sh: **A ros environment set up for the shell inside the container.  I have no idea if this could be somehow embedded inside the Dockerfile.
+9. **entrypoint.sh: **A ros environment set up for the shell inside the container.  I have no idea if this could be somehow embedded inside the Dockerfile.
+
+<!---
+4. **fix.patch** a patch extracted from the fixing commit of ``b4dc23c`` using the following git command in the checkout of the repository with the buggy package (ideally already included by @ChrisTimperley):
+``git format-patch -1 --src-prefix=a/geometry2/ --dst-prefix=b/geometry2/ b4dc23c54ba06a846c64215a2d8f944c5a1bd036 --stdout > path-to/b4dc23c/fix.patch``
+   Note on the 'parameters': 
+     * The hash is the hash of the fixing commit, from the ``b4dc23c.bug`` file (the bug description)
+     * The path is to wherever the patch should land in the bug data repo
+     * geometry2 (in two places) is the name of the repo that contains the bug (the directory name in the source space) - this simplifies the patch application later.
+--->
 
 
 # Writing and deploying the test-case #
@@ -134,3 +159,14 @@ In this case geometry2 (twice) is the name of the original repository (also the 
 13. Consider creating the  L2 bug - now you really understand how to do this.
 
 14. If you failed to reproduce, document why (perhaps we need a description extension in the bug file)
+
+# Working with Docker without Bugzoo
+
+(outdated) These are the old commands for running the test on the buggy code and on the fixed code (update pending).
+
+```docker build -t b4dc23c . && docker run -it b4dc23c ./test.sh``` ← should result in a failed test
+
+```docker build -t b4dc23c . && docker run -it b4dc23c ./test-with-fix.sh``` ← should result in a pass (despite some nodes failing, as expected)
+
+<!--- vim:wrap
+--->
