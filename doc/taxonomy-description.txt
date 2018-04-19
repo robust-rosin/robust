@@ -1,0 +1,161 @@
+=== BUG RECORD ===
+
+Claus Brabrand & Andrzej Wasowski
+[ April 3, 2017, version 1.3 ]
+
+This document explains how to systematically capture and record a bug. It details what information should be captured and in what format. Note that it will not always be possible to perfectly fill in all fields for all bugs, but please try to fill in as many fields as realistically possible.  In cases where the information is not available (or you cannot obtain it without spending excessive amounts of time), please leave the field empty.  In cases where the information is not applicable, please put “N/A”  (Not Applicable).
+
+title:
+	Concise textual one-line summary of the bug intended for domain non-experts (typically 10 words or less).
+
+description:
+	Textual description of the bug (typically 5-10 lines). Try to write this so that a domain non-expert software developer will be able to understand what this bug is about. This often involves writing about the *cause* of the bug (what was the underlying problem and what needed fixing) as well as the *effect* of the bug (how did the bug manifest itself), including whatever else is relevant in order to have a rough idea of the bug. (The text is indented five spaces.)
+
+CWE:
+	The Common Weakness Enumeration (CWE) is a community-developed list of common software security weaknesses.   It is essentially a taxonomy of errors (weaknesses). We will try to use this taxonomy to classify the errors in terms of their effect; e.g.: "CWE-476: NULL Pointer Dereference".
+Since CWE is primarily concerned with security, it is sometimes necessary to add your own new categories (without a number identifier) not covered by the taxonomy; e.g., dependency errors, type errors, and robotics-specific weaknesses. In many cases, multiple categories are applicable. You should then pick the most appropriate category.
+
+internal classification (cause): open text field
+
+internal classification (effect): open text field
+
+keywords:
+	This is a comma-separated list of key words; e.g.,: "xacro, gazebo, urdf, driver"
+
+system:
+	This is an identifier for the system at hand (e.g., kobuki, motoman, mavros). If it's a confidential system, then just put the value "confidential".
+
+severity:
+	This is a subjective assessment of the severity of the bug in terms of its overall effect.  Its value should be one of the following options: "error", "warning", "convention-violation", "bad-smell", "minor-issue". Most problems will be errors.  All categories refer to code, so convention-violation is a coding convention violation (similarly, for bad-smells).
+
+links:
+	A list of links to additional information relevant for understanding the bug.
+
+=== BUG ===
+The following fields relate to the manifestation of the bug itself which is also sometimes referred to as the effect of the bug (as opposed to the underlying cause of the bug involving how it was fixed which is covered later; cf. “FIX” below).
+
+phase:
+	In what phase of the software life cycle did the error occur?  Please pick the most appropriate among the following predefined options (each is accompanied by a elaborative description):
+  - "build-time" (for errors that are reported by the build/make tools that compose the source code prior to compilation)
+  - "compile-time" (for errors that are reported by the compiler itself)
+  - "deployment-time" (for errors that occur after compilation and before the program is run; often when some deployment or installation scripts are run. This also includes “installation-time”)?
+  - "runtime-initialization" (for errors that occur when the software is run and being initialized). [Note that this including both "virtual" simulation and "real" hardware.]
+  - "runtime-operation" (for errors that occur when the software is run on normal operation after having been initialized). [Note that this including both "virtual" simulation and "real" hardware.]
+
+specificity:
+	This is an open textual field about how this bug generalizes; whether it is a general software issue applicable to many or most software projects or whether it is a general robotics issue or something completely specific applicable only to the ROS or ROS-I projects. Please pick the most appropriate among the following options:
+  - "general issue" (similar issues are to be expected in many or most software projects). Heuristic: An issue is general if a single tool solving this issue could plausibly solve it for a broad class of software projects.
+  - "robotics-specific" (similar issues are to be expected in other robotics platforms).
+  - "ROS-specific" (quite idiosyncratic as to how ROS or ROS-I is built). Heuristic: If a special ROS tool is needed to solve this issue, then it is probably ROS-specific.
+  - "application-specific" (specific to an application).
+
+architectural location:
+	 Where did the bug occur? Please pick one of the following two options:
+   - "application-specific code" (did the bug occur in an application)
+   - "platform code" (did the bug occur in ROS or ROS-I platform itself)
+
+application:
+	In case you answered “application-specific” above, please specify what the application was: textual description of robot application (e.g., “picker robot”); “N/A” for platform code. Leave empty if the application is unknown or classified.
+
+task:
+	Please pick the task in which the bug occurred:
+  - perception (including Object Detection, Collision Detection)
+  - localization
+  - planning (including path, trajectory, collision)
+  - manipulation (including actuation and motion)
+  - human-robot interaction
+  - simulation (including visualization)
+  - diagnostics
+  - SLAM (simultaneous localization and mapping)
+  - N/A
+
+subsystem:
+	In which subsystem (part of the organizational structure of the project) did the bug occur:
+  - motion
+  - driver
+  - core component
+  - generic task component (e.g., a planner)
+  - specific application component (e.g., auto docking)
+  - ...
+
+  SUGGESTION TO INCLUDE> Generic component, driver, controller (orchestration) for application, Ros, Ros-com.
+
+  package:
+    This is a newline-separated list of packages involved. Each entry should specify the project, the repository, and the package involved; e.g.:
+    "ros-industrial/universal_robot/ur_bringup"
+    "ros-industrial/universal_robot/ur_description"
+
+  language:
+    A comma-separated list of the languages involved in the manifestation of the bug. “N/A” if the error is not explicitly reported by the language infrastructure.
+   Let's also try to normalize the languages: python, cmake, C++, package.xml, launch XML, msg, srv,  xacro, urdf.  Avoid a generic XML tag (all files in ROS have some known schema, and let's try to narrow it down when writing). Also the language should be N/A if the bug is not reported by the language infrastructure (so if the error is in package.xml but a C compiler fails then the language is "C" here, not package.xml.  The latter is listed under the fix. If the error is not reported by a language infrastructure, but for instance wrong behavior is discovered in simulation, then do not put a language in).
+For this reason it should be fairly unusual to have more than one language listed here.
+
+  detected-by:
+    How was the bug detected? Please pick the most appropriate among the following predefined list:
+  - "build system" (the bug was detected by the build system prior to compilation)
+  - "compiler" (the bug was detected by the compiler itself, this includes xacro, which compiles xacro files to urdf)
+  - "code scanning tool" (the bug was detected by QA code scanning tools)
+  - "assertions" (the bug was detected by assertions statements in the code; e.g., “assert(x>0);”)
+  - "runtime detection" (the bug was detected at runtime; e.g., an exception was thrown)
+  - "runtime crash" (the bug caused the system to crash at runtime and cease functioning)
+  - "testing violation" (the bug was detected by violating a test case)
+  - "developer" (the bug was detected by a developer of the system)
+  - "user" (the bug was detected by a user of the system)
+
+reported-by:
+	How was the bug reported? Please pick the most appropriate among the following predefined list:
+-  "guest user" (the bug was reported by a guest user)
+-  "contributor" (the bug was reported by a developer/contributor)
+-  "member developer" (the bug was reported by a member developer)
+-  "automatic" (the bug was reported by an automatic test/analyze QA service, including continuous integration)
+-  "unreported" (the bug was not reported; e.g., because it was fixed directly without any reports)
+
+issue:
+	This is a URI reference to an issue tracker entry (e.g., GitHub or StackOverflow). This will obviously be empty if the bug is unreported.  But even for some reported bugs there will be no issue created (bugs can be reported through other channels). Add reports through other channels under links (above).
+
+time-reported:
+	The time the bug was reported (“unreported” if it was not reported); e.g.: “2017-12-31 (23:59)”.
+
+reproducibility:
+- { always, sometimes, rare }
+
+trace:
+	For runtime bugs, this is a trace (call stack/sequence of function calls) to the bug.   “N/A” for bugs not involving runtime (e.g., type errors or build-system bugs).
+
+=== FIX ===
+The following fields relate to the fixing of the bug which is also sometimes referred to as the cause of the bug (as opposed to the underlying effect of the bug which was covered above under “BUG”).
+
+repository:
+	URI reference to repository where the bug was fixed.
+
+hash:
+	The hexadecimal hash code of the commit that fixed the bug. (With pull requests there are two commits; one is in the local branch from which the pull request is created, the other is the actual merging commit on the mainline; we should try to report the latter as this is what is more easily accessible long term; other branches may be deleted. Also the merge commit gives a single reference id, while the pull request branch may consist of several smaller commits.)
+
+pull-request:
+	URI for pull request that fixed the bug.
+
+fix-in:
+	A list of the files that were updated when fixing the bug.
+
+language:
+	A comma-separated list of the languages involved in fixing the bug. (See list of conventions for naming languages under bug/language.)
+
+time-fixed:
+	The time the bug was fixed (“unfixed” if it was not fixed); e.g.: “2017-12-31 (23:59)”.
+
+=== SIMPLIFICATION ===
+We agree that it seems too much to figure out one single way to simplify bugs and create the benchmark for all bugs in the collection.
+
+We suggest to consider three different strategies and apply them opportunistically, so apply for each bug the strategy/strategies that make most sense for the given bug.  We don't suggest applying all three strategies to each bugs, but allow this.  We also envision that there might be bugs were no simplification has been performed because this was too hard.  Here are the three strategies considered:
+
+L1: a metaphorical simplification.  Write a single file program in a common programming language. The program should be ROS independent but exhibit the same problem.  If a bug occurs in a strange programming language, change the language to C/C++/python.  Encode configuration issues within the logic of the program.  We name this strategy "metaphorical" because it basically tries to use a programming language to tell the story of the original bug. However, it is not necessarily the case that a bug finder able to detect the problem in the simplified buggy program, will be able to do it for the real problem, because significant aspects of the problem have different flavour (for instance service calls have been changed to function calls).
+
+Example: TODO
+
+L2: a "slicing" simplification.  This simplification occurs mostly by removing the irrelevant aspects from the buggy ROS program, possibly merging fragments from multiple files into a single one, plus possibly mocking some aspects of ROS, in order for the program.  The spirit of the original program is preserved. A bug finder able to detect an L2 bug, should in principle face the same fundamental challenges as if it worked on the original buggy program, except perhaps that some aspects unrelated to the bug are removed (for instance the original program used function pointers, but the bug was in no way related to function pointers, then an L2 simplification, would not use function pointers either).  A bug finder working on an L2 benchmark requires more development to work on the actual bugs, but handling L2 bugs should appear as an appropriate milestone of developing such bug finder.
+
+Example: TODO
+
+L3: real bug (not simplified).  Create a script (or if impossible, then informal instructions) allowing to reproduce the real bug. Include repository cloning, setting up workspace, running a test case, etc.
+
+Example: TODO
