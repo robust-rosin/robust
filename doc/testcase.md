@@ -63,33 +63,24 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
     
     The tag will have to be shifted after the tests are added (and released)
 
-3. **Dockerfile** is created following [roughly this procedure]( https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1). A single [Dockerfile](Dockerfile) is used for all the bugs now, and the bugzoo infrastructure builds the bug images. We are exploiting the parameters in Dockerfiles (a relatively new feature).
+3. `Dockerfile` is created following [roughly this procedure]( https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1). A single [Dockerfile](Dockerfile) is used for all the bugs now, and the bugzoo infrastructure builds the bug images. We are exploiting the parameters in Dockerfiles (a relatively new feature).
 
 4. The bug specification for bugzoo is stored in a YAML file, one per system. The format is determined by the bugzoo project. Since b4dc23c is a geometry2 bug it is stored in [geometry2.bugzoo.yml](tf2/geometry2.bugzoo.yml).
 
-5. (outdated) **test.sh**: A script that builds the tests with catkin_make_isolated and then calls rostest with roughly this contents:
+5. `test.sh`: A script that builds the tests with catkin_make_isolated and then calls rostest with roughly this contents:
 
-    ```/ros_ws/src/catkin/bin/catkin_make_isolated --pkg tf2_ros --make-args tests```
-
-    ```rostest tf2_ros bug_witness.test```
+    ```bash
+    /ros_ws/src/catkin/bin/catkin_make_isolated --pkg tf2_ros --make-args tests
+    rostest tf2_ros bug_witness.test
+    ```
    
-    I suggest that bug_witness.test is a fixed name for our test launch file.  So only tf2_ros (the name of the offending package) is variable in that script. As you can see in ``b4dc23c/test.sh`` this file may need to be customized for the purpose of some tests (I need to make a script executable here). So you will likely be changing the generic file produced by @ChrisTimperley.
+    I suggest that `bug_witness.test` is a fixed name for our test launch file.  So only tf2_ros (the name of the offending package) is variable in that script. As you can see in `b4dc23c/test.sh` this file may need to be customized for the purpose of some tests (I need to make a script executable here). So you will likely be changing the generic file produced by @ChrisTimperley.
 
-7. (not revised) **fix.sh**: A completely generic script that applies fix.patch, so that you can test both before and after fixing.  @Chris: you are welcomed to think how we can avoid keeping completely generic files in every L3 bug, and how to make more files generic (reuse).
+6. `fix.sh`: A completely generic script, the same for all the bugs, that switches the PUT checkout from the tag `robust_buggy_released` to `robust_fixed_released`, so that you can run the test on the fixed code.
 
-8. (not revised) **test-with-fix.sh **A completely generic file that first calls fix.sh and then test.sh so that you can quickly use it as a singly command with docker run.
+7. `unfix.sh`: A completely generic script, the same for all the bugs, that switches the PUT checkout from the tag `robust_fixed_released` to the tag `robust_buggy_released`, so that you can run the test on the buggy code.
 
-9. (outdated) **entrypoint.sh: **A ros environment set up for the shell inside the container.  I have no idea if this could be somehow embedded inside the Dockerfile.
-
-<!---
-4. **fix.patch** a patch extracted from the fixing commit of ``b4dc23c`` using the following git command in the checkout of the repository with the buggy package (ideally already included by @ChrisTimperley):
-``git format-patch -1 --src-prefix=a/geometry2/ --dst-prefix=b/geometry2/ b4dc23c54ba06a846c64215a2d8f944c5a1bd036 --stdout > path-to/b4dc23c/fix.patch``
-   Note on the 'parameters': 
-     * The hash is the hash of the fixing commit, from the ``b4dc23c.bug`` file (the bug description)
-     * The path is to wherever the patch should land in the bug data repo
-     * geometry2 (in two places) is the name of the repo that contains the bug (the directory name in the source space) - this simplifies the patch application later.
---->
-
+8. `build.sh`: A script for initiating the build of the workspace.
 
 # Writing and deploying the test-case #
 
@@ -97,26 +88,26 @@ After getting a complete L3 directory with the above files  from Chris, identify
 
 1. git-clone the bug development repo locally and move to the buggy branch where we will be developing the test
 
-  ```
-  git clone b4dc23c_geometry2
-  git checkout robust_buggy
-  ```
+    ```bash
+    git clone b4dc23c_geometry2
+    git checkout robust_buggy
+    ```
 
 2. Develop the test, committing any required changes to this branch. 
 	
-      a. We want the test to fail before applying fix, pass after applying the fix (this is hard for ``b4dc23c`` and possible for many others) and capture the problem as precisely as possible.
+    a. We want the test to fail before applying fix, pass after applying the fix (this is hard for ``b4dc23c`` and possible for many others) and capture the problem as precisely as possible.
 	
-      b. You likely need a test launch file: Create it in **tf2_ros/test/bug_witness.test** (of course choosing your package name for tf2_ros). Then the scripts using rostest (above) will be able to pick up this file.
+    b. You likely need a test launch file: Create it in **tf2_ros/test/bug_witness.test** (of course choosing your package name for tf2_ros). Then the scripts using rostest (above) will be able to pick up this file.
 	
-      c. Try to write the test to be as non-invasive as possible: as separate unit tests for functions, or as separate test nodes.  The changes to the original files should be minimal (as otherwise we are spoiling their realism).  Ideally we don't want to modify historical files at all; This is possible if the property is testable through a unit test or a node test.  If we have to do it, we keep our modifications as far as possible outside (for instance in a header file). Any new added code is in external files.  
+    c. Try to write the test to be as non-invasive as possible: as separate unit tests for functions, or as separate test nodes.  The changes to the original files should be minimal (as otherwise we are spoiling their realism).  Ideally we don't want to modify historical files at all; This is possible if the property is testable through a unit test or a node test.  If we have to do it, we keep our modifications as far as possible outside (for instance in a header file). Any new added code is in external files.  
 	
-      d. Standard file names for our added code are: **test/bug_witness.cpp** or **test/bug_witness.py** (the header goes to **include/package_name/bug_witness.h**). This will help any code transformation tools using the benchmark later to distinguish the testing code from the actual code. 
+    d. Standard file names for our added code are: **test/bug_witness.cpp** or **test/bug_witness.py** (the header goes to **include/package_name/bug_witness.h**). This will help any code transformation tools using the benchmark later to distinguish the testing code from the actual code. 
 
 
 
 3. You can commit to the branch while you are working, as usual. You need to move the code to the container to test whether the test case actually fails.  Start the container, switch the directory to the repo, pull, and checkout the right branch. This is an example (of coruse your sessions will vary wildly):
 
-    ```
+    ```bash
     bugzoo container launch robust:b4dc23c
     cd src/b4dc23c_geometry2/
     git pull
@@ -132,59 +123,59 @@ After getting a complete L3 directory with the above files  from Chris, identify
 
 5. You also need to test whether the test passes on the container containing the fix code:
 
-    ```
-    bugzoo container launch robust:b4dc23c
-    cd src/b4dc23c_geometry2/
-    git pull
-    git checkout robust_fixed
-    git merge robust_buggy
-    cd ../../
-    ./test.sh
+    ```bash
+    $ bugzoo container launch robust:b4dc23c
+    $ cd src/b4dc23c_geometry2/
+    $ git pull
+    $ git checkout robust_fixed
+    $ git merge robust_buggy
+    $ cd ../../
+    $ ./test.sh
     ```
 
     The test should pass if everything is alright. (Then you can also try to push the test files to the fixed branch, but you can also do it from the outside of the container).
 
 6. Once the test case works both on the buggy and fixed branches, we need to release it.  I assume that your local checkout of b4dc23c_geometry2 (outside the container) has all the test code on both branches now.  We just need to move the release tags. This commands are to be invoked inside the b4dc23c_geometry2 repo checkout, fully upto-date with upstream (if you pushed any changes from the container) and with no uncommitted changes (if you were doing development):
 
-    ```
-    git checkout robust_buggy
-    git tag -d robust_buggy_released
-    git push --tags
-    git tag robust_buggy_released
-    git push --tags
+    ```bash
+    $ git checkout robust_buggy
+    $ git tag -d robust_buggy_released
+    $ git push --tags
+    $ git tag robust_buggy_released
+    $ git push --tags
 
-    git checkout robust_fixed
-    git tag -d robust_fixed_released
-    git push --tags
-    git tag robust_buggy_fixed
-    git push --tags
+    $ git checkout robust_fixed
+    $ git tag -d robust_fixed_released
+    $ git push --tags
+    $ git tag robust_buggy_fixed
+    $ git push --tags
     ```
 
 7. Now if everythin is fine you should be able to do:
 
-  ```
-  # run the container
-  bugzoo container launch robust:b4dc23c
-  # compile the workspace
-  ./build.sh
-  # see the test fail
-  ./test.sh
-  # apply the fixing commit (not yet implemented)
-  ./fix.sh
-  # build the corrected code
-  ./build.sh
-  # see the test passing
-  ./test.sh
-  ```
+    ```bash
+    # run the container
+    $ bugzoo container launch robust:b4dc23c
+    # compile the workspace
+    $ ./build.sh
+    # see the test fail
+    $ ./test.sh
+    # apply the fixing commit (not yet implemented)
+    $ ./fix.sh
+    # build the corrected code
+    $ ./build.sh
+    # see the test passing
+    $ ./test.sh
+    ```
 
-  The same should be possible from outside
+    The same should be possible from outside
 
-  ```
-  bugzoo container execute robust:b4dc23c ./build.sh && ./test.sh
-  # test fails after this execution
-  bugzoo container execute robust:b4dc23c ./fix.sh && ./build.sh && ./test.sh
-  # test passes after this execution
-  ```
+    ```bash
+    bugzoo container execute robust:b4dc23c ./build.sh && ./test.sh
+    # test fails after this execution
+    bugzoo container execute robust:b4dc23c ./fix.sh && ./build.sh && ./test.sh
+    # test passes after this execution
+    ```
 
 8. Revise the bug description to match the problem: now you really understand what the bug is, so please read the description file and fix any inaccuracies.  In the bug description file add the field "reproduction:" under the bug part, in which you can mention an important decisions you made in the reproduction process.  If you failed to reproduce, document why (also in the ``reproduction`` field in the bug description).
 
