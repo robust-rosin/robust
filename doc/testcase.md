@@ -112,10 +112,9 @@ After getting a complete L3 directory with the above files  from Chris, identify
 	
       d. Standard file names for our added code are: **test/bug_witness.cpp** or **test/bug_witness.py** (the header goes to **include/package_name/bug_witness.h**). This will help any code transformation tools using the benchmark later to distinguish the testing code from the actual code. 
 
-3. In the bug description file add the field "reproduction:" under the bug part, in which you can mention an important decisions you made in the reproduction process. 
 
 
-4. You can commit to the branch while you are working, as usual. You need to move the code to the container to test whether the test case actually fails.  Start the container, switch the directory to the repo, pull, and checkout the right branch. This is an example (of coruse your sessions will vary wildly):
+3. You can commit to the branch while you are working, as usual. You need to move the code to the container to test whether the test case actually fails.  Start the container, switch the directory to the repo, pull, and checkout the right branch. This is an example (of coruse your sessions will vary wildly):
 
     ```
     bugzoo container launch robust:b4dc23c
@@ -129,9 +128,9 @@ After getting a complete L3 directory with the above files  from Chris, identify
     You can, of course, continue the development of the test inside the container, but likely you will find the environment lacking.  So it is probably easier to stay outside and push the code via github.
     
     
-5. As you have seen above, you invoke the test with ``./test.sh``. You need to  modify this file in order to call the right test (with the right parameters, etc). The fie is in the bug directory in the ``robust`` repo.  To have this file inside the container you will need to rebuild the container after every change - this should be fast at this stage.
+4. As you have seen above, you invoke the test with ``./test.sh``. You need to  modify this file in order to call the right test (with the right parameters, etc). The fie is in the bug directory in the ``robust`` repo.  To have this file inside the container you will need to rebuild the container after every change - this should be fast at this stage.
 
-6. You also need to test whether the test passes on the container containing the fix code:
+5. You also need to test whether the test passes on the container containing the fix code:
 
     ```
     bugzoo container launch robust:b4dc23c
@@ -145,7 +144,7 @@ After getting a complete L3 directory with the above files  from Chris, identify
 
     The test should pass if everything is alright. (Then you can also try to push the test files to the fixed branch, but you can also do it from the outside of the container).
 
-7. Once the test case works both on the buggy and fixed branches, we need to release it.  I assume that your local checkout of b4dc23c_geometry2 (outside the container) has all the test code on both branches now.  We just need to move the release tags. This commands are to be invoked inside the b4dc23c_geometry2 repo checkout, fully upto-date with upstream (if you pushed any changes from the container) and with no uncommitted changes (if you were doing development):
+6. Once the test case works both on the buggy and fixed branches, we need to release it.  I assume that your local checkout of b4dc23c_geometry2 (outside the container) has all the test code on both branches now.  We just need to move the release tags. This commands are to be invoked inside the b4dc23c_geometry2 repo checkout, fully upto-date with upstream (if you pushed any changes from the container) and with no uncommitted changes (if you were doing development):
 
     ```
     git checkout robust_buggy
@@ -161,46 +160,32 @@ After getting a complete L3 directory with the above files  from Chris, identify
     git push --tags
     ```
 
-8. TODO: give instructions to check if everything worked out fine in the release.
+7. Now if everythin is fine you should be able to do:
 
-9. (not revised yet) Run the container
+  ```
+  # run the container
+  bugzoo container launch robust:b4dc23c
+  # compile the workspace
+  ./build.sh
+  # see the test fail
+  ./test.sh
+  # apply the fixing commit (not yet implemented)
+  ./fix.sh
+  # build the corrected code
+  ./build.sh
+  # see the test passing
+  ./test.sh
+  ```
 
-	* ``docker run -it b4dc23c`` (opens interactively, good for debugging)
+  The same should be possible from outside
 
-	* compile and run tests with [./test.sh](file:///home/wasowski/Dropbox/Notes/20160318_ICT_26_ROSIN/42_bugs_in_ROS/process_notes/tf/test.sh) to check whether the tests fail approprietly on the buggy code.  Once you got it to work move to the next step.
+  ```
+  bugzoo container execute robust:b4dc23c ./build.sh && ./test.sh
+  # test fails after this execution
+  bugzoo container execute robust:b4dc23c ./fix.sh && ./build.sh && ./test.sh
+  # test passes after this execution
+  ```
 
-10. Test the fixing commit
+8. Revise the bug description to match the problem: now you really understand what the bug is, so please read the description file and fix any inaccuracies.  In the bug description file add the field "reproduction:" under the bug part, in which you can mention an important decisions you made in the reproduction process.  If you failed to reproduce, document why (also in the ``reproduction`` field in the bug description).
 
-	* ``docker run -it b4dc23c`` (opens interactively, good for debugging)
-
-	* apply the fix, compile and run tests with [./tests-with-fix.sh](file:///home/wasowski/Dropbox/Notes/20160318_ICT_26_ROSIN/42_bugs_in_ROS/process_notes/tf/tests-with-fix.sh) 
-
-	* You may need to iterate a few times between this and the previous step.
-
-11. To speed things up, I usually combine the last three steps into something like that (kept in my bash history):
-
-	a. to test without a fix quickly run::
-
-       ``docker build -t b4dc23c . && docker run -it b4dc23c ./test.sh``
-
-       b. to test with a fix quickly run: 
-
-       ``docker build -t b4dc23c . && docker run -it b4dc23c ./test-with-fix.sh``. 
-
-       I also keep the command generating the bu_witness.patch in the history, so that it takes two history hits to run a rebuild + test cycle (I guess you can automate this further).
-
-12. Revise the bug description to match the problem: now you really understand what the bug is, so please read the description file and fix any inaccuracies
-
-13. Consider creating the  L2 bug - now you really understand how to do this.
-
-14. If you failed to reproduce, document why (perhaps we need a description extension in the bug file)
-
-# Working with Docker without Bugzoo
-
-(outdated) These are the old commands for running the test on the buggy code and on the fixed code (update pending).
-
-```docker build -t b4dc23c . && docker run -it b4dc23c ./test.sh``` ← should result in a failed test
-
-```docker build -t b4dc23c . && docker run -it b4dc23c ./test-with-fix.sh``` ← should result in a pass (despite some nodes failing, as expected)
-
-<!---In testing, you will occasionally find out that a clean build is needed, because otherwise you have stale files in the filesystem (not always Docker cleanly discovers that things should be rebuild):  ``docker build --no-cache -t b4dc23c .``  (This is a bit brutal, so if you have a quicker way, in your case, you may want to use it). I only needed this once in ``b4dc23c`` process.--->
+9. Consider creating the  L2 bug - now you really understand how to do this.
