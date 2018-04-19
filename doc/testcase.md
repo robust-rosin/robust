@@ -41,11 +41,36 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
 
 2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, and named with the bug hash included as a prefix (robust/HASH_repo).  In this case we create [robust-rosin / b4dc23c_geometry2](https://github.com/robust-rosin/b4dc23c_geometry2).  The parent of the bug fixing commit is branched to ```robust_buggy``` and the fixed commit is branched to ```robust_fixed```.
 
+  To identify the parent commit of the fixing commit following the issue/pull-request link from the bug description and finding the right merge commit, then it will have a parent. For this example:
+
+  ```
+  git checkout a9dbba2e265458ab26a9c2ced03f604c51b95312
+  git checkout -b robust_buggy
+  git tag robust_buggy_released
+  git push --tags
+  ```
+
+  The tag will have to be shifted after the tests are added (and released).  The commit **should be** (!) the same commit that was used to create the pkgs.rosinstall file. Otherwise you are likely to see build errors. Small deviations are probably ok.
+
+  Also branch the fixing commit and tag appropriately. For our example:
+
+  ```
+  git checkout b4dc23c
+  git checkout -b robust_fixed
+  git tag robust_fixed_released
+  git push --tags
+  ``` 
+  
+  The tag will have to be shifted after the tests are added (and released)
+
 3. **Dockerfile** is created following [roughly this procedure]( https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1). A single [Dockerfile](Dockerfile) is used for all the bugs now, and the bugzoo infrastructure builds the bug images. We are exploiting the parameters in Dockerfiles (a relatively new feature).
 
-4. The bug specification for bugzoo is stored in a YAML file, one per system. The format is determined by the bugzoo project. Since b4dc23c is a geometry2 bug it is stored in [tf2.bugzoo.yml](tf2/tf2.bugzoo.yml).
+4. The bug specification for bugzoo is stored in a YAML file, one per system. The format is determined by the bugzoo project. Since b4dc23c is a geometry2 bug it is stored in [geometry2.bugzoo.yml](tf2/geometry2.bugzoo.yml).
 
-5. **test.sh**: A script that builds the tests with catkin_make_isolated and then calls rostest with roughly this contents:
+
+
+
+5. (outdated) **test.sh**: A script that builds the tests with catkin_make_isolated and then calls rostest with roughly this contents:
 
     ```/ros_ws/src/catkin/bin/catkin_make_isolated --pkg tf2_ros --make-args tests```
 
@@ -53,11 +78,11 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
    
     I suggest that bug_witness.test is a fixed name for our test launch file.  So only tf2_ros (the name of the offending package) is variable in that script. As you can see in ``b4dc23c/test.sh`` this file may need to be customized for the purpose of some tests (I need to make a script executable here). So you will likely be changing the generic file produced by @ChrisTimperley.
 
-7. **fix.sh**: A completely generic script that applies fix.patch, so that you can test both before and after fixing.  @Chris: you are welcomed to think how we can avoid keeping completely generic files in every L3 bug, and how to make more files generic (reuse).
+7. (not revised) **fix.sh**: A completely generic script that applies fix.patch, so that you can test both before and after fixing.  @Chris: you are welcomed to think how we can avoid keeping completely generic files in every L3 bug, and how to make more files generic (reuse).
 
-8. **test-with-fix.sh **A completely generic file that first calls fix.sh and then test.sh so that you can quickly use it as a singly command with docker run.
+8. (not revised) **test-with-fix.sh **A completely generic file that first calls fix.sh and then test.sh so that you can quickly use it as a singly command with docker run.
 
-9. **entrypoint.sh: **A ros environment set up for the shell inside the container.  I have no idea if this could be somehow embedded inside the Dockerfile.
+9. (outdated) **entrypoint.sh: **A ros environment set up for the shell inside the container.  I have no idea if this could be somehow embedded inside the Dockerfile.
 
 <!---
 4. **fix.patch** a patch extracted from the fixing commit of ``b4dc23c`` using the following git command in the checkout of the repository with the buggy package (ideally already included by @ChrisTimperley):
@@ -73,33 +98,16 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
 
 After getting a complete L3 directory with the above files  from Chris, identify the repo and the issue (or pull request) number of the bug. 
 
-1. (elided)
+1. git-clone the bug development repo locally and move to the buggy branch where we will be developing the test
 
-2. git-clone the new repo locally
+  ```
+  git clone b4dc23c_geometry2
+  git checkout robust_buggy
+  ```
 
-3. Identify the parent commit of the fixing commit (the easiest by following the issue/pull-request and finding the right merge commit, then it will have a parent) and checkout this commit. For this example:
 
-    ``git checkout a9dbba2e265458ab26a9c2ced03f604c51b95312``
-    
-    This **has to be** (!) the same commit as used by @gavanderhoorn to create the pkgs.rosinstall file. 
 
-3. [outdated] Create a branch "bug_witness" from that commit in your local repo (later you obviously push it to the github remote as well):
-
-    ``git checkout -b bug_witness``
-    
-     This will be useful for generating the patch as a difference between master and this branch.  
-
-     For convenience we should also tag the start of this branch:
-
-     ``git tag bug``
-
-     ``git push --tags``
-
-4. Create a file ``README.bug_witness`` at the root of this repo, containing a URL to your repo, plus any important comments about reproduction you think you need to make. This is so that we can find your repo if we wanted to fix something in this bug - this link will land in our patch file, so we can trace from the database to this repo.
-
-     Of course you should commit to this repo, to the bug_witness branch as you go so that you have version control for your test development work.
-
-6. Develop the test
+4. Develop the test
 	
       a. We want the test to fail before applying fix, pass after applying the fix (this is hard for ``b4dc23c`` and possible for many others) and capture the problem as precisely as possible.
 	
@@ -109,7 +117,9 @@ After getting a complete L3 directory with the above files  from Chris, identify
 	
       d. Standard file names for our added code are: **test/bug_witness.cpp** or **test/bug_witness.py** (the header goes to **include/package_name/bug_witness.h**). This will help any code transformation tools using the benchmark later to distinguish the testing code from the actual code. 
 
-7. Create a patch file **bug_witness.patch** and move it to the bug data repo.
+5. In the bug description file add the field "reproduction:" under the bug part, in which you can mention an important decisions you made in the reproduction process. 
+
+6. Create a patch file **bug_witness.patch** and move it to the bug data repo.
 
     ``git diff --src-prefix a/geometry2/ --dst-prefix b/geometry2/ bug --cached > pathto/data/b4dc23c.L3/bug_witness.patch``
 
