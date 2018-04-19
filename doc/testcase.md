@@ -41,34 +41,31 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
 
 2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, and named with the bug hash included as a prefix (robust/HASH_repo).  In this case we create [robust-rosin / b4dc23c_geometry2](https://github.com/robust-rosin/b4dc23c_geometry2).  The parent of the bug fixing commit is branched to ```robust_buggy``` and the fixed commit is branched to ```robust_fixed```.
 
-  To identify the parent commit of the fixing commit following the issue/pull-request link from the bug description and finding the right merge commit, then it will have a parent. For this example:
+    To identify the parent commit of the fixing commit following the issue/pull-request link from the bug description and finding the right merge commit, then it will have a parent. For this example:
 
-  ```
-  git checkout a9dbba2e265458ab26a9c2ced03f604c51b95312
-  git checkout -b robust_buggy
-  git tag robust_buggy_released
-  git push --tags
-  ```
+    ```
+    git checkout a9dbba2e265458ab26a9c2ced03f604c51b95312
+    git checkout -b robust_buggy
+    git tag robust_buggy_released
+    git push --tags
+    ```
 
-  The tag will have to be shifted after the tests are added (and released).  The commit **should be** (!) the same commit that was used to create the pkgs.rosinstall file. Otherwise you are likely to see build errors. Small deviations are probably ok.
+    The tag will have to be shifted after the tests are added (and released).  The commit **should be** (!) the same commit that was used to create the pkgs.rosinstall file. Otherwise you are likely to see build errors. Small deviations are probably ok.
 
-  Also branch the fixing commit and tag appropriately. For our example:
+    Also branch the fixing commit and tag appropriately. For our example:
 
-  ```
-  git checkout b4dc23c
-  git checkout -b robust_fixed
-  git tag robust_fixed_released
-  git push --tags
-  ``` 
-  
-  The tag will have to be shifted after the tests are added (and released)
+    ```
+    git checkout b4dc23c
+    git checkout -b robust_fixed
+    git tag robust_fixed_released
+    git push --tags
+    ``` 
+    
+    The tag will have to be shifted after the tests are added (and released)
 
 3. **Dockerfile** is created following [roughly this procedure]( https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/1). A single [Dockerfile](Dockerfile) is used for all the bugs now, and the bugzoo infrastructure builds the bug images. We are exploiting the parameters in Dockerfiles (a relatively new feature).
 
 4. The bug specification for bugzoo is stored in a YAML file, one per system. The format is determined by the bugzoo project. Since b4dc23c is a geometry2 bug it is stored in [geometry2.bugzoo.yml](tf2/geometry2.bugzoo.yml).
-
-
-
 
 5. (outdated) **test.sh**: A script that builds the tests with catkin_make_isolated and then calls rostest with roughly this contents:
 
@@ -105,9 +102,7 @@ After getting a complete L3 directory with the above files  from Chris, identify
   git checkout robust_buggy
   ```
 
-
-
-4. Develop the test
+2. Develop the test, committing any required changes to this branch. 
 	
       a. We want the test to fail before applying fix, pass after applying the fix (this is hard for ``b4dc23c`` and possible for many others) and capture the problem as precisely as possible.
 	
@@ -117,28 +112,58 @@ After getting a complete L3 directory with the above files  from Chris, identify
 	
       d. Standard file names for our added code are: **test/bug_witness.cpp** or **test/bug_witness.py** (the header goes to **include/package_name/bug_witness.h**). This will help any code transformation tools using the benchmark later to distinguish the testing code from the actual code. 
 
-5. In the bug description file add the field "reproduction:" under the bug part, in which you can mention an important decisions you made in the reproduction process. 
+3. In the bug description file add the field "reproduction:" under the bug part, in which you can mention an important decisions you made in the reproduction process. 
 
-6. Create a patch file **bug_witness.patch** and move it to the bug data repo.
 
-    ``git diff --src-prefix a/geometry2/ --dst-prefix b/geometry2/ bug --cached > pathto/data/b4dc23c.L3/bug_witness.patch``
+4. You can commit to the branch while you are working, as usual. You need to move the code to the container to test whether the test case actually fails.  Start the container, switch the directory to the repo, pull, and checkout the right branch. This is an example (of coruse your sessions will vary wildly):
 
-    We are referring to the origin commit of this branch with the tag "bug" created above.
-In this case geometry2 (twice) is the name of the original repository (also the directory name that will be needed to generically apply the patch).  I couldn't find a simpler way to include it in the patch than with --src-prefix and --dst-prefix (improvements welcome!)
+    ```
+    bugzoo container launch robust:b4dc23c
+    cd src/b4dc23c_geometry2/
+    git pull
+    git checkout robust_buggy
+    cd ../../
+    ./test.sh
+    ```
 
-    It appears that ``git diff`` is oblivious to your local directory, as long as you are in the git tree, so this works from anywhere in the cloned code.
+    You can, of course, continue the development of the test inside the container, but likely you will find the environment lacking.  So it is probably easier to stay outside and push the code via github.
+    
+    
+5. As you have seen above, you invoke the test with ``./test.sh``. You need to  modify this file in order to call the right test (with the right parameters, etc). The fie is in the bug directory in the ``robust`` repo.  To have this file inside the container you will need to rebuild the container after every change - this should be fast at this stage.
 
-    The above method of creating a patch only works if you git-add all your changes, but you don't need to commit (which is convenient, because you would like to first test your patch in the docker container). So I usually do:
+6. You also need to test whether the test passes on the container containing the fix code:
 
-    ``git add -v &&`` ``git diff --src-prefix a/geometry2/ --dst-prefix b/geometry2/ bug --cached > ~/work/2017-42-bugs-in-ros/data/b4dc23c.L3/bug_witness.patch``
+    ```
+    bugzoo container launch robust:b4dc23c
+    cd src/b4dc23c_geometry2/
+    git pull
+    git checkout robust_fixed
+    git merge robust_buggy
+    cd ../../
+    ./test.sh
+    ```
 
-8. Build the the container. It should likely build nicely thanks to Gijs and Chris. Any bugs will be in your patch :)
+    The test should pass if everything is alright. (Then you can also try to push the test files to the fixed branch, but you can also do it from the outside of the container).
 
-    You just need to build the container: ``docker build -t b4dc23c .``  in the L3 directory. This already applies the test patch, and compiles the tests for you.
+7. Once the test case works both on the buggy and fixed branches, we need to release it.  I assume that your local checkout of b4dc23c_geometry2 (outside the container) has all the test code on both branches now.  We just need to move the release tags. This commands are to be invoked inside the b4dc23c_geometry2 repo checkout, fully upto-date with upstream (if you pushed any changes from the container) and with no uncommitted changes (if you were doing development):
 
-    In testing, you will occasionally find out that a clean build is needed, because otherwise you have stale files in the filesystem (not always Docker cleanly discovers that things should be rebuild):  ``docker build --no-cache -t b4dc23c .``  (This is a bit brutal, so if you have a quicker way, in your case, you may want to use it). I only needed this once in ``b4dc23c`` process.
+    ```
+    git checkout robust_buggy
+    git tag -d robust_buggy_released
+    git push --tags
+    git tag robust_buggy_released
+    git push --tags
 
-9. Run the container
+    git checkout robust_fixed
+    git tag -d robust_fixed_released
+    git push --tags
+    git tag robust_buggy_fixed
+    git push --tags
+    ```
+
+8. TODO: give instructions to check if everything worked out fine in the release.
+
+9. (not revised yet) Run the container
 
 	* ``docker run -it b4dc23c`` (opens interactively, good for debugging)
 
@@ -178,5 +203,4 @@ In this case geometry2 (twice) is the name of the original repository (also the 
 
 ```docker build -t b4dc23c . && docker run -it b4dc23c ./test-with-fix.sh``` ← should result in a pass (despite some nodes failing, as expected)
 
-<!--- vim:wrap
---->
+<!---In testing, you will occasionally find out that a clean build is needed, because otherwise you have stale files in the filesystem (not always Docker cleanly discovers that things should be rebuild):  ``docker build --no-cache -t b4dc23c .``  (This is a bit brutal, so if you have a quicker way, in your case, you may want to use it). I only needed this once in ``b4dc23c`` process.--->
