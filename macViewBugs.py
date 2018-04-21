@@ -4,10 +4,12 @@ import sys
 import os
 import subprocess
 #Orginal author: Zack Coker
-#read in a line delimited or csv file of bug names
+#reads in a list of bugs, either from a file specified with the -f
+#argument or from the standard input
+#
 #parse the file for the repo and commit hash
-#open up the file in gedit
-#open up the commit in firefox
+#open up the file in TextEdit
+#open up the commit in Safari
 #
 #Note: This script is not perfect. It dies if the hash
 #is missing or the file organization is inconsistent.
