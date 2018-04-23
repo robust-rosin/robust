@@ -1,4 +1,5 @@
-# TODO explain build-time arguments
+# This Dockerfile is used to construct container images for all of the bugs
+# belonging to the ROBUST dataset.
 #
 # Build Arguments:
 #
