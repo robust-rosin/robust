@@ -70,12 +70,18 @@ COPY deps.rosinstall .
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/deps.rosinstall
 
 # generate fix and unfix scripts
-RUN echo "patch -p1 -d '${ROS_WSPACE}/src' < fix.patch" > fix.sh \
- && echo "patch -p1 -R -d '${ROS_WSPACE}/src' < fix.patch" > unfix.sh \
- && chmod +x fix.sh unfix.sh
+RUN echo "#!/bin/bash\n\
+pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
+git clean -dfx && \n\
+git checkout \"robust_\$1\" && \n\
+echo \"switched mode to: \$1\"" > switch \
+ && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' robust_fixed_released" > fix \
+ && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' robust_buggy_released" > unfix \
+ && chmod +x fix unfix switch
 
 # install system dependencies
-RUN apt-get update \
+RUN apt-get clean \
+ && apt-get update \
  && rosdep init \
  && rosdep update \
  && rosdep install --from-paths src -i --rosdistro=${ROS_DISTRO} -y \
