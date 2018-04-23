@@ -74,7 +74,8 @@ which are located at `/ros_ws`:
   exit code if not.
 * `fix`: switches the source code for the PUT to its buggy state.
 * `unfix`: switches the source code for the PUT to its fixed state.
+* `fix.patch`: provides the developer patch that was used to fix the bug.
 
-Note that `build.sh`, `fix`, and `unfix` are automatically generated during the
-BugZoo build process. `test.sh` and any files related to testing are hosted by
-the directory for each scenario.
+Note that `build.sh`, `fix.patch`, `fix`, and `unfix` are automatically
+generated during the BugZoo build process. `test.sh` and any files related to
+testing are hosted by the directory for each scenario.
