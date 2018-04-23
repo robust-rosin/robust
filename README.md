@@ -21,21 +21,22 @@ $ bugzoo source add robust .
 
 ### Bug Installation
 
-The following bugs are known to build correctly:
+Now that you've added ROBUST as a source to your BugZoo installation, you can
+begin building containers for each of the bugs inside the ROBUST dataset by
+using the `bugzoo bug build` command, as shown below:
 
 ```
 $ bugzoo bug build --force robust:ca23e58
-$ bugzoo bug build --force robust:b826eae
-$ bugzoo bug build --force robust:eed104d
-$ bugzoo bug build --force robust:b4dc23c
 ```
 
-All bugs listed below do not build correctly; the issues causing their build
-processes to fail should be documented on the issue tracker.
+where `ca23e58` is replaced by the identifier (i.e., the SHA-8) of the bug that
+you wish to build. The `--force` option instructs BugZoo to attempt to rebuild
+the image even if it is already installed -- don't worry, thanks to Docker's
+caching mechanism, rebuilding takes a few seconds at most (if there have been
+no changes to the image).
 
-```
-
-```
+To determine the current replication status of a particular bug, refer to the
+[progress tracker](https://github.com/robust-rosin/robust/blob/master/doc/progress.csv).
 
 ## Interacting with the bugs
 
