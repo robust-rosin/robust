@@ -23,6 +23,11 @@ ARG ROS_DISTRO
 ARG UBUNTU_VERSION
 FROM ubuntu:${UBUNTU_VERSION}
 
+ENV ROS_WSPACE=/ros_ws
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 # establish container entrypoint
 RUN echo "#!/bin/bash \n\
 set -e \n\
@@ -43,11 +48,6 @@ RUN if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
       && apt-get update \
       && apt-get dist-upgrade \
     ; fi
-
-ENV ROS_WSPACE=/ros_ws
-ENV DEBIAN_FRONTEND=noninteractive
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
 
 # install bootstrap utilities
 RUN apt-get update \
