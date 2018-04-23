@@ -101,11 +101,10 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
 # download & build Package Under Test
 ARG CATKIN_PKG
 ARG REPO_FORK_URL
-RUN echo "- git:\n \
-              local-name: '${CATKIN_PKG}'\n \
-              uri: '${REPO_FORK_URL}'\n \
-              version: 'robust_buggy_released'" > puts.rosinstall
-RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/puts.rosinstall
+RUN mkdir src \
+ && git clone "${REPO_FORK_URL}" "src/repo-under-test" \
+ && cd src/repo-under-test \
+ && git checkout robust_buggy_released
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
@@ -124,9 +123,9 @@ RUN echo "#!/bin/bash\n\
 RUN if [ "${IS_BUILD_FAILURE}" = "False" ]; then ./build.sh ; fi
 COPY test.sh .
 
-# add historical patch
-# TODO automatically generate (or avoid the need to do so)
-COPY fix.patch .
+# automatically generate historical patch
+RUN cd src/repo-under-test \
+ && git diff robust_buggy_released robust_fixed_released > "${ROS_WSPACE}/fix.patch"
 
 # FIXME move to top of Dockerfile
 # setup container entrypoints
@@ -136,6 +135,5 @@ source \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \n\
 source \"${ROS_WSPACE}/devel/setup.bash\" \n\
 exec \"\$@\"" > /entrypoint.sh \
  && chmod +x /entrypoint.sh
-# source \"${ROS_WSPACE}/devel/setup.bash\" \n\
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]
