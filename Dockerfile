@@ -1,3 +1,20 @@
+# TODO explain build-time arguments
+#
+# Build Arguments:
+#
+#   ROS_DISTRO -- the name of the ROS distribution that should be used when
+#     replicating the bug.
+#   UBUNTU_VERSION -- the version of Ubuntu that should be used when
+#     replicating the bug; should be given as a numbered version to avoid
+#     non-deterministic build outcomes.
+#   USE_APT_OLD_RELEASES -- a flag that accepts the values "True" or "False".
+#     If set to true, the resulting Docker image will attempt to use archival
+#     package sources. Allows "apt-get" to be used with versions of Ubuntu
+#     that are no longer maintained.
+#   CATKIN_PKG -- the local name of the package under test (i.e., the name
+#     of the directory inside "source" that will contain the source code for
+#     the package under test).
+#
 ARG ROS_DISTRO
 ARG UBUNTU_VERSION
 FROM ubuntu:${UBUNTU_VERSION}
@@ -42,7 +59,7 @@ RUN apt-get update \
 
 # add OSRF repository to prevent Gazebo installation problems
 RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list \
- && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add
+ && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
 
 # install the following for 17.10: gnupg dirmngr
 
