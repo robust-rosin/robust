@@ -19,6 +19,21 @@ $ cd path/to/robust-rosin
 $ bugzoo source add robust .
 ```
 
+After adding ROBUST as a BugZoo source, you can use `bugzoo bug list` to
+obtain a list of bugs in the ROBUST dataset (along with bugs from any other
+BugZoo datasets that you might happen to have installed on your machine).
+
+```
+$ bugzoo bug list
+Bug                                             Program     Dataset    Source    Installed?
+----------------------------------------------  ----------  ---------  --------  ------------
+robust:b826eae                                  care-o-bot  robust     robust    No
+robust:eed104d                                  kobuki      robust     robust    No
+robust:ca23e58                                  ros_comm    robust     robust    No
+robust:b4dc23c                                  tf2         robust     robust    Yes
+...
+```
+
 ### Bug Installation
 
 Now that you've added ROBUST as a source to your BugZoo installation, you can
