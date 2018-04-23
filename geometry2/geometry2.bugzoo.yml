@@ -11,6 +11,7 @@ blueprints:
       UBUNTU_VERSION: 14.04.5
       ROS_DISTRO: indigo
       CATKIN_PKG: tf2_ros
+      REPO_FORK_URL: https://github.com/robust-rosin/b4dc23c_geometry2
 
 bugs:
   - name: robust:b4dc23c

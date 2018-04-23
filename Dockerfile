@@ -14,6 +14,7 @@
 #   CATKIN_PKG -- the local name of the package under test (i.e., the name
 #     of the directory inside "source" that will contain the source code for
 #     the package under test).
+#   REPO_FORK_URL -- the URL of the ROBUST forked Git repository for this bug.
 #
 ARG ROS_DISTRO
 ARG UBUNTU_VERSION
@@ -98,12 +99,13 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/devel_isolated
 
 # download & build Package Under Test
-COPY puts.rosinstall .
+ARG CATKIN_PKG
+ARG REPO_FORK_URL
+RUN echo "- git:\n \
+              local-name: '${CATKIN_PKG}'\n \
+              uri: '${REPO_FORK_URL}'\n \
+              version: 'robust_buggy_released'" > puts.rosinstall
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/puts.rosinstall
-
-# FIXME use branches or tags rather than patches
-COPY bug_witness.patch .
-RUN patch -p1 -d src < bug_witness.patch
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
@@ -115,7 +117,6 @@ RUN patch -p1 -d src < bug_witness.patch
 # expected to be a build failure.
 # we use '--only-pkg-with-deps' to avoid building /everything/
 ARG IS_BUILD_FAILURE
-ARG CATKIN_PKG
 RUN echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
           && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" > build.sh \
