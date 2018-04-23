@@ -24,10 +24,10 @@ $ bugzoo source add robust .
 The following bugs are known to build correctly:
 
 ```
-$ bugzoo bug build robust:ca23e58
-$ bugzoo bug build robust:b826eae
-$ bugzoo bug build robust:eed104d
-$ bugzoo bug build robust:b4dc23c
+$ bugzoo bug build --force robust:ca23e58
+$ bugzoo bug build --force robust:b826eae
+$ bugzoo bug build --force robust:eed104d
+$ bugzoo bug build --force robust:b4dc23c
 ```
 
 All bugs listed below do not build correctly; the issues causing their build
@@ -53,7 +53,7 @@ fix is applied to the source code, the package under test is rebuilt, and the
 test is executed.
 
 ```
-$ bugzoo container execute robust:b4dc23c ./fix.sh && ./build.sh && ./test.sh
+$ bugzoo container execute robust:b4dc23c ./fix && ./build.sh && ./test.sh
 ```
 
 ## Container Anatomy
@@ -72,9 +72,9 @@ which are located at `/ros_ws`:
   than `0`. The same behaviour should also apply to build-related issues; that
   is, `test.sh` should exit with `0` if the build was successful, and any other
   exit code if not.
-* `fix.sh`: applies the historical fix to the PUT.
-* `unfix.sh`: reverses the historical fix to the PUT.
+* `fix`: switches the source code for the PUT to its buggy state.
+* `unfix`: switches the source code for the PUT to its fixed state.
 
-Note that `build.sh`, `fix.sh`, and `unfix.sh` are automatically generated
-during the BugZoo build process. `test.sh` and any files related to testing are
-hosted by the directory for each scenario.
+Note that `build.sh`, `fix`, and `unfix` are automatically generated during the
+BugZoo build process. `test.sh` and any files related to testing are hosted by
+the directory for each scenario.
