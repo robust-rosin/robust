@@ -26,8 +26,10 @@ RUN apt-get update \
       git \
       python-pip \
       cmake \
+      wget \
+      lsb-release \
+ && pip install --upgrade pip==9.0.3 \
  && pip install setuptools \
- && pip install --upgrade pip \
  && pip install --upgrade \
       wheel \
       rosdep \
@@ -37,6 +39,10 @@ RUN apt-get update \
       catkin_pkg \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+# add OSRF repository to prevent Gazebo installation problems
+RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list \
+ && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add
 
 # install the following for 17.10: gnupg dirmngr
 
@@ -109,6 +115,7 @@ COPY fix.patch .
 RUN echo "#!/bin/bash \n\
 set -e \n\
 source \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \n\
+source \"${ROS_WSPACE}/devel/setup.bash\" \n\
 exec \"\$@\"" > /entrypoint.sh \
  && chmod +x /entrypoint.sh
 # source \"${ROS_WSPACE}/devel/setup.bash\" \n\
