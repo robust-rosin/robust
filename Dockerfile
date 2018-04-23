@@ -23,6 +23,16 @@ ARG ROS_DISTRO
 ARG UBUNTU_VERSION
 FROM ubuntu:${UBUNTU_VERSION}
 
+# establish container entrypoint
+RUN echo "#!/bin/bash \n\
+set -e \n\
+source \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \n\
+source \"${ROS_WSPACE}/devel/setup.bash\" \n\
+exec \"\$@\"" > /entrypoint.sh \
+ && chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]
+
 # fix the package sources list to use archival sources
 # https://askubuntu.com/questions/1000291/error-the-repository-xxx-does-not-have-a-release-file
 # https://askubuntu.com/questions/91815/how-to-install-software-or-upgrade-from-an-old-unsupported-release
@@ -135,14 +145,3 @@ COPY test.sh .
 # automatically generate historical patch
 RUN cd src/repo-under-test \
  && git diff robust_buggy_released robust_fixed_released > "${ROS_WSPACE}/fix.patch"
-
-# FIXME move to top of Dockerfile
-# setup container entrypoints
-RUN echo "#!/bin/bash \n\
-set -e \n\
-source \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \n\
-source \"${ROS_WSPACE}/devel/setup.bash\" \n\
-exec \"\$@\"" > /entrypoint.sh \
- && chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["bash"]
