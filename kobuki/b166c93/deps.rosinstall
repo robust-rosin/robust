@@ -1,0 +1,105 @@
+- tar:
+    local-name: catkin
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/indigo/catkin/0.6.18-0.tar.gz
+    version: catkin-release-release-indigo-catkin-0.6.18-0
+- tar:
+    local-name: cmake_modules
+    uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/indigo/cmake_modules/0.3.3-0.tar.gz
+    version: cmake_modules-release-release-indigo-cmake_modules-0.3.3-0
+- tar:
+    local-name: ecl_build
+    uri: https://github.com/yujinrobot-release/ecl_tools-release/archive/release/indigo/ecl_build/0.61.4-0.tar.gz
+    version: ecl_tools-release-release-indigo-ecl_build-0.61.4-0
+- tar:
+    local-name: ecl_command_line
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_command_line/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_command_line-0.61.14-0
+- tar:
+    local-name: ecl_concepts
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_concepts/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_concepts-0.61.14-0
+- tar:
+    local-name: ecl_config
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/indigo/ecl_config/0.61.6-0.tar.gz
+    version: ecl_lite-release-release-indigo-ecl_config-0.61.6-0
+- tar:
+    local-name: ecl_containers
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_containers/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_containers-0.61.14-0
+- tar:
+    local-name: ecl_converters
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_converters/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_converters-0.61.14-0
+- tar:
+    local-name: ecl_devices
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_devices/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_devices-0.61.14-0
+- tar:
+    local-name: ecl_eigen
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_eigen/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_eigen-0.61.14-0
+- tar:
+    local-name: ecl_errors
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/indigo/ecl_errors/0.61.6-0.tar.gz
+    version: ecl_lite-release-release-indigo-ecl_errors-0.61.6-0
+- tar:
+    local-name: ecl_exceptions
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_exceptions/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_exceptions-0.61.14-0
+- tar:
+    local-name: ecl_formatters
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_formatters/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_formatters-0.61.14-0
+- tar:
+    local-name: ecl_geometry
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_geometry/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_geometry-0.61.14-0
+- tar:
+    local-name: ecl_license
+    uri: https://github.com/yujinrobot-release/ecl_tools-release/archive/release/indigo/ecl_license/0.61.4-0.tar.gz
+    version: ecl_tools-release-release-indigo-ecl_license-0.61.4-0
+- tar:
+    local-name: ecl_linear_algebra
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_linear_algebra/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_linear_algebra-0.61.14-0
+- tar:
+    local-name: ecl_math
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_math/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_math-0.61.14-0
+- tar:
+    local-name: ecl_mobile_robot
+    uri: https://github.com/yujinrobot-release/ecl_navigation-release/archive/release/indigo/ecl_mobile_robot/0.60.1-1.tar.gz
+    version: ecl_navigation-release-release-indigo-ecl_mobile_robot-0.60.1-1
+- tar:
+    local-name: ecl_mpl
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_mpl/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_mpl-0.61.14-0
+- tar:
+    local-name: ecl_sigslots
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_sigslots/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_sigslots-0.61.14-0
+- tar:
+    local-name: ecl_threads
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_threads/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_threads-0.61.14-0
+- tar:
+    local-name: ecl_time
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_time/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_time-0.61.14-0
+- tar:
+    local-name: ecl_time_lite
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/indigo/ecl_time_lite/0.61.6-0.tar.gz
+    version: ecl_lite-release-release-indigo-ecl_time_lite-0.61.6-0
+- tar:
+    local-name: ecl_type_traits
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_type_traits/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_type_traits-0.61.14-0
+- tar:
+    local-name: ecl_utilities
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_utilities/0.61.14-0.tar.gz
+    version: ecl_core-release-release-indigo-ecl_utilities-0.61.14-0
+- tar:
+    local-name: sophus
+    uri: https://github.com/yujinrobot-release/sophus-release/archive/release/indigo/sophus/0.9.0-2.tar.gz
+    version: sophus-release-release-indigo-sophus-0.9.0-2
+
