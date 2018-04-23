@@ -14,7 +14,10 @@
 #   CATKIN_PKG -- the local name of the package under test (i.e., the name
 #     of the directory inside "source" that will contain the source code for
 #     the package under test).
-#   REPO_FORK_URL -- the URL of the ROBUST forked Git repository for this bug.
+#   REPO_FORK_URL -- the URL of the ROBUST fork Git repository for this bug.
+#   IS_BUILD_FAILURE -- indicates whether or not the package under test is
+#     expected to encounter a build failure. Accepts values of "True" and
+#     "False".
 #
 ARG ROS_DISTRO
 ARG UBUNTU_VERSION
