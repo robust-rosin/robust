@@ -124,7 +124,8 @@ ARG REPO_FORK_URL
 RUN mkdir src \
  && git clone "${REPO_FORK_URL}" "src/repo-under-test" \
  && cd src/repo-under-test \
- && git checkout robust_buggy_released
+ && git reset --hard eol-cob3 \
+ && git checkout -b robust_buggy_released
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author

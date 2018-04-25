@@ -320,8 +320,8 @@
     version: rqt_common_plugins-release-release-indigo-rqt_py_common-0.4.3-0
 - tar:
     local-name: schunk_description
-    uri: https://github.com/ipa320/schunk_modular_robotics-release/archive/release/indigo/schunk_description/0.6.8-0.tar.gz
-    version: schunk_modular_robotics-release-release-indigo-schunk_description-0.6.8-0
+    uri: https://github.com/ipa320/schunk_modular_robotics-release/archive/release/indigo/schunk_description/0.6.9-0.tar.gz
+    version: schunk_modular_robotics-release-release-indigo-schunk_description-0.6.9-0
 - tar:
     local-name: sensor_msgs
     uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/sensor_msgs/1.11.9-0.tar.gz
