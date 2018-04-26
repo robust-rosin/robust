@@ -11,6 +11,7 @@ blueprints:
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
       CATKIN_PKG: roscpp
+      REPO_FORK_URL: https://github.com/robust-rosin/ca23e58_ros_comm
 
 bugs:
   - name: robust:ca23e58
