@@ -122,11 +122,14 @@ reproducibility:
 trace:
 	For runtime bugs, this is a trace (call stack/sequence of function calls) to the bug.   “N/A” for bugs not involving runtime (e.g., type errors or build-system bugs).
 
-reproduction:
-  Any notes about how you reproduced the bug in your L3 test case.  The idea is to help the reader analyze the test (the main idea should be here).  For instance: I inserted an assertion to enforce X at a point B, and then modified a launch file to provide the input that drives it there.  Or since the bug was flaky and hard to reproduce, we first determinized the control flow, and then ...
+reproduction-images: 
+	buggy: the nearest compiling commit in git log that exhibits the bug (an anecstor of the fixing commit)
+	fixed: the neaerst compiling commit that contains the fix (a child of the fixing commit)  
+	rosdistro: the rosdistro commit capturing the distribution packages used in building the reproduction image.
+	note: Any notes about how you reproduced the bug in your L3 test case.  The idea is to help the reader analyze the test (the main idea should be here).  For instance: I inserted an assertion to enforce X at a point B, and then modified a launch file to provide the input that drives it there.  Or since the bug was flaky and hard to reproduce, we first determinized the control flow, and then ...
 
-  N/A if the bug not reproduced.
-
+	N/A if the bug not reproduced.
+	
 === FIX ===
 The following fields relate to the fixing of the bug which is also sometimes referred to as the cause of the bug (as opposed to the underlying effect of the bug which was covered above under “BUG”).
 
