@@ -21,6 +21,7 @@ blueprints:
       UBUNTU_VERSION: trusty
       ROS_DISTRO: indigo
       CATKIN_PKG: kobuki_driver
+      REPO_FORK_URL: https://github.com/robust-rosin/b166c93_kobuki_core.git
 
 bugs:
   - name: robust:eed104d
