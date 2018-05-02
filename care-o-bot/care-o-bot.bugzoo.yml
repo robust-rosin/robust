@@ -4,7 +4,7 @@ blueprints:
   - type: docker
     tag: robustrosin/robust:b826eae
     file: ../Dockerfile
-    context: b826eae.L3
+    context: b826eae
     arguments:
       IS_BUILD_FAILURE: no
       USE_APT_OLD_RELEASES: no

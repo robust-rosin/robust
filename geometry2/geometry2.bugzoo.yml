@@ -4,7 +4,7 @@ blueprints:
   - type: docker
     tag: robustrosin/robust:b4dc23c
     file: ../Dockerfile
-    context: b4dc23c.L3
+    context: b4dc23c
     arguments:
       IS_BUILD_FAILURE: no
       USE_APT_OLD_RELEASES: no
