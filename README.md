@@ -98,8 +98,8 @@ which are located at `/ros_ws`:
   than `0`. The same behaviour should also apply to build-related issues; that
   is, `test.sh` should exit with `0` if the build was successful, and any other
   exit code if not.
-* `fix`: switches the source code for the PUT to its buggy state.
-* `unfix`: switches the source code for the PUT to its fixed state.
+* `fix`: switches the source code for the PUT to its fixed state.
+* `unfix`: switches the source code for the PUT to its buggy state.
 * `fix.patch`: provides the developer patch that was used to fix the bug.
 
 Note that `build.sh`, `fix.patch`, `fix`, and `unfix` are automatically
