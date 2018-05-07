@@ -1,5 +1,5 @@
 Bug, Package, ROS Install?, Forked?, Docker?, Tests?
 b4dc23c, geometry2, Yes, Yes, Yes, Yes
-b826eae, care-o-bot, Yes, No, No, No
+b826eae, care-o-bot, Yes, Yes, Yes, Yes
 eed104d, kobuki, Yes, No, No, No
 ca23e58, ros_comm, Yes, Yes, No, Yes
