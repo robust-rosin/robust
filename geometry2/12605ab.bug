@@ -47,6 +47,11 @@ bug:
   trace:
     FIXME: the first set up for the reproduction is given in the link above, in links.  But we will also likely need to cause a  SIGINT.
 
+  reproduction-images:
+    buggy: TODO
+    fixed: TODO
+    rosdistro: a7fd093f6922394309c317d519ec42d469258ea6
+
 fix:
 
   repo: https://github.com/ros/geometry2
