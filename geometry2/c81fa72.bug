@@ -2,9 +2,10 @@ title: Wrong logical condition for selecting targets of a message
 
 description: 
   Static Transform Broadcaster uses a wrong condition in selecting messages to
-  be send to notes.  This is a typical bug in logic of the program that does
-  not really appear fixable/detectable without specification (for instance
-  tests).  The developer producing the fix has also included a regression test.
+  be send to notes (the condition is supposed to filter out duplicates).  This
+  is a typical bug in logic of the program that does not really appear
+  fixable/detectable without specification (for instance tests).  The developer
+  producing the fix has also included a regression test.
 
 classification: Wrong behavior (no CWE) 
 
