@@ -13,9 +13,35 @@ blueprints:
       CATKIN_PKG: tf2_ros
       REPO_FORK_URL: https://github.com/robust-rosin/b4dc23c_geometry2
 
+  - type: docker
+    tag: robustrosin/robust:12605ab
+    file: ../Dockerfile
+    context: b4dc23c
+    arguments:
+      IS_BUILD_FAILURE: no
+      USE_APT_OLD_RELEASES: no
+      UBUNTU_VERSION: 14.04.5
+      ROS_DISTRO: indigo
+      CATKIN_PKG: tf2_ros
+      REPO_FORK_URL: https://github.com/robust-rosin/b4dc23c_geometry2
+
 bugs:
   - name: robust:b4dc23c
     image: robustrosin/robust:b4dc23c
+    program: tf2
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
+
+  - name: robust:12605ab
+    image: robustrosin/robust:12605ab
     program: tf2
     dataset: robust
     languages:
