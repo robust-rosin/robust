@@ -6,11 +6,11 @@ blueprints:
     file: ../Dockerfile
     context: eed104d
     arguments:
-      IS_BUILD_FAILURE: yes
-      USE_APT_OLD_RELEASES: no
-      UBUNTU_VERSION: xenial
-      ROS_DISTRO: kinetic
-      CATKIN_PKG: kobuki_ftdi
+      IS_BUILD_FAILURE: "yes"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: "xenial"
+      ROS_DISTRO: "kinetic"
+      CATKIN_PKG: "kobuki_ftdi"
 
 bugs:
   - name: robust:eed104d

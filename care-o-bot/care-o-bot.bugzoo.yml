@@ -6,12 +6,12 @@ blueprints:
     file: ../Dockerfile
     context: b826eae
     arguments:
-      IS_BUILD_FAILURE: no
-      USE_APT_OLD_RELEASES: no
-      UBUNTU_VERSION: trusty
-      ROS_DISTRO: indigo
-      CATKIN_PKG: cob_robots
-      REPO_FORK_URL: https://github.com/robust-rosin/b826eae_cob_robots
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: "trusty"
+      ROS_DISTRO: "indigo"
+      CATKIN_PKG: "cob_robots"
+      REPO_FORK_URL: "https://github.com/robust-rosin/b826eae_cob_robots"
 
 bugs:
   - name: robust:b826eae
