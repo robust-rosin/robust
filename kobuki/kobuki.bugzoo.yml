@@ -11,10 +11,35 @@ blueprints:
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
       CATKIN_PKG: kobuki_ftdi
+  - type: docker
+    tag: robustrosin/robust:b166c93
+    file: ../Dockerfile
+    context: b166c93
+    arguments:
+      IS_BUILD_FAILURE: no
+      USE_APT_OLD_RELEASES: no
+      UBUNTU_VERSION: trusty
+      ROS_DISTRO: indigo
+      CATKIN_PKG: kobuki_driver
+      REPO_FORK_URL: https://github.com/robust-rosin/b166c93_kobuki_core.git
 
 bugs:
   - name: robust:eed104d
     image: robustrosin/robust:eed104d
+    program: kobuki
+    dataset: robust
+    # FIXME
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
+  - name: robust:b166c93
+    image: robustrosin/robust:b166c93
     program: kobuki
     dataset: robust
     # FIXME
