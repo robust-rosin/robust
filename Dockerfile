@@ -16,13 +16,34 @@
 #     of the directory inside "source" that will contain the source code for
 #     the package under test).
 #   REPO_FORK_URL -- the URL of the ROBUST fork Git repository for this bug.
+#   REPO_BUG_COMMIT -- the SHA-1 hash for the commit in the forked repository
+#     that provides the buggy version of the code. This version of the code
+#     also contains supplementary files that, where possible, provide a test
+#     case for the bug.
+#   REPO_FIX_COMMIT -- the SHA-1 hash for the commit in the forked repository
+#     that provides the fixed version of the code. This version of the code
+#     also contains supplementary files that, where possible, provide a test
+#     case for the bug.
 #   IS_BUILD_FAILURE -- indicates whether or not the package under test is
 #     expected to encounter a build failure. Accepts values of "True" and
 #     "False".
 #
-ARG ROS_DISTRO
 ARG UBUNTU_VERSION
+
+# we download the forked repository for the package under test to improve
+# build caching
+FROM alpine:3.7 as fork
+ARG REPO_FORK_URL
+RUN apk --no-cache add git
+RUN git clone "${REPO_FORK_URL}" /tmp/repo-under-test
+
 FROM ubuntu:${UBUNTU_VERSION}
+ARG ROS_DISTRO
+ARG USE_APT_OLD_RELEASES
+ARG CATKIN_PKG
+ARG REPO_FIX_COMMIT
+ARG REPO_BUG_COMMIT
+ARG IS_BUILD_FAILURE
 
 ENV ROS_WSPACE=/ros_ws
 ENV DEBIAN_FRONTEND=noninteractive
@@ -42,7 +63,6 @@ CMD ["bash"]
 # fix the package sources list to use archival sources
 # https://askubuntu.com/questions/1000291/error-the-repository-xxx-does-not-have-a-release-file
 # https://askubuntu.com/questions/91815/how-to-install-software-or-upgrade-from-an-old-unsupported-release
-ARG USE_APT_OLD_RELEASES
 RUN if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
       sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' \
         /etc/apt/sources.list \
@@ -83,16 +103,6 @@ WORKDIR ${ROS_WSPACE}
 COPY deps.rosinstall .
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/deps.rosinstall
 
-# generate fix and unfix scripts
-RUN echo "#!/bin/bash\n\
-pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
-git clean -dfx && \n\
-git checkout \"\$1\" && \n\
-echo \"switched mode to: \$1\"" > switch \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' robust_fixed_released" > fix \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' robust_buggy_released" > unfix \
- && chmod +x fix unfix switch
-
 # install system dependencies
 RUN apt-get clean \
  && apt-get update \
@@ -119,12 +129,21 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/devel_isolated
 
 # download & build Package Under Test
-ARG CATKIN_PKG
-ARG REPO_FORK_URL
-RUN mkdir src \
- && git clone "${REPO_FORK_URL}" "src/repo-under-test" \
- && cd src/repo-under-test \
- && git checkout robust_buggy_released
+COPY --from=fork /tmp/repo-under-test src/repo-under-test
+RUN cd src/repo-under-test \
+ && git fetch origin "${REPO_FIX_COMMIT}" \
+ && git fetch origin "${REPO_BUG_COMMIT}" \
+ && git checkout "${REPO_BUG_COMMIT}"
+
+# generate fix and unfix scripts
+RUN echo "#!/bin/bash\n\
+pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
+git clean -dfx && \n\
+git checkout \"\$1\" && \n\
+echo \"switched mode to: \$1\"" > switch \
+ && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_FIX_COMMIT}\"" > fix \
+ && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_BUG_COMMIT}\"" > unfix \
+ && chmod +x fix unfix switch
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
@@ -135,7 +154,6 @@ RUN mkdir src \
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
 # we use '--only-pkg-with-deps' to avoid building /everything/
-ARG IS_BUILD_FAILURE
 RUN echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
           && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" > build.sh \
@@ -145,4 +163,4 @@ COPY test.sh .
 
 # automatically generate historical patch
 RUN cd src/repo-under-test \
- && git diff robust_buggy_released robust_fixed_released > "${ROS_WSPACE}/fix.patch"
+ && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch"
