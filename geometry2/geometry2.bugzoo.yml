@@ -11,7 +11,7 @@ blueprints:
       UBUNTU_VERSION: "14.04.5"
       ROS_DISTRO: indigo
       CATKIN_PKG: tf2_ros
-      REPO_FORK_URL: https://github.com/robust-rosin/b4dc23c_geometry2
+      REPO_FORK_URL: https://github.com/robust-rosin/geometry2
       REPO_BUG_COMMIT: 2b21a3e00a3f96fcd9f194baf6fa160e38fb6c56
       REPO_FIX_COMMIT: 4e442e278e751c4563b83cd5b2e01556ba3e6e45
 
@@ -25,7 +25,7 @@ blueprints:
       UBUNTU_VERSION: 14.04.5
       ROS_DISTRO: indigo
       CATKIN_PKG: tf2_ros
-      REPO_FORK_URL: https://github.com/robust-rosin/b4dc23c_geometry2
+      REPO_FORK_URL: https://github.com/robust-rosin/geometry2
       # FIXME branches need to be created.
       REPO_BUG_COMMIT: a9dbba2e265458ab26a9c2ced03f604c51b95312
       REPO_FIX_COMMIT: b4dc23c54ba06a846c64215a2d8f944c5a1bd036

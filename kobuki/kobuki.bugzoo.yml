@@ -11,7 +11,7 @@ blueprints:
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
       CATKIN_PKG: kobuki_ftdi
-      REPO_FORK_URL: https://github.com/robust-rosin/eed104d_kobuki_core
+      REPO_FORK_URL: https://github.com/robust-rosin/kobuki_core
       # FIXME CT couldn't see any ROBUST tags or branches on this fork
       REPO_BUG_COMMIT: 61f4b66366a1084a4fa5c621cedf7bca314468f8
       REPO_FIX_COMMIT: eed104dcdd8862824598838b65a7e2339f8e660a

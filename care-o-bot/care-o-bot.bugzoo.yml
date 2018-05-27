@@ -11,7 +11,7 @@ blueprints:
       UBUNTU_VERSION: trusty
       ROS_DISTRO: indigo
       CATKIN_PKG: cob_robots
-      REPO_FORK_URL: https://github.com/robust-rosin/b826eae_cob_robots
+      REPO_FORK_URL: https://github.com/robust-rosin/cob_robots
       REPO_BUG_COMMIT: 6ca6d5029d60f1babbb1f66f759837117b68511b
       REPO_FIX_COMMIT: 6ca6d5029d60f1babbb1f66f759837117b68511b
 
