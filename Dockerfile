@@ -35,7 +35,9 @@ ARG UBUNTU_VERSION
 FROM alpine:3.7 as fork
 ARG REPO_FORK_URL
 RUN apk --no-cache add git
-RUN git clone "${REPO_FORK_URL}" /tmp/repo-under-test
+RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
+ && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
+ && echo "[ROBUST] cloned repo."
 
 FROM ubuntu:${UBUNTU_VERSION}
 ARG ROS_DISTRO
@@ -44,6 +46,9 @@ ARG CATKIN_PKG
 ARG REPO_FIX_COMMIT
 ARG REPO_BUG_COMMIT
 ARG IS_BUILD_FAILURE
+
+ENV ROS_DISTRO "${ROS_DISTRO}"
+RUN echo "[ROBUST]: building image for ROS_DISTRO: '${ROS_DISTRO}'"
 
 ENV ROS_WSPACE=/ros_ws
 ENV DEBIAN_FRONTEND=noninteractive
@@ -63,11 +68,15 @@ CMD ["bash"]
 # fix the package sources list to use archival sources
 # https://askubuntu.com/questions/1000291/error-the-repository-xxx-does-not-have-a-release-file
 # https://askubuntu.com/questions/91815/how-to-install-software-or-upgrade-from-an-old-unsupported-release
-RUN if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
-      sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' \
+RUN echo "[ROBUST] use archival sources? '${USE_APT_OLD_RELEASES}'" \
+ && if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
+      echo "[ROBUST] using archival sources" \
+      && sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' \
         /etc/apt/sources.list \
       && apt-get update \
       && apt-get dist-upgrade \
+    ; else \
+      echo "[ROBUST] not using archival sources" \
     ; fi
 
 # install bootstrap utilities
@@ -130,10 +139,16 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
 
 # download & build Package Under Test
 COPY --from=fork /tmp/repo-under-test src/repo-under-test
+ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
+ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
 RUN cd src/repo-under-test \
+ && echo "[ROBUST] fetching fixed and buggy source code..." \
+ && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}" \
+ && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
  && git fetch origin "${REPO_FIX_COMMIT}" \
  && git fetch origin "${REPO_BUG_COMMIT}" \
- && git checkout "${REPO_BUG_COMMIT}"
+ && git checkout "${REPO_BUG_COMMIT}" \
+ && echo "[ROBUST] fetched fixed and buggy source code."
 
 # generate fix and unfix scripts
 RUN echo "#!/bin/bash\n\
@@ -154,11 +169,16 @@ echo \"switched mode to: \$1\"" > switch \
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
 # we use '--only-pkg-with-deps' to avoid building /everything/
-RUN echo "#!/bin/bash\n\
+RUN echo "[ROBUST] creating build script" \
+ && echo "[ROBUST] PUT is provided by catkin package: '${CATKIN_PKG}'" \
+ && echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
           && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" > build.sh \
- && chmod +x build.sh
-RUN if [ "${IS_BUILD_FAILURE}" = "False" ]; then ./build.sh ; fi
+ && chmod +x build.sh \
+ && echo "[ROBUST] created build script"
+RUN echo "[ROBUST] attempting to build PUT..." \
+ && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
+ && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
 
 # automatically generate historical patch
