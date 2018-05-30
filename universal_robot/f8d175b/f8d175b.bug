@@ -57,7 +57,10 @@ bug:
 
   reproducibility: always
 
-  trace:
+  reproduction-images:
+    buggy: 2cb16836ab3a14e3c534d2d20837642e3cc4a210
+    fixed: 8f7f2418edc1d507853c1c766b6a79123393007b
+    rosdistro: ros/rosdistro@75ab3e205a0d04fc81763657736742e315733956
 
 fix:
 

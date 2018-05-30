@@ -1,0 +1,30 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: robustrosin/robust:f8d175b
+    file: ../../Dockerfile
+    arguments:
+      IS_BUILD_FAILURE: "yes"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: "trusty"
+      ROS_DISTRO: "indigo"
+      CATKIN_PKG: "ur_kinematics"
+      REPO_FORK_URL: "https://github.com/robust-rosin/universal_robot"
+      REPO_BUG_COMMIT: 2cb16836ab3a14e3c534d2d20837642e3cc4a210
+      REPO_FIX_COMMIT: 8f7f2418edc1d507853c1c766b6a79123393007b
+
+bugs:
+  - name: robust:f8d175b
+    image: robustrosin/robust:f8d175b
+    program: universal_robot
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
