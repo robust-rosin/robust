@@ -25,4 +25,11 @@ ROBUST.
     to reproduce the bug (i.e., test cases). The buggy and fixed branches
     should be named `${SHA8}_robust_buggy` and `${SHA8}_robust_fixed`,
     respectively, where `${SHA8}` is replaced by the name (i.e., the short SHA)
-    of the bug.
+    of the bug. To generate these branches, you should checkout the buggy or
+    fixed version of the PUT using the information provided by the `.bug` file,
+    and branch from those points. After you've created the branches, don't
+    worry about creating any additional files (e.g., test cases) -- those can
+    come later.
+5.  Finally, create a file named `manifest.bugzoo.yml` inside the bug
+    directory. This file is going to be responsible for providing BugZoo with
+    all of the necessary information for building and interacting with the bug.
