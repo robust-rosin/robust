@@ -35,3 +35,22 @@ ROBUST.
 5.  Finally, create a file named `manifest.bugzoo.yml` inside the bug
     directory. This file is going to be responsible for providing BugZoo with
     all of the necessary information for building and interacting with the bug.
+    Below is a template for the contents of the file:
+    ```
+    version: '1.0'
+
+    blueprints:
+      - type: docker
+        tag: robustrosin/robust:__NAME__
+        file: ../Dockerfile
+        context: __NAME__
+        arguments:
+          IS_BUILD_FAILURE: "yes"
+          USE_APT_OLD_RELEASES: "no"
+          UBUNTU_VERSION: __UBUNTU_VERSION__
+          ROS_DISTRO: __ROS_DISTRO__
+          CATKIN_PKG: __PUT__
+          REPO_FORK_URL: __FORK_URL__
+          REPO_BUG_COMMIT: __BUG_COMMIT__
+          REPO_FIX_COMMIT: __FIX_COMMIT__
+    ```
