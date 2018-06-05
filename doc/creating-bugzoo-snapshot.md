@@ -16,6 +16,13 @@ ROBUST.
 3.  Use the [ROS install time machine](https://github.com/rosin-project/rosinstall_generator_time_machine)
     to generate a `.rosinstall` file for the non-fixed version of your bug.
     The `.rosintall` file is responsible for specifying all of the dependencies
-    (together with fixed versions) of the program under test (PUT).
+    (together with fixed versions) of the package under test (PUT).
     The generated `.rosinstall` file should be saved to `deps.rosinstall`
     inside the bug directory.
+4.  Next, we need to create a separate branch for the buggy and fixed versions
+    of the code within the forked repository for the package under test. Each
+    branch is responsible for providing any additional files that are required
+    to reproduce the bug (i.e., test cases). The buggy and fixed branches
+    should be named `${SHA8}_robust_buggy` and `${SHA8}_robust_fixed`,
+    respectively, where `${SHA8}` is replaced by the name (i.e., the short SHA)
+    of the bug.
