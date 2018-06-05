@@ -79,3 +79,8 @@ ROBUST.
       `__BUG_COMMIT__` and `__FIX_COMMIT__` will need to be updated. This step
       is necessary to prevent Docker's build caching from ignoring updates to
       the branches.
+    * `__FORK_URL__` should be replaced with the URL of the forked repository
+      for the PUT (e.g., `https://github.com/robust-rosin/ros_comm`).
+    * `__IS_BUILD_FAILURE__` should be set to `"yes"` if the bug
+      is a build failure, or `"no"` if it is not. **The value of this argument
+      MUST be enclosed in quotes to avoid it being incorrectly parsed.**
