@@ -56,16 +56,16 @@ ROBUST.
 
     bugs:
       - name: robust:__NAME__
-	image: robustrosin/robust:__NAME__
-	program: __PUT_NAME__
-	dataset: robust
-	languages:
-	  - cpp
-	source-location: /ros_ws/src
-	test-harness:
-	  type: empty
-	compiler:
-	  type: catkin
-	  workspace: /ros_ws/src
+        image: robustrosin/robust:__NAME__
+        program: __PUT_NAME__
+        dataset: robust
+        languages:
+          - cpp
+        source-location: /ros_ws/src
+        test-harness:
+          type: empty
+        compiler:
+          type: catkin
+          workspace: /ros_ws/src
         time-limit: 300
     ```
