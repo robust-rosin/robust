@@ -36,7 +36,7 @@ ROBUST.
     directory. This file is going to be responsible for providing BugZoo with
     all of the necessary information for building and interacting with the bug.
     Below is a template for the contents of the file:
-    ```
+    ```yaml
     version: '1.0'
 
     blueprints:
