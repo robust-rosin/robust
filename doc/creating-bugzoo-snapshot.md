@@ -70,12 +70,12 @@ ROBUST.
         time-limit: 300
     ```
     The `blueprints` section of the file is responsible for providing BugZoo
-    with instructions for building the Docker image for the bug. All instances
-    of `__NAME__` should be replaced by the short name of the bug
-    (e.g., `eed104d`).
-    `__BUG_COMMIT__` and `__FIX_COMMIT__` should be replaced
-    with the SHA hashes for the head of the buggy and fixed branches for the
-    PUT. Note that if any commits are pushed to either of the branches, the
-    `__BUG_COMMIT__` and `__FIX_COMMIT__` will need to be updated. This step is
-    necessary to prevent Docker's build caching from ignoring updates to the
-    branches.
+    with instructions for building the Docker image for the bug.
+    * All instances of `__NAME__` should be replaced by the short name of the
+      bug (e.g., `eed104d`).
+    * `__BUG_COMMIT__` and `__FIX_COMMIT__` should be replaced with the SHA
+      hashes for the head of the buggy and fixed branches for the PUT. Note
+      that if any commits are pushed to either of the branches, the
+      `__BUG_COMMIT__` and `__FIX_COMMIT__` will need to be updated. This step
+      is necessary to prevent Docker's build caching from ignoring updates to
+      the branches.
