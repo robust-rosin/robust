@@ -84,3 +84,8 @@ ROBUST.
     * `__IS_BUILD_FAILURE__` should be set to `"yes"` if the bug
       is a build failure, or `"no"` if it is not. **The value of this argument
       MUST be enclosed in quotes to avoid it being incorrectly parsed.**
+    * `__USE_APT_OLD_RELEASES__` should be set to `"yes"` if the version of
+      Ubuntu is no longer maintained. If the version of Ubuntu is still being
+      supported, then `"no"` should be used instead.
+      **Once again, the value of this argument MUST be enclosed in quotes to
+      avoid it being incorrectly parsed.**
