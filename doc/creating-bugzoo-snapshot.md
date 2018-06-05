@@ -53,4 +53,19 @@ ROBUST.
           REPO_FORK_URL: __FORK_URL__
           REPO_BUG_COMMIT: __BUG_COMMIT__
           REPO_FIX_COMMIT: __FIX_COMMIT__
+
+    bugs:
+      - name: robust:__NAME__
+	image: robustrosin/robust:__NAME__
+	program: __PUT_NAME__
+	dataset: robust
+	languages:
+	  - cpp
+	source-location: /ros_ws/src
+	test-harness:
+	  type: empty
+	compiler:
+	  type: catkin
+	  workspace: /ros_ws/src
+        time-limit: 300
     ```
