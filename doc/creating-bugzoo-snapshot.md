@@ -70,7 +70,8 @@ ROBUST.
         time-limit: 300
     ```
     The `blueprints` section of the file is responsible for providing BugZoo
-    with instructions for building the Docker image for the bug.
+    with instructions for building the Docker image for the bug. To prepare
+    this section for your bug, you should take the following steps:
     * All instances of `__NAME__` should be replaced by the short name of the
       bug (e.g., `eed104d`).
     * `__BUG_COMMIT__` and `__FIX_COMMIT__` should be replaced with the SHA
