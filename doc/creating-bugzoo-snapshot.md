@@ -42,8 +42,7 @@ ROBUST.
     blueprints:
       - type: docker
         tag: robustrosin/robust:__NAME__
-        file: ../Dockerfile
-        context: __NAME__
+        file: ../../Dockerfile
         arguments:
           IS_BUILD_FAILURE: __IS_BUILD_FAILURE__
           USE_APT_OLD_RELEASES: __USE_APT_OLD_RELEASES__
