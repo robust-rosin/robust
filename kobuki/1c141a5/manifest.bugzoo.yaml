@@ -1,0 +1,30 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: robustrosin/robust:1c141a5
+    file: ../../Dockerfile
+    arguments:
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "yes"
+      UBUNTU_VERSION: precise
+      ROS_DISTRO: groovy
+      CATKIN_PKG: kobuki_driver
+      REPO_FORK_URL: https://github.com/robust-rosin/kobuki
+      REPO_BUG_COMMIT: 10a37746933a588055eb39ee2e827e11627f2103
+      REPO_FIX_COMMIT: 1c141a54fb2c0e2ec453b32f8026d1cd0ffb14d9
+
+bugs:
+  - name: robust:1c141a5
+    image: robustrosin/robust:1c141a5
+    program: kobuki_driver
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+    time-limit: 300
