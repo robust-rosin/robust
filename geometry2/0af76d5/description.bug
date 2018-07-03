@@ -51,7 +51,8 @@ bug:
     # Call the main function in static_transform_broadcaster_program.cpp giving 9 arguments, with the last two arguments being the same string.
 
   reproduction: 
-    # The idea is to  start the node with wrong and good parameters in parallel with a dummy test that always passes. Then the success of the rostest only depends on whether the nodes have crashed or not.  Use launch-prefix to inspect whether a node test failed because of (expected) parameter validation, or because an assertion failed.  The assertions are inserted by redefining ROS_FATAL for the file in question (otherwise we would need to change the file, and the fixing commit would either not pass the test, or would not apply).
+    There is no fixing commit and fixing this requires a redesign of the component (to our best knowledge this race condition has not been fixed until today).  In the discussions whether a design flaw is a bug, we decided to reproduce the race, but not fix the design.  Thus this bug has no fixing commit.
+  # TODO:finish
 
 fix:
 
