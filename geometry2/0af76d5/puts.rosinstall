@@ -1,0 +1,4 @@
+- tar:
+    local-name: geometry2/tf2_ros
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_ros/0.5.13-0.tar.gz
+    version: geometry2-release-release-indigo-tf2_ros-0.5.13-0
