@@ -36,7 +36,7 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
 
   * [put.rosinstall](tf2/b4dc23c/put.rosinstall): the source and commit which contains the bug 
 
-  * [puts_with_deps.rosinstall](tf2/b4dc23c/puts_with_deps.rosinstall): the concatanation of the previous two
+  * [puts_with_deps.rosinstall](tf2/b4dc23c/puts_with_deps.rosinstall): the concatenation of the previous two
 
 
 2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, without renaming---if this has not been done before.  In this case we create [robust-rosin / geometry2](https://github.com/robust-rosin/geometry2).  The parent of the bug fixing commit is branched to ```bugname_robust_buggy``` and the fixed commit is branched to ```bugname_robust_fixed``` (in this case ```b4dc23c_robust_buggy``` and ```b4dc23c_robust_fixed``` respectively).
