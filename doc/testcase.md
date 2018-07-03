@@ -28,7 +28,7 @@ We describe both of these below.
 
 # Preparation of the skeleton container #
 
-This part is a bit sketchy &mdash; people doing this know the details well. It mostly describes what happens **before you start writing a test**. All the relevant files should be  should be in [tf2/b4dc23c](tf2/b4dc23c)). 
+This part is a bit sketchy &mdash; people doing this know the details well. It mostly describes what happens **before you start writing a test**. All the relevant files should be  should be in [geometry2 / b4dc23c](geometry2/b4dc23c)). 
 
 1. The [time machine](https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2) is used to produce the lists of dependent sources in the rosinstall format: 
 
