@@ -2,7 +2,7 @@
 
 This file describes the procedure of reproduction of the bug in the ROBUST ROSIN repository. It is meant to be read by those who contribute to the repository.  Before reading this document, read about the general usage of the repository, anatomy and commands in [the top-level readme file](README.md). 
 
-We explain the process using the bug b4dc23c as an example.  Go to [tf2/b4dc23c/](tf2/b4dc23c/) and run (requires a docker installation). This bug is now implemented so that you can test whether you have all the prerequistes set up by invoking:
+We explain the process using the bug b4dc23c as an example.  Go to [/ geometry2 / b4dc23c/](/geometry2/b4dc23c/) and run (requires a docker installation). This bug is now implemented so that you can test whether you have all the prerequistes set up by invoking:
 
 ```bugzoo bug build robust:b4dc23c```
 
@@ -28,7 +28,7 @@ We describe both of these below.
 
 # Preparation of the skeleton container #
 
-This part is a bit sketchy &mdash; people doing this know the details well. It mostly describes what happens **before you start writing a test**. All the relevant files should be  should be in [geometry2 / b4dc23c](geometry2/b4dc23c)). 
+This part is a bit sketchy &mdash; people doing this know the details well. It mostly describes what happens **before you start writing a test**. All the relevant files should be  should be in [/ geometry2 / b4dc23c](/geometry2/b4dc23c)). 
 
 1. The [time machine](https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2) is used to produce the lists of dependent sources in the rosinstall format: 
 
