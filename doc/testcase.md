@@ -39,14 +39,14 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
   * [puts_with_deps.rosinstall](tf2/b4dc23c.L3/puts_with_deps.rosinstall): the concatanation of the previous two
 
 
-2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, and named with the bug hash included as a prefix (robust/HASH_repo).  In this case we create [robust-rosin / b4dc23c_geometry2](https://github.com/robust-rosin/b4dc23c_geometry2).  The parent of the bug fixing commit is branched to ```robust_buggy``` and the fixed commit is branched to ```robust_fixed```.
+2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, without renaming---if this has not been done before.  In this case we create [robust-rosin / geometry2](https://github.com/robust-rosin/geometry2).  The parent of the bug fixing commit is branched to ```bugname_robust_buggy``` and the fixed commit is branched to ```bugname_robust_fixed``` (in this case ```b4dc23c_robust_buggy``` and ```b4dc23c_robust_fixed``` respectively).
 
     To identify the parent commit of the fixing commit following the issue/pull-request link from the bug description and finding the right merge commit, then it will have a parent. For this example:
 
     ```
     git checkout a9dbba2e265458ab26a9c2ced03f604c51b95312
-    git checkout -b robust_buggy
-    git tag robust_buggy_released
+    git checkout -b b4dc23c_robust_buggy
+    git tag b4dc23c_robust_buggy_released
     git push --tags
     ```
 
@@ -56,8 +56,8 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
 
     ```
     git checkout b4dc23c
-    git checkout -b robust_fixed
-    git tag robust_fixed_released
+    git checkout -b b4dc23c_robust_fixed
+    git tag b4dc23c_robust_fixed_released
     git push --tags
     ``` 
     
