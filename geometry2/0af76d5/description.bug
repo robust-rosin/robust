@@ -1,0 +1,71 @@
+title: A race condition in message filter
+
+description: 
+    # In the static_transform_broadcaster_program.cpp the main function processes command line arguments.  The program accepts either 10 or 9 arguments, and the validity of the arguments is checked slightly differently for the two cases. Presumably due to a cut-and-paste mistake, the error reporting code is the same in both cases, and in the case of 9 arguments, it accesses the value argv[9] which might not then exist.  
+    
+    # This may read the array out-of-bounds (accessing a NULL value).   Through a series of macros for error reporting this expands to executing ::ros::console::print, and through further several function calls to vsnprintf call (a standard library function) that will traverse the argument to produce an error string.  This presumably might dereference the pointer to a non existing string argument leading to a crash. After this the program quits.
+
+    # The consequences of this might be potentially serious. In the best case, the program crashes for memory violation, or the error has no side effects.  In the worst case, in combination with bugs in the standard library or the operating system, this might be usable to create security exploits, compromising the host machine.  However, with the current implementation of the vsnprintf in libraries, the dereference is not made.  The library checks for NULL, and formats the string "(null)" in such case.
+
+# In regular situation, where this node is started via a launch file, the access will not actually be out-of-bounds. The launch mechanism (roslaunch or rostest) will pass additional parameters to the node. The opening call to ros::init will hide these parameters by sorting them to the end of the argv array, and decreasing the argc counter.  Thus in a regular launch situation this bug will simply access some of the hidden parameter values, producing a broken error message; not more. 
+
+classification: CWE-125: Out-of-bounds Read
+
+keywords: c++ | out-of-bounds | command-line arguments | logging
+
+system: core component
+
+severity: minor-issue
+
+links: http://docs.ros.org/api/rosconsole/html/rosconsole_8cpp_source.html#l00460
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  applicatios: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package: ros/geometry2/tf2_ros
+
+  languages: C++
+
+  detected-by: # developer
+
+  reported-by: # unreported
+
+  issue: https://github.com/ros/geometry2/issues/35
+
+  time-reported: 2013-10-29 (01:05) 
+
+  reproducibility: sometimes
+
+  trace:
+    # Call the main function in static_transform_broadcaster_program.cpp giving 9 arguments, with the last two arguments being the same string.
+
+  reproduction: 
+    There is no fixing commit and fixing this requires a redesign of the component (to our best knowledge this race condition has not been fixed until today).  In the discussions whether a design flaw is a bug, we decided to reproduce the race, but not fix the design.  Thus this bug has no fixing commit.
+  # TODO:finish
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: 
+
+  pull-request: https://github.com/ros/geometry2/pull/167
+
+  license: BSD
+
+  fix-in: tf2_ros/src/static_transform_broadcaster_program.cpp
+
+  languages: C++ 
+
+  time: 2016-04-02 (08:29)
