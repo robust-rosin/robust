@@ -1,23 +1,28 @@
-title: A race condition in message filter
+title: A race condition in message filter of TF2
 
 description: 
-    # In the static_transform_broadcaster_program.cpp the main function processes command line arguments.  The program accepts either 10 or 9 arguments, and the validity of the arguments is checked slightly differently for the two cases. Presumably due to a cut-and-paste mistake, the error reporting code is the same in both cases, and in the case of 9 arguments, it accesses the value argv[9] which might not then exist.  
-    
-    # This may read the array out-of-bounds (accessing a NULL value).   Through a series of macros for error reporting this expands to executing ::ros::console::print, and through further several function calls to vsnprintf call (a standard library function) that will traverse the argument to produce an error string.  This presumably might dereference the pointer to a non existing string argument leading to a crash. After this the program quits.
+    "In ROS Message filters are a tool that allows registering subscribers that work with multiple msgs, or trigger callbacks if an arriving message satisfies a predicate. TF provides message filters that are specificlaly tailored---they register callbacks that can triggered whenever the incoming message can be transformed (using tf.transform(..)) into a set of coordinate frames. For instance one can trigger a callback on messages of certain type (a point cloud or an object with a spatial dimension) that can be transformed to selected frames. 
 
-    # The consequences of this might be potentially serious. In the best case, the program crashes for memory violation, or the error has no side effects.  In the worst case, in combination with bugs in the standard library or the operating system, this might be usable to create security exploits, compromising the host machine.  However, with the current implementation of the vsnprintf in libraries, the dereference is not made.  The library checks for NULL, and formats the string "(null)" in such case.
+    The problem is that the checking by tf msg filters whether that is possible and the invocation of the callback happen at two separate times, so even if the check succeeds, by the time the callback is fired, it could fail, because the frames could already have been pushed out of the tf buffer.
 
-# In regular situation, where this node is started via a launch file, the access will not actually be out-of-bounds. The launch mechanism (roslaunch or rostest) will pass additional parameters to the node. The opening call to ros::init will hide these parameters by sorting them to the end of the argv array, and decreasing the argc counter.  Thus in a regular launch situation this bug will simply access some of the hidden parameter values, producing a broken error message; not more. 
+    The callbel needs to retrieve the transforms. If tf.lookupTransform(...)  is used it mail fail, even if the transform was applicable at the time of the predicate checking.
 
-classification: CWE-125: Out-of-bounds Read
+    The race condition is built-in into the design of the API. You can only experience it when you start to use the API, and don't take additional (awkward) protection measures.  This is best summarized with the quote from the original bug report: ''tf::message_filters are difficult to use because you're only guaranteed to have a transform at the beginning of the callback, not when you actually want to use the transform. (..) you can deal with this through judicious use of try-catch loops and setTolerance(), but that seems hacky. Multiple users have had trouble with this concept.''
 
-keywords: c++ | out-of-bounds | command-line arguments | logging
+    To the best of our knowledge, this bug / design issue remains in ROS til the time of writing this analysis. It has never been addressed." 
+
+classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+
+keywords: c++ | race condition | callback 
 
 system: core component
 
-severity: minor-issue
+severity:error
 
-links: http://docs.ros.org/api/rosconsole/html/rosconsole_8cpp_source.html#l00460
+links: 
+  - https://github.com/ros/geometry2/blob/5722773de7d688bcaf8dfe68a0f2a55ff49dc9d3/tf2_ros/include/tf2_ros/message_filter.h The file where the message filter is implemented.
+  - https://github.com/ros/geometry2/blob/5722773de7d688bcaf8dfe68a0f2a55ff49dc9d3/tf2_ros/include/tf2_ros/message_filter.h#L88 fragment of the file with the API doc for the message filter.
+  - https://github.com/ros/geometry2/blob/5722773de7d688bcaf8dfe68a0f2a55ff49dc9d3/tf2_ros/include/tf2_ros/message_filter.h#L293 the method invoked on the new (incoming) message.
 
 bug:
 
@@ -37,9 +42,9 @@ bug:
 
   languages: C++
 
-  detected-by: # developer
+  detected-by: 
 
-  reported-by: # unreported
+  reported-by:  member developer
 
   issue: https://github.com/ros/geometry2/issues/35
 
@@ -48,11 +53,11 @@ bug:
   reproducibility: sometimes
 
   trace:
-    # Call the main function in static_transform_broadcaster_program.cpp giving 9 arguments, with the last two arguments being the same string.
 
   reproduction: 
+    The idea is to create a buffer object, manually insert some transforms into it, then instantiate a tf message filter, invoke its callbacks do some trickery with a manually crafted msg (its header) and then show that the transform we're looking for, and which msg filters said was there, is no longer there.
+
     There is no fixing commit and fixing this requires a redesign of the component (to our best knowledge this race condition has not been fixed until today).  In the discussions whether a design flaw is a bug, we decided to reproduce the race, but not fix the design.  Thus this bug has no fixing commit.
-  # TODO:finish
 
 fix:
 
@@ -60,11 +65,11 @@ fix:
 
   hash: 
 
-  pull-request: https://github.com/ros/geometry2/pull/167
+  pull-request: 
 
-  license: BSD
+  license: 
 
-  fix-in: tf2_ros/src/static_transform_broadcaster_program.cpp
+  fix-in: 
 
   languages: C++ 
 
