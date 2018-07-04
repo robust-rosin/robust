@@ -1,0 +1,30 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: robustrosin/robust:5ee65b0
+    file: ../../Dockerfile
+    arguments:
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: trusty
+      ROS_DISTRO: indigo
+      CATKIN_PKG: kobuki_dashboard
+      REPO_FORK_URL: https://github.com/robust-rosin/kobuki_desktop
+      REPO_BUG_COMMIT: f04c615cd9216e1b7b6949db2745dc8fa25acc0b
+      REPO_FIX_COMMIT: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
+
+bugs:
+  - name: robust:5ee65b0
+    image: robustrosin/robust:5ee65b0
+    program: kobuki_dashboard
+    dataset: robust
+    languages:
+      - python
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+    time-limit: 300
