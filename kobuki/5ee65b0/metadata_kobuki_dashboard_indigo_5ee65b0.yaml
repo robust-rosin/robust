@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 5ee65b0
+put: kobuki_dashboard
+ros_distro: indigo
+datetime_reported: 2014-08-12T05:50:00Z
+issue_url: 2014-08-12T05:50:00Z
+reproduction-images:
+  buggy: TODO
+  fixed: TODO
+  rosdistro: 991e9c6d4e020b148e6e96e41d3808b44ac45ea2
