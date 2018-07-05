@@ -34,6 +34,8 @@ links:
 === BUG ===
 The following fields relate to the manifestation of the bug itself which is also sometimes referred to as the effect of the bug (as opposed to the underlying cause of the bug involving how it was fixed which is covered later; cf. “FIX” below).
 
+Manifestation of a bug is what the testing terminology calls a *failure*.
+
 phase:
 	In what phase of the software life cycle did the error occur?  Please pick the most appropriate among the following predefined options (each is accompanied by a elaborative description):
   - "build-time" (for errors that are reported by the build/make tools that compose the source code prior to compilation)
@@ -131,7 +133,7 @@ reproduction-images:
 	N/A if the bug not reproduced.
 
 === FIX ===
-The following fields relate to the fixing of the bug which is also sometimes referred to as the cause of the bug (as opposed to the underlying effect of the bug which was covered above under “BUG”).
+The following fields relate to the fixing of the bug which is also sometimes referred to as the cause of the bug (as opposed to the underlying effect of the bug which was covered above under “BUG”).  The fix of the bug involves removing the actual *fault* (in testing terminology).
 
 repository:
 	URI reference to repository where the bug was fixed.
