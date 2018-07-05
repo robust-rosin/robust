@@ -84,6 +84,15 @@ bug:
         Since the bug is related to misuse of ROS primitives, the test script
         has to override said primitives (`rospy.Publisher` in this case)
         and fail whenever the wrong arguments are passed to it.
+        
+        The implementation of the test case faced an issue, however.
+        Since the faulty original code used widgets from a GUI application,
+        it cannot be called directly in the test case. This is due to the Qt
+        library inhibiting initialization of widgets without initializing
+        a GUI application first, but these cannot be initialized within
+        Docker images, which provide no access to GUI primitives (X server).
+        Thus, the final solution has to mimic the original code, but stripping
+        the GUI-related parts.
 
 fix:
 
