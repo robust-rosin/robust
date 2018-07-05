@@ -38,6 +38,7 @@ Manifestation of a bug is what the testing terminology calls a *failure*.
 
 phase:
 	In what phase of the software life cycle did the error occur?  Please pick the most appropriate among the following predefined options (each is accompanied by a elaborative description):
+  - "programming-time" (for errors that are detected by programmers, for instance due to a missing API, etc.)
   - "build-time" (for errors that are reported by the build/make tools that compose the source code prior to compilation)
   - "compile-time" (for errors that are reported by the compiler itself)
   - "deployment-time" (for errors that occur after compilation and before the program is run; often when some deployment or installation scripts are run. This also includes “installation-time”)?
