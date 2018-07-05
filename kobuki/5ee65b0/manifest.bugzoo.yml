@@ -27,4 +27,4 @@ bugs:
     compiler:
       type: catkin
       workspace: /ros_ws/src
-    time-limit: 300
+      time-limit: 300
