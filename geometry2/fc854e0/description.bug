@@ -1,0 +1,66 @@
+title: Executable files installed in a wrong directory
+
+description:
+  The view_frames.py script is installed into the share directory instead of the bin directory.  This primarily manifests itself in the file not getting the executable permission set (so it cannot be run directly).
+
+  This is a standard deployment / installation fault.
+
+  This bug has been reported in a by-now defunct issue system so we can no longer trace to the original bug report.  We have the pull request only.
+
+classification: Too restricted permission to allow execution (no CWE)
+
+keywords: catkin | cmake | install | permission
+
+system: core component
+
+severity:error
+
+links: 
+
+bug:
+
+  phase: runtime-initialization
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  applications: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package: ros/geometry2/tf2_tools
+
+  languages: 
+
+  detected-by: 
+
+  reported-by:  
+
+  issue: 
+
+  time-reported: 
+
+  reproducibility: always
+
+  trace:
+
+  reproduction: 
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: fc854e0e7013e9a05c3c4f50eb1375aa0ad26841
+
+  pull-request: https://github.com/ros/geometry2/pull/44
+
+  license: BSD
+
+  fix-in: tf2_tools/CMakeLists.txt
+
+  languages: CMake
+
+  time: 2013-11-06 (08:19 GMT+1)
