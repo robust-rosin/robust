@@ -1,7 +1,7 @@
 title: An exception thrown by delay function, when Time object not initialized
 
 description:
-  The tf2_ros is a C++ package that is using the ros::Time object to sleep (a C++ object).  This object might not be initialized if running inside rospy.  In such case an exception is thrown and sleeping fails. 
+  The tf2_ros is a C++ package that is using the ros::Time object to sleep (a C++ object).  This object might not be initialized if running inside rospy (so from python API to ros).  In such case an exception is thrown and sleeping fails. 
 
   The fix of the bug catches the exception and uses the wall clock time API to delay instead.  
 
@@ -17,6 +17,7 @@ severity:error
 
 links: 
   - The PR is rather uninformative.  The best explanation can be found in this comment: https://github.com/ros/geometry2/pull/42/commits/0a034c5b21d7025f24b25051e0ab758f614efa5f#diff-45868e304b80cd09fbee9238de68a079R85 
+  - http://wiki.ros.org/rospy
 bug:
 
   phase: runtime-operation
