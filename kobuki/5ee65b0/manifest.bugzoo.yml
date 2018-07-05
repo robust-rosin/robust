@@ -11,8 +11,8 @@ blueprints:
       ROS_DISTRO: indigo
       CATKIN_PKG: kobuki_dashboard
       REPO_FORK_URL: https://github.com/robust-rosin/kobuki_desktop
-      REPO_BUG_COMMIT: f04c615cd9216e1b7b6949db2745dc8fa25acc0b
-      REPO_FIX_COMMIT: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
+      REPO_BUG_COMMIT: 37a1eee5ce2642144735102ffcd4c3736c4b2850
+      REPO_FIX_COMMIT: d852bd6dbc24c7096bd6f042739725b894359494
 
 bugs:
   - name: robust:5ee65b0
