@@ -11,8 +11,8 @@ blueprints:
       ROS_DISTRO: "indigo"
       CATKIN_PKG: "kobuki_driver"
       REPO_FORK_URL: "https://github.com/robust-rosin/kobuki_core"
-      REPO_BUG_COMMIT: 57b89147438e41c46c0a6890ac7082a70c0056c2
-      REPO_FIX_COMMIT: b166c93913e293c55a3faa7b298c5f52f6def964
+      REPO_BUG_COMMIT: c054e5437f2662774e5677c75e17388c8b1f4206
+      REPO_FIX_COMMIT: 51e46da5e9cb075f6ffea60132178c8ef7807d05
 
 bugs:
   - name: robust:b166c93
