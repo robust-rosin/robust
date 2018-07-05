@@ -20,8 +20,8 @@ blueprints:
     file: ../Dockerfile
     context: b4dc23c
     arguments:
-      IS_BUILD_FAILURE: no
-      USE_APT_OLD_RELEASES: no
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
       UBUNTU_VERSION: 14.04.5
       ROS_DISTRO: indigo
       CATKIN_PKG: tf2_ros
@@ -35,8 +35,8 @@ blueprints:
     file: ../Dockerfile
     context: 0af76d5
     arguments:
-      IS_BUILD_FAILURE: no
-      USE_APT_OLD_RELEASES: no
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
       UBUNTU_VERSION: 14.04.5
       ROS_DISTRO: indigo
       CATKIN_PKG: tf2_ros
