@@ -1,0 +1,68 @@
+title: Use of retired class field 
+
+description:
+  tf2_ros uses the "__connection_header" field in ROS messages to get connection information.  This field has been phased out by the roscpp project, and for some time tf2_ros was not updated.  References to a non-existing field in C++ cause a build failure (reported by type and name analysis).
+
+  This is a rather typical example of co-evolving projects getting out of sync.
+
+  The pull request merged in this description has not been directly merged but it appears that the commit has been merged.
+
+classification: Undeclared Identifier (no CWE) #EVOLUTION
+
+keywords: build | field | deprecation
+
+system: core component
+
+severity: error
+
+links: 
+
+bug:
+
+  phase: build-time
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  applications: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package:  ros/geometry2/tf2_ros
+
+  languages: C++ 
+
+  detected-by: compiler
+
+  reported-by: 
+
+  issue: 
+
+  time-reported: 
+
+  reproducibility: always
+
+  trace:
+
+  reproduction: 
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: 932c6cafd2b7959133fb32303e8c27cca3ff9e33
+
+  pull-request: https://github.com/ros/geometry2/pull/51
+
+  license: BSD
+
+  fix-in:
+      - tf2_ros/include/tf2_ros/transform_listener.h
+      - tf2_ros/src/transform_listener.cpp
+
+  languages: C++
+
+  time: 2014-01-29 (18:45 GMT+1)
