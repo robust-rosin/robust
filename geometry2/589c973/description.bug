@@ -1,0 +1,64 @@
+title: Missing const qualifier on a C++ function with no side effects
+
+description:
+    The tf2::Vector3.rotate() function computes a rotation of a vector by an angle around an axis.  It is a pure function that does not modify the object state. It should thus have a const modifier to allow calling it from other const functions---otherwise the typechecker stops compilation.
+
+    This bug will be reported not when typechecking the file in question, but when typechecking a const method in user code (so the fault and failure locations are different).
+
+classification: Imprecise type declaration (no CWE)
+
+keywords: const | type | pure
+
+system: core component
+
+severity: bad-smell
+
+links: 
+
+bug:
+
+  phase: build-time
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  applications: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package: 
+
+  languages: C++
+
+  detected-by: 
+
+  reported-by: 
+
+  issue: 
+
+  time-reported: 
+
+  reproducibility: always
+
+  trace:
+
+  reproduction: 
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: 589c973ed4250f29b45310e931d5fd4e875aaa33
+
+  pull-request: https://github.com/ros/geometry2/pull/47
+
+  license: BSD
+
+  fix-in: tf2/include/tf2/LinearMath/Vector3.h
+
+  languages: C++
+
+  time: 2013-11-27 (18:21 GMT+1)
