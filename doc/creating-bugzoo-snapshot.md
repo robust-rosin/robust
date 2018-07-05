@@ -66,7 +66,7 @@ ROBUST.
         compiler:
           type: catkin
           workspace: /ros_ws/src
-        time-limit: 300
+          time-limit: 300
     ```
     The `blueprints` section of the file is responsible for providing BugZoo
     with instructions for building the Docker image for the bug. To prepare
