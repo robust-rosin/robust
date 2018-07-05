@@ -150,6 +150,7 @@ language:
 
 time-fixed:
 	The time the bug was fixed (“unfixed” if it was not fixed); e.g.: “2017-12-31 (23:59)”.
+  Use the merge commit time into the mainline development if possible.  This is when the fix makes it into the project tree.
 
 === SIMPLIFICATION ===
 We agree that it seems too much to figure out one single way to simplify bugs and create the benchmark for all bugs in the collection.
