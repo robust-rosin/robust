@@ -7,6 +7,114 @@
     uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/indigo/cmake_modules/0.3.3-0.tar.gz
     version: cmake_modules-release-release-indigo-cmake_modules-0.3.3-0
 - tar:
+    local-name: cpp_common
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/cpp_common/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-cpp_common-0.5.7-0
+- tar:
+    local-name: gencpp
+    uri: https://github.com/ros-gbp/gencpp-release/archive/release/indigo/gencpp/0.5.4-0.tar.gz
+    version: gencpp-release-release-indigo-gencpp-0.5.4-0
+- tar:
+    local-name: genlisp
+    uri: https://github.com/ros-gbp/genlisp-release/archive/release/indigo/genlisp/0.4.15-0.tar.gz
+    version: genlisp-release-release-indigo-genlisp-0.4.15-0
+- tar:
+    local-name: genmsg
+    uri: https://github.com/ros-gbp/genmsg-release/archive/release/indigo/genmsg/0.5.7-0.tar.gz
+    version: genmsg-release-release-indigo-genmsg-0.5.7-0
+- tar:
+    local-name: genpy
+    uri: https://github.com/ros-gbp/genpy-release/archive/release/indigo/genpy/0.5.9-0.tar.gz
+    version: genpy-release-release-indigo-genpy-0.5.9-0
+- tar:
+    local-name: message_generation
+    uri: https://github.com/ros-gbp/message_generation-release/archive/release/indigo/message_generation/0.2.10-0.tar.gz
+    version: message_generation-release-release-indigo-message_generation-0.2.10-0
+- tar:
+    local-name: message_runtime
+    uri: https://github.com/ros-gbp/message_runtime-release/archive/release/indigo/message_runtime/0.4.12-0.tar.gz
+    version: message_runtime-release-release-indigo-message_runtime-0.4.12-0
+- tar:
+    local-name: rosbuild
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/rosbuild/1.11.12-0.tar.gz
+    version: ros-release-release-indigo-rosbuild-1.11.12-0
+- tar:
+    local-name: rosclean
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/rosclean/1.11.12-0.tar.gz
+    version: ros-release-release-indigo-rosclean-1.11.12-0
+- tar:
+    local-name: rosconsole
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosconsole/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-rosconsole-1.11.19-0
+- tar:
+    local-name: roscpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roscpp/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-roscpp-1.11.19-0
+- tar:
+    local-name: roscpp_serialization
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_serialization/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-roscpp_serialization-0.5.7-0
+- tar:
+    local-name: roscpp_traits
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_traits/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-roscpp_traits-0.5.7-0
+- tar:
+    local-name: rosgraph
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosgraph/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-rosgraph-1.11.19-0
+- tar:
+    local-name: rosgraph_msgs
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/rosgraph_msgs/1.11.2-0.tar.gz
+    version: ros_comm_msgs-release-release-indigo-rosgraph_msgs-1.11.2-0
+- tar:
+    local-name: roslang
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/roslang/1.11.12-0.tar.gz
+    version: ros-release-release-indigo-roslang-1.11.12-0
+- tar:
+    local-name: roslaunch
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roslaunch/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-roslaunch-1.11.19-0
+- tar:
+    local-name: roslib
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/roslib/1.11.12-0.tar.gz
+    version: ros-release-release-indigo-roslib-1.11.12-0
+- tar:
+    local-name: rosmaster
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosmaster/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-rosmaster-1.11.19-0
+- tar:
+    local-name: rosout
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosout/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-rosout-1.11.19-0
+- tar:
+    local-name: rospack
+    uri: https://github.com/ros-gbp/rospack-release/archive/release/indigo/rospack/2.2.6-0.tar.gz
+    version: rospack-release-release-indigo-rospack-2.2.6-0
+- tar:
+    local-name: rosparam
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosparam/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-rosparam-1.11.19-0
+- tar:
+    local-name: rospy
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rospy/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-rospy-1.11.19-0
+- tar:
+    local-name: rostime
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/rostime/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-rostime-0.5.7-0
+- tar:
+    local-name: rosunit
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/rosunit/1.11.12-0.tar.gz
+    version: ros-release-release-indigo-rosunit-1.11.12-0
+- tar:
+    local-name: std_msgs
+    uri: https://github.com/ros-gbp/std_msgs-release/archive/release/indigo/std_msgs/0.5.10-0.tar.gz
+    version: std_msgs-release-release-indigo-std_msgs-0.5.10-0
+- tar:
+    local-name: xmlrpcpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/xmlrpcpp/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-xmlrpcpp-1.11.19-0
+- tar:
     local-name: ecl_build
     uri: https://github.com/yujinrobot-release/ecl_tools-release/archive/release/indigo/ecl_build/0.61.4-0.tar.gz
     version: ecl_tools-release-release-indigo-ecl_build-0.61.4-0
@@ -102,4 +210,7 @@
     local-name: sophus
     uri: https://github.com/yujinrobot-release/sophus-release/archive/release/indigo/sophus/0.9.0-2.tar.gz
     version: sophus-release-release-indigo-sophus-0.9.0-2
-
+- tar:
+    local-name: rostest
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rostest/1.11.19-0.tar.gz
+    version: ros_comm-release-release-indigo-rostest-1.11.19-0
