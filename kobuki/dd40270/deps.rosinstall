@@ -372,20 +372,20 @@
     version: geometry-release-release-indigo-tf-1.11.3-1
 - tar:
     local-name: tf2
-    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/indigo/tf2/0.5.5-0.tar.gz
-    version: geometry_experimental-release-release-indigo-tf2-0.5.5-0
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2/0.5.5-0.tar.gz
+    version: geometry2-release-release-indigo-tf2-0.5.5-0
 - tar:
     local-name: tf2_msgs
-    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/indigo/tf2_msgs/0.5.5-0.tar.gz
-    version: geometry_experimental-release-release-indigo-tf2_msgs-0.5.5-0
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_msgs/0.5.5-0.tar.gz
+    version: geometry2-release-release-indigo-tf2_msgs-0.5.5-0
 - tar:
     local-name: tf2_py
-    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/indigo/tf2_py/0.5.5-0.tar.gz
-    version: geometry_experimental-release-release-indigo-tf2_py-0.5.5-0
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_py/0.5.5-0.tar.gz
+    version: geometry2-release-release-indigo-tf2_py-0.5.5-0
 - tar:
     local-name: tf2_ros
-    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/indigo/tf2_ros/0.5.5-0.tar.gz
-    version: geometry_experimental-release-release-indigo-tf2_ros-0.5.5-0
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_ros/0.5.5-0.tar.gz
+    version: geometry2-release-release-indigo-tf2_ros-0.5.5-0
 - tar:
     local-name: topic_tools
     uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/topic_tools/1.11.8-0.tar.gz

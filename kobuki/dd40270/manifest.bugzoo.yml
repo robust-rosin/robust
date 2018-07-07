@@ -11,8 +11,8 @@ blueprints:
       ROS_DISTRO: indigo
       CATKIN_PKG: kobuki_node
       REPO_FORK_URL: https://github.com/robust-rosin/kobuki
-      REPO_BUG_COMMIT: 6ce8bab89603028ab5bef9412b09da857b81e4bd
-      REPO_FIX_COMMIT: 978eab8ad305367aa15304ea6e27c376408ee57d
+      REPO_BUG_COMMIT: ad066e2c669211b2930ebe4d34ba99eb8599004a
+      REPO_FIX_COMMIT: 93ad2ed69068284c591f195ec9945581af34b79a
 
 bugs:
   - name: robust:dd40270

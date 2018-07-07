@@ -61,6 +61,17 @@ bug:
 
   trace: N/A
 
+  reproduction: >
+    Due to the renaming of the geometry_experimental repository to geometry2,
+    the rosinstall file had to be manually changed to use the correct URIs.
+    
+    The test case strategy is straightforward. Replace the ROS Publisher with
+    a class that crashes when the queue_size argument is not given.
+    
+    In order to use the faulty code directly, Python dynamic imports had to be
+    used, due to the fact that the bugs reside in executable scripts, which
+    are not part of the source code that is importable by standard means.
+
 fix:
 
   repo: https://github.com/yujinrobot/kobuki
