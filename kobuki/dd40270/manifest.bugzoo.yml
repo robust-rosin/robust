@@ -1,0 +1,30 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: robustrosin/robust:dd40270
+    file: ../../Dockerfile
+    arguments:
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: trusty
+      ROS_DISTRO: indigo
+      CATKIN_PKG: kobuki_node
+      REPO_FORK_URL: https://github.com/robust-rosin/kobuki
+      REPO_BUG_COMMIT: 6ce8bab89603028ab5bef9412b09da857b81e4bd
+      REPO_FIX_COMMIT: 978eab8ad305367aa15304ea6e27c376408ee57d
+
+bugs:
+  - name: robust:dd40270
+    image: robustrosin/robust:dd40270
+    program: kobuki_node
+    dataset: robust
+    languages:
+      - python
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
