@@ -1,0 +1,62 @@
+title: A broken dependecy on orocos_kdl library 
+
+description:
+  The build description for tfw_geometry_msgs does not properly resolve names of orocos libraries.  The problem is that names have to be searched for, not paths. The bug is fixed by adding a search resolving libraries by name.
+
+classification: Broken Build Dependency (no CWE)
+
+keywords: build | dependency | library | orocos
+
+system: core component
+
+severity: error
+
+links: 
+
+bug:
+
+  phase: build-time
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  applications: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package:  ros/geometry2/tf2_geometry_msgs
+
+  languages: CMake 
+
+  detected-by: build system
+
+  reported-by: guest user
+
+  issue: https://github.com/ros/geometry2/issues/53
+
+  time-reported: 2014-02-13 (9:40am GMT+1)
+
+  reproducibility: always
+
+  trace: N/A
+
+  reproduction: 
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: 4c160d3f1bde818fa201ba2c78e25a3e7d9b7cf6
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: tf2_geometry_msgs/CMakeLists.txt
+
+  languages: CMake
+
+  time: 2014-12-16 (10:01am GMT+1)
