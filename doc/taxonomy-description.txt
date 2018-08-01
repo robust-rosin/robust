@@ -144,6 +144,7 @@ hash:
 
 pull-request:
 	URI for pull request that fixed the bug.
+  Empty if no pull request (for instance direct commit).
 
 fix-in:
 	A list of the files that were updated when fixing the bug.
