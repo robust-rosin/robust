@@ -18,7 +18,8 @@ system: core component
 severity: error
 
 links: 
-  - https://github.com/ros/geometry2/pull/56
+  - https://github.com/ros/geometry2/pull/56 (the alternative, rejected fix)
+  - https://github.com/ros/geometry2/pull/59 (the version of accepted fix also pushed to indigo; the one listed below is in hydro)
 
 bug:
 
