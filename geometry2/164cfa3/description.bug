@@ -7,18 +7,21 @@ description:
 
   The bug is fixed by escaping the % character in the URL (%%).
   
-  NB. Not much later in the history the logWarn macro has been renamed, so locating the bug in git history requires precision.'
+  NB. Not much later in the history the logWarn macro has been renamed, so locating the bug in git history requires precision.
+
+  The bug has been fixed in indigo, and then the same fix has been merged back into hydro development.  This means that the bug has been found when the new release work was already started.'
 
 classification: CWE-628: Function Call with Incorrectly Specified Arguments
 
-keywords: printf | format string | security | varargs | stack
+keywords: printf | format string | security | varargs | stack | cross-branch
 
 system: core component
 
 severity: error
 
 links: 
-  https://github.com/ros/console_bridge/issues/18 the discussion leading to renaming of logWarn
+  - https://github.com/ros/console_bridge/issues/18 the discussion leading to renaming of logWarn
+  - https://github.com/ros/geometry2/pull/65 The pull request that fixes the same issue in the hydro branch
 
 bug:
 
