@@ -1,0 +1,70 @@
+title: Missing escape in a printf format string
+
+description:
+  'The logWarn macro takes a format string parameter in C printf style (it expands to a call to a console_bridge::log).  This macros is used in the BufferCore::setTransform function to produce a message containing a URL to a page with possible diagnostic information.  The link contains a verbatim string "%20e" which is interpreted by the log function as a format string that emits a floating point number in an exponential notation. 
+
+  This causes two problems: first the warning message is broken (the link is malformed), second an unsafe memory access happens during log execution---the argument list of a variadic function is accessed beyond its length. This likely accesses the stack beyond the argument part of the stack frame of the function, and (most likely) the return address of the call is being printed as the floating point number. This may be a security vulnerability.
+
+  The bug is fixed by escaping the % character in the URL (%%).
+  
+  NB. Not much later in the history the logWarn macro has been renamed, so locating the bug in git history requires precision.'
+
+classification: CWE-628: Function Call with Incorrectly Specified Arguments
+
+keywords: printf | format string | security | varargs | stack
+
+system: core component
+
+severity: error
+
+links: 
+  https://github.com/ros/console_bridge/issues/18 the discussion leading to renaming of logWarn
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  applications: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package:  ros/geometry2/tf2
+
+  languages: C++ 
+
+  detected-by: developer
+
+  reported-by: 
+
+  issue: 
+
+  time-reported: 
+
+  reproducibility: always
+
+  trace:
+
+  reproduction: 
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: 164cfa3ef1aad2d11b35894275730fe126e35d3e
+
+  pull-request: https://github.com/ros/geometry2/pull/62
+
+  license: BSD
+
+  fix-in:
+      - tf2/src/buffer_core.cpp
+
+  languages: C++
+
+  time: 2014-05-12 (21:11 GMT+1)
