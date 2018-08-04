@@ -11,7 +11,7 @@ description:
 
   The bug has been fixed in indigo, and then the same fix has been merged back into hydro development.  This means that the bug has been found when the new release work was already started.'
 
-classification: CWE-628: Function Call with Incorrectly Specified Arguments
+classification: CWE-209: Information Exposure Through an Error Message
 
 keywords: printf | format string | security | varargs | stack | cross-branch
 
