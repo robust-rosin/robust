@@ -16,6 +16,8 @@ system: core component
 severity: warning
 
 links: 
+  - https://en.wikipedia.org/wiki/One_Definition_Rule
+  - https://hubicka.blogspot.com/2014/09/devirtualization-in-c-part-6-enforcing.html An interesting post from the gcc developer implementing the ODR checker. Lists problems and dangers, rationalizing the rule and the enforcement.
 
 bug:
 
