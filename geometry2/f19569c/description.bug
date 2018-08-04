@@ -7,6 +7,8 @@ description:
 
   In general ODR violations can be symptopms of more serious dependency issues, name violation issues, name-space problems, or cut & paste programming. In this particular case, it seems that the violation was not harmful, and the "inline" modifier was mostly added to remove a compiler warning.
 
+  The pull request has addressed also other unrelated issues, through several commits. The commit referenced below in the description is the one that fixes the ODR issue.
+
 classification: One definition rule violation (no CWE)
 
 keywords: build | types and names 
