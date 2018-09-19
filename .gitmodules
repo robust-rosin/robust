@@ -1,0 +1,3 @@
+[submodule "scripts/rosinstall_generator_time_machine"]
+	path = scripts/rosinstall_generator_time_machine
+	url = https://github.com/rosin-project/rosinstall_generator_time_machine
