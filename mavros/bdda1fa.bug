@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Run-time missing attribute/method error
-
-description:
+description: >
      Following a rosrun call to mavsetp (e.g., rosrun mavros mavsetp
      local -p 2 2 2 2), a missing attribute is encountered on line 40
      of the "mavsetp" (Python) script. The attribute in question is
@@ -15,59 +16,39 @@ description:
      regression into the "mavsetp" script by failing to remove the
      "guided_enabled" call and replace it with an appropriate
      "set_mode" call.
-
-classification: Undeclared Identifier (no CWE) #EVOLUTION: CWE-439
-
-keywords: call to missing method
-
+classification: "Undeclared Identifier (no CWE) #EVOLUTION: CWE-439"
+keywords:
+  - call to missing method
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-initialization
-
-  specificity: 
-
+  specificity: UNKNOWN
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: Python
-
+  package: mavros
+  languages:
+    - Python
   detected-by: user
-
   reported-by: user
-
   issue: https://github.com/mavlink/mavros/issues/478
-
   time-reported: 2016-01-21 (00:00)
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: bdda1fab32a9d084cfe980fe4f364b5eb35173e0
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: mavros/scripts/mavsetp | mavros/src/mavros/command.py
-
-  languages: Python
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/scripts/mavsetp
+    - mavros/src/mavros/command.py
+  languages:
+    - Python
   time: 2016-01-22 (00:00)

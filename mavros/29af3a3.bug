@@ -1,79 +1,59 @@
-title: mavros ignores SIGINT and `rosnode kill mavros`
-
-description:
+%YAML 1.1
+---
+title: "mavros ignores SIGINT and `rosnode kill mavros`"
+description: >
      MAVROS ignores SIGNT and `rosnode kill mavros`, but correctly
      handles SIGTERM. Additionally, termination upon port closure also
      fails, and produces the output given below.
-  
+
      [ERROR] [1408358771.110588398]: serial0:receive: End of file
      terminate called after throwing an instance of
      'std::system_error' what(): Resource deadlock avoided
-  
+
      This behaviour was caused by a premature closure of the serial device:
-  
+
      serial_dev.close();
      io_service.stop();
-  
+
      The premature closure of the serial device caused io_service::run
      to continue indefinitely, leading to a hang upon join in
      MAVConnSerial::close.
-  
+
      The fix moves "serial_dev.close()" to immediately below
      "io_service.stop()", which then terminates correctly and resolves
      the bug.
-
-classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE
-
-keywords: signal handling
-
+classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
+keywords:
+  - signal handling
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
-  specificity: 
-
+  specificity: UNKNOWN
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: C++
-
+  package: mavros
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/mavlink/mavros/issues/130
-
   time-reported: 2014-08-18 (00:00)
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 29af3a3c14da0e5b92ebad40b8befa8e0141b63d
-
   pull-request: https://github.com/mavlink/mavros/pull/527
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: libmavconn/src/serial.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - libmavconn/src/serial.cpp
+  languages:
+    - C++
   time: 2016-03-27 (00:00)

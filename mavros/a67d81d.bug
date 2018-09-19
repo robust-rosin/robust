@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Missing type conversion in u8->hex conversion
-
-description:
+description: >
      The "array_to_hex_string" helper function in "sys_status.cpp"
      accepts an array of uint8_t (along with an argument specifying
      its size), and returns a hexadecimal string describing the
@@ -10,59 +11,39 @@ description:
      uint8_t as if it were an int, producing an incorrect result. The
      fixed version of this function explicitly converts the uint8_t to
      an int before passing it to the ostringstream.
-
-classification: CWE-704: Incorrect Type Conversion or Cast
-
-keywords: type conversion | signedness
-
+classification: "CWE-704: Incorrect Type Conversion or Cast"
+keywords:
+  - type conversion
+  - signedness
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
-  specificity: general issue: missing type conversion
-
+  specificity: "general issue: missing type conversion"
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: 
-
+  package: mavros
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
-  issue: N/A
-
+  issue: https://github.com/mavlink/mavros/issues/300
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: a67d81d05776a5431e9c0e77f51602ce7987fc7b
-
-  pull-request: 
-
-  license: BSD | GPLv3 | LGPLv3
-
+  pull-request: None
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
   fix-in:
-
-  languages: 
-
-  time: unfixed
+    - mavros/src/plugins/sys_status.cpp
+  languages:
+    - C++
+  time: 2018-06-16

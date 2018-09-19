@@ -1,61 +1,40 @@
+%YAML 1.1
+---
 title: Incorrect name of class used to register plugin
-
-description:
+description: >
      An incorrect name, "SetpointActuatorControlPlugin", was used to
      export the "ActuatorControlPlugin" class as a MAVROS plugin.
-
 classification: Incorrect Class Name (no CWE)
-
-keywords: incorrect class name
-
+keywords:
+  - incorrect class name
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: compile-time
-
-  specificity: general issue: incorrect parameter name
-
+  specificity: "general issue: incorrect parameter name"
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
   package: mavlink/mavros
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: dab1b8a16d6194056cb7e76215ecf299d1a90f08
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
   fix-in: mavros/src/plugins/actuator_control.cpp
-
-  languages: C++
-
+  languages:
+    - C++
   time: 2015-02-28 (00:00)

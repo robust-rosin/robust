@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Missing bounds checking code in legacy mode
-
-description:
+description: >
      The "UAS::orientation_from_str" function accepts a string that
      gives the name of one of 39 pre-defined orientations (e.g.,
      "NONE", "YAW_45", "ROLL_90_PITCH_90"), and returns an integer,
@@ -19,63 +20,41 @@ description:
      checking code that ensures that the integer is within the
      expected range, and if not, it reports an error to ROS and
      returns -1, indicating failure.
-  
+
      Note, a test case is added to
      "mavros/test/test_sensor_orientation.cpp" to demonstrate this
      bug.
-
-classification: CWE-20: Improper Input Validation
-
-keywords: missing input validation
-
+classification: "CWE-20: Improper Input Validation"
+keywords:
+  - missing input validation
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-initialization
-
   specificity: UNCLEAR
-
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
   package: mavlink/mavros
-
   languages: C++
-
   detected-by: developer
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 4fb6e7e8190145ba6fa49fa6e13cc49730885b7f
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: mavros/src/lib/uas_sensor_orientation.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/lib/uas_sensor_orientation.cpp
+  languages:
+    - C++
   time: 2015-08-02 (00:00)

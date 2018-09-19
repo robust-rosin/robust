@@ -35,7 +35,8 @@ fix:
     - BSD
     - GPLv3
     - LGPLv3
-  fix-in: libmavconn/include/mavconn/interface.h
+  fix-in:
+    - libmavconn/include/mavconn/interface.h
   languages:
     - C++
   time: 2014-11-02 (00:00)

@@ -1,6 +1,7 @@
-title: Incorrect string length 
-
-description:
+%YAML 1.1
+---
+title: Incorrect string length
+description: >
      On line 210 of "sys_status.cpp", the contents of a decoded
      message (represented by a std::string) are copied to a local
      std::string variable, "text". The parameters for the
@@ -11,59 +12,37 @@ description:
      than in characters. The fixed version of the code determines the
      number of characters in the decoded message using the "strnlen"
      function.
-
 classification: CWE-137 Representation Errors
-
-keywords: string length 
-
+keywords: string length
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
-  specificity: general issue: size passed in bytes instead of length
-
+  specificity: "general issue: size passed in bytes instead of length"
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: C++
-
+  package: mavros
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 2998e9f7f9e0fb969e7248a46d5ecd0749614d06
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: src/plugins/sys_status.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - src/plugins/sys_status.cpp
+  languages:
+    - C++
   time: 2014-01-13 (00:00)

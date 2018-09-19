@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Incorrect use of namespacing in ROS parameter names
-
-description:
+description: >
      All ROS parameter interactions within
      "mavros_extras/src/plugins/visualization.cpp" incorrectly prefix
      the name of parameters with a "visualization" namespace. This
@@ -8,59 +9,40 @@ description:
      result are incorrect. e.g., "visualization/fixed_frame_id"
      becomes "/visualization/visualization/fixed_frame_id" when fully
      qualified.
-
-classification: Incorrect use of ROS namespacing (no CWE) #EVOLUTION
-
-keywords: API change | incorrect parameter name | namespace issue
-
+classification: "Incorrect use of ROS namespacing (no CWE) #EVOLUTION"
+keywords:
+  - API change
+  - incorrect parameter name
+  - namespace issue
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-initialization
-
-  specificity: gneral issue: incorrect parameter name 
-
+  specificity: "general issue: incorrect parameter name"
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: C++
-
+  package: mavros
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
   issue: https://github.com/mavlink/mavros/issues/207
-
   time-reported: 2015-02-03 (00:00)
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 84264f01aeea79b345fe9f397da8c4759b7846fb
-
   pull-request: N/A
-
-  license: BSD, GPLv3, LGPLv3
-
-  fix-in: mavros_extras/src/plugins/visualization.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros_extras/src/plugins/visualization.cpp
+  languages:
+    - C++
   time: 2015-03-05 (00:00)
