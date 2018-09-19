@@ -1,0 +1,34 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: robustrosin/robust:08cd181
+    file: ../../Dockerfile
+    context: .
+    arguments:
+      IS_BUILD_FAILURE: "yes"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: trusty
+      ROS_DISTRO: hydro
+      CATKIN_PKG: mavros
+      # FIXME
+      REPO_FORK_URL: https://github.com/mavlink/mavros
+      # FIXME CT couldn't see any ROBUST tags or branches on this fork
+      REPO_BUG_COMMIT: 665484a19c47771cc68200b2cd2c5c75a77995ac
+      REPO_FIX_COMMIT: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
+
+bugs:
+  - name: robust:08cd181
+    image: robustrosin/robust:08cd181
+    program: mavros
+    dataset: robust
+    # FIXME
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300

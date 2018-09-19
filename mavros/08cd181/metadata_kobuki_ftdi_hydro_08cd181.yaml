@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 08cd181
+put: kobuki_ftdi
+ros_distro: hydro
+datetime_reported: 2014-11-02T13:28:17Z
+issue_url: https://github.com/mavlink/mavros/issues/161
+reproduction-images:
+  buggy: TODO
+  fixed: TODO
+  rosdistro: af560abb09419274eb11b6e20ea46496573e9425
