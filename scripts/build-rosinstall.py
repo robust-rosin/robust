@@ -25,11 +25,18 @@ def find_bug_descriptions(d):
     return buff
 
 
-def build_file(fn_bug_desc):
+def build_file(fn_bug_desc, overwrite=False):
     logger.info("building rosinstall file for file: %s", fn_bug_desc)
     bug_id = os.path.basename(fn_bug_desc)[:-4]
     dir_bug = os.path.join(os.path.dirname(fn_bug_desc), bug_id)
     fn_rosinstall = os.path.join(dir_bug, 'deps.rosinstall')
+
+    if os.path.isfile(fn_rosinstall):
+        if overwrite:
+            logger.warning("overwriting file: %s", fn_rosinstall)
+        else:
+            logger.info("skipping existing file: %s", fn_rosinstall)
+            return
 
     if not os.path.isdir(dir_bug):
         logger.debug("creating directory for bug [%s]: %s", bug_id, dir_bug)
@@ -42,7 +49,7 @@ def build_file(fn_bug_desc):
     if 'issue' in d['time-machine']:
         issue_or_datetime = d['time-machine']['issue']
     elif 'datetime' in d['time-machine']:
-        issue_or_datetime = d['time-machine']['datetime']
+        issue_or_datetime = str(d['time-machine']['datetime'])
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
@@ -58,33 +65,35 @@ def build_file(fn_bug_desc):
         ros_pkgs[0],
         os.path.abspath(fn_rosinstall),
     ]
+    logger.debug("executing command: %s", ' '.join(cmd))
     subprocess.check_call(cmd, cwd=DIR_TIME_MACHINE)
 
 
-def build_dir(d):
+def build_dir(d, overwrite=False):
     logger.info("building rosinstall files for directory: %s", d)
     files = find_bug_descriptions(d)
     for fn in files:
         try:
-            build_file(fn)
+            build_file(fn, overwrite=overwrite)
         except Exception:
             logger.exception("failed to create rosinstall file for bug: %s", fn)
 
 
 def main():
     log_to_stdout = logging.StreamHandler()
-    log_to_stdout.setLevel(logging.INFO)
+    log_to_stdout.setLevel(logging.DEBUG)
     logger.addHandler(log_to_stdout)
 
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument('file_or_dir', type=str)
+    parser.add_argument('--overwrite', action='store_true')
     args = parser.parse_args()
     fn_or_dir = args.file_or_dir
 
     if os.path.isdir(fn_or_dir):
-        build_dir(fn_or_dir)
+        build_dir(fn_or_dir, overwrite=args.overwrite)
     elif os.path.isfile(fn_or_dir):
-        build_file(fn_or_dir)
+        build_file(fn_or_dir, overwrite=args.overwrite)
     else:
         logger.error("ERROR: expected a filename or directory.")
         sys.exit(1)
