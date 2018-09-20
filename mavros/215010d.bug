@@ -42,7 +42,6 @@ bug:
   time-reported: N/A
   reproducibility: N/A
   trace: N/A
-
 fix:
   repo: https://github.com/mavlink/mavros
   hash: 215010d25409211ccfb35375c218c74c921b1a3a
@@ -56,3 +55,8 @@ fix:
   languages:
     - C++
   time: 2014-06-30 (00:00)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  datetime: 2014-06-30

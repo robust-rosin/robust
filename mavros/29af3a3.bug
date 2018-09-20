@@ -57,3 +57,8 @@ fix:
   languages:
     - C++
   time: 2016-03-27 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/130

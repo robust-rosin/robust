@@ -46,3 +46,8 @@ fix:
   languages:
     - C++
   time: 2014-01-13 (00:00)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  datetime: 2014-01-13

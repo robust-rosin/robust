@@ -26,11 +26,10 @@ bug:
     - C++
   detected-by: developer
   reported-by: contributor
-  issue: mavconn transmission hangs on high packet count
+  issue: https://github.com/mavlink/mavros/issues/72
   time-reported: 2014-07-31 (00:00)
   reproducibility: N/A
   trace: N/A
-
 fix:
   repo: https://github.com/mavlink/mavros
   hash: 1f019166ccedf8ce5151944f5e33302afaf82679
@@ -45,3 +44,8 @@ fix:
   languages:
     - C++
   time: 2014-08-04 (00:00)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/72

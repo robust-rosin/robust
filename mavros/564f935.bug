@@ -53,3 +53,8 @@ fix:
   languages:
     - Python
   time: 2015-06-16 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-06-16
