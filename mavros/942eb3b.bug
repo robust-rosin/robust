@@ -38,3 +38,8 @@ fix:
   languages:
     - CMake
   time: 2014-11-02 (00:00)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  datetime: 2014-11-02

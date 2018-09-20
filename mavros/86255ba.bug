@@ -29,7 +29,7 @@ bug:
     - C++
   detected-by: developer
   reported-by: contributor
-  issue: rerequest don't count down retry counter.
+  issue: https://github.com/mavlink/mavros/issues/276
   time-reported: 2015-04-18 (00:00)
   reproducibility: N/A
   trace: N/A
@@ -46,3 +46,8 @@ fix:
   languages:
     - C++
   time: 2015-04-18 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/276
