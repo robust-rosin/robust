@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 DIR_HERE = os.path.dirname(__file__)
-DIR_TIME_MACHINE = os.path.abspath(os.path.join(DIR_HERE, 'time_machine'))
+# DIR_TIME_MACHINE = os.path.abspath(os.path.join(DIR_HERE, 'time_machine'))
 
 DESCRIPTION = "build-rosinstall"
 
@@ -58,7 +58,7 @@ def build_file(fn_bug_desc, overwrite=False):
         raise Exception("the time machine doesn't currently support more than ROS package")
 
     cmd = [
-        './rosinstall_generator_tm.sh',
+        'rosinstall_generator_tm.sh',
         issue_or_datetime,
         bug_id,
         d['time-machine']['ros_distro'],
@@ -66,7 +66,7 @@ def build_file(fn_bug_desc, overwrite=False):
         os.path.abspath(fn_rosinstall),
     ]
     logger.debug("executing command: %s", ' '.join(cmd))
-    subprocess.check_call(cmd, cwd=DIR_TIME_MACHINE)
+    subprocess.check_call(cmd, cwd=DIR_HERE)
 
 
 def build_dir(d, overwrite=False):
