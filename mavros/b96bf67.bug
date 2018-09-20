@@ -45,3 +45,8 @@ fix:
   languages:
     - C++
   time: 2016-04-29 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2016-04-29

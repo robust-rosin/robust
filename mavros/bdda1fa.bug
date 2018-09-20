@@ -52,3 +52,8 @@ fix:
   languages:
     - Python
   time: 2016-01-22 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/478
