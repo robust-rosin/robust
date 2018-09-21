@@ -1,69 +1,43 @@
+%YAML 1.1
+---
 title: Unknown Type Due to Missing Include
-
-description:
+description: >
      The compiler complains about not knowing the type `uint16_t`,
      which is declared in `stdint.h`.
-
      The original code relied on another library (libusb-dev) to
      include the required header as a dependency, instead of including
      it directly.  This worked only for some systems.
-
-classification: Missing Include / Dependency (no CWE)
-
-internal classification (cause):
-
-internal classification (effect):
-
-keywords: includes | header files | stdint | dependencies
-
+classification: >
+  Missing Include / Dependency (no CWE)
+  internal classification (cause):
+  internal classification (effect):
+keywords: ['includes', 'header files', 'stdint', 'dependencies']
 system: kobuki
-
 severity: error
-
-links: 
-
+links: []
 bug:
-  
   phase: compile-time
-
   specificity: general-issue
-
   architectural-location: application-specific code
-
-  application: 
-
+  application: null
   task: N/A
-
   subsystem: driver
-
   package: yujinrobot/kobuki/kobuki_ftdi
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: compiler
-
   reported-by: guest user
-
   issue: https://github.com/yujinrobot/kobuki/issues/220
-
   time-reported: 2013-01-24 (21:33)
-
   reproducibility: sometimes
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki
-
   hash: 0027b57fea017e610baa226b6645a5a1c071f05c | 087aa595f7c93ed7f34c3fb9db5629532bdf972a
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_ftdi/include/kobuki_ftdi/scanner.hpp | kobuki_ftdi/manifest.xml
-
-  languages: C++ | package.xml
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_ftdi/include/kobuki_ftdi/scanner.hpp', 'kobuki_ftdi/manifest.xml']
+  languages:
+    - C++
+    - package.xml
   time: 2013-01-25 (08:40)

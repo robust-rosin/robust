@@ -1,13 +1,13 @@
+%YAML 1.1
+---
 title: Outdated parameter file
-
-description:
+description: >
      The Kobuki (Turtlebot) robot has a graphical tool (Kobuki
      Dashboard) that shows the status of the various components of the
      robot and allows access to basic functionalities
      (e.g. LEDs). This tool runs as a ROS node that subscribes to the
      diagnostics aggregator node
      (ros/diagnostics/diagnostic_aggregator/aggregator_node).
-
      The diagnostics aggregator consumes a series of parameters from
      the ROS parameter server, in order to know which diagnostics to
      aggregate, how to process them and how to output them. Said
@@ -16,65 +16,38 @@ description:
      prefix that should be present in the names of incoming
      diagnostics sources. If there is no match, the diagnostics are
      not processed.
-
      This bug manifested because the parameter file used an old prefix
      that had not been changed. As a result, diagnostics were not
      being processed, and not shown in the dashboard. The fix is to
      simply change the values of `remove_prefix` in the parameter file
      to the correct ones.
-
-classification: Inconsistent naming (no CWE) #EVOLUTION: CWE-439
-
-keywords: parameter | rosparam | yaml
-
+classification: "Inconsistent naming (no CWE) #EVOLUTION: CWE-439"
+keywords: ['parameter', 'rosparam', 'yaml']
 system: kobuki
-
 severity: error
-
-links: http://wiki.ros.org/kobuki_dashboard | http://wiki.ros.org/diagnostic_aggregator | http://wiki.ros.org/Parameter%20Server | http://wiki.ros.org/rosparam
-
+links: ['http://wiki.ros.org/kobuki_dashboard', 'http://wiki.ros.org/diagnostic_aggregator', 'http://wiki.ros.org/Parameter%20Server', 'http://wiki.ros.org/rosparam']
 bug:
-  
   phase: runtime-initialization
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
   application: diagnostics dashboard
-
   task: diagnostics
-
   subsystem: generic component
-
   package: yujinrobot/kobuki/kobuki_node
-
-  languages: rosparam YAML
-
+  languages:
+    - rosparam YAML
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/yujinrobot/kobuki/issues/350
-
   time-reported: 2014-08-26 (06:52)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/yujinrobot/kobuki
-
   hash: 8a729db54ee9a8b43f4634ab8052ddaa24d517fd
-
-  pull-request: N/A
-
-  license: BSD
-
-  fix-in: kobuki_node/param/diagnostics.yaml
-
-  languages: rosparam YAML
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_node/param/diagnostics.yaml']
+  languages:
+    - rosparam YAML
   time: 2014-08-26 (06:54)

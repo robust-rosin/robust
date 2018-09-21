@@ -1,65 +1,37 @@
+%YAML 1.1
+---
 title: Bumpers Stopped Working In Simulation
-
-description:
+description: >
      Some logical error in the implementation of the Gazebo plugin
      caused the simulated bumpers to stop working properly.  No
      additional details are provided.
-
      The fix replaces some variables with boolean flags and moves the
      ordering of some statements.
-
 classification: Wrong behavior (no CWE) #PHYSICAL
-
-keywords: bumper | gazebo | simulaton
-
+keywords: ['bumper', 'gazebo', 'simulaton']
 system: kobuki
-
 severity: error
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-operation
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
   application: 
-
   task: simulation
-
   subsystem: simulation plugin
-
   package: yujinrobot/kobuki_desktop/kobuki_gazebo_plugins
-
   languages: N/A
-
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/19
-
   time-reported: 2013-08-28 (11:38)
-
   reproducibility: always
-
   trace:
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki_desktop
-
   hash: acd5bfbd5513fb915d54fe7662fb345237f18490
-
   pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_gazebo_plugins/include/kobuki_gazebo_plugins/gazebo_ros_kobuki.h | kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp
-
+  license: ['BSD']
+  fix-in: ['kobuki_gazebo_plugins/include/kobuki_gazebo_plugins/gazebo_ros_kobuki.h', 'kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
   languages: C++
-
   time: 2013-08-29 (04:29)

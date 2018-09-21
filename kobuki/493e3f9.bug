@@ -1,67 +1,40 @@
+%YAML 1.1
+---
 title: Wrong Inertia and Center of Mass in Robot Description
-
-description:
+description: >
      The URDF file for Kobuki's physical model assumed the center of
      mass to be in the center of the robot's cylinder body. This is
      wrong, since the battery was intentionally placed at the front of
      the robot to make it heavier at the front.
-
      The wrong placement of the robot's center of mass had the effect
      of having it constantly bouncing back and forth in the Gazebo
      simulator.
-
 classification: Wrong Robot Model (no CWE) #PHYSICAL
-
-keywords: xacro | urdf | gazebo | simulation
-
+keywords: ['xacro', 'urdf', 'gazebo', 'simulation']
 system: kobuki
-
 severity: minor-issue
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-operation
-
   specificity: robotics-specific
-
   architectural-location: application-specific code
-
   application: mobile robot
-
   task: simulation
-
   subsystem: driver
-
   package: yujinrobot/kobuki/kobuki_description
-
-  languages: N/A
-
+  languages: null
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/yujinrobot/kobuki/issues/271
-
   time-reported: 2013-06-17 (05:24)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/yujinrobot/kobuki
-
   hash: 493e3f9c9f65fbf0283571ca92b89a7203e5f287
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_description/urdf/kobuki.urdf.xacro
-
-  languages: URDF
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_description/urdf/kobuki.urdf.xacro']
+  languages:
+    - URDF
   time: 2013-08-20 (10:22)
