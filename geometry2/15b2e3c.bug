@@ -1,63 +1,37 @@
+%YAML 1.1
+---
 title: Race conditions in startup code of TF2
-
-description: 
+description: >
   A buffer server node is being start with an autostart parameter (which is picked up due to a default value of the autostart parameter).  Unfortunately, this supposedly causes race conditions in initialization code. A warning is produced that this may happen.
-
   The fix removes the autostart, and starts the server manually.  There is some understanding, that this is a minor problem, as the race condition should not have any serious effect on this module.
-
-classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE
-
-keywords: race condition | concurrency 
-
+classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
+keywords: ['race condition', 'concurrency']
 system: core component
-
 severity: minor-issue
-
-links: 
-  https://github.com/ros/geometry2/issues/15 (another issue that seems to be reporting the same)
-
+links:
+  - https://github.com/ros/geometry2/issues/15 (another issue that seems to be reporting the same)
 bug:
-
   phase: runtime
-
   specificity: general issue
-
   architectural-location: platform code
-
-  application: N/A
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: generic task component
-
   package: ros/geometry2/tf2_ros
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: runtime detection
-
   reported-by: member developer
-
   issue: https://github.com/ros/geometry2/issues/9
-
   time-reported: Jun 27, 2013, 8:41 PM GMT+2
-
-  reproducibility: 
-
-  trace: N/A
-
+  reproducibility: null
+  trace: null
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: https://github.com/ros/geometry2/commit/15b2e3c52152ee4fc19c55ec76f049e990c05809
-
   pull-request: https://github.com/ros/geometry2/pull/10
-
-  license: BSD
-
-  fix-in: tf2_ros/include/tf2_ros/buffer_server.h |  tf2_ros/src/buffer_server_main.cpp
-
-  languages: C++
-
+  license: ['BSD']
+  fix-in: ['tf2_ros/include/tf2_ros/buffer_server.h', 'tf2_ros/src/buffer_server_main.cpp']
+  languages:
+    - C++
   time: Jul 10, 2013, 8:48 AM GMT+2

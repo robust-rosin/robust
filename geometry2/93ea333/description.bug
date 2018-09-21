@@ -1,67 +1,39 @@
+%YAML 1.1
+---
 title: Unused assignments to local variables
-
-description: 
+description: >
   Two assingments in max/min computations were found that needlessly updated a local variable just before the function returns, without accessing the variables. This is likely caused by symmmetric shape of the code, and the last case being formed following the same scheme as the previous cases (where the assignment was not stale).
-
   CWE refers to this problem as 'dead store'. This does not seem to a cause a problem directly, but is considered an indication of low quality, and likely a manifestation of other problems.  Thus CWE recommends cleaning.  In this case in tf2, it does not appear that this problem was causing any noticable harm (besides noise).
-
   The error has been found by a static analyzer of clang.
-
 classification: CWE-563: Assignment to Variable without Use
-
-keywords: c++ | dead store | assignment
-
+keywords: ['c++', 'dead store', 'assignment']
 system: core component
-
 severity: bad-smell
-
-links: 
-
+links: []
 bug:
-
   phase: compile-time
-
   specificity: general issue
-
   architectural-location: platform code
-
-  application: N/A
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: generic task component
-
   package: ros/geometry2/tf2
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: code scanning tool
-
   reported-by:  member developer
-
-  issue: 
-
+  issue: null
   time-reported: 2015-03-03 (02:10 AM GMT+1)
-
   reproducibility: always
-
-  trace:
-
-  reproduction: 
+  trace: null
+  reproduction: >
     Rerun the clang static checker or find the comparable gcc flag.
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 93ea33319d60d4787afa63d50fa824c3bacc1921
-
   pull-request: https://github.com/ros/geometry2/pull/81
-
-  license: BSD
-
-  fix-in: tf2/include/tf2/LinearMath/Vector3.h
-
-  languages: C++ 
-
+  license: ['BSD']
+  fix-in: ['tf2/include/tf2/LinearMath/Vector3.h']
+  languages:
+    - C++
   time: 2015-03-03 (09:36 AM GMT+1)
