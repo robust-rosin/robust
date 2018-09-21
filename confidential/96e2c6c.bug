@@ -1,14 +1,13 @@
+%YAML 1.1
+---
 title: Incorrect joint position order used in trajectory generation
-
-description:
+description: >
      Joint space trajectory generation uses the given initial and
      target joint positions in an incorrect order.
-
      The algorithm's input consists in, amongst other parameters, two
      instances of `sensor_msgs::JointState` class. This class contains
      an array of strings containing the joint names and another array
      containing the joint positions.
-
      The algorithm, which is internally used by a robot controller
      node, assumes that the initial and target joint states are
      provided in the same order, and only checks that both inputs
@@ -16,61 +15,34 @@ description:
      true in general, but under certain circumstances a different
      ordering might be used in the initial and target joint positions,
      resulting in highly unpredictable outcomes.
-
-classification: CWE-440: Expected Behavior Violation
-
-keywords: jointstates | joint ordering
-
+classification: "CWE-440: Expected Behavior Violation"
+keywords: ['jointstates', 'joint ordering']
 system: confidential
-
 severity: error
-
-links: http://docs.ros.org/api/sensor_msgs/html/msg/JointState.html
-
+links: ['http://docs.ros.org/api/sensor_msgs/html/msg/JointState.html']
 bug:
-
   phase: runtime-operation
-
   specificity: robotics-specific
-
   architectural-location: application-specific code
-
   application: manipulator controller
-
   task: manipulation
-
   subsystem: controller
-
   package: core_manipulator_controller
-
   reactive:
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: runtime crash
-
   reported-by: guest user
-
-  issue: N/A
-
-  time-reported: N/A
-
+  issue: null
+  time-reported: null
   reproducibility: sometimes
-
   trace: TBD
-
 fix:
-
   repo: CONFIDENTIAL
-
   hash: 96e2c6ce746e187ea4276360909e9a71773c3119
-
-  pull-request: N/A
-
-  license: BSD
-
-  fix-in: trajectory_generation.cpp | utils.h
-
-  languages: C++
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['trajectory_generation.cpp', 'utils.h']
+  languages:
+    - C++
   time: 2017-02-09 (16:43)
