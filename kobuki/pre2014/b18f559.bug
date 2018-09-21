@@ -8,7 +8,7 @@ description: >
      names.  Another issue was having multiple functions that were
      doing mostly the same thing, but named accordingly to each
      protocol version (e.g. `getData`, `getData2`, `getDefaultData`).
-classification: CWE-477: Use of Obsolete Functions #EVOLUTION
+classification: "CWE-477: Use of Obsolete Functions #EVOLUTION"
 keywords: ['protocol', 'topics', 'api', 'driver']
 system: kobuki
 severity: bad-smell
@@ -17,11 +17,11 @@ bug:
   phase: runtime-operation
   specificity: ROS-specific
   architectural-location: application-specific code
-  application: 
-  task: N/A
+  application: null
+  task: null
   subsystem: driver
   package: yujinrobot/kobuki/kobuki_node
-  languages: N/A
+  languages: null
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/yujinrobot/kobuki/issues/27
@@ -31,8 +31,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: b18f55910cc032f967b436b26710c01ec435291d
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp', 'kobuki_node/include/kobuki_node/kobuki_node.hpp', 'kobuki_node/src/nodelets/kobuki_node.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2012-04-09 (06:34)

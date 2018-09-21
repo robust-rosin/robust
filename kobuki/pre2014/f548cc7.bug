@@ -16,7 +16,7 @@ description: >
      leading to manipulation of uninitialized state if there was
      premature input to process. The fix also places thread start at
      the right time.
-classification: CWE-248: Uncaught Exception
+classification: "CWE-248: Uncaught Exception"
 keywords: ['teleop', 'exceptions', 'interrupt']
 system: kobuki
 severity: error
@@ -29,7 +29,8 @@ bug:
   task: teleoperation
   subsystem: generic task component
   package: yujinrobot/kobuki/kobuki_keyop
-  languages: C++
+  languages:
+    - C++
   detected-by: runtime crash
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/180
@@ -47,8 +48,10 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: f548cc73fb2959c7ceb6ab1c7f5a973bf95e5594
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_keyop/include/keyop_core/keyop_core.hpp', 'kobuki_keyop/manifest.xml', 'kobuki_keyop/src/keyop_core.cpp', 'kobuki_keyop/src/main.cpp']
-  languages: C++ | Package XML
+  languages:
+    - C++
+    - Package XML
   time: 2012-12-01 (06:26)

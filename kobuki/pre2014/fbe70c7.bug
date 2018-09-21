@@ -23,7 +23,7 @@ bug:
   task: teleoperation
   subsystem: specific application component
   package: yujinrobot/kobuki/kobuki_meta
-  languages: N/A
+  languages: null
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/yujinrobot/kobuki/issues/25
@@ -33,8 +33,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: fbe70c7d5e6d3b85fea6296c23039958c428e6df
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_meta/resources/launch/components/base.launch', 'kobuki_meta/resources/launch/keyop.launch']
-  languages: Launch XML
+  languages:
+    - Launch XML
   time: 2012-04-05 (23:57)

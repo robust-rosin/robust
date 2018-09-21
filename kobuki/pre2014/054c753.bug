@@ -18,7 +18,7 @@ description: >
      with the `open` function. In short, calling the functions in the
      wrong order leads to using uninitialized values, causing the
      wrong behaviour.
-classification: CWE-908: Use of Uninitialized Resource #RESOURCE
+classification: "CWE-908: Use of Uninitialized Resource #RESOURCE"
 keywords: ['serial', 'ecl', 'terminal', 'blocking']
 system: kobuki
 severity: error
@@ -28,10 +28,11 @@ bug:
   specificity: general-issue
   architectural-location: application-specific code
   application: mobile robot
-  task: N/A
+  task: null
   subsystem: driver
   package: yujinrobot/kobuki/kobuki_driver
-  languages: C++
+  languages:
+    - C++
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/272
@@ -44,5 +45,6 @@ fix:
   pull-request: https://github.com/yujinrobot/kobuki/pull/278
   license: ['BSD']
   fix-in: ['kobuki_driver/src/driver/kobuki.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2013-08-01 (07:33)

@@ -20,7 +20,7 @@ description: >
      when using nodelets. The fix consists on storing shared pointers
      to messages, so that the pointers can be published instead of a
      copy of the message structure.
-classification: Creating Unnecessary Copies of Objects (no CWE) #RESOURCE
+classification: "Creating Unnecessary Copies of Objects (no CWE) #RESOURCE"
 keywords: ['nodelet', 'shared memory', 'publish', 'pointer', 'object copy']
 system: kobuki
 severity: bad-smell
@@ -33,8 +33,9 @@ bug:
   task: communication
   subsystem: driver
   package: yujinrobot/kobuki/kobuki_node
-  reactive: 
-  languages: C++
+  reactive: null
+  languages:
+    - C++
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/yujinrobot/kobuki/issues/183
@@ -44,8 +45,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: dbcdb12acb4b7811084d4f4dc75e0408b9899de0
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_node/include/kobuki_node/odometry.hpp', 'kobuki_node/src/library/odometry.cpp', 'kobuki_node/src/library/slot_callbacks.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2012-12-04 (05:59)

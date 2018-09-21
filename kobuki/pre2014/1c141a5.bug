@@ -9,7 +9,7 @@ description: >
      This lead to calculation errors in some special cases, where the
      robot was supposed to move forward but ended up moving backwards
      instead.
-classification: CWE-704: Incorrect Type Conversion or Cast #PHYSICAL
+classification: "CWE-704: Incorrect Type Conversion or Cast #PHYSICAL"
 keywords: ['differential drive', 'rounding', 'driver', 'movement']
 system: kobuki
 severity: error
@@ -22,7 +22,8 @@ bug:
   task: differential drive
   subsystem: driver
   package: yujinrobot/kobuki/kobuki_driver
-  languages: C++
+  languages:
+    - C++
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/246
@@ -32,8 +33,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 1c141a54fb2c0e2ec453b32f8026d1cd0ffb14d9
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp', 'kobuki_driver/src/driver/diff_drive.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2013-05-07 (06:40)

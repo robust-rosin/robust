@@ -7,7 +7,7 @@ description: >
      warning.
      A watchdog was added to keep track of whether data is being
      received through the serial cable within a time limit.
-classification: Dangerous behavior: operation during off (no CWE) #PHYSICAL
+classification: "Dangerous behavior: operation during off (no CWE) #PHYSICAL"
 keywords: ['watchdog', 'power', 'driver']
 system: kobuki
 severity: error
@@ -16,11 +16,11 @@ bug:
   phase: runtime-operation
   specificity: robotics-specific
   architectural-location: application-specific code
-  application: 
-  task: N/A
+  application: null
+  task: null
   subsystem: driver
   package: yujinrobot/kobuki/kobuki_driver
-  languages: N/A
+  languages: null
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/yujinrobot/kobuki/issues/73
@@ -30,8 +30,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: e45b2b6a02152021764f3ca9d8d0ed17084c3bcd
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2012-04-16 (10:51)

@@ -28,24 +28,26 @@ severity: error
 links: ['http://wiki.ros.org/Remapping%20Arguments', 'http://wiki.ros.org/roslaunch/XML/remap']
 bug:
   phase: runtime-initialization
-  specificity: ROS-specific 
+  specificity: ROS-specific
   architectural-location: application-specific code
   application: automatic docking
   task: communication
   subsystem: launch file
   package: yujinrobot/kobuki/kobuki_auto_docking
-  languages: launch XML
+  languages:
+    - launch XML
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/235
   time-reported: 2013-02-25 (07:37)
   reproducibility: always
-  trace: N/A
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 35682ec3c3e7177373c66c48228ad58b2eb34aae
-  pull-request: N/A
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_auto_docking/launch/auto_dock_with_safe_keyop.launch']
-  languages: launch XML
+  languages:
+    - launch XML
   time: 2013-02-25 (08:34)

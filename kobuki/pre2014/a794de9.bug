@@ -6,7 +6,7 @@ description: >
      structures in Eigen need to be bit-aligned and some macros need
      to be present in the code for this to happen.  Adding the missing
      macros fixed most of the occurrences of the problem.
-classification: CWE-617: Reachable Assertion Violation
+classification: "CWE-617: Reachable Assertion Violation"
 keywords: ['eigen', 'bit-alignment', 'assertions', '32-bit']
 system: kobuki
 severity: error
@@ -16,10 +16,11 @@ bug:
   specificity: general-issue
   architectural-location: application-specific code
   application: bumper to pointcloud converter
-  task: N/A
+  task: null
   subsystem: specific application component
   package: yujinrobot/kobuki/kobuki_bumper2pc
-  languages: C++
+  languages:
+    - C++
   detected-by: assertions
   reported-by: guest user
   issue: https://github.com/yujinrobot/kobuki/issues/257
@@ -29,8 +30,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: a794de9b6567b69f6c4885a177d017685f518524 | 18b46dc557676adc00b9f17c09c3af5281b5ea88 | f62c63ff94ab65fb3218e647e3886636e250f189 | 193ba75ee7b08b8bdb09b5815e486948913e3442 | 936e46785de6ae1fc473ff670b07ab16016ab7ef
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_bumper2pc/include/kobuki_bumper2pc/kobuki_bumper2pc.hpp', 'kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp', 'kobuki_auto_docking/src/dock_drive.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2013-08-12 (09:03)

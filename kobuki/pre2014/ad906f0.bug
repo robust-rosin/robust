@@ -10,7 +10,7 @@ description: >
      also reports of the robot performing wheelies when a command was
      issued after staying idle: the robot had a very high torque for
      half a second before returning to normal levels.
-classification: CWE-682: Incorrect Calculation #PHYSICAL
+classification: "CWE-682: Incorrect Calculation #PHYSICAL"
 keywords: ['motion', 'acceleration', 'smoother', 'driver']
 system: kobuki
 severity: minor-issue
@@ -23,7 +23,7 @@ bug:
   task: motion
   subsystem: driver
   package: yujinrobot/kobuki/kobuki_driver
-  languages: N/A
+  languages: null
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/126 | https://github.com/yujinrobot/kobuki/issues/111
@@ -33,8 +33,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: ad906f0a6ebeb732afb5938f79200f8eb4bccabf
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/modules/gate_keeper.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2012-06-11 (04:40)

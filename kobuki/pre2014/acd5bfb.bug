@@ -7,7 +7,7 @@ description: >
      additional details are provided.
      The fix replaces some variables with boolean flags and moves the
      ordering of some statements.
-classification: Wrong behavior (no CWE) #PHYSICAL
+classification: "Wrong behavior (no CWE) #PHYSICAL"
 keywords: ['bumper', 'gazebo', 'simulaton']
 system: kobuki
 severity: error
@@ -16,11 +16,11 @@ bug:
   phase: runtime-operation
   specificity: ROS-specific
   architectural-location: application-specific code
-  application: 
+  application: null
   task: simulation
   subsystem: simulation plugin
   package: yujinrobot/kobuki_desktop/kobuki_gazebo_plugins
-  languages: N/A
+  languages: null
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/19
@@ -30,8 +30,9 @@ bug:
 fix:
   repo: https://github.com/yujinrobot/kobuki_desktop
   hash: acd5bfbd5513fb915d54fe7662fb345237f18490
-  pull-request: 
+  pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_gazebo_plugins/include/kobuki_gazebo_plugins/gazebo_ros_kobuki.h', 'kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2013-08-29 (04:29)
