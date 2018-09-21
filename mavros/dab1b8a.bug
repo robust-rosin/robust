@@ -37,4 +37,9 @@ fix:
   fix-in: mavros/src/plugins/actuator_control.cpp
   languages:
     - C++
-  time: 2015-02-28 (00:00)
+  time: 2015-02-28 (00:00)16d6194056cb7e76215ecf299d1a90f08
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-02-28T02:13:01+01
