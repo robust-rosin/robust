@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Missing runtime dependency on message definitions
-
-description:
+description: >
      ROS uses channels (known as 'topics') for communication.  Each
      topic is typed by a format of the messages it can carry.
      Messages are defined in a .msg file (.msg is essentially a super
@@ -8,24 +9,19 @@ description:
      messages are generated from msg files at compile time and then
      used at runtime to serialize and deserialize messages for
      communication.
-
      Meta-packages in ROS are used to install a number of packages
      working together (and having actual contents) to be conveniently
      installed together, while tracking all dependencies.
-
      The definition of runtime dependencies in the manifest
      (package.xml) file of universal_robot meta-package misses the
      runtime dependency on the ur_msgs package, which means that
      python programs trying to send or receive messages will crash.
-
      The issue is ROS-specific as it appears in ROS-specific
      package.xml files.  However, the issue of missing runtime
      dependencies overall, is a general software-engineering issue.
-
      The first pull request linked has not been merged, but a larger
      pull request has been merged that contain the fix. This is why we
      link two PRs.
-
      This bug also affects statically compiled languages (not only
      python), because format 1 of package.xml uses runtime
      dependencies both to specify actual runtime dependencies and
@@ -33,63 +29,38 @@ description:
      (build dependencies are reserved for dependencies needed to build
      the referred package). This is explained in the REP, in the
      second link below.
-
-classification: run-time dependency issue (no CWE)
-
-internal classification (cause):
-
-internal classification (effect):
-
-keywords: package.xml | catkin
-
+classification: >
+  run-time dependency issue (no CWE)
+  internal classification (cause):
+  internal classification (effect):
+keywords: ['package.xml', 'catkin']
 system: universal_robot
-
 severity: error
-
-links: http://wiki.ros.org/catkin/package.xml | http://www.ros.org/reps/rep-0140.html#rationale
-
+links:
+  - http://wiki.ros.org/catkin/package.xml
+  - http://www.ros.org/reps/rep-0140.html#rationale
 bug:
-  
   phase: runtime-initialization
-
   specificity: ROS-specific
-
   architectural-location: platform code
-
-  application: N/A
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: driver
-
   package: ros-industrial/universal_robot/universal_robot
-
-  languages: python
-
+  languages:
+    - python
   detected-by: runtime detection
-
   reported-by: unreported
-
-  issue: N/A
-
+  issue: null
   time-reported: unreported
-
   reproducibility: always
-
-  trace:
-
+  trace: null
 fix:
-
   repo: https://github.com/ros-industrial/universal_robot
-
   hash: 082dcf1551d84a9a874443adc39627f67272ac4c
-
   pull-request: https://github.com/ros-industrial/universal_robot/pull/100 | https://github.com/ros-industrial/universal_robot/pull/130
-
-  license: BSD
-
-  fix-in: package.xml
-
-  languages: package.xml
-
+  license: ['BSD']
+  fix-in: ['package.xml']
+  languages:
+    - package.xml
   time: 2014-09-04 (17:57)

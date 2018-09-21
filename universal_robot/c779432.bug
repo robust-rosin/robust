@@ -1,71 +1,44 @@
+%YAML 1.1
+---
 title: required C++11 compiler
-
-description:
+description: >
      The geometric_shapes package (from moveit) started to use C++11
      features, more precisely the shared pointer type that clashes
      with a similar type in the Boost library.  The geometry shapes
      headers were updated to include a check if a C++11 compiler is
      used, and fail with an error otherwise.
-
      This issue could appear in any complex projects which mixes
      versions of the programming language (here C++).
-
-classification: Type error (no CWE) #EVOLUTION: CWE-439
-
-internal classification (cause):
-
-internal classification (effect):
-
-keywords: C++11 | boost | pointer | header file
-
+classification: |
+  Type error (no CWE) #EVOLUTION: CWE-439
+  internal classification (cause):
+  internal classification (effect):
+keywords: ['C++11', 'boost', 'pointer', 'header file']
 system: universal_robot
-
 severity: error
-
-links: https://github.com/ros-industrial/universal_robot/pull/254 | https://github.com/ros-planning/geometric_shapes/blob/kinetic-devel/include/geometric_shapes/shapes.h | https://discourse.ros.org/t/std-shared-ptr-in-the-geometric-shapes-public-api/395/10
-
+links: ['https://github.com/ros-industrial/universal_robot/pull/254', 'https://github.com/ros-planning/geometric_shapes/blob/kinetic-devel/include/geometric_shapes/shapes.h', 'https://discourse.ros.org/t/std-shared-ptr-in-the-geometric-shapes-public-api/395/10']
 bug:
-  
   phase: compile-time
-
   specificity: general issue
-
   architectural-location: platform code
-
-  application: N/A
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: driver
-
   package: ros-industrial/universal_robot/ur_kinematics
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: compile-time
-
-  reported-by: N/A
-
-  issue: N/A
-
-  time-reported: N/A
-
+  reported-by: null
+  issue: null
+  time-reported: null
   reproducibility: always
-
   trace:
-
 fix:
-
   repo: https://github.com/ros-industrial/universal_robot/
-
   hash: c7794329bf632592bf1d345d1290ff4b8d13580a
-
   pull-request: https://github.com/ros-industrial/universal_robot/pull/286
-
-  license: BSD
-
-  fix-in: ur_kinematics/CMakeLists.txt | ur_kinematics/include/ur_kinematics/ur_moveit_plugin.h
-
-  languages: cmake
-
+  license: ['BSD']
+  fix-in: ['ur_kinematics/CMakeLists.txt', 'ur_kinematics/include/ur_kinematics/ur_moveit_plugin.h']
+  languages:
+    - CMake
   time: 2017-01-06 (12:29)

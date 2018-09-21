@@ -1,77 +1,49 @@
+%YAML 1.1
+---
 title: An attempt to read a flag beyond 32-bits
-
-description:
+description: >
      The universal_robot driver controls the rebots with help of
      scritps (prog) written in a proprietary lanugage developed by
      Universal Robots (URScript).
-
      The prog script used in the driver reads flags consecutively to
      send them forwards starting with 0 to 32. However the vector of
      flags has only 32 bits, so the last flag does not exist.  This
      causes the simulator of the universal robot to complain with a
      warning.  The actual robot does not appear to be affected.
-
      The issue is general. It is a typical overflow/one-off error when
      accessing an indexed resource. It appears in a language that is
      specific to the robot in question, and entirely independent of
      ROS.
-
-classification: CWE-193: Off-by-one Error
-
-internal classification (cause):
-
-internal classification (effect):
-
-keywords: urscript | flags | overflow
-
+classification: |
+  CWE-193: Off-by-one Error
+  internal classification (cause):
+  internal classification (effect):
+keywords: ['urscript', 'flags', 'overflow']
 system: universal_robot
-
 severity: warning
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-operation
-
   specificity: general-issue
-
   architectural-location: platform-code
-
-  application: N/A
-
+  application: null
   task: simulation
-
   subsystem: driver
-
   package: ros-industrial/universal_robot/ur_driver
-
-  languages: URScript
-
+  languages:
+    - URScript
   detected-by: runtime detection
-
   reported-by: member developer
-
   issue: https://github.com/ros-industrial/universal_robot/issues/108
-
   time-reported: 2014-09-12 (17:15)
-
   reproducibility: always
-
   trace:
-
 fix:
-
   repo: https://github.com/ros-industrial/universal_robot
-
   hash: b2abe31a90a92b5ebd26cd2e39c260d6151d0daa
-
   pull-request: https://github.com/ros-industrial/universal_robot/pull/110
-
-  license: BSD
-
-  fix-in: ur_driver/prog
-
-  languages: URScript
-
+  license: ['BSD']
+  fix-in: ['ur_driver/prog']
+  languages:
+    - URScript
   time: 2014-10-10 (11:26)
