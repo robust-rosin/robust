@@ -4,7 +4,7 @@ title: Missing polling of ros::ok prevents nodes from exiting gracefully when RO
 description: >
   Two loops in Buffer::canTransform (the same problem in two overloaded versions) do not check the value of ros::ok() to detect whether the shutdown has not completed.  As a result the waitForTransform() function on tf listners would not shutdown if simulated time has been paused.
   This can have serious implications if the running node holds on to resources that make it impossible to, for instance, restart the system.
-classification: CWE-404: Improper Resource Shutdown or Release
+classification: "CWE-404: Improper Resource Shutdown or Release"
 keywords: ['C++', 'shutdown', 'SIGINT']
 system: core component
 severity: error
