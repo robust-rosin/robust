@@ -1,47 +1,29 @@
+%YAML 1.1
+---
 title: No Image Coming From Camera
-
-description:
+description: >
      A missing runtime dependency crashed the image processing node,
      causing no images to be received from the camera.
-
 classification: Missing Dependency (no CWE) #PHYSICAL
-
-keywords: camera | eigen | dependencies | runtime
-
+keywords: ['camera', 'eigen', 'dependencies', 'runtime']
 system: turtlebot
-
 severity: error
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-operation
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
-  application: 
-
+  application: null
   task: vision
-
   subsystem: driver
-
   package: ros-perception/image_pipeline/depth_image_proc
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: runtime crash
-
   reported-by: contributor
-
   issue: https://github.com/turtlebot/turtlebot/issues/142
-
   time-reported: 2014-06-12 (10:04)
-
   reproducibility: always
-
   trace: |
     [ INFO] [1402564815.530736554]: /camera/rgb/camera_info -> /camera/rgb/camera_info
     [ERROR] [1402564815.727176562]: Failed to load nodelet [/camera/depth_metric_rect] of type
@@ -50,19 +32,12 @@ bug:
      names are consistent between this macro and your XML. Error string: Could not load library (Poco
      exception = libeigen_conversions.so: cannot open shared object file: No such file or directory)
     [FATAL] [1402564815.727410623]: Service call failed!
-
 fix:
-
   repo: https://github.com/ros-perception/image_pipeline
-
   hash: f01d9525901b75858047e6fa81e4efc92c7dfedc
-
   pull-request: https://github.com/ros-perception/image_pipeline/pull/79
-
-  license: BSD
-
-  fix-in: depth_image_proc/package.xml
-
-  languages: Package XML
-
+  license: ['BSD']
+  fix-in: ['depth_image_proc/package.xml']
+  languages:
+    - Package XML
   time: 2014-06-13 (01:12)
