@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Install tags missing or wrong
-
-description:
+description: >
      CMakeList is essential for every ROS package and it contains the
      information of the packages, which is needed for the buildsystem.
      After build time, targets are placed into the devel space of the
@@ -19,65 +20,37 @@ description:
      install space and so it is easy to make errors. Also, if a
      packages gets updated one has to update the install tragets
      accordingly.
-
      In the example a file- and also a folder-name inside a package
      has changed but the install targets have not been
      updated. Consequently, the installation of the the package would
      be incomplete. The problem was solved by updating the names of
      the install targets accordingly.
-
-classification: Missing Installation Dependencies (no CWE) #EVOLUTION: CWE-439
-
-keywords: install targets | CMakeLists
-
+classification: "Missing Installation Dependencies (no CWE) #EVOLUTION: CWE-439"
+keywords: ['install targets', 'CMakeLists']
 system: care-o-bot
-
 severity: error
-
-links: http://wiki.ros.org/catkin/CMakeLists.txt; 11 
-
+links: ['http://wiki.ros.org/catkin/CMakeLists.txt; 11']
 bug:
-  
   phase: deployment-time
-
-  specificity: ROS-specific 
-
+  specificity: ROS-specific
   architectural-location: application-specific
-
-  application: N/A
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: specific application component
-
   package: cob_android
-
-  languages: N/A
-
+  languages: null
   detected-by: developer
-
   reported-by: developer
-
   issue: https://github.com/ipa320/cob_android/issues/7
-
   time-reported: 2015-08-03 (10:09)
-
   reproducibility: always
-
   trace:
-
 fix:
-
   repo: https://github.com/ipa320/cob_android
-
   hash: 79867c88acc64342f061e6324ed6b84ca7e0773d
-
   pull-request: https://github.com/ipa320/cob_android/pull/8
-
-  license: LGPL
-
-  fix-in: cob_android/cob_android_msgs/CMakeLists.txt | cob_android/cob_android_script_server/CMakeLists.txt
-
-  languages: txt
-
+  license: ['LGPL']
+  fix-in: ['cob_android/cob_android_msgs/CMakeLists.txt', 'cob_android/cob_android_script_server/CMakeLists.txt']
+  languages:
+    - CMake
   time: 2015-08-04 (16:26)

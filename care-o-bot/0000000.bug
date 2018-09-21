@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Individual ROS-packages of Metapackage are outdated on local system
-
-description: 
+description: >
      The motor for the tray of CoB-3 is not moving. The reason for the
      error is that certain ROS packages are outdated on the local
      system. This happened since updating the metapackage does not
@@ -13,59 +14,31 @@ description:
      outdated packages are "controller_manager" and
      "hardware_interface".  This error could be fixed by updating the
      outdated ROS packages.
-
-classification: Wrong behavior (no CWE) #EVOLUTION CWE-439 #PHYSICAL
-
-keywords: metapackage | package | update | outdated
-
+classification: "Wrong behavior (no CWE) #EVOLUTION CWE-439 #PHYSICAL"
+keywords: ['metapackage', 'package', 'update', 'outdated']
 system: care-o-bot
-
 severity: error
-
-links: http://wiki.ros.org/Metapackages | https://github.com/ros-controls/ros_control
-
+links: ['http://wiki.ros.org/Metapackages', 'https://github.com/ros-controls/ros_control']
 bug:
-
   phase: runtime-operation
-
   specificity: ROS-specific
-
   architectural-location: application-specific
-
   application: ros control
-
   task: manipulation
-
   subsystem: motion
-
   package: ros_control
-
-  languages: N/A
-
+  languages: null
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/ipa320/cob_robots/issues/656
-
   time-reported: 2017-04-18 (00:00)
-
   reproducibility: rare
-
   trace:
-
 fix:
-
   repo: https://github.com/ipa320/cob_robots/tree/indigo_dev/cob_bringup
-
-  hash: N/A   # The previous one would be: 0656d117ba875221c66a5e354252d06c2562aced
-
-  pull-request: N/A
-
-  license: LGPL
-
-  fix-in:  
-
-  languages: 
-
+  hash: null   # The previous one would be: 0656d117ba875221c66a5e354252d06c2562aced
+  pull-request: null
+  license: ['LGPL']
+  fix-in: []
+  languages: []
   time: unfixed
