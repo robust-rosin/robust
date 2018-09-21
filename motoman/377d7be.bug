@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Error message when installing Inform Code in DX200
-
-description:
+description: >
      The Motoman controller has to be prepared for use with ROS.
      For this, you have to first install MotoPlus on the controller
      and afterwards a special INFORM Code. The motoman driver
@@ -10,59 +11,31 @@ description:
      command, which will provide the required handshaking.  When
      installing the INFORM Code to a DX200, it shows an error: L:****)
      ERROR 3200 : NOP or END instruction not found (J:INIT_ROS
-
-classification: CWE-172: Encoding Error (Unix vs Windows line breaks)
-
-keywords: driver | motoman
-
+classification: "CWE-172: Encoding Error (Unix vs Windows line breaks)"
+keywords: ['driver', 'motoman']
 system: motoman
-
 severity: error
-
-links: http://wiki.ros.org/motoman_driver/Tutorials/indigo/InstallServer
-
+links: ['http://wiki.ros.org/motoman_driver/Tutorials/indigo/InstallServer']
 bug:
-  
   phase: deployment-time
-  
   specificity: ROS-specific
-  
   architectural-location: platform code
-
-  application: N/A
-
-  task: N/A
-
-  subsystem: N/A
-
+  application: null
+  task: null
+  subsystem: null
   package: ros-industrial/motoman/motoman_driver
-
-  languages: N/A
-
+  languages: null
   detected-by: user
-
   reported-by: guest user
-  
   issue: https://github.com/ros-industrial/motoman/issues/142
-
   time-reported: 2017-01-08 (12:42)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/ros-industrial/motoman
-
-  hash: 
-
+  hash: null
   pull-request: 147
-
-  license: BSD
-
-  fix-in: motoman_driver/Inform/.gitattributes
-
-  languages: N/A
-
+  license: ['BSD']
+  fix-in: ['motoman_driver/Inform/.gitattributes']
+  languages: null
   time: 2017-01-09 (21:09)

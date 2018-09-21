@@ -1,65 +1,41 @@
+%YAML 1.1
+---
 title: Incorrect values for joint limits in sia20d package
-
-description:
+description: >
      The position limits for the joints joint_s, joint_r and joint_t
      for the SIA20 are set to exactly 3.1416 or -3.1416, but from the
      data sheet the limits for these joints are exactly Pi. The values
      appear to be rounded up, which gives the possibility for the
      robot to try to reach positions, which are physically not
      reachable.
-
-classification: Wrong constant (no CWE) #PHYSICAL
-
-keywords: robot arm | joint limits | robot description
-
+classification: "Wrong constant (no CWE) #PHYSICAL"
+keywords: ['robot arm', 'joint limits', 'robot description']
 system: motoman
-
 severity: error
-
-links: https://www.motoman.com/industrial-robots/sia20d
-
+links: ['https://www.motoman.com/industrial-robots/sia20d']
 bug:
-  
   phase: runtime-operation
-
   specificity: robotics-specific
-
   architectural-location: application-specific code
-
   application: industrial robot arm
-
   task: manipulation
-
   subsystem: motion
-
   package: ros-industrial/motoman | ros-industrial/motoman/sia20d_support | ros-industrial/motoman/sia10d_support | ros-industrial/motoman/sia10f_support
-
-  languages: XML
-
+  languages:
+    - XML
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/ros-industrial/motoman/issues/102
-
   time-reported: 2016-06-13 (00:00)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/gavanderhoorn/motoman
-
   hash: 93a9abae92b51ed79b6909397940e26d379eaa94
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: motoman_sia20d_support/urdf/sia20d.urdf | motoman_sia20d_support/urdf/sia20d_macro.xacro  
-
-  languages: urdf | xacro
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['motoman_sia20d_support/urdf/sia20d.urdf', 'motoman_sia20d_support/urdf/sia20d_macro.xacro']
+  languages:
+    - urdf
+    - xacro
   time: 2016-06-19 (00:00)

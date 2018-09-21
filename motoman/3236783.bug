@@ -1,62 +1,36 @@
+%YAML 1.1
+---
 title: Missing install targets
-
-description:
+description: >
      The CMakeLists.txt of the dx100, fs100 and motoman_driver
      packages are missing install targets. This makes it impossible to
      use them in a install space.
-
 classification: Missing Installation Dependencies (no CWE)
-
-keywords: CMake | install targets
-
+keywords: ['CMake', 'install targets']
 system: motoman
-
 severity: error
-
-links: 
-
+links: []
 bug:
-  
   phase: build-time
-
   specificity: general-issue
-
   architectural-location: platform code
-  
-  application: N/A
-
-  task: N/A
-
-  subsystem: N/A
-
-  package: ros-industrial/motoman | ros-industrial/motoman/motoman_driver	
-
-  languages: CMake
-
+  application: null
+  task: null
+  subsystem: null
+  package: ros-industrial/motoman | ros-industrial/motoman/motoman_driver
+  languages:
+    - CMake
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/ros-industrial/motoman/issues/10
-
   time-reported: 2013-08-24 (00:00)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/ros-industrial/motoman/
-
-  hash: 
-
+  hash: null
   pull-request: 10 | 11 | 14
-
-  license: BSD
-
-  fix-in: 158 files due to a complete update of the driver package.
-
-  languages: N/A
-
+  license: ['BSD']
+  fix-in: ['158 files due to a complete update of the driver package.']
+  languages: null
   time: 2013-09-05 (18:20)
