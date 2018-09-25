@@ -1,0 +1,67 @@
+title: Inconsistent buffer size between Python and C++ implementation
+
+description: 
+  The TransformBroadcaster class is implemented both in the Python and the C++ interface for tf2.  The former initializes the buffer queue size to 1, while the latter initializes is to 100.  Consequently, the python version fails when two messages are to be sent immediately one after another, while the C++ version is more resilient to this problem.
+
+  The bug lies though not in the queue size (the developers agree that this should be made configurable in future), but in the fact that the behavior of the C++ and of the Python API is inconsistent.
+
+  The problem of API consistency is general for many libraries and frameworks, however this specific instance of the problem is entirely idiosyncratic---at this point there exist no tools that would be able to handle these kinds of problems in a project oblivious manner. 
+
+classification: Inconsistency of API implementation across languages (no CWE)
+
+keywords: python | c++ | api| queue | bugger | broadcaster
+
+system: core component
+
+severity: bad-smell
+
+links:
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: ROS-specific
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: camera calibration (perception, calibration)
+
+  subsystem: generic task component
+
+  package: ros/geometry2/tf2_ros
+
+  languages: python
+
+  detected-by: developer
+
+  reported-by: contributor
+
+  issue: https://github.com/ros/geometry2/issues/89
+
+  time-reported: 2015-03-18 (14:49 GMT+1)
+
+  reproducibility: sometimes
+
+  trace:
+
+  reproduction: 
+    The bug report includes a test case. This should be used.
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: ede2646d463c8ae1bbbf2460941df2b07d39824e
+
+  pull-request: https://github.com/ros/geometry2/pull/90
+
+  license: BSD
+
+  fix-in: tf2_ros/src/tf2_ros/transform_broadcaster.py
+
+  languages: python
+
+  time: 2015-03-20 (19:08 AM GMT+1)
