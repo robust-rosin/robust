@@ -17,6 +17,7 @@ severity: error
 
 links: 
   - https://github.com/ros/geometry2/issues/92
+  - https://github.com/ros/geometry2/commit/729a6531929203720f4a518ac9e79321fe3c5537 fixing commit
 
 bug:
 
@@ -49,6 +50,7 @@ bug:
   trace:
 
   reproduction: 
+    TODO: try to write a unit test for the function in the fixing commit (might require inserting an assertion to cause a crash or using a sanitizer)
 
 fix:
 
