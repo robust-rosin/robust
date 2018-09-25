@@ -1,0 +1,67 @@
+title: Access out of bounds to std::vector
+
+description: 
+  An accessor to the frame buffer (BufferCore::getFrame) accesses the frames buffer possibly one position outside of bounds due to an off-by-one error.
+
+  The access to std::vector instances using the indexing operator [ ] in the C++ standard library does not incur out of bounds checks for performance reasons (the 'at' method does).
+
+  The error has been found by triaging a double free bug. It is not clear however whether this problem is related to double-free.  The original double free issue (in links below) has not been closed at the time of this data collection.
+
+classification: CWE-125: Out-of-bounds Read
+
+keywords: c++ | vector | stl | out-of-bounds
+
+system: core component
+
+severity: error
+
+links: 
+  - https://github.com/ros/geometry2/issues/92
+
+bug:
+
+  phase: runtime-operation
+
+  specificity: general issue
+
+  architectural-location: platform code
+
+  application: N/A
+
+  task: N/A
+
+  subsystem: generic task component
+
+  package: ros/geometry2/tf2
+
+  languages: C++
+
+  detected-by: developer
+
+  reported-by:  contributor
+
+  issue: 
+
+  time-reported: 2015-04-07 (03:36 AM GMT+1)
+
+  reproducibility: always
+
+  trace:
+
+  reproduction: 
+
+fix:
+
+  repo: https://github.com/ros/geometry2
+
+  hash: 729a6531929203720f4a518ac9e79321fe3c5537
+
+  pull-request: 
+
+  license: BSD
+
+  fix-in: tf2/src/buffer_core.cpp
+
+  languages: C++ 
+
+  time: 2015-04-16 (23:36 GMT+1)
