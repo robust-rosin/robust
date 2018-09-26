@@ -1,0 +1,30 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: robustrosin/robust:105dc16
+    file: ../../Dockerfile
+    arguments:
+      IS_BUILD_FAILURE: "yes"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: trusty
+      ROS_DISTRO: indigo
+      CATKIN_PKG: cob_twist_controller
+      REPO_FORK_URL: https://github.com/robust-rosin/cob_control
+      REPO_BUG_COMMIT: 105dc16_robust_buggy
+      REPO_FIX_COMMIT: 105dc16_robust_fixed
+
+bugs:
+  - name: robust:105dc16
+    image: robustrosin/robust:105dc16
+    program: cob_twist_controller
+    dataset: robust
+    languages:
+      - CMake
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
