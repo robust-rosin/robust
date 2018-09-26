@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 8c30446
+put: kobuki_node
+ros_distro: indigo
+datetime_reported: 2014-08-11T05:11:02Z
+issue_url: https://github.com/yujinrobot/kobuki/issues/339
+reproduction-images:
+  buggy: 6467c926459de0852b43c6e1e4e4298a2031ae40
+  fixed: 7c8225790623c6970d2347d01709bbc0b5d5b76f
+  rosdistro: 6b7c064d8940b73535094aa6db5c449731ac7e78

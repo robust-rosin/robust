@@ -1,0 +1,109 @@
+- tar:
+    local-name: catkin
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/hydro/catkin/0.5.86-0.tar.gz
+    version: catkin-release-release-hydro-catkin-0.5.86-0
+- tar:
+    local-name: ecl_build
+    uri: https://github.com/yujinrobot-release/ecl_tools-release/archive/release/hydro/ecl_build/0.60.1-0.tar.gz
+    version: ecl_tools-release-release-hydro-ecl_build-0.60.1-0
+- tar:
+    local-name: ecl_command_line
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_command_line/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_command_line-0.60.8-0
+- tar:
+    local-name: ecl_concepts
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_concepts/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_concepts-0.60.8-0
+- tar:
+    local-name: ecl_config
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/hydro/ecl_config/0.60.1-0.tar.gz
+    version: ecl_lite-release-release-hydro-ecl_config-0.60.1-0
+- tar:
+    local-name: ecl_containers
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_containers/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_containers-0.60.8-0
+- tar:
+    local-name: ecl_converters
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_converters/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_converters-0.60.8-0
+- tar:
+    local-name: ecl_devices
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_devices/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_devices-0.60.8-0
+- tar:
+    local-name: ecl_eigen
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_eigen/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_eigen-0.60.8-0
+- tar:
+    local-name: ecl_errors
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/hydro/ecl_errors/0.60.1-0.tar.gz
+    version: ecl_lite-release-release-hydro-ecl_errors-0.60.1-0
+- tar:
+    local-name: ecl_exceptions
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_exceptions/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_exceptions-0.60.8-0
+- tar:
+    local-name: ecl_formatters
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_formatters/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_formatters-0.60.8-0
+- tar:
+    local-name: ecl_geometry
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_geometry/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_geometry-0.60.8-0
+- tar:
+    local-name: ecl_license
+    uri: https://github.com/yujinrobot-release/ecl_tools-release/archive/release/hydro/ecl_license/0.60.1-0.tar.gz
+    version: ecl_tools-release-release-hydro-ecl_license-0.60.1-0
+- tar:
+    local-name: ecl_linear_algebra
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_linear_algebra/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_linear_algebra-0.60.8-0
+- tar:
+    local-name: ecl_math
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_math/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_math-0.60.8-0
+- tar:
+    local-name: ecl_mobile_robot
+    uri: https://github.com/yujinrobot-release/ecl_navigation-release/archive/release/hydro/ecl_mobile_robot/0.60.0-2.tar.gz
+    version: ecl_navigation-release-release-hydro-ecl_mobile_robot-0.60.0-2
+- tar:
+    local-name: ecl_mpl
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_mpl/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_mpl-0.60.8-0
+- tar:
+    local-name: ecl_sigslots
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_sigslots/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_sigslots-0.60.8-0
+- tar:
+    local-name: ecl_threads
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_threads/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_threads-0.60.8-0
+- tar:
+    local-name: ecl_time
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_time/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_time-0.60.8-0
+- tar:
+    local-name: ecl_time_lite
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/hydro/ecl_time_lite/0.60.1-0.tar.gz
+    version: ecl_lite-release-release-hydro-ecl_time_lite-0.60.1-0
+- tar:
+    local-name: ecl_type_traits
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_type_traits/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_type_traits-0.60.8-0
+- tar:
+    local-name: ecl_utilities
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_utilities/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_utilities-0.60.8-0
+- tar:
+    local-name: kobuki_dock_drive
+    uri: https://github.com/yujinrobot-release/kobuki_core-release/archive/release/hydro/kobuki_dock_drive/0.5.4-0.tar.gz
+    version: kobuki_core-release-release-hydro-kobuki_dock_drive-0.5.4-0
+- tar:
+    local-name: kobuki_driver
+    uri: https://github.com/yujinrobot-release/kobuki_core-release/archive/release/hydro/kobuki_driver/0.5.4-0.tar.gz
+    version: kobuki_core-release-release-hydro-kobuki_driver-0.5.4-0
+- tar:
+    local-name: kobuki_ftdi
+    uri: https://github.com/yujinrobot-release/kobuki_core-release/archive/release/hydro/kobuki_ftdi/0.5.4-0.tar.gz
+    version: kobuki_core-release-release-hydro-kobuki_ftdi-0.5.4-0
+

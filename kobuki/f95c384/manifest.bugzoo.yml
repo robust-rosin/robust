@@ -1,0 +1,30 @@
+version: '1.0'
+
+blueprints:
+  - type: docker
+    tag: robustrosin/robust:f95c384
+    file: ../../Dockerfile
+    arguments:
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: precise
+      ROS_DISTRO: hydro
+      CATKIN_PKG: kobuki_node
+      REPO_FORK_URL: https://github.com/robust-rosin/kobuki
+      REPO_BUG_COMMIT: 446f0b0cf9699a69b4f2badfd45fee702cbf22bc
+      REPO_FIX_COMMIT: f95c3847d97fba46b6317e00ffd78ce352ec376f
+
+bugs:
+  - name: robust:f95c384
+    image: robustrosin/robust:f95c384
+    program: kobuki_node
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
