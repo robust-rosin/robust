@@ -38,13 +38,19 @@ def main():
         try:
             ros_distro = desc['time-machine']['ros_distro']
             ros_pkgs = desc['time-machine']['ros_pkgs']
-            is_build_failure = desc['bugzoo']['is_build_failure']
+            is_build_failure = desc['bugzoo']['is-build-failure']
             sha_bug = desc['bugzoo']['bug-commit']
             sha_fix = desc['bugzoo']['fix-commit']
         except KeyError as err:
             msg = 'bug file [{}:{}] is missing property [{}]'
             msg = msg.format(package, bug_id, err)
-            warnings.warn(msg, UserWarning)
+            warnings.warn(msg)
+            continue
+
+        if not isinstance(is_build_failure, bool):
+            tpl = 'bad bug file [{}:{}]'.format(package, bug_id)
+            msg = "{}: 'is_build_failure' should be a boolean"
+            warnings.warn(msg)
             continue
 
         if len(ros_pkgs) > 1:
@@ -76,7 +82,7 @@ def main():
             ubuntu_version in ['15.04', '12.04']
 
         build_args = {
-            'IS_BUILD_FAILURE': is_build_failure,
+            'IS_BUILD_FAILURE': "yes" if is_build_failure else "no",
             'USE_APT_OLD_RELEASES': use_apt_old_releases,
             'UBUNTU_VERSION': ubuntu_version,
             'ROS_DISTRO': ros_distro,
