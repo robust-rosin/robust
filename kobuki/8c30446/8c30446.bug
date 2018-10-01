@@ -17,6 +17,7 @@ description: >
      standpoint, it is Turtlebot that builds upon Kobuki, and not the
      other way around. Kobuki is a base, Turtlebot is the entire
      robot.
+
      The fix consisted on creating a file with the required data
      within the Kobuki repository.
 classification: External Dependency (no CWE)
@@ -40,7 +41,6 @@ bug:
   time-reported: 2014-08-11 (06:11)
   reproducibility: always
   trace: null
-  trace: N/A
   reproduction: >
         An issue surfaced when building the docker image, as it could
         not find tf2 packages. This was due to the repository being named
