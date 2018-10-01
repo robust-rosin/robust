@@ -35,6 +35,9 @@ def main():
 
         bug_id = os.path.basename(fn)[:-4]
         package = os.path.basename(os.path.dirname(fn))
+        logger.info("generating manifest for bug [%s:%s] at file (%s)",
+                    package, bug_id, fn)
+
         try:
             ros_distro = desc['time-machine']['ros_distro']
             ros_pkgs = desc['time-machine']['ros_pkgs']
@@ -95,7 +98,7 @@ def main():
         name_image = 'robustrosin/robust:{}'.format(bug_id)
         blueprints.append({
             'tag': name_image,
-            'file': '{}/Dockerfile'.format(package),
+            'file': 'Dockerfile',
             'context': '{}/{}'.format(package, bug_id),
             'arguments': build_args
         })
