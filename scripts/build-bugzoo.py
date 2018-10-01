@@ -35,20 +35,22 @@ def main():
 
         bug_id = os.path.basename(fn)[:-4]
         package = os.path.basename(os.path.dirname(fn))
-        ros_distro = desc['time-machine']['ros_distro']
-        ros_pkgs = desc['time-machine']['ros_pkgs']
+        try:
+            ros_distro = desc['time-machine']['ros_distro']
+            ros_pkgs = desc['time-machine']['ros_pkgs']
+            is_build_failure = desc['bugzoo']['is_build_failure']
+            sha_bug = desc['bugzoo']['bug-commit']
+            sha_fix = desc['bugzoo']['fix-commit']
+        except KeyError as err:
+            msg = 'bug file [{}] is missing "{}" property'
+            msg = msg.format(bug_id, err)
+            warnings.warn(msg, UserWarning)
+            continue
+
         if len(ros_pkgs) > 1:
             warnings.warn('BugZoo file does not currently support multiple PUTs')
             continue
         catkin_pkg = ros_pkgs[0]
-
-        try:
-            is_build_failure = desc['bugzoo']['is_build_failure']
-        except KeyError:
-            msg = 'bug file [%s] is missing "bugzoo.is_build_failure"'
-            msg = msg.format(bug_id)
-            warnings.warn(msg)
-            continue
 
         # determine fork URL
         if 'bugzoo' in desc and 'fork-url' in desc['bugzoo']:
@@ -61,16 +63,6 @@ def main():
                 'ros_comm': 'https://github.com/robust-rosin/ros_comm',
                 'mavros': 'https://github.com/robust-rosin/mavros'
             })[package]
-
-        # determine commit SHA1s
-        try:
-            sha_bug = desc['bugzoo']['bug-commit']
-            sha_fix = desc['bugzoo']['fix-commit']
-        except KeyError as err:
-            msg = "bug file [%s] is missing '%s'"
-            msg = msg.format(bug_id, err)
-            warnings.warn(msg)
-            continue
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
