@@ -42,8 +42,8 @@ def main():
             sha_bug = desc['bugzoo']['bug-commit']
             sha_fix = desc['bugzoo']['fix-commit']
         except KeyError as err:
-            msg = 'bug file [{}] is missing "{}" property'
-            msg = msg.format(bug_id, err)
+            msg = 'bug file [{}:{}] is missing property [{}]'
+            msg = msg.format(package, bug_id, err)
             warnings.warn(msg, UserWarning)
             continue
 
