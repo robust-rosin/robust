@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: OSX compilation failure due to library incompatibilities
-
-description:
+description: >
      The libmavconn module fails to compile on OSX due to library
      incompatibilities in thread_utils.h. Specifically, the
      pthread_setname_np function defined in pthread.h implements a
@@ -8,59 +9,45 @@ description:
      this function sets the name of the calling thread to a given (C)
      string; on Linux, the function also accepts the pthread_t object
      of the thread which should be renamed.
-
 classification: OS-library incompatibility (no CWE)
-
-keywords: porting | OSX
-
+keywords:
+  - porting
+  - OSX
 system: mavros
-
 severity: warning
-
-links:
-
+links: []
 bug:
-
   phase: compile-time
-
-  specificity: 
-
+  specificity: UNKNOWN
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: C++
-
+  package: mavros
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
   issue: https://github.com/mavlink/mavros/issues/626
-
   time-reported: 2016-11-14 (00:00)
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 31ad11dc57aaf7dfac6f8d810162184b0f4d3ef4
-
-  pull-request: 
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: libmavconn/include/mavconn/thread_utils.h | mavros/include/mavros/utils.h
-
-  languages: C++
-
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - libmavconn/include/mavconn/thread_utils.h
+    - mavros/include/mavros/utils.h
+  languages:
+    - C++
   time: 2017-02-07 (00:00)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/626

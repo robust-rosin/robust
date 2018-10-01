@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Typo in function for converting from ROS to MAVLINK messages
-
-description:
+description: >
      The inline "convert" function defined in mavlink_convert.h is
      responsible for converting messages from ROS to MAVLink (a
      popular communications protocol for small autonomous
@@ -8,68 +9,54 @@ description:
      for the original ROS message, rmsg, and the other for the
      destination MAVLink message, mmsg. A typo in this function causes
      an incomplete conversion.
-  
+
      The faulty line, given below, accidentally assigns the initial
      (placeholder) value of "mmsg.magic" to "mmsg.magic".
-  
+
      mmsg.magic = mmsg.magic
-  
+
      The fixed version of this line should use the ROS message.
-  
+
      mmsg.magic = rmsg.magic
 
 classification: Assignment to wrong identifier (no CWE)
-
-keywords: typo | message conversion
-
+keywords:
+  - typo
+  - message conversion
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
   specificity: general issue
-
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
   package: mavlink/mavros
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: user
-
   reported-by: guest user
-
   issue: https://github.com/mavlink/mavros/issues/609
-
   time-reported: 2016-09-30 (00:00)
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: c172409eb3ae3ccce78697d4097db6ed5d9d5721
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: mavros_msgs/include/mavros_msgs/mavlink_convert.h
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros_msgs/include/mavros_msgs/mavlink_convert.h
+  languages:
+    - C++
   time: 2016-09-30 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/609

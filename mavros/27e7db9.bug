@@ -1,62 +1,46 @@
+%YAML 1.1
+---
 title: Incorrect header installation path
-
-description:
+description: >
      When mavconn was removed from mavros, the install destination for
      the mavconn headers were not appropriately updated, causing both
      the 0.9.1 and 0.8.4 builds (of MAVROS) to break.
-
 classification: Missing Installation Dependencies (no CWE) #EVOLUTION CWE-439
-
-keywords: broken build
-
+keywords:
+  - broken build
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: build-time
-
-  specificity: general issue: 
-
+  specificity: general issue
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
   package: mavlink/mavros
-
-  languages: 
-
+  languages:
+    - CMake
   detected-by: developer
-
   reported-by: contributor
-
-  issue: Split hydro development branch
-
+  issue: https://github.com/mavlink/mavros/issues/162
   time-reported: 2014-11-02 (00:00)
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 27e7db9d504359d05830fbc9553fd1fd1af3aab2
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
   fix-in: libmavconn/CMakeLists.txt
-
-  languages: 
-
+  languages:
+    - CMake
   time: 2014-11-04 (00:00)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/162

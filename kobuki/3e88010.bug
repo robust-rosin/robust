@@ -1,62 +1,37 @@
+%YAML 1.1
+---
 title: Node Fails Due to Bad Linking
-
-description:
+description: >
      The nodelet was linked directly against an executable, resulting
      in a crash during runtime. Nodelets should be separated into
      their own libraries and loaded dynamically.
-
 classification: Linking error (no CWE)
-
-keywords: linking | catkin | nodelet | class loader
-
+keywords: ['linking', 'catkin', 'nodelet', 'class loader']
 system: kobuki
-
 severity: error
-
 links:
-
 bug:
-  
   phase: runtime-initialization
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
   application: auto docking
-
   task: auto docking
-
   subsystem: specific application component
-
   package: yujinrobot/kobuki/kobuki_auto_docking
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: runtime crash
-
   reported-by: contributor
-
   issue: https://github.com/yujinrobot/kobuki/issues/234
-
   time-reported: 2013-02-25 (04:32)
-
   reproducibility: always
-
   trace:
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki
-
   hash: 3e88010293c350ffa71f5e8b64ec58ec09a64549
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_auto_docking/CMakeLists.txt
-
-  languages: CMake
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_auto_docking/CMakeLists.txt']
+  languages:
+    - CMake
   time: 2013-02-25 (04:36)

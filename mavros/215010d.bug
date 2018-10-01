@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Possible array overrun
-
-description:
+description: >
      The function "MAVConnInterface::new_channel" in
      "mavconn_interface.cpp" is used to establish a new communications
      channel, and to return the index of that channel to the
@@ -17,59 +18,45 @@ description:
      would be added to the set and returned to the user. Subsequent
      accesses to this channel could then result in an array overrun,
      or cause unexpected program behaviour.
-
-classification: CWE-193: Off-by-one Error
-
-keywords: Incorrect comparison operators | array overrun | off-by-one
-
+classification: "CWE-193: Off-by-one Error"
+keywords:
+  - Incorrect comparison operators
+  - array overrun
+  - off-by-one
 system: mavros
-
 severity: bad-smell
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
-  specificity: general issue: off-by-one error (<= should be <)
-
+  specificity: "general issue: off-by-one error (<= should be <)"
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: C++
-
+  package: mavros
+  languages:
+    - C++
   detected-by: compiler
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 215010d25409211ccfb35375c218c74c921b1a3a
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: src/mavconn/mavconn_interface.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - src/mavconn/mavconn_interface.cpp
+  languages:
+    - C++
   time: 2014-06-30 (00:00)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  datetime: 2014-06-30

@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Segmentation fault due to incorrect resource sharing between threads
-
-description:
+description: >
      MAVROS (asynchronously) runs its TCP, UDP, and serial connection
      services using dedicated threads.  The "utils::set_thread_name"
      function is used to assign appropriate names to each of those
@@ -13,59 +14,50 @@ description:
      for the thread. To fix this issue, "pthread_self()" is used to
      fetch a valid "pthread_t" instance for the current thread,
      instead.
-
-classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE
-
-keywords: segmentation fault | race condition
-
+classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
+keywords:
+  - segmentation fault
+  - race condition
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
   specificity: general issue
-
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
   package: mavlink/mavros
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 400949c5b152a888a8b4fd94b085bbfc2092f146
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: libmavconn/include/mavconn/thread_utils.h | libmavconn/include/mavconn/interface.h | libmavconn/src/interface.cpp | libmavconn/src/serial.cpp | libmavconn/src/tcp.cpp | libmavconn/src/udp.cpp | libmavconn/test/test_hang.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - libmavconn/include/mavconn/thread_utils.h
+    - libmavconn/include/mavconn/interface.h
+    - libmavconn/src/interface.cpp
+    - libmavconn/src/serial.cpp
+    - libmavconn/src/tcp.cpp
+    - libmavconn/src/udp.cpp
+    - libmavconn/test/test_hang.cpp
+  languages:
+    - C++
   time: 2016-06-06 (00:00)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - mavros
+  datetime: 2016-06-06

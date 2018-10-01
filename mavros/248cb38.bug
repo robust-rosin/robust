@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Missing ENU->NED frame conversion in send_attitude_target
-
-description:
+description: >
      The "send_attitude_target" function in "setpoint_attribute.cpp"
      accepts a 3D affine transformation (along with a timestamp), and
      forwards an attitude target to MAVLink via the lower-level
@@ -10,59 +11,44 @@ description:
      higher-level function converts the affine transformation to a
      quarternion in the ENU frame, but fails to convert the resulting
      quaternion to the NED frame expected by the lower-level frame.
-
 classification: Missing Frame Conversion (no CWE); possibly CWE-137?
-
-keywords: incorrect argument | frame conversion
-
+keywords:
+  - incorrect argument
+  - frame conversion
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
   specificity: UNCLEAR
-
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: C++
-
+  package: mavros
+  languages:
+    - C++
   detected-by: N/A
-
   reported-by: unreported
-
   issue: N/A
-
   time-reported: unreported
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 248cb389b122fa94a68578a48e50d4f240df4629
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: mavros/src/plugins/setpoint_attitude.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/plugins/setpoint_attitude.cpp
+  languages:
+    - C++
   time: 2015-07-28 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-07-28

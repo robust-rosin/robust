@@ -1,15 +1,14 @@
+%YAML 1.1
+---
 title: Referencing Wrong Parameter File
-
-description:
+description: >
      A launch file was referencing a data file from another repository
      to initialize ROS parameters.
-
      Launch files are XML files that declare a sequence of nodes for
      the ROS platform to execute. Launch files can also declare ROS
      parameters to be loaded to the ROS parameter server (key-value
      pairs). In particular, the `rosparam` tag is a shortcut to load a
      series of parameters from an YAML file.
-
      Referencing data files from other repositories is arguably not
      recommended, because they may change or disappear unexpectedly,
      besides introducing additional dependencies. Additionally, the
@@ -21,47 +20,27 @@ description:
 
      The fix consisted on creating a file with the required data
      within the Kobuki repository.
-
 classification: External Dependency (no CWE)
-
-keywords: dependencies | rosparam | launch
-
+keywords: ['dependencies', 'rosparam', 'launch']
 system: kobuki
-
 severity: bad-smell
-
-links: http://wiki.ros.org/roslaunch/XML/rosparam
-
+links: ['http://wiki.ros.org/roslaunch/XML/rosparam']
 bug:
-  
   phase: runtime-initialization
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
   application: system bringup
-
-  task: N/A
-
+  task: null
   subsystem: driver
-
   package: yujinrobot/kobuki/kobuki_node
-
-  languages: launch XML
-
+  languages:
+    - launch XML
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/yujinrobot/kobuki/issues/339
-
   time-reported: 2014-08-11 (06:11)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
   reproduction: >
         An issue surfaced when building the docker image, as it could
         not find tf2 packages. This was due to the repository being named
@@ -69,7 +48,7 @@ bug:
         having been renamed to `geometry2` later on. To fix this, the
         rosinstall file had to be patched manually. Cf. issue
         https://github.com/robust-rosin/robust/issues/63.
-        
+
         Regarding the test case, the strategy is very straightforward.
         Since the bug is related to the use of data files from other packages
         within a launch file (thus, creating unnecessary dependencies),
@@ -77,19 +56,12 @@ bug:
         `rosparam` tag (which loads the file), and check that the fixed
         version no longer uses a file from another package (in this case,
         `turtlebot_bringup`).
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki
-
   hash: 8c30446d18bad63da0f58a1f666c2e7e209d917d
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_node/launch/robot_with_tf.launch
-
-  languages: launch XML
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_node/launch/robot_with_tf.launch']
+  languages:
+    - launch XML
   time: 2014-08-11 (06:11)

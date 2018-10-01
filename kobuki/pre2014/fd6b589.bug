@@ -1,62 +1,37 @@
+%YAML 1.1
+---
 title: Wrong Metapackage Dependencies
-
-description:
+description: >
      Kobuki metapackages were declaring a list of dependencies
      (children) that did not correspond to the actual list of children
      they grouped.
-
 classification: Wrong Dependencies (no CWE)
-
-keywords: metapackage | package | dependencies
-
+keywords: ['metapackage', 'package', 'dependencies']
 system: kobuki
-
 severity: error
-
-links: http://wiki.ros.org/Metapackages
-
+links: ['http://wiki.ros.org/Metapackages']
 bug:
-  
   phase: build-time
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
-  application: 
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: metapackage
-
   package: yujinrobot/kobuki/kobuki | yujinrobot/kobuki_core/kobuki_core
-
-  languages: Package XML
-
+  languages:
+    - Package XML
   detected-by: build system
-
   reported-by: automatic
-
   issue: https://github.com/yujinrobot/kobuki_core/issues/2
-
   time-reported: 2013-08-31 (03:02)
-
   reproducibility: always
-
   trace:
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki_core | https://github.com/yujinrobot/kobuki
-
   hash: fd6b589ccba8ed8531c66a806cb755074207a4c2 | 710e62408a0c6934e423411b9ae914fb26a3be49
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_core/package.xml | kobuki/package.xml
-
-  languages: Package XML
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_core/package.xml', 'kobuki/package.xml']
+  languages:
+    - Package XML
   time: 2013-08-31 (07:09)

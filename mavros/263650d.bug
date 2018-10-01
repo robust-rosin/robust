@@ -1,63 +1,48 @@
+%YAML 1.1
+---
 title: Incorrect topic name used to fetch GPS information
-
-description:
+description: >
      Following changes to MAVROS, the name of the "gps" topic was
      renamed to "global_position". The buggy function,
      "_find_gps_topic", continues to use the older, incorrect name of
      the "gps" topic.
-
-classification: Incorrect (String-Based) Parameter Name (no CWE) #EVOLUTION
-
-keywords: topic path
-
+classification: "Incorrect (String-Based) Parameter Name (no CWE) #EVOLUTION"
+keywords:
+  - topic path
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-initialization
-
   specificity: ROS-specific
-
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: Python
-
+  package: mavros
+  languages:
+    - Python
   detected-by: developer
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: 263650d6c1a9c9aebc6b8a0e3ea4627e59c58a77
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: mavros/scripts/mavcmd
-
-  languages: Python
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/scripts/mavcmd
+  languages:
+    - Python
   time: 2015-08-03 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-08-03

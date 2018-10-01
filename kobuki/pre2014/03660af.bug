@@ -1,64 +1,38 @@
+%YAML 1.1
+---
 title: Potential Race Condition on Serial Writes
-
-description:
+description: >
      The Kobuki driver communicates with the actual robot by sending
      commands over a serial cable. This interface was not protected
      against concurrent accesses, while being used in an environment
      that, more often that not, features multithreading.
-
-classification: CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE
-
-keywords: multithreading | concurrency | race condition | driver | serial
-
+classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
+keywords: ['multithreading', 'concurrency', 'race condition', 'driver', 'serial']
 system: kobuki
-
 severity: bad-smell
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-operation
-
   specificity: general-issue
-
   architectural-location: application-specific code
-
-  application: 
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: driver
-
   package: yujinrobot/kobuki/kobuki_driver
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/yujinrobot/kobuki/issues/125
-
   time-reported: 2012-06-04 (05:54)
-
   reproducibility: rare
-
   trace:
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki
-
   hash: 03660afb5917366cc6d57567e2f695450fd95feb
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_driver/include/kobuki_driver/kobuki.hpp | kobuki_driver/src/driver/kobuki.cpp
-
-  languages: C++
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
+  languages:
+    - C++
   time: 2012-06-04 (05:58)
-

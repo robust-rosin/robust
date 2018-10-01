@@ -1,63 +1,39 @@
+%YAML 1.1
+---
 title: Deprecated reference to files in sia5d package
-
-description:
+description: >
      The sia5d_support packages makes use of mesh files for robot
      visualization.  The meshes used in the robot description file
      sia5d_macro.xacro refers to the motoman_config package for this
      mesh files, which is deprecated.
-
-classification: CWE-477: Use of Obsolete Functions #EVOLUTION
-
-keywords: xacro macro | mesh | robot description
-
+classification: "CWE-477: Use of Obsolete Functions #EVOLUTION"
+keywords: ['xacro macro', 'mesh', 'robot description']
 system: motoman
-
 severity: minor-issue
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-initialization
-
   specificity: general-issue
-
   architectural-location: application-specific
-
   application: industrial robot arm
-
   task: simulation
-
   subsystem: visualization
-
   package: ros-industrial/motoman | ros-industrial/motoman/sia5d_support
-
-  languages: XML
-
+  languages:
+    - XML
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/ros-industrial/motoman/issues/81
-
   time-reported: 2016-02-15 (00:00)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/ros-industrial/motoman
-
-  hash: 
-
+  hash: null
   pull-request: 94
-
-  license: BSD
-
-  fix-in: motoman_sia5d_support/urdf/sia5d.urdf | motoman_sia5d_support/urdf/sia5d_macro.xacro
-
-  languages: xacro | urdf
-
+  license: ['BSD']
+  fix-in: ['motoman_sia5d_support/urdf/sia5d.urdf', 'motoman_sia5d_support/urdf/sia5d_macro.xacro']
+  languages:
+    - xacro
+    - urdf
   time: 2016-06-25 (00:00)

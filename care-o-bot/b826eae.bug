@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: Xacro broken because of missing argument
-
-description:
+description: >
      A xacro can reference to other xacros with the ability to pass
      arguments. In the example a child-xacro was changed by adding an
      additional argument. However, the parent-xacro (includes the
@@ -14,59 +15,32 @@ description:
      has been forgotten in the example.  The problem was solved by
      adding the newly introduced argument to the parent-xacro at the
      respective call of the child-xacro.
-
-classification: CWE-685: Wrong Number of Function Arguments #EVOLUTION
-
-keywords: xacro | arguments | update | outdated
-
+classification: "CWE-685: Wrong Number of Function Arguments #EVOLUTION"
+keywords: ['xacro', 'arguments', 'update', 'outdated']
 system: care-o-bot
-
 severity: error
-
-links: http://wiki.ros.org/xacro
-
+links: ['http://wiki.ros.org/xacro']
 bug:
-
   phase: build-time
-
   specificity: ROS-specific
-
   architectural-location: application-specific
-
   application: cob robots
-
-  task: N/A
-
+  task: null
   subsystem: robot description
-
   package: cob_robots
-
   languages: xacro
-
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/ipa320/cob_robots/issues/552
-
   time-reported: 2016-11-04 (00:00)
-
   reproducibility: sometimes
-
   trace:
-
 fix:
-
   repo: https://github.com/ipa320/cob_robots
-
   hash: b826eaeae5c8dc548ac2c97002725c7a8131137e
-
   pull-request: https://github.com/ipa320/cob_robots/pull/553
-
-  license: LGPL
-
-  fix-in: https://github.com/ipa-fmw/cob_robots/blob/b826eaeae5c8dc548ac2c97002725c7a8131137e/cob_hardware_config/cob3-9/urdf/cob3-9.urdf.xacro  
-
-  languages: xacro 
-
+  license: ['LGPL']
+  fix-in: ['https://github.com/ipa-fmw/cob_robots/blob/b826eaeae5c8dc548ac2c97002725c7a8131137e/cob_hardware_config/cob3-9/urdf/cob3-9.urdf.xacro']
+  languages:
+    - xacro
   time: 2016-11-10 (00:00)

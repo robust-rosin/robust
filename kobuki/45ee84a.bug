@@ -1,62 +1,37 @@
+%YAML 1.1
+---
 title: Exporting Non-Existent Libraries
-
-description:
+description: >
      A CMake file was declaring a couple libraries as being part of
      the Kobuki driver package, but it was actually a copy and paste
      mistake.
-
 classification: Exporting Non-Existent Libraries (no CWE)
-
-keywords: CMake | libraries | package
-
+keywords: ['CMake', 'libraries', 'package']
 system: kobuki
-
 severity: error
-
-links: 
-
+links: []
 bug:
-  
   phase: build-time
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
-  application: 
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: driver
-
   package: yujinrobot/kobuki_core/kobuki_ftdi
-
-  languages: CMake
-
+  languages:
+    - CMake
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/yujinrobot/kobuki_core/issues/16
-
   time-reported: 2015-02-11 (18:21)
-
   reproducibility: always
-
   trace:
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki_core
-
   hash: 45ee84aa1e920b26f8191763e20c10c5806ead60
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_ftdi/CMakeLists.txt
-
-  languages: CMake
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_ftdi/CMakeLists.txt']
+  languages:
+    - CMake
   time: 2015-02-12 (00:18)

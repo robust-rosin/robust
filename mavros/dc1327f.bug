@@ -1,61 +1,41 @@
+%YAML 1.1
+---
 title: Missing mavlink dependency
-
-description:
+description: >
      Versions 0.9 and 0.8.3 of MAVROS fail to build due to a missing
      "mavlink" dependency.
-
 classification: Missing Dependency (no CWE)
-
-keywords: missing dependencies 
-
+keywords:
+  - missing dependencies
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: build-time
-
-  specificity: general issue: missing dependency
-
+  specificity: "general issue: missing dependency"
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: XML
-
+  package: mavros
+  languages:
+    - XML
   detected-by: developer
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: dc1327f35887f9337bb4f29bb94fb8a5c5fa8a73
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: libmavconn/package.xml
-
-  languages: XML
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - libmavconn/package.xml
+  languages:
+    - XML
   time: 2013-11-03 (00:00)

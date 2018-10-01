@@ -1,62 +1,35 @@
+%YAML 1.1
+---
 title: Directory names with mixed case
-
-description:
+description: >
      The directories Inform and MotoPlus are mixed case, all other
      directories are lowercase. The dx100 package has directories with
      the same names, but in all lowercase.
-
 classification: inconsistent naming
-
-keywords: mixed case | naming convention | lowercase
-
+keywords: ['mixed case', 'naming convention', 'lowercase']
 system: motoman
-
 severity: bad-style
-
-links: 
-
+links: []
 bug:
-  
   phase: compile-time
-
   specificity: general-issue
-
   architectural-location: platform code
-
-  application: N/A
-
-  task: N/A
-
-  subsystem: N/A
-
-  package: ros-industrial/motoman | ros-industrial/motoman/motoman_mh5_support | ros-industrial/motoman/motoman_sda10f_support | ros_industrial/motoman/motoman_sia10d_support | ros-industrial/motoman/motoman_sia20d_support | ros-industrial/motoman/motoman_sia5d_support	
-
-  languages: N/A
-
+  application: null
+  task: null
+  subsystem: null
+  package: ros-industrial/motoman | ros-industrial/motoman/motoman_mh5_support | ros-industrial/motoman/motoman_sda10f_support | ros_industrial/motoman/motoman_sia10d_support | ros-industrial/motoman/motoman_sia20d_support | ros-industrial/motoman/motoman_sia5d_support
+  languages: null
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/ros-industrial/motoman/issues/12
-
   time-reported: 2013-08-26 (12:01)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/ros-industrial/motoman
-
-  hash: N/A
-  
+  hash: null
   pull-request: 12
-
-  license: BSD
-
-  fix-in: ros-industrial/motoman | ros-industrial/motoman/motoman_mh5_support | ros-industrial/motoman/motoman_sda10f_support | ros_industrial/motoman/motoman_sia10d_support | ros-industrial/motoman/motoman_sia20d_support | ros-industrial/motoman/motoman_sia5d_support	
-
-  languages: N/A
-
+  license: ['BSD']
+  fix-in: ['ros-industrial/motoman', 'ros-industrial/motoman/motoman_mh5_support', 'ros-industrial/motoman/motoman_sda10f_support', 'ros_industrial/motoman/motoman_sia10d_support', 'ros-industrial/motoman/motoman_sia20d_support', 'ros-industrial/motoman/motoman_sia5d_support']
+  languages: null
   time: 2014-09-02 (11:31)

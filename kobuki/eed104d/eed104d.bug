@@ -1,87 +1,59 @@
+%YAML 1.1
+---
 title: Missing Build Dependency
-
-description:
+description: >
      A package dependency was missing in order for the build to
      succeed.
-
 classification: Missing Dependency (no CWE)
-
-keywords: package | dependencies | build
-
+keywords: ['package', 'dependencies', 'build']
 system: kobuki
-
 severity: error
-
-links: http://wiki.ros.org/catkin/package.xml#Dependencies
-
+links: ['http://wiki.ros.org/catkin/package.xml#Dependencies']
 bug:
-  
   phase: build-time
-
   specificity: ROS-specific
-
   architectural-location: application-specific code
-
-  application: 
-
-  task: N/A
-
+  application: null
+  task: null
   subsystem: driver
-
   package: yujinrobot/kobuki_core/kobuki_ftdi
-
-  languages: package.xml | CMake
-
+  languages:
+    - package.xml
+    - CMake
   detected-by: build system
-
   reported-by: guest user
-
   issue: https://github.com/yujinrobot/kobuki_core/issues/29
-
   time-reported: 2017-03-01 (08:57)
-
   reproducibility: always
-
   trace: |
     CMake Error at /usr/share/cmake-3.2/Modules/FindPkgConfig.cmake:552 (message):
       None of the required 'libusb' found
     Call Stack (most recent call first):
       CMakeLists.txt:7 (pkg_search_module)
-
     -- checking for one of the modules 'libftdi'
     CMake Error at /usr/share/cmake-3.2/Modules/FindPkgConfig.cmake:552 (message):
       None of the required 'libftdi' found
     Call Stack (most recent call first):
       CMakeLists.txt:8 (pkg_search_module)
-
     CMake Warning at /opt/ros/kinetic/share/catkin/cmake/catkin_package.cmake:166 (message):
       catkin_package() DEPENDS on 'libusb' but neither 'libusb_INCLUDE_DIRS' nor
       'libusb_LIBRARIES' is defined.
     Call Stack (most recent call first):
       /opt/ros/kinetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)
       CMakeLists.txt:10 (catkin_package)
-
     CMake Warning at /opt/ros/kinetic/share/catkin/cmake/catkin_package.cmake:166 (message):
       catkin_package() DEPENDS on 'libftdi' but neither 'libftdi_INCLUDE_DIRS'
       nor 'libftdi_LIBRARIES' is defined.
     Call Stack (most recent call first):
       /opt/ros/kinetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)
       CMakeLists.txt:10 (catkin_package)
-
     -- Configuring incomplete, errors occurred!
-
 fix:
-
   repo: https://github.com/yujinrobot/kobuki_core
-
   hash: eed104dcdd8862824598838b65a7e2339f8e660a
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_ftdi/package.xml
-
-  languages: Package XML
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_ftdi/package.xml']
+  languages:
+    - Package XML
   time: 2017-03-03 (00:11)

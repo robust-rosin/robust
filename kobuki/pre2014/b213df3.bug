@@ -1,68 +1,42 @@
+%YAML 1.1
+---
 title: Missing Comment Token
-
-description:
+description: >
      ROS parameters (key-value pairs) can be loaded from YAML files.
      One such file was missing a line comment token, causing part of
      the text to be interpreted as YAML data, and loaded as a ROS
      parameter.
-
      There was no crash or error report because the text happened to
      contain a colon, which made it valid YAML syntax for the parser.
      The end result was a strangely named parameter showing up during
      operation.
-
 classification: Syntax Error (no CWE)
-
-keywords: parameters | yaml | syntax | comments
-
+keywords: ['parameters', 'yaml', 'syntax', 'comments']
 system: kobuki
-
 severity: minor-issue
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-initialization
-
   specificity: general-issue
-
   architectural-location: application-specific code
-
   application: mobile robot
-
-  task: N/A
-
+  task: null
   subsystem: driver
-
   package: yujinrobot/kobuki/kobuki_node
-
-  languages: YAML
-
+  languages:
+    - YAML
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/yujinrobot/kobuki/issues/300
-
   time-reported: 2013-08-30 (05:41)
-
   reproducibility: always
-
-  trace: N/A
-
+  trace: null
 fix:
-
   repo: https://github.com/yujinrobot/kobuki
-
   hash: b213df3324cd933ddfc1bbd7ef8dce50cc233d51
-
-  pull-request: 
-
-  license: BSD
-
-  fix-in: kobuki_node/param/base.yaml
-
-  languages: YAML
-
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_node/param/base.yaml']
+  languages:
+    - YAML
   time: 2013-08-30 (09:45)

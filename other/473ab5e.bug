@@ -1,6 +1,7 @@
+%YAML 1.1
+---
 title: component not correctly initialized at activation
-
-description:
+description: >
      A robot is providing an interface for pose-based control, i.e.,
      it is ready to receive 6d pose request to move the robot.  Among
      the different ways to produce the pose target, the one of
@@ -8,7 +9,6 @@ description:
      interface.  This component reads at launch the current pose of
      the robot, and waits then for joystick input to produce some
      motion requests.
-    
      But if the robot is moved through other means, the joystick-based
      pose commands does not get the current robot pose updated. It is
      indeed only set at the component creation.  Thus, when the
@@ -16,61 +16,33 @@ description:
      input, the target pose updated may be based on an old pose of the
      robot end effector, so that the robot will move back to a
      previous (and potentially far) pose.
-
-classification: Dangerous behavior: wrong position from joystick (no CWE) #PHYSICAL
-
-keywords: driver | joystick | node life-cycle
-
+classification: "Dangerous behavior: wrong position from joystick (no CWE) #PHYSICAL"
+keywords: ['driver', 'joystick', 'node life-cycle']
 system: shadow-robot
-
 severity: error
-
-links: 
-
+links: []
 bug:
-  
   phase: runtime-operation
-
   specificity: robotic-specific or general issue
-
   architectural-location: application-specific code
-
   application: arm control
-
   task: arm position-based inverse kinematics
-
-  subsystem: driver | controller # (component getting joystick motion and deducing the desired 6D motion of the arm end effector)
-
+  subsystem: "driver | controller # (component getting joystick motion and deducing the desired 6D motion of the arm end effector)"
   package: shadow_robot/stiff_flop/sf_teleop/
-
   reactive: ???
-
-  languages: N/A
-
+  languages: null
   detected-by: user
-
   reported-by: member developer
-
   issue: https://github.com/shadow-robot/stiff_flop/issues/276
-
   time-reported: 2015-12-04 (00:00)
-
   reproducibility: always
-
   trace:
-
 fix:
-
   repo:  https://github.com/shadow-robot/stiff_flop
-
   hash: 473ab5eb82487fb024458c0d709463fb3e046e34
-
   pull-request: https://github.com/shadow-robot/stiff_flop/issues/276
-
-  license: closed source
-
-  fix-in: sf_teleop/CMAkelists.txt | sf_teleop/package.xml | sf_teleop/scripts/sf_teleop/sf_joystick_control.py
-
-  languages: python
-
+  license: ['closed source']
+  fix-in: ['sf_teleop/CMAkelists.txt', 'sf_teleop/package.xml', 'sf_teleop/scripts/sf_teleop/sf_joystick_control.py']
+  languages:
+    - python
   time: 2015-12-07 (00:00)

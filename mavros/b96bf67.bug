@@ -1,65 +1,52 @@
+%YAML 1.1
+---
 title: Incorrect orientation (wrong frame) passed to set_attitude_target
-
-description:
+description: >
      MAVROS operates on a frame of base_link->ENU, whereas MAVLink
      operates on aircraft->NED. Therefore, location and orientation
      must be transformed between these two frames when communicating
      between them.  The buggy function correctly performs the
      necessary frame conversions, but fails to pass the converted
      orientation in the "set_attitude_target" function call.
-
 classification: CWE-137 Representation Errors #PHYSICAL
-
-keywords: incorrect argument | function call | frame conversion
-
+keywords:
+  - incorrect argument
+  - function call
+  - frame conversion
 system: mavros
-
 severity: error
-
-links:
-
+links: []
 bug:
-
   phase: runtime-operation
-
   specificity: general issue?
-
   architectural-location: N/A
-
   application: N/A
-
   task: N/A
-
   subsystem: N/A
-
-  package: mavlink/mavros
-
-  languages: C++
-
+  package: mavros
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
   issue: N/A
-
   time-reported: N/A
-
   reproducibility: N/A
-
   trace: N/A
-
 fix:
-
   repo: https://github.com/mavlink/mavros
-
   hash: b96bf672a718b9f0c9694e4314283e385ba96231
-
   pull-request: N/A
-
-  license: BSD | GPLv3 | LGPLv3
-
-  fix-in: mavros/src/plugins/setpoint_raw.cpp
-
-  languages: C++
-
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/plugins/setpoint_raw.cpp
+  languages:
+    - C++
   time: 2016-04-29 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2016-04-29
