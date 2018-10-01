@@ -75,14 +75,14 @@ def main():
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
-            'kinetic': '16.04',
+            'kinetic': '16.04.4',
             'jade': '15.04',
-            'indigo': '14.04',
-            'hydro': '12.04',
-            'groovy': '12.04',
-        }).get(ros_distro, '12.04')
+            'indigo': '14.04.5',
+            'hydro': '12.04.5',
+            'groovy': '12.04.5',
+        }).get(ros_distro, '12.04.5')
         use_apt_old_releases = \
-            ubuntu_version in ['15.04', '12.04']
+            ubuntu_version in ['15.04', '12.04.5']
 
         build_args = {
             'IS_BUILD_FAILURE': "yes" if is_build_failure else "no",
