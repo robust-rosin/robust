@@ -89,9 +89,10 @@ RUN apt-get update \
       cmake \
       wget \
       lsb-release \
- && pip install --upgrade pip==9.0.3 \
- && pip install setuptools \
- && pip install --upgrade \
+ && pip --version \
+ && pip install --upgrade -i https://pypi.python.org/simple pip==9.0.3
+RUN pip install --upgrade \
+      setuptools \
       wheel \
       rosdep \
       wstool \
