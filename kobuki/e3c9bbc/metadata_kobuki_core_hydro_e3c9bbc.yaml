@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: e3c9bbc
+put: kobuki_core
+ros_distro: hydro
+datetime_reported: 2014-05-28T00:47:38Z
+issue_url: https://github.com/yujinrobot/kobuki_desktop/issues/29
+reproduction-images:
+  buggy: TODO
+  fixed: TODO
+  rosdistro: b60f65bbecb4ff4d0a392a046c418e1515bb6c59

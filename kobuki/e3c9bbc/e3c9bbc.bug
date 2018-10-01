@@ -30,7 +30,12 @@ bug:
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/29
   time-reported: 2014-05-28 (01:47)
   reproducibility: always
-  trace:
+  trace: null
+  reproduction: >
+        We decided to not reproduce this bug, as this is not really an
+        interesting case from the perspective of software analysis.
+        Besides, the fix occurs in the rosdistro repository, which does
+        not contain a ROS package, and makes the reproduction process harder.
 fix:
   repo: https://github.com/ros/rosdistro
   hash: e3c9bbcd9a3c05a5375375732d52e185cca5afb0
