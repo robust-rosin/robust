@@ -12,7 +12,7 @@ classification: "Changed macro to function call #EVOLUTION"
 keywords: ['backporting', 'fix', 'driver']
 system: kobuki
 severity: error
-links: []
+links:
   - http://www.cplusplus.com/reference/cmath/isnan/
   - http://wiki.ros.org/CppStyleGuide
 bug:

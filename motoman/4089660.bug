@@ -5,7 +5,7 @@ description: >
      In the Motoman driver a variable 'bHasPreviousData' is set to
      different values, but it is never used in any case later.  It is
      used just in a line, which is at that moment in a commit.
-classification: CWE-563: Assignment to Variable without Use (Unused Variable)
+classification: "CWE-563: Assignment to Variable without Use (Unused Variable)"
 keywords: ['driver', 'motoman']
 system: motoman
 severity: error
