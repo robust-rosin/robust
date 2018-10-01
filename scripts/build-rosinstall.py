@@ -49,7 +49,7 @@ def build_file(fn_bug_desc, overwrite=False):
     if 'issue' in d['time-machine']:
         issue_or_datetime = d['time-machine']['issue']
     elif 'datetime' in d['time-machine']:
-        issue_or_datetime = str(d['time-machine']['datetime'])
+        issue_or_datetime = d['time-machine']['datetime'].isoformat()
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
