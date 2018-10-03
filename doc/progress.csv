@@ -8,3 +8,4 @@ f8d175b, universal_robot, Yes, Yes, Yes, No
 1c141a5, kobuki, No, Yes, No, No
 5ee65b0, kobuki, Yes, Yes, Yes, Yes
 dd40270, kobuki, Yes, Yes, Yes, Yes
+1a746c3, mavros, Yes, No, Yes, No
