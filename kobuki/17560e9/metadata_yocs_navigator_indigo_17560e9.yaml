@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 17560e9
+put: yocs_navigator
+ros_distro: indigo
+datetime_reported: 2015-02-09T13:05:00Z
+issue_url: 2015-02-09T13:05:00Z
+reproduction-images:
+  buggy: ecb7a6619b8c541b5c6042d3137969302604ca84
+  fixed: 17560e98ef751714a352a5cee403fd3eb53c9fdb
+  rosdistro: ec7ee86eec1506aaf580d1092d4e48f9798331c8
