@@ -45,3 +45,7 @@ time-machine:
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/62
+bugzoo:
+  is-build-failure: yes
+  bug-commit: 366dadaadfb85e0a1450a4a59477419930f94372
+  fix-commit: 282c9bece1fa7bc87db070d836127b52bb9d1306
