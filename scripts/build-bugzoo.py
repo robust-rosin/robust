@@ -75,7 +75,7 @@ def main():
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
-            'kinetic': '16.04.4',
+            'kinetic': 'xenial-20180808',
             'jade': '15.04',
             'indigo': '14.04.5',
             'hydro': '12.04.5',
