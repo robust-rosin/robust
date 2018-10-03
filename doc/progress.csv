@@ -2,7 +2,7 @@ Bug, Package, ROS Install?, Forked?, Docker?, Tests?
 b826eae, care-o-bot, Yes, Yes, Yes, Yes
 b4dc23c, geometry2, Yes, Yes, Yes, Yes
 b166c93, kobuki, Yes, Yes, Yes, Yes
-eed104d, kobuki, Yes, No, No, No
+eed104d, kobuki, Yes, Yes, No, No
 ca23e58, ros_comm, Yes, Yes, No, Yes
 f8d175b, universal_robot, Yes, Yes, Yes, No
 1c141a5, kobuki, No, Yes, No, No
@@ -10,3 +10,7 @@ f8d175b, universal_robot, Yes, Yes, Yes, No
 dd40270, kobuki, Yes, Yes, Yes, Yes
 08cd181, mavros, Yes, N/A, Yes, N/A
 1a746c3, mavros, Yes, No, Yes, No
+8c30446, kobuki, Yes, Yes, Yes, Yes
+e3c9bbc, kobuki, Yes, No, Unreproducible, No
+f95c384, kobuki, Yes, Yes, No, Yes
+17560e9, kobuki, No, No, No, Yes
