@@ -44,3 +44,7 @@ time-machine:
   ros_distro: groovy
   ros_pkgs:
     - mavros
+bugzoo:
+  is-build-failure: yes
+  bug-commit: 215010d25409211ccfb35375c218c74c921b1a3a
+  fix-commit: 101c09b7047eac18a2d9989b09c5916181a49cd5
