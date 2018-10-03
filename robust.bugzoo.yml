@@ -1,0 +1,278 @@
+blueprints:
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'yes'
+    REPO_BUG_COMMIT: 366dadaadfb85e0a1450a4a59477419930f94372
+    REPO_FIX_COMMIT: 282c9bece1fa7bc87db070d836127b52bb9d1306
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: hydro
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
+  context: mavros/282c9be
+  file: Dockerfile
+  tag: robustrosin/robust:282c9be
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: 7b742cfdab5f8af5cef35481e9ce8c214a9a335a
+    REPO_FIX_COMMIT: 29af3a3c14da0e5b92ebad40b8befa8e0141b63d
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: indigo
+    UBUNTU_VERSION: 14.04.5
+    USE_APT_OLD_RELEASES: false
+  context: mavros/29af3a3
+  file: Dockerfile
+  tag: robustrosin/robust:29af3a3
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'yes'
+    REPO_BUG_COMMIT: 665484a19c47771cc68200b2cd2c5c75a77995ac
+    REPO_FIX_COMMIT: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: hydro
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
+  context: mavros/08cd181
+  file: Dockerfile
+  tag: robustrosin/robust:08cd181
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: f2b2dfce6fbccd84a60aba48cc14a9cd8ab931cc
+    REPO_FIX_COMMIT: 215010d25409211ccfb35375c218c74c921b1a3a
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: hydro
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
+  context: mavros/215010d
+  file: Dockerfile
+  tag: robustrosin/robust:215010d
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: 3a82c908b6dba4b784c46106c51ae73ff1e881b8
+    REPO_FIX_COMMIT: 248cb389b122fa94a68578a48e50d4f240df4629
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: indigo
+    UBUNTU_VERSION: 14.04.5
+    USE_APT_OLD_RELEASES: false
+  context: mavros/248cb38
+  file: Dockerfile
+  tag: robustrosin/robust:248cb38
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: 82007c06555130ca840c064ed3a93b7cfbdf8d32
+    REPO_FIX_COMMIT: 2998e9f7f9e0fb969e7248a46d5ecd0749614d06
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: hydro
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
+  context: mavros/2998e9f
+  file: Dockerfile
+  tag: robustrosin/robust:2998e9f
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: 2caee4543d130b74cd3d349c04684d236dde838b
+    REPO_FIX_COMMIT: 1f019166ccedf8ce5151944f5e33302afaf82679
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: hydro
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
+  context: mavros/1f01916
+  file: Dockerfile
+  tag: robustrosin/robust:1f01916
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: b9bece1437dfe50c2d6855efd166ea2def2733ea
+    REPO_FIX_COMMIT: 400949c5b152a888a8b4fd94b085bbfc2092f146
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: kinetic
+    UBUNTU_VERSION: xenial-20180808
+    USE_APT_OLD_RELEASES: false
+  context: mavros/400949c
+  file: Dockerfile
+  tag: robustrosin/robust:400949c
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: 8a1de7ce287af951363ea24a6a70aa74cae23a4b
+    REPO_FIX_COMMIT: 1a746c326c49c0c265e01556bd4da45dadeacaa7
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: indigo
+    UBUNTU_VERSION: 14.04.5
+    USE_APT_OLD_RELEASES: false
+  context: mavros/1a746c3
+  file: Dockerfile
+  tag: robustrosin/robust:1a746c3
+- arguments:
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'yes'
+    REPO_BUG_COMMIT: 215010d25409211ccfb35375c218c74c921b1a3a
+    REPO_FIX_COMMIT: 101c09b7047eac18a2d9989b09c5916181a49cd5
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: groovy
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
+  context: mavros/101c09b
+  file: Dockerfile
+  tag: robustrosin/robust:101c09b
+- arguments:
+    CATKIN_PKG: tf2_ros
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: 2b21a3e00a3f96fcd9f194baf6fa160e38fb6c56
+    REPO_FIX_COMMIT: 4e442e278e751c4563b83cd5b2e01556ba3e6e45
+    REPO_FORK_URL: https://github.com/robust-rosin/geometry2
+    ROS_DISTRO: indigo
+    UBUNTU_VERSION: 14.04.5
+    USE_APT_OLD_RELEASES: false
+  context: geometry2/b4dc23c
+  file: Dockerfile
+  tag: robustrosin/robust:b4dc23c
+bugs:
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:282c9be
+  languages:
+  - cpp
+  name: robust:282c9be
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:29af3a3
+  languages:
+  - cpp
+  name: robust:29af3a3
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:08cd181
+  languages:
+  - cpp
+  name: robust:08cd181
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:215010d
+  languages:
+  - cpp
+  name: robust:215010d
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:248cb38
+  languages:
+  - cpp
+  name: robust:248cb38
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:2998e9f
+  languages:
+  - cpp
+  name: robust:2998e9f
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:1f01916
+  languages:
+  - cpp
+  name: robust:1f01916
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:400949c
+  languages:
+  - cpp
+  name: robust:400949c
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:1a746c3
+  languages:
+  - cpp
+  name: robust:1a746c3
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:101c09b
+  languages:
+  - cpp
+  name: robust:101c09b
+  program: mavros
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:b4dc23c
+  languages:
+  - cpp
+  name: robust:b4dc23c
+  program: geometry2
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+version: '1.0'
