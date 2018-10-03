@@ -91,8 +91,8 @@ RUN apt-get update \
       lsb-release \
  && pip --version \
  && pip install --upgrade -i https://pypi.python.org/simple pip==9.0.3
+RUN pip install --upgrade setuptools
 RUN pip install --upgrade \
-      setuptools \
       wheel \
       rosdep \
       wstool \
