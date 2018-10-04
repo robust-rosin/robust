@@ -46,3 +46,7 @@ fix:
   languages:
     - C++
   time: 2015-09-17 (00:00)
+bugzoo:
+  is-build-failure: no
+  bug-commit: 753226d93a735ba01744620b5654b8a038d1c89d
+  fix-commit: fcf9cd9de383a20bb98dad3040cc0a6204cb9e10
