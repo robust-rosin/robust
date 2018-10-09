@@ -139,6 +139,8 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/devel_isolated
 
 # download & build Package Under Test
+# && git fetch origin "${REPO_FIX_COMMIT}" \
+# && git fetch origin "${REPO_BUG_COMMIT}" \
 COPY --from=fork /tmp/repo-under-test src/repo-under-test
 ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
 ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
@@ -146,9 +148,9 @@ RUN cd src/repo-under-test \
  && echo "[ROBUST] fetching fixed and buggy source code..." \
  && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}" \
  && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
- && git fetch origin "${REPO_FIX_COMMIT}" \
- && git fetch origin "${REPO_BUG_COMMIT}" \
- && git checkout "${REPO_BUG_COMMIT}" \
+ && git log -a \
+ && git pull \
+ && git reset --hard "${REPO_BUG_COMMIT}" \
  && echo "[ROBUST] fetched fixed and buggy source code."
 
 # generate fix and unfix scripts
