@@ -43,8 +43,8 @@ time-machine:
   issue: https://github.com/mavlink/mavros/issues/161
 bugzoo:
   is-build-failure: yes
-    bug-commit: 665484a19c47771cc68200b2cd2c5c75a77995ac
-    fix-commit: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
+  bug-commit: 665484a19c47771cc68200b2cd2c5c75a77995ac
+  fix-commit: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
 ```
 
 The script uses the `ros_distro` section of the `time-machine` section to
