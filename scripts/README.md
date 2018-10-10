@@ -53,5 +53,12 @@ for that ROS version). The `ros_pkgs` property of the `time-machine` section is
 also used to determine the appropriate fork for the PUTs. (At the time of
 writing, the script only supports bugs that specify a single PUT.)
 
+The `is-build-failure` property of the `bugzoo` section of the `.bug` file
+specifies whether the build is expected to fail for the PUT.
+The `bug-commit` and `fix-commit` properties of the `bugzoo` section give the
+commit hashes for the head of the bug witness and fix witness for the bug in
+its fork. Note that these properties must be updated when the witness branches
+are modified in order to break the cache and to ensure the image is up to date.
+
 **Note:** To use this script, `pyyaml` must be installed in the current
   environment.
