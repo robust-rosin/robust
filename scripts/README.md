@@ -47,5 +47,11 @@ bugzoo:
     fix-commit: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
 ```
 
+The script uses the `ros_distro` section of the `time-machine` section to
+determine which version of ROS to use (along with a suitable version of Ubuntu
+for that ROS version). The `ros_pkgs` property of the `time-machine` section is
+also used to determine the appropriate fork for the PUTs. (At the time of
+writing, the script only supports bugs that specify a single PUT.)
+
 **Note:** To use this script, `pyyaml` must be installed in the current
   environment.
