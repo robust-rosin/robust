@@ -30,5 +30,22 @@ manifest file which is saved to the root of the repository.
 $ python build-bugzoo.py
 ```
 
+To construct a BugZoo snapshot (and accompanying blueprint) definition for a
+bug scenario within ROBUST, this script uses information provided by the
+`bugzoo` and `time-machine` sections of the `.bug` file.
+Below is an excerpt from `mavros/08cd181.bug`.
+
+```
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/161
+bugzoo:
+  is-build-failure: yes
+    bug-commit: 665484a19c47771cc68200b2cd2c5c75a77995ac
+    fix-commit: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
+```
+
 **Note:** To use this script, `pyyaml` must be installed in the current
   environment.
