@@ -17,3 +17,18 @@ file already exists for a given bug, that file will be skipped.
 
 **Note:** This script assumes that the `rosinstall_generator_time_machine`
   binary is visible from the `PATH`.
+
+
+## `build-bugzoo.py`
+
+Used to construct a single BugZoo manifest file that packages all of the bug
+scenarios within ROBUST as BugZoo snapshots. This file takes no arguments; it
+simply scans for all `.bug` files and uses their contents to build a BugZoo
+manifest file which is saved to the root of the repository.
+
+```
+$ python build-bugzoo.py
+```
+
+**Note:** To use this script, `pyyaml` must be installed in the current
+  environment.
