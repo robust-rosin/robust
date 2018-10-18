@@ -52,7 +52,7 @@ def main():
 
         if not isinstance(is_build_failure, bool):
             tpl = 'bad bug file [{}:{}]'.format(package, bug_id)
-            msg = "{}: 'is_build_failure' should be a boolean"
+            msg = "{}: 'is_build_failure' should be a boolean".format(tpl)
             warnings.warn(msg)
             continue
 
@@ -84,9 +84,17 @@ def main():
         use_apt_old_releases = \
             ubuntu_version in ['15.04', '12.04.5']
 
+        use_osrf_repos = desc['bugzoo'].get('use-osrf', False)
+        if not isinstance(use_osrf_repos, bool):
+            tpl = 'bad bug file [{}:{}]'.format(package, bug_id)
+            msg = "{}: 'use-osrf' should be a boolean".format(tpl)
+            warnings.warn(msg)
+            continue
+
         build_args = {
             'IS_BUILD_FAILURE': "yes" if is_build_failure else "no",
             'USE_APT_OLD_RELEASES': use_apt_old_releases,
+            'USE_OSRF_REPOS': use_osrf_repos,
             'UBUNTU_VERSION': ubuntu_version,
             'ROS_DISTRO': ros_distro,
             'CATKIN_PKG': catkin_pkg,
