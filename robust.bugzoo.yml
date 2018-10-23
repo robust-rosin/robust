@@ -14,7 +14,7 @@ blueprints:
 - arguments:
     CATKIN_PKG: mavros
     IS_BUILD_FAILURE: 'yes'
-    REPO_BUG_COMMIT: 820a90b53a4dfe2be857b930a21d2c655be1edac
+    REPO_BUG_COMMIT: b4050353b12ebb92b59bcaa8845ee3ef32d942cb
     REPO_FIX_COMMIT: b6b975421c8242fad83138a67fb026ef0d90704d
     REPO_FORK_URL: https://github.com/robust-rosin/mavros
     ROS_DISTRO: indigo
@@ -98,8 +98,8 @@ blueprints:
 - arguments:
     CATKIN_PKG: mavros
     IS_BUILD_FAILURE: 'no'
-    REPO_BUG_COMMIT: 19760fa90593c2dfb2dc4adbf06492e3423df23c
-    REPO_FIX_COMMIT: c15904101ca0ecc8aa13712d92cc5382ddc0af18
+    REPO_BUG_COMMIT: 100fa9e21df5212141b2c4b6d0851894183005ea
+    REPO_FIX_COMMIT: e307661511eb98c2db32568a8350a7f385cfd755
     REPO_FORK_URL: https://github.com/robust-rosin/mavros
     ROS_DISTRO: indigo
     UBUNTU_VERSION: 14.04.5
@@ -197,8 +197,8 @@ blueprints:
     REPO_BUG_COMMIT: 9800c9e20a7325afb985142d3ea68af9660a9a38
     REPO_FIX_COMMIT: de2cc36b37689363f60876d9892f2630173b4f8c
     REPO_FORK_URL: https://github.com/robust-rosin/mavros
-    ROS_DISTRO: indigo
-    UBUNTU_VERSION: 14.04.5
+    ROS_DISTRO: kinetic
+    UBUNTU_VERSION: xenial-20180808
     USE_APT_OLD_RELEASES: false
   context: mavros/de2cc36
   file: Dockerfile
