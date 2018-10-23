@@ -52,5 +52,5 @@ time-machine:
   datetime: 2015-08-07
 bugzoo:
   is-build-failure: no
-  bug-commit: 19760fa90593c2dfb2dc4adbf06492e3423df23c
-  fix-commit: c15904101ca0ecc8aa13712d92cc5382ddc0af18
+  bug-commit: 100fa9e21df5212141b2c4b6d0851894183005ea
+  fix-commit: e307661511eb98c2db32568a8350a7f385cfd755
