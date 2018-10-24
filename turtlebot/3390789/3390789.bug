@@ -23,7 +23,14 @@ bug:
   issue: https://github.com/turtlebot/turtlebot/issues/185
   time-reported: 2015-01-06 (23:43)
   reproducibility: always
-  trace:
+  trace: ""
+  reproduction: >
+        An issue surfaced when building the Docker image, as it could
+        not find tf2 packages. This was due to the repository being named
+        `geometry_experimental` at the time this issue was reported, and
+        having been renamed to `geometry2` later on. To fix this, the
+        rosinstall file had to be patched manually. Cf. issue
+        https://github.com/robust-rosin/robust/issues/63.
 fix:
   repo: https://github.com/turtlebot/turtlebot
   hash: 339078942cf67457bc472e07a3e75e9895ebf2f7
