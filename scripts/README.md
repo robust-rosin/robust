@@ -18,6 +18,31 @@ file already exists for a given bug, that file will be skipped.
 **Note:** This script assumes that the `rosinstall_generator_time_machine`
   binary is visible from the `PATH`.
 
+This script uses the `time-machine` section of a bug description file to
+construct its corresponding `deps.rosinstall` file. The `time-machine`
+section contains the following properties:
+
+* `ros_distro`: specifies the distribution of ROS that should be used.
+  Supported values: `kinetic`, `jade`', `indigo`, `hydro`, `groovy`,
+  `fuerte`, `electric`.
+* `ros_pkgs`: a list of the names of the packages under test (PUTs).
+* `issue`: an optional link to issue where the bug is reported. The time
+  machine uses this information to determine the point in time at which
+  the bug was reported.
+* `datetime`: if no `issue` is provided, `datetime` can be used to specify,
+  using an ISO-8601 date-time string, the approximate time at which the
+  bug was reported.
+
+Below is an example of a `time-machine` section, taken from
+`mavros/08cd181.bug`.
+
+```
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/161
+```
 
 ## `build-bugzoo.py`
 
