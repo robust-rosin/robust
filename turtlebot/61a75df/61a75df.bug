@@ -34,6 +34,10 @@ bug:
   time-reported: 2017-01-30 (23:27)
   reproducibility: always
   trace: "ImportError: cannot import name QMessageBox"
+  reproduction: >
+        Building the Docker image requires the USE_OSRF_REPOS option.
+        Testing the bug is straightforward. Since it is a Python import
+        issue, it suffices for the unit test to import the affected files.
 fix:
   repo: https://github.com/yujinrobot/kobuki_desktop
   hash: 61a75df171e8ac8f34ed848456a7a267d4d9d3e3
@@ -43,3 +47,12 @@ fix:
   languages:
     - Python
   time: 2017-02-22 (14:10)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - kobuki_dashboard
+  issue: "https://github.com/turtlebot/turtlebot/issues/250"
+bugzoo:
+  is-build-failure: no
+  bug-commit: 3e1428b67ad1876ea5c57e59e787fca7813b8ebb
+  fix-commit: 70948a266e2406c16a462bb6c6f6e203971c905e
