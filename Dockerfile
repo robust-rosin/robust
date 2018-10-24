@@ -154,8 +154,8 @@ RUN cd src/repo-under-test \
  && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}" \
  && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
  && git log -a \
- && git pull \
- && git reset --hard "${REPO_BUG_COMMIT}"
+ && git fetch origin \
+ && git reset --hard "${REPO_BUG_COMMIT}" \
  && echo "[ROBUST] fetched fixed and buggy source code."
 
 # generate fix and unfix scripts
