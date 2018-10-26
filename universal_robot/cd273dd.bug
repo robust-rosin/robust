@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-title: Missing runtime dependency on another package (industrial robot simulator) 
+title: Missing runtime dependency on another package (industrial robot simulator)
 description: >
      The universal robot planner (moveit) module lacks a runtime
      dependency on the industrial robot simulator.  This leads to a

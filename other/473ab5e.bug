@@ -38,7 +38,7 @@ bug:
   reproducibility: always
   trace:
 fix:
-  repo:  https://github.com/shadow-robot/stiff_flop
+  repo: https://github.com/shadow-robot/stiff_flop
   hash: 473ab5eb82487fb024458c0d709463fb3e046e34
   pull-request: https://github.com/shadow-robot/stiff_flop/issues/276
   license: ['closed source']

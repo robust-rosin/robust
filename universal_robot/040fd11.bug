@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-title:  An exported library is not installed
+title: An exported library is not installed
 description: >
      The ur_kinematics package exports a libraries (ur5_moveit_plugin,
      ur10_moveit_plugin) to be used in depending packages.  This will

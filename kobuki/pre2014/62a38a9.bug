@@ -46,8 +46,8 @@ bug:
   reproducibility: sometimes
   trace: |
     terminate called after throwing an instance of 'ecl::StandardException'
-    what():  
-    Location : /opt/yujin/unstable/stacks/ecl/ecl_core/ecl_devices/include/ecl/devices/serial_pos.hpp:407 
+    what():
+    Location : /opt/yujin/unstable/stacks/ecl/ecl_core/ecl_devices/include/ecl/devices/serial_pos.hpp:407
     Flag     : Attempted to work on an invalid object.
     Detail   : The device is not a valid device for writing.
 fix:
