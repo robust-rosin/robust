@@ -34,7 +34,7 @@ bug:
   languages:
     - Python
   detected-by: runtime detection
-  reported-by:  guest user
+  reported-by: guest user
   issue: https://groups.google.com/forum/#!topic/swri-ros-pkg-dev/f4jF8s8_U40 | https://github.com/ros-industrial/universal_robot/issues/225 | https://github.com/ros-industrial/universal_robot/issues/231
   time-reported: 2015-12-02 (23:24)
   reproducibility: always

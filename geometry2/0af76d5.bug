@@ -26,7 +26,7 @@ bug:
   languages:
     - C++
   detected-by: null
-  reported-by:  member developer
+  reported-by: member developer
   issue: https://github.com/ros/geometry2/issues/35
   time-reported: 2013-10-29 (01:05)
   reproducibility: sometimes

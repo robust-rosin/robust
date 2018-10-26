@@ -18,7 +18,7 @@ bug:
   subsystem: generic task component
   package: ros/geometry2/tf2_ros
   languages: ['C++']
-  detected-by:  build system
+  detected-by: build system
   reported-by: automatic
   issue: https://github.com/ros/geometry2/issues/5
   time-reported: Feb 14, 2013, 9:39 AM GMT+1

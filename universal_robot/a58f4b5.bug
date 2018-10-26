@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-title:  urX_moveit_config packages depende on meta-package moveit_plugin
+title: urX_moveit_config packages depende on meta-package moveit_plugin
 description: >
      The UR moveit config packages, which are proper packages, depend
      on a meta-package (just a grouping package) moveit_plugins, which
@@ -33,7 +33,7 @@ severity: error
 links: http://www.ros.org/reps/rep-0127.html | https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118
 bug:
   phase: build-time
-  specificity:  ROS-specific
+  specificity: ROS-specific
   architectural-location: platform code
   application: null
   task: null

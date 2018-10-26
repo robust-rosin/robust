@@ -21,7 +21,7 @@ bug:
   languages:
     - C++
   detected-by: code scanning tool
-  reported-by:  member developer
+  reported-by: member developer
   issue: null
   time-reported: 2015-03-03 (02:10 AM GMT+1)
   reproducibility: always

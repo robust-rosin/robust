@@ -30,7 +30,7 @@ bug:
   architectural-location: platform code
   application: null
   task: null
-  subsystem:  driver
+  subsystem: driver
   package: ros-industrial/universal_robot/ur_kinematics
   languages:
     - C++

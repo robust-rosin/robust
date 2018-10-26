@@ -11,15 +11,15 @@ description: >
 classification: "CWE-764: Multiple Locks of a Critical Resource"
 keywords: ['deadlock', 'tf2', 'callback', 'lock']
 system: null
-severity:  error
+severity: error
 links: ['http://www.boost.org/doc/libs/1_41_0/doc/html/thread/synchronization.html']
 bug:
-  phase:  runtime-operation
+  phase: runtime-operation
   specificity: general issue
   architectural-location: platform code
   application: null
   task: null
-  subsystem:  generic task component
+  subsystem: generic task component
   package: ros/geometry2/tf2_ros
   languages: ['C++']
   detected-by: null
