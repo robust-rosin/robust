@@ -4,3 +4,5 @@ rules:
   line-length:
     max: 80
     level: warning
+  empty-values:
+    forbid-in-block-mappings: true
