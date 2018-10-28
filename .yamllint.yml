@@ -8,3 +8,5 @@ rules:
     forbid-in-block-mappings: true
   truthy:
     level: error
+  key-duplicates:
+    level: error
