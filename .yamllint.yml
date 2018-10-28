@@ -6,3 +6,5 @@ rules:
     level: warning
   empty-values:
     forbid-in-block-mappings: true
+  truthy:
+    level: error
