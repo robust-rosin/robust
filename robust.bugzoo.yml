@@ -197,8 +197,8 @@ blueprints:
     REPO_BUG_COMMIT: 9800c9e20a7325afb985142d3ea68af9660a9a38
     REPO_FIX_COMMIT: de2cc36b37689363f60876d9892f2630173b4f8c
     REPO_FORK_URL: https://github.com/robust-rosin/mavros
-    ROS_DISTRO: indigo
-    UBUNTU_VERSION: 14.04.5
+    ROS_DISTRO: kinetic
+    UBUNTU_VERSION: xenial-20180808
     USE_APT_OLD_RELEASES: false
   context: mavros/de2cc36
   file: Dockerfile

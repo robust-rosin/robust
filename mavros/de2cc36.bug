@@ -44,10 +44,11 @@ fix:
     - C++
   time: 2016-06-23 (00:00)
 time-machine:
-  ros_distro: indigo
+  ros_distro: kinetic
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/561
+  datetime: 2016-06-23T16:21:01+03:00
+  # issue: https://github.com/mavlink/mavros/issues/561
 bugzoo:
   is-build-failure: no
   bug-commit: 9800c9e20a7325afb985142d3ea68af9660a9a38
