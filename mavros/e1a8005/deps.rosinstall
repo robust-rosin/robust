@@ -56,12 +56,12 @@
     version: common_msgs-release-release-indigo-geometry_msgs-1.11.6-0
 - tar:
     local-name: libmavconn
-    uri: https://github.com/mavlink/mavros-release/archive/release/indigo/libmavconn/0.10.1-0.tar.gz
-    version: mavros-release-release-indigo-libmavconn-0.10.1-0
+    uri: https://github.com/mavlink/mavros-release/archive/release/indigo/libmavconn/0.10.2-0.tar.gz
+    version: mavros-release-release-indigo-libmavconn-0.10.2-0
 - tar:
     local-name: mavlink
-    uri: https://github.com/mavlink/mavlink-gbp-release/archive/release/indigo/mavlink/2015.2.2-0.tar.gz
-    version: mavlink-gbp-release-release-indigo-mavlink-2015.2.2-0
+    uri: https://github.com/mavlink/mavlink-gbp-release/archive/release/indigo/mavlink/2015.3.11-0.tar.gz
+    version: mavlink-gbp-release-release-indigo-mavlink-2015.3.11-0
 - tar:
     local-name: message_filters
     uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/message_filters/1.11.10-0.tar.gz
@@ -120,8 +120,8 @@
     version: ros_comm-release-release-indigo-rosgraph-1.11.10-0
 - tar:
     local-name: rosgraph_msgs
-    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/rosgraph_msgs/1.10.3-0.tar.gz
-    version: ros_comm_msgs-release-release-indigo-rosgraph_msgs-1.10.3-0
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/rosgraph_msgs/1.11.0-0.tar.gz
+    version: ros_comm_msgs-release-release-indigo-rosgraph_msgs-1.11.0-0
 - tar:
     local-name: roslang
     uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/roslang/1.11.6-0.tar.gz
@@ -200,8 +200,8 @@
     version: std_msgs-release-release-indigo-std_msgs-0.5.9-1
 - tar:
     local-name: std_srvs
-    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/std_srvs/1.10.3-0.tar.gz
-    version: ros_comm_msgs-release-release-indigo-std_srvs-1.10.3-0
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/std_srvs/1.11.0-0.tar.gz
+    version: ros_comm_msgs-release-release-indigo-std_srvs-1.11.0-0
 - tar:
     local-name: tf
     uri: https://github.com/ros-gbp/geometry-release/archive/release/indigo/tf/1.11.4-0.tar.gz
