@@ -50,7 +50,8 @@ time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/207
+  datetime: 2015-03-05T18:52:39+03:00
+  # issue: https://github.com/mavlink/mavros/issues/207
 bugzoo:
   is-build-failure: no
   bug-commit: 01055466b1a97a71d2374831a43f276f392fc27d
