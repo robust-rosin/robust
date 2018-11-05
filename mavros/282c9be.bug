@@ -41,7 +41,7 @@ fix:
     - C++
   time: 2014-07-26 (00:00)
 time-machine:
-  ros_distro: hydro
+  ros_distro: indigo
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/62

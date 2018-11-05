@@ -53,9 +53,9 @@ blueprints:
     REPO_BUG_COMMIT: 366dadaadfb85e0a1450a4a59477419930f94372
     REPO_FIX_COMMIT: 282c9bece1fa7bc87db070d836127b52bb9d1306
     REPO_FORK_URL: https://github.com/robust-rosin/mavros
-    ROS_DISTRO: hydro
-    UBUNTU_VERSION: 12.04.5
-    USE_APT_OLD_RELEASES: true
+    ROS_DISTRO: indigo
+    UBUNTU_VERSION: 14.04.5
+    USE_APT_OLD_RELEASES: false
   context: mavros/282c9be
   file: Dockerfile
   tag: robustrosin/robust:282c9be
