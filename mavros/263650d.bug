@@ -46,3 +46,7 @@ time-machine:
   ros_pkgs:
     - mavros
   datetime: 2015-08-03
+bugzoo:
+  is-build-failure: no
+  bug-commit: 4fb6e7e8190145ba6fa49fa6e13cc49730885b7f
+  fix-commit: 263650d6c1a9c9aebc6b8a0e3ea4627e59c58a77
