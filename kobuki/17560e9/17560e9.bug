@@ -66,6 +66,6 @@ time-machine:
     - yocs_navigator
   issue: https://github.com/yujinrobot/kobuki/issues/348
 bugzoo:
-  is-build-failure: yes
+  is-build-failure: true
   bug-commit: ecb7a6619b8c541b5c6042d3137969302604ca84
   fix-commit: 17560e98ef751714a352a5cee403fd3eb53c9fdb
