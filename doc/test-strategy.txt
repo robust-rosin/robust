@@ -1,0 +1,104 @@
+ff581a0, e1a8005, 84264f0: incorrect parameter namespace
+  - ff581a0: x, y, z coordinates (DistanceSensorItem::create_item)
+
+de2cc36: PX4 acknowledges sent commands
+  - ensure that acknowledgement isn't received
+  - use a USER_WAYPOINT command and send a rejected response
+
+
+catkin_make run_tests
+
+* add unit tests to mavros package
+
+
+https://github.com/google/googletest/blob/master/googletest/docs/primer.md
+
+
+== c172409 ================================================================
+
+#include <gtest/gtest.h>
+#include <ros/ros.h>
+#include <mavros_msgs/mavlink_convert.h>
+
+using namespace mavros_msgs::mavlink;
+
+using mavros_msgs::mavlink::mavlink_message_t;
+
+TEST(CONVERT, convert_mavlink)
+{
+  // create a mock mavlink_message_t message
+  mavlink_message_t mmsg;
+  mmsg.checksum = 10;
+  mmsg.magic = 20;
+  mmsg.len = 30;
+  mmsg.seq = 40;
+  mmsg.sysid = 50;
+  mmsg.compid = 60;
+  mmsg.msgid = 70;
+  for (int i = 0; i < 33; ++i)
+    mmsg.payload64[i] = i * 100;
+
+  // convert to mavros_msgs::Mavlink
+  mavros_msgs::Mavlink rmsg;
+  ASSERT_TRUE(convert(mmsg, rmsg));
+
+  // convert back to mavlink_message_t
+  mavlink_message_t sanity;
+  ASSERT_TRUE(convert(rmsg, sanity));
+
+  ASSERT_EQ(mmsg.checksum, sanity.checksum);
+  ASSERT_EQ(mmsg.magic, sanity.magic);
+  ASSERT_EQ(mmsg.len, sanity.len);
+  ASSERT_EQ(mmsg.seq, sanity.seq);
+  ASSERT_EQ(mmsg.sysid, sanity.sysid);
+  ASSERT_EQ(mmsg.compid, sanity.compid);
+  ASSERT_EQ(mmsg.msgid, sanity.msgid);
+}
+
+int main(int argc, char **argv)
+{
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+
+
+== c0067f9 ====================================
+
+if __name__ == '__main__':
+  import mavros.mission
+
+
+== c6791f0 ===================================
+
+import os
+import imp
+import mavros
+
+from mavros.command import CommandLong
+
+# treat the "mavcmd" script as a module
+DIR_SCRIPTS = '/ros_ws/src/repo-under-test/mavros/scripts'
+FN_MAVCMD = os.path.join(DIR_SCRIPTS, 'mavcmd')
+mavcmd = imp.load_source('mavcmd', FN_MAVCMD)
+
+
+if __name__ == '__main__':
+  cmd = CommandLong()
+  cmd.broadcast = True
+  cmd.confirmation = 100
+  cmd.command = 125
+  cmd.param1 = 1.0
+  cmd.param2 = 1.0
+  cmd.param3 = 1.0
+  cmd.param4 = 1.0
+  cmd.param5 = 1.0
+  cmd.param6 = 1.0
+  cmd.param7 = 365.0
+
+  def mock_command_long(*args, **kwargs):
+    assert 'param7' in kwargs
+    assert kwargs['param7'] == cmd.param7
+
+  mavros.command.long = mock_command_long
+
+  mavcmd.do_long(cmd)
