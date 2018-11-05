@@ -102,3 +102,41 @@ if __name__ == '__main__':
   mavros.command.long = mock_command_long
 
   mavcmd.do_long(cmd)
+
+
+== 564f935 ==========================================================
+
+import os
+import imp
+import sys
+
+import rospy
+import mavros
+
+# treat the "mavcmd" script as a module
+DIR_SCRIPTS = '/ros_ws/src/repo-under-test/mavros/scripts'
+FN_MAVCMD = os.path.join(DIR_SCRIPTS, 'mavcmd')
+mavcmd = imp.load_source('mavcmd', FN_MAVCMD)
+
+
+def silence(*args, **kwargs):
+  return
+
+
+if __name__ == '__main__':
+  is_trigger_enabled = None
+  def mock_trigger_control(trigger_enable=False, integration_time=float):
+    is_trigger_enabled = trigger_enable
+
+  mavros.command.trigger_control = mock_trigger_control
+  mavros.command.setup_services = silence
+  mavros.set_namespace = silence
+  rospy.init_node = silence
+
+  sys.argv = ["mavcmd", "trigger_control", "-e"]
+  mavcmd.main()
+  assert is_trigger_enabled
+
+  sys.argv = ["mavcmd", "trigger_control", "-d"]
+  mavcmd.main()
+  assert not is_trigger_enabled
