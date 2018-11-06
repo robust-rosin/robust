@@ -140,3 +140,36 @@ if __name__ == '__main__':
   sys.argv = ["mavcmd", "trigger_control", "-d"]
   mavcmd.main()
   assert not is_trigger_enabled
+
+
+== 263650d ===============================================================
+
+import os
+import imp
+import collections
+
+import mavros
+import rospy
+
+# treat the "mavcmd" script as a module
+DIR_SCRIPTS = '/ros_ws/src/repo-under-test/mavros/scripts'
+FN_MAVCMD = os.path.join(DIR_SCRIPTS, 'mavcmd')
+mavcmd = imp.load_source('mavcmd', FN_MAVCMD)
+
+
+if __name__ == '__main__':
+  TOPICS = [
+    (mavros.get_topic('global_position', 'raw', 'fix'), None)
+  ]
+  rospy.get_published_topics = lambda: TOPICS
+
+  # mock args
+  args = collections.namedtuple('Args', ['any_gps'])(False)
+  op_name = "foo"
+
+    result = mavcmd._find_gps_topic(args, op_name)
+  expected = mavros.get_topic('global_position', 'raw', 'fix')
+  print(expected)
+  print(result)
+  assert result == expected
+
