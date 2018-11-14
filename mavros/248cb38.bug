@@ -51,7 +51,7 @@ time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  datetime: 2015-07-28
+  datetime: 2015-07-28T14:18:43-0400
 bugzoo:
   is-build-failure: no
   bug-commit: 3a82c908b6dba4b784c46106c51ae73ff1e881b8
