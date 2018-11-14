@@ -53,6 +53,6 @@ time-machine:
     - kobuki_dashboard
   issue: "https://github.com/turtlebot/turtlebot/issues/250"
 bugzoo:
-  is-build-failure: no
+  is-build-failure: false
   bug-commit: 3e1428b67ad1876ea5c57e59e787fca7813b8ebb
   fix-commit: 70948a266e2406c16a462bb6c6f6e203971c905e
