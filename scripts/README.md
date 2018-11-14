@@ -67,6 +67,7 @@ time-machine:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/161
 bugzoo:
+  fork-url: https://github.com/robust-rosin/mavros # [optional] 
   is-build-failure: yes
   bug-commit: 665484a19c47771cc68200b2cd2c5c75a77995ac
   fix-commit: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
@@ -84,6 +85,8 @@ The `bug-commit` and `fix-commit` properties of the `bugzoo` section give the
 commit hashes for the head of the bug witness and fix witness for the bug in
 its fork. Note that these properties must be updated when the witness branches
 are modified in order to break the cache and to ensure the image is up to date.
+The `fork-url` should be used if the forked repository does not match the name 
+of the bug-folder.
 
 **Note:** To use this script, `pyyaml` must be installed in the current
   environment.
