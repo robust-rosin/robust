@@ -36,7 +36,7 @@ section contains the following properties:
 Below is an example of a `time-machine` section, taken from
 `mavros/08cd181.bug`.
 
-```
+```yaml
 time-machine:
   ros_distro: hydro
   ros_pkgs:
@@ -60,7 +60,7 @@ bug scenario within ROBUST, this script uses information provided by the
 `bugzoo` and `time-machine` sections of the `.bug` file.
 Below is an excerpt from `mavros/08cd181.bug`.
 
-```
+```yaml
 time-machine:
   ros_distro: hydro
   ros_pkgs:
