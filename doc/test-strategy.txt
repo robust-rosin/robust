@@ -167,9 +167,44 @@ if __name__ == '__main__':
   args = collections.namedtuple('Args', ['any_gps'])(False)
   op_name = "foo"
 
-    result = mavcmd._find_gps_topic(args, op_name)
+  result = mavcmd._find_gps_topic(args, op_name)
   expected = mavros.get_topic('global_position', 'raw', 'fix')
   print(expected)
   print(result)
   assert result == expected
 
+
+== bdda1fa ====================================================================
+
+import os
+import imp
+import collections
+
+import mavros
+import mavros_msgs
+import rospy
+
+# treat the "mavcmd" script as a module
+DIR_SCRIPTS = '/ros_ws/src/repo-under-test/mavros/scripts'
+FN_MAVSETP = os.path.join(DIR_SCRIPTS, 'mavsetp')
+mavsetp = imp.load_source('mavsetp', FN_MAVSETP)
+
+
+if __name__ == '__main__':
+  has_service_been_called = False
+
+  class ServiceProxyMock(object):
+    def __init__(name, typ):
+      assert name == mavros.get_topic('set_mode')
+      assert typ == mavros_msgs.srv.SetMode
+
+    def __call__(self, *args, **kwargs):
+      has_service_been_called = True
+      assert args == []
+      assert kwargs == {'custom_mode': 'OFFBOARD'}
+      return mavros_msgs.srv.SetModeResponse(success=True)
+
+  rospy.ServiceProxy = ServiceProxyMock
+
+  mavcmd.enable_offboard()
+  assert has_service_been_called
