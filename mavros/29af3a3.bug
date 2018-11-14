@@ -56,12 +56,12 @@ fix:
     - libmavconn/src/serial.cpp
   languages:
     - C++
-  time: 2016-03-27 (00:00)
+  time: 2016-03-27T20:53:24-0400
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/130
+  datetime: 2016-03-27T20:53:24-0400
 bugzoo:
   is-build-failure: no
   bug-commit: 7b742cfdab5f8af5cef35481e9ce8c214a9a335a
