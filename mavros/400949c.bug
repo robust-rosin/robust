@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 400949c
 title: Segmentation fault due to incorrect resource sharing between threads
 description: >
      MAVROS (asynchronously) runs its TCP, UDP, and serial connection

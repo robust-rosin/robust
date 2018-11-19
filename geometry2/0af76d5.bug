@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 0af76d5
 title: A race condition in message filter of TF2
 description: >
     "In ROS Message filters are a tool that allows registering subscribers that work with multiple msgs, or trigger callbacks if an arriving message satisfies a predicate. TF provides message filters that are specificlaly tailored---they register callbacks that can triggered whenever the incoming message can be transformed (using tf.transform(..)) into a set of coordinate frames. For instance one can trigger a callback on messages of certain type (a point cloud or an object with a spatial dimension) that can be transformed to selected frames.

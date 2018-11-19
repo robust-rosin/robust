@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 7b11629
 title: Incorrect parsing of multiple RWS content
 description: >
      When using Robot Web Services (RWS) to extract resources from the

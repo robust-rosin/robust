@@ -1,5 +1,6 @@
 title: Missing tcpclient lock
 description: >
+id: 1f01916
      The "MAVConnTCPServer::client_closed" method is responsible for
      safely closing a given client's connection to the TCP server. In
      the buggy implementation of this method, the lock for the

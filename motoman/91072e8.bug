@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 91072e8
 title: Directory names with mixed case
 description: >
      The directories Inform and MotoPlus are mixed case, all other

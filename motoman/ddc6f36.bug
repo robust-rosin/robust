@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: ddc6f36
 title: Library linking error
 description: >
      In the CMakeLists.txt from the motoman_driver package, this

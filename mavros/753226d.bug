@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 753226d
 title: Missing assignment during construction of JointState object
 description: >
      The "ServoStatePublisher" class is used to publish the state of

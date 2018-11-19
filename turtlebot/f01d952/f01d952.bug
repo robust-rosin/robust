@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: f01d952
 title: No Image Coming From Camera
 description: >
      A missing runtime dependency crashed the image processing node,

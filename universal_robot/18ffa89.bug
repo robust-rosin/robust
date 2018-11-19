@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 18ffa89
 title: An error in physical robot specification
 description: >
      A Xacro file refers to wrong wrist of the robot, which results in

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e34428d
 title: Multiple Warnings When Unable to Check Battery Level
 description: >
      When a laptop battery monitor script was not able to check the

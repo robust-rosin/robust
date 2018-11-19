@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 778c1ac
 title: parameter moved into namespace
 description: >
      MoveIt parameters have been reorganized. The parameters

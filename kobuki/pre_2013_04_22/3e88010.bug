@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 3e88010
 title: Node Fails Due to Bad Linking
 description: >
      The nodelet was linked directly against an executable, resulting

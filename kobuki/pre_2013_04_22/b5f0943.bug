@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: b5f0943
 title: Converting Nodes to Nodelets
 description: >
      ROS provides the concepts of node and nodelet. Nodes are the main

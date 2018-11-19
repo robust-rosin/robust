@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: b96bf67
 title: Incorrect orientation (wrong frame) passed to set_attitude_target
 description: >
      MAVROS operates on a frame of base_link->ENU, whereas MAVLink

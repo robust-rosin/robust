@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 473ab5e
 title: component not correctly initialized at activation
 description: >
      A robot is providing an interface for pose-based control, i.e.,

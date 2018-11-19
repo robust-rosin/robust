@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 38bee3a
 title: Cannot Retrieve Version Information From Robot
 description: >
      Sometimes the driver would fail to retrieve version information

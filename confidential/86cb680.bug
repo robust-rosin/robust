@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 86cb680
 title: Possibly inconclusive result when asking for RWS data
 description: >
      When using Robot Web Services (RWS) to ask the robot controller

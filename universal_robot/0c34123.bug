@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 0c34123
 title: ur_gazebo depends on gazebo_ros_pkgs meta-package
 description: >
      The ur_gazebo package, which is a proper package depends on a

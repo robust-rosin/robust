@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 45ee84a
 title: Exporting Non-Existent Libraries
 description: >
      A CMake file was declaring a couple libraries as being part of

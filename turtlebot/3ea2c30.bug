@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 3ea2c30
 title: Environment Hooks Introduce Undocumented Dependency
 description: >
      ROS packages can make use of environment hooks -- shell scripts

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: f95c384
 title: Circular Package Dependencies Cause Build to Fail
 description: >
      Two packages, `kobuki_node` and `kobuki_capabilities` had launch

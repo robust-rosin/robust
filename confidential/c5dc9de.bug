@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c5dc9de
 title: Incorrect cleanup of network resources
 description: >
      When terminating the application unexpectedly by e.g. Ctrl-C,

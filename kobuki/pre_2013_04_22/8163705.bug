@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 8163705
 title: Use of Error Stream Instead of Debug Stream
 description: >
      The developers were printing out the message for a caught

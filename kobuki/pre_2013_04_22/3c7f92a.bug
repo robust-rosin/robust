@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 3c7f92a
 title: Test Suite GUI Crashing Due to API Changes
 description: >
      Kobuki's test suite uses GUI plugins for rqt in order to plot

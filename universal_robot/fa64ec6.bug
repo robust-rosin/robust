@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: fa64ec6
 title: xacro namespace warnings
 description: >
      URDF is an XML-based modeling language in which robot physical

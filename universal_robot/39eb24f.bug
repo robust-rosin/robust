@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 39eb24f
 title: Name clashes when using boost and ur_kin.h
 description: >
      Robot parameters for UR5 and UR10 have been declared as

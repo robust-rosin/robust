@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 12605ab
 title: Missing polling of ros::ok prevents nodes from exiting gracefully when ROS shuts down
 description: >
   Two loops in Buffer::canTransform (the same problem in two overloaded versions) do not check the value of ros::ok() to detect whether the shutdown has not completed.  As a result the waitForTransform() function on tf listners would not shutdown if simulated time has been paused.

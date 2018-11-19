@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: ca23e58
 title: Use of unsafe concurrency patterns
 description: >
      A singleton object is created using the Double-checked Locking pattern.

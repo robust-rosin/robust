@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 29af3a3
 title: "mavros ignores SIGINT and `rosnode kill mavros`"
 description: >
      MAVROS ignores SIGNT and `rosnode kill mavros`, but correctly

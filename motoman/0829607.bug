@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 0829607
 title: SDA10f model meshes are malformed
 description: >
      When loading the SDA10F robot model in rviz, it shows the warning

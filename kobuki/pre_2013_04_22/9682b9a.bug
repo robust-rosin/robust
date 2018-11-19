@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 9682b9a
 title: rqt_plot Failing When Kobuki Is Installed
 description: >
      Starting the rqt_plot tool (a plotting GUI with plugins) resulted

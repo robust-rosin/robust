@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e122ccc
 title: Missing runtime dependency to run UR robots Gazebo simulation
 description: >
      The moveit_simple_controller_manager package is not installed due

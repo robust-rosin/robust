@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: eadbcb8
 title: ASCII STL file beginning with characters "solid"
 description: >
      ASCII STL files are supposed to be designated by the first 5

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 4fb6e7e
 title: Missing bounds checking code in legacy mode
 description: >
      The "UAS::orientation_from_str" function accepts a string that

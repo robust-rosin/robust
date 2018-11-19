@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: acd5eab
 title: Setup Validation for MotoROS logic wrong
 description: >
      The installation of MotoROS for the Controller is checked by a

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: de2cc36
 title: New PX4 drone now acknowledges sent commands
 description: >
      A newer version of the PX4 autopilot module now sends an

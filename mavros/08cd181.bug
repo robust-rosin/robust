@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 08cd181
 title: Missing include in mavconn interface.h
 description: >
      A missing header, "boost/make_shared.hpp", prevented the ROS

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 17560e9
 title: Compilation Error due to Missing File Inclusion
 description: >
      When building the `yocs_navigator` package, a user experienced a

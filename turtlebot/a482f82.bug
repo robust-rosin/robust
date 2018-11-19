@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: a482f82
 title: No Support For Namespaces and Multiple Instances
 description: >
      Camera processing nodes used hard-coded and global names, making

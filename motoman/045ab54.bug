@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 045ab54
 title: Missing dependency on Motoman Messages
 description: >
      The motoman driver package depends on its own special message

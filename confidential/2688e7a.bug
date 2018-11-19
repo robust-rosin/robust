@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 2688e7a
 title: Incorrect handling of network communication failure
 description: >
      The POCO C++ libraries that are utilized (for interacting with

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 9df36cb
 title: Missing dependency to Industrial Robot Simulation package
 description: >
      The Motoman uses MoveIt for Dynamic Path Planning. The MoveIt

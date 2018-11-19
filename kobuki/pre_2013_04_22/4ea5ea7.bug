@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 4ea5ea7
 title: Robot Model Viewer Fails to Display Model
 description: >
      Launching the robot model viewer would result in an error,

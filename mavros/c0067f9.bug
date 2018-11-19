@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c0067f9
 title: Erroneous import of Goto service
 description: >
      "mavros/src/mavros/mission.py" attempts to import a class that no

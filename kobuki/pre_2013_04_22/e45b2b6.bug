@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e45b2b6
 title: Node Starts Normally Even When Robot Is Turned Off
 description: >
      The Kobuki driver's node started normally even when the robot

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 493e3f9
 title: Wrong Inertia and Center of Mass in Robot Description
 description: >
      The URDF file for Kobuki's physical model assumed the center of

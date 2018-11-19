@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 0027b57
 title: Unknown Type Due to Missing Include
 description: >
      The compiler complains about not knowing the type `uint16_t`,

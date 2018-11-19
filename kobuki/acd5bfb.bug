@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: acd5bfb
 title: Bumpers Stopped Working In Simulation
 description: >
      Some logical error in the implementation of the Gazebo plugin

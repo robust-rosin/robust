@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 0416c81
 title: Robot Getting Stuck When Auto-docking
 description: >
      Kobuki is a mobile robot base that is used mainly for version 2

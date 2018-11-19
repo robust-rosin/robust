@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 96e2c6c
 title: Incorrect joint position order used in trajectory generation
 description: >
      Joint space trajectory generation uses the given initial and

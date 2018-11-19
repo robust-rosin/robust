@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: dab1b8a
 title: Incorrect name of class used to register plugin
 description: >
      An incorrect name, "SetpointActuatorControlPlugin", was used to

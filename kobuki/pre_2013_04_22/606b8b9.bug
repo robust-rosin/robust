@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 606b8b9
 title: Node Crashes When the Robot is Disconnected
 description: >
      When the USB serial cable is unplugged, the Kobuki driver's node

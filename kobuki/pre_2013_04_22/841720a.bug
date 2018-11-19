@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 841720a
 title: Robot Reports Full Battery Before Charging It
 description: >
      Just after connecting to the power adapter the robot would send a

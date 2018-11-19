@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: fd6b589
 title: Wrong Metapackage Dependencies
 description: >
      Kobuki metapackages were declaring a list of dependencies

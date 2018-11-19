@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 0000000
 title: Individual ROS-packages of Metapackage are outdated on local system
 description: >
      The motor for the tray of CoB-3 is not moving. The reason for the

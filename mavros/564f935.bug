@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 564f935
 title: Incorrect argument name and positional->keyword argument
 description: >
      This commit fixes two bugs in the "mavros/scripts/mavcmd" script:

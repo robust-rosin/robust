@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e9ed0f8
 title: Undeclared transitive dependencies to an external library
 description: >
      The file package.xml is essential for every ROS package and it

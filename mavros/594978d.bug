@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 594978d
 title: Missing information in packet header. Fix during feature implementation.
 description: >
      "mavlink_convert.h" is used to convert MAVROS messages to

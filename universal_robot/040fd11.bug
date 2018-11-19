@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 040fd11
 title: An exported library is not installed
 description: >
      The ur_kinematics package exports a libraries (ur5_moveit_plugin,

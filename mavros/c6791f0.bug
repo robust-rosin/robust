@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c6791f0
 title: Missing parameter in ROS service call
 description: >
      The "do_long" function in the "mavcmd" script accepts an object

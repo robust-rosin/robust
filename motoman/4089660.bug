@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 4089660
 title: Variable is assigned but never used
 description: >
      In the Motoman driver a variable 'bHasPreviousData' is set to

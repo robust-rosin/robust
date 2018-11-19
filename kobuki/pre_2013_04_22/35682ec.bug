@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 35682ec
 title: Wrong topic remapping makes robot ignore velocity commands
 description: >
      ROS allows resource names to be remapped. Topics, in particular,
