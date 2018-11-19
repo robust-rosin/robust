@@ -30,6 +30,7 @@ def main():
     bugs = []
     files = find_bug_descriptions(DIR_ROBUST)
     for fn in files:
+        dir_bug = os.path.dirname(fn)
         fn_short = os.path.relpath(fn, DIR_ROBUST)
         logger.info("generating manifest for bug file [%s]", fn_short)
 
@@ -48,13 +49,6 @@ def main():
             sha_fix = desc['bugzoo']['fix-commit']
         except KeyError as err:
             msg = report_error('missing property [{}]'.format(err))
-            continue
-
-        package = os.path.basename(os.path.dirname(fn))
-        dir_bug = os.path.join(package, bug_id)
-
-        if not os.path.isdir(dir_bug):
-            report_error('bug directory not found [{}]'.format(dir_bug))
             continue
 
         fn_test = os.path.join(dir_bug, 'test.sh')
@@ -86,7 +80,7 @@ def main():
                 'universal_robot': 'https://github.com/robust-rosin/universal_robot',
                 'ros_comm': 'https://github.com/robust-rosin/ros_comm',
                 'mavros': 'https://github.com/robust-rosin/mavros'
-            })[package]
+            })[catkin_pkg]
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
@@ -120,7 +114,7 @@ def main():
         blueprints.append({
             'tag': name_image,
             'file': 'Dockerfile',
-            'context': '{}/{}'.format(package, bug_id),
+            'context': os.path.relpath(dir_bug, DIR_ROBUST),
             'arguments': build_args
         })
         bugs.append({
