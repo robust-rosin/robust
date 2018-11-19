@@ -33,7 +33,7 @@ def main():
         with open(fn, 'r') as f:
             desc = yaml.load(f)
 
-        bug_id = os.path.basename(fn)[:-4]
+        bug_id = desc['id']
         package = os.path.basename(os.path.dirname(fn))
         logger.info("generating manifest for bug [%s:%s] at file (%s)",
                     package, bug_id, fn)
