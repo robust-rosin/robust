@@ -1,0 +1,42 @@
+%YAML 1.1
+---
+id: c5dc9de
+title: Incorrect cleanup of network resources
+description: >
+     When terminating the application unexpectedly by e.g. Ctrl-C,
+     then the network resources are not properly released. If
+     restarting the program immediately, then the same network ports
+     might not be available for use and this cause exceptions to be
+     thrown. This can be fixed by adding a cleanup function.
+classification: >
+  CWE-404: Improper Resource Shutdown or Release #RESOURCE
+  internal classification (cause): no proper cleanup of network resources
+  internal classification (effect): might make network resources unavailable for use
+keywords: ['network', 'cleanup']
+system: confidential
+severity: error
+links: ['https://en.wikipedia.org/wiki/Unix_signal']
+bug:
+  phase: runtime-operation
+  specificity: application specific
+  architectural location: application-specific code
+  application: EGM interface
+  tasks: requesting network resources
+  subsystem: driver
+  package: null
+  languages: null
+  detected-by: developer
+  reported-by: member developer
+  issue: null
+  time-reported: 2015-12-07 (16:41)
+  reproducibility: sometimes
+  trace: null
+fix:
+  repository: CONFIDENTIAL
+  hash: null
+  pull-request: null
+  license: ['closed source']
+  fix-in: ['CONFIDENTIAL']
+  languages:
+    - C++
+  time: 2015-12-09 (14:20)

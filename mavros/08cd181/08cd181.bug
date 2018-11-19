@@ -1,0 +1,48 @@
+%YAML 1.1
+---
+id: 08cd181
+title: Missing include in mavconn interface.h
+description: >
+     A missing header, "boost/make_shared.hpp", prevented the ROS
+     Hydro-release from building.  This regression was brought about
+     as a result of moving MAVConn to its own package.
+classification: Missing header (no CWE)
+keywords:
+  - missing headers
+system: mavros
+severity: error
+links: []
+bug:
+  phase: build-time
+  specificity: "general issue: missing header"
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: contributor
+  issue: https://github.com/mavlink/mavros/issues/161
+  time-reported: 2014-11-02 (00:00)
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - libmavconn/include/mavconn/interface.h
+  languages:
+    - C++
+  time: 2014-11-02 (00:00)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/161

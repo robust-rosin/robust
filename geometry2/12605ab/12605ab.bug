@@ -1,0 +1,44 @@
+%YAML 1.1
+---
+id: 12605ab
+title: Missing polling of ros::ok prevents nodes from exiting gracefully when ROS shuts down
+description: >
+  Two loops in Buffer::canTransform (the same problem in two overloaded versions) do not check the value of ros::ok() to detect whether the shutdown has not completed.  As a result the waitForTransform() function on tf listners would not shutdown if simulated time has been paused.
+  This can have serious implications if the running node holds on to resources that make it impossible to, for instance, restart the system.
+classification: "CWE-404: Improper Resource Shutdown or Release"
+keywords: ['C++', 'shutdown', 'SIGINT']
+system: core component
+severity: error
+links:
+  - https://answers.ros.org/question/182811/bug-or-intended-behaviour-transformlistenerwaitfortransform-does-not-poll-rosok/?answer=182844#post-id-182844
+  - http://wiki.ros.org/tf/Tutorials/tf%20and%20Time%20%28C%2B%2B%29
+bug:
+  phase: runtime-operation
+  specificity: ROS-specific
+  architectural-location: platform code
+  application: null
+  task: null
+  subsystem: generic task component
+  package: ros/geometry2/tf2_ros
+  languages:
+    - C++
+  detected-by: null
+  reported-by: contributor
+  issue: https://github.com/ros/geometry2/issues/26
+  time-reported: Sep 17, 2013, 3:34 PM GMT +2
+  reproducibility: sometimes
+  trace: >
+    FIXME: the first set up for the reproduction is given in the link above, in links.  But we will also likely need to cause a  SIGINT.
+  reproduction-images:
+    buggy: TODO
+    fixed: TODO
+    rosdistro: a7fd093f6922394309c317d519ec42d469258ea6
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 12605ab6b8024395c014e76ecc9b75d853c5c631
+  pull-request: https://github.com/ros/geometry2/pull/85
+  license: ['BSD']
+  fix-in: ['tf2_ros/src/buffer.cpp']
+  languages:
+    - C++
+  time: March 12, 2015, 2:33 AM GMT+1

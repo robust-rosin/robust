@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e3c9bbc
 title: Missing Information in ROS Distribution Index
 description: >
      For each ROS major version (ROS distribution / ROS release) there
@@ -7,7 +8,7 @@ description: >
      all packages that are considered to be part of that release. This
      index stores not only information about the binary release, but
      documentation and source code repository as well.
-     
+
      The entries for Kobuki repositories were missing source code
      information in this index. This information is useful, for
      instance, for users to download the latest source code for a

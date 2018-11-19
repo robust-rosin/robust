@@ -3,7 +3,7 @@
 Claus Brabrand & Andrzej Wasowski
 [ April 3, 2017, version 1.3 ]
 
-This document explains how to systematically capture and record a bug. It details what information should be captured and in what format. Note that it will not always be possible to perfectly fill in all fields for all bugs, but please try to fill in as many fields as realistically possible.  In cases where the information is not available (or you cannot obtain it without spending excessive amounts of time), please leave the field empty.  In cases where the information is not applicable, please put “N/A”  (Not Applicable).
+This document explains how to systematically capture and record a bug. It details what information should be captured and in what format. Note that it will not always be possible to perfectly fill in all fields for all bugs, but please try to fill in as many fields as realistically possible.  In cases where the information is not available (or you cannot obtain it without spending excessive amounts of time), please leave the field empty (null).  In cases where the information is not applicable, please put “N/A”  (Not Applicable).
 
 title:
 	Concise textual one-line summary of the bug intended for domain non-experts (typically 10 words or less).

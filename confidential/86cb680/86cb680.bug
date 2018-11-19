@@ -1,0 +1,45 @@
+%YAML 1.1
+---
+id: 86cb680
+title: Possibly inconclusive result when asking for RWS data
+description: >
+     When using Robot Web Services (RWS) to ask the robot controller
+     if a certain condition is true or false, then the current
+     solution report false for all cases except when the data was
+     received correctly and parsed to true. E.g. a network failure
+     would mean that the condition is reported as false. In such cases
+     it is more prudent to report the condition as unknown. This can
+     be done by using a tri state Boolean as output instead of a
+     normal bool.
+classification: >
+  Incorrect Data Parsing (no CWE)
+  internal classification (cause): inconclusive result if e.g. communication failure
+  internal classification (effect): inconclusive result will be reported
+keywords: ['network', 'communication', 'parsing', 'RWS']
+system: confidential
+severity: bad-smell
+links: ['http://developercenter.robotstudio.com/webservice/api_reference']
+bug:
+  phase: runtime-operation
+  specificity: application specific
+  architectural location: application-specific code
+  application: RWS interface
+  tasks: asking for true/false condition(s)
+  subsystem: driver
+  package: null
+  languages: null
+  detected-by: developer
+  reported-by: member developer
+  issue: null
+  time-reported: 2017-06-28 (13:52)
+  reproducibility: always
+  trace:
+fix:
+  repository: CONFIDENTIAL
+  hash: null
+  pull-request: null
+  license: ['closed source']
+  fix-in: ['CONFIDENTIAL']
+  languages:
+    - C++
+  time: 2017-07-03 (11:27)

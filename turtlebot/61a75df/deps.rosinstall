@@ -1,0 +1,269 @@
+- tar:
+    local-name: actionlib
+    uri: https://github.com/ros-gbp/actionlib-release/archive/release/kinetic/actionlib/1.11.7-0.tar.gz
+    version: actionlib-release-release-kinetic-actionlib-1.11.7-0
+- tar:
+    local-name: actionlib_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/actionlib_msgs/1.12.5-0.tar.gz
+    version: common_msgs-release-release-kinetic-actionlib_msgs-1.12.5-0
+- tar:
+    local-name: angles
+    uri: https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/kinetic/angles/1.9.10-0.tar.gz
+    version: geometry_angles_utils-release-release-kinetic-angles-1.9.10-0
+- tar:
+    local-name: catkin
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/kinetic/catkin/0.7.4-0.tar.gz
+    version: catkin-release-release-kinetic-catkin-0.7.4-0
+- tar:
+    local-name: cmake_modules
+    uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/kinetic/cmake_modules/0.4.0-1.tar.gz
+    version: cmake_modules-release-release-kinetic-cmake_modules-0.4.0-1
+- tar:
+    local-name: cpp_common
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/cpp_common/0.6.1-0.tar.gz
+    version: roscpp_core-release-release-kinetic-cpp_common-0.6.1-0
+- tar:
+    local-name: diagnostic_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/diagnostic_msgs/1.12.5-0.tar.gz
+    version: common_msgs-release-release-kinetic-diagnostic_msgs-1.12.5-0
+- tar:
+    local-name: gencpp
+    uri: https://github.com/ros-gbp/gencpp-release/archive/release/kinetic/gencpp/0.5.4-0.tar.gz
+    version: gencpp-release-release-kinetic-gencpp-0.5.4-0
+- tar:
+    local-name: geneus
+    uri: https://github.com/tork-a/geneus-release/archive/release/kinetic/geneus/2.2.5-1.tar.gz
+    version: geneus-release-release-kinetic-geneus-2.2.5-1
+- tar:
+    local-name: genlisp
+    uri: https://github.com/ros-gbp/genlisp-release/archive/release/kinetic/genlisp/0.4.16-0.tar.gz
+    version: genlisp-release-release-kinetic-genlisp-0.4.16-0
+- tar:
+    local-name: genmsg
+    uri: https://github.com/ros-gbp/genmsg-release/archive/release/kinetic/genmsg/0.5.8-0.tar.gz
+    version: genmsg-release-release-kinetic-genmsg-0.5.8-0
+- tar:
+    local-name: gennodejs
+    uri: https://github.com/RethinkRobotics-release/gennodejs-release/archive/release/kinetic/gennodejs/1.0.3-0.tar.gz
+    version: gennodejs-release-release-kinetic-gennodejs-1.0.3-0
+- tar:
+    local-name: genpy
+    uri: https://github.com/ros-gbp/genpy-release/archive/release/kinetic/genpy/0.6.3-0.tar.gz
+    version: genpy-release-release-kinetic-genpy-0.6.3-0
+- tar:
+    local-name: geometry_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/geometry_msgs/1.12.5-0.tar.gz
+    version: common_msgs-release-release-kinetic-geometry_msgs-1.12.5-0
+- tar:
+    local-name: kobuki_msgs
+    uri: https://github.com/yujinrobot-release/kobuki_msgs-release/archive/release/kinetic/kobuki_msgs/0.7.0-0.tar.gz
+    version: kobuki_msgs-release-release-kinetic-kobuki_msgs-0.7.0-0
+- tar:
+    local-name: message_filters
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/message_filters/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-message_filters-1.12.6-0
+- tar:
+    local-name: message_generation
+    uri: https://github.com/ros-gbp/message_generation-release/archive/release/kinetic/message_generation/0.4.0-0.tar.gz
+    version: message_generation-release-release-kinetic-message_generation-0.4.0-0
+- tar:
+    local-name: message_runtime
+    uri: https://github.com/ros-gbp/message_runtime-release/archive/release/kinetic/message_runtime/0.4.12-0.tar.gz
+    version: message_runtime-release-release-kinetic-message_runtime-0.4.12-0
+- tar:
+    local-name: nav_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/nav_msgs/1.12.5-0.tar.gz
+    version: common_msgs-release-release-kinetic-nav_msgs-1.12.5-0
+- tar:
+    local-name: python_qt_binding
+    uri: https://github.com/ros-gbp/python_qt_binding-release/archive/release/kinetic/python_qt_binding/0.3.2-0.tar.gz
+    version: python_qt_binding-release-release-kinetic-python_qt_binding-0.3.2-0
+- tar:
+    local-name: qt_gui
+    uri: https://github.com/ros-gbp/qt_gui_core-release/archive/release/kinetic/qt_gui/0.3.4-0.tar.gz
+    version: qt_gui_core-release-release-kinetic-qt_gui-0.3.4-0
+- tar:
+    local-name: qt_gui_py_common
+    uri: https://github.com/ros-gbp/qt_gui_core-release/archive/release/kinetic/qt_gui_py_common/0.3.4-0.tar.gz
+    version: qt_gui_core-release-release-kinetic-qt_gui_py_common-0.3.4-0
+- tar:
+    local-name: rosbag
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosbag/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosbag-1.12.6-0
+- tar:
+    local-name: rosbag_storage
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosbag_storage/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosbag_storage-1.12.6-0
+- tar:
+    local-name: rosbuild
+    uri: https://github.com/ros-gbp/ros-release/archive/release/kinetic/rosbuild/1.13.4-0.tar.gz
+    version: ros-release-release-kinetic-rosbuild-1.13.4-0
+- tar:
+    local-name: rosclean
+    uri: https://github.com/ros-gbp/ros-release/archive/release/kinetic/rosclean/1.13.4-0.tar.gz
+    version: ros-release-release-kinetic-rosclean-1.13.4-0
+- tar:
+    local-name: rosconsole
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosconsole/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosconsole-1.12.6-0
+- tar:
+    local-name: roscpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/roscpp/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-roscpp-1.12.6-0
+- tar:
+    local-name: roscpp_serialization
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/roscpp_serialization/0.6.1-0.tar.gz
+    version: roscpp_core-release-release-kinetic-roscpp_serialization-0.6.1-0
+- tar:
+    local-name: roscpp_traits
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/roscpp_traits/0.6.1-0.tar.gz
+    version: roscpp_core-release-release-kinetic-roscpp_traits-0.6.1-0
+- tar:
+    local-name: rosgraph
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosgraph/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosgraph-1.12.6-0
+- tar:
+    local-name: rosgraph_msgs
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/kinetic/rosgraph_msgs/1.11.2-0.tar.gz
+    version: ros_comm_msgs-release-release-kinetic-rosgraph_msgs-1.11.2-0
+- tar:
+    local-name: roslang
+    uri: https://github.com/ros-gbp/ros-release/archive/release/kinetic/roslang/1.13.4-0.tar.gz
+    version: ros-release-release-kinetic-roslang-1.13.4-0
+- tar:
+    local-name: roslaunch
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/roslaunch/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-roslaunch-1.12.6-0
+- tar:
+    local-name: roslib
+    uri: https://github.com/ros-gbp/ros-release/archive/release/kinetic/roslib/1.13.4-0.tar.gz
+    version: ros-release-release-kinetic-roslib-1.13.4-0
+- tar:
+    local-name: roslz4
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/roslz4/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-roslz4-1.12.6-0
+- tar:
+    local-name: rosmaster
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosmaster/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosmaster-1.12.6-0
+- tar:
+    local-name: rosmsg
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosmsg/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosmsg-1.12.6-0
+- tar:
+    local-name: rosnode
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosnode/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosnode-1.12.6-0
+- tar:
+    local-name: rosout
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosout/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosout-1.12.6-0
+- tar:
+    local-name: rospack
+    uri: https://github.com/ros-gbp/rospack-release/archive/release/kinetic/rospack/2.3.1-0.tar.gz
+    version: rospack-release-release-kinetic-rospack-2.3.1-0
+- tar:
+    local-name: rosparam
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosparam/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosparam-1.12.6-0
+- tar:
+    local-name: rospy
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rospy/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rospy-1.12.6-0
+- tar:
+    local-name: rosservice
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rosservice/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rosservice-1.12.6-0
+- tar:
+    local-name: rostest
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rostest/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rostest-1.12.6-0
+- tar:
+    local-name: rostime
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/kinetic/rostime/0.6.1-0.tar.gz
+    version: roscpp_core-release-release-kinetic-rostime-0.6.1-0
+- tar:
+    local-name: rostopic
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/rostopic/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-rostopic-1.12.6-0
+- tar:
+    local-name: rosunit
+    uri: https://github.com/ros-gbp/ros-release/archive/release/kinetic/rosunit/1.13.4-0.tar.gz
+    version: ros-release-release-kinetic-rosunit-1.13.4-0
+- tar:
+    local-name: roswtf
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/roswtf/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-roswtf-1.12.6-0
+- tar:
+    local-name: rqt_bag
+    uri: https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/kinetic/rqt_bag/0.4.4-0.tar.gz
+    version: rqt_common_plugins-release-release-kinetic-rqt_bag-0.4.4-0
+- tar:
+    local-name: rqt_console
+    uri: https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/kinetic/rqt_console/0.4.4-0.tar.gz
+    version: rqt_common_plugins-release-release-kinetic-rqt_console-0.4.4-0
+- tar:
+    local-name: rqt_gui
+    uri: https://github.com/ros-gbp/rqt-release/archive/release/kinetic/rqt_gui/0.3.2-0.tar.gz
+    version: rqt-release-release-kinetic-rqt_gui-0.3.2-0
+- tar:
+    local-name: rqt_gui_py
+    uri: https://github.com/ros-gbp/rqt-release/archive/release/kinetic/rqt_gui_py/0.3.2-0.tar.gz
+    version: rqt-release-release-kinetic-rqt_gui_py-0.3.2-0
+- tar:
+    local-name: rqt_logger_level
+    uri: https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/kinetic/rqt_logger_level/0.4.4-0.tar.gz
+    version: rqt_common_plugins-release-release-kinetic-rqt_logger_level-0.4.4-0
+- tar:
+    local-name: rqt_nav_view
+    uri: https://github.com/ros-gbp/rqt_robot_plugins-release/archive/release/kinetic/rqt_nav_view/0.5.6-0.tar.gz
+    version: rqt_robot_plugins-release-release-kinetic-rqt_nav_view-0.5.6-0
+- tar:
+    local-name: rqt_py_common
+    uri: https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/kinetic/rqt_py_common/0.4.4-0.tar.gz
+    version: rqt_common_plugins-release-release-kinetic-rqt_py_common-0.4.4-0
+- tar:
+    local-name: rqt_robot_dashboard
+    uri: https://github.com/ros-gbp/rqt_robot_plugins-release/archive/release/kinetic/rqt_robot_dashboard/0.5.6-0.tar.gz
+    version: rqt_robot_plugins-release-release-kinetic-rqt_robot_dashboard-0.5.6-0
+- tar:
+    local-name: rqt_robot_monitor
+    uri: https://github.com/ros-gbp/rqt_robot_plugins-release/archive/release/kinetic/rqt_robot_monitor/0.5.6-0.tar.gz
+    version: rqt_robot_plugins-release-release-kinetic-rqt_robot_monitor-0.5.6-0
+- tar:
+    local-name: sensor_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/kinetic/sensor_msgs/1.12.5-0.tar.gz
+    version: common_msgs-release-release-kinetic-sensor_msgs-1.12.5-0
+- tar:
+    local-name: std_msgs
+    uri: https://github.com/ros-gbp/std_msgs-release/archive/release/kinetic/std_msgs/0.5.10-0.tar.gz
+    version: std_msgs-release-release-kinetic-std_msgs-0.5.10-0
+- tar:
+    local-name: tf
+    uri: https://github.com/ros-gbp/geometry-release/archive/release/kinetic/tf/1.11.8-0.tar.gz
+    version: geometry-release-release-kinetic-tf-1.11.8-0
+- tar:
+    local-name: tf2
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2/0.5.14-0.tar.gz
+    version: geometry2-release-release-kinetic-tf2-0.5.14-0
+- tar:
+    local-name: tf2_msgs
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_msgs/0.5.14-0.tar.gz
+    version: geometry2-release-release-kinetic-tf2_msgs-0.5.14-0
+- tar:
+    local-name: tf2_py
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_py/0.5.14-0.tar.gz
+    version: geometry2-release-release-kinetic-tf2_py-0.5.14-0
+- tar:
+    local-name: tf2_ros
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/kinetic/tf2_ros/0.5.14-0.tar.gz
+    version: geometry2-release-release-kinetic-tf2_ros-0.5.14-0
+- tar:
+    local-name: topic_tools
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/topic_tools/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-topic_tools-1.12.6-0
+- tar:
+    local-name: xmlrpcpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/kinetic/xmlrpcpp/1.12.6-0.tar.gz
+    version: ros_comm-release-release-kinetic-xmlrpcpp-1.12.6-0
+

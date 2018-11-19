@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: f8d175b
 title: package ur_kinematics fails to build
 description: >
      The moveit sub-project has factored out kinematics solvers to a

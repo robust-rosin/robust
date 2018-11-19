@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 17560e9
 title: Compilation Error due to Missing File Inclusion
 description: >
      When building the `yocs_navigator` package, a user experienced a
@@ -44,7 +45,7 @@ bug:
         at the time the issue was reported.
         In order to create the rosinstall file, a date had to be manually
         selected, after the release of the package into the distribution.
-        
+
         An issue surfaced when building the docker image, as it could
         not find tf2 packages. This was due to the repository being named
         `geometry_experimental` at the time this issue was reported, and
@@ -66,6 +67,6 @@ time-machine:
     - yocs_navigator
   issue: https://github.com/yujinrobot/kobuki/issues/348
 bugzoo:
-  is-build-failure: yes
+  is-build-failure: true
   bug-commit: ecb7a6619b8c541b5c6042d3137969302604ca84
   fix-commit: 17560e98ef751714a352a5cee403fd3eb53c9fdb
