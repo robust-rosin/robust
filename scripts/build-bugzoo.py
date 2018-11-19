@@ -71,7 +71,6 @@ def main():
         catkin_pkg = ros_pkgs[0]
 
         # FIXME determine fork URL
-        package = os.path.basename(os.path.dirname(fn))
         if 'bugzoo' in desc and 'fork-url' in desc['bugzoo']:
             url_fork = desc['bugzoo']['fork-url']
         else:
@@ -81,7 +80,7 @@ def main():
                 'universal_robot': 'https://github.com/robust-rosin/universal_robot',
                 'ros_comm': 'https://github.com/robust-rosin/ros_comm',
                 'mavros': 'https://github.com/robust-rosin/mavros'
-            })[package]
+            })[catkin_pkg]
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
