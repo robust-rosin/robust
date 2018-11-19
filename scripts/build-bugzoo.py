@@ -30,6 +30,7 @@ def main():
     bugs = []
     files = find_bug_descriptions(DIR_ROBUST)
     for fn in files:
+        dir_bug = os.path.dirname(fn)
         fn_short = os.path.relpath(fn, DIR_ROBUST)
         logger.info("generating manifest for bug file [%s]", fn_short)
 
@@ -48,13 +49,6 @@ def main():
             sha_fix = desc['bugzoo']['fix-commit']
         except KeyError as err:
             msg = report_error('missing property [{}]'.format(err))
-            continue
-
-        package = os.path.basename(os.path.dirname(fn))
-        dir_bug = os.path.join(package, bug_id)
-
-        if not os.path.isdir(dir_bug):
-            report_error('bug directory not found [{}]'.format(dir_bug))
             continue
 
         fn_test = os.path.join(dir_bug, 'test.sh')
@@ -77,6 +71,7 @@ def main():
         catkin_pkg = ros_pkgs[0]
 
         # FIXME determine fork URL
+        package = os.path.basename(os.path.dirname(fn))
         if 'bugzoo' in desc and 'fork-url' in desc['bugzoo']:
             url_fork = desc['bugzoo']['fork-url']
         else:
@@ -120,7 +115,7 @@ def main():
         blueprints.append({
             'tag': name_image,
             'file': 'Dockerfile',
-            'context': '{}/{}'.format(package, bug_id),
+            'context': os.path.relpath(dir_bug, DIR_ROBUST),
             'arguments': build_args
         })
         bugs.append({
