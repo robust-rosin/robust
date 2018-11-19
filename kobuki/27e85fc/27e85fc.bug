@@ -1,0 +1,37 @@
+%YAML 1.1
+---
+id: 27e85fc
+title: Use of Deprecated Functions
+description: >
+     Kobuki's plugin for Gazebo was using some deprecated functions to
+     parse models. These were replaced with recommended alternatives.
+classification: "CWE-477: Use of Obsolete Functions #EVOLUTION"
+keywords: ['gazebo, deprecation, sdf']
+system: kobuki
+severity: warning
+links: []
+bug:
+  phase: compile-time
+  specificity: ROS-specific
+  architectural-location: application-specific code
+  application: null
+  task: simulation
+  subsystem: simulation plugin
+  package: yujinrobot/kobuki_desktop/kobuki_gazebo_plugins
+  languages:
+    - C++
+  detected-by: compiler
+  reported-by: member developer
+  issue: https://github.com/yujinrobot/kobuki_desktop/issues/13
+  time-reported: 2013-07-31 (03:30)
+  reproducibility: always
+  trace:
+fix:
+  repo: https://github.com/yujinrobot/kobuki_desktop
+  hash: 27e85fc224fc6198b55c5af0d066c7901af8ec0b
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
+  languages:
+    - C++
+  time: 2013-08-09 (08:14)

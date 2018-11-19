@@ -106,6 +106,13 @@ RUN pip install --upgrade \
 RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list \
  && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
 
+# optionally add packages.ros.org as a source
+ARG USE_OSRF_REPOS
+RUN if [ "${USE_OSRF_REPOS}" = "True" ]; then \
+         echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list \
+       && wget http://packages.ros.org/ros.key -O - | apt-key add - \
+    ; fi
+
 # install the following for 17.10: gnupg dirmngr
 
 # setup workspace and import packages

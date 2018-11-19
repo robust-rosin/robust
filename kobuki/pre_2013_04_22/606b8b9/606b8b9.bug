@@ -1,0 +1,39 @@
+%YAML 1.1
+---
+id: 606b8b9
+title: Node Crashes When the Robot is Disconnected
+description: >
+     When the USB serial cable is unplugged, the Kobuki driver's node
+     crashes. This is related to the node trying to read data from the
+     Bluetooth interface when USB is unplugged. Under certain
+     conditions (not specified) it causes a crash.
+classification: "Use of Wrong Interface (no CWE)"
+keywords: ['udev', 'serial', 'bluetooth', 'driver']
+system: kobuki
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: robotics-specific
+  architectural-location: application-specific code
+  application: mobile robot
+  task: null
+  subsystem: driver
+  package: yujinrobot/kobuki/kobuki_ftdi | yujinrobot/kobuki/kobuki_driver
+  languages:
+    - C++
+  detected-by: runtime crash
+  reported-by: contributor
+  issue: https://github.com/yujinrobot/kobuki/issues/225
+  time-reported: 2013-02-18 (06:52)
+  reproducibility: always
+  trace:
+fix:
+  repo: https://github.com/yujinrobot/kobuki
+  hash: 606b8b9434ce501ff663e9252f5459eb9c50c6af
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_ftdi/57-kobuki.rules']
+  languages:
+    - udev rules
+  time: 2013-02-19 (07:15)

@@ -41,3 +41,8 @@ de2cc36, mavros, Yes, No, Yes, No
 e1a8005, mavros, Yes, No, Yes, No
 29af3a3, mavros, Yes, No, Yes, No
 248cb38, mavros, Yes, No, Yes, No
+17560e9, kobuki, Yes, Yes, Yes, No
+45ee84a, kobuki, Yes, Yes, Yes, No
+9c8abeb, kobuki, Yes, Yes, No, No
+61a75df, turtlebot, Yes, Yes, Yes, Yes
+f01d952, turtlebot, Yes, Yes, Yes, No

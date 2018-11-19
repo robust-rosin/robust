@@ -1,0 +1,56 @@
+%YAML 1.1
+---
+id: 7c6514d
+title: Redundant (static) array entry for removed sensor
+description: >
+     The "mavros/src/lib/sensor_orientation.cpp" file defines a static
+     array of sensor orientations ("sensor_or").  A list of the names
+     of these 39 sensor orientations can be found in
+     "mavros/src/lib/uas_sensor_orientation.cpp". The static array in
+     "mavros/src/lib/sensor_orientation.cpp" contains a redundant
+     entry for a sensor that no longer exists. The fix to this "bug"
+     removes this entry and decreases the size of the array, reported
+     by MAV_SENSOR_ORIENTATION_MAX.
+classification: "CWE-561: Dead Code"
+keywords: redundant array entry
+system: mavros
+severity: minor-issue
+links: []
+bug:
+  phase: compile-time
+  specificity: "general issue: redundant array entry"
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: contributor
+  issue: N/A
+  time-reported: N/A
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: 7c6514d3d5ec3c9f75b32db9054d468c49dbdfe8
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/lib/sensor_orientation.cpp
+  languages:
+    - C++
+  time: 2015-05-21 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-05-21
+bugzoo:
+  is-build-failure: no
+  bug-commit: 34f92ff9cd4d0aa9223ec2a1d67630a6aba3c851
+  fix-commit: 7c6514d3d5ec3c9f75b32db9054d468c49dbdfe8

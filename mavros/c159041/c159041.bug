@@ -1,0 +1,57 @@
+%YAML 1.1
+---
+id: c159041
+title: Incorrect If guard for checking orientation string is empty
+description: >
+     Line 337 of distance_sensor.cpp is responsible for checking if a
+     valid orientation is stored in the local "orientation_str"
+     variable. If a valid orientation is unavailable, a ROS error
+     should be produced. A typo on this line causes the if-statement
+     guarding the error handling code to incorrectly check that the
+     string is not empty, rather than checking the string is empty.
+classification: "CWE-20: Improper Input Validation"
+keywords:
+  - corner case
+  - bad if-condition
+  - bad negation
+system: mavros
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: "general issue: incorrectly negated condition"
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: contributor
+  issue: N/A
+  time-reported: N/A
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: c15904101ca0ecc8aa13712d92cc5382ddc0af18
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros_extras/src/plugins/distance_sensor.cpp
+  languages:
+    - C++
+  time: 2015-08-07 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-08-07
+bugzoo:
+  is-build-failure: no
+  bug-commit: 100fa9e21df5212141b2c4b6d0851894183005ea
+  fix-commit: e307661511eb98c2db32568a8350a7f385cfd755

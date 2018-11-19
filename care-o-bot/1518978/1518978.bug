@@ -1,0 +1,46 @@
+%YAML 1.1
+---
+id: 1518978
+title: Hardcoded namespace because name is defined global
+description: >
+     Parameter-names are hardcoded. In the example a parameter is
+     named "/sound_controller/mode".  There are four types of Graph
+     Resource Names in ROS: base, relative, global, and private.
+     Names that start with a "/" are global -- they are considered
+     fully resolved. Global names should be avoided as much as
+     possible as they limit code portability.
+     An error might occure due to the following scenario: The node,
+     which was the global namespace is used within a group tag in a
+     roslaunch file. The group-name is written before every path-name,
+     but not if the path-name is defined globally. This could cause a
+     mismatch of names if not handled correctly.
+classification: Use of Global Names (no CWE)
+keywords: ['namespace', 'hardcoded', 'parameter', 'global']
+system: care-o-bot
+severity: error
+links: ['http://wiki.ros.org/Names', 'http://wiki.ros.org/roslaunch/XML/group']
+bug:
+  phase: runtime-operation
+  specificity: ROS-specific
+  architectural-location: application-specific
+  application: cob drivers
+  task: null
+  subsystem: driver
+  package: cob_drivers
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: member developer
+  issue: https://github.com/ipa320/cob_driver/issues/272
+  time-reported: 2016-04-07 (00:00)
+  reproducibility: sometimes
+  trace: null
+fix:
+  repo: https://github.com/ipa320/cob_driver
+  hash: 151897840540e8dd662cf6c8c77e5613c84e3424
+  pull-request: https://github.com/ipa320/cob_driver/pull/274
+  license: ['LGPL']
+  fix-in: ['https://github.com/ipa-fxm/cob_driver/blob/151897840540e8dd662cf6c8c77e5613c84e3424/cob_sound/ros/src/sound.cpp']
+  languages:
+    - C++
+  time: 2016-04-07 (00:00)

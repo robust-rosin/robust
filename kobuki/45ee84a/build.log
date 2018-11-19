@@ -1,0 +1,1477 @@
+Sending build context to Docker daemon  114.7kB
+Step 1/41 : ARG UBUNTU_VERSION
+Step 2/41 : FROM alpine:3.7 as fork
+ ---> 3fd9065eaf02
+Step 3/41 : ARG REPO_FORK_URL
+ ---> Running in 4eb030b2688f
+Removing intermediate container 4eb030b2688f
+ ---> fe7bd3778b99
+Step 4/41 : RUN apk --no-cache add git
+ ---> Running in 6501d6b4e69e
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.7/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.7/community/x86_64/APKINDEX.tar.gz
+(1/6) Installing ca-certificates (20171114-r0)
+(2/6) Installing libssh2 (1.8.0-r2)
+(3/6) Installing libcurl (7.61.1-r0)
+(4/6) Installing expat (2.2.5-r0)
+(5/6) Installing pcre2 (10.30-r0)
+(6/6) Installing git (2.15.2-r0)
+Executing busybox-1.27.2-r7.trigger
+Executing ca-certificates-20171114-r0.trigger
+OK: 19 MiB in 17 packages
+Removing intermediate container 6501d6b4e69e
+ ---> 8fb998ee403c
+Step 5/41 : RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'"  && git clone "${REPO_FORK_URL}" /tmp/repo-under-test  && echo "[ROBUST] cloned repo."
+ ---> Running in a69dafb5fd96
+[ROBUST] cloning repo: 'https://github.com/robust-rosin/kobuki_core'
+[91mCloning into '/tmp/repo-under-test'...
+[0m[ROBUST] cloned repo.
+Removing intermediate container a69dafb5fd96
+ ---> df7c456a2be5
+Step 6/41 : FROM ubuntu:${UBUNTU_VERSION}
+ ---> 578c3e61a98c
+Step 7/41 : ARG ROS_DISTRO
+ ---> Using cache
+ ---> 167d722c5ceb
+Step 8/41 : ARG USE_APT_OLD_RELEASES
+ ---> Using cache
+ ---> c16d78c4f300
+Step 9/41 : ARG CATKIN_PKG
+ ---> Using cache
+ ---> fce097711867
+Step 10/41 : ARG REPO_FIX_COMMIT
+ ---> Using cache
+ ---> 2f7feefd2fb0
+Step 11/41 : ARG REPO_BUG_COMMIT
+ ---> Using cache
+ ---> 2e4753f33d5a
+Step 12/41 : ARG IS_BUILD_FAILURE
+ ---> Using cache
+ ---> 166e18406907
+Step 13/41 : ENV ROS_DISTRO "${ROS_DISTRO}"
+ ---> Using cache
+ ---> 600cf80fd18c
+Step 14/41 : RUN echo "[ROBUST]: building image for ROS_DISTRO: '${ROS_DISTRO}'"
+ ---> Running in 550fcf14d83d
+[ROBUST]: building image for ROS_DISTRO: 'indigo'
+Removing intermediate container 550fcf14d83d
+ ---> 0063104bdff1
+Step 15/41 : ENV ROS_WSPACE=/ros_ws
+ ---> Running in adb5415ce3f1
+Removing intermediate container adb5415ce3f1
+ ---> aefb06e17140
+Step 16/41 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Running in eeecb32a5e07
+Removing intermediate container eeecb32a5e07
+ ---> 88baf4299ed1
+Step 17/41 : ENV LANG C.UTF-8
+ ---> Running in 0022f9e646fc
+Removing intermediate container 0022f9e646fc
+ ---> 013f5223a2a5
+Step 18/41 : ENV LC_ALL C.UTF-8
+ ---> Running in 7b5da538549d
+Removing intermediate container 7b5da538549d
+ ---> 6e41991ea53a
+Step 19/41 : RUN echo "#!/bin/bash \nset -e \nsource \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \nsource \"${ROS_WSPACE}/devel/setup.bash\" \nexec \"\$@\"" > /entrypoint.sh  && chmod +x /entrypoint.sh
+ ---> Running in 66ce5a331a5d
+Removing intermediate container 66ce5a331a5d
+ ---> 66cc520d9552
+Step 20/41 : ENTRYPOINT ["/entrypoint.sh"]
+ ---> Running in f6402f242f2b
+Removing intermediate container f6402f242f2b
+ ---> ba43fb55bd8c
+Step 21/41 : CMD ["bash"]
+ ---> Running in 6c5eb2de847b
+Removing intermediate container 6c5eb2de847b
+ ---> de7903df9299
+Step 22/41 : RUN echo "[ROBUST] use archival sources? '${USE_APT_OLD_RELEASES}'"  && if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then       echo "[ROBUST] using archival sources"       && sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g'         /etc/apt/sources.list       && apt-get update       && apt-get dist-upgrade     ; else       echo "[ROBUST] not using archival sources"     ; fi
+ ---> Running in 738842a49324
+[ROBUST] use archival sources? 'no'
+[ROBUST] not using archival sources
+Removing intermediate container 738842a49324
+ ---> 5c024faaf426
+Step 23/41 : RUN apt-get update  && apt-get install -y --no-install-recommends       build-essential       ca-certificates       git       python-pip       cmake       wget       lsb-release  && pip --version  && pip install --upgrade -i https://pypi.python.org/simple pip==9.0.3
+ ---> Running in fe7094fc5a4b
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://security.ubuntu.com trusty-security/universe Sources [103 kB]
+Get:3 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:4 http://security.ubuntu.com trusty-security/main amd64 Packages [967 kB]
+Get:5 http://archive.ubuntu.com trusty-backports InRelease [65.9 kB]
+Get:6 http://archive.ubuntu.com trusty Release.gpg [933 B]
+Get:7 http://archive.ubuntu.com trusty-updates/universe Sources [267 kB]
+Get:8 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:9 http://security.ubuntu.com trusty-security/universe amd64 Packages [335 kB]
+Get:10 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4722 B]
+Get:11 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1387 kB]
+Get:12 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:13 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [631 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.0 kB]
+Get:15 http://archive.ubuntu.com trusty-backports/main amd64 Packages [14.7 kB]
+Get:16 http://archive.ubuntu.com trusty-backports/restricted amd64 Packages [40 B]
+Get:17 http://archive.ubuntu.com trusty-backports/universe amd64 Packages [52.5 kB]
+Get:18 http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1392 B]
+Get:19 http://archive.ubuntu.com trusty Release [58.5 kB]
+Get:20 http://archive.ubuntu.com trusty/universe Sources [7926 kB]
+Get:21 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:22 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:23 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Get:24 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+Fetched 21.5 MB in 47s (457 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+lsb-release is already the newest version.
+The following extra packages will be installed:
+  binutils cmake-data cpp cpp-4.8 dpkg-dev g++ g++-4.8 gcc gcc-4.8 git-man
+  libarchive13 libasan0 libasn1-8-heimdal libatomic1 libc-dev-bin libc6-dev
+  libcloog-isl4 libcurl3 libcurl3-gnutls libdpkg-perl liberror-perl
+  libgcc-4.8-dev libgmp10 libgomp1 libgssapi-krb5-2 libgssapi3-heimdal
+  libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhx509-5-heimdal libidn11 libisl10 libitm1 libk5crypto3 libkeyutils1
+  libkrb5-26-heimdal libkrb5-3 libkrb5support0 libldap-2.4-2 liblzo2-2 libmpc3
+  libmpfr4 libnettle4 libpython-stdlib libpython2.7-minimal
+  libpython2.7-stdlib libquadmath0 libroken18-heimdal librtmp0 libsasl2-2
+  libsasl2-modules-db libstdc++-4.8-dev libtimedate-perl libtsan0
+  libwind0-heimdal libxml2 linux-libc-dev make openssl patch python
+  python-chardet python-chardet-whl python-colorama python-colorama-whl
+  python-distlib python-distlib-whl python-html5lib python-html5lib-whl
+  python-minimal python-pip-whl python-pkg-resources python-requests
+  python-requests-whl python-setuptools python-setuptools-whl python-six
+  python-six-whl python-urllib3 python-urllib3-whl python2.7 python2.7-minimal
+  python3-pkg-resources xz-utils
+Suggested packages:
+  binutils-doc codeblocks eclipse cpp-doc gcc-4.8-locales debian-keyring
+  g++-multilib g++-4.8-multilib gcc-4.8-doc libstdc++6-4.8-dbg gcc-multilib
+  manpages-dev autoconf automake1.9 libtool flex bison gdb gcc-doc
+  gcc-4.8-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg libatomic1-dbg
+  libasan0-dbg libtsan0-dbg libquadmath0-dbg gettext-base git-daemon-run
+  git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-arch
+  git-bzr git-cvs git-mediawiki git-svn lrzip glibc-doc krb5-doc krb5-user
+  libstdc++-4.8-doc make-doc ed diffutils-doc python-doc python-tk
+  python-genshi python-lxml python-distribute python-distribute-doc
+  python2.7-doc binfmt-support python3-setuptools
+Recommended packages:
+  fakeroot libalgorithm-merge-perl rsync ssh-client libfile-fcntllock-perl
+  krb5-locales libsasl2-modules xml-core python-dev-all python-wheel
+The following NEW packages will be installed:
+  binutils build-essential ca-certificates cmake cmake-data cpp cpp-4.8
+  dpkg-dev g++ g++-4.8 gcc gcc-4.8 git git-man libarchive13 libasan0
+  libasn1-8-heimdal libatomic1 libc-dev-bin libc6-dev libcloog-isl4 libcurl3
+  libcurl3-gnutls libdpkg-perl liberror-perl libgcc-4.8-dev libgmp10 libgomp1
+  libgssapi-krb5-2 libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libidn11 libisl10 libitm1
+  libk5crypto3 libkeyutils1 libkrb5-26-heimdal libkrb5-3 libkrb5support0
+  libldap-2.4-2 liblzo2-2 libmpc3 libmpfr4 libnettle4 libpython-stdlib
+  libpython2.7-minimal libpython2.7-stdlib libquadmath0 libroken18-heimdal
+  librtmp0 libsasl2-2 libsasl2-modules-db libstdc++-4.8-dev libtimedate-perl
+  libtsan0 libwind0-heimdal libxml2 linux-libc-dev make openssl patch python
+  python-chardet python-chardet-whl python-colorama python-colorama-whl
+  python-distlib python-distlib-whl python-html5lib python-html5lib-whl
+  python-minimal python-pip python-pip-whl python-pkg-resources
+  python-requests python-requests-whl python-setuptools python-setuptools-whl
+  python-six python-six-whl python-urllib3 python-urllib3-whl python2.7
+  python2.7-minimal python3-pkg-resources wget xz-utils
+0 upgraded, 90 newly installed, 0 to remove and 13 not upgraded.
+Need to get 53.5 MB of archives.
+After this operation, 186 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libroken18-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [39.9 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libasn1-8-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [160 kB]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5support0 amd64 1.12+dfsg-2ubuntu5.3 [30.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libk5crypto3 amd64 1.12+dfsg-2ubuntu5.3 [79.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main libkeyutils1 amd64 1.5.6-1 [7318 B]
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5-3 amd64 1.12+dfsg-2ubuntu5.3 [262 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgssapi-krb5-2 amd64 1.12+dfsg-2ubuntu5.3 [114 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libidn11 amd64 1.28-1ubuntu2.2 [94.6 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libhcrypto4-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [84.1 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libheimbase1-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [29.0 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libwind0-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [47.9 kB]
+Get:12 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libhx509-5-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [104 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5-26-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [196 kB]
+Get:14 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libheimntlm0-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [15.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgssapi3-heimdal amd64 1.6~git20131207+dfsg-1ubuntu1.2 [89.7 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ trusty/main libsasl2-modules-db amd64 2.1.25.dfsg1-17build1 [14.9 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ trusty/main libsasl2-2 amd64 2.1.25.dfsg1-17build1 [56.5 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libldap-2.4-2 amd64 2.4.31-1+nmu2ubuntu8.4 [153 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ trusty-updates/main librtmp0 amd64 2.4+20121230.gitdf6c518-1ubuntu0.1 [50.4 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libcurl3-gnutls amd64 7.35.0-1ubuntu2.17 [166 kB]
+Get:21 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libxml2 amd64 2.9.1+dfsg1-3ubuntu4.13 [573 kB]
+Get:22 http://archive.ubuntu.com/ubuntu/ trusty-updates/main liblzo2-2 amd64 2.06-1.2ubuntu1.1 [46.1 kB]
+Get:23 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libnettle4 amd64 2.7.1-1ubuntu0.2 [102 kB]
+Get:24 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libarchive13 amd64 3.1.2-7ubuntu2.6 [262 kB]
+Get:25 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libasan0 amd64 4.8.4-2ubuntu1~14.04.4 [63.1 kB]
+Get:26 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libatomic1 amd64 4.8.4-2ubuntu1~14.04.4 [8630 B]
+Get:27 http://archive.ubuntu.com/ubuntu/ trusty/main libgmp10 amd64 2:5.1.3+dfsg-1ubuntu1 [218 kB]
+Get:28 http://archive.ubuntu.com/ubuntu/ trusty/main libisl10 amd64 0.12.2-1 [419 kB]
+Get:29 http://archive.ubuntu.com/ubuntu/ trusty/main libcloog-isl4 amd64 0.18.2-1 [57.5 kB]
+Get:30 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libcurl3 amd64 7.35.0-1ubuntu2.17 [173 kB]
+Get:31 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgomp1 amd64 4.8.4-2ubuntu1~14.04.4 [23.1 kB]
+Get:32 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libitm1 amd64 4.8.4-2ubuntu1~14.04.4 [28.6 kB]
+Get:33 http://archive.ubuntu.com/ubuntu/ trusty/main libmpfr4 amd64 3.1.2-1 [203 kB]
+Get:34 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libquadmath0 amd64 4.8.4-2ubuntu1~14.04.4 [126 kB]
+Get:35 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libtsan0 amd64 4.8.4-2ubuntu1~14.04.4 [94.8 kB]
+Get:36 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython2.7-minimal amd64 2.7.6-8ubuntu0.4 [307 kB]
+Get:37 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python2.7-minimal amd64 2.7.6-8ubuntu0.4 [1188 kB]
+Get:38 http://archive.ubuntu.com/ubuntu/ trusty/main libmpc3 amd64 1.0.1-1ubuntu1 [38.4 kB]
+Get:39 http://archive.ubuntu.com/ubuntu/ trusty-updates/main openssl amd64 1.0.1f-1ubuntu2.26 [489 kB]
+Get:40 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ca-certificates all 20170717~14.04.1 [167 kB]
+Get:41 http://archive.ubuntu.com/ubuntu/ trusty-updates/main wget amd64 1.15-1ubuntu1.14.04.4 [270 kB]
+Get:42 http://archive.ubuntu.com/ubuntu/ trusty-updates/main binutils amd64 2.24-5ubuntu14.2 [2076 kB]
+Get:43 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc-dev-bin amd64 2.19-0ubuntu6.14 [69.0 kB]
+Get:44 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-libc-dev amd64 3.13.0-160.210 [773 kB]
+Get:45 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc6-dev amd64 2.19-0ubuntu6.14 [1913 kB]
+Get:46 http://archive.ubuntu.com/ubuntu/ trusty-updates/main cpp-4.8 amd64 4.8.4-2ubuntu1~14.04.4 [4452 kB]
+Get:47 http://archive.ubuntu.com/ubuntu/ trusty/main cpp amd64 4:4.8.2-1ubuntu6 [27.5 kB]
+Get:48 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgcc-4.8-dev amd64 4.8.4-2ubuntu1~14.04.4 [1688 kB]
+Get:49 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gcc-4.8 amd64 4.8.4-2ubuntu1~14.04.4 [5040 kB]
+Get:50 http://archive.ubuntu.com/ubuntu/ trusty/main gcc amd64 4:4.8.2-1ubuntu6 [5098 B]
+Get:51 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libstdc++-4.8-dev amd64 4.8.4-2ubuntu1~14.04.4 [1051 kB]
+Get:52 http://archive.ubuntu.com/ubuntu/ trusty-updates/main g++-4.8 amd64 4.8.4-2ubuntu1~14.04.4 [18.0 MB]
+Get:53 http://archive.ubuntu.com/ubuntu/ trusty/main g++ amd64 4:4.8.2-1ubuntu6 [1490 B]
+Get:54 http://archive.ubuntu.com/ubuntu/ trusty/main make amd64 3.81-8.2ubuntu3 [119 kB]
+Get:55 http://archive.ubuntu.com/ubuntu/ trusty/main libtimedate-perl all 2.3000-1 [37.2 kB]
+Get:56 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libdpkg-perl all 1.17.5ubuntu5.8 [179 kB]
+Get:57 http://archive.ubuntu.com/ubuntu/ trusty/main xz-utils amd64 5.1.1alpha+20120614-2ubuntu2 [78.8 kB]
+Get:58 http://archive.ubuntu.com/ubuntu/ trusty-updates/main patch amd64 2.7.1-4ubuntu2.4 [86.9 kB]
+Get:59 http://archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg-dev all 1.17.5ubuntu5.8 [726 kB]
+Get:60 http://archive.ubuntu.com/ubuntu/ trusty/main build-essential amd64 11.6ubuntu6 [4838 B]
+Get:61 http://archive.ubuntu.com/ubuntu/ trusty/main cmake-data all 2.8.12.2-0ubuntu3 [676 kB]
+Get:62 http://archive.ubuntu.com/ubuntu/ trusty/main cmake amd64 2.8.12.2-0ubuntu3 [2618 kB]
+Get:63 http://archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21.1 kB]
+Get:64 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git-man all 1:1.9.1-1ubuntu0.9 [701 kB]
+Get:65 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git amd64 1:1.9.1-1ubuntu0.9 [2333 kB]
+Get:66 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libpython2.7-stdlib amd64 2.7.6-8ubuntu0.4 [1869 kB]
+Get:67 http://archive.ubuntu.com/ubuntu/ trusty/main libpython-stdlib amd64 2.7.5-5ubuntu3 [7012 B]
+Get:68 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python2.7 amd64 2.7.6-8ubuntu0.4 [196 kB]
+Get:69 http://archive.ubuntu.com/ubuntu/ trusty/main python-minimal amd64 2.7.5-5ubuntu3 [27.5 kB]
+Get:70 http://archive.ubuntu.com/ubuntu/ trusty/main python amd64 2.7.5-5ubuntu3 [134 kB]
+Get:71 http://archive.ubuntu.com/ubuntu/ trusty/main python-chardet all 2.0.1-2build2 [106 kB]
+Get:72 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python3-pkg-resources all 3.3-1ubuntu2 [31.7 kB]
+Get:73 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-chardet-whl all 2.2.1-2~ubuntu1 [170 kB]
+Get:74 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-colorama all 0.2.5-0.1ubuntu2 [18.4 kB]
+Get:75 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-colorama-whl all 0.2.5-0.1ubuntu2 [18.2 kB]
+Get:76 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-distlib all 0.1.8-1ubuntu1 [113 kB]
+Get:77 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-distlib-whl all 0.1.8-1ubuntu1 [140 kB]
+Get:78 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-six all 1.5.2-1ubuntu1.1 [8348 B]
+Get:79 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-html5lib all 0.999-3~ubuntu1 [83.5 kB]
+Get:80 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-html5lib-whl all 0.999-3~ubuntu1 [109 kB]
+Get:81 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-six-whl all 1.5.2-1ubuntu1.1 [10.6 kB]
+Get:82 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-urllib3-whl all 1.7.1-1ubuntu4.1 [63.9 kB]
+Get:83 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-requests-whl all 2.2.1-1ubuntu0.4 [228 kB]
+Get:84 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-setuptools-whl all 3.3-1ubuntu2 [244 kB]
+Get:85 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-pip-whl all 1.5.4-1ubuntu4 [111 kB]
+Get:86 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-pkg-resources all 3.3-1ubuntu2 [61.9 kB]
+Get:87 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-urllib3 all 1.7.1-1ubuntu4.1 [39.4 kB]
+Get:88 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-requests all 2.2.1-1ubuntu0.4 [43.5 kB]
+Get:89 http://archive.ubuntu.com/ubuntu/ trusty-updates/main python-setuptools all 3.3-1ubuntu2 [230 kB]
+Get:90 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe python-pip all 1.5.4-1ubuntu4 [97.3 kB]
+[91mExtracting templates from packages: 33%[0m[91mExtracting templates from packages: 66%[0m[91mExtracting templates from packages: 100%
+[0mPreconfiguring packages ...
+Fetched 53.5 MB in 53s (994 kB/s)
+Selecting previously unselected package libroken18-heimdal:amd64.
+(Reading database ... 11571 files and directories currently installed.)
+Preparing to unpack .../libroken18-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libroken18-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libasn1-8-heimdal:amd64.
+Preparing to unpack .../libasn1-8-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libasn1-8-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../libkrb5support0_1.12+dfsg-2ubuntu5.3_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../libk5crypto3_1.12+dfsg-2ubuntu5.3_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../libkeyutils1_1.5.6-1_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.5.6-1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../libkrb5-3_1.12+dfsg-2ubuntu5.3_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../libgssapi-krb5-2_1.12+dfsg-2ubuntu5.3_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Selecting previously unselected package libidn11:amd64.
+Preparing to unpack .../libidn11_1.28-1ubuntu2.2_amd64.deb ...
+Unpacking libidn11:amd64 (1.28-1ubuntu2.2) ...
+Selecting previously unselected package libhcrypto4-heimdal:amd64.
+Preparing to unpack .../libhcrypto4-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libhcrypto4-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libheimbase1-heimdal:amd64.
+Preparing to unpack .../libheimbase1-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libheimbase1-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libwind0-heimdal:amd64.
+Preparing to unpack .../libwind0-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libwind0-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libhx509-5-heimdal:amd64.
+Preparing to unpack .../libhx509-5-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libhx509-5-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libkrb5-26-heimdal:amd64.
+Preparing to unpack .../libkrb5-26-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libkrb5-26-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libheimntlm0-heimdal:amd64.
+Preparing to unpack .../libheimntlm0-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libheimntlm0-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libgssapi3-heimdal:amd64.
+Preparing to unpack .../libgssapi3-heimdal_1.6~git20131207+dfsg-1ubuntu1.2_amd64.deb ...
+Unpacking libgssapi3-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../libsasl2-modules-db_2.1.25.dfsg1-17build1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.25.dfsg1-17build1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../libsasl2-2_2.1.25.dfsg1-17build1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.25.dfsg1-17build1) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../libldap-2.4-2_2.4.31-1+nmu2ubuntu8.4_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.31-1+nmu2ubuntu8.4) ...
+Selecting previously unselected package librtmp0:amd64.
+Preparing to unpack .../librtmp0_2.4+20121230.gitdf6c518-1ubuntu0.1_amd64.deb ...
+Unpacking librtmp0:amd64 (2.4+20121230.gitdf6c518-1ubuntu0.1) ...
+Selecting previously unselected package libcurl3-gnutls:amd64.
+Preparing to unpack .../libcurl3-gnutls_7.35.0-1ubuntu2.17_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.35.0-1ubuntu2.17) ...
+Selecting previously unselected package libxml2:amd64.
+Preparing to unpack .../libxml2_2.9.1+dfsg1-3ubuntu4.13_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.1+dfsg1-3ubuntu4.13) ...
+Selecting previously unselected package liblzo2-2:amd64.
+Preparing to unpack .../liblzo2-2_2.06-1.2ubuntu1.1_amd64.deb ...
+Unpacking liblzo2-2:amd64 (2.06-1.2ubuntu1.1) ...
+Selecting previously unselected package libnettle4:amd64.
+Preparing to unpack .../libnettle4_2.7.1-1ubuntu0.2_amd64.deb ...
+Unpacking libnettle4:amd64 (2.7.1-1ubuntu0.2) ...
+Selecting previously unselected package libarchive13:amd64.
+Preparing to unpack .../libarchive13_3.1.2-7ubuntu2.6_amd64.deb ...
+Unpacking libarchive13:amd64 (3.1.2-7ubuntu2.6) ...
+Selecting previously unselected package libasan0:amd64.
+Preparing to unpack .../libasan0_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libasan0:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../libatomic1_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libatomic1:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package libgmp10:amd64.
+Preparing to unpack .../libgmp10_2%3a5.1.3+dfsg-1ubuntu1_amd64.deb ...
+Unpacking libgmp10:amd64 (2:5.1.3+dfsg-1ubuntu1) ...
+Selecting previously unselected package libisl10:amd64.
+Preparing to unpack .../libisl10_0.12.2-1_amd64.deb ...
+Unpacking libisl10:amd64 (0.12.2-1) ...
+Selecting previously unselected package libcloog-isl4:amd64.
+Preparing to unpack .../libcloog-isl4_0.18.2-1_amd64.deb ...
+Unpacking libcloog-isl4:amd64 (0.18.2-1) ...
+Selecting previously unselected package libcurl3:amd64.
+Preparing to unpack .../libcurl3_7.35.0-1ubuntu2.17_amd64.deb ...
+Unpacking libcurl3:amd64 (7.35.0-1ubuntu2.17) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../libgomp1_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libgomp1:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../libitm1_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libitm1:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package libmpfr4:amd64.
+Preparing to unpack .../libmpfr4_3.1.2-1_amd64.deb ...
+Unpacking libmpfr4:amd64 (3.1.2-1) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../libquadmath0_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libquadmath0:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../libtsan0_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libtsan0:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package libpython2.7-minimal:amd64.
+Preparing to unpack .../libpython2.7-minimal_2.7.6-8ubuntu0.4_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.6-8ubuntu0.4) ...
+Selecting previously unselected package python2.7-minimal.
+Preparing to unpack .../python2.7-minimal_2.7.6-8ubuntu0.4_amd64.deb ...
+Unpacking python2.7-minimal (2.7.6-8ubuntu0.4) ...
+Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../libmpc3_1.0.1-1ubuntu1_amd64.deb ...
+Unpacking libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Selecting previously unselected package openssl.
+Preparing to unpack .../openssl_1.0.1f-1ubuntu2.26_amd64.deb ...
+Unpacking openssl (1.0.1f-1ubuntu2.26) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../ca-certificates_20170717~14.04.1_all.deb ...
+Unpacking ca-certificates (20170717~14.04.1) ...
+Selecting previously unselected package wget.
+Preparing to unpack .../wget_1.15-1ubuntu1.14.04.4_amd64.deb ...
+Unpacking wget (1.15-1ubuntu1.14.04.4) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../binutils_2.24-5ubuntu14.2_amd64.deb ...
+Unpacking binutils (2.24-5ubuntu14.2) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../libc-dev-bin_2.19-0ubuntu6.14_amd64.deb ...
+Unpacking libc-dev-bin (2.19-0ubuntu6.14) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../linux-libc-dev_3.13.0-160.210_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (3.13.0-160.210) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../libc6-dev_2.19-0ubuntu6.14_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.19-0ubuntu6.14) ...
+Selecting previously unselected package cpp-4.8.
+Preparing to unpack .../cpp-4.8_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking cpp-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../cpp_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking cpp (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package libgcc-4.8-dev:amd64.
+Preparing to unpack .../libgcc-4.8-dev_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libgcc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package gcc-4.8.
+Preparing to unpack .../gcc-4.8_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking gcc-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../gcc_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking gcc (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package libstdc++-4.8-dev:amd64.
+Preparing to unpack .../libstdc++-4.8-dev_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package g++-4.8.
+Preparing to unpack .../g++-4.8_4.8.4-2ubuntu1~14.04.4_amd64.deb ...
+Unpacking g++-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking g++ (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package make.
+Preparing to unpack .../make_3.81-8.2ubuntu3_amd64.deb ...
+Unpacking make (3.81-8.2ubuntu3) ...
+Selecting previously unselected package libtimedate-perl.
+Preparing to unpack .../libtimedate-perl_2.3000-1_all.deb ...
+Unpacking libtimedate-perl (2.3000-1) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../libdpkg-perl_1.17.5ubuntu5.8_all.deb ...
+Unpacking libdpkg-perl (1.17.5ubuntu5.8) ...
+Selecting previously unselected package xz-utils.
+Preparing to unpack .../xz-utils_5.1.1alpha+20120614-2ubuntu2_amd64.deb ...
+Unpacking xz-utils (5.1.1alpha+20120614-2ubuntu2) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../patch_2.7.1-4ubuntu2.4_amd64.deb ...
+Unpacking patch (2.7.1-4ubuntu2.4) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../dpkg-dev_1.17.5ubuntu5.8_all.deb ...
+Unpacking dpkg-dev (1.17.5ubuntu5.8) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../build-essential_11.6ubuntu6_amd64.deb ...
+Unpacking build-essential (11.6ubuntu6) ...
+Selecting previously unselected package cmake-data.
+Preparing to unpack .../cmake-data_2.8.12.2-0ubuntu3_all.deb ...
+Unpacking cmake-data (2.8.12.2-0ubuntu3) ...
+Selecting previously unselected package cmake.
+Preparing to unpack .../cmake_2.8.12.2-0ubuntu3_amd64.deb ...
+Unpacking cmake (2.8.12.2-0ubuntu3) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...
+Unpacking liberror-perl (0.17-1.1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../git-man_1%3a1.9.1-1ubuntu0.9_all.deb ...
+Unpacking git-man (1:1.9.1-1ubuntu0.9) ...
+Selecting previously unselected package git.
+Preparing to unpack .../git_1%3a1.9.1-1ubuntu0.9_amd64.deb ...
+Unpacking git (1:1.9.1-1ubuntu0.9) ...
+Selecting previously unselected package libpython2.7-stdlib:amd64.
+Preparing to unpack .../libpython2.7-stdlib_2.7.6-8ubuntu0.4_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.6-8ubuntu0.4) ...
+Selecting previously unselected package libpython-stdlib:amd64.
+Preparing to unpack .../libpython-stdlib_2.7.5-5ubuntu3_amd64.deb ...
+Unpacking libpython-stdlib:amd64 (2.7.5-5ubuntu3) ...
+Selecting previously unselected package python2.7.
+Preparing to unpack .../python2.7_2.7.6-8ubuntu0.4_amd64.deb ...
+Unpacking python2.7 (2.7.6-8ubuntu0.4) ...
+Selecting previously unselected package python-minimal.
+Preparing to unpack .../python-minimal_2.7.5-5ubuntu3_amd64.deb ...
+Unpacking python-minimal (2.7.5-5ubuntu3) ...
+Selecting previously unselected package python.
+Preparing to unpack .../python_2.7.5-5ubuntu3_amd64.deb ...
+Unpacking python (2.7.5-5ubuntu3) ...
+Selecting previously unselected package python-chardet.
+Preparing to unpack .../python-chardet_2.0.1-2build2_all.deb ...
+Unpacking python-chardet (2.0.1-2build2) ...
+Selecting previously unselected package python3-pkg-resources.
+Preparing to unpack .../python3-pkg-resources_3.3-1ubuntu2_all.deb ...
+Unpacking python3-pkg-resources (3.3-1ubuntu2) ...
+Selecting previously unselected package python-chardet-whl.
+Preparing to unpack .../python-chardet-whl_2.2.1-2~ubuntu1_all.deb ...
+Unpacking python-chardet-whl (2.2.1-2~ubuntu1) ...
+Selecting previously unselected package python-colorama.
+Preparing to unpack .../python-colorama_0.2.5-0.1ubuntu2_all.deb ...
+Unpacking python-colorama (0.2.5-0.1ubuntu2) ...
+Selecting previously unselected package python-colorama-whl.
+Preparing to unpack .../python-colorama-whl_0.2.5-0.1ubuntu2_all.deb ...
+Unpacking python-colorama-whl (0.2.5-0.1ubuntu2) ...
+Selecting previously unselected package python-distlib.
+Preparing to unpack .../python-distlib_0.1.8-1ubuntu1_all.deb ...
+Unpacking python-distlib (0.1.8-1ubuntu1) ...
+Selecting previously unselected package python-distlib-whl.
+Preparing to unpack .../python-distlib-whl_0.1.8-1ubuntu1_all.deb ...
+Unpacking python-distlib-whl (0.1.8-1ubuntu1) ...
+Selecting previously unselected package python-six.
+Preparing to unpack .../python-six_1.5.2-1ubuntu1.1_all.deb ...
+Unpacking python-six (1.5.2-1ubuntu1.1) ...
+Selecting previously unselected package python-html5lib.
+Preparing to unpack .../python-html5lib_0.999-3~ubuntu1_all.deb ...
+Unpacking python-html5lib (0.999-3~ubuntu1) ...
+Selecting previously unselected package python-html5lib-whl.
+Preparing to unpack .../python-html5lib-whl_0.999-3~ubuntu1_all.deb ...
+Unpacking python-html5lib-whl (0.999-3~ubuntu1) ...
+Selecting previously unselected package python-six-whl.
+Preparing to unpack .../python-six-whl_1.5.2-1ubuntu1.1_all.deb ...
+Unpacking python-six-whl (1.5.2-1ubuntu1.1) ...
+Selecting previously unselected package python-urllib3-whl.
+Preparing to unpack .../python-urllib3-whl_1.7.1-1ubuntu4.1_all.deb ...
+Unpacking python-urllib3-whl (1.7.1-1ubuntu4.1) ...
+Selecting previously unselected package python-requests-whl.
+Preparing to unpack .../python-requests-whl_2.2.1-1ubuntu0.4_all.deb ...
+Unpacking python-requests-whl (2.2.1-1ubuntu0.4) ...
+Selecting previously unselected package python-setuptools-whl.
+Preparing to unpack .../python-setuptools-whl_3.3-1ubuntu2_all.deb ...
+Unpacking python-setuptools-whl (3.3-1ubuntu2) ...
+Selecting previously unselected package python-pip-whl.
+Preparing to unpack .../python-pip-whl_1.5.4-1ubuntu4_all.deb ...
+Unpacking python-pip-whl (1.5.4-1ubuntu4) ...
+Selecting previously unselected package python-pkg-resources.
+Preparing to unpack .../python-pkg-resources_3.3-1ubuntu2_all.deb ...
+Unpacking python-pkg-resources (3.3-1ubuntu2) ...
+Selecting previously unselected package python-urllib3.
+Preparing to unpack .../python-urllib3_1.7.1-1ubuntu4.1_all.deb ...
+Unpacking python-urllib3 (1.7.1-1ubuntu4.1) ...
+Selecting previously unselected package python-requests.
+Preparing to unpack .../python-requests_2.2.1-1ubuntu0.4_all.deb ...
+Unpacking python-requests (2.2.1-1ubuntu0.4) ...
+Selecting previously unselected package python-setuptools.
+Preparing to unpack .../python-setuptools_3.3-1ubuntu2_all.deb ...
+Unpacking python-setuptools (3.3-1ubuntu2) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../python-pip_1.5.4-1ubuntu4_all.deb ...
+Unpacking python-pip (1.5.4-1ubuntu4) ...
+Processing triggers for mime-support (3.54ubuntu1.1) ...
+Setting up libroken18-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libasn1-8-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libkrb5support0:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Setting up libk5crypto3:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Setting up libkeyutils1:amd64 (1.5.6-1) ...
+Setting up libkrb5-3:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Setting up libgssapi-krb5-2:amd64 (1.12+dfsg-2ubuntu5.3) ...
+Setting up libidn11:amd64 (1.28-1ubuntu2.2) ...
+Setting up libhcrypto4-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libheimbase1-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libwind0-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libhx509-5-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libkrb5-26-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libheimntlm0-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libgssapi3-heimdal:amd64 (1.6~git20131207+dfsg-1ubuntu1.2) ...
+Setting up libsasl2-modules-db:amd64 (2.1.25.dfsg1-17build1) ...
+Setting up libsasl2-2:amd64 (2.1.25.dfsg1-17build1) ...
+Setting up libldap-2.4-2:amd64 (2.4.31-1+nmu2ubuntu8.4) ...
+Setting up librtmp0:amd64 (2.4+20121230.gitdf6c518-1ubuntu0.1) ...
+Setting up libcurl3-gnutls:amd64 (7.35.0-1ubuntu2.17) ...
+Setting up libxml2:amd64 (2.9.1+dfsg1-3ubuntu4.13) ...
+Setting up liblzo2-2:amd64 (2.06-1.2ubuntu1.1) ...
+Setting up libnettle4:amd64 (2.7.1-1ubuntu0.2) ...
+Setting up libarchive13:amd64 (3.1.2-7ubuntu2.6) ...
+Setting up libasan0:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up libatomic1:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up libgmp10:amd64 (2:5.1.3+dfsg-1ubuntu1) ...
+Setting up libisl10:amd64 (0.12.2-1) ...
+Setting up libcloog-isl4:amd64 (0.18.2-1) ...
+Setting up libcurl3:amd64 (7.35.0-1ubuntu2.17) ...
+Setting up libgomp1:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up libitm1:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up libmpfr4:amd64 (3.1.2-1) ...
+Setting up libquadmath0:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up libtsan0:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up libpython2.7-minimal:amd64 (2.7.6-8ubuntu0.4) ...
+Setting up python2.7-minimal (2.7.6-8ubuntu0.4) ...
+Setting up libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Setting up openssl (1.0.1f-1ubuntu2.26) ...
+Setting up ca-certificates (20170717~14.04.1) ...
+Setting up wget (1.15-1ubuntu1.14.04.4) ...
+Setting up binutils (2.24-5ubuntu14.2) ...
+Setting up libc-dev-bin (2.19-0ubuntu6.14) ...
+Setting up linux-libc-dev:amd64 (3.13.0-160.210) ...
+Setting up libc6-dev:amd64 (2.19-0ubuntu6.14) ...
+Setting up cpp-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up cpp (4:4.8.2-1ubuntu6) ...
+Setting up libgcc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up gcc-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up gcc (4:4.8.2-1ubuntu6) ...
+Setting up libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up g++-4.8 (4.8.4-2ubuntu1~14.04.4) ...
+Setting up g++ (4:4.8.2-1ubuntu6) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up make (3.81-8.2ubuntu3) ...
+Setting up libtimedate-perl (2.3000-1) ...
+Setting up libdpkg-perl (1.17.5ubuntu5.8) ...
+Setting up xz-utils (5.1.1alpha+20120614-2ubuntu2) ...
+update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+Setting up patch (2.7.1-4ubuntu2.4) ...
+Setting up dpkg-dev (1.17.5ubuntu5.8) ...
+Setting up build-essential (11.6ubuntu6) ...
+Setting up cmake-data (2.8.12.2-0ubuntu3) ...
+Setting up cmake (2.8.12.2-0ubuntu3) ...
+Setting up liberror-perl (0.17-1.1) ...
+Setting up git-man (1:1.9.1-1ubuntu0.9) ...
+Setting up git (1:1.9.1-1ubuntu0.9) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.6-8ubuntu0.4) ...
+Setting up libpython-stdlib:amd64 (2.7.5-5ubuntu3) ...
+Setting up python2.7 (2.7.6-8ubuntu0.4) ...
+Setting up python-minimal (2.7.5-5ubuntu3) ...
+Setting up python (2.7.5-5ubuntu3) ...
+Setting up python-chardet (2.0.1-2build2) ...
+Setting up python3-pkg-resources (3.3-1ubuntu2) ...
+Setting up python-chardet-whl (2.2.1-2~ubuntu1) ...
+Setting up python-colorama (0.2.5-0.1ubuntu2) ...
+Setting up python-colorama-whl (0.2.5-0.1ubuntu2) ...
+Setting up python-distlib (0.1.8-1ubuntu1) ...
+Setting up python-distlib-whl (0.1.8-1ubuntu1) ...
+Setting up python-six (1.5.2-1ubuntu1.1) ...
+Setting up python-html5lib (0.999-3~ubuntu1) ...
+Setting up python-html5lib-whl (0.999-3~ubuntu1) ...
+Setting up python-six-whl (1.5.2-1ubuntu1.1) ...
+Setting up python-urllib3-whl (1.7.1-1ubuntu4.1) ...
+Setting up python-requests-whl (2.2.1-1ubuntu0.4) ...
+Setting up python-setuptools-whl (3.3-1ubuntu2) ...
+Setting up python-pip-whl (1.5.4-1ubuntu4) ...
+Setting up python-pkg-resources (3.3-1ubuntu2) ...
+Setting up python-urllib3 (1.7.1-1ubuntu4.1) ...
+Setting up python-requests (2.2.1-1ubuntu0.4) ...
+Setting up python-setuptools (3.3-1ubuntu2) ...
+Setting up python-pip (1.5.4-1ubuntu4) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.14) ...
+Processing triggers for ca-certificates (20170717~14.04.1) ...
+Updating certificates in /etc/ssl/certs... 148 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d....done.
+pip 1.5.4 from /usr/lib/python2.7/dist-packages (python 2.7)
+Downloading/unpacking pip==9.0.3
+Installing collected packages: pip
+  Found existing installation: pip 1.5.4
+    Not uninstalling pip at /usr/lib/python2.7/dist-packages, owned by OS
+Successfully installed pip
+Cleaning up...
+Removing intermediate container fe7094fc5a4b
+ ---> c2096a36f3d3
+Step 24/41 : RUN pip install --upgrade setuptools
+ ---> Running in b9514c198816
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:339: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  SNIMissingWarning
+[0m[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0mCollecting setuptools
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/96/06/c8ee69628191285ddddffb277bd5abdf769166e7a14b867c2a172f0175b1/setuptools-40.4.3-py2.py3-none-any.whl (569kB)
+Installing collected packages: setuptools
+  Found existing installation: setuptools 3.3
+    Uninstalling setuptools-3.3:
+      Successfully uninstalled setuptools-3.3
+Successfully installed setuptools-40.4.3
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m[91mYou are using pip version 9.0.3, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[0mRemoving intermediate container b9514c198816
+ ---> 6748d14ffe4e
+Step 25/41 : RUN pip install --upgrade       wheel       rosdep       wstool       rosinstall       rospkg       catkin_pkg  && apt-get clean  && rm -rf /var/lib/apt/lists/*
+ ---> Running in 27af66237dd2
+Collecting wheel
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:339: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  SNIMissingWarning
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/fc/e9/05316a1eec70c2bfc1c823a259546475bd7636ba6d27ec80575da523bc34/wheel-0.32.1-py2.py3-none-any.whl
+Collecting rosdep
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/02/b7/c54f4cfed18f3367be992f74298c2ceb60a679c7e5982f2ba79fbd289ee9/rosdep-0.12.2.tar.gz (80kB)
+Collecting wstool
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/66/7b/a3e4195605644e54658101acc13593703bde9fb67731e4565ac225a5bdb5/wstool-0.1.17.tar.gz (53kB)
+Collecting rosinstall
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/38/c5/2c466034d05ad84ca15179d1f496958c6caad9432928bf7436711cc3e64e/rosinstall-0.7.8.tar.gz
+Collecting rospkg
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/af/1c/dfb6952da61d2ad7331271481f050e405b49830e11c50990a4acf01f7bd3/rospkg-1.1.7.tar.gz (40kB)
+Collecting catkin_pkg
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/40/ba/f4a63b025b03b81ec364b6ff875d6faa1327aead8eda4fd90cabab1b202b/catkin_pkg-0.4.8.tar.gz (58kB)
+Collecting rosdistro>=0.4.0 (from rosdep)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/16/29/8ba39bfeb2d1e5c5a8ce37c814ed673eb0f1be2a127b44e3eec39475f9fd/rosdistro-0.6.9.tar.gz (45kB)
+Collecting PyYAML>=3.1 (from rosdep)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz (270kB)
+Collecting vcstools>=0.1.38 (from wstool)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/1e/0c/fd44a903c31a12827f31c6fb15d8ba2f3b731ad1e54f1a004c98f1fa6541/vcstools-0.1.40.tar.gz (51kB)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0mCollecting argparse (from catkin_pkg)
+  Downloading https://files.pythonhosted.org/packages/f2/94/3af39d34be01a24a6e65433d19e107099374224905f1e0cc6bbe1fd22a2f/argparse-1.4.0-py2.py3-none-any.whl
+Collecting docutils (from catkin_pkg)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/50/09/c53398e0005b11f7ffb27b7aa720c617aba53be4fb4f4f3f06b9b5c60f28/docutils-0.14-py2-none-any.whl (543kB)
+Collecting python-dateutil (from catkin_pkg)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/cf/f5/af2b09c957ace60dcfac112b669c45c8c97e32f94aa8b56da4c6d1682825/python_dateutil-2.7.3-py2.py3-none-any.whl (211kB)
+Collecting pyparsing (from catkin_pkg)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0m  Downloading https://files.pythonhosted.org/packages/2b/4a/f06b45ab9690d4c37641ec776f7ad691974f4cf6943a73267475b05cbfca/pyparsing-2.2.2-py2.py3-none-any.whl (57kB)
+Requirement already up-to-date: setuptools in /usr/local/lib/python2.7/dist-packages (from rosdistro>=0.4.0->rosdep)
+[91m/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/util/ssl_.py:137: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. You can upgrade to a newer version of Python to solve this. For more information, see https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecurePlatformWarning
+[0mCollecting six>=1.5 (from python-dateutil->catkin_pkg)
+  Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Installing collected packages: wheel, argparse, docutils, six, python-dateutil, pyparsing, catkin-pkg, PyYAML, rospkg, rosdistro, rosdep, vcstools, wstool, rosinstall
+  Found existing installation: argparse 1.2.1
+    Not uninstalling argparse at /usr/lib/python2.7, as it is in the standard library.
+  Found existing installation: six 1.5.2
+[91m    DEPRECATION: Uninstalling a distutils installed project (six) has been deprecated and will be removed in a future version. This is due to the fact that uninstalling a distutils project will only partially uninstall the project.
+[0m    Uninstalling six-1.5.2:
+      Successfully uninstalled six-1.5.2
+  Running setup.py install for catkin-pkg: started
+    Running setup.py install for catkin-pkg: finished with status 'done'
+  Running setup.py install for PyYAML: started
+    Running setup.py install for PyYAML: finished with status 'done'
+  Running setup.py install for rospkg: started
+    Running setup.py install for rospkg: finished with status 'done'
+  Running setup.py install for rosdistro: started
+    Running setup.py install for rosdistro: finished with status 'done'
+  Running setup.py install for rosdep: started
+    Running setup.py install for rosdep: finished with status 'done'
+  Running setup.py install for vcstools: started
+    Running setup.py install for vcstools: finished with status 'done'
+  Running setup.py install for wstool: started
+    Running setup.py install for wstool: finished with status 'done'
+  Running setup.py install for rosinstall: started
+    Running setup.py install for rosinstall: finished with status 'done'
+Successfully installed PyYAML-3.13 argparse-1.4.0 catkin-pkg-0.4.8 docutils-0.14 pyparsing-2.2.2 python-dateutil-2.7.3 rosdep-0.12.2 rosdistro-0.6.9 rosinstall-0.7.8 rospkg-1.1.7 six-1.11.0 vcstools-0.1.40 wheel-0.32.1 wstool-0.1.17
+[91mYou are using pip version 9.0.3, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[0mRemoving intermediate container 27af66237dd2
+ ---> c213db9b24c5
+Step 26/41 : RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list  && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
+ ---> Running in 7b86a654623f
+[91m--2018-10-15 18:04:13--  http://packages.osrfoundation.org/gazebo.key
+[0m[91mResolving packages.osrfoundation.org (packages.osrfoundation.org)... [0m[91m54.176.9.38
+Connecting to packages.osrfoundation.org (packages.osrfoundation.org)|54.176.9.38|:80... [0m[91mconnected.
+HTTP request sent, awaiting response... [0m[91m200 OK
+Length: 1772 (1.7K) [application/pgp-keys]
+Saving to: ‘STDOUT’
+
+     0K .                                                     100%  150M=0s
+
+2018-10-15 18:04:14 (150 MB/s) - written to stdout [1772/1772]
+
+[0mOK
+Removing intermediate container 7b86a654623f
+ ---> 56587136b87b
+Step 27/41 : WORKDIR ${ROS_WSPACE}
+Removing intermediate container 7963b2fc786d
+ ---> 7a36f3e3751a
+Step 28/41 : COPY deps.rosinstall .
+ ---> 2f62d26ccc09
+Step 29/41 : RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/deps.rosinstall
+ ---> Running in 4ee1450c646b
+Using initial elements from: /ros_ws/deps.rosinstall
+Writing /ros_ws/src/.rosinstall
+[ecl_license] Fetching https://github.com/yujinrobot-release/ecl_tools-release/archive/release/indigo/ecl_license/0.61.0-0.tar.gz (version ecl_tools-release-release-indigo-ecl_license-0.61.0-0) to /ros_ws/src/ecl_license
+[ecl_license] Done.
+[ecl_command_line] Fetching https://github.com/yujinrobot-release/ecl_core-release/archive/release/indigo/ecl_command_line/0.61.0-0.tar.gz (version ecl_core-release-release-indigo-ecl_command_line-0.61.0-0) to /ros_ws/src/ecl_command_line
+[ecl_command_line] Done.
+[catkin] Fetching https://github.com/ros-gbp/catkin-release/archive/release/indigo/catkin/0.6.11-0.tar.gz (version catkin-release-release-indigo-catkin-0.6.11-0) to /ros_ws/src/catkin
+[catkin] Done.
+[catkin,ecl_command_line,ecl_license] still active
+[catkin] still active
+
+update complete.
+Removing intermediate container 4ee1450c646b
+ ---> b1d43c727ecd
+Step 30/41 : RUN apt-get clean  && apt-get update  && rosdep init  && rosdep update  && rosdep install --from-paths src -i --rosdistro=${ROS_DISTRO} -y       --skip-keys="python-rosdep python-catkin-pkg python-rospkg"  && apt-get clean  && rm -rf /var/lib/apt/lists/*
+ ---> Running in 9bfc965a16f7
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:3 http://security.ubuntu.com trusty-security/universe Sources [103 kB]
+Get:4 http://archive.ubuntu.com trusty-backports InRelease [65.9 kB]
+Get:5 http://archive.ubuntu.com trusty Release.gpg [933 B]
+Get:6 http://archive.ubuntu.com trusty-updates/universe Sources [267 kB]
+Get:7 http://security.ubuntu.com trusty-security/main amd64 Packages [967 kB]
+Get:8 http://packages.osrfoundation.org trusty InRelease [4255 B]
+Get:9 http://packages.osrfoundation.org trusty/main amd64 Packages [38.2 kB]
+Get:10 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1387 kB]
+Get:11 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:12 http://security.ubuntu.com trusty-security/universe amd64 Packages [335 kB]
+Get:13 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4722 B]
+Get:14 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:15 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [631 kB]
+Get:16 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.0 kB]
+Get:17 http://archive.ubuntu.com trusty Release [58.5 kB]
+Get:18 http://archive.ubuntu.com trusty-backports/main amd64 Packages [14.7 kB]
+Get:19 http://archive.ubuntu.com trusty-backports/restricted amd64 Packages [40 B]
+Get:20 http://archive.ubuntu.com trusty-backports/universe amd64 Packages [52.5 kB]
+Get:21 http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1392 B]
+Get:22 http://archive.ubuntu.com trusty/universe Sources [7926 kB]
+Get:23 http://archive.ubuntu.com trusty/main amd64 Packages [1743 kB]
+Get:24 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:25 http://archive.ubuntu.com trusty/universe amd64 Packages [7589 kB]
+Get:26 http://archive.ubuntu.com trusty/multiverse amd64 Packages [169 kB]
+Fetched 21.6 MB in 20s (1077 kB/s)
+Reading package lists...
+Wrote /etc/ros/rosdep/sources.list.d/20-default.list
+Recommended: please run
+
+	rosdep update
+
+[91mWarning: running 'rosdep update' as root is not recommended.[0m[91m
+[0m[91m  You should run 'sudo rosdep fix-permissions' and invoke 'rosdep update' again without sudo.[0m[91m
+[0mreading in sources list data from /etc/ros/rosdep/sources.list.d
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/osx-homebrew.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/base.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/python.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/rosdep/ruby.yaml
+Hit https://raw.githubusercontent.com/ros/rosdistro/master/releases/fuerte.yaml
+Query rosdistro index https://raw.githubusercontent.com/ros/rosdistro/master/index.yaml
+Add distro "groovy"
+Add distro "hydro"
+Add distro "indigo"
+Add distro "jade"
+Add distro "kinetic"
+Add distro "lunar"
+Add distro "melodic"
+updated cache in /root/.ros/rosdep/sources.cache
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  python-mock-doc
+The following NEW packages will be installed:
+  python-mock
+0 upgraded, 1 newly installed, 0 to remove and 13 not upgraded.
+Need to get 23.8 kB of archives.
+After this operation, 140 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main python-mock all 1.0.1-3 [23.8 kB]
+Fetched 23.8 kB in 0s (121 kB/s)
+Selecting previously unselected package python-mock.
+(Reading database ... 17644 files and directories currently installed.)
+Preparing to unpack .../python-mock_1.0.1-3_all.deb ...
+Unpacking python-mock (1.0.1-3) ...
+Setting up python-mock (1.0.1-3) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  python-empy
+0 upgraded, 1 newly installed, 0 to remove and 13 not upgraded.
+Need to get 71.9 kB of archives.
+After this operation, 329 kB of additional disk space will be used.
+Get:1 http://packages.osrfoundation.org/gazebo/ubuntu-stable/ trusty/main python-empy all 3.3-9osrf1 [71.9 kB]
+Fetched 71.9 kB in 1s (70.2 kB/s)
+Selecting previously unselected package python-empy.
+(Reading database ... 17652 files and directories currently installed.)
+Preparing to unpack .../python-empy_3.3-9osrf1_all.deb ...
+Unpacking python-empy (3.3-9osrf1) ...
+Setting up python-empy (3.3-9osrf1) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  libgtest-dev
+0 upgraded, 1 newly installed, 0 to remove and 13 not upgraded.
+Need to get 262 kB of archives.
+After this operation, 1333 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main libgtest-dev all 1.6.0-1ubuntu6 [262 kB]
+Fetched 262 kB in 0s (652 kB/s)
+Selecting previously unselected package libgtest-dev.
+(Reading database ... 17663 files and directories currently installed.)
+Preparing to unpack .../libgtest-dev_1.6.0-1ubuntu6_all.deb ...
+Unpacking libgtest-dev (1.6.0-1ubuntu6) ...
+Setting up libgtest-dev (1.6.0-1ubuntu6) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  python-coverage python-nose-doc
+The following NEW packages will be installed:
+  python-nose
+0 upgraded, 1 newly installed, 0 to remove and 13 not upgraded.
+Need to get 119 kB of archives.
+After this operation, 592 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main python-nose all 1.3.1-2 [119 kB]
+Fetched 119 kB in 0s (407 kB/s)
+Selecting previously unselected package python-nose.
+(Reading database ... 17731 files and directories currently installed.)
+Preparing to unpack .../python-nose_1.3.1-2_all.deb ...
+Unpacking python-nose (1.3.1-2) ...
+Setting up python-nose (1.3.1-2) ...
+[1mexecuting command [apt-get install -y python-mock][0m
+[1mexecuting command [apt-get install -y python-empy][0m
+[1mexecuting command [apt-get install -y libgtest-dev][0m
+[1mexecuting command [apt-get install -y python-nose][0m
+#All required rosdeps installed successfully
+Removing intermediate container 9bfc965a16f7
+ ---> 9b5937a8c1b5
+Step 31/41 : RUN cd /usr/src/gtest  && cmake CMakeLists.txt  && make
+ ---> Running in ffac515868f5
+-- The CXX compiler identification is GNU 4.8.4
+-- The C compiler identification is GNU 4.8.4
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Found PythonInterp: /usr/bin/python (found version "2.7.6") 
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /usr/src/gtest
+Scanning dependencies of target gtest
+[ 50%] Building CXX object CMakeFiles/gtest.dir/src/gtest-all.cc.o
+Linking CXX static library libgtest.a
+[ 50%] Built target gtest
+Scanning dependencies of target gtest_main
+[100%] Building CXX object CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+Linking CXX static library libgtest_main.a
+[100%] Built target gtest_main
+Removing intermediate container ffac515868f5
+ ---> 843fa1a1358b
+Step 32/41 : RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated       --install       --install-space /opt/ros/${ROS_DISTRO}       -DCMAKE_BUILD_TYPE=Release  && rm -rf        ${ROS_WSPACE}/src        ${ROS_WSPACE}/build_isolated        ${ROS_WSPACE}/devel_isolated
+ ---> Running in c02ff2327835
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /opt/ros/indigo/_setup_util.py
+-- Installing: /opt/ros/indigo/env.sh
+-- Installing: /opt/ros/indigo/setup.bash
+-- Installing: /opt/ros/indigo/setup.sh
+-- Installing: /opt/ros/indigo/setup.zsh
+-- Installing: /opt/ros/indigo/.rosinstall
+-- Installing: /opt/ros/indigo/etc/catkin/profile.d/05.catkin_make.bash
+-- Installing: /opt/ros/indigo/etc/catkin/profile.d/05.catkin_make_isolated.bash
+-- Installing: /opt/ros/indigo/lib/pkgconfig/catkin.pc
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkinConfig-version.cmake
+-- Installing: /opt/ros/indigo/share/catkin/package.xml
+-- Installing: /opt/ros/indigo/share/catkin/LICENSE
+-- Installing: /opt/ros/indigo/share/catkin/cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_package.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/list_append_deduplicate.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/atomic_configure_file.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_python_setup.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/toplevel.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/em_expand.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/list_insert_in_workspace_order.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_package_xml.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/python.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/list_append_unique.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/tools
+-- Installing: /opt/ros/indigo/share/catkin/cmake/tools/threads.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/tools/rt.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/tools/doxygen.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/tools/libraries.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/tools/bz2.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/legacy.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/platform
+-- Installing: /opt/ros/indigo/share/catkin/cmake/platform/windows.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/platform/lsb.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/platform/ubuntu.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/script.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/pkgConfig-version.cmake.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/script.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/env-hook.context.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/script.bash.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/python_distutils_install.bat.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/pkg.context.pc.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/pkgConfig.cmake.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/generate_cached_setup.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/script.sh.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/setup.bat.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/__init__.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/safe_execute_install.cmake.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/_setup_util.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/setup.bash.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/cfg-extras.context.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/rosinstall.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/env.bat.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/env.sh.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/order_packages.context.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/Doxyfile.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/python_distutils_install.sh.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/setup.sh.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/setup.zsh.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/templates/relay.py.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_install_python.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/shell.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/interrogate_setup_dot_py.py
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_libraries.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_add_env_hooks.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_metapackage.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/find_program_required.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/string_starts_with.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/test
+-- Installing: /opt/ros/indigo/share/catkin/cmake/test/download_checkmd5.py
+-- Installing: /opt/ros/indigo/share/catkin/cmake/test/catkin_download_test_data.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/test/tests.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/test/run_tests.py
+-- Installing: /opt/ros/indigo/share/catkin/cmake/test/nosetests.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/test/gtest.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_workspace.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_generate_environment.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/em
+-- Installing: /opt/ros/indigo/share/catkin/cmake/em/pkg.pc.em
+-- Installing: /opt/ros/indigo/share/catkin/cmake/em/order_packages.cmake.em
+-- Installing: /opt/ros/indigo/share/catkin/cmake/assert.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/debug_message.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/safe_execute_process.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/order_paths.py
+-- Installing: /opt/ros/indigo/share/catkin/cmake/empy.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/stamp.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/parse_package_xml.py
+-- Installing: /opt/ros/indigo/share/catkin/cmake/env-hooks
+-- Installing: /opt/ros/indigo/share/catkin/cmake/env-hooks/05.catkin_make_isolated.bash
+-- Installing: /opt/ros/indigo/share/catkin/cmake/env-hooks/05.catkin_make.bash
+-- Installing: /opt/ros/indigo/share/catkin/cmake/env-hooks/05.catkin-test-results.bat.develspace.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/env-hooks/05.catkin-test-results.sh.develspace.in
+-- Installing: /opt/ros/indigo/share/catkin/cmake/catkin_destinations.cmake
+-- Installing: /opt/ros/indigo/share/catkin/cmake/all.cmake
+[91m+ [0m[91m[[0m[91m -n[0m[91m [0m[91m ][0m[91m
+[0m[91m+ [0m[91mcd[0m[91m /ros_ws/src/catkin[0m[91m
+[0m[91m+ [0m[91m/usr/bin/env[0m[91m PYTHONPATH=/opt/ros/indigo/lib/python2.7/dist-packages:/ros_ws/build_isolated/catkin/lib/python2.7/dist-packages:[0m[91m CATKIN_BINARY_DIR=/ros_ws/build_isolated/catkin[0m[91m /usr/bin/python /ros_ws/src/catkin/setup.py build --build-base /ros_ws/build_isolated/catkin install --install-layout=deb --prefix=/opt/ros/indigo --install-scripts=/opt/ros/indigo/bin
+[0mrunning build
+running build_py
+creating /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7
+creating /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/find_in_workspaces.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/test_results.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/environment_cache.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/tidy_xml.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/workspace.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/cmake.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/workspace_vcs.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/package_version.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/builder.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/__init__.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/terminal_color.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+copying python/catkin/init_workspace.py -> /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin
+running build_scripts
+creating /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_find -> /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_init_workspace -> /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_make -> /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_make_isolated -> /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_package_version -> /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_prepare_release -> /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_test_results -> /ros_ws/build_isolated/catkin/scripts-2.7
+copying and adjusting bin/catkin_topological_order -> /ros_ws/build_isolated/catkin/scripts-2.7
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_find from 644 to 755
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_init_workspace from 644 to 755
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_make from 644 to 755
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_make_isolated from 644 to 755
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_package_version from 644 to 755
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_prepare_release from 644 to 755
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_test_results from 644 to 755
+changing mode of /ros_ws/build_isolated/catkin/scripts-2.7/catkin_topological_order from 644 to 755
+running install
+running install_lib
+creating /opt/ros/indigo/lib/python2.7
+creating /opt/ros/indigo/lib/python2.7/dist-packages
+creating /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/find_in_workspaces.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/test_results.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/environment_cache.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/tidy_xml.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/workspace.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/cmake.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/workspace_vcs.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/package_version.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/builder.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/__init__.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/terminal_color.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+copying /ros_ws/build_isolated/catkin/lib.linux-x86_64-2.7/catkin/init_workspace.py -> /opt/ros/indigo/lib/python2.7/dist-packages/catkin
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/find_in_workspaces.py to find_in_workspaces.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/test_results.py to test_results.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/environment_cache.py to environment_cache.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/tidy_xml.py to tidy_xml.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/workspace.py to workspace.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/cmake.py to cmake.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/workspace_vcs.py to workspace_vcs.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/package_version.py to package_version.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/builder.py to builder.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/__init__.py to __init__.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/terminal_color.py to terminal_color.pyc
+byte-compiling /opt/ros/indigo/lib/python2.7/dist-packages/catkin/init_workspace.py to init_workspace.pyc
+running install_scripts
+creating /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_test_results -> /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_find -> /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_make -> /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_prepare_release -> /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_init_workspace -> /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_package_version -> /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_topological_order -> /opt/ros/indigo/bin
+copying /ros_ws/build_isolated/catkin/scripts-2.7/catkin_make_isolated -> /opt/ros/indigo/bin
+changing mode of /opt/ros/indigo/bin/catkin_test_results to 755
+changing mode of /opt/ros/indigo/bin/catkin_find to 755
+changing mode of /opt/ros/indigo/bin/catkin_make to 755
+changing mode of /opt/ros/indigo/bin/catkin_prepare_release to 755
+changing mode of /opt/ros/indigo/bin/catkin_init_workspace to 755
+changing mode of /opt/ros/indigo/bin/catkin_package_version to 755
+changing mode of /opt/ros/indigo/bin/catkin_topological_order to 755
+changing mode of /opt/ros/indigo/bin/catkin_make_isolated to 755
+running install_egg_info
+Writing /opt/ros/indigo/lib/python2.7/dist-packages/catkin-0.6.11.egg-info
+Base path: /ros_ws
+Source space: /ros_ws/src
+Build space: /ros_ws/build_isolated
+Devel space: /ros_ws/devel_isolated
+Install space: /opt/ros/indigo
+Additional CMake Arguments: -DCMAKE_BUILD_TYPE=Release
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~  traversing 3 packages in topological order:
+~~  - catkin
+~~  - ecl_license
+~~  - ecl_command_line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The packages or cmake arguments have changed, forcing cmake invocation
+
+==> Processing catkin package: 'catkin'
+==> Creating build directory: 'build_isolated/catkin'
+==> cmake /ros_ws/src/catkin -DCATKIN_DEVEL_PREFIX=/ros_ws/devel_isolated/catkin -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo -DCMAKE_BUILD_TYPE=Release -G Unix Makefiles in '/ros_ws/build_isolated/catkin'
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Using CATKIN_DEVEL_PREFIX: /ros_ws/devel_isolated/catkin
+-- Using CMAKE_PREFIX_PATH: 
+-- Found PythonInterp: /usr/bin/python (found version "2.7.6") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /ros_ws/build_isolated/catkin/test_results
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.6.11
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /ros_ws/build_isolated/catkin
+==> make -j1 -l1 in '/ros_ws/build_isolated/catkin'
+==> make install in '/ros_ws/build_isolated/catkin'
+<== Finished processing package [1 of 3]: 'catkin'
+
+==> Processing catkin package: 'ecl_license'
+==> Creating build directory: 'build_isolated/ecl_license'
+==> Building with env: '/opt/ros/indigo/env.sh'
+==> cmake /ros_ws/src/ecl_license -DCATKIN_DEVEL_PREFIX=/ros_ws/devel_isolated/ecl_license -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo -DCMAKE_BUILD_TYPE=Release -G Unix Makefiles in '/ros_ws/build_isolated/ecl_license'
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Using CATKIN_DEVEL_PREFIX: /ros_ws/devel_isolated/ecl_license
+-- Using CMAKE_PREFIX_PATH: /opt/ros/indigo
+-- This workspace overlays: /opt/ros/indigo
+-- Found PythonInterp: /usr/bin/python (found version "2.7.6") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /ros_ws/build_isolated/ecl_license/test_results
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found gtest sources under '/usr/src/gtest': gtests will be buInstall the project...
+-- Install configuration: "Release"
+-- Installing: /opt/ros/indigo/_setup_util.py
+-- Installing: /opt/ros/indigo/env.sh
+-- Installing: /opt/ros/indigo/setup.bash
+-- Installing: /opt/ros/indigo/setup.sh
+-- Installing: /opt/ros/indigo/setup.zsh
+-- Installing: /opt/ros/indigo/.rosinstall
+-- Up-to-date: /opt/ros/indigo/etc/catkin/profile.d/05.catkin_make.bash
+-- Up-to-date: /opt/ros/indigo/etc/catkin/profile.d/05.catkin_make_isolated.bash
+-- Installing: /opt/ros/indigo/lib/pkgconfig/ecl_license.pc
+-- Installing: /opt/ros/indigo/share/ecl_license/cmake/ecl_licenseConfig.cmake
+-- Installing: /opt/ros/indigo/share/ecl_license/cmake/ecl_licenseConfig-version.cmake
+-- Installing: /opt/ros/indigo/share/ecl_license/package.xml
+-- Installing: /opt/ros/indigo/share/ecl_license/licenses
+-- Installing: /opt/ros/indigo/share/ecl_license/licenses/AUTHORS
+-- Installing: /opt/ros/indigo/share/ecl_license/licenses/COPYING-PLAIN
+-- Installing: /opt/ros/indigo/share/ecl_license/licenses/COPYING
+Scanning dependencies of target demo_command_line
+[100%] Building CXX object src/examples/CMakeFiles/demo_command_line.dir/command_line.cpp.o
+Linking CXX executable /ros_ws/devel_isolated/ecl_command_line/lib/ecl_command_line/demo_command_line
+[100%] Built target demo_command_line
+[100%] Built target demo_command_line
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /opt/ros/indigo/_setup_util.py
+-- Installing: /opt/ros/indigo/env.sh
+-- Installing: /opt/ros/indigo/setup.bash
+-- Installing: /opt/ros/indigo/setup.sh
+-- Installing: /opt/ros/indigo/setup.zsh
+-- Installing: /opt/ros/indigo/.rosinstall
+-- Up-to-date: /opt/ros/indigo/etc/catkin/profile.d/05.catkin_make.bash
+-- Up-to-date: /opt/ros/indigo/etc/catkin/profile.d/05.catkin_make_isolated.bash
+-- Installing: /opt/ros/indigo/lib/pkgconfig/ecl_command_line.pc
+-- Installing: /opt/ros/indigo/share/ecl_command_line/cmake/ecl_command_lineConfig.cmake
+-- Installing: /opt/ros/indigo/share/ecl_command_line/cmake/ecl_command_lineConfig-version.cmake
+-- Installing: /opt/ros/indigo/share/ecl_command_line/package.xml
+-- Installing: /opt/ros/indigo/include/ecl/command_line.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/xor_handler.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/visitor.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/arg.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/switch_arg.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/cmd_line_interface.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/optional_unlabeled_tracker.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/unlabeled_multi_arg.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/std_output.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/unlabeled_value_arg.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/constraint.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/values_constraint.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/docbook_output.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/multi_arg.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/arg_exception.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/ignore_rest_visitor.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/help_visitor.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/multi_switch_arg.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/cmd_line.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/cmd_line_output.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/value_arg.hpp
+-- Installing: /opt/ros/indigo/include/ecl/command_line/version_visitor.hpp
+-- Installing: /opt/ros/indigo/lib/ecl_command_line/demo_command_line
+ilt
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.6.11
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /ros_ws/build_isolated/ecl_license
+==> make -j1 -l1 in '/ros_ws/build_isolated/ecl_license'
+==> make install in '/ros_ws/build_isolated/ecl_license'
+<== Finished processing package [2 of 3]: 'ecl_license'
+
+==> Processing catkin package: 'ecl_command_line'
+==> Creating build directory: 'build_isolated/ecl_command_line'
+==> Building with env: '/opt/ros/indigo/env.sh'
+==> cmake /ros_ws/src/ecl_command_line -DCATKIN_DEVEL_PREFIX=/ros_ws/devel_isolated/ecl_command_line -DCMAKE_INSTALL_PREFIX=/opt/ros/indigo -DCMAKE_BUILD_TYPE=Release -G Unix Makefiles in '/ros_ws/build_isolated/ecl_command_line'
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Using CATKIN_DEVEL_PREFIX: /ros_ws/devel_isolated/ecl_command_line
+-- Using CMAKE_PREFIX_PATH: /opt/ros/indigo
+-- This workspace overlays: /opt/ros/indigo
+-- Found PythonInterp: /usr/bin/python (found version "2.7.6") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /ros_ws/build_isolated/ecl_command_line/test_results
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.6.11
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /ros_ws/build_isolated/ecl_command_line
+==> make -j1 -l1 in '/ros_ws/build_isolated/ecl_command_line'
+==> make install in '/ros_ws/build_isolated/ecl_command_line'
+<== Finished processing package [3 of 3]: 'ecl_command_line'
+Removing intermediate container c02ff2327835
+ ---> 97e3592c3a83
+Step 33/41 : COPY --from=fork /tmp/repo-under-test src/repo-under-test
+ ---> 3dbabd4cede9
+Step 34/41 : ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
+ ---> Running in 9a44636a65e4
+Removing intermediate container 9a44636a65e4
+ ---> 37b93c9bf099
+Step 35/41 : ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
+ ---> Running in a2cd8e13339c
+Removing intermediate container a2cd8e13339c
+ ---> 7d6db0154839
+Step 36/41 : RUN cd src/repo-under-test  && echo "[ROBUST] fetching fixed and buggy source code..."  && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}"  && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}"  && git fetch origin "${REPO_FIX_COMMIT}"  && git fetch origin "${REPO_BUG_COMMIT}"  && git checkout "${REPO_BUG_COMMIT}"  && echo "[ROBUST] fetched fixed and buggy source code."
+ ---> Running in 7d3b8508007e
+[ROBUST] fetching fixed and buggy source code...
+[ROBUST] using fix commit: 45ee84aa1e920b26f8191763e20c10c5806ead60
+[ROBUST] using bug commit: 84a5426c775e35c14485f7e62bdcb23a7737f24d
+[91mFrom https://github.com/robust-rosin/kobuki_core
+[0m[91m * branch            45ee84aa1e920b26f8191763e20c10c5806ead60 -> FETCH_HEAD
+[0m[91mFrom https://github.com/robust-rosin/kobuki_core
+[0m[91m * branch            84a5426c775e35c14485f7e62bdcb23a7737f24d -> FETCH_HEAD
+[0m[91mNote: checking out '84a5426c775e35c14485f7e62bdcb23a7737f24d'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+[0m[91mHEAD is now at 84a5426... 0.6.0
+[0m[ROBUST] fetched fixed and buggy source code.
+Removing intermediate container 7d3b8508007e
+ ---> e17433c20844
+Step 37/41 : RUN echo "#!/bin/bash\npushd '${ROS_WSPACE}/src/repo-under-test' && \ngit clean -dfx && \ngit checkout \"\$1\" && \necho \"switched mode to: \$1\"" > switch  && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_FIX_COMMIT}\"" > fix  && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_BUG_COMMIT}\"" > unfix  && chmod +x fix unfix switch
+ ---> Running in d8aa69bf7e90
+Removing intermediate container d8aa69bf7e90
+ ---> 06c8e5bbf98b
+Step 38/41 : RUN echo "[ROBUST] creating build script"  && echo "[ROBUST] PUT is provided by catkin package: '${CATKIN_PKG}'"  && echo "#!/bin/bash\n          source /opt/ros/$ROS_DISTRO/setup.bash           && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" > build.sh  && chmod +x build.sh  && echo "[ROBUST] created build script"
+ ---> Running in fe6b35818924
+[ROBUST] creating build script
+[ROBUST] PUT is provided by catkin package: 'kobuki_ftdi'
+[ROBUST] created build script
+Removing intermediate container fe6b35818924
+ ---> d19d7b1fb8de
+Step 39/41 : RUN echo "[ROBUST] attempting to build PUT..."  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}."  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
+ ---> Running in c5293883e3a9
+[ROBUST] attempting to build PUT...
+[ROBUST] is a build failure expected? yes.
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Using CATKIN_DEVEL_PREFIX: /ros_ws/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/indigo
+-- This workspace overlays: /opt/ros/indigo
+-- Found PythonInterp: /usr/bin/python (found version "2.7.6") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /ros_ws/build/test_results
+-- Looking for include file pthread.h
+-- Looking for include file pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.6.11
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 1 packages in topological order:
+-- ~~  - kobuki_ftdi
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'kobuki_ftdi'
+-- ==> add_subdirectory(repo-under-test/kobuki_ftdi)
+-- Could NOT find PkgConfig (missing:  PKG_CONFIG_EXECUTABLE) 
+-- checking for one of the modules 'libusb'
+-- checking for one of the modules 'libftdi'
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /ros_ws/build
+Scanning dependencies of target find_devices
+[ 10%] Building CXX object repo-under-test/kobuki_ftdi/src/CMakeFiles/find_devices.dir/find_devices.cpp.o
+[91mIn file included from /ros_ws/src/repo-under-test/kobuki_ftdi/src/find_devices.cpp:16:0:
+/ros_ws/src/repo-under-test/kobuki_ftdi/include/kobuki_ftdi/scanner.hpp:45:17: fatal error: usb.h: No such file or directory
+ #include <usb.h>
+                 ^
+[0m[91mcompilation terminated.
+[0m[91mmake[2]: [0m[91m*** [repo-under-test/kobuki_ftdi/src/CMakeFiles/find_devices.dir/find_devices.cpp.o] Error 1[0m[91m
+[0m[91mmake[1]: [0m[91m*** [repo-under-test/kobuki_ftdi/src/CMakeFiles/find_devices.dir/all] Error 2[0m[91m
+[0m[91mmake: [0m[91m*** [all] Error 2[0m[91m
+[0mBase path: /ros_ws
+Source space: /ros_ws/src
+Build space: /ros_ws/build
+Devel space: /ros_ws/devel
+Install space: /ros_ws/install
+Creating symlink "/ros_ws/src/CMakeLists.txt" pointing to "/opt/ros/indigo/share/catkin/cmake/toplevel.cmake"
+Whitelisted packages: kobuki_ftdi
+####
+#### Running command: "cmake /ros_ws/src -DCATKIN_DEVEL_PREFIX=/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/ros_ws/install -DCATKIN_WHITELIST_PACKAGES=kobuki_ftdi -G Unix Makefiles" in "/ros_ws/build"
+####
+####
+#### Running command: "make -j1 -l1" in "/ros_ws/build"
+####
+[91mInvoking "make -j1 -l1" failed[0m[91m
+[0mRemoving intermediate container c5293883e3a9
+ ---> ac7be7eb6d6b
+Step 40/41 : COPY test.sh .
+ ---> d9fd432ceae3
+Step 41/41 : RUN cd src/repo-under-test  && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch"
+ ---> Running in ff9cd48ac49e
+Removing intermediate container ff9cd48ac49e
+ ---> 3eb1d8e085a1
+Successfully built 3eb1d8e085a1
+Successfully tagged robustrosin/test-45ee84a:latest

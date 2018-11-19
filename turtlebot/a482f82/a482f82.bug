@@ -1,0 +1,37 @@
+%YAML 1.1
+---
+id: a482f82
+title: No Support For Namespaces and Multiple Instances
+description: >
+     Camera processing nodes used hard-coded and global names, making
+     it impossible to launch multiple instances in different
+     namespaces, as the names would clash.
+classification: Use of Global Names (no CWE)
+keywords: ['names', 'remappings', 'namespaces', 'openni', 'driver']
+system: turtlebot
+severity: bad-smell
+links: []
+bug:
+  phase: runtime-operation
+  specificity: ROS-specific
+  architectural-location: platform code
+  application: null
+  task: null
+  subsystem: driver
+  package: ros-drivers/openni-launch/openni-launch
+  languages: null
+  detected-by: developer
+  reported-by: member developer
+  issue: https://github.com/turtlebot/turtlebot/issues/80
+  time-reported: 2013-07-26 (05:45)
+  reproducibility: sometimes
+  trace:
+fix:
+  repo: https://github.com/ros-drivers/openni_launch
+  hash: a482f8268042aa8fae0e73970ed2af5dfd01e5df
+  pull-request: https://github.com/ros-drivers/openni_launch/pull/3
+  license: ['BSD']
+  fix-in: ['launch/includes/depth.launch', 'launch/includes/depth_registered.launch', 'launch/includes/ir.launch', 'launch/includes/manager.launch', 'launch/includes/processing.launch', 'launch/includes/rgb.launch', 'launch/openni.launch']
+  languages:
+    - Launch XML
+  time: 2013-07-27 (02:39)

@@ -1,0 +1,51 @@
+%YAML 1.1
+---
+id: c0067f9
+title: Erroneous import of Goto service
+description: >
+     "mavros/src/mavros/mission.py" attempts to import a class that no
+     longer exists, "WaypointGOTO", from the "mavros_msgs.srv" module.
+classification: Import of Missing Module (no CWE)
+keywords:
+  - import error
+system: mavros
+severity: error
+links: []
+bug:
+  phase: runtime-initialization
+  specificity: general issue
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavlink/mavros
+  languages:
+    - Python
+  detected-by: developer
+  reported-by: contributor
+  issue: N/A
+  time-reported: N/A
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: c0067f9f27a5a6ef5354e06fea18279541934520
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/mavros/mission.py
+  languages:
+    - Python
+  time: 2015-11-13 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-11-13
+bugzoo:
+  is-build-failure: no
+  bug-commit: 19760fa90593c2dfb2dc4adbf06492e3423df23c
+  fix-commit: c0067f9f27a5a6ef5354e06fea18279541934520

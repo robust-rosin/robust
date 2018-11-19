@@ -1,0 +1,44 @@
+%YAML 1.1
+---
+id: e9e7fd8
+title: Double deallocation of data
+description: >
+     If a base class A has a vector containing smart pointers to an
+     abstract class B, and then a class AA (inheriting from A) has
+     data objects of a class BB (inheriting from B). And if pointers
+     to AA's data objects are put into the vector, then during
+     destruction of AA the data objects will be destructed twice which
+     cause an exception. A solution is replace the vectors elements to
+     be raw pointers instead of smart pointers.
+classification: >
+  CWE-664: Improper Control of a Resource Through its Lifetime #RESOURCE
+  internal classification (cause): incorrect deallocation of data
+  internal classification (effect): an exception will be thrown
+keywords: ['deallocation']
+system: confidential
+severity: error
+links:
+bug:
+  phase: runtime-operation
+  specificity: application specific
+  architectural-location: application-specific code
+  application: RWS interface
+  tasks: destruction of object(s)
+  subsystem: driver
+  package: null
+  languages: null
+  detected-by: developer
+  reported-by: member developer
+  issue: null
+  time-reported: 2017-06-30 (10:23)
+  reproducibility: always
+  trace: null
+fix:
+  repository: CONFIDENTIAL
+  hash: null
+  pull-request: null
+  license: ['closed source']
+  fix-in: ['CONFIDENTIAL']
+  languages:
+    - C++
+  time: 2017-07-04 (15:33)

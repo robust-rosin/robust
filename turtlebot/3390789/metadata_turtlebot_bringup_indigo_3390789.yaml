@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 3390789
+put: turtlebot_bringup
+ros_distro: indigo
+datetime_reported: 2015-01-06T23:43:52Z
+issue_url: https://github.com/turtlebot/turtlebot/issues/185
+reproduction-images:
+  buggy: 3339a099564bbb3386fe98222001e2ce9d174bab
+  fixed: 339078942cf67457bc472e07a3e75e9895ebf2f7
+  rosdistro: 01360036d46e674c2e5993aed30d9c50e59b648e
