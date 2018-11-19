@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: eb99671
 title: Missing dependency to catkin
 description: >
      The package.xml describes the build, run-time and buildtools

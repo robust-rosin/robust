@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 93ea333
 title: Unused assignments to local variables
 description: >
   Two assingments in max/min computations were found that needlessly updated a local variable just before the function returns, without accessing the variables. This is likely caused by symmmetric shape of the code, and the last case being formed following the same scheme as the previous cases (where the assignment was not stale).

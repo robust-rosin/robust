@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 6e748c1
 title: Process Hanging in Shutdown Sequence
 description: >
      ROS provides the concept of node (a process) and nodelet -- a

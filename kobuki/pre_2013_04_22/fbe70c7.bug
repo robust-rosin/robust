@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: fbe70c7
 title: Keyboard Teleoperation Not Issuing Commands to Base
 description: >
      The node for keyboard teleoperation for Kobuki was not issuing

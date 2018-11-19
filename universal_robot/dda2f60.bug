@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: dda2f60
 title: Missing Runtime Dependency on MoveIt config
 description: >
      The universal_robot package misses a runtime dependency in the

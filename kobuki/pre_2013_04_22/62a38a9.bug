@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 62a38a9
 title: Unclean termination leads to exceptions and segmentation faults
 description: >
      When an interrupt signal is issued (Ctrl+C), termination code

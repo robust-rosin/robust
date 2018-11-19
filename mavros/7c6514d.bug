@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 7c6514d
 title: Redundant (static) array entry for removed sensor
 description: >
      The "mavros/src/lib/sensor_orientation.cpp" file defines a static

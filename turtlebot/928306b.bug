@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 928306b
 title: No Laptop Battery Information Displaying
 description: >
      Turtlebot's dashboard application features an indicator for the

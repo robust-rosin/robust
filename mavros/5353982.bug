@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 5353982
 title: Introduced regression when converting ROS_ASSERT(false) to ROS_BREAK()
 description: >
      The "ROS_BREAK" macro is used to abort program execution, and to

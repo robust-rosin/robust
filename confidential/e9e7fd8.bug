@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e9e7fd8
 title: Double deallocation of data
 description: >
      If a base class A has a vector containing smart pointers to an

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: a794de9
 title: Assertion Error When Running on 32-bit Platform
 description: >
      Kobuki uses the Eigen library for linear algebra.  Some

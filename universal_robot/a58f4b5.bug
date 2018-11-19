@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: a58f4b5
 title: urX_moveit_config packages depende on meta-package moveit_plugin
 description: >
      The UR moveit config packages, which are proper packages, depend

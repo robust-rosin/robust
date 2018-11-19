@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 263650d
 title: Incorrect topic name used to fetch GPS information
 description: >
      Following changes to MAVROS, the name of the "gps" topic was

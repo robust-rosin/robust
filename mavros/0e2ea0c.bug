@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 0e2ea0c
 title: Inefficient checking for string emptiness using empty() rather than size()
 description: >
      This commit performs two small performance/hygiene-related fixes

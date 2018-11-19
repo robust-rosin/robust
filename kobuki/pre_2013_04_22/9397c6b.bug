@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 9397c6b
 title: Misaligned or Overflowed Buffer
 description: >
      Sometimes, when reading serial data, the Kobuki driver would find

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: ad906f0
 title: Robot With Lack of Acceleration Smoothing
 description: >
      Initially, Kobuki did not have an acceleration smoother, a

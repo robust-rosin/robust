@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c159041
 title: Incorrect If guard for checking orientation string is empty
 description: >
      Line 337 of distance_sensor.cpp is responsible for checking if a

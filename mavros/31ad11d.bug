@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 31ad11d
 title: OSX compilation failure due to library incompatibilities
 description: >
      The libmavconn module fails to compile on OSX due to library

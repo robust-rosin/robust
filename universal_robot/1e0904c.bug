@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 1e0904c
 title: Syntax error in a robot script
 description: >
      The bug occurs in the code running on the robot that is uploaded

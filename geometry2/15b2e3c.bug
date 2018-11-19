@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 15b2e3c
 title: Race conditions in startup code of TF2
 description: >
   A buffer server node is being start with an autostart parameter (which is picked up due to a default value of the autostart parameter).  Unfortunately, this supposedly causes race conditions in initialization code. A warning is produced that this may happen.

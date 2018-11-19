@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c81fa72
 title: Wrong logical condition for selecting targets of a message
 description: >
   Static Transform Broadcaster uses a wrong condition in selecting messages to

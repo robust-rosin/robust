@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 3e32933
 title: Image Processing Sometimes Does Not Receive Data
 description: >
      One of Turtlebot's launch files launches a node that processes

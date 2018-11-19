@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e05c71a
 title: Incorrect ROS build files (e.g., CMakeLists.txt, package.xml)
 description: >
      The build files for the MAVROS project are missing several pieces

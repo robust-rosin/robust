@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: b4dc23c
 title: Processing command-line arguments accesses wrong cells, possibly out of bounds
 description: >
     In the static_transform_broadcaster_program.cpp the main function processes command line arguments.  The program accepts either 10 or 9 arguments, and the validity of the arguments is checked slightly differently for the two cases. Presumably due to a cut-and-paste mistake, the error reporting code is the same in both cases, and in the case of 9 arguments, it accesses the value argv[9] which might not then exist.

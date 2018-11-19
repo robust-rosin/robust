@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 03660af
 title: Potential Race Condition on Serial Writes
 description: >
      The Kobuki driver communicates with the actual robot by sending

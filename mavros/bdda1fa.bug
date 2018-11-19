@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: bdda1fa
 title: Run-time missing attribute/method error
 description: >
      Following a rosrun call to mavsetp (e.g., rosrun mavros mavsetp

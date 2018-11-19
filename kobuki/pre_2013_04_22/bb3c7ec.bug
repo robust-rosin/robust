@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: bb3c7ec
 title: Battery Charge Was Not Showing on Android Applications
 description: >
      Turtlebot features some Android applications to control the robot

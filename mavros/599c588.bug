@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 599c588
 title: set_mode service always returns true, regardless of success
 description: >
      The "set_mode" service provides the user (and the system itself)

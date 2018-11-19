@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 054c753
 title: Terminal Becomes Unresponsive Due To Uninitialized Objects
 description: >
      Sometimes, the logging functions of ROS would misbehave, for

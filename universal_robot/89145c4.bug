@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 89145c4
 title: Self-collisions break planning when full joint space is used
 description: >
      The state space of the elbow joint of UR5 and UR10 is set to be

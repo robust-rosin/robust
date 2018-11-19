@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 22e4e4f
 title: Image from the Kinect v2 is flipped
 description: >
      The Kinect v2 is a camera providing images and depth data. The

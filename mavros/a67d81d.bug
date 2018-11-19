@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: a67d81d
 title: Missing type conversion in u8->hex conversion
 description: >
      The "array_to_hex_string" helper function in "sys_status.cpp"

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: b826eae
 title: Xacro broken because of missing argument
 description: >
      A xacro can reference to other xacros with the ability to pass

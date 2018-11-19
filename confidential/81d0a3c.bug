@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 81d0a3c
 title: Incorrect parsing of RAPID record data
 description: >
      When using Robot Web Services (RWS) to read RAPID record data,

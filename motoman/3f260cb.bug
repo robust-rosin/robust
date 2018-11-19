@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 3f260cb
 title: Motoman robot can move after estop release
 description: >
      The problem occurs in the following scenario: Running the Motoman

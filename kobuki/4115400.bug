@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 4115400
 title: Multiple Simulated Robots Do Not Update Orientation
 description: >
      When multiple Kobuki robots were spawned in the Gazebo simulator

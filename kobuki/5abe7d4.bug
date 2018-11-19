@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 5abe7d4
 title: ABI/API Incompatibility
 description: >
      When the Gazebo simulator upgraded from version 1.9 to version

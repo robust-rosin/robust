@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 377d7be
 title: Error message when installing Inform Code in DX200
 description: >
      The Motoman controller has to be prepared for use with ROS.

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 9ffffca
 title: Node Does Not Support Namespaces
 description: >
      A velocity smoother node for Kobuki's teleoperation was being

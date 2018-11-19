@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c4e1187
 title: Using a Boost type instead of a C++11 type
 description: >
      The urdf_model package started to use C++11 features, more

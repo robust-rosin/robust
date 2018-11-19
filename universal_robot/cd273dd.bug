@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: cd273dd
 title: Missing runtime dependency on another package (industrial robot simulator)
 description: >
      The universal robot planner (moveit) module lacks a runtime

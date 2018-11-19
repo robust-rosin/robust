@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 3a48064
 title: dependency on ros_controllers metapackage
 description: >
      The ur_gazebo package, which is a proper package, depends on a

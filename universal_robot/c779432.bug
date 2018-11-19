@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c779432
 title: required C++11 compiler
 description: >
      The geometric_shapes package (from moveit) started to use C++11

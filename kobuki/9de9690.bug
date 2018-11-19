@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 9de9690
 title: Missing Dependency Causes Setup to Fail
 description: >
      Kobuki has a package, `kobuki_ftdi` which contains utilities for

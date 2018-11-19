@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 6a7a506
 title: Deprecated reference to files in sia5d package
 description: >
      The sia5d_support packages makes use of mesh files for robot

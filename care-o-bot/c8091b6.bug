@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c8091b6
 title: Missing dependencies to an external library
 description: >
      The file package.xml is essential for every ROS package and it

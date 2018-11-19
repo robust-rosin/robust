@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 292b5cc
 title: Incorrect response from FS100 to a control request
 description: >
      The FS100 is one of the robot controllers by Motoman that are

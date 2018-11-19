@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: fcf9cd9
 title: Uninitialised variable causes incorrect timestamps to be produced
 description: >
      The UAS manager, defined in uas_data.cpp, is responsible for

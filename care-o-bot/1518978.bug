@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 1518978
 title: Hardcoded namespace because name is defined global
 description: >
      Parameter-names are hardcoded. In the example a parameter is

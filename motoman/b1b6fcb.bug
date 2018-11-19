@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: b1b6fcb
 title: Motoman starts next command after pausing it
 description: >
      A stop_motion command or an empty trajectory command will make the robot

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 21b86f6
 title: Specifications of dimensions of a robot arm are not reflecting real dimensions
 description: >
      URDF is an XML-based modeling language in which robot physical

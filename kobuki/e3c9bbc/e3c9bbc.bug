@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: e3c9bbc
 title: Missing Information in ROS Distribution Index
 description: >
      For each ROS major version (ROS distribution / ROS release) there

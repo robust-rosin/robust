@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: c04eae5
 title: No Graceful Termination When Firmware is Outdated
 description: >
      There were no checks on firmware version, and thus no graceful

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 496aac8
 title: Add an Option to Reset Odometry Values
 description: >
      The Kobuki plugin for Gazebo did not have an option to reset

@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: b3c2c21
 title: Robot jumps to the first point of the new trajectory
 description: >
      The problem was caused by using absolute, instead of relative

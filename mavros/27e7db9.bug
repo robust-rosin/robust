@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 27e7db9
 title: Incorrect header installation path
 description: >
      When mavconn was removed from mavros, the install destination for

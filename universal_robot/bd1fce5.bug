@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: bd1fce5
 title: Driver locks without discovering that a trajectory has been realized or failed
 description: >
      The python driver is not detecting that a robot arm has reached a
