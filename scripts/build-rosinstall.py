@@ -4,10 +4,13 @@ import argparse
 import logging
 import subprocess
 
+import docker
 import yaml
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+
+DOCKER_IMAGE_TIME_MACHINE = 'robust-rosin/rosinstall_generator_time_machine:02'
 
 DIR_HERE = os.path.dirname(__file__)
 # DIR_TIME_MACHINE = os.path.abspath(os.path.join(DIR_HERE, 'time_machine'))
@@ -30,6 +33,15 @@ def build_file(fn_bug_desc, overwrite=False):
     bug_id = os.path.basename(fn_bug_desc)[:-4]
     dir_bug = os.path.dirname(fn_bug_desc)
     fn_rosinstall = os.path.join(dir_bug, 'deps.rosinstall')
+
+    # check for existence of Docker image for time machine
+    client_docker = docker.from_env()
+    try:
+        client_docker.images.get(DOCKER_IMAGE_TIME_MACHINE)
+    except docker.errors.ImageNotFound:
+        logger.warning("Docker image for time machine not found: %s",
+                       DOCKER_IMAGE_TIME_MACHINE)
+        sys.exit(1)
 
     if os.path.isfile(fn_rosinstall):
         if overwrite:
