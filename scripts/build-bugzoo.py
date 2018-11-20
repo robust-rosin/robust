@@ -49,7 +49,7 @@ def main():
             sha_fix = desc['bugzoo']['fix-commit']
             url_forks = desc['bugzoo']['fork-urls']
         except KeyError as err:
-            msg = report_error('missing property [{}]'.format(err))
+            report_error('missing property [{}]'.format(err))
             continue
 
         fn_test = os.path.join(dir_bug, 'test.sh')
