@@ -7,6 +7,7 @@ import shutil
 
 import docker
 import yaml
+import requests
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -60,10 +61,13 @@ def build_file(fn_bug_desc, overwrite=False):
     with open(fn_bug_desc, 'r') as f:
         d = yaml.load(f)
 
+    # FIXME determine datetime from issue
     if 'issue' in d['time-machine']:
-        issue_or_datetime = d['time-machine']['issue']
-    elif 'datetime' in d['time-machine']:
-        issue_or_datetime = d['time-machine']['datetime'].isoformat()
+        issue = d['time-machine']
+        raise Exception("'issue' is currently not supported.")
+
+    if 'datetime' in d['time-machine']:
+        dt = d['time-machine']['datetime'].isoformat()
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
@@ -71,14 +75,11 @@ def build_file(fn_bug_desc, overwrite=False):
     if len(ros_pkgs) > 1:
         raise Exception("the time machine doesn't currently support more than ROS package")
 
-    cmd = [
-        BIN_TIME_MACHINE,
-        issue_or_datetime,
-        bug_id,
-        d['time-machine']['ros_distro'],
-        ros_pkgs[0],
-        os.path.abspath(fn_rosinstall),
-    ]
+    os.path.abspath(fn_rosinstall)
+
+    cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
+    cmd += ros_pkgs
+    cmd += ['--deps', '--tars']
     logger.debug("executing command: %s", ' '.join(cmd))
     subprocess.check_call(cmd, cwd=DIR_HERE)
 
