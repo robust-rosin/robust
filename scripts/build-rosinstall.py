@@ -79,9 +79,21 @@ def build_file(fn_bug_desc, overwrite=False):
 
     cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
     cmd += ros_pkgs
-    cmd += ['--deps', '--tars']
+    cmd += ['--deps', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
-    subprocess.check_call(cmd, cwd=DIR_HERE)
+
+    p = subprocess.Popen(cmd, stderr=subprocess.PIPE)
+    try:
+        stdout, stderr = p.communicate()
+        stderr = stderr.decode('utf-8')
+        if p.returncode != 0:
+            logger.warning("time machine failed for bug [%s]:\n%s",
+                           fn_bug_desc, stderr)
+            return
+    finally:
+        p.kill()
+
+    # write to rosinstall file
 
 
 def build_dir(d, overwrite=False):
