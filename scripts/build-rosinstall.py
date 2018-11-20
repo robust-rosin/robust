@@ -90,7 +90,10 @@ def build_file(fn_bug_desc, overwrite=False):
     cmd += ['--deps', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
 
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p = subprocess.Popen(cmd,
+                         stderr=subprocess.PIPE,
+                         stdout=subprocess.PIPE,
+                         stdin=subprocess.PIPE)
     try:
         contents, stderr = tuple(o.decode('utf-8') for o in p.communicate())
         if p.returncode != 0:
