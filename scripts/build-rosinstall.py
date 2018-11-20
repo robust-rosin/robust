@@ -84,8 +84,6 @@ def build_file(fn_bug_desc, overwrite=False):
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
     ros_pkgs = d['time-machine']['ros_pkgs']
-    if len(ros_pkgs) > 1:
-        raise Exception("the time machine doesn't currently support more than ROS package")
 
     cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
     cmd += ros_pkgs
