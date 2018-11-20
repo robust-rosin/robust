@@ -45,9 +45,9 @@ fix:
     - mavros/src/lib/uas_timesync.cpp
   languages:
     - C++
-  time: 2017-03-30 (00:00)
+  time: 2017-03-30T11:08:19+03:00
 time-machine:
   ros_distro: kinetic
   ros_pkgs:
     - mavros
-  datetime: 2017-03-30
+  datetime: 2017-03-30T11:08:19+03:00
