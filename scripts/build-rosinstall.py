@@ -38,11 +38,6 @@ def build_file(fn_bug_desc, overwrite=False):
             logger.info("skipping existing file: %s", fn_rosinstall)
             return
 
-    if not os.path.isdir(dir_bug):
-        logger.debug("creating directory for bug [%s]: %s", bug_id, dir_bug)
-        os.mkdir(dir_bug)
-        logger.debug("created directory for bug [%s]: %s", bug_id, dir_bug)
-
     with open(fn_bug_desc, 'r') as f:
         d = yaml.load(f)
 
