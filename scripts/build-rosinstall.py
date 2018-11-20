@@ -82,10 +82,9 @@ def build_file(fn_bug_desc, overwrite=False):
     cmd += ['--deps', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
 
-    p = subprocess.Popen(cmd, stderr=subprocess.PIPE)
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
-        stdout, stderr = p.communicate()
-        stderr = stderr.decode('utf-8')
+        contents, stderr = tuple(o.decode('utf-8') for o in p.communicate())
         if p.returncode != 0:
             logger.warning("time machine failed for bug [%s]:\n%s",
                            fn_bug_desc, stderr)
@@ -94,6 +93,8 @@ def build_file(fn_bug_desc, overwrite=False):
         p.kill()
 
     # write to rosinstall file
+    with open(fn_rosinstall, 'w') as f:
+        f.write(contents)
 
 
 def build_dir(d, overwrite=False):
