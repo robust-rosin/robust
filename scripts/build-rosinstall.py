@@ -3,6 +3,7 @@ import os
 import argparse
 import logging
 import subprocess
+import shutil
 
 import docker
 import yaml
@@ -11,6 +12,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 DOCKER_IMAGE_TIME_MACHINE = 'robust-rosin/rosinstall_generator_time_machine:02'
+BIN_TIME_MACHINE = 'rosinstall_generator_tm.sh'
 
 DIR_HERE = os.path.dirname(__file__)
 # DIR_TIME_MACHINE = os.path.abspath(os.path.join(DIR_HERE, 'time_machine'))
@@ -43,6 +45,11 @@ def build_file(fn_bug_desc, overwrite=False):
                        DOCKER_IMAGE_TIME_MACHINE)
         sys.exit(1)
 
+    if not shutil.which(BIN_TIME_MACHINE):
+        logger.warning("could not find time machine binary in PATH: %s",
+                       BIN_TIME_MACHINE)
+        sys.exit(1)
+
     if os.path.isfile(fn_rosinstall):
         if overwrite:
             logger.warning("overwriting file: %s", fn_rosinstall)
@@ -65,7 +72,7 @@ def build_file(fn_bug_desc, overwrite=False):
         raise Exception("the time machine doesn't currently support more than ROS package")
 
     cmd = [
-        'rosinstall_generator_tm.sh',
+        BIN_TIME_MACHINE,
         issue_or_datetime,
         bug_id,
         d['time-machine']['ros_distro'],
