@@ -92,6 +92,9 @@ def build_file(fn_bug_desc, overwrite=False):
     finally:
         p.kill()
 
+    # updated repository names
+    contents = contents.replace('geometry_experimental', 'geometry2')
+
     # write to rosinstall file
     with open(fn_rosinstall, 'w') as f:
         f.write(contents)
