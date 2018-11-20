@@ -28,7 +28,7 @@ def find_bug_descriptions(d):
 def build_file(fn_bug_desc, overwrite=False):
     logger.info("building rosinstall file for file: %s", fn_bug_desc)
     bug_id = os.path.basename(fn_bug_desc)[:-4]
-    dir_bug = os.path.join(os.path.dirname(fn_bug_desc), bug_id)
+    dir_bug = os.path.dirname(fn_bug_desc)
     fn_rosinstall = os.path.join(dir_bug, 'deps.rosinstall')
 
     if os.path.isfile(fn_rosinstall):
