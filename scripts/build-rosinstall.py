@@ -29,6 +29,17 @@ def find_bug_descriptions(d):
     return buff
 
 
+def gh_issue_to_datetime(url_issue):
+    # type: (str) -> str
+    prefix = "https://github.com/"
+    owner, repo, _, number = url_issue[len(prefix):].split('/')
+    url_api = 'https://api.github.com/repos/{}/{}/issues/{}'
+    url_api = url_api.format(owner, repo, number)
+    r = requests.get(url_api)
+    created_at = r.json()['created_at']
+    return created_at
+
+
 def build_file(fn_bug_desc, overwrite=False):
     logger.info("building rosinstall file for file: %s", fn_bug_desc)
     bug_id = os.path.basename(fn_bug_desc)[:-4]
@@ -59,12 +70,15 @@ def build_file(fn_bug_desc, overwrite=False):
     with open(fn_bug_desc, 'r') as f:
         d = yaml.load(f)
 
-    # FIXME determine datetime from issue
     if 'issue' in d['time-machine']:
-        issue = d['time-machine']
-        raise Exception("'issue' is currently not supported.")
-
-    if 'datetime' in d['time-machine']:
+        url_issue = d['time-machine']['issue']
+        try:
+            dt = gh_issue_to_datetime(url_issue)
+        except Exception:
+            m = "failed to convert GitHub issue to ISO 8601 timestamp: {}"
+            m = m.format(url_issue)
+            raise Exception(m)
+    elif 'datetime' in d['time-machine']:
         dt = d['time-machine']['datetime'].isoformat()
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
@@ -72,8 +86,6 @@ def build_file(fn_bug_desc, overwrite=False):
     ros_pkgs = d['time-machine']['ros_pkgs']
     if len(ros_pkgs) > 1:
         raise Exception("the time machine doesn't currently support more than ROS package")
-
-    os.path.abspath(fn_rosinstall)
 
     cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
     cmd += ros_pkgs
