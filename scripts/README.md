@@ -81,7 +81,7 @@ for that ROS version). The `ros_pkgs` property of the `time-machine` section is
 also used to determine the appropriate fork for the PUTs. (At the time of
 writing, the script only supports bugs that specify a single PUT.)
 
-The bugzoo section contains the following properties:
+The `bugzoo` section contains the following properties:
 * `is-build-failure`: whether the build is expected to fail for the PUT.
 * `bug-commit` and `fix-commit`: give the commit hashes for the head of the bug witness and fix witness for the bug in
 its fork. Note that these properties must be updated when the witness branches
