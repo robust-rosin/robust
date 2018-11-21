@@ -1,0 +1,38 @@
+%YAML 1.1
+---
+id: 841720a
+title: Robot Reports Full Battery Before Charging It
+description: >
+     Just after connecting to the power adapter the robot would send a
+     "battery charged" signal, and only after would it transition to
+     the appropriate "charging" state.
+classification: "CWE-393: Return of Wrong Status Code"
+keywords: ['battery', 'power', 'driver', 'charging']
+system: kobuki
+severity: minor-issue
+links:
+bug:
+  phase: runtime-operation
+  specificity: robotics-specific
+  architectural-location: application-specific code
+  application: null
+  task: null
+  subsystem: driver
+  package: yujinrobot/kobuki/kobuki_driver | yujinrobot/kobuki/kobuki_node
+  languages: null
+  detected-by: developer
+  reported-by: contributor
+  issue: https://github.com/yujinrobot/kobuki/issues/137
+  time-reported: 2012-06-20 (05:35)
+  reproducibility: always
+  trace:
+fix:
+  repo: https://github.com/yujinrobot/kobuki
+  hash: 841720ab97e442a11ae30b7abdbef07150e56c97
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_comms/msg/PowerSystemEvent.msg', 'kobuki_driver/include/kobuki_driver/event_manager.hpp', 'kobuki_driver/src/driver/event_manager.cpp', 'kobuki_node/include/kobuki_node/kobuki_node.hpp', 'kobuki_node/src/node/kobuki_node.cpp', 'kobuki_node/src/node/slot_callbacks.cpp']
+  languages:
+    - C++
+    - ROS Message
+  time: 2012-06-25 (13:14)

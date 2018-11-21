@@ -30,30 +30,39 @@ def main():
     bugs = []
     files = find_bug_descriptions(DIR_ROBUST)
     for fn in files:
+        dir_bug = os.path.dirname(fn)
+        fn_short = os.path.relpath(fn, DIR_ROBUST)
+        logger.info("generating manifest for bug file [%s]", fn_short)
+
+        def report_error(m):
+            m = "bad bug file [{}]: {}".format(fn_short, m)
+            warnings.warn(m)
+
         with open(fn, 'r') as f:
             desc = yaml.load(f)
-
-        bug_id = os.path.basename(fn)[:-4]
-        package = os.path.basename(os.path.dirname(fn))
-        logger.info("generating manifest for bug [%s:%s] at file (%s)",
-                    package, bug_id, fn)
-
         try:
+            bug_id = desc['id']
             ros_distro = desc['time-machine']['ros_distro']
             ros_pkgs = desc['time-machine']['ros_pkgs']
             is_build_failure = desc['bugzoo']['is-build-failure']
             sha_bug = desc['bugzoo']['bug-commit']
             sha_fix = desc['bugzoo']['fix-commit']
         except KeyError as err:
-            msg = 'bug file [{}:{}] is missing property [{}]'
-            msg = msg.format(package, bug_id, err)
-            warnings.warn(msg)
+            msg = report_error('missing property [{}]'.format(err))
+            continue
+
+        fn_test = os.path.join(dir_bug, 'test.sh')
+        if not os.path.isfile(fn_test):
+            report_error('test.sh not found at {}'.format(fn_test))
+            continue
+
+        fn_deps = os.path.join(dir_bug, 'deps.rosinstall')
+        if not os.path.isfile(fn_deps):
+            report_error('deps.rosinstall not found at {}'.format(fn_deps))
             continue
 
         if not isinstance(is_build_failure, bool):
-            tpl = 'bad bug file [{}:{}]'.format(package, bug_id)
-            msg = "{}: 'is_build_failure' should be a boolean".format(tpl)
-            warnings.warn(msg)
+            report_error("'is_build_failure' should be a boolean")
             continue
 
         if len(ros_pkgs) > 1:
@@ -61,7 +70,7 @@ def main():
             continue
         catkin_pkg = ros_pkgs[0]
 
-        # determine fork URL
+        # FIXME determine fork URL
         if 'bugzoo' in desc and 'fork-url' in desc['bugzoo']:
             url_fork = desc['bugzoo']['fork-url']
         else:
@@ -71,7 +80,7 @@ def main():
                 'universal_robot': 'https://github.com/robust-rosin/universal_robot',
                 'ros_comm': 'https://github.com/robust-rosin/ros_comm',
                 'mavros': 'https://github.com/robust-rosin/mavros'
-            })[package]
+            })[catkin_pkg]
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
@@ -86,9 +95,7 @@ def main():
 
         use_osrf_repos = desc['bugzoo'].get('use-osrf', False)
         if not isinstance(use_osrf_repos, bool):
-            tpl = 'bad bug file [{}:{}]'.format(package, bug_id)
-            msg = "{}: 'use-osrf' should be a boolean".format(tpl)
-            warnings.warn(msg)
+            report_error("'use-osrf' should be a boolean")
             continue
 
         build_args = {
@@ -107,7 +114,7 @@ def main():
         blueprints.append({
             'tag': name_image,
             'file': 'Dockerfile',
-            'context': '{}/{}'.format(package, bug_id),
+            'context': os.path.relpath(dir_bug, DIR_ROBUST),
             'arguments': build_args
         })
         bugs.append({

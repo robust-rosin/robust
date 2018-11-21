@@ -1,0 +1,52 @@
+%YAML 1.1
+---
+id: 359a2e9
+title: Controller reads too many bytes for IO message
+description: >
+     The controller reads more from the socket than the size of the
+     message. This is not always a problem, as often messages are
+     processed one a time, and there is nothing more available to
+     read.  However in many-message scenarios (like executing a
+     trajectory) this leads to errors, as remaining messages are read
+     with an offset (incomplete gibberish).
+     The bug occurs in the code running on the robot that is uploaded
+     there by ROS.  This code is written in a prioprietary language
+     URScript.
+     The bug appears in universal-robot-specific language, but
+     overreading is a standard issue, that could be seen in many
+     software systems.
+     The first pull request was closed without merging, but a large
+     (the second) pull request included the same change.
+classification: |
+  CWE-805: Buffer Access with Incorrect Length Value
+  internal classification (cause):
+  internal classification (effect):
+keywords: ['socket', 'message', 'urscript']
+system: universal_robot
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: general-issue
+  architectural-location: platform-code
+  application: null
+  task: null
+  subsystem: driver
+  package: ros-industrial/universal_robot/ur_driver
+  languages:
+    - URScript
+  detected-by: developer
+  reported-by: member developer
+  issue: https://github.com/ros-industrial/universal_robot/issues/107
+  time-reported: 2014-09-12 (12:16)
+  reproducibility: sometimes
+  trace:
+fix:
+  repo: https://github.com/ros-industrial/universal_robot/
+  hash: 359a2e9d0c21b37c4fc077e08dbb56de771734cb
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/115 | https://github.com/ros-industrial/universal_robot/pull/117
+  license: ['BSD']
+  fix-in: ['ur_driver/prog']
+  languages:
+    - URScript
+  time: 2014-10-10 (11:52)

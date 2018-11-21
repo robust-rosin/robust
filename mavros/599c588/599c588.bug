@@ -1,0 +1,62 @@
+%YAML 1.1
+---
+id: 599c588
+title: set_mode service always returns true, regardless of success
+description: >
+     The "set_mode" service provides the user (and the system itself)
+     with the means of requesting a change of mode for the robot
+     (e.g., manual to autonomous navigation). This service call
+     accepts the desired mode as its sole argument, and should return
+     a boolean flag, indicating whether the request was successful, in
+     which case True is returned, or if the request failed, in which
+     case False is returned. In practice, however, calls to this
+     service always return True, even when the requested mode change
+     was unsuccessful.
+
+     Closer inspection of the code reveals that no checking is
+     performed by the service handler, and that the success flag is
+     hardcoded as True.
+classification: Return of Wrong Status Code
+keywords: missing functionality
+system: mavros
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: UNKNOWN
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - Python
+    - C++
+  detected-by: user
+  reported-by: guest user
+  issue: https://github.com/mavlink/mavros/issues/625
+  time-reported: 2016-11-07 (00:00)
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: 599c5887ad2aadc124d7e1354f3a1597402118da
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/scripts/mavsetp
+    - mavros/scripts/mavsys
+    - mavros/src/plugins/sys_status.cpp
+    - mavros_msgs/srv/SetMode.srv
+  languages:
+    - Python
+    - C++
+  time: 2017-06-28 (00:00)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/625

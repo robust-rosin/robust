@@ -1,0 +1,51 @@
+%YAML 1.1
+---
+id: de2cc36
+title: New PX4 drone now acknowledges sent commands
+description: >
+     A newer version of the PX4 autopilot module now sends an
+     acknowledgement signal upon receiving a command, unlike all
+     previous versions. To ensure proper functioning, the
+     "send_command_long_and_wait" function, responsible for issuing
+     commands to the drone should be updated to expect acknowledgement
+     from the drone (autopilot).
+classification: "CWE-252: Unchecked Return Value #EVOLUTION"
+keywords:
+  - robot behaviour change
+system: mavros
+severity: warning
+links: []
+bug:
+  phase: runtime-operation
+  specificity: "robotics-specific: updated robot controller implements slightly different API"
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - C++
+  detected-by: UNKNOWN
+  reported-by: guest user
+  issue: https://github.com/mavlink/mavros/issues/561
+  time-reported: 2016-06-15 (00:00)
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: de2cc36b37689363f60876d9892f2630173b4f8c
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/plugins/command.cpp
+  languages:
+    - C++
+  time: 2016-06-23 (00:00)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  issue: https://github.com/mavlink/mavros/issues/561

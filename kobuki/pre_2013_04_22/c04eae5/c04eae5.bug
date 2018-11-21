@@ -1,0 +1,37 @@
+%YAML 1.1
+---
+id: c04eae5
+title: No Graceful Termination When Firmware is Outdated
+description: >
+     There were no checks on firmware version, and thus no graceful
+     termination if the driver and firmware were incompatible.
+classification: "CWE-754: Improper Check for Unusual or Exceptional Conditions #EVOLUTION"
+keywords: ['firmware', 'termination', 'version', 'driver']
+system: kobuki
+severity: bad-smell
+links: []
+bug:
+  phase: runtime-initialization
+  specificity: robotics-specific
+  architectural-location: application-specific code
+  application: null
+  task: null
+  subsystem: driver
+  package: yujinrobot/kobuki/kobuki_driver
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: member developer
+  issue: https://github.com/yujinrobot/kobuki/issues/175
+  time-reported: 2012-11-24 (07:41)
+  reproducibility: always
+  trace:
+fix:
+  repo: https://github.com/yujinrobot/kobuki
+  hash: c04eae575167f579f9fce4e11f212e6d73b3deac | d92a96e5a05f69c626132db42490ac382298df93
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_node/src/library/kobuki_ros.cpp', 'kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/include/kobuki_driver/packets/firmware.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
+  languages:
+    - C++
+  time: 2012-11-29 (11:47)

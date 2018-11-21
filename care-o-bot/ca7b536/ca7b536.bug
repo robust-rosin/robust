@@ -1,0 +1,48 @@
+%YAML 1.1
+---
+id: ca7b536
+title: Missing dependencies to gencpp, which is important for ROS messages and services
+description: >
+     CMakeList is essential for every ROS package and it contains the
+     information of the packages, which is needed for the buildsystem.
+     If you have a target which depends on some other target you need
+     to add an explicit dependency so that they are built in the
+     correct order.
+     In the example the node "cob_obstacle_distance" depends on
+     "cob_obstacle_distance_gencpp". Gencpp is apparently a helper
+     when adding some msgs as dependencies to a target node.  However,
+     the node was linking to "cob_srvs_gencpp" which might have been
+     correct at a former time (Apparently, the package has been
+     renamed).  This could be solved by naming the dependency
+     "${PROJECT_NAME}_gencpp". The "PROJECT_NAME" corresponds to the
+     package name and thus, one can have a generic name, which is
+     independent of the package name.
+classification: Missing Dependency (no CWE)
+keywords: ['missing', 'dependencies', 'gencpp', 'project_name', 'CMakeLists']
+system: care-o-bot
+severity: error
+links: ['http://wiki.ros.org/catkin/CMakeLists.txt', 'http://wiki.ros.org/gencpp']
+bug:
+  phase: deployment-time
+  specificity: ROS-specific
+  architectural-location: application-specific
+  application: null
+  task: null
+  subsystem: specific application component
+  package: cob_obstacle_distance
+  languages: null
+  detected-by: developer
+  reported-by: developer
+  issue: https://github.com/ipa320/cob_control/issues/48
+  time-reported: 2015-08-03 (14:15)
+  reproducibility: always
+  trace:
+fix:
+  repo: https://github.com/ipa320/cob_control
+  hash: ca7b536390bcf76bf4ab6e62354c52bd51fb1ece
+  pull-request: https://github.com/ipa320/cob_control/pull/47
+  license: ['LGPL']
+  fix-in: ['cob_control/cob_obstacle_distance/CMakeLists.txt']
+  languages:
+    - CMake
+  time: 2015-08-04 (13:09)

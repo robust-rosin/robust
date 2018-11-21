@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 61a75df
 title: Dashboard Crashes In ROS Kinetic
 description: >
      Turtlebot and Kobuki come with a dashboard program for live
