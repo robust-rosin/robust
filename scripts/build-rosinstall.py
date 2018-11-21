@@ -70,6 +70,9 @@ def build_file(fn_bug_desc, overwrite=False):
     with open(fn_bug_desc, 'r') as f:
         d = yaml.load(f)
 
+    ros_pkgs = d['time-machine']['ros_pkgs']
+    missing_deps = d['time-machine'].get('missing-dependencies', [])
+
     if 'issue' in d['time-machine']:
         url_issue = d['time-machine']['issue']
         try:
@@ -83,10 +86,9 @@ def build_file(fn_bug_desc, overwrite=False):
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
-    ros_pkgs = d['time-machine']['ros_pkgs']
 
     cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
-    cmd += ros_pkgs
+    cmd += ros_pkgs + missing_deps
     cmd += ['--deps', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
 
