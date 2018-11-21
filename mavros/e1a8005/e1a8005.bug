@@ -47,9 +47,9 @@ fix:
     - mavros/src/plugins/sys_time.cpp
   languages:
     - C++
-  time: 2015-03-11 (00:00)
+  time: 2015-03-11T13:27:29+03:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/206
+  datetime: 2015-03-11T13:27:29+03:00
