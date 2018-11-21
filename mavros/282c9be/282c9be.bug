@@ -40,9 +40,15 @@ fix:
     - src/plugins/3dr_radio.cpp
   languages:
     - C++
-  time: 2014-07-26 (00:00)
+  time: 2014-07-26T13:14:56+04:00
 time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/62
+  missing-dependencies:
+    - mavconn
+  datetime: 2014-07-26T13:14:56+04:00
+bugzoo:
+  is-build-failure: yes
+  bug-commit: 366dadaadfb85e0a1450a4a59477419930f94372
+  fix-commit: 282c9bece1fa7bc87db070d836127b52bb9d1306
