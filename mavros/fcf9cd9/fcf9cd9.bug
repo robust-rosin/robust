@@ -46,4 +46,13 @@ fix:
     - mavros/src/lib/uas_data.cpp
   languages:
     - C++
-  time: 2015-09-17 (00:00)
+  time: 2015-09-17T20:05:12+03:00
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-09-17T20:05:12+03:00
+bugzoo:
+  is-time-machine: no
+  bug-commit: 753226d93a735ba01744620b5654b8a038d1c89d
+  fix-commit: fcf9cd9de383a20bb98dad3040cc0a6204cb9e10
