@@ -88,22 +88,19 @@ def build_file(fn_bug_desc, overwrite=False):
 
 
     cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
-    cmd += ros_pkgs + missing_deps
+    cmd += ros_pkgs  + missing_deps
     cmd += ['--deps', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
 
-    p = subprocess.Popen(cmd,
-                         stderr=subprocess.PIPE,
-                         stdout=subprocess.PIPE,
-                         stdin=subprocess.PIPE)
     try:
-        contents, stderr = tuple(o.decode('utf-8') for o in p.communicate())
-        if p.returncode != 0:
-            logger.warning("time machine failed for bug [%s]:\n%s",
-                           fn_bug_desc, stderr)
-            return
-    finally:
-        p.kill()
+        res = subprocess.run(cmd,
+                             check=True,
+                             stdout=subprocess.PIPE)
+        contents = res.stdout.decode('utf-8')
+    except subprocess.CalledProcessError as err:
+        logger.warning("time machine failed (return code: %d) for bug [%s]",
+                       err.returncode, fn_bug_desc)
+        return
 
     # updated repository names
     contents = contents.replace('geometry_experimental', 'geometry2')
