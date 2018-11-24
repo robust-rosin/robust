@@ -3,14 +3,18 @@ import os
 import argparse
 import logging
 import subprocess
+import shutil
 
+import docker
 import yaml
+import requests
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 DIR_HERE = os.path.dirname(__file__)
-# DIR_TIME_MACHINE = os.path.abspath(os.path.join(DIR_HERE, 'time_machine'))
+DOCKER_IMAGE_TIME_MACHINE = 'robust-rosin/rosinstall_generator_time_machine:03'
+BIN_TIME_MACHINE = 'rosinstall_generator_tm.sh'
 
 DESCRIPTION = "build-rosinstall"
 
@@ -25,11 +29,36 @@ def find_bug_descriptions(d):
     return buff
 
 
+def gh_issue_to_datetime(url_issue):
+    # type: (str) -> str
+    prefix = "https://github.com/"
+    owner, repo, _, number = url_issue[len(prefix):].split('/')
+    url_api = 'https://api.github.com/repos/{}/{}/issues/{}'
+    url_api = url_api.format(owner, repo, number)
+    r = requests.get(url_api)
+    created_at = r.json()['created_at']
+    return created_at
+
+
 def build_file(fn_bug_desc, overwrite=False):
     logger.info("building rosinstall file for file: %s", fn_bug_desc)
     bug_id = os.path.basename(fn_bug_desc)[:-4]
-    dir_bug = os.path.join(os.path.dirname(fn_bug_desc), bug_id)
+    dir_bug = os.path.dirname(fn_bug_desc)
     fn_rosinstall = os.path.join(dir_bug, 'deps.rosinstall')
+
+    # check for existence of Docker image for time machine
+    client_docker = docker.from_env()
+    try:
+        client_docker.images.get(DOCKER_IMAGE_TIME_MACHINE)
+    except docker.errors.ImageNotFound:
+        logger.warning("Docker image for time machine not found: %s",
+                       DOCKER_IMAGE_TIME_MACHINE)
+        sys.exit(1)
+
+    if not shutil.which(BIN_TIME_MACHINE):
+        logger.warning("could not find time machine binary in PATH: %s",
+                       BIN_TIME_MACHINE)
+        sys.exit(1)
 
     if os.path.isfile(fn_rosinstall):
         if overwrite:
@@ -38,35 +67,49 @@ def build_file(fn_bug_desc, overwrite=False):
             logger.info("skipping existing file: %s", fn_rosinstall)
             return
 
-    if not os.path.isdir(dir_bug):
-        logger.debug("creating directory for bug [%s]: %s", bug_id, dir_bug)
-        os.mkdir(dir_bug)
-        logger.debug("created directory for bug [%s]: %s", bug_id, dir_bug)
-
     with open(fn_bug_desc, 'r') as f:
         d = yaml.load(f)
 
+    ros_pkgs = d['time-machine']['ros_pkgs']
+    missing_deps = d['time-machine'].get('missing-dependencies', [])
+
     if 'issue' in d['time-machine']:
-        issue_or_datetime = d['time-machine']['issue']
+        url_issue = d['time-machine']['issue']
+        try:
+            dt = gh_issue_to_datetime(url_issue)
+        except Exception:
+            m = "failed to convert GitHub issue to ISO 8601 timestamp: {}"
+            m = m.format(url_issue)
+            raise Exception(m)
     elif 'datetime' in d['time-machine']:
-        issue_or_datetime = d['time-machine']['datetime'].isoformat()
+        dt = d['time-machine']['datetime'].isoformat()
+        if dt[-1] != 'Z':
+            dt += 'Z'
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
-    ros_pkgs = d['time-machine']['ros_pkgs']
-    if len(ros_pkgs) > 1:
-        raise Exception("the time machine doesn't currently support more than ROS package")
 
-    cmd = [
-        'rosinstall_generator_tm.sh',
-        issue_or_datetime,
-        bug_id,
-        d['time-machine']['ros_distro'],
-        ros_pkgs[0],
-        os.path.abspath(fn_rosinstall),
-    ]
+    cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
+    cmd += ros_pkgs  + missing_deps
+    cmd += ['--deps', '--deps-only', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
-    subprocess.check_call(cmd, cwd=DIR_HERE)
+
+    try:
+        res = subprocess.run(cmd,
+                             check=True,
+                             stdout=subprocess.PIPE)
+        contents = res.stdout.decode('utf-8')
+    except subprocess.CalledProcessError as err:
+        logger.warning("time machine failed (return code: %d) for bug [%s]",
+                       err.returncode, fn_bug_desc)
+        return
+
+    # updated repository names
+    contents = contents.replace('geometry_experimental', 'geometry2')
+
+    # write to rosinstall file
+    with open(fn_rosinstall, 'w') as f:
+        f.write(contents)
 
 
 def build_dir(d, overwrite=False):

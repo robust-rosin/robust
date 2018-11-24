@@ -44,6 +44,6 @@ time-machine:
   issue: https://github.com/turtlebot/turtlebot/issues/113
 bugzoo:
   fork-url: https://github.com/robust-rosin/turtlebot
-  is-build-failure: no
+  is-build-failure: false
   bug-commit: 981a09902f5b73a24dc63bbde3977b8c6750b583
   fix-commit: 799db373131fcc022b6bda371a1884f9b23e7a7c
