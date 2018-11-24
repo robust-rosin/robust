@@ -69,7 +69,8 @@ time-machine:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/161
 bugzoo:
-  fork-url: https://github.com/robust-rosin/mavros  # [optional] 
+  fork-urls: 
+    - https://github.com/robust-rosin/mavros
   is-build-failure: yes
   use-osrf: no  # [optional]
   bug-commit: 665484a19c47771cc68200b2cd2c5c75a77995ac
@@ -82,17 +83,13 @@ for that ROS version). The `ros_pkgs` property of the `time-machine` section is
 also used to determine the appropriate fork for the PUTs. (At the time of
 writing, the script only supports bugs that specify a single PUT.)
 
-The `is-build-failure` property of the `bugzoo` section of the `.bug` file
-specifies whether the build is expected to fail for the PUT.
-The `bug-commit` and `fix-commit` properties of the `bugzoo` section give the
-commit hashes for the head of the bug witness and fix witness for the bug in
+The `bugzoo` section contains the following properties:
+* `is-build-failure`: whether the build is expected to fail for the PUT.
+* `bug-commit` and `fix-commit`: give the commit hashes for the head of the bug witness and fix witness for the bug in
 its fork. Note that these properties must be updated when the witness branches
 are modified in order to break the cache and to ensure the image is up to date.
-The `fork-url` property should be used if the forked repository does not match
-the name  of the bug-folder.
-The optional `use-osrf` property specifies whether or not BugZoo should use
-OSRF's sources when installing dependencies for the PUT.
-If `use-osrf` is not provided, its value will default to `no` (i.e., OSRF
+* `fork-urls`: lists the url(s) of the forked repository(/ies).
+* `use-osrf` [optional]: whether or not BugZoo should use OSRF's sources when installing dependencies for the PUT. If `use-osrf` is not provided, its value will default to `no` (i.e., OSRF
 sources will not be used).
 
 **Note:** To use this script, `pyyaml` must be installed in the current
