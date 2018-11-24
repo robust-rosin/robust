@@ -83,6 +83,8 @@ def build_file(fn_bug_desc, overwrite=False):
             raise Exception(m)
     elif 'datetime' in d['time-machine']:
         dt = d['time-machine']['datetime'].isoformat()
+        if dt[-1] != 'Z':
+            dt += 'Z'
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
