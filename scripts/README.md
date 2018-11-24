@@ -26,6 +26,8 @@ section contains the following properties:
   Supported values: `kinetic`, `jade`', `indigo`, `hydro`, `groovy`,
   `fuerte`, `electric`.
 * `ros_pkgs`: a list of the names of the packages under test (PUTs).
+* `missing-dependencies`: an optional list of the names of packages that are
+  undeclared dependencies of the PUTs.
 * `issue`: an optional link to issue where the bug is reported. The time
   machine uses this information to determine the point in time at which
   the bug was reported.
