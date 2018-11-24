@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 DIR_HERE = os.path.dirname(__file__)
-DOCKER_IMAGE_TIME_MACHINE = 'robust-rosin/rosinstall_generator_time_machine:02'
+DOCKER_IMAGE_TIME_MACHINE = 'robust-rosin/rosinstall_generator_time_machine:03'
 BIN_TIME_MACHINE = 'rosinstall_generator_tm.sh'
 
 DESCRIPTION = "build-rosinstall"
