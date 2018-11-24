@@ -30,7 +30,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/29
-  time-reported: 2014-05-28 (01:47)
+  time-reported: 2014-05-28T00:47:38Z
   reproducibility: always
   trace: null
   reproduction: >
