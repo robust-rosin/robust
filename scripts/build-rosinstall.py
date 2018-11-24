@@ -89,7 +89,7 @@ def build_file(fn_bug_desc, overwrite=False):
 
     cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
     cmd += ros_pkgs  + missing_deps
-    cmd += ['--deps', '--tar']
+    cmd += ['--deps', '--deps-only', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
 
     try:
