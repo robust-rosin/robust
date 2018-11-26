@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 import warnings
 
@@ -74,13 +75,17 @@ def main():
         if 'bugzoo' in desc and 'fork-url' in desc['bugzoo']:
             url_fork = desc['bugzoo']['fork-url']
         else:
-            url_fork = ({
-                'kobuki': 'https://github.com/robust-rosin/kobuki',
-                'geometry2': 'https://github.com/robust-rosin/geometry2',
-                'universal_robot': 'https://github.com/robust-rosin/universal_robot',
-                'ros_comm': 'https://github.com/robust-rosin/ros_comm',
-                'mavros': 'https://github.com/robust-rosin/mavros'
-            })[catkin_pkg]
+            try:
+                url_fork = ({
+                    'kobuki': 'https://github.com/robust-rosin/kobuki',
+                    'geometry2': 'https://github.com/robust-rosin/geometry2',
+                    'universal_robot': 'https://github.com/robust-rosin/universal_robot',
+                    'ros_comm': 'https://github.com/robust-rosin/ros_comm',
+                    'mavros': 'https://github.com/robust-rosin/mavros'
+                })[catkin_pkg]
+            except KeyError:
+                report_error("no fork-url")
+                continue
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
@@ -120,7 +125,7 @@ def main():
         bugs.append({
             'name': 'robust:{}'.format(bug_id),
             'image': name_image,
-            'program': package,
+            'program': catkin_pkg,
             'dataset': 'robust',
             'languages': ['cpp'],  # FIXME
             'source-location': '/ros_ws/src',
