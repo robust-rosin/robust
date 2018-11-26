@@ -238,4 +238,8 @@
     local-name: std_msgs
     uri: https://github.com/ros-gbp/std_msgs-release/archive/release/kinetic/std_msgs/0.5.11-0.tar.gz
     version: std_msgs-release-release-kinetic-std_msgs-0.5.11-0
+- tar:
+    local-name: unique_identifier/uuid_msgs
+    uri: https://github.com/ros-geographic-info/unique_identifier-release/archive/release/kinetic/uuid_msgs/1.0.5-0.tar.gz
+    version: unique_identifier-release-release-kinetic-uuid_msgs-1.0.5-0
 

@@ -59,6 +59,8 @@ time-machine:
   ros_distro: kinetic
   ros_pkgs:
     - mavros
+  missing-dependencies:
+    - geographic_msgs
   datetime: 2017-06-28T21:21:06+03:00
 bugzoo:
   is-build-failure: false
