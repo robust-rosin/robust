@@ -1,0 +1,51 @@
+%YAML 1.1
+---
+id: 3ec0485
+title: An unusual use of C-style format string causes a static analysis warning
+description: >
+  The two macros, TF2_ROS_MESSAGEFILTER_DEBUG and TF2_ROS_MESSAGEFILTER_WARN call another macro (ROS_DEBUG_NAMED, respectively ROS_WARN_NAMED).  The second argument of these ROS_* macros is a printf-style format string.  Both calls use a "%s" formatter inside this format string, which causes the next string to be inlined.  The problem is that these next string is also a format string in the same style, and this triggers (confuses) a gcc static analyzer that checks correctness of format strings and the following variable length argument list.  The fix is to change the macro to constract the a single format string first, before calling ROS_DEBUG_NAMED (ROS_WARN_NAMED).
+
+  This kind of issue could be found in any reasonably complex C/C++ system using preprocessor macros.
+classification: "Convoluted non-standard use of preprocessor (no CWE)"
+keywords:
+  - varargs
+  - preprocessor
+  - printf
+  - format string
+  - linter error
+system: core component
+severity: warning
+links: []
+bug:
+  phase: compile-time
+  specificity: general issue
+  architectural-location: platform code
+  application: N/A
+  task: N/A
+  subsystem: generic task component
+  package: ros/geometry2/tf2_ros
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: member-developer
+  issue: N/A
+  time-reported: N/A
+  reproducibility: >
+    Compile a small program using TF2_ROS_MESSAGE_FILTER_DEBUG (or the right
+    library code using that) on the code before fix.  The warning should be
+    triggerred.
+  trace: N/A
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 3ec048516fd47b533d9a40cae97482f5caefbb2f
+  pull-request: https://github.com/ros/geometry2/pull/107
+  license: BSD
+  fix-in:
+    - tf2_ros/include/tf2_ros/message_filter.h
+  languages:
+    - C++
+  time: 2015-05-10 21:11 GMT+2
+time-machine:
+  ros_distro: 
+  ros_pkgs:
+  datetime: 
