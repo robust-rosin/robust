@@ -54,9 +54,15 @@ fix:
   languages:
     - Python
     - C++
-  time: 2017-06-28 (00:00)
+  time: 2017-06-28T21:21:06+03:00
 time-machine:
   ros_distro: kinetic
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/625
+  datetime: 2017-06-28T21:21:06+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: df9f38067d4d80aeda839cc3d71b0a7eed67327a
+  fix-commit: 599c5887ad2aadc124d7e1354f3a1597402118da
+  fork-urls:
+    - 'https://github.com/robust-rosin/mavros'
