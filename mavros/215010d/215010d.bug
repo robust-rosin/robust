@@ -55,9 +55,15 @@ fix:
     - src/mavconn/mavconn_interface.cpp
   languages:
     - C++
-  time: 2014-06-30 (00:00)
+  datetime: 2014-07-01T01:15:08+04:00
 time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
-  datetime: 2014-06-30
+  datetime: 2014-07-01T01:15:08+04:00
+bugzoo:
+  is-build-failure: no
+  bug-commit: f2b2dfce6fbccd84a60aba48cc14a9cd8ab931cc
+  fix-commit: 215010d25409211ccfb35375c218c74c921b1a3a
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
