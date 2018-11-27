@@ -19,3 +19,4 @@ f01d952, turtlebot, Yes, Yes, Yes, No
 891cb68, turtlebot, Yes, Yes, No, Yes
 fd6b589, kobuki, Yes, Yes, No, Yes
 b213df3, kobuki, Yes, Yes, No, No
+08cd181, mavros, Yes, N/A, Yes, N/A
