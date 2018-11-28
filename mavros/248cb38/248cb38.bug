@@ -54,6 +54,8 @@ time-machine:
     - mavros
   datetime: 2015-07-28T14:18:43-04:00
 bugzoo:
-  is-build-failure: no
+  is-build-failure: false
   bug-commit: 3a82c908b6dba4b784c46106c51ae73ff1e881b8
   fix-commit: 248cb389b122fa94a68578a48e50d4f240df4629
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
