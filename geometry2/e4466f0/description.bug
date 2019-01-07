@@ -1,0 +1,56 @@
+%YAML 1.1
+---
+id: e4466f0
+title: Failed conversion of number to string due to dynamic types
+description: >
+  The code generator producing a dot (graphviz) file visualizing frame graph
+  assumed that the frame identifiers are strings.  But due to dynamic typing of
+  Python sometimes a numeric id may arise, which makes the identifier a number
+  at this point in code.  In such case, the concatenation of a string and a
+  number fails with an exception. The fix inserts an explicit cast to string
+  using the 'str' function.
+
+  This is a general Python problem.
+
+  The pull request contains another commit detecting not-well-formed quaternions.  This has not been merged but handled in other issues.  Here we only describe and refer to the cherry picked commit with the typing issue.
+classification: >
+  "CWE-704: Incorrect Type Conversion or Cast"
+  internal classification (cause):
+  internal classification (effect):
+keywords:
+  - dynamic types
+  - type case
+system: core component
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: general issue
+  architectural-location: platform code
+  application: N/A
+  task: N/A
+  subsystem: generic task component
+  package: ros/geometry2/tf2_tools
+  languages:
+    - Python
+  detected-by: guest user
+  reported-by: N/A
+  issue: N/A
+  time-reported: N/A
+  reproducibility: >
+    The discussion indicates that one needs to create a frame with a numeric id.
+  trace: N/A
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: e4466f0f482dcacf79b9ab9deaa70429e161e3a6
+  pull-request: https://github.com/ros/geometry2/pull/133/commits
+  license: BSD
+  fix-in:
+    - tf2_tools/scripts/view_frames.py
+  languages:
+    - Python
+  time: 2015-12-15 11:45 GMT+1
+time-machine:
+  ros_distro:
+  ros_pkgs:
+  datetime:
