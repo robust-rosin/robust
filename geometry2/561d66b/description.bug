@@ -1,0 +1,61 @@
+%YAML 1.1
+---
+id: da141a5
+title: Wrong function name in Python import (wrong use)
+description: >
+  The code in tf2_sensor_msgs.py imports method read_cloud from
+  sensor_msgs.point_cloud2.  This function does not exist though.  Instead
+  read_points should have been imported.
+
+  The code in do_transform_cloud in this module was not working for users
+  before (apparently it had no users before the one who found the problem.).
+  This should result in a runtime error when a call to do_transform_cloud is
+  made.
+
+  The merged commit fixes a few other minor issues with dependencies that are
+  mostly introduced during fixing the main bug.  These are not described here.
+
+  The fix has also exposed another bug (fixed in 26, link under links).
+
+classification: "Run-time dependency issue (no CWE)"
+keywords:
+  - import
+  - wrong use
+system: core component
+severity: error
+links:
+  - https://github.com/ros/geometry2/pull/126
+bug:
+  phase: runtime-operation
+  specificity: general issue
+  architectural-location: platform code
+  application: N/A
+  task: N/A
+  subsystem: generic task component
+  package: ros/geometry2/tf2_sensor_msgs
+  languages:
+    - Python
+  detected-by: developer
+  reported-by: contributor
+  issue: https://github.com/ros/geometry2/issues/121
+  time-reported: 2015-08-17 11:15 GMT+2
+  reproducibility: >
+    Call do_transform_cloud.  An idea how to do this is also in the test
+    included in the merged commit. So essentially the test is already
+    available, perhaps just needs to be simplified.
+  trace: N/A
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 561d66b106dec85246161e0b646874bd32812726
+  pull-request: https://github.com/ros/geometry2/pull/119
+  license: BSD
+  fix-in:
+    - tf2_sensor_msgs/src/tf2_sensor_msgs/tf2_sensor_msgs.py
+    - tf2_sensor_msgs/src/tf2_sensor_msgs/__init__.py
+  languages:
+    - Python
+  time: 2015-11-16 6:45 GMT+1
+time-machine:
+  ros_distro:
+  ros_pkgs:
+  datetime:
