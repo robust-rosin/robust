@@ -32,6 +32,16 @@ bug:
   time-reported: 2013-08-30T04:41:49Z
   reproducibility: always
   trace: null
+  reproduction-images:
+    buggy: debea999603d7312f8cf32b1b6081007f952d52b
+    fixed: fd9d80042b941961f9fed606b25a5ae0da51d600
+    rosdistro: hydro
+  reproduction: >
+    Building the image ran into some issues, as per the following thread #177
+    on the issue tracker.
+    The test strategy is straightforward. Just initialise a node and read the
+    parameter that is created by mistake. The successful reading of this
+    parameter should fail the test.
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: b213df3324cd933ddfc1bbd7ef8dce50cc233d51
