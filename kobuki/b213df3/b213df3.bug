@@ -35,7 +35,7 @@ bug:
   reproduction-images:
     buggy: debea999603d7312f8cf32b1b6081007f952d52b
     fixed: fd9d80042b941961f9fed606b25a5ae0da51d600
-    rosdistro: null
+    rosdistro: hydro
   reproduction: >
     Building the image ran into some issues, as per the following thread #177
     on the issue tracker.
