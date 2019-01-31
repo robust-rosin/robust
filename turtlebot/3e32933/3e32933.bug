@@ -32,7 +32,17 @@ bug:
   issue: https://github.com/turtlebot/turtlebot/issues/103
   time-reported: 2013-10-16 (04:53)
   reproducibility: sometimes
-  trace:
+  trace: null
+  reproduction-images:
+    buggy: cfcd70fcb30a2c3363303e1666dba9d77fa25578
+    fixed: 742746f34156e1a9285892c201a21da2078fdd84
+    rosdistro: 88c7076c1e6418079b94c653974737b27aa180f6
+    note: >
+        This is an L2 reproduction.
+        The original launch file starts nodes that rely on hardware, but are not
+        relevant to illustrate the bug and the fix themselves.
+        As such, the bug_witness.test in this case contains a slice of the
+        original launch file, and the buggy and fixed versions are different.
 fix:
   repo: https://github.com/turtlebot/turtlebot
   hash: 3e32933c829e308600707a9f971334d13d1cbe19
