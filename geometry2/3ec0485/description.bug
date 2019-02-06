@@ -46,6 +46,7 @@ fix:
     - C++
   time: 2015-05-10 21:11 GMT+2
 time-machine:
-  ros_distro: 
+  ros_distro: indigo
   ros_pkgs:
-  datetime: 
+    - tf2_ros
+  datetime: 2015-05-09T15:54:23Z
