@@ -50,3 +50,9 @@ time-machine:
   ros_pkgs:
     - tf2_ros
   datetime: 2015-05-09T15:54:23Z
+bugzoo:
+  is-build-failure: false
+  bug-commit: 18f94a0eebf7956201cc48b7aac2726a0b8bf224
+  fix-commit: 3ec048516fd47b533d9a40cae97482f5caefbb2f
+  fork-urls:
+    - https://github.com/robust-rosin/geometry2
