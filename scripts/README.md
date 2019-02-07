@@ -33,7 +33,7 @@ overwrite any existing `.rosinstall` files. By default, if a `.rosinstall`
 file already exists for a given bug, that file will be skipped.
 
 **Note:** This script assumes that the `rosinstall_generator_time_machine`
-  binary is visible from the `PATH`.
+  binary is visible from the `PATH` (ie: `rosinstall_generator_tm.sh`).
 
 This script uses the `time-machine` section of a bug description file to
 construct its corresponding `deps.rosinstall` file. The `time-machine`
