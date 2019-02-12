@@ -40,7 +40,7 @@ construct its corresponding `deps.rosinstall` file. The `time-machine`
 section contains the following properties:
 
 * `ros_distro`: specifies the distribution of ROS that should be used.
-  Supported values: `kinetic`, `jade`', `indigo`, `hydro`, `groovy`,
+  Supported values: `kinetic`, `jade`, `indigo`, `hydro`, `groovy`,
   `fuerte`, `electric`.
 * `ros_pkgs`: a list of the names of the packages under test (PUTs).
 * `missing-dependencies`: an optional list of the names of packages that are
