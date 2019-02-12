@@ -1,5 +1,22 @@
 # Additional Scripts
 
+## Installation
+
+Make sure to have a Python environment active with the required modules in it.
+
+Use `pip install -r requirements.txt` in this (ie: the `scripts/`) directory to install them with `pip`.
+
+Steps for a virtual environment with everything setup to use these scripts:
+
+```
+$ virtualenv --python=python3 $HOME/robust_venv
+$ source $HOME/robust_venv/bin/activate
+$ pip3 install -r requirements.txt
+```
+
+If you already have a virtual environment for use with BugZoo (see main [README](../README.md)) that could be used as well (just skip creation of a new virtual environment in the steps above).
+
+
 ## `build-rosinstall.py`
 
 Used to conveniently generate a rosinstall file for the bug belonging to
