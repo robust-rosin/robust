@@ -1,17 +1,17 @@
 blueprints:
 - arguments:
-    CATKIN_PKG: turtlebot_bringup
-    IS_BUILD_FAILURE: 'no'
-    REPO_BUG_COMMIT: 981a09902f5b73a24dc63bbde3977b8c6750b583
-    REPO_FIX_COMMIT: 799db373131fcc022b6bda371a1884f9b23e7a7c
-    REPO_FORK_URL: https://github.com/robust-rosin/turtlebot
-    ROS_DISTRO: hydro
-    UBUNTU_VERSION: 12.04.5
-    USE_APT_OLD_RELEASES: true
+    CATKIN_PKG: mavros
+    IS_BUILD_FAILURE: 'yes'
+    REPO_BUG_COMMIT: b2b553c6c23893349c017bd8a7949f25ca1472e6
+    REPO_FIX_COMMIT: dab1b8a16d6194056cb7e76215ecf299d1a90f08
+    REPO_FORK_URL: https://github.com/robust-rosin/mavros
+    ROS_DISTRO: indigo
+    UBUNTU_VERSION: 14.04.5
+    USE_APT_OLD_RELEASES: false
     USE_OSRF_REPOS: false
-  context: turtlebot/891cb68
+  context: mavros/dab1b8a
   file: Dockerfile
-  tag: robustrosin/robust:891cb68
+  tag: robustrosin/robust:dab1b8a
 - arguments:
     CATKIN_PKG: mavros
     IS_BUILD_FAILURE: 'no'
@@ -26,29 +26,42 @@ blueprints:
   file: Dockerfile
   tag: robustrosin/robust:263650d
 - arguments:
-    CATKIN_PKG: mavros
-    IS_BUILD_FAILURE: 'yes'
-    REPO_BUG_COMMIT: b2b553c6c23893349c017bd8a7949f25ca1472e6
-    REPO_FIX_COMMIT: dab1b8a16d6194056cb7e76215ecf299d1a90f08
-    REPO_FORK_URL: https://github.com/robust-rosin/mavros
-    ROS_DISTRO: indigo
-    UBUNTU_VERSION: 14.04.5
-    USE_APT_OLD_RELEASES: false
+    CATKIN_PKG: turtlebot_bringup
+    IS_BUILD_FAILURE: 'no'
+    REPO_BUG_COMMIT: 981a09902f5b73a24dc63bbde3977b8c6750b583
+    REPO_FIX_COMMIT: 799db373131fcc022b6bda371a1884f9b23e7a7c
+    REPO_FORK_URL: https://github.com/robust-rosin/turtlebot
+    ROS_DISTRO: hydro
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
     USE_OSRF_REPOS: false
-  context: mavros/dab1b8a
+  context: turtlebot/891cb68
   file: Dockerfile
-  tag: robustrosin/robust:dab1b8a
+  tag: robustrosin/robust:891cb68
+- arguments:
+    CATKIN_PKG: cob_script_server
+    IS_BUILD_FAILURE: 'yes'
+    REPO_BUG_COMMIT: 89eb430617039f04c7c61ba0dae8b303c26fc048
+    REPO_FIX_COMMIT: ac6a18190ef889f464a63ce6056100ce6da10b4d
+    REPO_FORK_URL: https://github.com/robust-rosin/cob_command_tools
+    ROS_DISTRO: hydro
+    UBUNTU_VERSION: 12.04.5
+    USE_APT_OLD_RELEASES: true
+    USE_OSRF_REPOS: false
+  context: care-o-bot/ac6a181
+  file: Dockerfile
+  tag: robustrosin/robust:ac6a181
 bugs:
 - compiler:
     time-limit: 300
     type: catkin
     workspace: /ros_ws/src
   dataset: robust
-  image: robustrosin/robust:891cb68
+  image: robustrosin/robust:dab1b8a
   languages:
   - cpp
-  name: robust:891cb68
-  program: turtlebot_bringup
+  name: robust:dab1b8a
+  program: mavros
   source-location: /ros_ws/src
   test-harness:
     type: empty
@@ -70,11 +83,24 @@ bugs:
     type: catkin
     workspace: /ros_ws/src
   dataset: robust
-  image: robustrosin/robust:dab1b8a
+  image: robustrosin/robust:891cb68
   languages:
   - cpp
-  name: robust:dab1b8a
-  program: mavros
+  name: robust:891cb68
+  program: turtlebot_bringup
+  source-location: /ros_ws/src
+  test-harness:
+    type: empty
+- compiler:
+    time-limit: 300
+    type: catkin
+    workspace: /ros_ws/src
+  dataset: robust
+  image: robustrosin/robust:ac6a181
+  languages:
+  - cpp
+  name: robust:ac6a181
+  program: cob_script_server
   source-location: /ros_ws/src
   test-harness:
     type: empty

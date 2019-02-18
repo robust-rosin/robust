@@ -39,3 +39,14 @@ fix:
   languages:
     - XML
   time: 2014-08-26 (08:57)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - cob_script_server
+  issue: https://github.com/ipa320/cob_command_tools/issues/49
+bugzoo:
+  fork-url: https://github.com/robust-rosin/cob_command_tools
+  is-build-failure: yes
+  use-osrf: no  # [optional]
+  bug-commit: 89eb430617039f04c7c61ba0dae8b303c26fc048
+  fix-commit: ac6a18190ef889f464a63ce6056100ce6da10b4d
