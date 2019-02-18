@@ -7,6 +7,7 @@ This project uses [BugZoo](https://github.com/squaresLab/BugZoo) for managing bu
 To setup the BugZoo environment, we suggest using a Python [virtualenv](https://virtualenv.pypa.io/en/stable) created in a suitable location. In the following example instructions, the venv is placed in the home directory, but that is of course not required.
 
 ```
+$ sudo apt install python3-dev
 $ virtualenv --python=python3 $HOME/bugzoo_venv
 $ source $HOME/bugzoo_venv/bin/activate
 $ pip3 install bugzoo
@@ -98,8 +99,8 @@ which are located at `/ros_ws`:
   than `0`. The same behaviour should also apply to build-related issues; that
   is, `test.sh` should exit with `0` if the build was successful, and any other
   exit code if not.
-* `fix`: switches the source code for the PUT to its buggy state.
-* `unfix`: switches the source code for the PUT to its fixed state.
+* `fix`: switches the source code for the PUT to its fixed state.
+* `unfix`: switches the source code for the PUT to its buggy state.
 * `fix.patch`: provides the developer patch that was used to fix the bug.
 
 Note that `build.sh`, `fix.patch`, `fix`, and `unfix` are automatically

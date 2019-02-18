@@ -1,0 +1,68 @@
+%YAML 1.1
+---
+id: 8c30446
+title: Referencing Wrong Parameter File
+description: >
+     A launch file was referencing a data file from another repository
+     to initialize ROS parameters.
+     Launch files are XML files that declare a sequence of nodes for
+     the ROS platform to execute. Launch files can also declare ROS
+     parameters to be loaded to the ROS parameter server (key-value
+     pairs). In particular, the `rosparam` tag is a shortcut to load a
+     series of parameters from an YAML file.
+     Referencing data files from other repositories is arguably not
+     recommended, because they may change or disappear unexpectedly,
+     besides introducing additional dependencies. Additionally, the
+     defective launch file is in the Kobuki repository, and
+     referencing a file in the Turtlebot repository.  From a logic
+     standpoint, it is Turtlebot that builds upon Kobuki, and not the
+     other way around. Kobuki is a base, Turtlebot is the entire
+     robot.
+
+     The fix consisted on creating a file with the required data
+     within the Kobuki repository.
+classification: External Dependency (no CWE)
+keywords: ['dependencies', 'rosparam', 'launch']
+system: kobuki
+severity: bad-smell
+links: ['http://wiki.ros.org/roslaunch/XML/rosparam']
+bug:
+  phase: runtime-initialization
+  specificity: ROS-specific
+  architectural-location: application-specific code
+  application: system bringup
+  task: null
+  subsystem: driver
+  package: yujinrobot/kobuki/kobuki_node
+  languages:
+    - launch XML
+  detected-by: developer
+  reported-by: member developer
+  issue: https://github.com/yujinrobot/kobuki/issues/339
+  time-reported: 2014-08-11T05:11:02Z
+  reproducibility: always
+  trace: null
+  reproduction: >
+        An issue surfaced when building the docker image, as it could
+        not find tf2 packages. This was due to the repository being named
+        `geometry_experimental` at the time this issue was reported, and
+        having been renamed to `geometry2` later on. To fix this, the
+        rosinstall file had to be patched manually. Cf. issue
+        https://github.com/robust-rosin/robust/issues/63.
+
+        Regarding the test case, the strategy is very straightforward.
+        Since the bug is related to the use of data files from other packages
+        within a launch file (thus, creating unnecessary dependencies),
+        the test script just has to parse the XML launch file, find the
+        `rosparam` tag (which loads the file), and check that the fixed
+        version no longer uses a file from another package (in this case,
+        `turtlebot_bringup`).
+fix:
+  repo: https://github.com/yujinrobot/kobuki
+  hash: 8c30446d18bad63da0f58a1f666c2e7e209d917d
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_node/launch/robot_with_tf.launch']
+  languages:
+    - launch XML
+  time: 2014-08-11 (06:11)

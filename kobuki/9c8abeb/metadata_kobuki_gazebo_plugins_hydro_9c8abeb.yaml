@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 9c8abeb
+put: kobuki_gazebo_plugins
+ros_distro: hydro
+datetime_reported: 2014-02-28T00:52:29Z
+issue_url: https://github.com/yujinrobot/kobuki_desktop/issues/25
+reproduction-images:
+  buggy: 024d79e2204a2be7ac4284bea5da2ac6ff92262a
+  fixed: 71f3294694ffda0e2ab48ba0842f71913204ac60
+  rosdistro: 24e111a3459d62640fa1381a14cf7c6ba7aeef53

@@ -1,0 +1,59 @@
+%YAML 1.1
+---
+id: 61a75df
+title: Dashboard Crashes In ROS Kinetic
+description: >
+     Turtlebot and Kobuki come with a dashboard program for live
+     diagnostics.  This program worked well on previous versions of
+     ROS, but users reported crashes when using it in ROS Kinetic and
+     Ubuntu 16.04 (required by Kinetic).
+     The issue is that the application's GUI was built on top of Qt4,
+     but Ubuntu 16.04 uses Qt5 which changed the API and made it
+     incompatible.
+     On the programming language level the problem manifests as a missing
+     dependency issue. A Python import of a module fails, because the module is
+     not longer available under the same name in Qt5.
+classification: "run-time dependency issue (no CWE) #EVOLUTION"
+keywords: ['qt', 'diagnostics', 'dashboard', 'turtlebot', 'api', 'dependency']
+system: turtlebot
+severity: error
+links:
+  - https://answers.ros.org/question/252837/cannot-launch-kobuki_dashboard-on-kinetic/?comment=253230#post-id-253230
+bug:
+  phase: runtime-initialization
+  specificity: ROS-specific
+  architectural-location: application-specific code
+  application: diagnostics dashboard
+  task: diagnostics
+  subsystem: application-specific component
+  package: yujinrobot/kobuki_desktop/kobuki_dashboard
+  languages:
+    - Python
+  detected-by: runtime crash
+  reported-by: guest user
+  issue: https://github.com/turtlebot/turtlebot/issues/250
+  time-reported: 2017-01-30 (23:27)
+  reproducibility: always
+  trace: "ImportError: cannot import name QMessageBox"
+  reproduction: >
+        Building the Docker image requires the USE_OSRF_REPOS option.
+        Testing the bug is straightforward. Since it is a Python import
+        issue, it suffices for the unit test to import the affected files.
+fix:
+  repo: https://github.com/yujinrobot/kobuki_desktop
+  hash: 61a75df171e8ac8f34ed848456a7a267d4d9d3e3
+  pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/49
+  license: ['BSD']
+  fix-in: ['kobuki_dashboard/src/kobuki_dashboard/battery_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/dashboard.py']
+  languages:
+    - Python
+  time: 2017-02-22 (14:10)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - kobuki_dashboard
+  issue: "https://github.com/turtlebot/turtlebot/issues/250"
+bugzoo:
+  is-build-failure: false
+  bug-commit: 3e1428b67ad1876ea5c57e59e787fca7813b8ebb
+  fix-commit: 70948a266e2406c16a462bb6c6f6e203971c905e

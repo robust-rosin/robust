@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+id: 6bb2672
+title: Weak if-condition causes incorrect control flow
+description: >
+     The "passthrough" timesync mode is used when synchronisation
+     between MAVROS and MAVLink is not required; e.g., in cases where
+     both are running on the same physical machine. In cases where
+     passthrough is used, a new ROS::Time instance should be generated
+     by adding the current offset, stored in "time_offset". The buggy
+     version of the code fails to apply this offset, and thus returns
+     incorrect timestamps.
+classification: "CWE-670: Always-Incorrect Control Flow Implementation"
+keywords:
+  - weak if-condition
+  - timestamp synchronisation
+system: mavros
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: "general issue: weak if-condition"
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: contributor
+  issue: N/A
+  time-reported: N/A
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: 6bb267295ec87d8a089cc0f2f7d23555ea342943
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/lib/uas_timesync.cpp
+  languages:
+    - C++
+  time: 2017-03-30 (00:00)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - mavros
+  datetime: 2017-03-30

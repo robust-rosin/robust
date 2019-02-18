@@ -1,0 +1,49 @@
+%YAML 1.1
+---
+id: fcf9cd9
+title: Uninitialised variable causes incorrect timestamps to be produced
+description: >
+     The UAS manager, defined in uas_data.cpp, is responsible for
+     describing the state of the robot. This description includes the
+     current position and orientation of the robot, its capabilities,
+     connection status, and more. Part of this manager also records a
+     time offset between MAVROS and MAVLink, which is used to maintain
+     synchronisation. A bug in the constructor fails to initialise the
+     attribute responsible for recording this offset (time_offset),
+     causing incorrect timestamps to be produced.
+classification: "CWE-456: Missing Initialization of a Variable #RESOURCE"
+keywords:
+  - uninitialised field
+  - time synchronisation
+system: mavros
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: "general issue: uninitialised variable"
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: contributor
+  issue: N/A
+  time-reported: N/A
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: fcf9cd9de383a20bb98dad3040cc0a6204cb9e10
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/lib/uas_data.cpp
+  languages:
+    - C++
+  time: 2015-09-17 (00:00)

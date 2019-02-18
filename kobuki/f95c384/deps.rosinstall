@@ -1,0 +1,441 @@
+- tar:
+    local-name: actionlib
+    uri: https://github.com/ros-gbp/actionlib-release/archive/release/hydro/actionlib/1.10.3-0.tar.gz
+    version: actionlib-release-release-hydro-actionlib-1.10.3-0
+- tar:
+    local-name: actionlib_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/actionlib_msgs/1.10.6-0.tar.gz
+    version: common_msgs-release-release-hydro-actionlib_msgs-1.10.6-0
+- tar:
+    local-name: angles
+    uri: https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/hydro/angles/1.9.9-0.tar.gz
+    version: geometry_angles_utils-release-release-hydro-angles-1.9.9-0
+- tar:
+    local-name: bond
+    uri: https://github.com/ros-gbp/bond_core-release/archive/release/hydro/bond/1.7.14-0.tar.gz
+    version: bond_core-release-release-hydro-bond-1.7.14-0
+- tar:
+    local-name: bondcpp
+    uri: https://github.com/ros-gbp/bond_core-release/archive/release/hydro/bondcpp/1.7.14-0.tar.gz
+    version: bond_core-release-release-hydro-bondcpp-1.7.14-0
+- tar:
+    local-name: catkin
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/hydro/catkin/0.5.88-0.tar.gz
+    version: catkin-release-release-hydro-catkin-0.5.88-0
+- tar:
+    local-name: class_loader
+    uri: https://github.com/ros-gbp/class_loader-release/archive/release/hydro/class_loader/0.2.5-0.tar.gz
+    version: class_loader-release-release-hydro-class_loader-0.2.5-0
+- tar:
+    local-name: cmake_modules
+    uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/hydro/cmake_modules/0.2.1-1.tar.gz
+    version: cmake_modules-release-release-hydro-cmake_modules-0.2.1-1
+- tar:
+    local-name: console_bridge
+    uri: https://github.com/ros-gbp/console_bridge-release/archive/release/hydro/console_bridge/0.2.4-1.tar.gz
+    version: console_bridge-release-release-hydro-console_bridge-0.2.4-1
+- tar:
+    local-name: cpp_common
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/cpp_common/0.4.3-0.tar.gz
+    version: roscpp_core-release-release-hydro-cpp_common-0.4.3-0
+- tar:
+    local-name: diagnostic_aggregator
+    uri: https://github.com/ros-gbp/diagnostics-release/archive/release/hydro/diagnostic_aggregator/1.8.3-0.tar.gz
+    version: diagnostics-release-release-hydro-diagnostic_aggregator-1.8.3-0
+- tar:
+    local-name: diagnostic_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/diagnostic_msgs/1.10.6-0.tar.gz
+    version: common_msgs-release-release-hydro-diagnostic_msgs-1.10.6-0
+- tar:
+    local-name: diagnostic_updater
+    uri: https://github.com/ros-gbp/diagnostics-release/archive/release/hydro/diagnostic_updater/1.8.3-0.tar.gz
+    version: diagnostics-release-release-hydro-diagnostic_updater-1.8.3-0
+- tar:
+    local-name: dynamic_reconfigure
+    uri: https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/hydro/dynamic_reconfigure/1.5.37-0.tar.gz
+    version: dynamic_reconfigure-release-release-hydro-dynamic_reconfigure-1.5.37-0
+- tar:
+    local-name: ecl_build
+    uri: https://github.com/yujinrobot-release/ecl_tools-release/archive/release/hydro/ecl_build/0.60.1-0.tar.gz
+    version: ecl_tools-release-release-hydro-ecl_build-0.60.1-0
+- tar:
+    local-name: ecl_command_line
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_command_line/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_command_line-0.60.8-0
+- tar:
+    local-name: ecl_concepts
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_concepts/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_concepts-0.60.8-0
+- tar:
+    local-name: ecl_config
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/hydro/ecl_config/0.60.1-0.tar.gz
+    version: ecl_lite-release-release-hydro-ecl_config-0.60.1-0
+- tar:
+    local-name: ecl_containers
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_containers/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_containers-0.60.8-0
+- tar:
+    local-name: ecl_converters
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_converters/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_converters-0.60.8-0
+- tar:
+    local-name: ecl_devices
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_devices/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_devices-0.60.8-0
+- tar:
+    local-name: ecl_eigen
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_eigen/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_eigen-0.60.8-0
+- tar:
+    local-name: ecl_errors
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/hydro/ecl_errors/0.60.1-0.tar.gz
+    version: ecl_lite-release-release-hydro-ecl_errors-0.60.1-0
+- tar:
+    local-name: ecl_exceptions
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_exceptions/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_exceptions-0.60.8-0
+- tar:
+    local-name: ecl_formatters
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_formatters/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_formatters-0.60.8-0
+- tar:
+    local-name: ecl_geometry
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_geometry/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_geometry-0.60.8-0
+- tar:
+    local-name: ecl_license
+    uri: https://github.com/yujinrobot-release/ecl_tools-release/archive/release/hydro/ecl_license/0.60.1-0.tar.gz
+    version: ecl_tools-release-release-hydro-ecl_license-0.60.1-0
+- tar:
+    local-name: ecl_linear_algebra
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_linear_algebra/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_linear_algebra-0.60.8-0
+- tar:
+    local-name: ecl_math
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_math/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_math-0.60.8-0
+- tar:
+    local-name: ecl_mobile_robot
+    uri: https://github.com/yujinrobot-release/ecl_navigation-release/archive/release/hydro/ecl_mobile_robot/0.60.0-2.tar.gz
+    version: ecl_navigation-release-release-hydro-ecl_mobile_robot-0.60.0-2
+- tar:
+    local-name: ecl_mpl
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_mpl/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_mpl-0.60.8-0
+- tar:
+    local-name: ecl_sigslots
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_sigslots/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_sigslots-0.60.8-0
+- tar:
+    local-name: ecl_streams
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_streams/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_streams-0.60.8-0
+- tar:
+    local-name: ecl_threads
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_threads/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_threads-0.60.8-0
+- tar:
+    local-name: ecl_time
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_time/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_time-0.60.8-0
+- tar:
+    local-name: ecl_time_lite
+    uri: https://github.com/yujinrobot-release/ecl_lite-release/archive/release/hydro/ecl_time_lite/0.60.1-0.tar.gz
+    version: ecl_lite-release-release-hydro-ecl_time_lite-0.60.1-0
+- tar:
+    local-name: ecl_type_traits
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_type_traits/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_type_traits-0.60.8-0
+- tar:
+    local-name: ecl_utilities
+    uri: https://github.com/yujinrobot-release/ecl_core-release/archive/release/hydro/ecl_utilities/0.60.8-0.tar.gz
+    version: ecl_core-release-release-hydro-ecl_utilities-0.60.8-0
+- tar:
+    local-name: gencpp
+    uri: https://github.com/ros-gbp/gencpp-release/archive/release/hydro/gencpp/0.4.17-0.tar.gz
+    version: gencpp-release-release-hydro-gencpp-0.4.17-0
+- tar:
+    local-name: genlisp
+    uri: https://github.com/ros-gbp/genlisp-release/archive/release/hydro/genlisp/0.4.14-0.tar.gz
+    version: genlisp-release-release-hydro-genlisp-0.4.14-0
+- tar:
+    local-name: genmsg
+    uri: https://github.com/ros-gbp/genmsg-release/archive/release/hydro/genmsg/0.4.25-0.tar.gz
+    version: genmsg-release-release-hydro-genmsg-0.4.25-0
+- tar:
+    local-name: genpy
+    uri: https://github.com/ros-gbp/genpy-release/archive/release/hydro/genpy/0.4.17-0.tar.gz
+    version: genpy-release-release-hydro-genpy-0.4.17-0
+- tar:
+    local-name: geometry_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/geometry_msgs/1.10.6-0.tar.gz
+    version: common_msgs-release-release-hydro-geometry_msgs-1.10.6-0
+- tar:
+    local-name: image_geometry
+    uri: https://github.com/ros-gbp/vision_opencv-release/archive/release/hydro/image_geometry/1.10.18-0.tar.gz
+    version: vision_opencv-release-release-hydro-image_geometry-1.10.18-0
+- tar:
+    local-name: image_transport
+    uri: https://github.com/ros-gbp/image_common-release/archive/release/hydro/image_transport/1.11.3-1.tar.gz
+    version: image_common-release-release-hydro-image_transport-1.11.3-1
+- tar:
+    local-name: interactive_markers
+    uri: https://github.com/ros-gbp/interactive_markers-release/archive/release/hydro/interactive_markers/1.10.2-0.tar.gz
+    version: interactive_markers-release-release-hydro-interactive_markers-1.10.2-0
+- tar:
+    local-name: kobuki_driver
+    uri: https://github.com/yujinrobot-release/kobuki_core-release/archive/release/hydro/kobuki_driver/0.5.4-0.tar.gz
+    version: kobuki_core-release-release-hydro-kobuki_driver-0.5.4-0
+- tar:
+    local-name: kobuki_ftdi
+    uri: https://github.com/yujinrobot-release/kobuki_core-release/archive/release/hydro/kobuki_ftdi/0.5.4-0.tar.gz
+    version: kobuki_core-release-release-hydro-kobuki_ftdi-0.5.4-0
+- tar:
+    local-name: kobuki_keyop
+    uri: https://github.com/yujinrobot-release/kobuki-release/archive/release/hydro/kobuki_keyop/0.5.6-0.tar.gz
+    version: kobuki-release-release-hydro-kobuki_keyop-0.5.6-0
+- tar:
+    local-name: kobuki_msgs
+    uri: https://github.com/yujinrobot-release/kobuki_msgs-release/archive/release/hydro/kobuki_msgs/0.5.0-1.tar.gz
+    version: kobuki_msgs-release-release-hydro-kobuki_msgs-0.5.0-1
+- tar:
+    local-name: kobuki_safety_controller
+    uri: https://github.com/yujinrobot-release/kobuki-release/archive/release/hydro/kobuki_safety_controller/0.5.6-0.tar.gz
+    version: kobuki-release-release-hydro-kobuki_safety_controller-0.5.6-0
+- tar:
+    local-name: laser_geometry
+    uri: https://github.com/ros-gbp/laser_geometry-release/archive/release/hydro/laser_geometry/1.5.16-0.tar.gz
+    version: laser_geometry-release-release-hydro-laser_geometry-1.5.16-0
+- tar:
+    local-name: map_msgs
+    uri: https://github.com/ros-gbp/map_msgs-release/archive/release/hydro/map_msgs/0.0.2-0.tar.gz
+    version: map_msgs-release-release-hydro-map_msgs-0.0.2-0
+- tar:
+    local-name: media_export
+    uri: https://github.com/ros-gbp/media_export-release/archive/release/hydro/media_export/0.1.0-0.tar.gz
+    version: media_export-release-release-hydro-media_export-0.1.0-0
+- tar:
+    local-name: message_filters
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/message_filters/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-message_filters-1.10.10-0
+- tar:
+    local-name: message_generation
+    uri: https://github.com/ros-gbp/message_generation-release/archive/release/hydro/message_generation/0.2.10-0.tar.gz
+    version: message_generation-release-release-hydro-message_generation-0.2.10-0
+- tar:
+    local-name: message_runtime
+    uri: https://github.com/ros-gbp/message_runtime-release/archive/release/hydro/message_runtime/0.4.12-0.tar.gz
+    version: message_runtime-release-release-hydro-message_runtime-0.4.12-0
+- tar:
+    local-name: nav_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/nav_msgs/1.10.6-0.tar.gz
+    version: common_msgs-release-release-hydro-nav_msgs-1.10.6-0
+- tar:
+    local-name: nodelet
+    uri: https://github.com/ros-gbp/nodelet_core-release/archive/release/hydro/nodelet/1.8.4-0.tar.gz
+    version: nodelet_core-release-release-hydro-nodelet-1.8.4-0
+- tar:
+    local-name: opencv2
+    uri: https://github.com/ros-gbp/opencv2-release/archive/release/hydro/opencv2/2.4.9-2.tar.gz
+    version: opencv2-release-release-hydro-opencv2-2.4.9-2
+- tar:
+    local-name: pluginlib
+    uri: https://github.com/ros-gbp/pluginlib-release/archive/release/hydro/pluginlib/1.9.24-0.tar.gz
+    version: pluginlib-release-release-hydro-pluginlib-1.9.24-0
+- tar:
+    local-name: python_qt_binding
+    uri: https://github.com/ros-gbp/python_qt_binding-release/archive/release/hydro/python_qt_binding/0.2.14-0.tar.gz
+    version: python_qt_binding-release-release-hydro-python_qt_binding-0.2.14-0
+- tar:
+    local-name: resource_retriever
+    uri: https://github.com/ros-gbp/robot_model-release/archive/release/hydro/resource_retriever/1.10.18-1.tar.gz
+    version: robot_model-release-release-hydro-resource_retriever-1.10.18-1
+- tar:
+    local-name: rosbag
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosbag/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosbag-1.10.10-0
+- tar:
+    local-name: rosbag_storage
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosbag_storage/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosbag_storage-1.10.10-0
+- tar:
+    local-name: rosbuild
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/rosbuild/1.10.10-0.tar.gz
+    version: ros-release-release-hydro-rosbuild-1.10.10-0
+- tar:
+    local-name: rosclean
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/rosclean/1.10.10-0.tar.gz
+    version: ros-release-release-hydro-rosclean-1.10.10-0
+- tar:
+    local-name: rosconsole
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosconsole/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosconsole-1.10.10-0
+- tar:
+    local-name: rosconsole_bridge
+    uri: https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/hydro/rosconsole_bridge/0.3.4-0.tar.gz
+    version: rosconsole_bridge-release-release-hydro-rosconsole_bridge-0.3.4-0
+- tar:
+    local-name: roscpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/roscpp/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-roscpp-1.10.10-0
+- tar:
+    local-name: roscpp_serialization
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/roscpp_serialization/0.4.3-0.tar.gz
+    version: roscpp_core-release-release-hydro-roscpp_serialization-0.4.3-0
+- tar:
+    local-name: roscpp_traits
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/roscpp_traits/0.4.3-0.tar.gz
+    version: roscpp_core-release-release-hydro-roscpp_traits-0.4.3-0
+- tar:
+    local-name: rosgraph
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosgraph/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosgraph-1.10.10-0
+- tar:
+    local-name: rosgraph_msgs
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosgraph_msgs/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosgraph_msgs-1.10.10-0
+- tar:
+    local-name: roslang
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/roslang/1.10.10-0.tar.gz
+    version: ros-release-release-hydro-roslang-1.10.10-0
+- tar:
+    local-name: roslaunch
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/roslaunch/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-roslaunch-1.10.10-0
+- tar:
+    local-name: roslib
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/roslib/1.10.10-0.tar.gz
+    version: ros-release-release-hydro-roslib-1.10.10-0
+- tar:
+    local-name: rosmaster
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosmaster/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosmaster-1.10.10-0
+- tar:
+    local-name: rosmsg
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosmsg/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosmsg-1.10.10-0
+- tar:
+    local-name: rosnode
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosnode/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosnode-1.10.10-0
+- tar:
+    local-name: rosout
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosout/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosout-1.10.10-0
+- tar:
+    local-name: rospack
+    uri: https://github.com/ros-gbp/rospack-release/archive/release/hydro/rospack/2.1.23-0.tar.gz
+    version: rospack-release-release-hydro-rospack-2.1.23-0
+- tar:
+    local-name: rosparam
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosparam/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosparam-1.10.10-0
+- tar:
+    local-name: rospy
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rospy/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rospy-1.10.10-0
+- tar:
+    local-name: rosservice
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosservice/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rosservice-1.10.10-0
+- tar:
+    local-name: rostest
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rostest/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rostest-1.10.10-0
+- tar:
+    local-name: rostime
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/rostime/0.4.3-0.tar.gz
+    version: roscpp_core-release-release-hydro-rostime-0.4.3-0
+- tar:
+    local-name: rostopic
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rostopic/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-rostopic-1.10.10-0
+- tar:
+    local-name: rosunit
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/rosunit/1.10.10-0.tar.gz
+    version: ros-release-release-hydro-rosunit-1.10.10-0
+- tar:
+    local-name: roswtf
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/roswtf/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-roswtf-1.10.10-0
+- tar:
+    local-name: rviz
+    uri: https://github.com/ros-gbp/rviz-release/archive/release/hydro/rviz/1.10.16-0.tar.gz
+    version: rviz-release-release-hydro-rviz-1.10.16-0
+- tar:
+    local-name: sensor_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/sensor_msgs/1.10.6-0.tar.gz
+    version: common_msgs-release-release-hydro-sensor_msgs-1.10.6-0
+- tar:
+    local-name: smclib
+    uri: https://github.com/ros-gbp/bond_core-release/archive/release/hydro/smclib/1.7.14-0.tar.gz
+    version: bond_core-release-release-hydro-smclib-1.7.14-0
+- tar:
+    local-name: std_msgs
+    uri: https://github.com/ros-gbp/std_msgs-release/archive/release/hydro/std_msgs/0.5.8-0.tar.gz
+    version: std_msgs-release-release-hydro-std_msgs-0.5.8-0
+- tar:
+    local-name: std_srvs
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/std_srvs/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-std_srvs-1.10.10-0
+- tar:
+    local-name: tf
+    uri: https://github.com/ros-gbp/geometry-release/archive/release/hydro/tf/1.10.8-1.tar.gz
+    version: geometry-release-release-hydro-tf-1.10.8-1
+- tar:
+    local-name: tf2
+    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/hydro/tf2/0.4.11-0.tar.gz
+    version: geometry_experimental-release-release-hydro-tf2-0.4.11-0
+- tar:
+    local-name: tf2_msgs
+    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/hydro/tf2_msgs/0.4.11-0.tar.gz
+    version: geometry_experimental-release-release-hydro-tf2_msgs-0.4.11-0
+- tar:
+    local-name: tf2_py
+    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/hydro/tf2_py/0.4.11-0.tar.gz
+    version: geometry_experimental-release-release-hydro-tf2_py-0.4.11-0
+- tar:
+    local-name: tf2_ros
+    uri: https://github.com/ros-gbp/geometry_experimental-release/archive/release/hydro/tf2_ros/0.4.11-0.tar.gz
+    version: geometry_experimental-release-release-hydro-tf2_ros-0.4.11-0
+- tar:
+    local-name: topic_tools
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/topic_tools/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-topic_tools-1.10.10-0
+- tar:
+    local-name: urdf
+    uri: https://github.com/ros-gbp/robot_model-release/archive/release/hydro/urdf/1.10.18-1.tar.gz
+    version: robot_model-release-release-hydro-urdf-1.10.18-1
+- tar:
+    local-name: urdf_parser_plugin
+    uri: https://github.com/ros-gbp/robot_model-release/archive/release/hydro/urdf_parser_plugin/1.10.18-1.tar.gz
+    version: robot_model-release-release-hydro-urdf_parser_plugin-1.10.18-1
+- tar:
+    local-name: urdfdom
+    uri: https://github.com/ros-gbp/urdfdom-release/archive/release/hydro/urdfdom/0.2.10-3.tar.gz
+    version: urdfdom-release-release-hydro-urdfdom-0.2.10-3
+- tar:
+    local-name: urdfdom_headers
+    uri: https://github.com/ros-gbp/urdfdom_headers-release/archive/release/hydro/urdfdom_headers/0.2.3-1.tar.gz
+    version: urdfdom_headers-release-release-hydro-urdfdom_headers-0.2.3-1
+- tar:
+    local-name: visualization_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/visualization_msgs/1.10.6-0.tar.gz
+    version: common_msgs-release-release-hydro-visualization_msgs-1.10.6-0
+- tar:
+    local-name: xmlrpcpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/xmlrpcpp/1.10.10-0.tar.gz
+    version: ros_comm-release-release-hydro-xmlrpcpp-1.10.10-0
+- tar:
+    local-name: yocs_cmd_vel_mux
+    uri: https://github.com/yujinrobot-release/yujin_ocs-release/archive/release/hydro/yocs_cmd_vel_mux/0.5.3-1.tar.gz
+    version: yujin_ocs-release-release-hydro-yocs_cmd_vel_mux-0.5.3-1
+- tar:
+    local-name: yocs_controllers
+    uri: https://github.com/yujinrobot-release/yujin_ocs-release/archive/release/hydro/yocs_controllers/0.5.3-1.tar.gz
+    version: yujin_ocs-release-release-hydro-yocs_controllers-0.5.3-1
+- tar:
+    local-name: yocs_velocity_smoother
+    uri: https://github.com/yujinrobot-release/yujin_ocs-release/archive/release/hydro/yocs_velocity_smoother/0.5.3-1.tar.gz
+    version: yujin_ocs-release-release-hydro-yocs_velocity_smoother-0.5.3-1
+

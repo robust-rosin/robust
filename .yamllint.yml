@@ -1,0 +1,13 @@
+extends: default
+
+rules:
+  line-length:
+    max: 80
+    level: warning
+  empty-values:
+    forbid-in-block-mappings: true
+    level: warning
+  truthy:
+    level: error
+  key-duplicates:
+    level: error

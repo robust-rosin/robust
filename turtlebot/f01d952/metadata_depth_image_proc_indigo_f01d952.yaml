@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: f01d952
+put: depth_image_proc
+ros_distro: indigo
+datetime_reported: 2014-06-12T09:04:16Z
+issue_url: https://github.com/turtlebot/turtlebot/issues/142
+reproduction-images:
+  buggy: 628ce167894bca0020d3637db90537ffe9559655
+  fixed: 37d911d78cfbb50ef92423a9055ec1e877e17958
+  rosdistro: 9e19f0dcbb08cb2b789c7b9b9fa55d42b9da8217

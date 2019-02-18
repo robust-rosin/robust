@@ -4,19 +4,51 @@ blueprints:
   - type: docker
     tag: robustrosin/robust:b4dc23c
     file: ../Dockerfile
-    context: b4dc23c.L3
+    context: b4dc23c
     arguments:
-      IS_BUILD_FAILURE: no
-      USE_APT_OLD_RELEASES: no
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: "14.04.5"
+      ROS_DISTRO: indigo
+      CATKIN_PKG: tf2_ros
+      REPO_FORK_URL: https://github.com/robust-rosin/geometry2
+      REPO_BUG_COMMIT: 2b21a3e00a3f96fcd9f194baf6fa160e38fb6c56
+      REPO_FIX_COMMIT: 4e442e278e751c4563b83cd5b2e01556ba3e6e45
+
+  - type: docker
+    tag: robustrosin/robust:12605ab
+    file: ../Dockerfile
+    context: b4dc23c
+    arguments:
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
       UBUNTU_VERSION: 14.04.5
       ROS_DISTRO: indigo
       CATKIN_PKG: tf2_ros
-      REPO_FORK_URL: https://github.com/robust-rosin/b4dc23c_geometry2
+      REPO_FORK_URL: https://github.com/robust-rosin/geometry2
+      # FIXME branches need to be created.
+      REPO_BUG_COMMIT: a9dbba2e265458ab26a9c2ced03f604c51b95312
+      REPO_FIX_COMMIT: b4dc23c54ba06a846c64215a2d8f944c5a1bd036
+
+  - type: docker
+    tag: robustrosin/robust:0af76d5
+    file: ../Dockerfile
+    context: 0af76d5
+    arguments:
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
+      UBUNTU_VERSION: 14.04.5
+      ROS_DISTRO: indigo
+      CATKIN_PKG: tf2_ros
+      REPO_FORK_URL: https://github.com/robust-rosin/geometry2
+      REPO_BUG_COMMIT: 0af76d57ad0a077aa4259706bbd436bc10d27868
+      # FIXME branch missing
+      REPO_FIX_COMMIT: b4dc23c54ba06a846c64215a2d8f944c5a1bd036
 
 bugs:
   - name: robust:b4dc23c
     image: robustrosin/robust:b4dc23c
-    program: tf2
+    program: geometry2
     dataset: robust
     languages:
       - cpp
@@ -27,3 +59,32 @@ bugs:
       type: catkin
       workspace: /ros_ws/src
       time-limit: 300
+
+  - name: robust:12605ab
+    image: robustrosin/robust:12605ab
+    program: geometry2
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
+
+  - name: robust:0af76d5
+    image: robustrosin/robust:0af76d5
+    program: geometry2
+    dataset: robust
+    languages:
+      - cpp
+    source-location: /ros_ws/src
+    test-harness:
+      type: empty
+    compiler:
+      type: catkin
+      workspace: /ros_ws/src
+      time-limit: 300
+

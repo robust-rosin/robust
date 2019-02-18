@@ -1,0 +1,49 @@
+%YAML 1.1
+---
+id: 891cb68
+title: Missing Runtime Dependency
+description: >
+     One of Turtlebot's core packages was missing a runtime dependency
+     in its manifest file, resulting in errors when trying to run the
+     nodes.
+classification: Missing Dependency (no CWE)
+keywords: ['dependencies', 'runtime', 'launch']
+system: turtlebot
+severity: error
+links: []
+bug:
+  phase: runtime-initialization
+  specificity: ROS-specific
+  architectural-location: application-specific code
+  application: mobile robot
+  task: null
+  subsystem: core component
+  package: turtlebot/turtlebot/turtlebot_bringup
+  languages: null
+  detected-by: runtime crash
+  reported-by: contributor
+  issue: https://github.com/turtlebot/turtlebot/issues/113
+  time-reported: 2013-11-05 (17:28)
+  reproducibility: always
+  trace: null
+  reproduction: >
+        geometry2
+fix:
+  repo: https://github.com/turtlebot/turtlebot
+  hash: 891cb680e98694e63a55394140bffdcde43f3f5e
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['turtlebot_bringup/package.xml']
+  languages:
+    - Package XML
+  time: 2013-11-06 (08:29)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - turtlebot_bringup
+  issue: https://github.com/turtlebot/turtlebot/issues/113
+bugzoo:
+  fork-url: https://github.com/robust-rosin/turtlebot
+  is-build-failure: false
+  bug-commit: 981a09902f5b73a24dc63bbde3977b8c6750b583
+  fix-commit: 799db373131fcc022b6bda371a1884f9b23e7a7c

@@ -16,13 +16,39 @@
 #     of the directory inside "source" that will contain the source code for
 #     the package under test).
 #   REPO_FORK_URL -- the URL of the ROBUST fork Git repository for this bug.
+#   REPO_BUG_COMMIT -- the SHA-1 hash for the commit in the forked repository
+#     that provides the buggy version of the code. This version of the code
+#     also contains supplementary files that, where possible, provide a test
+#     case for the bug.
+#   REPO_FIX_COMMIT -- the SHA-1 hash for the commit in the forked repository
+#     that provides the fixed version of the code. This version of the code
+#     also contains supplementary files that, where possible, provide a test
+#     case for the bug.
 #   IS_BUILD_FAILURE -- indicates whether or not the package under test is
 #     expected to encounter a build failure. Accepts values of "True" and
 #     "False".
 #
-ARG ROS_DISTRO
 ARG UBUNTU_VERSION
+
+# we download the forked repository for the package under test to improve
+# build caching
+FROM alpine:3.7 as fork
+ARG REPO_FORK_URL
+RUN apk --no-cache add git
+RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
+ && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
+ && echo "[ROBUST] cloned repo."
+
 FROM ubuntu:${UBUNTU_VERSION}
+ARG ROS_DISTRO
+ARG USE_APT_OLD_RELEASES
+ARG CATKIN_PKG
+ARG REPO_FIX_COMMIT
+ARG REPO_BUG_COMMIT
+ARG IS_BUILD_FAILURE
+
+ENV ROS_DISTRO "${ROS_DISTRO}"
+RUN echo "[ROBUST]: building image for ROS_DISTRO: '${ROS_DISTRO}'"
 
 ENV ROS_WSPACE=/ros_ws
 ENV DEBIAN_FRONTEND=noninteractive
@@ -42,12 +68,15 @@ CMD ["bash"]
 # fix the package sources list to use archival sources
 # https://askubuntu.com/questions/1000291/error-the-repository-xxx-does-not-have-a-release-file
 # https://askubuntu.com/questions/91815/how-to-install-software-or-upgrade-from-an-old-unsupported-release
-ARG USE_APT_OLD_RELEASES
-RUN if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
-      sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' \
+RUN echo "[ROBUST] use archival sources? '${USE_APT_OLD_RELEASES}'" \
+ && if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
+      echo "[ROBUST] using archival sources" \
+      && sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' \
         /etc/apt/sources.list \
       && apt-get update \
       && apt-get dist-upgrade \
+    ; else \
+      echo "[ROBUST] not using archival sources" \
     ; fi
 
 # install bootstrap utilities
@@ -60,9 +89,10 @@ RUN apt-get update \
       cmake \
       wget \
       lsb-release \
- && pip install --upgrade pip==9.0.3 \
- && pip install setuptools \
- && pip install --upgrade \
+ && pip --version \
+ && pip install --upgrade -i https://pypi.python.org/simple pip==9.0.3
+RUN pip install --upgrade setuptools
+RUN pip install --upgrade \
       wheel \
       rosdep \
       wstool \
@@ -76,22 +106,19 @@ RUN apt-get update \
 RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list \
  && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
 
+# optionally add packages.ros.org as a source
+ARG USE_OSRF_REPOS
+RUN if [ "${USE_OSRF_REPOS}" = "True" ]; then \
+         echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list \
+       && wget http://packages.ros.org/ros.key -O - | apt-key add - \
+    ; fi
+
 # install the following for 17.10: gnupg dirmngr
 
 # setup workspace and import packages
 WORKDIR ${ROS_WSPACE}
 COPY deps.rosinstall .
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/deps.rosinstall
-
-# generate fix and unfix scripts
-RUN echo "#!/bin/bash\n\
-pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
-git clean -dfx && \n\
-git checkout \"robust_\$1\" && \n\
-echo \"switched mode to: \$1\"" > switch \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' robust_fixed_released" > fix \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' robust_buggy_released" > unfix \
- && chmod +x fix unfix switch
 
 # install system dependencies
 RUN apt-get clean \
@@ -119,13 +146,27 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/devel_isolated
 
 # download & build Package Under Test
-ARG CATKIN_PKG
-ARG REPO_FORK_URL
-RUN mkdir src \
- && git clone "${REPO_FORK_URL}" "src/repo-under-test" \
- && cd src/repo-under-test \
- && git reset --hard eol-cob3 \
- && git checkout -b robust_buggy_released
+COPY --from=fork /tmp/repo-under-test src/repo-under-test
+ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
+ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
+RUN cd src/repo-under-test \
+ && echo "[ROBUST] fetching fixed and buggy source code..." \
+ && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}" \
+ && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
+ && git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" \
+ && git fetch --all \
+ && git reset --hard "${REPO_BUG_COMMIT}" \
+ && echo "[ROBUST] fetched fixed and buggy source code."
+
+# generate fix and unfix scripts
+RUN echo "#!/bin/bash\n\
+pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
+git clean -dfx && \n\
+git checkout \"\$1\" && \n\
+echo \"switched mode to: \$1\"" > switch \
+ && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_FIX_COMMIT}\"" > fix \
+ && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_BUG_COMMIT}\"" > unfix \
+ && chmod +x fix unfix switch
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
@@ -136,14 +177,18 @@ RUN mkdir src \
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
 # we use '--only-pkg-with-deps' to avoid building /everything/
-ARG IS_BUILD_FAILURE
-RUN echo "#!/bin/bash\n\
+RUN echo "[ROBUST] creating build script" \
+ && echo "[ROBUST] PUT is provided by catkin package: '${CATKIN_PKG}'" \
+ && echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
           && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" > build.sh \
- && chmod +x build.sh
-RUN if [ "${IS_BUILD_FAILURE}" = "False" ]; then ./build.sh ; fi
+ && chmod +x build.sh \
+ && echo "[ROBUST] created build script"
+RUN echo "[ROBUST] attempting to build PUT..." \
+ && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
+ && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
 
 # automatically generate historical patch
 RUN cd src/repo-under-test \
- && git diff robust_buggy_released robust_fixed_released > "${ROS_WSPACE}/fix.patch"
+ && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch"

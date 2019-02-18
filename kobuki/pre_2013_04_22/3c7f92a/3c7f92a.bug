@@ -1,0 +1,40 @@
+%YAML 1.1
+---
+id: 3c7f92a
+title: Test Suite GUI Crashing Due to API Changes
+description: >
+     Kobuki's test suite uses GUI plugins for rqt in order to plot
+     collected data. This plotting component crashed due to changes in
+     rqt's interface.
+classification: API Incompatibility (no CWE) #EVOLUTION
+keywords: ['rqt', 'rqt_plot', 'test suite', 'testing', 'api']
+system: kobuki
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: ROS-specific
+  architectural-location: application-specific code
+  application: test suite
+  task: testing
+  subsystem: test suite
+  package: yujinrobot/kobuki_desktop/kobuki_qtestsuite
+  languages:
+    - Python
+  detected-by: runtime crash
+  reported-by: member developer
+  issue: https://github.com/yujinrobot/kobuki_desktop/issues/9
+  time-reported: 2013-03-12T04:20:06Z
+  reproducibility: always
+  trace: >
+    Traceback (most recent call last): File "/opt/ros/groovy/lib/python2.7/dist-packages/rqt_plot/plot_widget.py", line 168, in update_plot self.data_plot.redraw() File "/opt/turtlebot/kobuki_desktop/kobuki_qtestsuite/plugins/../src/kobuki_qtestsuite/full_size_data_plot.py", line 54, in redraw data_x, data_y, plot = curve ValueError: too many values to unpack
+fix:
+  repo: https://github.com/yujinrobot/kobuki_desktop
+  hash: 3c7f92a2c6a51b4896e669d0da34b4de90a71914
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_qtestsuite/scripts/kobuki_qtestsuite', 'kobuki_qtestsuite/setup.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/configuration_dock_widget.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/ui/configuration_dock.ui']
+  languages:
+    - Python
+    - XML
+  time: 2013-08-21 (10:23)

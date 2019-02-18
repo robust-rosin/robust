@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 61a75df
+put: kobuki_dashboard
+ros_distro: kinetic
+datetime_reported: 2017-01-30T23:27:06Z
+issue_url: https://github.com/turtlebot/turtlebot/issues/250
+reproduction-images:
+  buggy: 3e1428b67ad1876ea5c57e59e787fca7813b8ebb
+  fixed: 70948a266e2406c16a462bb6c6f6e203971c905e
+  rosdistro: 1e6030a67c95a7d7466eceb080de2ce98f99bea7

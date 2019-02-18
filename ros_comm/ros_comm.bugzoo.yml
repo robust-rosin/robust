@@ -6,11 +6,14 @@ blueprints:
     file: ../Dockerfile
     context: ca23e58
     arguments:
-      IS_BUILD_FAILURE: no
-      USE_APT_OLD_RELEASES: no
+      IS_BUILD_FAILURE: "no"
+      USE_APT_OLD_RELEASES: "no"
       UBUNTU_VERSION: xenial
       ROS_DISTRO: kinetic
       CATKIN_PKG: roscpp
+      REPO_FORK_URL: https://github.com/robust-rosin/ros_comm
+      REPO_BUG_COMMIT: b64b72664f6d64ba0278382de49b1821165a3966
+      REPO_FIX_COMMIT: 348cc17ccb3689febe9adaeeb781a3abc9dbb0f6
 
 bugs:
   - name: robust:ca23e58

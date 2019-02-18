@@ -1,0 +1,60 @@
+%YAML 1.1
+---
+id: 18ffa89
+title: An error in physical robot specification
+description: >
+     A Xacro file refers to wrong wrist of the robot, which results in
+     a wrong physical model being used for simulation.
+     A robotics application needs a description of the physical
+     appearance, shape, etc. of the robot.  This is used, among
+     others, by the simulation tools.  The robot descriptions are
+     stored in URDF files, an XML format. Xacro files are URDF files
+     enriched with macros, mostly for better code reuse (so that
+     similar parts of the robot can be generated).
+     This particular URDF file is specific to the Gazebo physics
+     simulator.  It does not actually define the robot shape. It
+     decorates a robot model from another file with properties
+     specific to this simulation engine.
+     The error seems to be minor. The color of the wrist might be
+     wrong as a result (it is unclear whether the effect of gravity on
+     this wrist will also be wrong, which could be problematic; or
+     perhaps whether this wrist could disappear).
+     The error appeared by copying and pasting, presumably during
+     adapting a description of smaller variant of the same robot, for
+     a bigger version.
+     The file has been created on April 8, 2013.  The fix was
+     committed on Jun 4, 2013. The repository in which this work has
+     been done, seems to be deleted by now.  The bug was on 57 days,
+     but it was fixed before merging into ros-industrial repositories.
+classification: |
+  Wrong Robot Model (no CWE) #PHYSICAL
+  internal classification (cause):
+  internal classification (effect):
+keywords: ['xacro', 'gazebo', 'urdf', 'driver']
+system: universal_robot
+severity: minor-issue
+links: []
+bug:
+  phase: runtime-operation
+  specificity: robotics
+  architectural-location: platform code
+  application: null
+  task: simulation
+  subsystem: driver
+  package: ros-industrial/universal_robot/ur_description
+  languages: null
+  detected-by: developer
+  reported-by: unreported
+  issue: null
+  time-reported: unreported
+  reproducibility: always
+  trace: null
+fix:
+  repo: https://github.com/ros-industrial/universal_robot
+  hash: 18ffa89f797266ea519c2047dcb9416f0f79796b
+  pull-request: https://github.com/ros-industrial/universal_robot/pull/7
+  license: ['BSD']
+  fix-in: ['ur_description/urdf/ur10.gazebo.xacro']
+  languages:
+    - xacro
+  time: 2013-06-06 (19:43)
