@@ -1,66 +1,45 @@
-title: 
-
-description: 
-
+%YAML 1.1
+---
+id: 6c13c78
+title: Working title
+description:
   Most likely a NULL pointer dereference bug.  Precise place hard to establish before we reproduce it. Andrzej has a candidate location, but does not bother to describe before we can reproduce it.
-
-classification: CWE-476 NULL Pointer Dereference
-
-keywords: pointer | null | c++
-
+classification: "CWE-476 NULL Pointer Dereference"
+keywords:
+  - pointer
+  - "null"
 system: core component
-
 severity: error
-
-links: 
-	http://www.boost.org/doc/libs/1_50_0/libs/smart_ptr/shared_ptr.htm | https://stackoverflow.com/questions/621220/null-pointer-with-boostshared-ptr
-
+links:
+  - http://www.boost.org/doc/libs/1_50_0/libs/smart_ptr/shared_ptr.htm
+  - https://stackoverflow.com/questions/621220/null-pointer-with-boostshared-ptr
 bug:
-
   phase: runtime-operation
-
   specificity: general issue
-
   architectural-location: platform code
-
   application: N/A
-
   task: N/A
-
   subsystem: generic task component
-
   package: ros/geometry2/tf2
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: N/A
-
   reported-by: member developer
-
-  issue: 
-
-  time-reported: 
-
+  issue: N/A
+  time-reported: N/A
   reproducibility: sometimes
-
-  trace: N/A
+  trace:
     - TODO check out test/simple_tf2_core.cpp for how to set up a trace. Then
     - TODO there is some inspiration on how to us allFramesAsYAML in speed_test.cpp (commented out, but shows context)
-    - it appears that calling BufferCore::lookupOrInsertFrameNumber with some messy string will put a NULL object in the back that should cause the trouble. 
+    - it appears that calling BufferCore::lookupOrInsertFrameNumber with some messy string will put a NULL object in the back that should cause the trouble.
     - after that call allFramesAsYAML and insert an assertion just before line 1337 (see also whether it crashes immediately after )
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 6c13c78a9fd4a9220867f8433243deb00a8d7eb6
-
   pull-request: https://github.com/ros/geometry2/pull/25
-
   license: BSD
-
-  fix-in: tf2/src/buffer_core.cpp
-
-  languages: C++
-
+  fix-in:
+    - tf2/src/buffer_core.cpp
+  languages:
+    - C++
   time: Aug 29, 2013, 1:12 AM GMT+2
