@@ -45,9 +45,9 @@ fix:
   fix-in:
     - mavros/src/plugins/ftp.cpp
   languages: C++
-  time: 2015-07-29 (00:00)
+  time: 2015-07-29T13:27:14+03:00
 time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
-  datetime: 2015-07-29
+  datetime: 2015-07-29T13:27:14+03:00
