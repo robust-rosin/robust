@@ -32,7 +32,7 @@ bug:
   detected-by: runtime crash
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/10
-  time-reported: 2013-04-02 (12:45)
+  time-reported: 2013-04-02T11:45:01Z
   reproducibility: always
   trace: |
     Traceback (most recent call last):

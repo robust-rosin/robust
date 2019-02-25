@@ -35,7 +35,7 @@ bug:
   detected-by: runtime crash
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/180
-  time-reported: 2012-11-27 (15:21)
+  time-reported: 2012-11-27T15:21:53Z
   reproducibility: always
   trace: |
     [FATAL] [1354029622.148262110]: ASSERTION FAILED
