@@ -1,5 +1,22 @@
 # Additional Scripts
 
+## Installation
+
+Make sure to have a Python environment active with the required modules in it.
+
+Use `pip install -r requirements.txt` in this (ie: the `scripts/`) directory to install them with `pip`.
+
+Steps for a virtual environment with everything setup to use these scripts:
+
+```
+$ virtualenv --python=python3 $HOME/robust_venv
+$ source $HOME/robust_venv/bin/activate
+$ pip3 install -r requirements.txt
+```
+
+If you already have a virtual environment for use with BugZoo (see main [README](../README.md)) that could be used as well (just skip creation of a new virtual environment in the steps above).
+
+
 ## `build-rosinstall.py`
 
 Used to conveniently generate a rosinstall file for the bug belonging to
@@ -16,14 +33,16 @@ overwrite any existing `.rosinstall` files. By default, if a `.rosinstall`
 file already exists for a given bug, that file will be skipped.
 
 **Note:** This script assumes that the `rosinstall_generator_time_machine`
-  binary is visible from the `PATH`.
+  script (ie: `rosinstall_generator_tm.sh`) is visible on the `PATH` (to
+  test: try executing `rosinstall_generator_tm.sh` without specifying its
+  exact location).
 
 This script uses the `time-machine` section of a bug description file to
 construct its corresponding `deps.rosinstall` file. The `time-machine`
 section contains the following properties:
 
 * `ros_distro`: specifies the distribution of ROS that should be used.
-  Supported values: `kinetic`, `jade`', `indigo`, `hydro`, `groovy`,
+  Supported values: `kinetic`, `jade`, `indigo`, `hydro`, `groovy`,
   `fuerte`, `electric`.
 * `ros_pkgs`: a list of the names of the packages under test (PUTs).
 * `missing-dependencies`: an optional list of the names of packages that are
