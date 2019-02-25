@@ -40,7 +40,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/235
-  time-reported: 2013-02-25 (07:37)
+  time-reported: 2013-02-25T07:37:24Z
   reproducibility: always
   trace: null
 fix:
