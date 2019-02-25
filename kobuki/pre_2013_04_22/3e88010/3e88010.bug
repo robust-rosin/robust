@@ -24,7 +24,7 @@ bug:
   detected-by: runtime crash
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/234
-  time-reported: 2013-02-25 (04:32)
+  time-reported: 2013-02-25T04:32:32Z
   reproducibility: always
   trace:
 fix:

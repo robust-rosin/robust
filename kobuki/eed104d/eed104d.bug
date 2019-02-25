@@ -24,7 +24,7 @@ bug:
   detected-by: build system
   reported-by: guest user
   issue: https://github.com/yujinrobot/kobuki_core/issues/29
-  time-reported: 2017-03-01 (08:57)
+  time-reported: 2017-03-01T08:57:20Z
   reproducibility: always
   trace: |
     CMake Error at /usr/share/cmake-3.2/Modules/FindPkgConfig.cmake:552 (message):
