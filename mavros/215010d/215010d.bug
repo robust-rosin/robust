@@ -62,7 +62,7 @@ time-machine:
     - mavros
   datetime: 2014-07-01T01:15:08+04:00
 bugzoo:
-  is-build-failure: no
+  is-build-failure: false
   bug-commit: f2b2dfce6fbccd84a60aba48cc14a9cd8ab931cc
   fix-commit: 215010d25409211ccfb35375c218c74c921b1a3a
   fork-urls:
