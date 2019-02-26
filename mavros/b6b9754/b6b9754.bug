@@ -39,9 +39,15 @@ fix:
     - mavros/src/plugins/actuator_control.cpp
   languages:
     - C++
-  time: 2015-03-01 (00:00)
+  datetime: 2015-03-01T20:23:52+01:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  datetime: 2015-03-01
+  datetime: 2015-03-01T20:23:52+01:00
+bugzoo:
+  is-build-failure: true
+  bug-commit: b4050353b12ebb92b59bcaa8845ee3ef32d942cb
+  fix-commit: b6b975421c8242fad83138a67fb026ef0d90704d
+  url-forks:
+    - 'https://github.com/robust-rosin/mavros'

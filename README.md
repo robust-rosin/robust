@@ -7,6 +7,7 @@ This project uses [BugZoo](https://github.com/squaresLab/BugZoo) for managing bu
 To setup the BugZoo environment, we suggest using a Python [virtualenv](https://virtualenv.pypa.io/en/stable) created in a suitable location. In the following example instructions, the venv is placed in the home directory, but that is of course not required.
 
 ```
+$ sudo apt install python3-dev
 $ virtualenv --python=python3 $HOME/bugzoo_venv
 $ source $HOME/bugzoo_venv/bin/activate
 $ pip3 install bugzoo

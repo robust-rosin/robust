@@ -53,9 +53,15 @@ fix:
     - mavros/scripts/mavcmd
   languages:
     - Python
-  time: 2015-06-16 (00:00)
+  time: 2015-06-16T23:12:18+05:30
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  datetime: 2015-06-16
+  datetime: 2015-06-16T23:12:18+05:30
+bugzoo:
+  is-build-failure: false
+  bug-commit: a2a74ec4364a4842b86d3801472d93973e85a872
+  fix-commit: 564f935bc1ddd6c7849923a647ebd3828cde99f0
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
