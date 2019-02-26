@@ -36,7 +36,7 @@ b213df3, kobuki, Yes, Yes, Yes, Yes
 4fb6e7e, mavros, Yes, Yes, Yes, No
 5353982, mavros, Yes, N/A, Yes, N/A
 564f935, mavros, Yes, Yes, Yes, No
-594978d, mavros, No, No, No, No
+594978d, mavros, Yes, Yes, Yes, No
 599c588, mavros, No, No, No, No
 6bb2672, mavros, No, No, No, No
 753226d, mavros, No, No, No, No
