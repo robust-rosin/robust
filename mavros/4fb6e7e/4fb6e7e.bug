@@ -65,6 +65,6 @@ time-machine:
     - mavros
   datetime: 2015-08-02T16:13:18+03:00
 bugzoo:
-  is-build-failure: no
+  is-build-failure: false
   bug-commit: 65aa596f75c383a45b7b275433e24f2dd7b6ec71
   fix-commit: 4fb6e7e8190145ba6fa49fa6e13cc49730885b7f
