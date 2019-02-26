@@ -24,7 +24,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/169
-  time-reported: 2012-11-21 (00:03)
+  time-reported: 2012-11-21T00:03:13Z
   reproducibility: sometimes
   trace:
 fix:
