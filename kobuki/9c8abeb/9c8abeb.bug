@@ -27,7 +27,7 @@ bug:
   detected-by: compiler
   reported-by: guest user
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/25 | https://github.com/yujinrobot/kobuki_desktop/issues/27
-  time-reported: 2014-02-28 (00:52)
+  time-reported: 2014-02-28T00:52:29Z
   reproducibility: always
   trace: ""
   reproduction: >
