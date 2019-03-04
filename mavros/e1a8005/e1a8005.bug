@@ -57,3 +57,5 @@ bugzoo:
   is-build-failure: no
   bug-commit: f6ca8b360873a1c178dbc0cd2d8d70a11d4a9c2c
   fix-commit: e1a80052fbdb8324573c8cce0401b01aa78765ae
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
