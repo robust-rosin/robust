@@ -55,9 +55,16 @@ fix:
     - mavros_msgs/include/mavros_msgs/mavlink_convert.h
   languages:
     - C++
-  time: 2016-09-30 (00:00)
+  time: 2016-09-30T18:53:40+03:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/609
+  datetime: 2016-09-30T18:53:40+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 1ed30ca7a19a697a24c2c01426ca3d9fe13082a8
+  fix-commit: c172409eb3ae3ccce78697d4097db6ed5d9d5721
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
