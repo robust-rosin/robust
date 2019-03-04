@@ -38,7 +38,7 @@ bug:
   detected-by: runtime detection
   reported-by: member developer
   issue: https://github.com/yujinrobot/kobuki/issues/338
-  time-reported: 2014-08-08 (07:28)
+  time-reported: 2014-08-08T06:28:25Z
   reproducibility: always
   trace: null
   reproduction: >

@@ -52,9 +52,16 @@ fix:
     - mavros/src/mavros/command.py
   languages:
     - Python
-  time: 2016-01-22 (00:00)
+  time: 2016-01-22T09:10:42+03:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/478
+  datetime: 2016-01-22T09:10:42+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 18131c8cb55748214ad2b455cc2ecb30f7657b05
+  fix-commit: bdda1fab32a9d084cfe980fe4f364b5eb35173e0
+  fork-urls:
+    - https://github.com/robust-rosin/mavros

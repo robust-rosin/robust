@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 import warnings
 
@@ -47,8 +48,9 @@ def main():
             is_build_failure = desc['bugzoo']['is-build-failure']
             sha_bug = desc['bugzoo']['bug-commit']
             sha_fix = desc['bugzoo']['fix-commit']
+            url_forks = desc['bugzoo']['fork-urls']
         except KeyError as err:
-            msg = report_error('missing property [{}]'.format(err))
+            report_error('missing property [{}]'.format(err))
             continue
 
         fn_test = os.path.join(dir_bug, 'test.sh')
@@ -70,17 +72,13 @@ def main():
             continue
         catkin_pkg = ros_pkgs[0]
 
-        # FIXME determine fork URL
-        if 'bugzoo' in desc and 'fork-url' in desc['bugzoo']:
-            url_fork = desc['bugzoo']['fork-url']
-        else:
-            url_fork = ({
-                'kobuki': 'https://github.com/robust-rosin/kobuki',
-                'geometry2': 'https://github.com/robust-rosin/geometry2',
-                'universal_robot': 'https://github.com/robust-rosin/universal_robot',
-                'ros_comm': 'https://github.com/robust-rosin/ros_comm',
-                'mavros': 'https://github.com/robust-rosin/mavros'
-            })[catkin_pkg]
+        if not isinstance(url_forks, list):
+            report_error("'bugzoo.url-forks' should be a list")
+            continue
+
+        if len(url_forks) > 1:
+            warnings.warn("build-bugzoo.py does not currently support multiple PUTs")
+            continue
 
         # determine Ubuntu version based on ROS distro
         ubuntu_version = ({
@@ -104,8 +102,8 @@ def main():
             'USE_OSRF_REPOS': use_osrf_repos,
             'UBUNTU_VERSION': ubuntu_version,
             'ROS_DISTRO': ros_distro,
-            'CATKIN_PKG': catkin_pkg,
-            'REPO_FORK_URL': url_fork,
+            'CATKIN_PKG': catkin_pkg,  # FIXME
+            'REPO_FORK_URL': url_forks[0],  # FIXME
             'REPO_BUG_COMMIT': sha_bug,
             'REPO_FIX_COMMIT': sha_fix
         }
@@ -120,7 +118,7 @@ def main():
         bugs.append({
             'name': 'robust:{}'.format(bug_id),
             'image': name_image,
-            'program': package,
+            'program': catkin_pkg,
             'dataset': 'robust',
             'languages': ['cpp'],  # FIXME
             'source-location': '/ros_ws/src',

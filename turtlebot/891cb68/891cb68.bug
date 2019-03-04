@@ -26,6 +26,8 @@ bug:
   time-reported: 2013-11-05 (17:28)
   reproducibility: always
   trace: null
+  reproduction: >
+        geometry2
 fix:
   repo: https://github.com/turtlebot/turtlebot
   hash: 891cb680e98694e63a55394140bffdcde43f3f5e
@@ -35,3 +37,13 @@ fix:
   languages:
     - Package XML
   time: 2013-11-06 (08:29)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - turtlebot_bringup
+  issue: https://github.com/turtlebot/turtlebot/issues/113
+bugzoo:
+  fork-url: https://github.com/robust-rosin/turtlebot
+  is-build-failure: false
+  bug-commit: 981a09902f5b73a24dc63bbde3977b8c6750b583
+  fix-commit: 799db373131fcc022b6bda371a1884f9b23e7a7c
