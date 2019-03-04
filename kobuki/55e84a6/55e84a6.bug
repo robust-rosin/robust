@@ -23,7 +23,7 @@ bug:
   detected-by: testing violation
   reported-by: member developer
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/33
-  time-reported: 2014-08-08 (07:25)
+  time-reported: 2014-08-08T06:25:24Z
   reproducibility: always
   trace: |
     PluginManager._load_plugin() could not load plugin "kobuki_qtestsuite/Kobuki Test Suite":
