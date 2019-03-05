@@ -47,9 +47,11 @@ fix:
   languages: C++
   time: 2015-07-29T13:27:14+03:00
 time-machine:
-  ros_distro: hydro
+  ros_distro: indigo
   ros_pkgs:
     - mavros
+  missing-dependencies:
+    - eigen_conversions
   datetime: 2015-07-29T13:27:14+03:00
 bugzoo:
   is-build-failure: false
