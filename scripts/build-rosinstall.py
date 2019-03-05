@@ -4,7 +4,6 @@ import argparse
 import logging
 import subprocess
 import shutil
-import typing
 
 import docker
 import yaml
