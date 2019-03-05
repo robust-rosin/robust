@@ -47,9 +47,17 @@ fix:
     - mavros_extras/src/servo_state_publisher.cpp
   languages:
     - C++
-  time: 2015-09-17 (00:00)
+  time: 2015-09-17T19:22:06+03:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/387
+  missing-dependencies:
+    - mavros_extras
+  datetime: 2015-09-17T19:22:06+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: ef384edac7e0f5f6ab4145bc462e1cc2c43d91dc
+  fix-commit: 753226d93a735ba01744620b5654b8a038d1c89d
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
