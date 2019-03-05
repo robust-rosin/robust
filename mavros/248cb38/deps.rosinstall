@@ -83,10 +83,6 @@
     uri: https://github.com/mavlink/mavros-release/archive/release/indigo/libmavconn/0.12.0-0.tar.gz
     version: mavros-release-release-indigo-libmavconn-0.12.0-0
 - tar:
-    local-name: mavros/mavros
-    uri: https://github.com/mavlink/mavros-release/archive/release/indigo/mavros/0.12.0-0.tar.gz
-    version: mavros-release-release-indigo-mavros-0.12.0-0
-- tar:
     local-name: message_generation
     uri: https://github.com/ros-gbp/message_generation-release/archive/release/indigo/message_generation/0.2.10-0.tar.gz
     version: message_generation-release-release-indigo-message_generation-0.2.10-0
@@ -234,4 +230,11 @@
     local-name: std_msgs
     uri: https://github.com/ros-gbp/std_msgs-release/archive/release/indigo/std_msgs/0.5.9-1.tar.gz
     version: std_msgs-release-release-indigo-std_msgs-0.5.9-1
-
+- tar:
+    local-name: geometry/eigen_conversions
+    uri: https://github.com/ros-gbp/geometry-release/archive/release/indigo/eigen_conversions/1.11.7-0.tar.gz
+    version: geometry-release-release-indigo-eigen_conversions-1.11.7-0
+- tar:
+    local-name: orocos_kinematics_dynamics/orocos_kdl
+    uri: https://github.com/smits/orocos-kdl-release/archive/release/indigo/orocos_kdl/1.3.0-0.tar.gz
+    version: orocos-kdl-release-release-indigo-orocos_kdl-1.3.0-0
