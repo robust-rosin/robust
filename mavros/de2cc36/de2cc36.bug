@@ -45,7 +45,7 @@ fix:
     - C++
   time: 2016-06-23T16:21:01+03:00
 time-machine:
-  ros_distro: indigo
+  ros_distro: kinetic
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/561
