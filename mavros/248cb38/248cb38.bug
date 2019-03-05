@@ -52,6 +52,8 @@ time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
+  missing-dependencies:
+    - eigen_conversions
   datetime: 2015-07-28T14:18:43-04:00
 bugzoo:
   is-build-failure: false
