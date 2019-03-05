@@ -130,10 +130,6 @@ def build_file(fn_bug_desc, overwrite=False):
     contents = yaml.dump([{'tar': e} for e in deps.values()],
                          default_flow_style=False)
 
-    # remove PUTs
-    contents = yaml.dump([e for e in yaml.load(contents)
-                          if e['local-name'] not in ros_pkgs])
-
     # write to rosinstall file
     with open(fn_rosinstall, 'w') as f:
         f.write(contents)
