@@ -91,7 +91,7 @@ def build_file(fn_bug_desc, overwrite=False):
 
     cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
     cmd += ros_pkgs + missing_deps
-    cmd += ['--deps', '--deps-only', '--tar']
+    cmd += ['--deps', '--tar']
     logger.debug("executing command: %s", ' '.join(cmd))
 
     try:
@@ -106,6 +106,10 @@ def build_file(fn_bug_desc, overwrite=False):
 
     # updated repository names
     contents = contents.replace('geometry_experimental', 'geometry2')
+
+    # remove PUTs
+    contents = yaml.dump([e for e in yaml.load(contents)
+                          if e['local-name'] not in ros_pkgs])
 
     # write to rosinstall file
     with open(fn_rosinstall, 'w') as f:
