@@ -128,7 +128,7 @@ def build_file(fn_bug_desc, overwrite=False):
 
     # updated repository names
     if 'geometry_experimental' in contents:
-        msg = "renamed 'geometry_experimental' entries to 'geometry2'"
+        msg = "updated 'geometry_experimental' URLs to refer to the 'geometry2' repository (it was renamed in https://github.com/ros/geometry2/issues/160)"
         comment = '# build-rosinstall.py: {}\n'.format(msg)
         logger.warning(msg)
         contents = contents.replace('geometry_experimental', 'geometry2')
