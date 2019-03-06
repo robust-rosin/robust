@@ -61,9 +61,6 @@ def _time_machine(packages,
                        err.returncode, fn_bug_desc)
         return
 
-    # updated repository names
-    contents = contents.replace('geometry_experimental', 'geometry2')
-
     return {e['tar']['local-name']: e['tar'] for e in yaml.load(contents)}
 
 
@@ -128,6 +125,14 @@ def build_file(fn_bug_desc, overwrite=False):
 
     contents = yaml.dump([{'tar': e} for e in deps.values()],
                          default_flow_style=False)
+
+    # updated repository names
+    if 'geometry_experimental' in contents:
+        msg = "updated 'geometry_experimental' URLs to refer to the 'geometry2' repository (it was renamed in https://github.com/ros/geometry2/issues/160)"
+        comment = '# build-rosinstall.py: {}\n'.format(msg)
+        logger.warning(msg)
+        contents = contents.replace('geometry_experimental', 'geometry2')
+        contents = comment + contents
 
     # write to rosinstall file
     with open(fn_rosinstall, 'w') as f:
