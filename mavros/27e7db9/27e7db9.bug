@@ -39,9 +39,15 @@ fix:
   fix-in: libmavconn/CMakeLists.txt
   languages:
     - CMake
-  time: 2014-11-04 (00:00)
+  time: 2014-11-03T12:18:48+03:00
 time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/162
+  datetime: 2014-11-03T12:18:48+03:00
+bugzoo:
+  is-build-failure: true
+  bug-commit: 2a257e378845f76a88cb81152f4212a59cffe9f3
+  fix-commit: 27e7db9d504359d05830fbc9553fd1fd1af3aab2
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
