@@ -43,7 +43,13 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/324
   time-reported: 2014-04-21T06:32:43Z
   reproducibility: always
-  trace:
+  trace: n/a
+  reproduction-images:
+    buggy: 973236d0584ec2976e3ba0fdf515032545ed56b4
+    fixed: 56ae36a85afedf21b58c4c375101f983dbc7123f
+    rosdistro: c103f398285c7bb2dfc4c69ca5991e5425850f10
+    note: > Had to cut some parts of the original code, so that
+            the node would not require the hardware to test.
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 6e748c1df1024847de91d899506ae872759d1094
