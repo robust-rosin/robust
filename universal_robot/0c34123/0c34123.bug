@@ -48,7 +48,12 @@ bug:
   issue: null
   time-reported: unreported
   reproducibility: always
-  trace:
+  trace: N/A
+  reproduction-images:
+    buggy: b26b61d579e892f85e325da72d49b9f93c5bcf64
+    fixed: 0c34123c779d4076a75acf892571f8ec4aa018cc
+    rosdistro: 07d2e30b
+    note: This is a build bug. Testing it is trivial.
 fix:
   repo: https://github.com/ros-industrial/universal_robot
   hash: 0c34123c779d4076a75acf892571f8ec4aa018cc
