@@ -67,17 +67,12 @@ def main():
             report_error("'is_build_failure' should be a boolean")
             continue
 
-        if len(ros_pkgs) > 1:
-            warnings.warn('BugZoo file does not currently support multiple PUTs')
-            continue
-        catkin_pkg = ros_pkgs[0]
-
         if not isinstance(url_forks, list):
             report_error("'bugzoo.url-forks' should be a list")
             continue
 
         if len(url_forks) > 1:
-            warnings.warn("build-bugzoo.py does not currently support multiple PUTs")
+            report_error("BugZoo file does not support multiple forks.")
             continue
 
         # determine Ubuntu version based on ROS distro
