@@ -37,7 +37,7 @@ RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
  && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
  && echo "[ROBUST] cloned repo."
 
-FROM ubuntu:${UBUNTU_VERSION} as buggy
+FROM ubuntu:${UBUNTU_VERSION} as _buggy
 ARG ROS_DISTRO
 ARG USE_APT_OLD_RELEASES
 ARG REPO_FIX_COMMIT
@@ -179,4 +179,29 @@ RUN echo "[ROBUST] attempting to build PUT..." \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
  && catkin init \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
-COPY test.sh .
+
+# we build the fixed image on top of the buggy image
+FROM _buggy as _fixed
+
+# TODO: build additional/changed dependencies via fixed.rosinstall
+RUN cd src/repo-under-test \
+ && echo "[ROBUST] checking out fix commit" \
+ && git checkout "${REPO_FIX_COMMIT}" \
+ && echo "[ROBUST] checked out fix commit: ${REPO_FIX_COMMIT}" \
+ && echo "[ROBUST] running rosdep on fixed version" \
+ && rosdep update \
+ && rosdep install --from-paths src -i --rosdistro=${ROS_DISTRO} -y \
+      --skip-keys="python-rosdep python-catkin-pkg python-rospkg" \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* \
+ && echo "[ROBUST] finished running rosdep on fixed version" \
+ && echo "[ROBUST] building fixed version" \
+ && ./build.sh \
+ && echo "[ROBUST] finished building fixed version"
+
+# we use a separate build stage to add the test script to avoid breaking
+# the build cache and doing unnecessary work
+FROM _buggy as buggy
+COPY test.sh
+FROM _fixed as fixed
+COPY test.sh
