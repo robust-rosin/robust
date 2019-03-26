@@ -133,7 +133,7 @@ RUN cd /usr/src/gtest \
  && cmake CMakeLists.txt \
  && make
 
-# build workspace and install source-based dependencies
+# build workspace and install source-based dependencies for buggy version
 RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
       --install \
       --install-space /opt/ros/${ROS_DISTRO} \
@@ -143,7 +143,7 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/build_isolated \
        ${ROS_WSPACE}/devel_isolated
 
-# download & build Package Under Test
+# download & build PUTs
 COPY --from=fork /tmp/repo-under-test src/repo-under-test
 ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
 ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
@@ -154,7 +154,9 @@ RUN cd src/repo-under-test \
  && git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" \
  && git fetch --all \
  && git reset --hard "${REPO_BUG_COMMIT}" \
- && echo "[ROBUST] fetched fixed and buggy source code."
+ && echo "[ROBUST] fetched fixed and buggy source code." \
+ && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch" \
+ && echo "[ROBUST] built historical patch."
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
@@ -178,7 +180,3 @@ RUN echo "[ROBUST] attempting to build PUT..." \
  && catkin init \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
-
-# automatically generate historical patch
-RUN cd src/repo-under-test \
- && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch"
