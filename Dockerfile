@@ -12,6 +12,7 @@
 #     If set to true, the resulting Docker image will attempt to use archival
 #     package sources. Allows "apt-get" to be used with versions of Ubuntu
 #     that are no longer maintained.
+#   CATKIN_PACKAGES -- the names of the packages under test.
 #   REPO_FORK_URL -- the URL of the ROBUST fork Git repository for this bug.
 #   REPO_BUG_COMMIT -- the SHA-1 hash for the commit in the forked repository
 #     that provides the buggy version of the code. This version of the code
@@ -95,6 +96,7 @@ RUN pip install --upgrade \
       rosinstall \
       rospkg \
       catkin_pkg \
+      catkin_tools \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -172,14 +174,16 @@ echo \"switched mode to: \$1\"" > switch \
 # package(s) under test.
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
-# we use '--only-pkg-with-deps' to avoid building /everything/
+ARG CATKIN_PACKAGES
+ENV CATKIN_PACKAGES "${CATKIN_PACKAGES}"
 RUN echo "[ROBUST] creating build script" \
  && echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
-          && catkin build" > build.sh \
+          && catkin build ${CATKIN_PACKAGES}" > build.sh \
  && chmod +x build.sh \
  && echo "[ROBUST] created build script"
 RUN echo "[ROBUST] attempting to build PUT..." \
+ && echo "[ROBUST] building packages: ${CATKIN_PACKAGES}" \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
