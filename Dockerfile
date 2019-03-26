@@ -37,7 +37,7 @@ RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
  && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
  && echo "[ROBUST] cloned repo."
 
-FROM ubuntu:${UBUNTU_VERSION} as _buggy
+FROM ubuntu:${UBUNTU_VERSION} as temp_buggy
 ARG ROS_DISTRO
 ARG USE_APT_OLD_RELEASES
 ARG REPO_FIX_COMMIT
@@ -181,7 +181,7 @@ RUN echo "[ROBUST] attempting to build PUT..." \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 
 # we build the fixed image on top of the buggy image
-FROM _buggy as _fixed
+FROM temp_buggy as temp_fixed
 
 # TODO: build additional/changed dependencies via fixed.rosinstall
 RUN cd src/repo-under-test \
@@ -201,7 +201,7 @@ RUN cd src/repo-under-test \
 
 # we use a separate build stage to add the test script to avoid breaking
 # the build cache and doing unnecessary work
-FROM _buggy as buggy
-COPY test.sh
-FROM _fixed as fixed
-COPY test.sh
+FROM temp_buggy as buggy
+COPY test.sh .
+FROM temp_fixed as fixed
+COPY test.sh .
