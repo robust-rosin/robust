@@ -37,7 +37,7 @@ RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
  && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
  && echo "[ROBUST] cloned repo."
 
-FROM ubuntu:${UBUNTU_VERSION}
+FROM ubuntu:${UBUNTU_VERSION} as buggy
 ARG ROS_DISTRO
 ARG USE_APT_OLD_RELEASES
 ARG REPO_FIX_COMMIT
