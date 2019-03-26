@@ -57,8 +57,8 @@ def _time_machine(packages,
                              stdout=subprocess.PIPE)
         contents = res.stdout.decode('utf-8')
     except subprocess.CalledProcessError as err:
-        logger.warning("time machine failed (return code: %d) for bug [%s]",
-                       err.returncode, fn_bug_desc)
+        logger.warning("time machine failed (return code: %d)",
+                       err.returncode)
         return
 
     return {e['tar']['local-name']: e['tar'] for e in yaml.load(contents)}
