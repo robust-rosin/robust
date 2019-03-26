@@ -156,16 +156,6 @@ RUN cd src/repo-under-test \
  && git reset --hard "${REPO_BUG_COMMIT}" \
  && echo "[ROBUST] fetched fixed and buggy source code."
 
-# generate fix and unfix scripts
-RUN echo "#!/bin/bash\n\
-pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
-git clean -dfx && \n\
-git checkout \"\$1\" && \n\
-echo \"switched mode to: \$1\"" > switch \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_FIX_COMMIT}\"" > fix \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_BUG_COMMIT}\"" > unfix \
- && chmod +x fix unfix switch
-
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
 # to have correctly listed all dependencies ..
