@@ -189,6 +189,8 @@ RUN cd src/repo-under-test \
  && git checkout "${REPO_FIX_COMMIT}" \
  && echo "[ROBUST] checked out fix commit: ${REPO_FIX_COMMIT}" \
  && echo "[ROBUST] running rosdep on fixed version" \
+ && cd "${ROS_WSPACE}" \
+ && apt-get update \
  && rosdep update \
  && rosdep install --from-paths src -i --rosdistro=${ROS_DISTRO} -y \
       --skip-keys="python-rosdep python-catkin-pkg python-rospkg" \
