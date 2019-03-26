@@ -185,6 +185,7 @@ RUN echo "[ROBUST] creating build script" \
 RUN echo "[ROBUST] attempting to build PUT..." \
  && echo "[ROBUST] building packages: ${CATKIN_PACKAGES}" \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
+ && catkin init \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
 
