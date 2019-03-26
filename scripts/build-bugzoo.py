@@ -102,7 +102,6 @@ def main():
             'USE_OSRF_REPOS': use_osrf_repos,
             'UBUNTU_VERSION': ubuntu_version,
             'ROS_DISTRO': ros_distro,
-            'CATKIN_PKG': catkin_pkg,  # FIXME
             'REPO_FORK_URL': url_forks[0],  # FIXME
             'REPO_BUG_COMMIT': sha_bug,
             'REPO_FIX_COMMIT': sha_fix
