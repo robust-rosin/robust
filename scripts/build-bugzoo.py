@@ -112,7 +112,6 @@ def main():
         bugs.append({
             'name': 'robust:{}'.format(bug_id),
             'image': name_image,
-            'program': catkin_pkg,
             'dataset': 'robust',
             'languages': ['cpp'],  # FIXME
             'source-location': '/ros_ws/src',
