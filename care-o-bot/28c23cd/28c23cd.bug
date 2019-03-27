@@ -21,7 +21,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/catkin/CMakeLists.txt; 7.3']
 bug:
-  phase: deployment-time
+  phase: build-time
   specificity: ROS-specific
   architectural-location: application-specific
   application: N/A
@@ -34,7 +34,12 @@ bug:
   issue: https://github.com/ipa320/cob_command_tools/issues/118
   time-reported: 2015-09-16 (14:58)
   reproducibility: always
-  trace:
+  trace: N/A
+  reproduction-images:
+    buggy: 220f59bb263d744f79703c432a06c20ee9ef2dee
+    fixed: 28c23cd13e5cbade9776b496518facc07cef59f2
+    rosdistro: 393a5bae
+    note: This is a build bug, and thus testing is trivial.
 fix:
   repo: https://github.com/ipa320/cob_command_tools
   hash: 28c23cd13e5cbade9776b496518facc07cef59f2
