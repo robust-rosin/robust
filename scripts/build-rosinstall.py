@@ -136,6 +136,8 @@ def build_file(fn_bug_desc, overwrite=False):
         msg = "updated 'catkin' version ({}) to 0.5.78 to support --only-pkg-with-deps".format(version_str_catkin)
         header += "# build-rosinstall.py: {}\n".format(msg)
         logger.warning(msg)
+        deps['catkin']['version'] = "catkin-release-release-{}-catkin-0.5.78-0".format(distro)
+        deps['catkin']['uri'] = "https://github.com/ros-gbp/catkin-release/archive/release/{}/catkin/0.5.78-0.tar.gz".format(distro)
 
     contents = yaml.dump([{'tar': e} for e in deps.values()],
                          default_flow_style=False)
