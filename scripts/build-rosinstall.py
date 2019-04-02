@@ -123,6 +123,19 @@ def build_file(fn_bug_desc, overwrite=False):
                        err.returncode, fn_bug_desc)
         return
 
+    # added to the top of the file after processing
+    header = ''
+
+    # ensure catkin >= 0.5.78 (i.e., supports --only-pkg-with-deps)
+    # https://github.com/ros/catkin/commit/913488427d2ff18b808764d1eaf38acead67e18f
+    if not 'catkin' in deps:
+        raise Exception("expected 'catkin' package in .rosinstall file")
+    version_str_catkin = deps['catkin']['version'].split('-')[-2]
+    version_catkin = tuple(map(int, version_str_catkin.split('.')))
+    if version_catkin <= (0, 5, 78):
+        comment = "# build-rosinstall.py: updated 'catkin' version ({}) to 0.5.78 to support --only-pkg-with-deps\n"
+        header += comment.format(version_str_catkin)
+
     contents = yaml.dump([{'tar': e} for e in deps.values()],
                          default_flow_style=False)
 
