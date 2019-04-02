@@ -174,12 +174,13 @@ echo \"switched mode to: \$1\"" > switch \
 # package(s) under test.
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
+# NOTE assumes catkin >= 0.5.78 (supports --only-pkg-with-deps)
 ARG CATKIN_PACKAGES
 ENV CATKIN_PACKAGES "${CATKIN_PACKAGES}"
 RUN echo "[ROBUST] creating build script" \
  && echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
-          && catkin_make -DCATKIN_WHITELIST_PACKAGES='${CATKIN_PACKAGES}'" > build.sh \
+          && catkin_make --only-pkg-with-deps='${CATKIN_PACKAGES}'" > build.sh \
  && chmod +x build.sh \
  && echo "[ROBUST] created build script"
 RUN echo "[ROBUST] attempting to build PUT..." \
