@@ -132,7 +132,7 @@ def build_file(fn_bug_desc, overwrite=False):
         raise Exception("expected 'catkin' package in .rosinstall file")
     version_str_catkin = deps['catkin']['version'].split('-')[-2]
     version_catkin = tuple(map(int, version_str_catkin.split('.')))
-    if version_catkin <= (0, 5, 78):
+    if version_catkin < (0, 5, 78):
         msg = "updated 'catkin' version ({}) to 0.5.78 to support --only-pkg-with-deps".format(version_str_catkin)
         header += "# build-rosinstall.py: {}\n".format(msg)
         logger.warning(msg)
