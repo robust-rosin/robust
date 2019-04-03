@@ -67,17 +67,12 @@ def main():
             report_error("'is_build_failure' should be a boolean")
             continue
 
-        if len(ros_pkgs) > 1:
-            warnings.warn('BugZoo file does not currently support multiple PUTs')
-            continue
-        catkin_pkg = ros_pkgs[0]
-
         if not isinstance(url_forks, list):
             report_error("'bugzoo.url-forks' should be a list")
             continue
 
         if len(url_forks) > 1:
-            warnings.warn("build-bugzoo.py does not currently support multiple PUTs")
+            report_error("BugZoo file does not support multiple forks.")
             continue
 
         # determine Ubuntu version based on ROS distro
@@ -102,7 +97,7 @@ def main():
             'USE_OSRF_REPOS': use_osrf_repos,
             'UBUNTU_VERSION': ubuntu_version,
             'ROS_DISTRO': ros_distro,
-            'CATKIN_PKG': catkin_pkg,  # FIXME
+            'CATKIN_PACKAGES': ' '.join(ros_pkgs),
             'REPO_FORK_URL': url_forks[0],  # FIXME
             'REPO_BUG_COMMIT': sha_bug,
             'REPO_FIX_COMMIT': sha_fix
@@ -118,7 +113,6 @@ def main():
         bugs.append({
             'name': 'robust:{}'.format(bug_id),
             'image': name_image,
-            'program': catkin_pkg,
             'dataset': 'robust',
             'languages': ['cpp'],  # FIXME
             'source-location': '/ros_ws/src',
