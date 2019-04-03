@@ -1,0 +1,2 @@
+bugzoo>=2.1.26
+packaging~=19.0
