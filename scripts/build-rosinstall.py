@@ -8,6 +8,7 @@ import shutil
 import docker
 import yaml
 import requests
+import packaging.version
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -17,6 +18,8 @@ DOCKER_IMAGE_TIME_MACHINE = 'robust-rosin/rosinstall_generator_time_machine:03'
 BIN_TIME_MACHINE = 'rosinstall_generator_tm.sh'
 
 DESCRIPTION = "build-rosinstall"
+
+MIN_CATKIN_VERSION = packaging.version.Version('0.5.78')
 
 
 def find_bug_descriptions(d):
@@ -130,10 +133,10 @@ def build_file(fn_bug_desc, overwrite=False):
     # https://github.com/ros/catkin/commit/913488427d2ff18b808764d1eaf38acead67e18f
     if not 'catkin' in deps:
         raise Exception("expected 'catkin' package in .rosinstall file")
-    version_str_catkin = deps['catkin']['version'].split('-')[-2]
-    version_catkin = tuple(map(int, version_str_catkin.split('.')))
-    if version_catkin < (0, 5, 78):
-        msg = "updated 'catkin' version ({}) to 0.5.78 to support --only-pkg-with-deps".format(version_str_catkin)
+    version_catkin = packaging.version.parse(deps['catkin']['version'].split('-')[-2])
+    if version_catkin < MIN_CATKIN_VERSION:
+        msg = "updated 'catkin' version ({}) to 0.5.78 to support --only-pkg-with-deps"
+        msg = msg.format(str(version_catkin))
         header += "# build-rosinstall.py: {}\n".format(msg)
         logger.warning(msg)
         deps['catkin']['version'] = "catkin-release-release-{}-catkin-0.5.78-0".format(distro)
