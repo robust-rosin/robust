@@ -19,8 +19,6 @@ BIN_TIME_MACHINE = 'rosinstall_generator_tm.sh'
 
 DESCRIPTION = "build-rosinstall"
 
-MIN_CATKIN_VERSION = packaging.version.Version('0.5.78')
-
 
 def find_bug_descriptions(d):
     buff = []
@@ -134,7 +132,7 @@ def build_file(fn_bug_desc, overwrite=False):
     if not 'catkin' in deps:
         raise Exception("expected 'catkin' package in .rosinstall file")
     version_catkin = packaging.version.parse(deps['catkin']['version'].split('-')[-2])
-    if version_catkin < MIN_CATKIN_VERSION:
+    if version_catkin < packaging.version.Version('0.5.78'):
         msg = "updated 'catkin' version ({}) to 0.5.78 to support --only-pkg-with-deps"
         msg = msg.format(str(version_catkin))
         header += "# build-rosinstall.py: {}\n".format(msg)
