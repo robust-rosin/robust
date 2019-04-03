@@ -12,9 +12,8 @@
 #     If set to true, the resulting Docker image will attempt to use archival
 #     package sources. Allows "apt-get" to be used with versions of Ubuntu
 #     that are no longer maintained.
-#   CATKIN_PKG -- the local name of the package under test (i.e., the name
-#     of the directory inside "source" that will contain the source code for
-#     the package under test).
+#   CATKIN_PACKAGES -- a space-colon-delimited list of the names of the
+#     packages under test.
 #   REPO_FORK_URL -- the URL of the ROBUST fork Git repository for this bug.
 #   REPO_BUG_COMMIT -- the SHA-1 hash for the commit in the forked repository
 #     that provides the buggy version of the code. This version of the code
@@ -42,7 +41,6 @@ RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
 FROM ubuntu:${UBUNTU_VERSION}
 ARG ROS_DISTRO
 ARG USE_APT_OLD_RELEASES
-ARG CATKIN_PKG
 ARG REPO_FIX_COMMIT
 ARG REPO_BUG_COMMIT
 ARG IS_BUILD_FAILURE
@@ -176,15 +174,17 @@ echo \"switched mode to: \$1\"" > switch \
 # package(s) under test.
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
-# we use '--only-pkg-with-deps' to avoid building /everything/
+# NOTE assumes catkin >= 0.5.78 (supports --only-pkg-with-deps)
+ARG CATKIN_PACKAGES
+ENV CATKIN_PACKAGES "${CATKIN_PACKAGES}"
 RUN echo "[ROBUST] creating build script" \
- && echo "[ROBUST] PUT is provided by catkin package: '${CATKIN_PKG}'" \
  && echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
-          && catkin_make --only-pkg-with-deps=${CATKIN_PKG}" > build.sh \
+          && catkin_make --only-pkg-with-deps ${CATKIN_PACKAGES}" > build.sh \
  && chmod +x build.sh \
  && echo "[ROBUST] created build script"
 RUN echo "[ROBUST] attempting to build PUT..." \
+ && echo "[ROBUST] building packages: ${CATKIN_PACKAGES}" \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
