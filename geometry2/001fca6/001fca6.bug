@@ -38,3 +38,9 @@ fix:
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages: C++
   time: 2013-11-04T08:27:53Z
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - tf2
+    - tf2_ros
+  datetime: 2013-11-04T08:27:53Z
