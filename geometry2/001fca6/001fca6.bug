@@ -1,67 +1,40 @@
+%YAML 1.1
+---
 title: An exception thrown by delay function, when Time object not initialized
-
-description:
-  The tf2_ros is a C++ package that is using the ros::Time object to sleep (a C++ object).  This object might not be initialized if running inside rospy (so from python API to ros).  In such case an exception is thrown and sleeping fails. 
-
-  The fix of the bug catches the exception and uses the wall clock time API to delay instead.  
-
+description: >
+  The tf2_ros is a C++ package that is using the ros::Time object to sleep (a C++ object).  This object might not be initialized if running inside rospy (so from python API to ros).  In such case an exception is thrown and sleeping fails.
+  The fix of the bug catches the exception and uses the wall clock time API to delay instead.
   The problem and the fix are ROS-specific.  However the issue of using uninitialized APIs due to configuration issues is a fairly general one.
-
-classification: CWE-908: Use of Uninitialized Resource #RESOURCE
-
-keywords: c++ | exception | time | unitialized | sleep
-
+  The PR is rather uninformative.  The best explanation can be found in the first link in the 'links' section.
+classification: "CWE-908: Use of Uninitialized Resource #RESOURCE"
+keywords: ['c++', 'exception', 'time', 'unitialized', 'sleep']
 system: core component
-
-severity:error
-
-links: 
-  - The PR is rather uninformative.  The best explanation can be found in this comment: https://github.com/ros/geometry2/pull/42/commits/0a034c5b21d7025f24b25051e0ab758f614efa5f#diff-45868e304b80cd09fbee9238de68a079R85 
+severity: error
+links:
+  - https://github.com/ros/geometry2/pull/42/commits/0a034c5b21d7025f24b25051e0ab758f614efa5f#diff-45868e304b80cd09fbee9238de68a079R85
   - http://wiki.ros.org/rospy
 bug:
-
   phase: runtime-operation
-
   specificity: ROS-specific
-
   architectural-location: platform code
-
-  applicatios: N/A
-
-  task: N/A
-
+  applicatios: null
+  task: null
   subsystem: generic task component
-
   package: ros/geometry2/tf2_ros
-
-  languages: C++
-
-  detected-by: 
-
-  reported-by:  
-
-  issue: 
-
-  time-reported: 
-
+  languages:
+    - C++
+  detected-by: null
+  reported-by: null
+  issue: null
+  time-reported: null
   reproducibility: sometimes
-
   trace:
-
-  reproduction: 
-
+  reproduction: null
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 001fca6f33c108c83da4416db3bf43dfeffbe7dd
-
   pull-request: https://github.com/ros/geometry2/pull/42
-
-  license: BSD
-
-  fix-in: tf2_ros/src/buffer.cpp
-
-  languages: C++ 
-
+  license: ['BSD']
+  fix-in: ['tf2_ros/src/buffer.cpp']
+  languages: C++
   time: 2013-11-06 (08:19 GMT+1)
