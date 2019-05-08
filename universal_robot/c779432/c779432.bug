@@ -43,3 +43,9 @@ fix:
   languages:
     - CMake
   time: 2017-01-06 (12:29)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - ur_kinematics
+  issue: https://github.com/ros-industrial/universal_robot/pull/286
+  datetime: 2017-08-04T14:43:51Z
