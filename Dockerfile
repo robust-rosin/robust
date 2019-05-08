@@ -121,11 +121,6 @@ RUN if [ "${USE_OSRF_REPOS}" = "True" ]; then \
        && wget http://packages.ros.org/ros.key -O - | apt-key add - \
     ; fi
 
-# install gtest
-RUN cd /usr/src/gtest \
- && cmake CMakeLists.txt \
- && make
-
 # create an empty workspace
 WORKDIR "${ROS_WSPACE}"
 RUN mkdir src
@@ -157,6 +152,11 @@ RUN apt-get clean \
       --skip-keys="python-rosdep python-catkin-pkg python-rospkg" \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+# install gtest
+RUN cd /usr/src/gtest \
+ && cmake CMakeLists.txt \
+ && make
 
 # build workspace and install source-based dependencies
 RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
