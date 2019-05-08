@@ -184,6 +184,7 @@ RUN cd src/repo-under-test \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
  && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
  && git reset --hard "${REPO_BUG_COMMIT}" \
+ && cd "${ROS_WS}" \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
 
@@ -193,5 +194,6 @@ RUN cd src/repo-under-test \
  && echo "[ROBUST] building fixed PUT..." \
  && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}" \
  && git reset --hard "${REPO_FIX_COMMIT}" \
+ && cd "${ROS_WS}" \
  && ./build.sh
 COPY test.sh .
