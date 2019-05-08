@@ -12,7 +12,8 @@
 #     If set to true, the resulting Docker image will attempt to use archival
 #     package sources. Allows "apt-get" to be used with versions of Ubuntu
 #     that are no longer maintained.
-#   CATKIN_PACKAGES -- the names of the packages under test.
+#   CATKIN_PACKAGES -- a space-colon-delimited list of the names of the
+#     packages under test.
 #   REPO_FORK_URL -- the URL of the ROBUST fork Git repository for this bug.
 #   REPO_BUG_COMMIT -- the SHA-1 hash for the commit in the forked repository
 #     that provides the buggy version of the code. This version of the code
@@ -166,12 +167,13 @@ RUN cd src/repo-under-test \
 # package(s) under test.
 # we now attempt to build the workspace, and suppress any errors if the bug is
 # expected to be a build failure.
+# NOTE assumes catkin >= 0.5.78 (supports --only-pkg-with-deps)
 ARG CATKIN_PACKAGES
 ENV CATKIN_PACKAGES "${CATKIN_PACKAGES}"
 RUN echo "[ROBUST] creating build script" \
  && echo "#!/bin/bash\n\
           source /opt/ros/$ROS_DISTRO/setup.bash \
-          && catkin build ${CATKIN_PACKAGES}" > build.sh \
+          && catkin_make --only-pkg-with-deps ${CATKIN_PACKAGES}" > build.sh \
  && chmod +x build.sh \
  && echo "[ROBUST] created build script"
 RUN echo "[ROBUST] attempting to build PUT..." \
