@@ -36,14 +36,29 @@ ARG UBUNTU_VERSION
 # Arguments:
 #
 # * REPO_FORK_URL
+# * REPO_FIX_COMMIT
+# * REPO_BUG_COMMIT
 #
 ##############################################################################
 FROM alpine:3.7 as fork
 ARG REPO_FORK_URL
 RUN apk --no-cache add git
 RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
- && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
+ && git clone "${REPO_FORK_URL}" /repo-under-test \
+ && cd /repo-under-test \
+ && git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" \
  && echo "[ROBUST] cloned repo."
+ARG REPO_FIX_COMMIT
+ARG REPO_BUG_COMMIT
+RUN cd /repo-under-test \
+ && echo "[ROBUST] fetching latest buggy and fixed verisons..." \
+ && echo "[ROBUST] fetching bug version: ${REPO_BUG_COMMIT}" \
+ && echo "[ROBUST] fetching fix version: ${REPO_FIX_COMMIT}" \
+ && git fetch --all \
+ && echo "[ROBUST] fetched latest buggy and fixed versions." \
+ && echo "[ROBUST] generating patch diff..." \
+ && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > /fix.patch \
+ && echo "[ROBUST] generated patch diff."
 
 
 ##############################################################################
@@ -169,29 +184,12 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/devel_isolated
 
 # download & build Package Under Test
-COPY --from=fork /tmp/repo-under-test src/repo-under-test
-ARG REPO_FIX_COMMIT
+COPY --from=fork fix.patch fix.patch
+COPY --from=fork repo-under-test src/repo-under-test
 ARG REPO_BUG_COMMIT
-ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
-ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
 RUN cd src/repo-under-test \
- && echo "[ROBUST] fetching fixed and buggy source code..." \
- && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}" \
  && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
- && git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" \
- && git fetch --all \
- && git reset --hard "${REPO_BUG_COMMIT}" \
- && echo "[ROBUST] fetched fixed and buggy source code."
-
-# generate fix and unfix scripts
-RUN echo "#!/bin/bash\n\
-pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
-git clean -dfx && \n\
-git checkout \"\$1\" && \n\
-echo \"switched mode to: \$1\"" > switch \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_FIX_COMMIT}\"" > fix \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_BUG_COMMIT}\"" > unfix \
- && chmod +x fix unfix switch
+ && git reset --hard "${REPO_BUG_COMMIT}"
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
@@ -217,7 +215,3 @@ RUN echo "[ROBUST] attempting to build PUT..." \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
-
-# automatically generate historical patch
-RUN cd src/repo-under-test \
- && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch"
