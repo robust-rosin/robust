@@ -35,9 +35,9 @@ bug:
   reproducibility: always
   trace: N/A
   reproduction-images:
-	buggy: -
-	fixed: -
-	rosdistro: ros/rosdistro@f0b14fbd
+    buggy: 7958c81afed1d70322efbd84aa042ddfaf2c54ea
+    fixed: c7794329bf632592bf1d345d1290ff4b8d13580a
+    rosdistro: ros/rosdistro@f0b14fbd
     note: >
         The 'time-machine' section includes a specific timestamp because the
         PUT ('ur_kinematics') was only added into ROS Kinetic at that time
@@ -57,3 +57,10 @@ time-machine:
     - ur_kinematics
   issue: https://github.com/ros-industrial/universal_robot/pull/286
   datetime: 2017-08-04T14:43:51Z
+bugzoo:
+  fork-urls: 
+    - https://github.com/robust-rosin/universal_robot
+  is-build-failure: yes
+  use-osrf: no  # [optional]
+  bug-commit: 7958c81afed1d70322efbd84aa042ddfaf2c54ea
+  fix-commit: c7794329bf632592bf1d345d1290ff4b8d13580a
