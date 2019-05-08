@@ -33,7 +33,15 @@ bug:
   issue: null
   time-reported: null
   reproducibility: always
-  trace:
+  trace: N/A
+  reproduction-images:
+	buggy: -
+	fixed: -
+	rosdistro: ros/rosdistro@f0b14fbd
+    note: >
+        The 'time-machine' section includes a specific timestamp because the
+        PUT ('ur_kinematics') was only added into ROS Kinetic at that time
+        (a few months after the report/fix).
 fix:
   repo: https://github.com/ros-industrial/universal_robot/
   hash: c7794329bf632592bf1d345d1290ff4b8d13580a
