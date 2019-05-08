@@ -29,8 +29,15 @@
 #
 ARG UBUNTU_VERSION
 
-# we download the forked repository for the package under test to improve
-# build caching
+
+##############################################################################
+# Download the forked repository as a build stage to improve build caching.
+#
+# Arguments:
+#
+# * REPO_FORK_URL
+#
+##############################################################################
 FROM alpine:3.7 as fork
 ARG REPO_FORK_URL
 RUN apk --no-cache add git
@@ -38,22 +45,26 @@ RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
  && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
  && echo "[ROBUST] cloned repo."
 
-FROM ubuntu:${UBUNTU_VERSION}
-ARG ROS_DISTRO
-ARG USE_APT_OLD_RELEASES
-ARG REPO_FIX_COMMIT
-ARG REPO_BUG_COMMIT
-ARG IS_BUILD_FAILURE
 
-ENV ROS_DISTRO "${ROS_DISTRO}"
-RUN echo "[ROBUST]: building image for ROS_DISTRO: '${ROS_DISTRO}'"
-
-ENV ROS_WSPACE=/ros_ws
-ENV DEBIAN_FRONTEND=noninteractive
+##############################################################################
+# Build a (reusable) base image for the ROS distro
+#
+# Arguments:
+#
+# * UBUNTU_VERSION
+# * ROS_DISTRO
+# * USE_APT_OLD_RELEASES
+# * USE_OSRF_REPOS
+#
+##############################################################################
+FROM ubuntu:${UBUNTU_VERSION} as distro
+ENV ROS_WSPACE /ros_ws
+ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-
-# establish container entrypoint
+ARG ROS_DISTRO
+ENV ROS_DISTRO "${ROS_DISTRO}"
+RUN echo "[ROBUST]: building image for ROS_DISTRO: '${ROS_DISTRO}'"
 RUN echo "#!/bin/bash \n\
 set -e \n\
 source \"/opt/ros/\${ROS_DISTRO}/setup.bash\" \n\
@@ -66,6 +77,7 @@ CMD ["bash"]
 # fix the package sources list to use archival sources
 # https://askubuntu.com/questions/1000291/error-the-repository-xxx-does-not-have-a-release-file
 # https://askubuntu.com/questions/91815/how-to-install-software-or-upgrade-from-an-old-unsupported-release
+ARG USE_APT_OLD_RELEASES
 RUN echo "[ROBUST] use archival sources? '${USE_APT_OLD_RELEASES}'" \
  && if [ "${USE_APT_OLD_RELEASES}" = "True" ]; then \
       echo "[ROBUST] using archival sources" \
@@ -77,7 +89,6 @@ RUN echo "[ROBUST] use archival sources? '${USE_APT_OLD_RELEASES}'" \
       echo "[ROBUST] not using archival sources" \
     ; fi
 
-# install bootstrap utilities
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       build-essential \
@@ -103,7 +114,6 @@ RUN pip install --upgrade \
 # add OSRF repository to prevent Gazebo installation problems
 RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list \
  && wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
-
 # optionally add packages.ros.org as a source
 ARG USE_OSRF_REPOS
 RUN if [ "${USE_OSRF_REPOS}" = "True" ]; then \
@@ -111,14 +121,29 @@ RUN if [ "${USE_OSRF_REPOS}" = "True" ]; then \
        && wget http://packages.ros.org/ros.key -O - | apt-key add - \
     ; fi
 
-# install the following for 17.10: gnupg dirmngr
+# create an empty workspace
+WORKDIR "${ROS_WSPACE}"
+RUN mkdir src
+
+
+##############################################################################
+# Build an image for the PUT
+#
+# Arguments:
+#
+# * REPO_FIX_COMMIT
+# * REPO_BUG_COMMIT
+# * IS_BUILD_FAILURE
+# * CATKIN_PACKAGES
+#
+##############################################################################
+FROM distro as put
 
 # setup workspace and import packages
-WORKDIR ${ROS_WSPACE}
 COPY deps.rosinstall .
 RUN wstool init -j8 ${ROS_WSPACE}/src ${ROS_WSPACE}/deps.rosinstall
 
-# install system dependencies
+# install binary dependencies via rosdep
 RUN apt-get clean \
  && apt-get update \
  && rosdep init \
@@ -145,6 +170,8 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
 
 # download & build Package Under Test
 COPY --from=fork /tmp/repo-under-test src/repo-under-test
+ARG REPO_FIX_COMMIT
+ARG REPO_BUG_COMMIT
 ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
 ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
 RUN cd src/repo-under-test \
@@ -183,6 +210,8 @@ RUN echo "[ROBUST] creating build script" \
           && catkin_make --only-pkg-with-deps ${CATKIN_PACKAGES}" > build.sh \
  && chmod +x build.sh \
  && echo "[ROBUST] created build script"
+
+ARG IS_BUILD_FAILURE
 RUN echo "[ROBUST] attempting to build PUT..." \
  && echo "[ROBUST] building packages: ${CATKIN_PACKAGES}" \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
