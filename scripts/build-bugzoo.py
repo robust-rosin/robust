@@ -104,12 +104,16 @@ def main():
         }
 
         name_image = 'robustrosin/robust:{}'.format(bug_id)
-        blueprints.append({
+        blueprint = {
             'tag': name_image,
             'file': 'Dockerfile',
             'context': os.path.relpath(dir_bug, DIR_ROBUST),
-            'arguments': build_args
-        })
+            'arguments': build_args,
+            'build-stage': 'bug'
+        }
+        blueprints.append({**blueprint, **{'build-stage': 'bug'}})
+        blueprints.append({**blueprint, **{'build-stage': 'fix'}})
+
         bugs.append({
             'name': 'robust:{}'.format(bug_id),
             'image': name_image,
