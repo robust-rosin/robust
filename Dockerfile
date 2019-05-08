@@ -44,20 +44,20 @@ FROM alpine:3.7 as fork
 ARG REPO_FORK_URL
 RUN apk --no-cache add git
 RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
- && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
- && cd /tmp/repo-under-test \
+ && git clone "${REPO_FORK_URL}" /repo-under-test \
+ && cd /repo-under-test \
  && git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" \
  && echo "[ROBUST] cloned repo."
 ARG REPO_FIX_COMMIT
 ARG REPO_BUG_COMMIT
-RUN cd /tmp/repo-under-test \
+RUN cd /repo-under-test \
  && echo "[ROBUST] fetching latest buggy and fixed verisons..." \
  && echo "[ROBUST] fetching bug version: ${REPO_BUG_COMMIT}" \
  && echo "[ROBUST] fetching fix version: ${REPO_FIX_COMMIT}" \
  && git fetch --all \
  && echo "[ROBUST] fetched latest buggy and fixed versions." \
  && echo "[ROBUST] generating patch diff..." \
- && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > /tmp/fix.patch \
+ && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > /fix.patch \
  && echo "[ROBUST] generated patch diff."
 
 
@@ -184,8 +184,8 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/devel_isolated
 
 # download & build Package Under Test
-COPY --from=fork /tmp/fix.patch fix.patch
-COPY --from=fork /tmp/repo-under-test src/repo-under-test
+COPY --from=fork fix.patch fix.patch
+COPY --from=fork repo-under-test src/repo-under-test
 ARG REPO_BUG_COMMIT
 RUN cd src/repo-under-test \
  && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
