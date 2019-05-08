@@ -188,6 +188,9 @@ RUN cd src/repo-under-test \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
 COPY test.sh .
 
+##############################################################################
+# Build an image for the fixed verison of the PUT
+##############################################################################
 FROM put_base_with_deps as fix
 ARG REPO_FIX_COMMIT
 RUN cd src/repo-under-test \
