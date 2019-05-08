@@ -38,7 +38,7 @@ RUN echo "[ROBUST] cloning repo: '${REPO_FORK_URL}'" \
  && git clone "${REPO_FORK_URL}" /tmp/repo-under-test \
  && echo "[ROBUST] cloned repo."
 
-FROM ubuntu:${UBUNTU_VERSION}
+FROM ubuntu:${UBUNTU_VERSION} as temp_buggy
 ARG ROS_DISTRO
 ARG USE_APT_OLD_RELEASES
 ARG REPO_FIX_COMMIT
@@ -97,6 +97,7 @@ RUN pip install --upgrade \
       rosinstall \
       rospkg \
       catkin_pkg \
+      catkin_tools \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -133,7 +134,7 @@ RUN cd /usr/src/gtest \
  && cmake CMakeLists.txt \
  && make
 
-# build workspace and install source-based dependencies
+# build workspace and install source-based dependencies for buggy version
 RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
       --install \
       --install-space /opt/ros/${ROS_DISTRO} \
@@ -143,7 +144,7 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/build_isolated \
        ${ROS_WSPACE}/devel_isolated
 
-# download & build Package Under Test
+# download & build PUTs
 COPY --from=fork /tmp/repo-under-test src/repo-under-test
 ENV REPO_FIX_COMMIT "${REPO_FIX_COMMIT}"
 ENV REPO_BUG_COMMIT "${REPO_BUG_COMMIT}"
@@ -154,17 +155,9 @@ RUN cd src/repo-under-test \
  && git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" \
  && git fetch --all \
  && git reset --hard "${REPO_BUG_COMMIT}" \
- && echo "[ROBUST] fetched fixed and buggy source code."
-
-# generate fix and unfix scripts
-RUN echo "#!/bin/bash\n\
-pushd '${ROS_WSPACE}/src/repo-under-test' && \n\
-git clean -dfx && \n\
-git checkout \"\$1\" && \n\
-echo \"switched mode to: \$1\"" > switch \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_FIX_COMMIT}\"" > fix \
- && echo "#!/bin/bash\n'${ROS_WSPACE}/switch' \"\${REPO_BUG_COMMIT}\"" > unfix \
- && chmod +x fix unfix switch
+ && echo "[ROBUST] fetched fixed and buggy source code." \
+ && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch" \
+ && echo "[ROBUST] built historical patch."
 
 # dependencies should already have been resolved, built and installed, so we
 # can skip running rosdep here. We do of course depend on the package author
@@ -186,9 +179,33 @@ RUN echo "[ROBUST] creating build script" \
 RUN echo "[ROBUST] attempting to build PUT..." \
  && echo "[ROBUST] building packages: ${CATKIN_PACKAGES}" \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
+ && catkin init \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
-COPY test.sh .
 
-# automatically generate historical patch
+# we build the fixed image on top of the buggy image
+FROM temp_buggy as temp_fixed
+
+# TODO: build additional/changed dependencies via fixed.rosinstall
 RUN cd src/repo-under-test \
- && git diff "${REPO_BUG_COMMIT}" "${REPO_FIX_COMMIT}" > "${ROS_WSPACE}/fix.patch"
+ && echo "[ROBUST] checking out fix commit" \
+ && git checkout "${REPO_FIX_COMMIT}" \
+ && echo "[ROBUST] checked out fix commit: ${REPO_FIX_COMMIT}" \
+ && echo "[ROBUST] running rosdep on fixed version" \
+ && cd "${ROS_WSPACE}" \
+ && apt-get update \
+ && rosdep update \
+ && rosdep install --from-paths src -i --rosdistro=${ROS_DISTRO} -y \
+      --skip-keys="python-rosdep python-catkin-pkg python-rospkg" \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* \
+ && echo "[ROBUST] finished running rosdep on fixed version" \
+ && echo "[ROBUST] building fixed version" \
+ && ./build.sh \
+ && echo "[ROBUST] finished building fixed version"
+
+# we use a separate build stage to add the test script to avoid breaking
+# the build cache and doing unnecessary work
+FROM temp_buggy as buggy
+COPY test.sh .
+FROM temp_fixed as fixed
+COPY test.sh .
