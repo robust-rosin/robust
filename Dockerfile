@@ -32,13 +32,6 @@ ARG UBUNTU_VERSION
 
 ##############################################################################
 # Download the forked repository as a build stage to improve build caching.
-#
-# Arguments:
-#
-# * REPO_FORK_URL
-# * REPO_FIX_COMMIT
-# * REPO_BUG_COMMIT
-#
 ##############################################################################
 FROM alpine:3.7 as fork
 ARG REPO_FORK_URL
@@ -63,14 +56,6 @@ RUN cd /repo-under-test \
 
 ##############################################################################
 # Build a (reusable) base image for the ROS distro
-#
-# Arguments:
-#
-# * UBUNTU_VERSION
-# * ROS_DISTRO
-# * USE_APT_OLD_RELEASES
-# * USE_OSRF_REPOS
-#
 ##############################################################################
 FROM ubuntu:${UBUNTU_VERSION} as distro
 ENV ROS_WSPACE /ros_ws
@@ -142,17 +127,20 @@ RUN mkdir src
 
 
 ##############################################################################
-# Build an image for the PUT
-#
-# Arguments:
-#
-# * REPO_FIX_COMMIT
-# * REPO_BUG_COMMIT
-# * IS_BUILD_FAILURE
-# * CATKIN_PACKAGES
-#
+# Build a base image for the PUT that contains its dependencies
 ##############################################################################
-FROM distro as put
+FROM distro as put_base_with_deps
+ARG CATKIN_PACKAGES
+ENV CATKIN_PACKAGES "${CATKIN_PACKAGES}"
+# NOTE assumes catkin >= 0.5.78 (supports --only-pkg-with-deps)
+RUN echo "[ROBUST] creating build script" \
+ && echo "#!/bin/bash\n\
+          source /opt/ros/$ROS_DISTRO/setup.bash \
+          && echo '[ROBUST] attempting to build PUT...' \
+          && echo \"[ROBUST] building packages: ${CATKIN_PACKAGES}\" \
+          && catkin_make --only-pkg-with-deps ${CATKIN_PACKAGES}" > build.sh \
+ && chmod +x build.sh \
+ && echo "[ROBUST] created build script"
 
 # setup workspace and import packages
 COPY deps.rosinstall .
@@ -166,14 +154,12 @@ RUN apt-get clean \
  && rosdep install --from-paths src -i --rosdistro=${ROS_DISTRO} -y \
       --skip-keys="python-rosdep python-catkin-pkg python-rospkg" \
  && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
-
-# install gtest
-RUN cd /usr/src/gtest \
+ && rm -rf /var/lib/apt/lists/* \
+ && cd /usr/src/gtest \
  && cmake CMakeLists.txt \
  && make
 
-# build workspace and install source-based dependencies
+# install source dependencies, then destroy workspace
 RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
       --install \
       --install-space /opt/ros/${ROS_DISTRO} \
@@ -183,35 +169,34 @@ RUN ${ROS_WSPACE}/src/catkin/bin/catkin_make_isolated \
        ${ROS_WSPACE}/build_isolated \
        ${ROS_WSPACE}/devel_isolated
 
-# download & build Package Under Test
 COPY --from=fork fix.patch fix.patch
 COPY --from=fork repo-under-test src/repo-under-test
+
+
+##############################################################################
+# Build an image for the buggy verison of the PUT
+##############################################################################
+FROM put_base_with_deps as bug
 ARG REPO_BUG_COMMIT
-RUN cd src/repo-under-test \
- && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
- && git reset --hard "${REPO_BUG_COMMIT}"
-
-# dependencies should already have been resolved, built and installed, so we
-# can skip running rosdep here. We do of course depend on the package author
-# to have correctly listed all dependencies ..
-
-# proceed with building the workspace, which now only contains the
-# package(s) under test.
-# we now attempt to build the workspace, and suppress any errors if the bug is
-# expected to be a build failure.
-# NOTE assumes catkin >= 0.5.78 (supports --only-pkg-with-deps)
-ARG CATKIN_PACKAGES
-ENV CATKIN_PACKAGES "${CATKIN_PACKAGES}"
-RUN echo "[ROBUST] creating build script" \
- && echo "#!/bin/bash\n\
-          source /opt/ros/$ROS_DISTRO/setup.bash \
-          && catkin_make --only-pkg-with-deps ${CATKIN_PACKAGES}" > build.sh \
- && chmod +x build.sh \
- && echo "[ROBUST] created build script"
-
 ARG IS_BUILD_FAILURE
-RUN echo "[ROBUST] attempting to build PUT..." \
- && echo "[ROBUST] building packages: ${CATKIN_PACKAGES}" \
+RUN cd src/repo-under-test \
+ && echo "[ROBUST] building buggy PUT..." \
  && echo "[ROBUST] is a build failure expected? ${IS_BUILD_FAILURE}." \
+ && echo "[ROBUST] using bug commit: ${REPO_BUG_COMMIT}" \
+ && git reset --hard "${REPO_BUG_COMMIT}" \
+ && cd "${ROS_WSPACE}" \
  && ./build.sh || [ "${IS_BUILD_FAILURE}" = "yes" ]
+COPY test.sh .
+
+##############################################################################
+# Build an image for the fixed verison of the PUT
+##############################################################################
+FROM put_base_with_deps as fix
+ARG REPO_FIX_COMMIT
+RUN cd src/repo-under-test \
+ && echo "[ROBUST] building fixed PUT..." \
+ && echo "[ROBUST] using fix commit: ${REPO_FIX_COMMIT}" \
+ && git reset --hard "${REPO_FIX_COMMIT}" \
+ && cd "${ROS_WSPACE}" \
+ && ./build.sh
 COPY test.sh .
