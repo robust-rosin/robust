@@ -1,0 +1,61 @@
+%YAML 1.1
+---
+id: 1f01916
+title: Missing dependencies on python_orocos_kdl in the package manifest
+description: >
+  tf2_gemoetry_msgs misses to declare build-time and run-time dependencies on
+  python interface to orocos_kdl library.  This may cause a build  error for
+  the package if built on a system where these libraries are not installed
+  (presumably when tests involving messages are run). Runtime crashes will
+  occur  in python client code that tries to use geometry messages.
+
+  We classify this as a run-time dependency issue, as this is a more serious
+  aspect here. The issue is ROS-specific, given that package.xml is a
+  ROS-specific dependency mechanism.  However, the problem of missing
+  build-time and run-time dependencies is general and could appear in many
+  software systems. 
+classification: Run-time dependency issue (no CWE)
+keywords:
+  - dependency
+system: geometry2
+severity: error
+links: []
+bug:
+  phase: runtime-operation
+  specificity: "ROS-specific"
+  architectural-location: platform code  
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: ros/geometry2/tf2_geometry_msgs
+  languages:
+    - python
+  detected-by: developer
+  reported-by: contributor
+  issue: 
+  time-reported: 
+  reproducibility: always
+  trace: null
+fix:
+  repo: https://github.com/ros/geometry2 
+  hash: 1f019166ccedf8ce5151944f5e33302afaf82679
+  pull-request: https://github.com/ros/geometry2/pull/150 
+  license:
+    - BSD
+  fix-in:
+    - tf2_geometry_msgs/package.xml 
+  languages:
+    - package.xml
+  time: 2016-03-04 03:30 GMT+1
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - geometry2
+  issue: 
+  datetime: 2016-01-27 14:04 GMT+1
+bugzoo:
+  is-build-failure: yes
+  bug-commit: 
+  fix-commit: 
+  fork-urls:
+    - 
