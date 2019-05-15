@@ -40,7 +40,7 @@ def main():
             warnings.warn(m)
 
         with open(fn, 'r') as f:
-            desc = yaml.load(f)
+            desc = yaml.safe_load(f)
         try:
             bug_id = desc['id']
             ros_distro = desc['time-machine']['ros_distro']
