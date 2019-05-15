@@ -13,7 +13,7 @@ description: >
   aspect here. The issue is ROS-specific, given that package.xml is a
   ROS-specific dependency mechanism.  However, the problem of missing
   build-time and run-time dependencies is general and could appear in many
-  software systems. 
+  software systems.
 classification: Run-time dependency issue (no CWE)
 keywords:
   - dependency
@@ -23,7 +23,7 @@ links: []
 bug:
   phase: runtime-operation
   specificity: "ROS-specific"
-  architectural-location: platform code  
+  architectural-location: platform code
   application: N/A
   task: N/A
   subsystem: N/A
@@ -32,18 +32,18 @@ bug:
     - python
   detected-by: developer
   reported-by: contributor
-  issue: 
-  time-reported: 
+  issue: null
+  time-reported: null
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros/geometry2 
+  repo: https://github.com/ros/geometry2
   hash: 1f019166ccedf8ce5151944f5e33302afaf82679
-  pull-request: https://github.com/ros/geometry2/pull/150 
+  pull-request: https://github.com/ros/geometry2/pull/150
   license:
     - BSD
   fix-in:
-    - tf2_geometry_msgs/package.xml 
+    - tf2_geometry_msgs/package.xml
   languages:
     - package.xml
   time: 2016-03-04 03:30 GMT+1
@@ -51,11 +51,11 @@ time-machine:
   ros_distro: indigo
   ros_pkgs:
     - geometry2
-  issue: 
+  issue: null
   datetime: 2016-01-27 14:04 GMT+1
 bugzoo:
   is-build-failure: yes
-  bug-commit: 
-  fix-commit: 
+  bug-commit: null
+  fix-commit: null
   fork-urls:
-    - 
+   - https://github.com/robust-rosin/geometry2
