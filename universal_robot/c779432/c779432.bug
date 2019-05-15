@@ -62,9 +62,9 @@ time-machine:
   issue: https://github.com/ros-industrial/universal_robot/pull/286
   datetime: 2017-08-04T14:43:51Z
 bugzoo:
-  fork-urls: 
+  fork-urls:
     - https://github.com/robust-rosin/universal_robot
-  is-build-failure: yes
-  use-osrf: yes
+  is-build-failure: true
+  use-osrf: true
   bug-commit: 7958c81afed1d70322efbd84aa042ddfaf2c54ea
   fix-commit: c7794329bf632592bf1d345d1290ff4b8d13580a
