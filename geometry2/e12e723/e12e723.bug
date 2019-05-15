@@ -36,6 +36,11 @@ bug:
   time-reported: null
   reproducibility: always
   trace: null
+  reproduction-images:
+    note: >
+        The PUT is a Python image, so even though technically this could be
+        classified as a build failure / problem, the workspace will build
+        as only at runtime the missing package will cause actual problems.
 fix:
   repo: https://github.com/ros/geometry2
   hash: 1f019166ccedf8ce5151944f5e33302afaf82679
