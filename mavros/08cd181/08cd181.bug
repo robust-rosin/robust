@@ -14,8 +14,8 @@ severity: error
 links: []
 bug:
   phase: build-time
-  specificity: "general issue: missing header"
-  architectural-location: N/A
+  specificity: "general issue"
+  architectural-location: "platform code"
   application: N/A
   task: N/A
   subsystem: N/A
@@ -25,13 +25,13 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/mavlink/mavros/issues/161
-  time-reported: 2014-11-02 (00:00)
-  reproducibility: N/A
+  time-reported: 2014-11-02T00:00:00+00:00
+  reproducibility: always 
   trace: N/A
 fix:
   repo: https://github.com/mavlink/mavros
   hash: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
-  pull-request: N/A
+  pull-request: 
   license:
     - BSD
     - GPLv3
