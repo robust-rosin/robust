@@ -26,12 +26,12 @@ bug:
   reported-by: contributor
   issue: https://github.com/mavlink/mavros/issues/161
   time-reported: 2014-11-02T00:00:00+00:00
-  reproducibility: always 
+  reproducibility: always
   trace: N/A
 fix:
   repo: https://github.com/mavlink/mavros
   hash: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
-  pull-request: 
+  pull-request:
   license:
     - BSD
     - GPLv3
