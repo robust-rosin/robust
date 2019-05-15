@@ -60,7 +60,7 @@ time-machine:
   datetime: 2016-01-27T13:04:41Z
 bugzoo:
   is-build-failure: yes
-  bug-commit: null
-  fix-commit: null
+  bug-commit: e4466f0f482dcacf79b9ab9deaa70429e161e3a6
+  fix-commit: e12e7236b48295ec495625937f9d771573420512
   fork-urls:
    - https://github.com/robust-rosin/geometry2
