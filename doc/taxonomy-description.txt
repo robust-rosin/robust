@@ -37,7 +37,7 @@ The following fields relate to the manifestation of the bug itself which is also
 Manifestation of a bug is what the testing terminology calls a *failure*.
 
 phase:
-	In what phase of the software life cycle did the error occur?  Please pick the most appropriate among the following predefined options (each is accompanied by a elaborative description):
+	In what phase of the software life cycle did the error occur?  Please pick the most appropriate among the following predefined options (each is accompanied by an elaborative description):
   - "programming-time" (for errors that are detected by programmers, for instance due to a missing API, etc.)
   - "build-time" (for errors that are reported by the build/make tools that compose the source code prior to compilation)
   - "compile-time" (for errors that are reported by the compiler itself)
@@ -149,26 +149,16 @@ pull-request:
 fix-in:
 	A list of the files that were updated when fixing the bug.
 
-language:
+license:
+  BSD, GPLv3, LGPLv3 (add more if need be, also to the schema)
+
+fix-in:
+  files where the fixing edits where made (a list)
+
+languages:
 	A comma-separated list of the languages involved in fixing the bug. (See list of conventions for naming languages under bug/language.)
 
 time-fixed:
 	The time the bug was fixed (“unfixed” if it was not fixed); e.g.: “2017-12-31 (23:59)”.
   Use the merge commit time into the mainline development if possible.  This is when the fix makes it into the project tree.
 
-=== SIMPLIFICATION ===
-We agree that it seems too much to figure out one single way to simplify bugs and create the benchmark for all bugs in the collection.
-
-We suggest to consider three different strategies and apply them opportunistically, so apply for each bug the strategy/strategies that make most sense for the given bug.  We don't suggest applying all three strategies to each bugs, but allow this.  We also envision that there might be bugs were no simplification has been performed because this was too hard.  Here are the three strategies considered:
-
-L1: a metaphorical simplification.  Write a single file program in a common programming language. The program should be ROS independent but exhibit the same problem.  If a bug occurs in a strange programming language, change the language to C/C++/python.  Encode configuration issues within the logic of the program.  We name this strategy "metaphorical" because it basically tries to use a programming language to tell the story of the original bug. However, it is not necessarily the case that a bug finder able to detect the problem in the simplified buggy program, will be able to do it for the real problem, because significant aspects of the problem have different flavour (for instance service calls have been changed to function calls).
-
-Example: TODO
-
-L2: a "slicing" simplification.  This simplification occurs mostly by removing the irrelevant aspects from the buggy ROS program, possibly merging fragments from multiple files into a single one, plus possibly mocking some aspects of ROS, in order for the program.  The spirit of the original program is preserved. A bug finder able to detect an L2 bug, should in principle face the same fundamental challenges as if it worked on the original buggy program, except perhaps that some aspects unrelated to the bug are removed (for instance the original program used function pointers, but the bug was in no way related to function pointers, then an L2 simplification, would not use function pointers either).  A bug finder working on an L2 benchmark requires more development to work on the actual bugs, but handling L2 bugs should appear as an appropriate milestone of developing such bug finder.
-
-Example: TODO
-
-L3: real bug (not simplified).  Create a script (or if impossible, then informal instructions) allowing to reproduce the real bug. Include repository cloning, setting up workspace, running a test case, etc.
-
-Example: TODO
