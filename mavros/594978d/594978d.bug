@@ -42,4 +42,15 @@ fix:
     - mavros_msgs/include/mavros_msgs/mavlink_convert.h
   languages:
     - C++
-  time: 2015-09-16 (00:00)
+  time: 2015-09-16T17:18:35+03:00
+time-machine:
+  ros_distro: jade
+  ros_pkgs:
+    - mavros
+  datetime: 2015-09-16T17:18:35+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 789c4c1908650f5460578597786a8f43a548f11f
+  fix-commit: 594978da8302b6194bcf63c8119e3b3801242acd
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
