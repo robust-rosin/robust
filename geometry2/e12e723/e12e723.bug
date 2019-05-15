@@ -50,9 +50,9 @@ fix:
 time-machine:
   ros_distro: indigo
   ros_pkgs:
-    - geometry2
+    - tf2_geometry_msgs
   issue: null
-  datetime: 2016-01-27 14:04 GMT+1
+  datetime: 2016-01-27T13:04:41Z
 bugzoo:
   is-build-failure: yes
   bug-commit: null
