@@ -1,5 +1,7 @@
 language: python
 python: ["2.7"]
 cache: pip
-install: pip install yamllint
-script: "find . -type f -name *.bug | xargs yamllint -f parsable -c .yamllint.yml"
+install:
+  - npm install -q -g ajv-cli
+script:
+  - for f in $(find . -type f -name *.bug); do any-json --input-format=yaml $f | ajv --verbose --errors=text -s scripts/robust.json -d /dev/stdin | sed "s/\/dev\/stdin/File/"; done
