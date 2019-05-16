@@ -2,6 +2,6 @@ language: python
 python: ["2.7"]
 cache: pip
 install:
-  - npm install -q -g ajv-cli
+  - npm install -q -g ajv-cli any-json
 script:
-  - for f in $(find . -type f -name *.bug); do any-json --input-format=yaml $f | ajv --verbose --errors=text -s scripts/robust.json -d /dev/stdin | sed "s/\/dev\/stdin/File/"; done
+  - for f in $(find . -type f -name *.bug); do any-json --input-format=yaml $f | ajv --errors=text -s scripts/robust.json -d /dev/stdin | sed "s/\/dev\/stdin/File/"; done
