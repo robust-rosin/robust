@@ -14,8 +14,8 @@ severity: error
 links: []
 bug:
   phase: build-time
-  specificity: "general issue"
-  architectural-location: "platform code"
+  specificity: general issue
+  architectural-location: platform code
   application: N/A
   task: N/A
   subsystem: N/A
