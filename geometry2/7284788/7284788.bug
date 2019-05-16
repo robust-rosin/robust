@@ -5,7 +5,7 @@ description: >
   A loop in tf2_ros/src/buffer.cpp depends on ros::ok evaluation to check whether the system has not stopped.  This works fine if the C++ version of tf is accessed.  However, if the canTransform function is called from the python API (pytf)  ros::ok may be not initialized. This immediately terminates the loop and as a result the waitForTransform function never waits for the transform being available but terminates with a generic uninformative exception. The bug seems to have been fixed, by ignoring the check for pytf (sic!).
   The issue is primarily seen from the tf (not tf2) access, exposed there, because tf has been reimplemented as a wrapper around tf2 at some point, for backwards compatibility.
   This issue is very idiosyncratic to ROS and tf2, but it is an interesting case of inconsistency of the API between Python and C++ (accessing the same C++ function).  In that sense it is also slightly related to bug ede2646 in the collection. It might be interesting to metamorphic testing research, among others.
-classification: CWE-703: Improper Check or Handling of Exceptional Conditions
+classification: "CWE-703: Improper Check or Handling of Exceptional Conditions"
 keywords: ['c++', 'python', 'exception', 'logging']
 system: core component
 severity: error
@@ -28,7 +28,7 @@ bug:
   detected-by: runtime crash
   reported-by: guest user
   issue: https://github.com/ros/geometry2/issues/102
-  time-reported: 2015-04-21 (10:42 AM GMT+2)
+  time-reported: 2015-04-21T08:42:47Z
   reproducibility: always
   trace: >
     import rospy, tf
@@ -40,18 +40,24 @@ bug:
 fix:
   repo: https://github.com/ros/geometry2
   hash: 7284788fc1646c6c6afb42bd0e50969387b4cf34
-  pull-request: 
+  # there is no pull request. Fix appears to have been pushed to the
+  # repository directly by tfoote
+  pull-request: null
   license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++
-  time: 2015-04-22 (20:16 GMT+2)
+  time: 2015-04-22T18:16:30Z
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - tf2_ros
+  # note: this is the author date on the commit that fixed the issue
+  datetime: 2015-04-22T18:16:30Z
 bugzoo:
-  is-build-failure: no
+  is-build-failure: false
   catkin-pkg: tf2_ros
   bug-commit: 3c2df0c2c745722c88081432c7c2be5a24cb4971
   fix-commit: 7284788fc1646c6c6afb42bd0e50969387b4cf34
+  fork-urls:
+    - https://github.com/robust-rosin/geometry2
