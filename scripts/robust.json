@@ -107,8 +107,14 @@
     "fix" : { 
       "type" : "object",
       "properties" : {
-        "repo" : { },
-        "hash" : { },
+        "repo" : { 
+          "type" : "string",
+          "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+)$"
+        },
+        "hash" : {
+          "type" : "string",
+          "pattern" : "^[0-9a-f]{40}$"
+        },
         "pull-request" : { 
           "enum" : [ 
             { "type" : "string", 
