@@ -2,73 +2,149 @@
   "$id": "http://fixme.com/robust.json",
   "$schema": "http://json-schema.org/schema#",
   "title" : "ROBUST bug file schema", 
+
   "type": "object",
   "properties": {
-    "id"             : { "type" : "string", "pattern" : "^([a-f]|[0-9]){7}$" },
-    "title"          : { "type" : "string", "maxLength": 160 },
-    "description"    : { "type" : "string" },
-    "classification" : { "type" : "string" },
-    "keywords"       : { "type" : "array", "items" : { "type" : "string", "maxLength" : 80 } },
-    "system"         : { "type" : "string", "maxLength" : 40 },
-    "severity"       : { "enum": [ "error", "warning", "convention-violation", "bad-smell", "minor-issue" ] },
-    "links"          : { "type" : "array", "items" : { "type" : "string", "format" : "uri" } },
-    "bug"            : { "type" : "object",
-                         "properties" : {
-                           "phase" : { "enum" : [ "programming-time",
-                             "build-time", "compile-time", "deployment-time",
-                             "runtime-initialization", "runtime-operation" ] },
-                           "specificity" : { "enum" : [ "general issue",
-                             "robotics-specific", "ROS-specific",
-                             "application-specific" ] },
-                           "architectural-location" : { "enum" :  [
-                             "application-specific code", "platform code" ] },
-                           "application" : { "type" : "string" },
-                           "task" : { "enum" : [ "perception", "localization",
-                             "planning", "manipulation", "human-robot interaction", 
-                             "simulation", "diagnostics", "SLAM", "N/A" ] },
-                           "subsystem" : { "type" : "string" },
-                           "package" : { "type" : "string", "pattern" : "^([a-z0-9A-Z_]+)([/][a-z0-9A-Z_]+)*$" },
-                           "languages" : { "type" : "array", "items" : { "enum" : [
-                             "python", "cmake", "C++", "package.xml",
-                             "launch.xml", "msg", "srv", "xacro", "urdf" ] } },
-                           "detected-by" : { "enum" : [ "build system",
-                             "compiler", "code scanning tool", "assertions",
-                             "runtime detection", "runtime crash", 
-                             "testing violation", "developer", "user" ] },
-                           "reported-by" : { "enum" : [ "guest user",
-                             "contributor", "member developer", "automatic",
-                             "unreported" ] },
-                           "issue" : { "type" : "string", 
-                                       "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/issues/[0-9]+)?$" }, 
-                           "time-reported" : { "type" : "string", "format" : "date-time" },
-                           "reproducibility" : { "enum" : [ "always", "sometimes", "rare" ] },
-                           "trace" : { "type" : "string" }
-                         },
-                         "required" : [ "phase", "specificity",
-                           "architectural-location", "application", "task",
-                           "subsystem", "package", "languages", "detected-by",
-                           "reported-by", "issue", "time-reported",
-                           "reproducibility", "trace"]
-                       },
-    "fix"            : { "type" : "object",
-                         "properties" : {
-                           "repo" : { },
-                           "hash" : { },
-                           "pull-request" : { "enum" : [ 
-                             { "type" : "string", "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$" }, 
-                             null ] },
-                           "license" : { "type" : "array", "items" : { "enum" : [ "BSD", "GPLv3", "LGPLv3" ] } },
-                           "fix-in" : { "type" : "array", "items" : { "type" : "string" } },
-                           "languages" : { "type" : "array", "items" : { "enum" : [
-                             "python", "cmake", "C++", "package.xml",
-                             "launch.xml", "msg", "srv", "xacro", "urdf" ] } },
-                           "time" : { "type" : "string", "format" : "date-time" }
-                          },
-                        "required" : [ "repo", "hash", "pull-request", "license", "fix-in", "languages", "time" ] 
-                       },
+    "id" : { 
+      "type" : "string", 
+      "pattern" : "^([a-f]|[0-9]){7}$" },
+    "title" : { 
+      "type" : "string", 
+      "maxLength": 160 
+    },
+    "description" : { 
+      "type" : "string" 
+    },
+    "classification" : { 
+      "type" : "string" 
+    },
+    "keywords" : { 
+      "type" : "array", 
+      "items" : { 
+        "type" : "string", 
+        "maxLength" : 80 
+      } 
+    },
+    "system" : { 
+      "type" : "string", 
+      "maxLength" : 40 
+    },
+    "severity" : { 
+      "enum": [ "error", "warning", "convention-violation", "bad-smell",
+        "minor-issue" ] 
+    },
+    "links" : { 
+      "type" : "array", 
+      "items" : { 
+        "type" : "string", 
+        "format" : "uri" 
+      } 
+    },
+    "bug" : { 
+      "type" : "object",
+      "properties" : {
+        "phase" : { 
+          "enum" : [ "programming-time", "build-time", "compile-time",
+            "deployment-time", "runtime-initialization", "runtime-operation" ]
+        },
+        "specificity" : { 
+          "enum" : [ "general issue", "robotics-specific", "ROS-specific",
+            "application-specific" ] 
+        },
+        "architectural-location" : { 
+          "enum" :  [ "application-specific code", "platform code" ] 
+        },
+        "application" : { 
+          "type" : "string" 
+        },
+        "task" : { 
+          "enum" : [ "perception", "localization", "planning", "manipulation",
+            "human-robot interaction", "simulation", "diagnostics", "SLAM",
+            "N/A" ] 
+        },
+        "subsystem" : { 
+          "type" : "string" 
+        },
+        "package" : { 
+          "type" : "string", 
+          "pattern" : "^([a-z0-9A-Z_]+)([/][a-z0-9A-Z_]+)*$" 
+        },
+        "languages" : { 
+          "type" : "array", 
+          "items" : { "enum" : [ "python", "cmake", "C++", "package.xml",
+            "launch.xml", "msg", "srv", "xacro", "urdf" ] } 
+        },
+        "detected-by" : { 
+          "enum" : [ "build system", "compiler", "code scanning tool",
+            "assertions", "runtime detection", "runtime crash", 
+            "testing violation", "developer", "user" ] 
+        },
+        "reported-by" : { 
+          "enum" : [ "guest user", "contributor", "member developer",
+            "automatic", "unreported" ] 
+        },
+        "issue" : { 
+          "type" : "string", 
+          "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/issues/[0-9]+)?$" 
+        }, 
+        "time-reported" : { 
+          "type" : "string", 
+          "format" : "date-time" 
+        },
+        "reproducibility" : { 
+          "enum" : [ "always", "sometimes", "rare" ] 
+        },
+        "trace" : { 
+          "type" : "string" 
+        }
+      },
+      "required" : [ "phase", "specificity",
+        "architectural-location", "application", "task",
+        "subsystem", "package", "languages", "detected-by",
+        "reported-by", "issue", "time-reported",
+        "reproducibility", "trace"] 
+    },
+    "fix" : { 
+      "type" : "object",
+      "properties" : {
+        "repo" : { },
+        "hash" : { },
+        "pull-request" : { 
+          "enum" : [ 
+            { "type" : "string", 
+              "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$" }, 
+            null ] 
+        },
+        "license" : { 
+          "type" : "array", 
+          "items" : { 
+            "enum" : [ "BSD", "GPLv3", "LGPLv3" ] 
+          } 
+        },
+        "fix-in" : { 
+          "type" : "array", 
+          "items" : { 
+            "type" : "string" 
+          }
+        },
+        "languages" : { 
+          "type" : "array", 
+          "items" : { 
+            "enum" : [ "python", "cmake", "C++", "package.xml", "launch.xml",
+              "msg", "srv", "xacro", "urdf" ] 
+          } 
+        },
+        "time" : { 
+          "type" : "string", 
+          "format" : "date-time" 
+        }
+       },
+     "required" : [ "repo", "hash", "pull-request", "license", "fix-in",
+       "languages", "time" ] 
+    },
     "time-machine"   : { },
     "bugzoo"         : { }
   },
-  "required" : ["id", "title", "description", "classification", 
-         "keywords", "system", "severity", "links", "bug", "fix"]
+  "required" : ["id", "title", "description", "classification", "keywords",
+    "system", "severity", "links", "bug", "fix"]
 }
