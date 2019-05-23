@@ -43,4 +43,10 @@ time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
-  datetime: 2014-11-02
+  datetime: 2014-11-02T20:53:27+03:00
+bugzoo:
+  is-build-failure: true
+  bug-commit: 03b75c84996a536c249fcfbdc2e427f1f22df1f4
+  fix-commit: 942eb3b173b97c66c8cb8df213acf01d32642002
+  fork-urls:
+    - http://github.com/robust-rosin/mavros
