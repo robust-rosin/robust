@@ -40,7 +40,7 @@ def main():
             warnings.warn(m)
 
         with open(fn, 'r') as f:
-            desc = yaml.load(f)
+            desc = yaml.safe_load(f)
         try:
             bug_id = desc['id']
             ros_distro = desc['time-machine']['ros_distro']
@@ -67,17 +67,12 @@ def main():
             report_error("'is_build_failure' should be a boolean")
             continue
 
-        if len(ros_pkgs) > 1:
-            warnings.warn('BugZoo file does not currently support multiple PUTs')
-            continue
-        catkin_pkg = ros_pkgs[0]
-
         if not isinstance(url_forks, list):
             report_error("'bugzoo.url-forks' should be a list")
             continue
 
         if len(url_forks) > 1:
-            warnings.warn("build-bugzoo.py does not currently support multiple PUTs")
+            report_error("BugZoo file does not support multiple forks.")
             continue
 
         # determine Ubuntu version based on ROS distro
@@ -102,31 +97,30 @@ def main():
             'USE_OSRF_REPOS': use_osrf_repos,
             'UBUNTU_VERSION': ubuntu_version,
             'ROS_DISTRO': ros_distro,
-            'CATKIN_PKG': catkin_pkg,  # FIXME
+            'CATKIN_PACKAGES': ' '.join(ros_pkgs),
             'REPO_FORK_URL': url_forks[0],  # FIXME
             'REPO_BUG_COMMIT': sha_bug,
             'REPO_FIX_COMMIT': sha_fix
         }
 
-        name_image = 'robustrosin/robust:{}'.format(bug_id)
-        blueprints.append({
-            'tag': name_image,
-            'file': 'Dockerfile',
-            'context': os.path.relpath(dir_bug, DIR_ROBUST),
-            'arguments': build_args
-        })
-        bugs.append({
-            'name': 'robust:{}'.format(bug_id),
-            'image': name_image,
-            'program': catkin_pkg,
-            'dataset': 'robust',
-            'languages': ['cpp'],  # FIXME
-            'source-location': '/ros_ws/src',
-            'test-harness': {'type': 'empty'},
-            'compiler': {'type': 'catkin',
-                         'workspace': '/ros_ws/src',
-                         'time-limit': 300}
-        })
+        # create a separate blueprint for the buggy and fixed version
+        # create a separate description for the buggy and fixed version
+        for stage in ('bug', 'fix'):
+            name_image = 'robustrosin/robust:{}-{}'.format(bug_id, stage)
+            blueprints.append({'file': 'Dockerfile',
+                               'tag': name_image,
+                               'build-stage': stage,
+                               'context': os.path.relpath(dir_bug, DIR_ROBUST),
+                               'arguments': build_args})
+            bugs.append({'name': 'robust:{}:{}'.format(bug_id, stage),
+                         'image': name_image,
+                         'dataset': 'robust',
+                         'languages': ['cpp'],  # FIXME
+                         'source-location': '/ros_ws/src',
+                         'test-harness': {'type': 'empty'},
+                         'compiler': {'type': 'catkin',
+                                      'workspace': '/ros_ws/src',
+                                      'time-limit': 300}})
 
     # create YAML
     yml = {'version': '1.0',
