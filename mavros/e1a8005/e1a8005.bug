@@ -47,9 +47,15 @@ fix:
     - mavros/src/plugins/sys_time.cpp
   languages:
     - C++
-  time: 2015-03-11 (00:00)
+  time: 2015-03-11T13:27:29+03:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/206
+  datetime: 2015-03-11T13:27:29+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: f6ca8b360873a1c178dbc0cd2d8d70a11d4a9c2c
+  fix-commit: e1a80052fbdb8324573c8cce0401b01aa78765ae
+  fork-urls:
+    - https://github.com/robust-rosin/mavros

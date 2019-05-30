@@ -36,7 +36,7 @@ bug:
   detected-by: compiler
   reported-by: guest user
   issue: https://github.com/yujinrobot/kobuki/issues/348
-  time-reported: 2014-08-22 (21:38)
+  time-reported: 2014-08-22T20:38:36Z
   reproducibility: always
   trace: null
   reproduction: >
