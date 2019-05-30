@@ -39,9 +39,15 @@ fix:
     - mavros/src/mavros/mission.py
   languages:
     - Python
-  time: 2015-11-13 (00:00)
+  time: 2015-11-13T08:25:02+03:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  datetime: 2015-11-13
+  datetime: 2015-11-13T08:25:02+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 19760fa90593c2dfb2dc4adbf06492e3423df23c
+  fix-commit: c0067f9f27a5a6ef5354e06fea18279541934520
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
