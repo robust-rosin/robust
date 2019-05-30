@@ -49,5 +49,5 @@ bugzoo:
 time-machine:
   ros_distro: indigo
   ros_pkgs:
-    - mavros
+    - libmavconn
   datetime: 2014-11-03T12:03:30+03:00
