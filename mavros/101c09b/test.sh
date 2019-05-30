@@ -1,2 +1,3 @@
 #!/bin/bash
-/ros_ws/build.sh
+pushd "${ROS_WS}"
+catkin_make run_tests
