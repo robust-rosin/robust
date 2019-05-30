@@ -39,4 +39,15 @@ fix:
     - libmavconn/package.xml
   languages:
     - XML
-  time: 2013-11-03 (00:00)
+  time: 2014-11-03T12:03:30+03:00
+bugzoo:
+  is-build-failure: true
+  bug-commit: 50e33279d5c891efad76697cb28d01e57a93f2a3
+  fix-commit: dc1327f35887f9337bb4f29bb94fb8a5c5fa8a73
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - mavros
+  datetime: 2014-11-03T12:03:30+03:00
