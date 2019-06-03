@@ -46,3 +46,17 @@ fix:
   languages:
     - CMake
   time: 2015-08-04 (13:09)
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - cob_obstacle_distance
+  issue: https://github.com/ipa320/cob_control/issues/48
+  #datetime: 2015-08-26
+bugzoo:
+  fork-urls: 
+    - https://github.com/robust-rosin/cob_control
+  is-build-failure: yes
+  use-osrf: no  # [optional]
+  bug-commit: f596e45f4fd43ea2d696e32c966314e107aee84a
+  fix-commit: ca7b536390bcf76bf4ab6e62354c52bd51fb1ece
+
