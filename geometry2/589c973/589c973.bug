@@ -33,3 +33,8 @@ fix:
   fix-in: ['tf2/include/tf2/LinearMath/Vector3.h']
   languages: C++
   time: 2013-11-27 (18:21 GMT+1)
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - tf2
+  datetime: 2013-11-27T08:53:10Z
