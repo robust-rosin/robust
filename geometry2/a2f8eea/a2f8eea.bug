@@ -22,7 +22,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros/geometry2/issues/46
-  time-reported: 2013-11-07 (18:25 GMT+1)
+  time-reported: 2013-11-07T17:25:31Z
   reproducibility: always
   trace: null
   reproduction: null
@@ -33,4 +33,9 @@ fix:
   license: ['BSD']
   fix-in: ['tf2_py/src/tf2_py.cpp']
   languages: python
-  time: 2013-12-23 (23:51 GMT+1)
+  time: 2013-12-26T22:51:58Z
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - tf2_py
+  datetime: 2013-11-06T18:43:24Z
