@@ -24,7 +24,13 @@ bug:
   time-reported: null
   reproducibility: always
   trace: null
-  reproduction: null
+  reproduction-images:
+    buggy: null
+    fixed: null
+    rosdistro: ros/rosdistro@1cf3f624
+    note: >
+        datetime used for 'time-machine.datetime' is the creation date of the
+        PR, as there is no issue for this bug.
 fix:
   repo: https://github.com/ros/geometry2
   hash: 589c973ed4250f29b45310e931d5fd4e875aaa33
