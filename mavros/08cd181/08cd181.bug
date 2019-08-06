@@ -17,7 +17,7 @@ bug:
   phase: build-time
   specificity: general issue
   architectural-location: platform code
-  application: N/A
+  application: null
   task: N/A
   subsystem: N/A
   package:

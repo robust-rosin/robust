@@ -75,9 +75,11 @@
           "enum" :  [ "application-specific code", "platform code", "N/A" ],
           "description" : "Where did the bug occur? Please pick one of the following two options: 'application-specific code' (did the bug occur in an application) or 'platform code' (did the bug occur in ROS or ROS-I platform itself)"
         },
-        "application" : { 
-          "type" : "string",
-          "minLength" : 1,
+        "application" : {
+          "oneOf" : [
+            { "type" : "string", "minLength" : 1 },
+            { "type" : "null" }
+          ],
           "description" : "In case you answered 'application-specific' above, please specify what the application was: textual description of robot application (e.g., 'picker robot'); N/A for platform code. Use null if the application is unknown or classified."
         },
         "task" : { 
@@ -137,9 +139,11 @@
           "minLength" : 1,
           "description" : "For runtime bugs, this is a trace (call stack/sequence of function calls) to the bug.   N/A for bugs not involving runtime (e.g., type errors or build-system bugs)."
         },
-        "reproduction" : { 
-          "type" : "string",
-          "minLength" : 1,
+        "reproduction" : {
+          "oneOf" : [ 
+            { "type" : "string", "minLength" : 1 },
+            { "type" : "null" }
+          ],
           "description" : "Any notes about how you reproduced the bug in your L3 test case.  The idea is to help the reader analyze the test (the main idea should be here).  For instance: I inserted an assertion to enforce X at a point B, and then modified a launch file to provide the input that drives it there.  Or since the bug was flaky and hard to reproduce, we first determinized the control flow, and then ... This field is null for many bugs, or missing, or it contains notes about a reproduction idea, rather than a succesful reproduction."
         }
       },
@@ -198,9 +202,10 @@
           "description" : "The languages involved in fixing the bug. (See list of conventions for naming languages under bug/language)."
         },
         "time" : { 
-          "type" : "string", 
-          "minLength" : 10,
-          "format" : "date-time",
+          "oneOf" : [ 
+            { "type" : "string", "minLength" : 10, "format" : "date-time" }, 
+            { "type" : "null" }
+          ],
           "description" : "The time the bug was fixed ('null' if it was not fixed); e.g.: '2017-12-31 (23:59)'.  Use the merge commit time into the mainline development if possible.  This is when the fix makes it into the project tree."
         }
        },
