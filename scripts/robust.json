@@ -64,7 +64,7 @@
           "description" : "How this bug generalizes; whether it is a general software issue applicable to many or most software projects or whether it is a general robotics issue or something completely specific applicable only to the ROS or ROS-I projects. Please pick the most appropriate among the following options: 1. 'general issue' (similar issues are to be expected in many or most software projects). Heuristic: An issue is general if a single tool solving this issue could plausibly solve it for a broad class of software projects. 2.  robotics-specific (similar issues are to be expected in other robotics platforms). 3.  ROS-specific (quite idiosyncratic as to how ROS or ROS-I is built). Heuristic: If a special ROS tool is needed to solve this issue, then it is probably ROS-specific. 4. application-specific (specific to an application)."
         },
         "architectural-location" : { 
-          "enum" :  [ "application-specific code", "platform code" ],
+          "enum" :  [ "application-specific code", "platform code", "N/A" ],
           "description" : "Where did the bug occur? Please pick one of the following two options: 'application-specific code' (did the bug occur in an application) or 'platform code' (did the bug occur in ROS or ROS-I platform itself)"
         },
         "application" : { 
@@ -149,8 +149,8 @@
           "enum" : [ 
             { "type" : "string", 
               "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$" }, 
-            null ],
-          "description" : "URI for pull request that fixed the bug.  Null if no pull request (for instance direct commit)."
+            "N/A" ],
+          "description" : "URI for pull request that fixed the bug.  N/A if no pull request (for instance direct commit)."
         },
         "license" : { 
           "type" : "array", 
