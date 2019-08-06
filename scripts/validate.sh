@@ -8,4 +8,4 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 SCHEMA="${DIR}/robust.json"
 echo Checking schema compliance for $1
-any-json --input-format=yaml $1 | ajv --verbose --errors=js -s ${SCHEMA} -d /dev/stdin 2>&1 >/dev/null | sed "s/\/dev\/stdin/File $1/"
+any-json --input-format=yaml $1 | ajv --verbose --errors=text -s ${SCHEMA} -d /dev/stdin 2>&1 >/dev/null | sed "s/\/dev\/stdin/File $1/"
