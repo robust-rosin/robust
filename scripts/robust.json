@@ -69,7 +69,7 @@
         },
         "application" : { 
           "type" : "string",
-          "description" : "In case you answered 'application-specific' above, please specify what the application was: textual description of robot application (e.g., 'picker robot'); N/A for platform code. Leave empty if the application is unknown or classified."
+          "description" : "In case you answered 'application-specific' above, please specify what the application was: textual description of robot application (e.g., 'picker robot'); N/A for platform code. Use null if the application is unknown or classified."
         },
         "task" : { 
           "enum" : [ "perception", "localization", "planning", "manipulation",
@@ -105,8 +105,8 @@
         },
         "issue" : { 
           "type" : "string", 
-          "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/issues/[0-9]+)?$",
-          "description" : "A URI reference to an issue tracker entry (e.g., GitHub or StackOverflow). This will obviously be empty if the bug is unreported.  But even for some reported bugs there will be no issue created (bugs can be reported through other channels). Add reports through other channels under links (above)."
+          "pattern" : "^((https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/issues/[0-9]+)?)|(N/A)$",
+          "description" : "A URI reference to an issue tracker entry (e.g., GitHub or StackOverflow). This will obviously be N/A if the bug is unreported.  But even for some reported bugs there will be no issue created (bugs can be reported through other channels). Add reports through other channels under links (above)."
         }, 
         "time-reported" : { 
           "type" : "string", 
@@ -122,7 +122,7 @@
         },
         "reproduction" : { 
           "type" : "string",
-          "description" : "Any notes about how you reproduced the bug in your L3 test case.  The idea is to help the reader analyze the test (the main idea should be here).  For instance: I inserted an assertion to enforce X at a point B, and then modified a launch file to provide the input that drives it there.  Or since the bug was flaky and hard to reproduce, we first determinized the control flow, and then ... This field is empty for more bugs, or missing, or it contains notes about a reproduction idea, rather than a succesful reproduction."
+          "description" : "Any notes about how you reproduced the bug in your L3 test case.  The idea is to help the reader analyze the test (the main idea should be here).  For instance: I inserted an assertion to enforce X at a point B, and then modified a launch file to provide the input that drives it there.  Or since the bug was flaky and hard to reproduce, we first determinized the control flow, and then ... This field is null for many bugs, or missing, or it contains notes about a reproduction idea, rather than a succesful reproduction."
         }
       },
       "required" : [ "phase", "specificity",
