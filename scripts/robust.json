@@ -171,11 +171,9 @@
           "description" : "The hexadecimal hash code of the commit that fixed the bug. (With pull requests there are two commits; one is in the local branch from which the pull request is created, the other is the actual merging commit on the mainline; we should try to report the latter as this is what is more easily accessible long term; other branches may be deleted. Also the merge commit gives a single reference id, while the pull request branch may consist of several smaller commits.)"
         },
         "pull-request" : { 
-          "enum" : [ 
-            { "type" : "string", 
-              "minLength" : 1,
-              "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$" }, 
-            "N/A" ],
+          "type" : "string", 
+          "minLength" : 1,
+          "pattern" : "(^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$)|(^N/A$)", 
           "description" : "URI for pull request that fixed the bug.  N/A if no pull request (for instance direct commit)."
         },
         "license" : { 
