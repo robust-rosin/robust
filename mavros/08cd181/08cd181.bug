@@ -20,7 +20,8 @@ bug:
   application: N/A
   task: N/A
   subsystem: N/A
-  package: mavros
+  package: 
+    - mavlink/mavros/mavros
   languages:
     - C++
   detected-by: developer

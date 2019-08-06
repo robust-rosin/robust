@@ -7,32 +7,39 @@
   "properties": {
     "id" : { 
       "type" : "string", 
+      "minLength" : 7,
+      "maxLength" : 7,
       "pattern" : "^([a-f]|[0-9]){7}$",
       "description" : "seven hexadecimal digits identifying the bug.  These are should be taken from the prefix of the hash of the merge commit for the fixed bugs (for other bugs pick them reasonably from another commit.)."
     },
     "title" : { 
-      "type" : "string", 
+      "type" : "string",
       "maxLength" : 160,
+      "minLength" : 1,
       "description" : "A concise one-line summary of the bug intended for domain non-experts (typically 10 words or less)"
     },
     "description" : { 
       "type" : "string",
+      "minLength" : 1,
       "description" : "Textual description of the bug (typically 5-10 lines). Try to write this so that a domain non-expert software developer will be able to understand what this bug is about. This often involves writing about the *cause* of the bug (what was the underlying problem and what needed fixing) as well as the *effect* of the bug (how did the bug manifest itself), including whatever else is relevant in order to have a rough idea of the bug. (The text is indented five spaces.)"
     },
     "classification" : { 
       "type" : "string",
+      "minLength" : 1,
       "description" : "The Common Weakness Enumeration (CWE) is a community-developed list of common software security weaknesses.   It is essentially a taxonomy of errors (weaknesses). We will try to use this taxonomy to classify the errors in terms of their effect; e.g.: 'CWE-476: NULL Pointer Dereference'.  Since CWE is primarily concerned with security, it is sometimes necessary to add your own new categories (without a number identifier) not covered by the taxonomy; e.g., dependency errors, type errors, and robotics-specific weaknesses. In many cases, multiple categories are applicable. You should then pick the most appropriate category."
     },
     "keywords" : { 
       "type" : "array", 
       "items" : { 
         "type" : "string", 
+        "minLength" : 1,
         "maxLength" : 80 
       },
       "description" : "a list of key words; e.g.,: xacro, gazebo, urdf, driver"
     },
     "system" : { 
       "type" : "string", 
+      "minLength" : 1,
       "maxLength" : 40,
       "description" : "An identifier for the system at hand (e.g., kobuki, motoman, mavros). If it's a confidential system, then just put the value 'confidential'."
     },
@@ -45,6 +52,7 @@
       "type" : "array", 
       "items" : { 
         "type" : "string", 
+        "minLength" : 1,
         "format" : "uri" 
       },
       "description" : "A list of links to additional information relevant for understanding the bug."
@@ -69,6 +77,7 @@
         },
         "application" : { 
           "type" : "string",
+          "minLength" : 1,
           "description" : "In case you answered 'application-specific' above, please specify what the application was: textual description of robot application (e.g., 'picker robot'); N/A for platform code. Use null if the application is unknown or classified."
         },
         "task" : { 
@@ -79,11 +88,16 @@
         },
         "subsystem" : { 
           "type" : "string",
+          "minLength" : 1,
           "description" : "In which subsystem (part of the organizational structure of the project) did the bug occur: motion, driver, controller (orchestration), core component, generic task component (e.g., a planner, tf2/geometry2), specific application component (e.g., auto docking), ..."
         },
         "package" : { 
-          "type" : "string", 
-          "pattern" : "^([a-z0-9A-Z_]+)([/][a-z0-9A-Z_]+)*$",
+          "type" : "array",
+          "items" : {
+            "type" : "string", 
+            "minLength" : 5,
+            "pattern" : "^([a-z0-9A-Z_]+)(/[a-z0-9A-Z_]+){2}$"
+          },
           "description" : "A list of packages involved. Each entry should specify the project, the repository, and the package, for example: 'ros-industrial/universal_robot/ur_bringup'"
         },
         "languages" : { 
@@ -105,11 +119,13 @@
         },
         "issue" : { 
           "type" : "string", 
+          "minLength" : 3,
           "pattern" : "^((https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/issues/[0-9]+)?)|(N/A)$",
           "description" : "A URI reference to an issue tracker entry (e.g., GitHub or StackOverflow). This will obviously be N/A if the bug is unreported.  But even for some reported bugs there will be no issue created (bugs can be reported through other channels). Add reports through other channels under links (above)."
         }, 
         "time-reported" : { 
           "type" : "string", 
+          "minLength" : 10,
           "format" : "date-time",
           "description" : "The time the bug was reported (“unreported” if it was not reported); e.g.: '2017-12-31 (23:59)'."
         },
@@ -118,10 +134,12 @@
         },
         "trace" : { 
           "type" : "string", 
+          "minLength" : 1,
           "description" : "For runtime bugs, this is a trace (call stack/sequence of function calls) to the bug.   N/A for bugs not involving runtime (e.g., type errors or build-system bugs)."
         },
         "reproduction" : { 
           "type" : "string",
+          "minLength" : 1,
           "description" : "Any notes about how you reproduced the bug in your L3 test case.  The idea is to help the reader analyze the test (the main idea should be here).  For instance: I inserted an assertion to enforce X at a point B, and then modified a launch file to provide the input that drives it there.  Or since the bug was flaky and hard to reproduce, we first determinized the control flow, and then ... This field is null for many bugs, or missing, or it contains notes about a reproduction idea, rather than a succesful reproduction."
         }
       },
@@ -137,17 +155,21 @@
       "properties" : {
         "repo" : { 
           "type" : "string",
+          "minLength" : 3,
           "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+)$",
           "description" : "URI reference to repository where the bug was fixed."
         },
         "hash" : {
           "type" : "string",
+          "minLength" : 40,
+          "maxLength" : 40,
           "pattern" : "^[0-9a-f]{40}$",
           "description" : "The hexadecimal hash code of the commit that fixed the bug. (With pull requests there are two commits; one is in the local branch from which the pull request is created, the other is the actual merging commit on the mainline; we should try to report the latter as this is what is more easily accessible long term; other branches may be deleted. Also the merge commit gives a single reference id, while the pull request branch may consist of several smaller commits.)"
         },
         "pull-request" : { 
           "enum" : [ 
             { "type" : "string", 
+              "minLength" : 1,
               "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$" }, 
             "N/A" ],
           "description" : "URI for pull request that fixed the bug.  N/A if no pull request (for instance direct commit)."
@@ -162,7 +184,8 @@
         "fix-in" : { 
           "type" : "array", 
           "items" : { 
-            "type" : "string" 
+            "type" : "string",
+            "minLength" : 1
           },
           "description" : "A list of files that were updated when fixing the bug (if a commit or pull-request contains irrelevant edits, then these should not be placed on this list as far as possible)"
         },
@@ -176,6 +199,7 @@
         },
         "time" : { 
           "type" : "string", 
+          "minLength" : 10,
           "format" : "date-time",
           "description" : "The time the bug was fixed ('null' if it was not fixed); e.g.: '2017-12-31 (23:59)'.  Use the merge commit time into the mainline development if possible.  This is when the fix makes it into the project tree."
         }
