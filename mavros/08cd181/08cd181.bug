@@ -15,19 +15,19 @@ severity: error
 links: []
 bug:
   phase: build-time
-  specificity: "general issue"
-  architectural-location: N/A
+  specificity: general issue
+  architectural-location: platform code
   application: N/A
   task: N/A
   subsystem: N/A
-  package: 
+  package:
     - mavlink/mavros/mavros
   languages:
     - C++
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/mavlink/mavros/issues/161
-  time-reported: 2014-11-02
+  time-reported: 2014-11-02T13:28:17Z
   reproducibility: always
   trace: N/A
 fix:
