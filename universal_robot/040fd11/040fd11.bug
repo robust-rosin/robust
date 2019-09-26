@@ -3,7 +3,7 @@
 id: 040fd11
 title: An exported library is not installed
 description: >
-     The ur_kinematics package exports a libraries (ur5_moveit_plugin,
+     The ur_kinematics package exports two libraries (ur5_moveit_plugin,
      ur10_moveit_plugin) to be used in depending packages.  This will
      work well if the packages using ur_kinematics are in the same
      workspace (devel space).  Since the installation script is
