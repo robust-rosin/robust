@@ -1,0 +1,47 @@
+%YAML 1.1
+---
+id: 439e235
+title: A geometrical calculation error
+description: >
+    "In the calculation of shortest angle represented by a quaternion in tf2
+    the positive and negative cases are swapped.  Interestingly, this code has
+    been originally cloned from Bullet LinearMath library, where it has been
+    fixed later.  This bug is a great example of difficulties of clone & own,
+    instead of depending on external components (not saying that this would be
+    a better choice here).
+
+    This is a robotics-specific issue as this calculation is common to
+    geometrical modeling libraries."
+classification: "Wrong behavior (no CWE) #PHYSICAL"
+keywords: ['geometry', 'math', 'quaternion']
+system: core component
+severity: error
+links: []
+bug:
+  phase: null
+  specificity: robotics-specific
+  architectural-location: platform code
+  applications: null
+  task: null
+  subsystem: generic task component
+  package: ros/geometry2/tf2
+  languages:
+    - C++
+  detected-by: null
+  reported-by: contributor
+  issue: https://github.com/ros/geometry2/issues/185
+  time-reported: Sep 7, 2016, 08:40 PM GMT+2
+  reproducibility: always
+  trace: null
+  reproduction:
+    A test case should be fairly easy to create by comparing the branching
+    before and after the fix.
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 439e2350ca9b2f0581a3631f0929acc2021db73e
+  pull-request: https://github.com/ros/geometry2/pull/187
+  license: ['BSD']
+  fix-in: [ 'tf2/include/tf2/LinearMath/Quaternion.h' ]
+  languages:
+    - C++
+  time: Sep 8, 2016, 10:34 PM GMT+2
