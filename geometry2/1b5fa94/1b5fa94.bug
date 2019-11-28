@@ -1,0 +1,72 @@
+%YAML 1.1
+---
+id: 1b5fa94
+title: Memory leak in Python–C++ interface
+description: >
+     The problem appears in a C++ code which handles Python objects (the
+     package which interfaces tf2 to Pyhton). Reference counting is used to
+     handle memory allocation.
+
+     The function `PyObject_SetAttrString()` does not transfer the ownership of
+     the reference from an object which is to be set as an attribute to an
+     object which receives the attribute. The reference count never reaches
+     zero and consequently it is never deallocated. The fix adds explicit
+     decrements of reference counters.
+
+     The leak has been observed when robots are running for days. It can be
+     reproduced with a rate of 15-20 MB leaked per second. From a security
+     perspective, it may mean that a deployment crashes itself (without any
+     hostile external action) by just running long enough.
+
+     It seem that detection of such bugs can be automated by using tools to
+     check against memory problems (like valgrind) or even by simply running
+     longer tests and monitoring their memory usage.
+classification: "CWE-401: Missing Release of Memory after Effective Lifetime"
+keywords:
+  - memory leak
+  - reference counting
+system: geometry2
+severity: error
+links: [
+  https://docs.python.org/3/c-api/intro.html#reference-count-details,
+  https://www.thecodingforums.com/threads/python-c-api-and-references.705035/
+]
+bug:
+  phase: runtime-operation
+  specificity: general issue
+  architectural-location: platform code
+  application: null
+  task: N/A
+  subsystem: N/A
+  package:
+    - tf2_py
+  languages:
+    - C++
+  detected-by: developer
+  reported-by: unreported
+  issue: N/A
+  time-reported: unreported
+  reproducibility: always
+  trace: N/A
+  reproduction: >
+    Reproduction would require a long run (perhaps could be faked/accelerated
+    by using the buggy function in a loop multiple times.)
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 1b5fa94cbca8dd5161f29c1697bf71449d14e041
+  pull-request: https://github.com/ros/geometry2/pull/251
+  license: ['BSD']
+  fix-in:
+    - f2_py/src/tf2_py.cpp
+  languages:
+    - C++
+  time: 2017-07-12 5:20PM UTC
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - tf2_py
+  datetime: null
+bugzoo:
+  is-build-failure: null
+  bug-commit: null
+  fix-commit: null
