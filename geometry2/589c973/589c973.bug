@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 589c973
 title: Missing const qualifier on a C++ function with no side effects
 description: >
     The tf2::Vector3.rotate() function computes a rotation of a vector by an angle around an axis.  It is a pure function that does not modify the object state. It should thus have a const modifier to allow calling it from other const functions---otherwise the typechecker stops compilation.
@@ -13,17 +14,19 @@ bug:
   phase: build-time
   specificity: general issue
   architectural-location: platform code
-  applications: N/A
+  application: N/A
   task: N/A
   subsystem: generic task component
-  package: null
-  languages: C++
-  detected-by: null
-  reported-by: null
-  issue: null
-  time-reported: null
+  package:
+    - ros/geometry2/tf2
+  languages:
+    - C++
+  detected-by: user
+  reported-by: unreported
+  issue: N/A
+  time-reported: unreported
   reproducibility: always
-  trace: null
+  trace: N/A
   reproduction-images:
     buggy: null
     fixed: null
@@ -37,7 +40,8 @@ fix:
   pull-request: https://github.com/ros/geometry2/pull/47
   license: ['BSD']
   fix-in: ['tf2/include/tf2/LinearMath/Vector3.h']
-  languages: C++
+  languages:
+    - C++
   time: 2013-11-27T17:21:05Z
 time-machine:
   ros_distro: hydro
