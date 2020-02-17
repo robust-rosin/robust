@@ -6,6 +6,7 @@ description: >
      A missing header, "boost/make_shared.hpp", prevented the ROS
      Hydro-release from building.  This regression was brought about
      as a result of moving MAVConn to its own package.
+     A missing header is a general issue that could appear in any C++ project.
 classification: Missing header (no CWE)
 keywords:
   - missing headers
@@ -14,19 +15,20 @@ severity: error
 links: []
 bug:
   phase: build-time
-  specificity: "general issue: missing header"
-  architectural-location: N/A
-  application: N/A
+  specificity: general issue
+  architectural-location: platform code
+  application: null
   task: N/A
   subsystem: N/A
-  package: mavros
+  package:
+    - mavlink/mavros/mavros
   languages:
     - C++
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/mavlink/mavros/issues/161
-  time-reported: 2014-11-02 (00:00)
-  reproducibility: N/A
+  time-reported: 2014-11-02T13:28:17Z
+  reproducibility: always
   trace: N/A
 fix:
   repo: https://github.com/mavlink/mavros
