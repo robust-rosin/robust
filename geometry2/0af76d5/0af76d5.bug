@@ -29,7 +29,7 @@ bug:
   detected-by: null
   reported-by: member developer
   issue: https://github.com/ros/geometry2/issues/35
-  time-reported: 2013-10-29 (01:05)
+  time-reported: 2013-10-29T01:05:05Z
   reproducibility: sometimes
   trace:
   reproduction: >
@@ -43,4 +43,9 @@ fix:
   fix-in: []
   languages:
     - C++
-  time: 2016-04-02 (08:29)
+  time: null
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - tf2_ros
+  datetime: 2013-10-29T01:05:05Z
