@@ -1,0 +1,54 @@
+%YAML 1.1
+---
+title: Missing functionality in the python API for tf2
+description: >
+  ROS has two main APIs, one in C++ and one in python, delivered by roscpp and rospy respectively.  The roscpp and rospy are expected to have feature parity in ROS 1, but since they are not sharing any code (or very little), the aspects of implementation need to be repeated in both langugages.
+  A static transform is a transform that does not change.  TF2 allocates their own topic to static transforms, to avoid needless publishing them at high frequency. They are published once and the topic is latched, so late joiners also get the messages.  Then it treats them like regular TF frames internally in the libs.
+  In this case the python implementation was missing the implementation of static transforms.   In general, it is debatable whether missing API implementation is a bug (fixing it is adding functionality, which is a regular software development activity, not bug fixing).  This case is interesting,  as we have two implementations of the same API not being functionally equivalent, with a twist that the two implementations are in two different languages.  Equivalent APIs is a reappering construction (for various reasons) in software projects, and equivalence testing is a known activity.
+classification: Incomplete implementation of an API (no CWE)
+keywords: ['rospy', 'roscpp', 'static transform']
+system: core component
+severity: error
+links: []
+bug:
+  phase: programming-time
+  specificity: general issue
+  architectural-location: platform code
+  applications: N/A
+  task: N/A
+  subsystem: generic task component
+  package: ros/geometry2/tf2_py
+  languages: python
+  detected-by: developer
+  reported-by: member developer
+  issue: https://github.com/ros/geometry2/issues/46
+  time-reported: 2013-11-07T17:25:31Z
+  reproducibility: always
+  trace: null
+  reproduction-images:
+    buggy: null
+    fixed: null
+    rosdistro: ros/rosdistro@1c2e421d
+    note: >
+        datetime used for 'time-machine.datetime' is the author date of the
+        commit that fixed the issue. There is no PR.
+        The ROS distro is assumed to be Hydro, as the fix was released as
+        part of version 0.4.10, while 0.5.x is the minor used for Indigo.
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: a2f8eea04f95c9abb0e4d7557d796e84fb13a32a
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['tf2_py/src/tf2_py.cpp']
+  languages: python
+  time: 2013-12-26T22:51:58Z
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - tf2_py
+  datetime: 2013-11-06T18:43:24Z
+bugzoo:
+  fork-urls:
+    - https://github.com/robust-rosin/geometry2
+  bug-commit: 17e57137dda28bf7e1d23a007e44e0eee404d26d
+  fix-commit: a2f8eea04f95c9abb0e4d7557d796e84fb13a32a
