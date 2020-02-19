@@ -1,0 +1,237 @@
+- tar:
+    local-name: actionlib
+    uri: https://github.com/ros-gbp/actionlib-release/archive/release/jade/actionlib/1.11.4-0.tar.gz
+    version: actionlib-release-release-jade-actionlib-1.11.4-0
+- tar:
+    local-name: angles
+    uri: https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/jade/angles/1.9.10-0.tar.gz
+    version: geometry_angles_utils-release-release-jade-angles-1.9.10-0
+- tar:
+    local-name: catkin
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/jade/catkin/0.6.14-0.tar.gz
+    version: catkin-release-release-jade-catkin-0.6.14-0
+- tar:
+    local-name: class_loader
+    uri: https://github.com/ros-gbp/class_loader-release/archive/release/jade/class_loader/0.3.2-0.tar.gz
+    version: class_loader-release-release-jade-class_loader-0.3.2-0
+- tar:
+    local-name: cmake_modules
+    uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/jade/cmake_modules/0.4.0-0.tar.gz
+    version: cmake_modules-release-release-jade-cmake_modules-0.4.0-0
+- tar:
+    local-name: common_msgs/actionlib_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/jade/actionlib_msgs/1.12.3-0.tar.gz
+    version: common_msgs-release-release-jade-actionlib_msgs-1.12.3-0
+- tar:
+    local-name: common_msgs/diagnostic_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/jade/diagnostic_msgs/1.12.3-0.tar.gz
+    version: common_msgs-release-release-jade-diagnostic_msgs-1.12.3-0
+- tar:
+    local-name: common_msgs/geometry_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/jade/geometry_msgs/1.12.3-0.tar.gz
+    version: common_msgs-release-release-jade-geometry_msgs-1.12.3-0
+- tar:
+    local-name: common_msgs/nav_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/jade/nav_msgs/1.12.3-0.tar.gz
+    version: common_msgs-release-release-jade-nav_msgs-1.12.3-0
+- tar:
+    local-name: common_msgs/sensor_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/jade/sensor_msgs/1.12.3-0.tar.gz
+    version: common_msgs-release-release-jade-sensor_msgs-1.12.3-0
+- tar:
+    local-name: diagnostics/diagnostic_updater
+    uri: https://github.com/ros-gbp/diagnostics-release/archive/release/jade/diagnostic_updater/1.8.7-0.tar.gz
+    version: diagnostics-release-release-jade-diagnostic_updater-1.8.7-0
+- tar:
+    local-name: gencpp
+    uri: https://github.com/ros-gbp/gencpp-release/archive/release/jade/gencpp/0.5.3-0.tar.gz
+    version: gencpp-release-release-jade-gencpp-0.5.3-0
+- tar:
+    local-name: geneus
+    uri: https://github.com/tork-a/geneus-release/archive/release/jade/geneus/2.2.1-0.tar.gz
+    version: geneus-release-release-jade-geneus-2.2.1-0
+- tar:
+    local-name: genlisp
+    uri: https://github.com/ros-gbp/genlisp-release/archive/release/jade/genlisp/0.4.15-0.tar.gz
+    version: genlisp-release-release-jade-genlisp-0.4.15-0
+- tar:
+    local-name: genmsg
+    uri: https://github.com/ros-gbp/genmsg-release/archive/release/jade/genmsg/0.5.6-0.tar.gz
+    version: genmsg-release-release-jade-genmsg-0.5.6-0
+- tar:
+    local-name: genpy
+    uri: https://github.com/ros-gbp/genpy-release/archive/release/jade/genpy/0.5.4-0.tar.gz
+    version: genpy-release-release-jade-genpy-0.5.4-0
+- tar:
+    local-name: geometry/eigen_conversions
+    uri: https://github.com/ros-gbp/geometry-release/archive/release/jade/eigen_conversions/1.11.7-0.tar.gz
+    version: geometry-release-release-jade-eigen_conversions-1.11.7-0
+- tar:
+    local-name: geometry2/tf2
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/jade/tf2/0.5.12-0.tar.gz
+    version: geometry2-release-release-jade-tf2-0.5.12-0
+- tar:
+    local-name: geometry2/tf2_msgs
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/jade/tf2_msgs/0.5.12-0.tar.gz
+    version: geometry2-release-release-jade-tf2_msgs-0.5.12-0
+- tar:
+    local-name: geometry2/tf2_py
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/jade/tf2_py/0.5.12-0.tar.gz
+    version: geometry2-release-release-jade-tf2_py-0.5.12-0
+- tar:
+    local-name: geometry2/tf2_ros
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/jade/tf2_ros/0.5.12-0.tar.gz
+    version: geometry2-release-release-jade-tf2_ros-0.5.12-0
+- tar:
+    local-name: mavlink
+    uri: https://github.com/mavlink/mavlink-gbp-release/archive/release/jade/mavlink/2015.9.9-0.tar.gz
+    version: mavlink-gbp-release-release-jade-mavlink-2015.9.9-0
+- tar:
+    local-name: mavros/libmavconn
+    uri: https://github.com/mavlink/mavros-release/archive/release/jade/libmavconn/0.14.2-0.tar.gz
+    version: mavros-release-release-jade-libmavconn-0.14.2-0
+- tar:
+    local-name: mavros/mavros_msgs
+    uri: https://github.com/mavlink/mavros-release/archive/release/jade/mavros_msgs/0.14.2-0.tar.gz
+    version: mavros-release-release-jade-mavros_msgs-0.14.2-0
+- tar:
+    local-name: message_generation
+    uri: https://github.com/ros-gbp/message_generation-release/archive/release/jade/message_generation/0.3.0-0.tar.gz
+    version: message_generation-release-release-jade-message_generation-0.3.0-0
+- tar:
+    local-name: message_runtime
+    uri: https://github.com/ros-gbp/message_runtime-release/archive/release/jade/message_runtime/0.4.12-0.tar.gz
+    version: message_runtime-release-release-jade-message_runtime-0.4.12-0
+- tar:
+    local-name: orocos_kinematics_dynamics/orocos_kdl
+    uri: https://github.com/smits/orocos-kdl-release/archive/release/jade/orocos_kdl/1.3.0-0.tar.gz
+    version: orocos-kdl-release-release-jade-orocos_kdl-1.3.0-0
+- tar:
+    local-name: pluginlib
+    uri: https://github.com/ros-gbp/pluginlib-release/archive/release/jade/pluginlib/1.10.1-0.tar.gz
+    version: pluginlib-release-release-jade-pluginlib-1.10.1-0
+- tar:
+    local-name: ros/rosbuild
+    uri: https://github.com/ros-gbp/ros-release/archive/release/jade/rosbuild/1.12.2-0.tar.gz
+    version: ros-release-release-jade-rosbuild-1.12.2-0
+- tar:
+    local-name: ros/rosclean
+    uri: https://github.com/ros-gbp/ros-release/archive/release/jade/rosclean/1.12.2-0.tar.gz
+    version: ros-release-release-jade-rosclean-1.12.2-0
+- tar:
+    local-name: ros/roslang
+    uri: https://github.com/ros-gbp/ros-release/archive/release/jade/roslang/1.12.2-0.tar.gz
+    version: ros-release-release-jade-roslang-1.12.2-0
+- tar:
+    local-name: ros/roslib
+    uri: https://github.com/ros-gbp/ros-release/archive/release/jade/roslib/1.12.2-0.tar.gz
+    version: ros-release-release-jade-roslib-1.12.2-0
+- tar:
+    local-name: ros/rosunit
+    uri: https://github.com/ros-gbp/ros-release/archive/release/jade/rosunit/1.12.2-0.tar.gz
+    version: ros-release-release-jade-rosunit-1.12.2-0
+- tar:
+    local-name: ros_comm/message_filters
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/message_filters/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-message_filters-1.11.13-0
+- tar:
+    local-name: ros_comm/rosbag
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosbag/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosbag-1.11.13-0
+- tar:
+    local-name: ros_comm/rosbag_storage
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosbag_storage/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosbag_storage-1.11.13-0
+- tar:
+    local-name: ros_comm/rosconsole
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosconsole/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosconsole-1.11.13-0
+- tar:
+    local-name: ros_comm/roscpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/roscpp/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-roscpp-1.11.13-0
+- tar:
+    local-name: ros_comm/rosgraph
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosgraph/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosgraph-1.11.13-0
+- tar:
+    local-name: ros_comm/roslaunch
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/roslaunch/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-roslaunch-1.11.13-0
+- tar:
+    local-name: ros_comm/roslz4
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/roslz4/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-roslz4-1.11.13-0
+- tar:
+    local-name: ros_comm/rosmaster
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosmaster/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosmaster-1.11.13-0
+- tar:
+    local-name: ros_comm/rosnode
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosnode/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosnode-1.11.13-0
+- tar:
+    local-name: ros_comm/rosout
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosout/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosout-1.11.13-0
+- tar:
+    local-name: ros_comm/rosparam
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rosparam/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rosparam-1.11.13-0
+- tar:
+    local-name: ros_comm/rospy
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rospy/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rospy-1.11.13-0
+- tar:
+    local-name: ros_comm/rostest
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rostest/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rostest-1.11.13-0
+- tar:
+    local-name: ros_comm/rostopic
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/rostopic/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-rostopic-1.11.13-0
+- tar:
+    local-name: ros_comm/topic_tools
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/topic_tools/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-topic_tools-1.11.13-0
+- tar:
+    local-name: ros_comm/xmlrpcpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/jade/xmlrpcpp/1.11.13-0.tar.gz
+    version: ros_comm-release-release-jade-xmlrpcpp-1.11.13-0
+- tar:
+    local-name: ros_comm_msgs/rosgraph_msgs
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/jade/rosgraph_msgs/1.11.1-0.tar.gz
+    version: ros_comm_msgs-release-release-jade-rosgraph_msgs-1.11.1-0
+- tar:
+    local-name: ros_comm_msgs/std_srvs
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/jade/std_srvs/1.11.1-0.tar.gz
+    version: ros_comm_msgs-release-release-jade-std_srvs-1.11.1-0
+- tar:
+    local-name: rosconsole_bridge
+    uri: https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/jade/rosconsole_bridge/0.4.2-0.tar.gz
+    version: rosconsole_bridge-release-release-jade-rosconsole_bridge-0.4.2-0
+- tar:
+    local-name: roscpp_core/cpp_common
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/jade/cpp_common/0.5.6-0.tar.gz
+    version: roscpp_core-release-release-jade-cpp_common-0.5.6-0
+- tar:
+    local-name: roscpp_core/roscpp_serialization
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/jade/roscpp_serialization/0.5.6-0.tar.gz
+    version: roscpp_core-release-release-jade-roscpp_serialization-0.5.6-0
+- tar:
+    local-name: roscpp_core/roscpp_traits
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/jade/roscpp_traits/0.5.6-0.tar.gz
+    version: roscpp_core-release-release-jade-roscpp_traits-0.5.6-0
+- tar:
+    local-name: roscpp_core/rostime
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/jade/rostime/0.5.6-0.tar.gz
+    version: roscpp_core-release-release-jade-rostime-0.5.6-0
+- tar:
+    local-name: rospack
+    uri: https://github.com/ros-gbp/rospack-release/archive/release/jade/rospack/2.2.5-0.tar.gz
+    version: rospack-release-release-jade-rospack-2.2.5-0
+- tar:
+    local-name: std_msgs
+    uri: https://github.com/ros-gbp/std_msgs-release/archive/release/jade/std_msgs/0.5.9-0.tar.gz
+    version: std_msgs-release-release-jade-std_msgs-0.5.9-0
+

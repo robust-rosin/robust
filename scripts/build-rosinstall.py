@@ -8,6 +8,7 @@ import shutil
 import docker
 import yaml
 import requests
+import packaging.version
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -40,6 +41,30 @@ def gh_issue_to_datetime(url_issue):
     return created_at
 
 
+def _time_machine(packages,
+                  dt,
+                  distro,
+                  deps_only=True):
+    # type: (List[str], str, str) -> Dict[str, Dict[str, str]]
+    cmd = [BIN_TIME_MACHINE, dt, distro] + packages
+    cmd += ['--deps', '--tar']
+    if deps_only:
+        cmd += ['--deps-only']
+    logger.debug("executing command: %s", ' '.join(cmd))
+
+    try:
+        res = subprocess.run(cmd,
+                             check=True,
+                             stdout=subprocess.PIPE)
+        contents = res.stdout.decode('utf-8')
+    except subprocess.CalledProcessError as err:
+        logger.warning("time machine failed (return code: %d)",
+                       err.returncode)
+        return
+
+    return {e['tar']['local-name']: e['tar'] for e in yaml.safe_load(contents)}
+
+
 def build_file(fn_bug_desc, overwrite=False):
     logger.info("building rosinstall file for file: %s", fn_bug_desc)
     bug_id = os.path.basename(fn_bug_desc)[:-4]
@@ -68,12 +93,17 @@ def build_file(fn_bug_desc, overwrite=False):
             return
 
     with open(fn_bug_desc, 'r') as f:
-        d = yaml.load(f)
+        d = yaml.safe_load(f)
 
+    distro = d['time-machine']['ros_distro']
     ros_pkgs = d['time-machine']['ros_pkgs']
     missing_deps = d['time-machine'].get('missing-dependencies', [])
 
-    if 'issue' in d['time-machine']:
+    if 'datetime' in d['time-machine']:
+        dt = d['time-machine']['datetime'].isoformat()
+        if dt[-1] != 'Z':
+            dt += 'Z'
+    elif 'issue' in d['time-machine']:
         url_issue = d['time-machine']['issue']
         try:
             dt = gh_issue_to_datetime(url_issue)
@@ -81,31 +111,47 @@ def build_file(fn_bug_desc, overwrite=False):
             m = "failed to convert GitHub issue to ISO 8601 timestamp: {}"
             m = m.format(url_issue)
             raise Exception(m)
-    elif 'datetime' in d['time-machine']:
-        dt = d['time-machine']['datetime'].isoformat()
-        if dt[-1] != 'Z':
-            dt += 'Z'
     else:
         raise Exception("expected 'issue' or 'datetime' in 'time-machine'")
 
-
-    cmd = [BIN_TIME_MACHINE, dt, d['time-machine']['ros_distro']]
-    cmd += ros_pkgs  + missing_deps
-    cmd += ['--deps', '--deps-only', '--tar']
-    logger.debug("executing command: %s", ' '.join(cmd))
-
     try:
-        res = subprocess.run(cmd,
-                             check=True,
-                             stdout=subprocess.PIPE)
-        contents = res.stdout.decode('utf-8')
+        deps = {}
+        deps.update(_time_machine(ros_pkgs, dt, distro, deps_only=True))
+        if missing_deps:
+            deps.update(_time_machine(missing_deps, dt, distro, deps_only=False))
     except subprocess.CalledProcessError as err:
         logger.warning("time machine failed (return code: %d) for bug [%s]",
                        err.returncode, fn_bug_desc)
         return
 
+    # added to the top of the file after processing
+    header = ''
+
+    # ensure catkin >= 0.5.78 (i.e., supports --only-pkg-with-deps)
+    # https://github.com/ros/catkin/commit/913488427d2ff18b808764d1eaf38acead67e18f
+    if not 'catkin' in deps:
+        raise Exception("expected 'catkin' package in .rosinstall file")
+    version_catkin = packaging.version.parse(deps['catkin']['version'].split('-')[-2])
+    if version_catkin < packaging.version.Version('0.5.78'):
+        msg = "updated 'catkin' version ({}) to 0.5.78 to support --only-pkg-with-deps"
+        msg = msg.format(str(version_catkin))
+        header += "# build-rosinstall.py: {}\n".format(msg)
+        logger.warning(msg)
+        deps['catkin']['version'] = "catkin-release-release-{}-catkin-0.5.78-0".format(distro)
+        deps['catkin']['uri'] = "https://github.com/ros-gbp/catkin-release/archive/release/{}/catkin/0.5.78-0.tar.gz".format(distro)
+
+    contents = yaml.dump([{'tar': e} for e in deps.values()],
+                         default_flow_style=False)
+
     # updated repository names
-    contents = contents.replace('geometry_experimental', 'geometry2')
+    if 'geometry_experimental' in contents:
+        msg = "updated 'geometry_experimental' URLs to refer to the 'geometry2' repository (it was renamed in https://github.com/ros/geometry2/issues/160)"
+        header += '# build-rosinstall.py: {}\n'.format(msg)
+        logger.warning(msg)
+        contents = contents.replace('geometry_experimental', 'geometry2')
+
+    # prepend header
+    contents = header + contents
 
     # write to rosinstall file
     with open(fn_rosinstall, 'w') as f:

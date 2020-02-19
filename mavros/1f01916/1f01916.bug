@@ -1,6 +1,8 @@
+%YAML 1.1
+---
+id: 1f01916
 title: Missing tcpclient lock
 description: >
-id: 1f01916
      The "MAVConnTCPServer::client_closed" method is responsible for
      safely closing a given client's connection to the TCP server. In
      the buggy implementation of this method, the lock for the
@@ -44,9 +46,16 @@ fix:
     - include/mavros/mavconn_tcp.h
   languages:
     - C++
-  time: 2014-08-04 (00:00)
+  time: 2014-08-04T15:14:53+04:00
 time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/72
+  datetime: 2014-08-04T15:14:53+04:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 2caee4543d130b74cd3d349c04684d236dde838b
+  fix-commit: 1f019166ccedf8ce5151944f5e33302afaf82679
+  fork-urls:
+    - https://github.com/robust-rosin/mavros

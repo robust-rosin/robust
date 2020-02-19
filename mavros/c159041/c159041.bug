@@ -45,9 +45,15 @@ fix:
     - mavros_extras/src/plugins/distance_sensor.cpp
   languages:
     - C++
-  time: 2015-08-07 (00:00)
+  time: 2015-08-07T20:52:57-04:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
-  datetime: 2015-08-07
+  datetime: 2015-08-07T20:52:57-04:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 22e53b71f39ba9f91755f4ca65f27502990b2fbd
+  fix-commit: c15904101ca0ecc8aa13712d92cc5382ddc0af18
+  fork-urls:
+    - https://github.com/robust-rosin/mavros

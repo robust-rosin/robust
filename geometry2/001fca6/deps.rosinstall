@@ -1,0 +1,142 @@
+# build-rosinstall.py: updated 'catkin' version (0.5.77) to 0.5.78 to support --only-pkg-with-deps
+# build-rosinstall.py: updated 'geometry_experimental' URLs to refer to the 'geometry2' repository (it was renamed in https://github.com/ros/geometry2/issues/160)
+- tar:
+    local-name: actionlib
+    uri: https://github.com/ros-gbp/actionlib-release/archive/release/hydro/actionlib/1.10.3-0.tar.gz
+    version: actionlib-release-release-hydro-actionlib-1.10.3-0
+- tar:
+    local-name: actionlib_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/actionlib_msgs/1.10.2-0.tar.gz
+    version: common_msgs-release-release-hydro-actionlib_msgs-1.10.2-0
+- tar:
+    local-name: catkin
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/hydro/catkin/0.5.78-0.tar.gz
+    version: catkin-release-release-hydro-catkin-0.5.78-0
+- tar:
+    local-name: console_bridge
+    uri: https://github.com/ros-gbp/console_bridge-release/archive/release/hydro/console_bridge/0.2.4-1.tar.gz
+    version: console_bridge-release-release-hydro-console_bridge-0.2.4-1
+- tar:
+    local-name: cpp_common
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/cpp_common/0.3.16-0.tar.gz
+    version: roscpp_core-release-release-hydro-cpp_common-0.3.16-0
+- tar:
+    local-name: gencpp
+    uri: https://github.com/ros-gbp/gencpp-release/archive/release/hydro/gencpp/0.4.14-0.tar.gz
+    version: gencpp-release-release-hydro-gencpp-0.4.14-0
+- tar:
+    local-name: genlisp
+    uri: https://github.com/ros-gbp/genlisp-release/archive/release/hydro/genlisp/0.4.12-0.tar.gz
+    version: genlisp-release-release-hydro-genlisp-0.4.12-0
+- tar:
+    local-name: genmsg
+    uri: https://github.com/ros-gbp/genmsg-release/archive/release/hydro/genmsg/0.4.23-0.tar.gz
+    version: genmsg-release-release-hydro-genmsg-0.4.23-0
+- tar:
+    local-name: genpy
+    uri: https://github.com/ros-gbp/genpy-release/archive/release/hydro/genpy/0.4.14-0.tar.gz
+    version: genpy-release-release-hydro-genpy-0.4.14-0
+- tar:
+    local-name: geometry_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/hydro/geometry_msgs/1.10.2-0.tar.gz
+    version: common_msgs-release-release-hydro-geometry_msgs-1.10.2-0
+- tar:
+    local-name: message_filters
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/message_filters/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-message_filters-1.9.50-0
+- tar:
+    local-name: message_generation
+    uri: https://github.com/ros-gbp/message_generation-release/archive/release/hydro/message_generation/0.2.10-0.tar.gz
+    version: message_generation-release-release-hydro-message_generation-0.2.10-0
+- tar:
+    local-name: message_runtime
+    uri: https://github.com/ros-gbp/message_runtime-release/archive/release/hydro/message_runtime/0.4.12-0.tar.gz
+    version: message_runtime-release-release-hydro-message_runtime-0.4.12-0
+- tar:
+    local-name: rosclean
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/rosclean/1.10.8-0.tar.gz
+    version: ros-release-release-hydro-rosclean-1.10.8-0
+- tar:
+    local-name: rosconsole
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosconsole/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rosconsole-1.9.50-0
+- tar:
+    local-name: roscpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/roscpp/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-roscpp-1.9.50-0
+- tar:
+    local-name: roscpp_serialization
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/roscpp_serialization/0.3.16-0.tar.gz
+    version: roscpp_core-release-release-hydro-roscpp_serialization-0.3.16-0
+- tar:
+    local-name: roscpp_traits
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/roscpp_traits/0.3.16-0.tar.gz
+    version: roscpp_core-release-release-hydro-roscpp_traits-0.3.16-0
+- tar:
+    local-name: rosgraph
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosgraph/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rosgraph-1.9.50-0
+- tar:
+    local-name: rosgraph_msgs
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosgraph_msgs/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rosgraph_msgs-1.9.50-0
+- tar:
+    local-name: roslang
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/roslang/1.10.8-0.tar.gz
+    version: ros-release-release-hydro-roslang-1.10.8-0
+- tar:
+    local-name: roslaunch
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/roslaunch/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-roslaunch-1.9.50-0
+- tar:
+    local-name: roslib
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/roslib/1.10.8-0.tar.gz
+    version: ros-release-release-hydro-roslib-1.10.8-0
+- tar:
+    local-name: rosmaster
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosmaster/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rosmaster-1.9.50-0
+- tar:
+    local-name: rosout
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosout/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rosout-1.9.50-0
+- tar:
+    local-name: rospack
+    uri: https://github.com/ros-gbp/rospack-release/archive/release/hydro/rospack/2.1.21-0.tar.gz
+    version: rospack-release-release-hydro-rospack-2.1.21-0
+- tar:
+    local-name: rosparam
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rosparam/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rosparam-1.9.50-0
+- tar:
+    local-name: rospy
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rospy/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rospy-1.9.50-0
+- tar:
+    local-name: rostest
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/rostest/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-rostest-1.9.50-0
+- tar:
+    local-name: rostime
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/hydro/rostime/0.3.16-0.tar.gz
+    version: roscpp_core-release-release-hydro-rostime-0.3.16-0
+- tar:
+    local-name: rosunit
+    uri: https://github.com/ros-gbp/ros-release/archive/release/hydro/rosunit/1.10.8-0.tar.gz
+    version: ros-release-release-hydro-rosunit-1.10.8-0
+- tar:
+    local-name: std_msgs
+    uri: https://github.com/ros-gbp/std_msgs-release/archive/release/hydro/std_msgs/0.5.8-0.tar.gz
+    version: std_msgs-release-release-hydro-std_msgs-0.5.8-0
+- tar:
+    local-name: tf2_msgs
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/hydro/tf2_msgs/0.4.7-0.tar.gz
+    version: geometry2-release-release-hydro-tf2_msgs-0.4.7-0
+- tar:
+    local-name: tf2_py
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/hydro/tf2_py/0.4.7-0.tar.gz
+    version: geometry2-release-release-hydro-tf2_py-0.4.7-0
+- tar:
+    local-name: xmlrpcpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/xmlrpcpp/1.9.50-0.tar.gz
+    version: ros_comm-release-release-hydro-xmlrpcpp-1.9.50-0
