@@ -1,0 +1,40 @@
+%YAML 1.1
+---
+id: d9aa656
+title: The inactivity Timeout Was Too Long
+description: >
+     Kobuki has a parameter with the default timeout period for
+     inactivity.  This means that if no commands are received within X
+     seconds (where X is the parameter value), then the robot stops
+     moving.
+     This timeout had a very long value of 2 seconds, which allows for
+     a diverse range of problematic scenarios.
+classification: Wrong Parameter Value (no CWE)
+keywords: ['timeout', 'driver', 'motion']
+system: kobuki
+severity: minor-issue
+links: []
+bug:
+  phase: runtime-operation
+  specificity: robotics-specific
+  architectural-location: application-specific code
+  application: mobile robot
+  task: motion
+  subsystem: driver
+  package: yujinrobot/kobuki/kobuki_driver
+  languages: null
+  detected-by: user
+  reported-by: member developer
+  issue: https://github.com/yujinrobot/kobuki/issues/109
+  time-reported: 2012-05-16T16:10:04Z
+  reproducibility: sometimes
+  trace:
+fix:
+  repo: https://github.com/yujinrobot/kobuki
+  hash: d9aa65681b3f10d0b6dda3d591a24b8be5119fb6
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_bringup/resources/yaml/kobuki.yaml']
+  languages:
+    - YAML
+  time: 2012-05-16 (17:29)

@@ -1,0 +1,80 @@
+%YAML 1.1
+---
+id: 5ee65b0
+title: Missing Queue Sizes for Some Publishers
+description: >
+     When publishing or subscribing to a topic in ROS, the developer
+     often declares a queue size to be associated with that
+     publisher/subscriber.  The queues store messages temporarily, if
+     the system is not fast enough to process every message before a
+     new one arrives.
+     In older versions of ROS, declaring the queue size was not
+     mandatory when using the Python client libraries. As of ROS
+     Indigo, this was kept optional for backward compatibility, but a
+     warning is issued.  Not specifying the queue size is a problem
+     because it changes the behaviour of the publisher, which might
+     not be expected.
+     When a queue size is not specified, publishing a message is done
+     synchronously. On the other hand, if a queue size is specified,
+     publishing a message is done asynchronously, which is more in
+     line with the behaviour of the C++ libraries. Publishing
+     synchronously is concerning, because if a subscriber is not fast
+     enough to receive the message, the publisher blocks.
+classification: "CWE-628: Function Call with Incorrectly Specified Arguments #EVOLUTION"
+keywords: ['missing arguments', 'rospy', 'publisher', 'subscriber', 'queue sizes']
+system: kobuki
+severity: warning
+links: ['http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers']
+bug:
+  phase: runtime-operation
+  specificity: ROS-specific
+  architectural-location: application-specific code
+  application: dashboard
+  task: diagnostics
+  subsystem: specific application component
+  package: yujinrobot/kobuki_desktop/kobuki_dashboard
+  languages:
+    - Python
+  detected-by: runtime detection
+  reported-by: member developer
+  issue: https://github.com/yujinrobot/kobuki_desktop/issues/32
+  time-reported: 2014-08-08T06:03:03Z
+  reproducibility: always
+  trace: null
+  reproduction: >
+        Building the rosinstall file using a link to the issue on GitHub ran
+        into errors, as per issue
+        https://github.com/robust-rosin/robust/issues/55.
+        This was due to the fact that the kobuki_desktop was only released on
+        ROS Indigo, but this issue was opened before the official release,
+        and thus rosdistro did not know the repository at the time the bug
+        was reported.
+        In order to create the rosinstall file, a date had to be manually
+        selected, after the release of the package into the distribution.
+        Another issue surfaced when building the docker image, as it could
+        not find tf2 packages. This was due to the repository being named
+        `geometry_experimental` at the time this issue was reported, and
+        having been renamed to `geometry2` later on. To fix this, the
+        rosinstall file had to be patched manually. Cf. issue
+        https://github.com/robust-rosin/robust/issues/63.
+        Regarding the test case, the strategy is very straightforward.
+        Since the bug is related to misuse of ROS primitives, the test script
+        has to override said primitives (`rospy.Publisher` in this case)
+        and fail whenever the wrong arguments are passed to it.
+        The implementation of the test case faced an issue, however.
+        Since the faulty original code used widgets from a GUI application,
+        it cannot be called directly in the test case. This is due to the Qt
+        library inhibiting initialization of widgets without initializing
+        a GUI application first, but these cannot be initialized within
+        Docker images, which provide no access to GUI primitives (X server).
+        Thus, the final solution has to mimic the original code, but stripping
+        the GUI-related parts.
+fix:
+  repo: https://github.com/yujinrobot/kobuki_desktop
+  hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_dashboard/src/kobuki_dashboard/led_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/motor_widget.py']
+  languages:
+    - Python
+  time: 2014-08-08 (11:25)

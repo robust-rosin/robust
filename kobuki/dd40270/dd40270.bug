@@ -1,0 +1,60 @@
+%YAML 1.1
+---
+id: dd40270
+title: Missing Queue Sizes for Some Publishers
+description: >
+     When publishing or subscribing to a topic in ROS, the developer
+     often declares a queue size to be associated with that
+     publisher/subscriber.  The queues store messages temporarily, if
+     the system is not fast enough to process every message before a
+     new one arrives.
+     In older versions of ROS, declaring the queue size was not
+     mandatory when using the Python client libraries. As of ROS
+     Indigo, this was kept optional for backward compatibility, but a
+     warning is issued.  Not specifying the queue size is a problem
+     because it changes the behaviour of the publisher, which might
+     not be expected.
+     When a queue size is not specified, publishing a message is done
+     synchronously. On the other hand, if a queue size is specified,
+     publishing a message is done asynchronously, which is more in
+     line with the behaviour of the C++ libraries. Publishing
+     synchronously is concerning, because if a subscriber is not fast
+     enough to receive the message, the publisher blocks.
+classification: "CWE-628: Function Call with Incorrectly Specified Arguments #EVOLUTION"
+keywords: ['missing arguments', 'rospy', 'publisher', 'subscriber', 'queue sizes']
+system: kobuki
+severity: warning
+links: ['http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers']
+bug:
+  phase: runtime-operation
+  specificity: ROS-specific
+  architectural-location: application-specific code
+  application: test suite
+  task: testing
+  subsystem: test suite
+  package: yujinrobot/kobuki/kobuki_testsuite | yujinrobot/kobuki/kobuki_node
+  languages:
+    - Python
+  detected-by: runtime detection
+  reported-by: member developer
+  issue: https://github.com/yujinrobot/kobuki/issues/338
+  time-reported: 2014-08-08T06:28:25Z
+  reproducibility: always
+  trace: null
+  reproduction: >
+    Due to the renaming of the geometry_experimental repository to geometry2,
+    the rosinstall file had to be manually changed to use the correct URIs.
+    The test case strategy is straightforward. Replace the ROS Publisher with
+    a class that crashes when the queue_size argument is not given.
+    In order to use the faulty code directly, Python dynamic imports had to be
+    used, due to the fact that the bugs reside in executable scripts, which
+    are not part of the source code that is importable by standard means.
+fix:
+  repo: https://github.com/yujinrobot/kobuki
+  hash: dd40270d17cdd3e1729437f0988c0acb6c622d5e
+  pull-request: null
+  license: ['BSD']
+  fix-in: ['kobuki_node/scripts/getOdom2D.py', 'kobuki_node/scripts/getYaw.py', 'kobuki_testsuite/src/kobuki_testsuite/drift_estimation.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_rotate.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_travel_forward.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_wander.py']
+  languages:
+    - Python
+  time: 2014-08-11 (06:13)

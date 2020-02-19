@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+id: 27e7db9
+title: Incorrect header installation path
+description: >
+     When mavconn was removed from mavros, the install destination for
+     the mavconn headers were not appropriately updated, causing both
+     the 0.9.1 and 0.8.4 builds (of MAVROS) to break.
+classification: Missing Installation Dependencies (no CWE) #EVOLUTION CWE-439
+keywords:
+  - broken build
+system: mavros
+severity: error
+links: []
+bug:
+  phase: build-time
+  specificity: general issue
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavlink/mavros
+  languages:
+    - CMake
+  detected-by: developer
+  reported-by: contributor
+  issue: https://github.com/mavlink/mavros/issues/162
+  time-reported: 2014-11-02 (00:00)
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: 27e7db9d504359d05830fbc9553fd1fd1af3aab2
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in: libmavconn/CMakeLists.txt
+  languages:
+    - CMake
+  time: 2014-11-03T12:18:48+03:00
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - mavros
+  datetime: 2014-11-03T12:18:48+03:00
+bugzoo:
+  is-build-failure: true
+  bug-commit: 2a257e378845f76a88cb81152f4212a59cffe9f3
+  fix-commit: 27e7db9d504359d05830fbc9553fd1fd1af3aab2
+  fork-urls:
+    - https://github.com/robust-rosin/mavros

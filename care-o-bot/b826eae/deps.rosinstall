@@ -1,0 +1,396 @@
+- tar:
+    local-name: actionlib
+    uri: https://github.com/ros-gbp/actionlib-release/archive/release/indigo/actionlib/1.11.7-0.tar.gz
+    version: actionlib-release-release-indigo-actionlib-1.11.7-0
+- tar:
+    local-name: actionlib_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/actionlib_msgs/1.11.9-0.tar.gz
+    version: common_msgs-release-release-indigo-actionlib_msgs-1.11.9-0
+- tar:
+    local-name: angles
+    uri: https://github.com/ros-gbp/geometry_angles_utils-release/archive/release/indigo/angles/1.9.10-0.tar.gz
+    version: geometry_angles_utils-release-release-indigo-angles-1.9.10-0
+- tar:
+    local-name: bond
+    uri: https://github.com/ros-gbp/bond_core-release/archive/release/indigo/bond/1.7.18-0.tar.gz
+    version: bond_core-release-release-indigo-bond-1.7.18-0
+- tar:
+    local-name: bondcpp
+    uri: https://github.com/ros-gbp/bond_core-release/archive/release/indigo/bondcpp/1.7.18-0.tar.gz
+    version: bond_core-release-release-indigo-bondcpp-1.7.18-0
+- tar:
+    local-name: bondpy
+    uri: https://github.com/ros-gbp/bond_core-release/archive/release/indigo/bondpy/1.7.18-0.tar.gz
+    version: bond_core-release-release-indigo-bondpy-1.7.18-0
+- tar:
+    local-name: catkin
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/indigo/catkin/0.6.18-0.tar.gz
+    version: catkin-release-release-indigo-catkin-0.6.18-0
+- tar:
+    local-name: class_loader
+    uri: https://github.com/ros-gbp/class_loader-release/archive/release/indigo/class_loader/0.3.6-0.tar.gz
+    version: class_loader-release-release-indigo-class_loader-0.3.6-0
+- tar:
+    local-name: cmake_modules
+    uri: https://github.com/ros-gbp/cmake_modules-release/archive/release/indigo/cmake_modules/0.3.3-0.tar.gz
+    version: cmake_modules-release-release-indigo-cmake_modules-0.3.3-0
+- tar:
+    local-name: cob_calibration_data
+    uri: https://github.com/ipa320/cob_calibration_data-release/archive/release/indigo/cob_calibration_data/0.6.6-0.tar.gz
+    version: cob_calibration_data-release-release-indigo-cob_calibration_data-0.6.6-0
+- tar:
+    local-name: cob_description
+    uri: https://github.com/ipa320/cob_common-release/archive/release/indigo/cob_description/0.6.6-0.tar.gz
+    version: cob_common-release-release-indigo-cob_description-0.6.6-0
+- tar:
+    local-name: cob_omni_drive_controller
+    uri: https://github.com/ipa320/cob_control-release/archive/release/indigo/cob_omni_drive_controller/0.6.14-0.tar.gz
+    version: cob_control-release-release-indigo-cob_omni_drive_controller-0.6.14-0
+- tar:
+    local-name: control_msgs
+    uri: https://github.com/ros-gbp/control_msgs-release/archive/release/indigo/control_msgs/1.3.1-0.tar.gz
+    version: control_msgs-release-release-indigo-control_msgs-1.3.1-0
+- tar:
+    local-name: control_toolbox
+    uri: https://github.com/ros-gbp/control_toolbox-release/archive/release/indigo/control_toolbox/1.13.2-0.tar.gz
+    version: control_toolbox-release-release-indigo-control_toolbox-1.13.2-0
+- tar:
+    local-name: controller_interface
+    uri: https://github.com/ros-gbp/ros_control-release/archive/release/indigo/controller_interface/0.9.4-0.tar.gz
+    version: ros_control-release-release-indigo-controller_interface-0.9.4-0
+- tar:
+    local-name: controller_manager
+    uri: https://github.com/ros-gbp/ros_control-release/archive/release/indigo/controller_manager/0.9.4-0.tar.gz
+    version: ros_control-release-release-indigo-controller_manager-0.9.4-0
+- tar:
+    local-name: controller_manager_msgs
+    uri: https://github.com/ros-gbp/ros_control-release/archive/release/indigo/controller_manager_msgs/0.9.4-0.tar.gz
+    version: ros_control-release-release-indigo-controller_manager_msgs-0.9.4-0
+- tar:
+    local-name: cpp_common
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/cpp_common/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-cpp_common-0.5.7-0
+- tar:
+    local-name: diagnostic_aggregator
+    uri: https://github.com/ros-gbp/diagnostics-release/archive/release/indigo/diagnostic_aggregator/1.8.10-0.tar.gz
+    version: diagnostics-release-release-indigo-diagnostic_aggregator-1.8.10-0
+- tar:
+    local-name: diagnostic_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/diagnostic_msgs/1.11.9-0.tar.gz
+    version: common_msgs-release-release-indigo-diagnostic_msgs-1.11.9-0
+- tar:
+    local-name: dynamic_reconfigure
+    uri: https://github.com/ros-gbp/dynamic_reconfigure-release/archive/release/indigo/dynamic_reconfigure/1.5.45-0.tar.gz
+    version: dynamic_reconfigure-release-release-indigo-dynamic_reconfigure-1.5.45-0
+- tar:
+    local-name: effort_controllers
+    uri: https://github.com/ros-gbp/ros_controllers-release/archive/release/indigo/effort_controllers/0.9.3-0.tar.gz
+    version: ros_controllers-release-release-indigo-effort_controllers-0.9.3-0
+- tar:
+    local-name: forward_command_controller
+    uri: https://github.com/ros-gbp/ros_controllers-release/archive/release/indigo/forward_command_controller/0.9.3-0.tar.gz
+    version: ros_controllers-release-release-indigo-forward_command_controller-0.9.3-0
+- tar:
+    local-name: gazebo_msgs
+    uri: https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/indigo/gazebo_msgs/2.4.11-0.tar.gz
+    version: gazebo_ros_pkgs-release-release-indigo-gazebo_msgs-2.4.11-0
+- tar:
+    local-name: gazebo_ros
+    uri: https://github.com/ros-gbp/gazebo_ros_pkgs-release/archive/release/indigo/gazebo_ros/2.4.11-0.tar.gz
+    version: gazebo_ros_pkgs-release-release-indigo-gazebo_ros-2.4.11-0
+- tar:
+    local-name: gencpp
+    uri: https://github.com/ros-gbp/gencpp-release/archive/release/indigo/gencpp/0.5.5-0.tar.gz
+    version: gencpp-release-release-indigo-gencpp-0.5.5-0
+- tar:
+    local-name: genlisp
+    uri: https://github.com/ros-gbp/genlisp-release/archive/release/indigo/genlisp/0.4.15-0.tar.gz
+    version: genlisp-release-release-indigo-genlisp-0.4.15-0
+- tar:
+    local-name: genmsg
+    uri: https://github.com/ros-gbp/genmsg-release/archive/release/indigo/genmsg/0.5.7-0.tar.gz
+    version: genmsg-release-release-indigo-genmsg-0.5.7-0
+- tar:
+    local-name: genpy
+    uri: https://github.com/ros-gbp/genpy-release/archive/release/indigo/genpy/0.5.10-0.tar.gz
+    version: genpy-release-release-indigo-genpy-0.5.10-0
+- tar:
+    local-name: geometry_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/geometry_msgs/1.11.9-0.tar.gz
+    version: common_msgs-release-release-indigo-geometry_msgs-1.11.9-0
+- tar:
+    local-name: hardware_interface
+    uri: https://github.com/ros-gbp/ros_control-release/archive/release/indigo/hardware_interface/0.9.4-0.tar.gz
+    version: ros_control-release-release-indigo-hardware_interface-0.9.4-0
+- tar:
+    local-name: joint_state_controller
+    uri: https://github.com/ros-gbp/ros_controllers-release/archive/release/indigo/joint_state_controller/0.9.3-0.tar.gz
+    version: ros_controllers-release-release-indigo-joint_state_controller-0.9.3-0
+- tar:
+    local-name: joint_trajectory_controller
+    uri: https://github.com/ros-gbp/ros_controllers-release/archive/release/indigo/joint_trajectory_controller/0.9.3-0.tar.gz
+    version: ros_controllers-release-release-indigo-joint_trajectory_controller-0.9.3-0
+- tar:
+    local-name: message_filters
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/message_filters/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-message_filters-1.11.20-0
+- tar:
+    local-name: message_generation
+    uri: https://github.com/ros-gbp/message_generation-release/archive/release/indigo/message_generation/0.2.10-0.tar.gz
+    version: message_generation-release-release-indigo-message_generation-0.2.10-0
+- tar:
+    local-name: message_runtime
+    uri: https://github.com/ros-gbp/message_runtime-release/archive/release/indigo/message_runtime/0.4.12-0.tar.gz
+    version: message_runtime-release-release-indigo-message_runtime-0.4.12-0
+- tar:
+    local-name: nav_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/nav_msgs/1.11.9-0.tar.gz
+    version: common_msgs-release-release-indigo-nav_msgs-1.11.9-0
+- tar:
+    local-name: pluginlib
+    uri: https://github.com/ros-gbp/pluginlib-release/archive/release/indigo/pluginlib/1.10.4-0.tar.gz
+    version: pluginlib-release-release-indigo-pluginlib-1.10.4-0
+- tar:
+    local-name: position_controllers
+    uri: https://github.com/ros-gbp/ros_controllers-release/archive/release/indigo/position_controllers/0.9.3-0.tar.gz
+    version: ros_controllers-release-release-indigo-position_controllers-0.9.3-0
+- tar:
+    local-name: prace_common
+    uri: https://github.com/ipa320/cob_substitute-release/archive/release/indigo/prace_common/0.6.5-0.tar.gz
+    version: cob_substitute-release-release-indigo-prace_common-0.6.5-0
+- tar:
+    local-name: python_qt_binding
+    uri: https://github.com/ros-gbp/python_qt_binding-release/archive/release/indigo/python_qt_binding/0.2.19-0.tar.gz
+    version: python_qt_binding-release-release-indigo-python_qt_binding-0.2.19-0
+- tar:
+    local-name: qt_gui
+    uri: https://github.com/ros-gbp/qt_gui_core-release/archive/release/indigo/qt_gui/0.2.31-0.tar.gz
+    version: qt_gui_core-release-release-indigo-qt_gui-0.2.31-0
+- tar:
+    local-name: qt_gui_py_common
+    uri: https://github.com/ros-gbp/qt_gui_core-release/archive/release/indigo/qt_gui_py_common/0.2.31-0.tar.gz
+    version: qt_gui_core-release-release-indigo-qt_gui_py_common-0.2.31-0
+- tar:
+    local-name: qwt_dependency
+    uri: https://github.com/ros-gbp/qwt_dependency-release/archive/release/indigo/qwt_dependency/1.0.1-0.tar.gz
+    version: qwt_dependency-release-release-indigo-qwt_dependency-1.0.1-0
+- tar:
+    local-name: raw_description
+    uri: https://github.com/ipa320/cob_common-release/archive/release/indigo/raw_description/0.6.6-0.tar.gz
+    version: cob_common-release-release-indigo-raw_description-0.6.6-0
+- tar:
+    local-name: realtime_tools
+    uri: https://github.com/ros-gbp/realtime_tools-release/archive/release/indigo/realtime_tools/1.9.1-0.tar.gz
+    version: realtime_tools-release-release-indigo-realtime_tools-1.9.1-0
+- tar:
+    local-name: rosbag
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosbag/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosbag-1.11.20-0
+- tar:
+    local-name: rosbag_migration_rule
+    uri: https://github.com/ros-gbp/rosbag_migration_rule-release/archive/release/indigo/rosbag_migration_rule/1.0.0-0.tar.gz
+    version: rosbag_migration_rule-release-release-indigo-rosbag_migration_rule-1.0.0-0
+- tar:
+    local-name: rosbag_storage
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosbag_storage/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosbag_storage-1.11.20-0
+- tar:
+    local-name: rosbuild
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/rosbuild/1.11.13-0.tar.gz
+    version: ros-release-release-indigo-rosbuild-1.11.13-0
+- tar:
+    local-name: rosclean
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/rosclean/1.11.13-0.tar.gz
+    version: ros-release-release-indigo-rosclean-1.11.13-0
+- tar:
+    local-name: rosconsole
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosconsole/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosconsole-1.11.20-0
+- tar:
+    local-name: rosconsole_bridge
+    uri: https://github.com/ros-gbp/rosconsole_bridge-release/archive/release/indigo/rosconsole_bridge/0.4.4-0.tar.gz
+    version: rosconsole_bridge-release-release-indigo-rosconsole_bridge-0.4.4-0
+- tar:
+    local-name: roscpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roscpp/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-roscpp-1.11.20-0
+- tar:
+    local-name: roscpp_serialization
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_serialization/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-roscpp_serialization-0.5.7-0
+- tar:
+    local-name: roscpp_traits
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/roscpp_traits/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-roscpp_traits-0.5.7-0
+- tar:
+    local-name: rosgraph
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosgraph/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosgraph-1.11.20-0
+- tar:
+    local-name: rosgraph_msgs
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/rosgraph_msgs/1.11.2-0.tar.gz
+    version: ros_comm_msgs-release-release-indigo-rosgraph_msgs-1.11.2-0
+- tar:
+    local-name: roslang
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/roslang/1.11.13-0.tar.gz
+    version: ros-release-release-indigo-roslang-1.11.13-0
+- tar:
+    local-name: roslaunch
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roslaunch/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-roslaunch-1.11.20-0
+- tar:
+    local-name: roslib
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/roslib/1.11.13-0.tar.gz
+    version: ros-release-release-indigo-roslib-1.11.13-0
+- tar:
+    local-name: roslint
+    uri: https://github.com/ros-gbp/roslint-release/archive/release/indigo/roslint/0.10.0-0.tar.gz
+    version: roslint-release-release-indigo-roslint-0.10.0-0
+- tar:
+    local-name: roslz4
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roslz4/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-roslz4-1.11.20-0
+- tar:
+    local-name: rosmaster
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosmaster/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosmaster-1.11.20-0
+- tar:
+    local-name: rosmsg
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosmsg/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosmsg-1.11.20-0
+- tar:
+    local-name: rosnode
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosnode/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosnode-1.11.20-0
+- tar:
+    local-name: rosout
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosout/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosout-1.11.20-0
+- tar:
+    local-name: rospack
+    uri: https://github.com/ros-gbp/rospack-release/archive/release/indigo/rospack/2.2.7-0.tar.gz
+    version: rospack-release-release-indigo-rospack-2.2.7-0
+- tar:
+    local-name: rosparam
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosparam/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosparam-1.11.20-0
+- tar:
+    local-name: rospy
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rospy/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rospy-1.11.20-0
+- tar:
+    local-name: rosservice
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rosservice/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rosservice-1.11.20-0
+- tar:
+    local-name: rostest
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rostest/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rostest-1.11.20-0
+- tar:
+    local-name: rostime
+    uri: https://github.com/ros-gbp/roscpp_core-release/archive/release/indigo/rostime/0.5.7-0.tar.gz
+    version: roscpp_core-release-release-indigo-rostime-0.5.7-0
+- tar:
+    local-name: rostopic
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/rostopic/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-rostopic-1.11.20-0
+- tar:
+    local-name: rosunit
+    uri: https://github.com/ros-gbp/ros-release/archive/release/indigo/rosunit/1.11.13-0.tar.gz
+    version: ros-release-release-indigo-rosunit-1.11.13-0
+- tar:
+    local-name: roswtf
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/roswtf/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-roswtf-1.11.20-0
+- tar:
+    local-name: rqt_gui
+    uri: https://github.com/ros-gbp/rqt-release/archive/release/indigo/rqt_gui/0.2.14-1.tar.gz
+    version: rqt-release-release-indigo-rqt_gui-0.2.14-1
+- tar:
+    local-name: rqt_gui_py
+    uri: https://github.com/ros-gbp/rqt-release/archive/release/indigo/rqt_gui_py/0.2.14-1.tar.gz
+    version: rqt-release-release-indigo-rqt_gui_py-0.2.14-1
+- tar:
+    local-name: rqt_plot
+    uri: https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/indigo/rqt_plot/0.4.3-0.tar.gz
+    version: rqt_common_plugins-release-release-indigo-rqt_plot-0.4.3-0
+- tar:
+    local-name: rqt_py_common
+    uri: https://github.com/ros-gbp/rqt_common_plugins-release/archive/release/indigo/rqt_py_common/0.4.3-0.tar.gz
+    version: rqt_common_plugins-release-release-indigo-rqt_py_common-0.4.3-0
+- tar:
+    local-name: schunk_description
+    uri: https://github.com/ipa320/schunk_modular_robotics-release/archive/release/indigo/schunk_description/0.6.9-0.tar.gz
+    version: schunk_modular_robotics-release-release-indigo-schunk_description-0.6.9-0
+- tar:
+    local-name: sensor_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/sensor_msgs/1.11.9-0.tar.gz
+    version: common_msgs-release-release-indigo-sensor_msgs-1.11.9-0
+- tar:
+    local-name: smclib
+    uri: https://github.com/ros-gbp/bond_core-release/archive/release/indigo/smclib/1.7.18-0.tar.gz
+    version: bond_core-release-release-indigo-smclib-1.7.18-0
+- tar:
+    local-name: std_msgs
+    uri: https://github.com/ros-gbp/std_msgs-release/archive/release/indigo/std_msgs/0.5.10-0.tar.gz
+    version: std_msgs-release-release-indigo-std_msgs-0.5.10-0
+- tar:
+    local-name: std_srvs
+    uri: https://github.com/ros-gbp/ros_comm_msgs-release/archive/release/indigo/std_srvs/1.11.2-0.tar.gz
+    version: ros_comm_msgs-release-release-indigo-std_srvs-1.11.2-0
+- tar:
+    local-name: tf
+    uri: https://github.com/ros-gbp/geometry-release/archive/release/indigo/tf/1.11.8-0.tar.gz
+    version: geometry-release-release-indigo-tf-1.11.8-0
+- tar:
+    local-name: tf2
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2/0.5.13-0.tar.gz
+    version: geometry2-release-release-indigo-tf2-0.5.13-0
+- tar:
+    local-name: tf2_msgs
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_msgs/0.5.13-0.tar.gz
+    version: geometry2-release-release-indigo-tf2_msgs-0.5.13-0
+- tar:
+    local-name: tf2_py
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_py/0.5.13-0.tar.gz
+    version: geometry2-release-release-indigo-tf2_py-0.5.13-0
+- tar:
+    local-name: tf2_ros
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/indigo/tf2_ros/0.5.13-0.tar.gz
+    version: geometry2-release-release-indigo-tf2_ros-0.5.13-0
+- tar:
+    local-name: topic_tools
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/topic_tools/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-topic_tools-1.11.20-0
+- tar:
+    local-name: trajectory_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/trajectory_msgs/1.11.9-0.tar.gz
+    version: common_msgs-release-release-indigo-trajectory_msgs-1.11.9-0
+- tar:
+    local-name: ur_description
+    uri: https://github.com/ros-industrial-release/universal_robot-release/archive/release/indigo/ur_description/1.1.6-0.tar.gz
+    version: universal_robot-release-release-indigo-ur_description-1.1.6-0
+- tar:
+    local-name: urdf
+    uri: https://github.com/ros-gbp/robot_model-release/archive/release/indigo/urdf/1.11.11-0.tar.gz
+    version: robot_model-release-release-indigo-urdf-1.11.11-0
+- tar:
+    local-name: urdf_parser_plugin
+    uri: https://github.com/ros-gbp/robot_model-release/archive/release/indigo/urdf_parser_plugin/1.11.11-0.tar.gz
+    version: robot_model-release-release-indigo-urdf_parser_plugin-1.11.11-0
+- tar:
+    local-name: velocity_controllers
+    uri: https://github.com/ros-gbp/ros_controllers-release/archive/release/indigo/velocity_controllers/0.9.3-0.tar.gz
+    version: ros_controllers-release-release-indigo-velocity_controllers-0.9.3-0
+- tar:
+    local-name: visualization_msgs
+    uri: https://github.com/ros-gbp/common_msgs-release/archive/release/indigo/visualization_msgs/1.11.9-0.tar.gz
+    version: common_msgs-release-release-indigo-visualization_msgs-1.11.9-0
+- tar:
+    local-name: xacro
+    uri: https://github.com/ros-gbp/xacro-release/archive/release/indigo/xacro/1.9.5-0.tar.gz
+    version: xacro-release-release-indigo-xacro-1.9.5-0
+- tar:
+    local-name: xmlrpcpp
+    uri: https://github.com/ros-gbp/ros_comm-release/archive/release/indigo/xmlrpcpp/1.11.20-0.tar.gz
+    version: ros_comm-release-release-indigo-xmlrpcpp-1.11.20-0

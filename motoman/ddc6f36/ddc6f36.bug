@@ -1,0 +1,46 @@
+%YAML 1.1
+---
+id: ddc6f36
+title: Library linking error
+description: >
+     In the CMakeLists.txt from the motoman_driver package, this
+     package is not linked against the catkin_LIBRARIES. This results
+     in an error, when compiling with catkin
+classification: Linking error (no CWE)
+keywords: ['linking', 'CMakeLists', 'catkin']
+system: motoman
+severity: error
+links: []
+bug:
+  phase: build-time
+  specificity: error
+  architectural-location: ROS-specific
+  application: platform code
+  task: null
+  subsystem: null
+  package: ros-industrial/motoman | ros-industrial/motoman/motoman_driver
+  languages:
+    - CMake
+  detected-by: developer
+  reported-by: member developer
+  issue: https://github.com/ros-industrial/motoman/issues/23
+  time-reported: 2014-01-27 (12:08)
+  reproducibility: always
+  trace: null
+  reproduction-images:
+    buggy: 41d65629b5dc9c29762369e7c3b5ed6453c30878
+    fixed: ddc6f363dde1f1bc28d76908a6f950a333d659b0
+    rosdistro: d56b6a300d0e81fcc9e945cec5ad918b2178a209
+    note: >
+        The date given to the time machine had to be posterior to the issue
+        report, since the package had not been released yet at the time.
+        Testing is straightforward, as this is a build bug.
+fix:
+  repo: https://github.com/ros-industrial/motoman/
+  hash: null
+  pull-request: 25
+  license: ['BSD']
+  fix-in: ['motoman_driver/CMakeLists.txt']
+  languages:
+    - CMake
+  time: 2014-01-28 (03:47)

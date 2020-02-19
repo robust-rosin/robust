@@ -1,0 +1,67 @@
+%YAML 1.1
+---
+id: 564f935
+title: Incorrect argument name and positional->keyword argument
+description: >
+     This commit fixes two bugs in the "mavros/scripts/mavcmd" script:
+
+     The first bug is on lines 278 and 279. These lines implement '-e'
+     and '-d' command-line flags, which are used to enable and disable
+     the camera trigger. The buggy version of these lines incorrectly
+     saves the state of these flags to the "enable" attribute of the
+     arguments object. The code which handles the state of this flag
+     is on line 191, and expects the flag to be saved to
+     "trigger_enable".
+
+     The second bug is on line 191. The buggy implementation
+     incorrectly passes the state of the "trigger_enable" flag to
+     "command.trigger_control" as its first (and only) positional
+     argument. The "command.trigger_control" function expects the flag
+     to be passed as its "trigger_enable" argument.
+classification: "CWE-628: Function Call with Incorrectly Specified Arguments"
+keywords:
+  - positional-to-keyword
+  - bad parameter name
+system: mavros
+severity: error
+links: []
+bug:
+  phase: runtime-initialization
+  specificity: "general issue: positional to keyword | bad parameter name"
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - Python
+  detected-by: developer
+  reported-by: contributor
+  issue: N/A
+  time-reported: N/A
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: 564f935bc1ddd6c7849923a647ebd3828cde99f0
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/scripts/mavcmd
+  languages:
+    - Python
+  time: 2015-06-16T23:12:18+05:30
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  datetime: 2015-06-16T23:12:18+05:30
+bugzoo:
+  is-build-failure: false
+  bug-commit: a2a74ec4364a4842b86d3801472d93973e85a872
+  fix-commit: 564f935bc1ddd6c7849923a647ebd3828cde99f0
+  fork-urls:
+    - https://github.com/robust-rosin/mavros

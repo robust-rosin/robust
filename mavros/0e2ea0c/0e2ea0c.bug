@@ -1,0 +1,61 @@
+%YAML 1.1
+---
+id: 0e2ea0c
+title: Inefficient checking for string emptiness using empty() rather than size()
+description: >
+     This commit performs two small performance/hygiene-related fixes
+     to the code, discovered using the cppcheck static analyser. The
+     first fix replaces code that checks a string is empty by ensuring
+     its length is greater than zero with a call to ".empty()".
+
+     (The commit also contains a minor optimization: an argument of
+     the "send_any_path_command" function has been optimized to now
+     be passed as string by reference, rather than by value.)
+classification: Inefficient use of library function (no CWE)
+keywords:
+  - cosmetic
+  - performance
+system: mavros
+severity: bad-smell
+links: []
+bug:
+  phase: build-time
+  specificity: general issue
+  architectural-location: N/A
+  application: N/A
+  task: N/A
+  subsystem: N/A
+  package: mavros
+  languages:
+    - C++
+  detected-by: code scanning tool
+  reported-by: unreported
+  issue: N/A
+  time-reported: unreported
+  reproducibility: N/A
+  trace: N/A
+fix:
+  repo: https://github.com/mavlink/mavros
+  hash: 0e2ea0c43b373feb490b45710fb63f4e6cde78eb
+  pull-request: N/A
+  license:
+    - BSD
+    - GPLv3
+    - LGPLv3
+  fix-in:
+    - mavros/src/plugins/ftp.cpp
+  languages: C++
+  time: 2015-07-29T13:27:14+03:00
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - mavros
+  missing-dependencies:
+    - eigen_conversions
+  datetime: 2015-07-29T13:27:14+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 9990651fe1898bc32991fbacf5afab281ba211c3
+  fix-commit: 0e2ea0c43b373feb490b45710fb63f4e6cde78eb
+  fork-urls:
+    - https://github.com/robust-rosin/mavros

@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: dd40270
+put: kobuki_node
+ros_distro: indigo
+datetime_reported: 2014-08-08T06:28:25Z
+issue_url: https://github.com/yujinrobot/kobuki/issues/338
+reproduction-images:
+  buggy: TODO
+  fixed: TODO
+  rosdistro: 4a8c69bff2adf4b1ee29837ede5cb162c9a7f682

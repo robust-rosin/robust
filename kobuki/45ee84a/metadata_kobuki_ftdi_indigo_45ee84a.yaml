@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+bug_id: 45ee84a
+put: kobuki_ftdi
+ros_distro: indigo
+datetime_reported: 2015-02-11T18:21:19Z
+issue_url: https://github.com/yujinrobot/kobuki_core/issues/16
+reproduction-images:
+  buggy: 84a5426c775e35c14485f7e62bdcb23a7737f24d
+  fixed: 45ee84aa1e920b26f8191763e20c10c5806ead60
+  rosdistro: cd8f526e44bebd74782e62e742ec454b727251be

@@ -2,7 +2,7 @@
 
 This file describes the procedure of reproduction of the bug in the ROBUST ROSIN repository. It is meant to be read by those who contribute to the repository.  Before reading this document, read about the general usage of the repository, anatomy and commands in [the top-level readme file](README.md). 
 
-We explain the process using the bug b4dc23c as an example.  Go to [tf2/b4dc23c.L3/](tf2/b4dc23c.L3/) and run (requires a docker installation). This bug is now implemented so that you can test whether you have all the prerequistes set up by invoking:
+We explain the process using the bug b4dc23c as an example.  Go to [/ geometry2 / b4dc23c/](/geometry2/b4dc23c/) and run (requires a docker installation). This bug is now implemented so that you can test whether you have all the prerequistes set up by invoking:
 
 ```bugzoo bug build robust:b4dc23c```
 
@@ -28,25 +28,25 @@ We describe both of these below.
 
 # Preparation of the skeleton container #
 
-This part is a bit sketchy &mdash; people doing this know the details well. It mostly describes what happens **before you start writing a test**. All the relevant files should be  should be in [tf2/b4dc23c.L3](tf2/b4dc23c.L3)). 
+This part is a bit sketchy &mdash; people doing this know the details well. It mostly describes what happens **before you start writing a test**. All the relevant files should be  should be in [/ geometry2 / b4dc23c](/geometry2/b4dc23c)). 
 
 1. The [time machine](https://github.com/gavanderhoorn/rosin_bug_hunt_l3/issues/2) is used to produce the lists of dependent sources in the rosinstall format: 
 
-  * [deps.rosinstall](tf2/b4dc23c.L3/deps.rosinstall): all sources of packages that the package under test depends on
+  * [deps.rosinstall](tf2/b4dc23c/deps.rosinstall): all sources of packages that the package under test depends on
 
-  * [put.rosinstall](tf2/b4dc23c.L3/put.rosinstall): the source and commit which contains the bug 
+  * [put.rosinstall](tf2/b4dc23c/put.rosinstall): the source and commit which contains the bug 
 
-  * [puts_with_deps.rosinstall](tf2/b4dc23c.L3/puts_with_deps.rosinstall): the concatanation of the previous two
+  * [puts_with_deps.rosinstall](tf2/b4dc23c/puts_with_deps.rosinstall): the concatenation of the previous two
 
 
-2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, and named with the bug hash included as a prefix (robust/HASH_repo).  In this case we create [robust-rosin / b4dc23c_geometry2](https://github.com/robust-rosin/b4dc23c_geometry2).  The parent of the bug fixing commit is branched to ```robust_buggy``` and the fixed commit is branched to ```robust_fixed```.
+2. The repository of the package containing the bug is forked under the [robust-rosin](https://github.com/robust-rosin/) organization, without renaming---if this has not been done before.  In this case we create [robust-rosin / geometry2](https://github.com/robust-rosin/geometry2).  The parent of the bug fixing commit is branched to ```bugname_robust_buggy``` and the fixed commit is branched to ```bugname_robust_fixed``` (in this case ```b4dc23c_robust_buggy``` and ```b4dc23c_robust_fixed``` respectively).
 
     To identify the parent commit of the fixing commit following the issue/pull-request link from the bug description and finding the right merge commit, then it will have a parent. For this example:
 
     ```
     git checkout a9dbba2e265458ab26a9c2ced03f604c51b95312
-    git checkout -b robust_buggy
-    git tag robust_buggy_released
+    git checkout -b b4dc23c_robust_buggy
+    git tag b4dc23c_robust_buggy_released
     git push --tags
     ```
 
@@ -56,8 +56,8 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
 
     ```
     git checkout b4dc23c
-    git checkout -b robust_fixed
-    git tag robust_fixed_released
+    git checkout -b b4dc23c_robust_fixed
+    git tag b4dc23c_robust_fixed_released
     git push --tags
     ``` 
     
@@ -84,7 +84,7 @@ This part is a bit sketchy &mdash; people doing this know the details well. It m
 
 # Writing and deploying the test-case #
 
-After getting a complete L3 directory with the above files  from Chris, identify the repo and the issue (or pull request) number of the bug. 
+After getting a complete directory with the above files  from Chris, identify the repo and the issue (or pull request) number of the bug. 
 
 1. git-clone the bug development repo locally and move to the buggy branch where we will be developing the test
 
