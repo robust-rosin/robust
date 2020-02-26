@@ -1,0 +1,59 @@
+%YAML 1.1
+---
+id: d12b890
+title: Incomplete type-checking at Python/C++ interface
+description: >
+    "tf2 is implemented in C++ and then later interface to Python using the
+    Python native interface (this is done in tf2_py package).  This package
+    receives calls from python, makes the necessary safety checks and
+    adaptations and forwards them to tf2.  Unfortunately, some checks on
+    messages are missing.  The bug report shows code where a transform rotation
+    field is assigned a 3D vector (it should be a quaternion), and the
+    transform's translation field is a ssigned a quaternion (it shouled be a
+    vector.) This code should crash, with a safety violation, as quternions and
+    vectors are not compatible on the C++ side. Unfortunately, due to the
+    missing checks in the native interfaces, it quietly throws an exception and
+    fails.
+
+    Not checking types on the interface between managed and unmanaged language
+    causes two problems: First, the API is not safe to use, and the reporting
+    is bad (so usability is low). Second, it might be exploitable to create
+    security attacks.
+
+    There is no pull request.  It appears that the fixing commit has been
+    pushed directly into the melodic-devel branch."
+classification: "CWE-704: Incorrect Type Conversion or Cast"
+keywords: ['c++', 'python', 'typel', 'exception']
+system: core component
+severity: error
+links:
+bug:
+  phase: runtime-operation
+  specificity: general issue
+  architectural-location: platform code
+  application: null
+  task: null
+  subsystem: generic task component
+  package: ros/geometry2/tf2_py
+  languages:
+    - C++
+    - Python
+  detected-by: runtime detection
+  reported-by: guest user
+  issue: https://github.com/ros/geometry2/issues/159
+  time-reported: 2016-03-11 17:43 GMT+1
+  reproducibility: always
+  trace:
+  reproduction: >
+    "The issue report contains small example code that demonstrates the issue.
+    It might be hard to write a test, as the objects are most easily created in
+    Python, but the error happens in C++ and is not propagated to python"
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: d12b8906c8686dc1b980c489a3e4b83d78d6a488
+  pull-request: null
+  license: ["BSD"]
+  fix-in: ["tf2_py/src/tf2_py.cpp"]
+  languages:
+    - C++
+  time: 2017-01-05 20:03 GMT+1
