@@ -40,9 +40,15 @@ fix:
   fix-in:
     - libmavconn/src/tcp.cpp
   languages: C++
-  time: 2016-06-28 (00:00)
+  time: 2016-06-28T21:38:47+03:00
 time-machine:
-  ros_distro: indigo
+  ros_distro: kinetic
   ros_pkgs:
     - mavros
-  issue: https://github.com/mavlink/mavros/issues/567
+  datetime: 2016-06-28T21:38:47+03:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 8a1de7ce287af951363ea24a6a70aa74cae23a4b
+  fix-commit: 1a746c326c49c0c265e01556bd4da45dadeacaa7
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
