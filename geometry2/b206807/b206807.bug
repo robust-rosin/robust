@@ -1,0 +1,55 @@
+%YAML 1.1
+---
+id: b206807
+title: Name conflict caused by wron name space declarations and imports
+description: >
+  "TF defines a function createExtrapolationException1 in the global C++
+  namespace.  TF2, which is meant to be TF compatible (and TF apparently
+  depends on TF2) defines the same name in the global C++ namespace again,
+  violating a single definition rule of C++.
+
+  The error is caused by tf2's file cache.cpp mistakenly importing (using
+  namespace) the tf2 namespace, instead of extending it, which would place the
+  new function under tf2::.
+
+  This is a fairly generic C++ bug, that is independent of the ROS or robotics
+  specifics.  It is different than many other namespace issues described in the
+  robust database, as they refer to ROS name spaces, not to C++ name spaces."
+classification: "Compile-time name conflict (no CWE)"
+keywords: ['c++', 'namespace', 'using', 'ODR']
+system: core component
+severity: error
+links: []
+bug:
+  phase: compile-time
+  specificity: general issue
+  architectural-location: platform code
+  application: null
+  task: null
+  subsystem: generic task component
+  package: null
+  languages: null
+  detected-by: null
+  reported-by: guest user
+  issue: https://github.com/ros/geometry2/issues/175
+  time-reported: 2016-05-12 00:30 GMT+2
+  reproducibility: never
+  trace: null
+  reproduction: >
+    "Apparently, this is a single definition rule violation (ODR) but the
+    bug report seems to indicate that this does not cause compilation
+    errors.  Instead the actual behaviour is undefined.  This may be hard
+    to reproduce then, as the bug probably violates the C++ standard, but
+    the behavior with the used compiler is fine (otherwise many more would
+    have complained much earlier). For this reason, the manifestation data
+    above is mostly empty.  This should be revised if anybody ever tries to
+    reproduce the bug."
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: b2068070b460fdc0ffc62e707d9085fb26320080
+  pull-request: https://github.com/ros/geometry2/pull/176
+  license: ["BSD"]
+  fix-in: ["tf2/src/cache.cpp"]
+  languages:
+    - C++
+  time: 2016-05-13 22:27 GMT+2
