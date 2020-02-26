@@ -1,4 +1,4 @@
-%YAML 2.1
+%YAML 1.1
 ---
 id: b206807
 title: Name conflict caused by wron name space declarations and imports
