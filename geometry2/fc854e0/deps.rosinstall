@@ -1,3 +1,5 @@
+# build-rosinstall.py: updated 'catkin' version (0.5.77) to 0.5.78 to support --only-pkg-with-deps
+# build-rosinstall.py: updated 'geometry_experimental' URLs to refer to the 'geometry2' repository (it was renamed in https://github.com/ros/geometry2/issues/160)
 - tar:
     local-name: actionlib
     uri: https://github.com/ros-gbp/actionlib-release/archive/release/hydro/actionlib/1.10.3-0.tar.gz
@@ -8,8 +10,8 @@
     version: common_msgs-release-release-hydro-actionlib_msgs-1.10.2-0
 - tar:
     local-name: catkin
-    uri: https://github.com/ros-gbp/catkin-release/archive/release/hydro/catkin/0.5.77-0.tar.gz
-    version: catkin-release-release-hydro-catkin-0.5.77-0
+    uri: https://github.com/ros-gbp/catkin-release/archive/release/hydro/catkin/0.5.78-0.tar.gz
+    version: catkin-release-release-hydro-catkin-0.5.78-0
 - tar:
     local-name: console_bridge
     uri: https://github.com/ros-gbp/console_bridge-release/archive/release/hydro/console_bridge/0.2.4-1.tar.gz
@@ -138,6 +140,10 @@
     local-name: tf2_py
     uri: https://github.com/ros-gbp/geometry2-release/archive/release/hydro/tf2_py/0.4.7-0.tar.gz
     version: geometry2-release-release-hydro-tf2_py-0.4.7-0
+- tar:
+    local-name: tf2_ros
+    uri: https://github.com/ros-gbp/geometry2-release/archive/release/hydro/tf2_ros/0.4.7-0.tar.gz
+    version: geometry2-release-release-hydro-tf2_ros-0.4.7-0
 - tar:
     local-name: xmlrpcpp
     uri: https://github.com/ros-gbp/ros_comm-release/archive/release/hydro/xmlrpcpp/1.9.50-0.tar.gz

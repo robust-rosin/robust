@@ -39,9 +39,15 @@ fix:
     - test/test_mavconn.cpp
   languages:
     - C++
-  time: 2013-06-30 (00:00)
+  time: 2014-07-01T01:42:55+04:00
 time-machine:
-  datetime: 2013-06-30
-  ros_distro: groovy
+  datetime: 2014-07-01T01:42:55+04:00
+  ros_distro: indigo
   ros_pkgs:
     - mavros
+bugzoo:
+  is-build-failure: true
+  bug-commit: 215010d25409211ccfb35375c218c74c921b1a3a
+  fix-commit: 101c09b7047eac18a2d9989b09c5916181a49cd5
+  fork-urls:
+    - https://github.com/mavlink/mavros
