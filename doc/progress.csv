@@ -22,13 +22,13 @@ b213df3, kobuki, Yes, Yes, Yes, Yes
 3e32933, turtlebot, Yes, Yes, Yes, Yes
 08cd181, mavros, Yes, N/A, Yes, N/A
 0e2ea0c, mavros, Yes, Yes, Yes, No
-101c09b, mavros, No, No, No, No
-1a746c3, mavros, No, No, No, No
+101c09b, mavros, Yes, Yes, Yes, Yes
+1a746c3, mavros, Yes, Yes, Yes, No
 1f01916, mavros, Yes, Yes, Yes, No
 215010d, mavros, Yes, Yes, Yes, No
-248cb38, mavros, No, No, No, No
+248cb38, mavros, Yes, Yes, Yes, No
 263650d, mavros, Yes, Yes, Yes, No
-27e7db9, mavros, No, No, No, No
+27e7db9, mavros, Yes, Yes, Yes, N/A
 282c9be, mavros, No, No, No, No
 2998e9f, mavros, No, No, No, No
 31ad11d, mavros, No, No, No, No
