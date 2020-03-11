@@ -9,8 +9,9 @@ description: >
      variable to which its value should be written, and a default
      value which should be written to the variable in the case that no
      parameter can be found that matches the given name. Lines 312 and
-     313 incorrectly retrieve the "sensor_position/x" parameter,
-     rather than the "sensor_position/y" and "sensor_position/z"
+     313 incorrectly retrieve the "sensor_position/x" value for all
+     three dimensions of the position of the sensor (ie: x, y and z),
+     rather than the correct "sensor_position/y" and "sensor_position/z"
      parameters.
 classification: "CWE-628: Function Call with Incorrectly Specified Arguments"
 keywords:
@@ -37,7 +38,7 @@ bug:
 fix:
   repo: https://github.com/mavlink/mavros
   hash: ff581a0752107f7ad875c16f83f7b75ccd92f847
-  pull-request: N/A
+  pull-request: https://github.com/mavlink/mavros/pull/296 # part of this PR, but there are 37 other commits in it
   license:
     - BSD
     - GPLv3

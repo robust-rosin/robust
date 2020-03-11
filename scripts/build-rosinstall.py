@@ -62,7 +62,7 @@ def _time_machine(packages,
                        err.returncode)
         return
 
-    return {e['tar']['local-name']: e['tar'] for e in yaml.load(contents)}
+    return {e['tar']['local-name']: e['tar'] for e in yaml.safe_load(contents)}
 
 
 def build_file(fn_bug_desc, overwrite=False):
@@ -93,7 +93,7 @@ def build_file(fn_bug_desc, overwrite=False):
             return
 
     with open(fn_bug_desc, 'r') as f:
-        d = yaml.load(f)
+        d = yaml.safe_load(f)
 
     distro = d['time-machine']['ros_distro']
     ros_pkgs = d['time-machine']['ros_pkgs']

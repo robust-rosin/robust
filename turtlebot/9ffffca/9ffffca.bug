@@ -5,13 +5,13 @@ title: Node Does Not Support Namespaces
 description: >
      A velocity smoother node for Kobuki's teleoperation was being
      used with remappings to global topic names.  A global name
-     (starts with "/") does not change with ROS name resolution, which
-     makes setups very inflexible.
+     (starts with "/") is already fully resolved (ie: cannot be namespaced),
+     which makes setups very inflexible.
      If a user wants to launch multiple robots, or simply launch a
-     robot within a specific namespace, topic names may clash or end
-     up disconnected.
+     robot within a specific namespace, topic names may clash because of this
+     or end up disconnected.
      The use of global names is not a recommended practice, and
-     relative names should be used instead.
+     relative names (ie: without a leading "/") should be used instead.
 classification: Use of Global Names (no CWE)
 keywords: ['names', 'global names', 'remaps', 'topics']
 system: turtlebot
