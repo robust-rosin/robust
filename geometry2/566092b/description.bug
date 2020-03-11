@@ -3,10 +3,12 @@
 id: 566092b
 title: A race condition in BufferClient tf2
 description: >
-    "The use of high frequency in a buffer client triggers a race condition.
-    The issue is complex and persisted in ROS for several years. This is a
-    ROS-specific design issue, but the problem of race conditions is general."
-classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')"
+  "The use of high frequency in a buffer client triggers a race condition.
+  The issue is complex and persisted in ROS for several years. This is a
+  ROS-specific design issue, but the problem of race conditions is general."
+classification:
+  "CWE-362: Concurrent Execution using Shared Resource with Improper
+  Synchronization ('Race Condition')"
 keywords: ['python', 'race condition', 'actionlib']
 system: core component
 severity: error
@@ -28,13 +30,14 @@ bug:
   reproducibility: sometimes
   trace: null
   reproduction: >
-    "Two replication programs are included that demonstrate the issue; They are accessible from the pull request page."
+    "Two replication programs are included that demonstrate the issue; They are
+    accessible from the pull request page."
 fix:
   repo: https://github.com/ros/geometry2
   hash: 566092b42e3c42b4745294124762f8d7e5176716
   pull-request: https://github.com/ros/geometry2/pull/333
   license: ['BSD']
-  fix-in: [ 'tf2_ros/src/tf2_ros/buffer_client.py' ]
+  fix-in: ['tf2_ros/src/tf2_ros/buffer_client.py']
   languages:
     - Python
   time: Oct 11, 2018, 2:51 AM GMT+2
