@@ -1,11 +1,22 @@
+%YAML 1.1
+---
 title: Inconsistent buffer size between Python and C++ implementation
 
-description: 
-  The TransformBroadcaster class is implemented both in the Python and the C++ interface for tf2.  The former initializes the buffer queue size to 1, while the latter initializes is to 100.  Consequently, the python version fails when two messages are to be sent immediately one after another, while the C++ version is more resilient to this problem.
+description: >
+  The TransformBroadcaster class is implemented both in the Python and the C++
+  interface for tf2.  The former initializes the buffer queue size to 1, while
+  the latter initializes is to 100.  Consequently, the python version fails
+  when two messages are to be sent immediately one after another, while the C++
+  version is more resilient to this problem.
 
-  The bug lies though not in the queue size (the developers agree that this should be made configurable in future), but in the fact that the behavior of the C++ and of the Python API is inconsistent.
+  The bug lies though not in the queue size (the developers agree that this
+  should be made configurable in future), but in the fact that the behavior of
+  the C++ and of the Python API is inconsistent.
 
-  The problem of API consistency is general for many libraries and frameworks, however this specific instance of the problem is entirely idiosyncratic---at this point there exist no tools that would be able to handle these kinds of problems in a project oblivious manner. 
+  The problem of API consistency is general for many libraries and frameworks,
+  however this specific instance of the problem is entirely idiosyncratic---at
+  this point there exist no tools that would be able to handle these kinds of
+  problems in a project oblivious manner.
 
 classification: Inconsistency of API implementation across languages (no CWE)
 
@@ -15,7 +26,7 @@ system: core component
 
 severity: bad-smell
 
-links:
+links: []
 
 bug:
 
@@ -45,9 +56,9 @@ bug:
 
   reproducibility: sometimes
 
-  trace:
+  trace: null
 
-  reproduction: 
+  reproduction:
     The bug report includes a test case. This should be used.
 
 fix:
