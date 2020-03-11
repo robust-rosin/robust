@@ -37,7 +37,6 @@ bug:
     fixed: null
     rosdistor: null
     note: A compilation with gcc 4.9 should expose the problem.
-    
 fix:
   repo: https://github.com/ros/geometry2
   hash: 7677ca7b72781e9482118c9709d838df671a82c0
