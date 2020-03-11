@@ -1,18 +1,33 @@
 %YAML 1.1
 ---
 id: da141a5
-title: Wrong matrix expression during computation of a geometrical transformation
+title:
+  Wrong matrix expression during computation of a geometrical transformation
 description: >
-  The transformation function doTransform uses the external KDL library to compute the transformation.  It first translates the transform to a KDL format and then performs a vector-matrix multiplication to compute a rotation.  Every (homogeneous) transformation matrix consists of a part that rotates and a part that translates.  The KDL::Frame::M method extracts the rotation matrix from the transformation.  A vector multiplied with this new matrix would thus only be rotated, and not translated.  Unfortunately, the call to the the KDL::Frame::M function is missing (mistakenly removed in pull request \#104).  The bug is fixed by re-inserting the call to M.
+  The transformation function doTransform uses the external KDL library to
+  compute the transformation.  It first translates the transform to a KDL
+  format and then performs a vector-matrix multiplication to compute a
+  rotation.  Every (homogeneous) transformation matrix consists of a part that
+  rotates and a part that translates.  The KDL::Frame::M method extracts the
+  rotation matrix from the transformation.  A vector multiplied with this new
+  matrix would thus only be rotated, and not translated.  Unfortunately, the
+  call to the the KDL::Frame::M function is missing (mistakenly removed in pull
+  request \#104).  The bug is fixed by re-inserting the call to M.
 
-  This kind of issue could be easily met in other robotics platforms and systems (in fact it occurred in an expression in ROS that used entirely KDL, so orocos, API). 
+  This kind of issue could be easily met in other robotics platforms and
+  systems (in fact it occurred in an expression in ROS that used entirely KDL,
+  so orocos, API).
 classification: "CWE-682: Incorrect Calculation"
 keywords:
   - kdl
   - matrix multiplication
 system: core component
 severity: error
-links: ['https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Frame.html#a367668b3344ccfd50410ccc1ed30fa6f', 'https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Rotation.html', 'https://github.com/ros/geometry2/pull/104', 'https://github.com/ros/geometry2/pull/106']
+links: [
+  'https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Frame.html#a367668b3344ccfd50410ccc1ed30fa6f',
+  'https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Rotation.html',
+  'https://github.com/ros/geometry2/pull/104',
+  'https://github.com/ros/geometry2/pull/106']
 bug:
   phase: runtime-operation
   specificity: robotics-specific
@@ -28,7 +43,10 @@ bug:
   issue: N/A
   time-reported: N/A
   reproducibility: >
-    The bug was introduced at pull request 104, and at that point the mainline contained a test that would detect the bug.  Thus the easiest way to reproduce this is to use the test suite with the test mentioned in pull request 106.
+    The bug was introduced at pull request 104, and at that point the mainline
+    contained a test that would detect the bug.  Thus the easiest way to
+    reproduce this is to use the test suite with the test mentioned in pull
+    request 106.
   trace: N/A
 fix:
   repo: https://github.com/ros/geometry2
@@ -41,6 +59,6 @@ fix:
     - C++
   time: 2015-05-11 18:23 GMT+2
 time-machine:
-  ros_distro: 
-  ros_pkgs:
-  datetime: 
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null
