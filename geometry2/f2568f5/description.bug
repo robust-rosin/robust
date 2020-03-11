@@ -48,6 +48,6 @@ fix:
     - package.xml
   time: 2015-11-16 8:55 GMT+1
 time-machine:
-  ros_distro:
-  ros_pkgs:
-  datetime:
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null
