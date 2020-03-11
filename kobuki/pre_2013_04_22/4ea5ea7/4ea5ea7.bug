@@ -6,7 +6,7 @@ description: >
      Launching the robot model viewer would result in an error,
      stating that there was no robot model to display.
      The reason behind this was that the xacro file only defined the
-     `kobuki` tag, but did not instantiate it. In other words, it was
+     `kobuki` model, but did not instantiate it. In other words, it was
      not a standalone file.
 classification: "Wrong Robot Model (no CWE) #PHYSICAL"
 keywords: ['urdf', 'xacro', 'rviz']
