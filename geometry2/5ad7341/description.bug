@@ -1,13 +1,22 @@
+%YAML 1.1
+---
 title: An unprotected field in otherwise thread-safe code
 
-description: 
-  The field lct_cache_ of BufferCore is not thread protected, so race conditions can be exposed by two clients using it from different threads.
+description:
+  The field lct_cache_ of BufferCore is not thread protected, so race
+  conditions can be exposed by two clients using it from different threads.
 
-  The bug is fixed by removing the field from the object properties, and making it a local (stack allocated) variable in the function BufferCore::getLatestCommonTime, which was the only function using it, and it reset the cache on startup anyways.
+  The bug is fixed by removing the field from the object properties, and making
+  it a local (stack allocated) variable in the function
+  BufferCore::getLatestCommonTime, which was the only function using it, and it
+  reset the cache on startup anyways.
 
-  The problem was discussed in issue #92 (see links below), apparently as a side aspect.  It might have been unrelated to the double free problem discussed therein.  That bug was not fixed in a clear manner -- it remained open at the time of the data collection.
+  The problem was discussed in issue \#92 (see links below), apparently as a
+  side aspect.  It might have been unrelated to the double free problem
+  discussed therein.  That bug was not fixed in a clear manner -- it remained
+  open at the time of the data collection.
 
-classification: CWE-414: Missing Lock Check
+classification: "CWE-414: Missing Lock Check"
 
 keywords: c++ | lock | cache | concurrency
 
@@ -15,7 +24,7 @@ system: core component
 
 severity: error
 
-links: 
+links:
   - https://github.com/ros/geometry2/issues/92
 
 bug:
@@ -38,17 +47,17 @@ bug:
 
   detected-by: developer
 
-  reported-by:  member developer
+  reported-by: member developer
 
-  issue: 
+  issue: null
 
-  time-reported: 
+  time-reported: null
 
   reproducibility: sometimes
 
-  trace:
+  trace: null
 
-  reproduction: 
+  reproduction: null
 
 fix:
 
@@ -64,6 +73,6 @@ fix:
     - tf2/include/tf2/buffer_core.h
     - tf2/src/buffer_core.cpp
 
-  languages: C++ 
+  languages: C++
 
   time: 2015-04-21 (21:43 GMT+2)
