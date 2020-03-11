@@ -56,6 +56,6 @@ fix:
     - C++
   time: 2016-03-04 4:00 GMT+1
 time-machine:
-  ros_distro:
-  ros_pkgs:
-  datetime:
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null
