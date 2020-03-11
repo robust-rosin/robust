@@ -12,7 +12,9 @@ description: >
 
   This is a general Python problem.
 
-  The pull request contains another commit detecting not-well-formed quaternions.  This has not been merged but handled in other issues.  Here we only describe and refer to the cherry picked commit with the typing issue.
+  The pull request contains another commit detecting not-well-formed
+  quaternions.  This has not been merged but handled in other issues.  Here we
+  only describe and refer to the cherry picked commit with the typing issue.
 classification: >
   "CWE-704: Incorrect Type Conversion or Cast"
   internal classification (cause):
@@ -51,6 +53,6 @@ fix:
     - Python
   time: 2015-12-15 11:45 GMT+1
 time-machine:
-  ros_distro:
-  ros_pkgs:
-  datetime:
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null
