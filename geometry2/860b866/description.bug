@@ -55,6 +55,6 @@ fix:
     - Python
   time: 2015-12-10 12:09 GMT+1
 time-machine:
-  ros_distro:
-  ros_pkgs:
-  datetime:
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null
