@@ -1,25 +1,41 @@
+%YAML 1.1
+---
 title: One definition rule (ODR) violation in C++
 
 description:
-  Since 2003 C++ requires at most a single definition (don't confuse with declaration) for an identifier.  An exception is made for inline functions, as the rule is exploited to resolve overloading by names at at linking time (so inlined functions are not affected). 
+  Since 2003 C++ requires at most a single definition (don't confuse with
+  declaration) for an identifier.  An exception is made for inline functions,
+  as the rule is exploited to resolve overloading by names at at linking time
+  (so inlined functions are not affected).
 
-  Several tf2 modules had non-inline functions defined in a header file, which lead to multiple definitions (in every file that included the header). This has been rectified by qualifying the functions as inline.
+  Several tf2 modules had non-inline functions defined in a header file, which
+  lead to multiple definitions (in every file that included the header). This
+  has been rectified by qualifying the functions as inline.
 
-  In general ODR violations can be symptopms of more serious dependency issues, name violation issues, name-space problems, or cut & paste programming. In this particular case, it seems that the violation was not harmful, and the "inline" modifier was mostly added to remove a compiler warning.
+  In general ODR violations can be symptopms of more serious dependency issues,
+  name violation issues, name-space problems, or cut & paste programming. In
+  this particular case, it seems that the violation was not harmful, and the
+  "inline" modifier was mostly added to remove a compiler warning.
 
-  The pull request has addressed also other unrelated issues, through several commits. The commit referenced below in the description is the one that fixes the ODR issue.
+  The pull request has addressed also other unrelated issues, through several
+  commits. The commit referenced below in the description is the one that fixes
+  the ODR issue.
+
+  The second  link under  links below, points  to an  interesting post
+  from the gcc developer  implementing the ODR checker. Lists problems
+  and dangers, rationalizing the rule and the enforcement.
 
 classification: One definition rule violation (no CWE)
 
-keywords: build | types and names 
+keywords: build | types and names
 
 system: core component
 
 severity: warning
 
-links: 
-  - https://en.wikipedia.org/wiki/One_Definition_Rule
-  - https://hubicka.blogspot.com/2014/09/devirtualization-in-c-part-6-enforcing.html An interesting post from the gcc developer implementing the ODR checker. Lists problems and dangers, rationalizing the rule and the enforcement.
+links: [
+  "https://en.wikipedia.org/wiki/One_Definition_Rule",
+  "https://hubicka.blogspot.com/2014/09/devirtualization-in-c-part-6-enforcing.html"]
 
 bug:
 
@@ -35,27 +51,27 @@ bug:
 
   subsystem: generic task component
 
-  package:  
+  package:
     - ros/geometry2/tf2_bullet
     - ros/geometry2/tf2_geometry_msgs
     - ros/geometry2/tf2_kdl
     - ros/geometry2/tf2_sensor_msgs
 
-  languages: C++ 
+  languages: C++
 
-  detected-by: 
+  detected-by: null
 
-  reported-by: 
+  reported-by: null
 
-  issue: 
+  issue: null
 
-  time-reported: 
+  time-reported: null
 
   reproducibility: always
 
-  trace:
+  trace: null
 
-  reproduction: 
+  reproduction: null
 
 fix:
 
