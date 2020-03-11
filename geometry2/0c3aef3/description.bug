@@ -1,4 +1,4 @@
-%YAML 2.1
+%YAML 1.1
 ---
 id: 0c3aef3
 title: Missing dependency on a package providing needed header files
