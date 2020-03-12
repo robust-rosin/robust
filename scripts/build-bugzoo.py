@@ -106,7 +106,7 @@ def main():
             'MISSING_SYSTEM_DEPENDENCIES': ' '.join(missing_system_deps),
             'REPO_FORK_URL': url_forks[0],  # FIXME
             'REPO_BUG_COMMIT': sha_bug,
-            'REPO_FIX_COMMIT': sha_fix,
+            'REPO_FIX_COMMIT': sha_fix
         }
 
         # create a separate blueprint for the buggy and fixed version
