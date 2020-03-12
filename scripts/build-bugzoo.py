@@ -40,7 +40,7 @@ def main():
             warnings.warn(m)
 
         with open(fn, 'r') as f:
-            desc = yaml.load(f)
+            desc = yaml.safe_load(f)
         try:
             bug_id = desc['id']
             ros_distro = desc['time-machine']['ros_distro']
@@ -103,24 +103,24 @@ def main():
             'REPO_FIX_COMMIT': sha_fix
         }
 
-        name_image = 'robustrosin/robust:{}'.format(bug_id)
-        blueprints.append({
-            'tag': name_image,
-            'file': 'Dockerfile',
-            'context': os.path.relpath(dir_bug, DIR_ROBUST),
-            'arguments': build_args
-        })
-        bugs.append({
-            'name': 'robust:{}'.format(bug_id),
-            'image': name_image,
-            'dataset': 'robust',
-            'languages': ['cpp'],  # FIXME
-            'source-location': '/ros_ws/src',
-            'test-harness': {'type': 'empty'},
-            'compiler': {'type': 'catkin',
-                         'workspace': '/ros_ws/src',
-                         'time-limit': 300}
-        })
+        # create a separate blueprint for the buggy and fixed version
+        # create a separate description for the buggy and fixed version
+        for stage in ('bug', 'fix'):
+            name_image = 'robustrosin/robust:{}-{}'.format(bug_id, stage)
+            blueprints.append({'file': 'Dockerfile',
+                               'tag': name_image,
+                               'build-stage': stage,
+                               'context': os.path.relpath(dir_bug, DIR_ROBUST),
+                               'arguments': build_args})
+            bugs.append({'name': 'robust:{}:{}'.format(bug_id, stage),
+                         'image': name_image,
+                         'dataset': 'robust',
+                         'languages': ['cpp'],  # FIXME
+                         'source-location': '/ros_ws/src',
+                         'test-harness': {'type': 'empty'},
+                         'compiler': {'type': 'catkin',
+                                      'workspace': '/ros_ws/src',
+                                      'time-limit': 300}})
 
     # create YAML
     yml = {'version': '1.0',

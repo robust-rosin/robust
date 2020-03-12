@@ -1,0 +1,66 @@
+%YAML 1.1
+---
+id: 1b44c4d
+title: Multiple definition of C++ template specialization
+description: >
+  The doTransform function template is defined in a header file, without
+  inlining.  C++ requires that each template has at most one specialization for
+  a given type in a scope.  Since this specialization happens in a header file,
+  it is included in multiple code files, leading to the specialization being
+  compiled into several object modules. This causes the linker to complain
+  about multiple template specializations (The linker does not know to which
+  one should link).  Instead the template should be inlined (so that it is not
+  externally visible), or it should be specialized in a .cpp file, not in a
+  header. The patch chooses the former option.
+  This problem could appear in any multi-source-file C++ system.
+classification: "CWE-694: Use of Multiple Resources with Duplicate Identifier"
+keywords:
+  - template
+  - duplicate definition
+system: geometry2
+severity: error
+links: [
+  https://en.wikipedia.org/wiki/One_Definition_Rule,
+  https://en.cppreference.com/w/cpp/language/inline,
+  https://stackoverflow.com/questions/39652884/one-definition-rule-multiple-definition-of-inline-functions#comment89993765_39653125
+]
+bug:
+  phase: build-time
+  specificity: general issue
+  architectural-location: platform code
+  application: null
+  task: N/A
+  subsystem: N/A
+  package:
+    - tf2_eigen
+  languages:
+    - C++
+  detected-by: compiler
+  reported-by: unreported
+  issue: N/A
+  time-reported: unreported
+  reproducibility: always
+  trace: N/A
+  reproduction: >
+    Create a program that has two translation units and each one includes the
+    buggy 'tf2_eigen.h' file. The compilation will fail during the linking
+    phase due to repeated definition of 'tf2::doTransform'.
+fix:
+  repo: https://github.com/mavlink/mavro://github.com/ros/geometry2
+  hash: 1b44c4dced86f11c5b24a4cfadbfd1f21673ac3a
+  pull-request: https://github.com/ros/geometry2/pull/200
+  license: ['BSD']
+  fix-in:
+    - tf2_eigen/include/tf2_eigen/tf2_eigen.h
+  languages:
+    - C++
+  time: 2017-01-24 11:24PM UTC
+time-machine:
+  ros_distro: indigo
+  ros_pkgs:
+    - tf2_eigen
+  datetime: null
+bugzoo:
+  is-build-failure: null
+  bug-commit: null
+  fix-commit: null

@@ -1,0 +1,61 @@
+%YAML 1.1
+---
+id: 2153716
+title: Double-method definition due to missing inline (C++)
+description: >
+  C++ method definitions placed in headers (tf2_eigen.h), outside the class
+  body, are created each time the method is compiled (so included in a C++
+  file), unless qualified with the 'inline' keyword.  That keyword was missing
+  in tf2_eigen.h on several methods leading to a linker error.
+
+  This is a general C++ problem.
+
+  The bug has been fixed in a pull request which combined unrelated commits
+  (some evolution and testing stuff.  The hash listed below is to the commit
+  that actually makes the fix for the issue).
+classification: >
+  "double definition of the same identifier (no CWE)"
+  internal classification (cause):
+  internal classification (effect):
+keywords:
+  - header
+  - inline
+  - definition
+system: core component
+severity: error
+links:
+  - https://github.com/ros/geometry2/pull/158/commits/2153716e32d0c12c24f8f80334de1a37d7a3665f
+bug:
+  phase: build-time
+  specificity: general issue
+  architectural-location: platform code
+  application: N/A
+  task: N/A
+  subsystem: generic task component
+  package: ros/geometry2/tf2_tools
+  languages:
+    - C++
+  detected-by: compiler
+  reported-by: contributor
+  issue: https://github.com/ros/geometry2/issues/143
+  time-reported: 2016-01-12 11:06 GMT+1
+  reproducibility: >
+    It seems that we need to create two C++ file that both include the header.
+    The linking of such a thing should fail. It is likely that the entire PR
+    158 exposed this error (so their test might do the job).  At least this
+    would explain why these changes were bundled together.
+  trace: N/A
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 2153716e32d0c12c24f8f80334de1a37d7a3665f
+  pull-request: https://github.com/ros/geometry2/pull/158
+  license: BSD
+  fix-in:
+    - tf2_eigen/include/tf2_eigen/tf2_eigen.h
+  languages:
+    - C++
+  time: 2016-03-04 4:00 GMT+1
+time-machine:
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null

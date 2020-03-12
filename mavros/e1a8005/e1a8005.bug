@@ -7,10 +7,11 @@ description: >
      "mavros/src/plugins/sys_time.cpp" use an older name for each
      parameter. Following a refactoring of the source code, namespaces
      were introduced to separate these parameters (e.g.,
-     "conn_system_time" -> "conn/system_time"). Since
-     "ros::NodeHandle::param" -- the function used to fetch parameter
-     values -- returns a default value when no parameter matching the
-     given name is found, this regression goes undetected.
+     "conn_system_time" -> "conn/system_time").
+     Because of how Mavros uses "ros::NodeHandle::param" (the function
+     used to fetch parameter values), it returns a default value when no
+     parameter matching the given name is found, thus causing the regression
+     to go undetected.
 classification: "CWE-628: Function Call with Incorrectly Specified Arguments #EVOLUTION"
 keywords:
   - API change

@@ -1,0 +1,60 @@
+%YAML 1.1
+---
+id: 860b866
+title: Wrong vector translation (violation of requirements spec)
+description: >
+  "Geometry distinguishes two types for a triple of numbers: Point and
+  Vector3.  They have the same members but different semantics. Vectors have
+  magnitude and direction but are always from the origin. Points have position.
+  This explained, for instance, in issue 330, under links below. Since vectors
+  are always rooted in origin, when a translation is applied to them, only the
+  rotation part is taken into account, not the translation part, so that they
+  remain rooted in the origin.
+
+  The function 'do_transform_vector3' wrongly applies the translation to the
+  argument as well (besides the rotation). This is fixed in the associated pull
+  request, and a test is added that exposes the behaviour.
+
+  This is a fairly general issue that could appear in any robotics framework,
+  not just in ROS."
+classification: "CWE-682: Incorrect Calculation"
+keywords:
+  - kdl
+  - matrix multiplication
+system: core component
+severity: error
+links:
+  - https://github.com/ros/geometry2/issues/330
+  - http://docs.ros.org/jade/api/geometry_msgs/html/msg/Vector3.html
+bug:
+  phase: runtime-operation
+  specificity: robotics-specific
+  architectural-location: platform code
+  application: N/A
+  task: N/A
+  subsystem: generic task component
+  package: ros/geometry2/tf2_geometry_msgs
+  languages:
+    - Python
+  detected-by: developer
+  reported-by: contributor
+  issue: https://github.com/ros/geometry2/issues/124
+  time-reported: 2015-09-24 12:04 GMT+2
+  reproducibility: >
+    The fixing commit contains a test.  A test is also discussed in the issue
+    report (exposing the problem).
+  trace: N/A
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 860b8667a9a880b8831e42cb260029a384c99a9a
+  pull-request: https://github.com/ros/geometry2/pull/128
+  license: BSD
+  fix-in:
+    - tf2_geometry_msgs/src/tf2_geometry_msgs/tf2_geometry_msgs.py
+  languages:
+    - Python
+  time: 2015-12-10 12:09 GMT+1
+time-machine:
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null

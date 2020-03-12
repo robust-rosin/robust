@@ -1,0 +1,53 @@
+%YAML 1.1
+---
+id: f2568f5
+title: Missing runtime dependency on python_orocos_kdl in the package manifest
+description: >
+  A runtime dependency on python_orocos_kdl is missing in package
+  tf2_sensor_msgs. Fixed by adding it to package.xml.
+
+  This is a fairly general issue (runtime dependency) but it appears in a
+  ROS-specific setup of handling dependencies. It will manifest in a runtime
+  crash of client code. It was exposed by a regression test added for another
+  problem (linked below).
+classification: >
+  run-time dependency issue (no CWE)
+  internal classification (cause):
+  internal classification (effect):
+keywords:
+  - package.xml
+  - dependency
+system: core component
+severity: error
+links:
+  - https://github.com/ros/geometry2/pull/119
+bug:
+  phase: runtime-operation
+  specificity: ROS-specific
+  architectural-location: platform code
+  application: N/A
+  task: N/A
+  subsystem: generic task component
+  package: N/A
+  languages: N/A
+  detected-by: automatic
+  reported-by: N/A
+  issue: N/A
+  time-reported: N/A
+  reproducibility: >
+    Look into the text of issue 119 (known as 561d66b in robust).
+  trace: N/A
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: f2568f597923d0ea4495c18cd828a67f12e05f0a
+  pull-request: https://github.com/ros/geometry2/pull/126
+  license: BSD
+  fix-in:
+    - tf2_sensor_msgs/package.xml
+  languages:
+    - package.xml
+  time: 2015-11-16 8:55 GMT+1
+time-machine:
+  ros_distro: null
+  ros_pkgs: null
+  datetime: null

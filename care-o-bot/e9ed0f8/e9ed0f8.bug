@@ -8,12 +8,12 @@ description: >
      is also essential for every ROS package and it contains the
      information of the packages, which is needed for the buildsystem.
      In this example the dependency on "joint_limits_interface" is
-     missing in the rosdep list and thus, the package could not be
+     missing in the rosdep list and thus, the package would not be
      installed by "rosdep install --from-path -i -y src".  The main
-     problem was an undeclared transitive dependency in
-     gazebo_ros_control package.
+     problem was an undeclared dependency in the gazebo_ros_control
+     package. Not in cob_gazebo_plugins.
      This could be solved by adding the dependency to the package.xml
-     with the lines:
+     of gazebo_ros_control with the lines:
      <build_depend>joint_limits_interface</build_depend>
      <run_depend>joint_limits_interface</run_depend>
      ...and to CMakeList with the lines:
@@ -24,13 +24,13 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/catkin/package.xml', 'http://wiki.ros.org/catkin/CMakeLists.txt']
 bug:
-  phase: deployment-time
+  phase: build-time
   specificity: ROS-specific
   architectural-location: application-specific
   application: N/A
   task: N/A
   subsystem: specific application component
-  package: cob_control
+  package: cob_gazebo_plugins
   languages: N/A
   detected-by: developer
   reported-by: developer
@@ -43,7 +43,8 @@ fix:
   hash: e9ed0f8e157398621987bd61e2d78683cd945c2b
   pull-request: https://github.com/ros-simulation/gazebo_ros_pkgs/pull/343
   license: ['LGPL']
-  fix-in: ['cob_command_tools/cob_script_server/package.xml']
+  fix-in: ['gazebo_ros_control/CMakeLists.txt', 'gazebo_ros_control/package.xml']
   languages:
-    - package.xml
+    - CMake
+    - XML
   time: 2015-08-08 (10:05)

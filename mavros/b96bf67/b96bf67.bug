@@ -36,7 +36,7 @@ bug:
 fix:
   repo: https://github.com/mavlink/mavros
   hash: b96bf672a718b9f0c9694e4314283e385ba96231
-  pull-request: N/A
+  pull-request: https://github.com/mavlink/mavros/pull/537
   license:
     - BSD
     - GPLv3
