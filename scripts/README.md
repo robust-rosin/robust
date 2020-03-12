@@ -111,7 +111,7 @@ are modified in order to break the cache and to ensure the image is up to date.
 * `use-osrf` [optional]: whether or not BugZoo should use OSRF's sources when installing dependencies for the PUT. If `use-osrf` is not provided, its value will default to `no` (i.e., OSRF
 sources will not be used).
 * `missing-system-dependencies` [optional]: gives a list of the names of any
-  missing system dependencies that should be installed via rosdep (for both
+  missing system dependencies that should be installed via `apt-get` (for both
   the buggy and fixed images).
 
 **Note:** To use this script, `pyyaml` must be installed in the current
