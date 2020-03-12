@@ -154,9 +154,10 @@ RUN apt-get clean \
  && rosdep update \
  && rosdep install --from-paths src -i --rosdistro=${ROS_DISTRO} -y \
       --skip-keys="python-rosdep python-catkin-pkg python-rospkg" \
- && ([-z "${MISSING_SYSTEM_DEPENDENCIES}"] \
-      && echo "installing missing system dependencies: ${MISSING_SYSTEM_DEPENDENCIES}" \
-      && rosdep install -y ${MISSING_SYSTEM_DEPENDENCIES}) \
+ && (test -z "${MISSING_SYSTEM_DEPENDENCIES}" \
+     && echo "no missing system dependencies need to be installed" \
+     || (echo "installing missing system dependencies: ${MISSING_SYSTEM_DEPENDENCIES}" \
+         && rosdep install -y ${MISSING_SYSTEM_DEPENDENCIES})) \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  && cd /usr/src/gtest \
