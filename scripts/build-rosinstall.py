@@ -101,7 +101,7 @@ def build_file(fn_bug_desc, overwrite=False):
     missing_deps = d['time-machine'].get('missing-dependencies', [])
 
     if 'datetime' in d['time-machine']:
-        dt = d['time-machine']['datetime'].isoformat()
+        dt = d['time-machine']['datetime'].replace(tzinfo=None).isoformat()
         if dt[-1] != 'Z':
             dt += 'Z'
     elif 'issue' in d['time-machine']:
