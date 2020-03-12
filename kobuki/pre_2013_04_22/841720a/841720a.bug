@@ -6,6 +6,15 @@ description: >
      Just after connecting to the power adapter the robot would send a
      "battery charged" signal, and only after would it transition to
      the appropriate "charging" state.
+     The issue is not in the ROS code, but in the firmware of the robot
+     controller.
+     The ROS side seems to be doing everything correctly, and the fix
+     commit introduces new functionality that seems correct, but just
+     appears to be malfunctioning as it essentially implements a 1-to-1
+     transformation between robot internal state and a ROS message. As
+     the robot's internal state is incorrectly being represented/reported
+     by the robot controller's firmware, the ROS code produces seemingly
+     "incorrect" messages (but they really aren't).
 classification: "CWE-393: Return of Wrong Status Code"
 keywords: ['battery', 'power', 'driver', 'charging']
 system: kobuki
