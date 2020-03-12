@@ -157,7 +157,7 @@ RUN apt-get clean \
  && (test -z "${MISSING_SYSTEM_DEPENDENCIES}" \
      && echo "no missing system dependencies need to be installed" \
      || (echo "installing missing system dependencies: ${MISSING_SYSTEM_DEPENDENCIES}" \
-         && apt install -y --no-install-recommends ${MISSING_SYSTEM_DEPENDENCIES})) \
+         && apt-get install -y --no-install-recommends ${MISSING_SYSTEM_DEPENDENCIES})) \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  && cd /usr/src/gtest \
