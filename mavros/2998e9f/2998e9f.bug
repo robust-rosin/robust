@@ -46,9 +46,15 @@ fix:
     - src/plugins/sys_status.cpp
   languages:
     - C++
-  time: 2014-01-13 (00:00)
+  time: 2014-01-14T06:50:54+04:00
 time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
-  datetime: 2014-01-13
+  datetime: 2014-01-14T06:50:54+04:00
+bugzoo:
+  is-build-failure: false
+  bug-commit: 82007c06555130ca840c064ed3a93b7cfbdf8d32
+  fix-commit: 2998e9f7f9e0fb969e7248a46d5ecd0749614d06
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
