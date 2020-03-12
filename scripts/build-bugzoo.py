@@ -49,6 +49,7 @@ def main():
             sha_bug = desc['bugzoo']['bug-commit']
             sha_fix = desc['bugzoo']['fix-commit']
             url_forks = desc['bugzoo']['fork-urls']
+            missing_system_deps = desc['bugzoo'].get('missing-system-dependencies', [])
         except KeyError as err:
             report_error('missing property [{}]'.format(err))
             continue
@@ -67,12 +68,16 @@ def main():
             report_error("'is_build_failure' should be a boolean")
             continue
 
+        if not isinstance(missing_system_deps, list):
+            report_error("'bugzoo.missing-system-dependencies' should be a list")
+            continue
+
         if not isinstance(url_forks, list):
             report_error("'bugzoo.url-forks' should be a list")
             continue
 
         if len(url_forks) > 1:
-            report_error("BugZoo file does not support multiple forks.")
+            report_error("BugZoo file does not support multiple forks")
             continue
 
         # determine Ubuntu version based on ROS distro
@@ -98,9 +103,10 @@ def main():
             'UBUNTU_VERSION': ubuntu_version,
             'ROS_DISTRO': ros_distro,
             'CATKIN_PACKAGES': ' '.join(ros_pkgs),
+            'MISSING_SYSTEM_DEPENDENCIES': ' '.join(missing_system_deps),
             'REPO_FORK_URL': url_forks[0],  # FIXME
             'REPO_BUG_COMMIT': sha_bug,
-            'REPO_FIX_COMMIT': sha_fix
+            'REPO_FIX_COMMIT': sha_fix,
         }
 
         # create a separate blueprint for the buggy and fixed version
