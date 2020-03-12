@@ -51,5 +51,7 @@ bugzoo:
   is-build-failure: true
   bug-commit: 366dadaadfb85e0a1450a4a59477419930f94372
   fix-commit: 282c9bece1fa7bc87db070d836127b52bb9d1306
+  missing-system-dependencies:
+    - libev-dev
   fork-urls:
     - https://github.com/robust-rosin/mavros
