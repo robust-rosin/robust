@@ -101,13 +101,14 @@ def build_file(fn_bug_desc, overwrite=False):
     missing_deps = d['time-machine'].get('missing-dependencies', [])
 
     if 'datetime' in d['time-machine']:
-        dt = d['time-machine']['datetime'].isoformat()
-        if dt[-1] != 'Z':
-            dt += 'Z'
+        dt = d['time-machine']['datetime']
+        dt_string = dt.isoformat()
+        if not dt.tzinfo and dt_string[-1] != 'Z':
+            dt_string += 'Z'
     elif 'issue' in d['time-machine']:
         url_issue = d['time-machine']['issue']
         try:
-            dt = gh_issue_to_datetime(url_issue)
+            dt_string = gh_issue_to_datetime(url_issue)
         except Exception:
             m = "failed to convert GitHub issue to ISO 8601 timestamp: {}"
             m = m.format(url_issue)
@@ -117,9 +118,9 @@ def build_file(fn_bug_desc, overwrite=False):
 
     try:
         deps = {}
-        deps.update(_time_machine(ros_pkgs, dt, distro, deps_only=True))
+        deps.update(_time_machine(ros_pkgs, dt_string, distro, deps_only=True))
         if missing_deps:
-            deps.update(_time_machine(missing_deps, dt, distro, deps_only=False))
+            deps.update(_time_machine(missing_deps, dt_string, distro, deps_only=False))
     except subprocess.CalledProcessError as err:
         logger.warning("time machine failed (return code: %d) for bug [%s]",
                        err.returncode, fn_bug_desc)
