@@ -3,18 +3,18 @@
 id: 400949c
 title: Segmentation fault due to incorrect resource sharing between threads
 description: >
-     MAVROS (asynchronously) runs its TCP, UDP, and serial connection
-     services using dedicated threads.  The "utils::set_thread_name"
-     function is used to assign appropriate names to each of those
-     threads (e.g., "MAVConnTCPs981"). "utils::set_thread_name"
-     accepts an std::thread instance and a string, and attempts to
-     assign the name given by the string to the thread using
-     "pthread_setname_np". However, a segmentation fault occurs when
-     the faulty program is run. This is due to the std::thread
-     instance, "t", being incorrectly accessed from within the lambda
-     for the thread. To fix this issue, "pthread_self()" is used to
-     fetch a valid "pthread_t" instance for the current thread,
-     instead.
+  MAVROS (asynchronously) runs its TCP, UDP, and serial connection
+  services using dedicated threads.  The "utils::set_thread_name"
+  function is used to assign appropriate names to each of those
+  threads (e.g., "MAVConnTCPs981"). "utils::set_thread_name"
+  accepts an std::thread instance and a string, and attempts to
+  assign the name given by the string to the thread using
+  "pthread_setname_np". However, a segmentation fault occurs when
+  the faulty program is run. This is due to the std::thread
+  instance, "t", being incorrectly accessed from within the lambda
+  for the thread. To fix this issue, "pthread_self()" is used to
+  fetch a valid "pthread_t" instance for the current thread,
+  instead.
 classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
 keywords:
   - segmentation fault
