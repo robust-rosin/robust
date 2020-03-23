@@ -14,7 +14,7 @@ description: >
 classification: Missing Features (no CWE)
 keywords: ['simulation', 'gazebo', 'odometry', 'imu']
 system: kobuki
-severity: minor-issue
+severity: not-a-bug
 links: []
 bug:
   phase: runtime-operation

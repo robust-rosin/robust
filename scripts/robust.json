@@ -45,7 +45,7 @@
     },
     "severity" : { 
       "enum": [ "error", "warning", "convention-violation", "bad-smell",
-        "minor-issue" ],
+        "minor-issue", "not-a-bug" ],
       "description" : "A subjective assessment of the severity of the bug in terms of its overall effect.  Its value should be one of the following options: error, warning, convention-violation, bad-smell, minor-issue. Most problems will be errors.  All categories refer to code, so convention-violation is a coding convention violation (similarly, for bad-smells)."
     },
     "links" : { 
