@@ -12,7 +12,7 @@ description:
   lead to multiple definitions (in every file that included the header). This
   has been rectified by qualifying the functions as inline.
 
-  In general ODR violations can be symptopms of more serious dependency issues,
+  In general ODR violations can be symptoms of more serious dependency issues,
   name violation issues, name-space problems, or cut & paste programming. In
   this particular case, it seems that the violation was not harmful, and the
   "inline" modifier was mostly added to remove a compiler warning.
@@ -21,8 +21,8 @@ description:
   commits. The commit referenced below in the description is the one that fixes
   the ODR issue.
 
-  The second  link under  links below, points  to an  interesting post
-  from the gcc developer  implementing the ODR checker. Lists problems
+  The second link (under the 'links' key below) points to an interesting post
+  from the gcc developer implementing the ODR checker. It lists problems
   and dangers, rationalizing the rule and the enforcement.
 
 classification: One definition rule violation (no CWE)
