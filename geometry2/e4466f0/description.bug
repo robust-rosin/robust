@@ -7,8 +7,8 @@ description: >
   assumed that the frame identifiers are strings.  But due to dynamic typing of
   Python sometimes a numeric id may arise, which makes the identifier a number
   at this point in code.  In such case, the concatenation of a string and a
-  number fails with an exception. The fix inserts an explicit cast to string
-  using the 'str' function.
+  number fails with an exception. The fix inserts an explicit conversion to a
+  string representation using the 'str()' method.
 
   This is a general Python problem.
 
