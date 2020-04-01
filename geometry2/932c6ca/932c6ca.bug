@@ -2,9 +2,14 @@
 ---
 title: Use of retired class field
 description: >
-  tf2_ros uses the "__connection_header" field in ROS messages to get connection information.  This field has been phased out by the roscpp project, and for some time tf2_ros was not updated.  References to a non-existing field in C++ cause a build failure (reported by type and name analysis).
+  tf2_ros uses the "__connection_header" field in ROS messages to get connection
+  information.  This field has been phased out by the roscpp project, and for
+  some time tf2_ros was not updated.
+  References to a non-existing field in C++ cause a build failure (reported by
+  type and name analysis).
   This is a rather typical example of co-evolving projects getting out of sync.
-  The pull request merged in this description has not been directly merged but it appears that the commit has been merged.
+  The pull request merged in this description has not been directly merged but
+  it appears that the commit has been merged.
 classification: Undeclared Identifier (no CWE) #EVOLUTION
 keywords: ['build', 'field', 'deprecation']
 system: core component
