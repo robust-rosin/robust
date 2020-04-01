@@ -2,9 +2,13 @@
 ---
 title: Executable files installed in a wrong directory
 description: >
-  The view_frames.py script is installed into the share directory instead of the bin directory.  This primarily manifests itself in the file not getting the executable permission set (so it cannot be run directly).
+  The view_frames.py script is installed into the share directory instead of
+  the bin directory.  This primarily manifests itself in the file not getting
+  the executable permission set (so it cannot be run directly).
   This is a standard deployment / installation fault.
-  This bug has been reported in a by-now defunct issue system so we can no longer trace to the original bug report.  We have the pull request only.
+  This bug has been reported in a by-now defunct issue system so we can no
+  longer trace to the original bug report.
+  We only have the pull request.
 classification: Too restricted permission to allow execution (no CWE)
 keywords: ['catkin', 'cmake', 'install', 'permission']
 system: core component
