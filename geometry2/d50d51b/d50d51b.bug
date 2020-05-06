@@ -6,7 +6,7 @@ description:
   The static transform publisher would not initialize the message header when
   publishing messages with RPY arguments. The bug is unrelated to the geometric
   specification RPY angles, but it is a pure intialization bug that could
-  appear in any communication protocol.  The hearder is not initialized with
+  appear in any communication protocol.  The header is not initialized with
   timestamp, and frame identifiers.
 
   The pull request also merged in a local name refactoring that appears
