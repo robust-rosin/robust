@@ -3,7 +3,7 @@
 id: 1f01916
 title: Missing dependencies on python_orocos_kdl in the package manifest
 description: >
-  tf2_gemoetry_msgs misses to declare build-time and run-time dependencies on
+  tf2_geometry_msgs misses to declare build-time and run-time dependencies on
   python interface to orocos_kdl library.  This may cause a build  error for
   the package if built on a system where these libraries are not installed
   (presumably when tests involving messages are run). Runtime crashes will
