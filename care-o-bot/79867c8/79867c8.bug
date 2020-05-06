@@ -21,12 +21,7 @@ description: >
      install space and so it is easy to make errors. Also, if a
      packages gets updated one has to update the install tragets
      accordingly.
-     In the example a file- and also a folder-name inside a package
-     has changed but the install targets have not been
-     updated. Consequently, the installation of the the package would
-     be incomplete. The problem was solved by updating the names of
-     the install targets accordingly.
-classification: "Missing Installation Dependencies (no CWE) #EVOLUTION: CWE-439"
+classification: "Missing Installation Dependencies (no CWE)"
 keywords: ['install targets', 'CMakeLists']
 system: care-o-bot
 severity: error
