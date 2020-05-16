@@ -46,9 +46,15 @@ fix:
     - mavros_extras/src/plugins/visualization.cpp
   languages:
     - C++
-  time: 2015-03-05 (00:00)
+  time: 2015-03-05T18:52:39+03:00
 time-machine:
   ros_distro: indigo
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/207
+bugzoo:
+  is-build-failure: false
+  bug-commit: 01055466b1a97a71d2374831a43f276f392fc27d
+  fix-commit: 84264f01aeea79b345fe9f397da8c4759b7846fb
+  fork-urls:
+    - https://github.com/robust-rosin/mavros
