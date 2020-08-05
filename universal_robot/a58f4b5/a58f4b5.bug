@@ -31,7 +31,7 @@ classification: |
 keywords: ['meta-package', 'catkin']
 system: universal_robot
 severity: error
-links: http://www.ros.org/reps/rep-0127.html | https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118
+links: [http://www.ros.org/reps/rep-0127.html, https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118]
 bug:
   phase: build-time
   specificity: ROS-specific
@@ -39,7 +39,7 @@ bug:
   application: null
   task: null
   subsystem: driver
-  package: ros-industrial/universal_robot/ur10_moveit_config | ros-industrial/universal_robot/ur3_moveit_config | ros-industrial/universal_robot/ur5_moveit_config
+  package: [ros-industrial/universal_robot/ur10_moveit_config, ros-industrial/universal_robot/ur3_moveit_config, ros-industrial/universal_robot/ur5_moveit_config]
   languages: package.xml
   detected-by: build system
   reported-by: unreported
