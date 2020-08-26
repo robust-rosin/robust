@@ -33,7 +33,19 @@ bug:
   issue: null
   time-reported: null
   reproducibility: always
-  trace:
+  trace: N/A
+  reproduction-images:
+    buggy: 7958c81afed1d70322efbd84aa042ddfaf2c54ea
+    fixed: c7794329bf632592bf1d345d1290ff4b8d13580a
+    rosdistro: ros/rosdistro@f0b14fbd
+    note: >
+        The 'time-machine' section includes a specific timestamp because the
+        PUT ('ur_kinematics') was only added into ROS Kinetic at that time
+        (a few months after the report/fix).
+        This timestamp was found by using 'git blame' to find which commit
+        initially added the PUT into the distribution file, and then finding
+        out in the commit history which commit actually merged this into the
+        master branch. The timestamp is that of the merge commit.
 fix:
   repo: https://github.com/ros-industrial/universal_robot/
   hash: c7794329bf632592bf1d345d1290ff4b8d13580a
@@ -43,3 +55,16 @@ fix:
   languages:
     - CMake
   time: 2017-01-06 (12:29)
+time-machine:
+  ros_distro: kinetic
+  ros_pkgs:
+    - ur_kinematics
+  issue: https://github.com/ros-industrial/universal_robot/pull/286
+  datetime: 2017-08-04T14:43:51Z
+bugzoo:
+  fork-urls:
+    - https://github.com/robust-rosin/universal_robot
+  is-build-failure: true
+  use-osrf: true
+  bug-commit: 7958c81afed1d70322efbd84aa042ddfaf2c54ea
+  fix-commit: c7794329bf632592bf1d345d1290ff4b8d13580a
