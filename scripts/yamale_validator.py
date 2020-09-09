@@ -1,6 +1,19 @@
 # Import Yamale and make a schema object:
 import yamale
-schema = yamale.make_schema('./robust.yaml')
+import datetime
+from yamale.validators import DefaultValidators, Validator
+
+class Date(Validator):
+    """ Custom Date validator """
+    tag = 'date'
+
+    def _is_valid(self, value):
+        return isinstance(value, datetime.date)
+
+validators = DefaultValidators.copy()  # This is a dictionary
+validators[Date.tag] = Date
+
+schema = yamale.make_schema('./robust.yaml', validators=validators)
 
 # Create a Data object
 data = yamale.make_data('./yamale.bug')
