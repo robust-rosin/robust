@@ -98,14 +98,14 @@
           "items" : {
             "type" : "string", 
             "minLength" : 5,
-            "pattern" : "^([a-z0-9A-Z_]+)(/[a-z0-9A-Z_]+){2}$"
+            "pattern" : "^([a-z0-9A-Z-]+)(/[a-z0-9A-Z_]+){2}$"
           },
           "description" : "A list of packages involved. Each entry should specify the project, the repository, and the package, for example: 'ros-industrial/universal_robot/ur_bringup'"
         },
         "languages" : { 
           "type" : "array", 
           "items" : { "enum" : [ "python", "cmake", "C++", "package.xml",
-            "launch.xml", "msg", "srv", "xacro", "urdf" ] },
+            "launch.xml", "msg", "srv", "xacro", "urdf", "robot specific" ] },
           "description" : "A list of the languages involved in the failure. N/A if the error is not explicitly reported by the language infrastructure.  Avoid a generic XML tag (all files in ROS have some known schema, and let's try to narrow it down when writing). Also the language should be N/A if the bug is not reported by the language infrastructure (so if the error is in package.xml but a C++ compiler fails then the language is 'C++' here, not 'package.xml'.  The latter is listed under the fix. If the error is not reported by a language infrastructure, but for instance wrong behavior is discovered in simulation, then do not put a language in).  For this reason it should be fairly unusual to have more than one language listed here."
         },
         "detected-by" : { 
@@ -160,7 +160,7 @@
         "repo" : { 
           "type" : "string",
           "minLength" : 3,
-          "pattern" : "^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+)$",
+          "pattern" : "^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+)$",
           "description" : "URI reference to repository where the bug was fixed."
         },
         "hash" : {
@@ -173,7 +173,7 @@
         "pull-request" : { 
           "type" : "string", 
           "minLength" : 1,
-          "pattern" : "(^(https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$)|(^N/A$)", 
+          "pattern" : "(^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$)|(^N/A$)",
           "description" : "URI for pull request that fixed the bug.  N/A if no pull request (for instance direct commit)."
         },
         "license" : { 
@@ -195,7 +195,7 @@
           "type" : "array", 
           "items" : { 
             "enum" : [ "python", "cmake", "C++", "package.xml", "launch.xml",
-              "msg", "srv", "xacro", "urdf" ] 
+              "msg", "srv", "xacro", "urdf", "robot specific" ]
           },
           "description" : "The languages involved in fixing the bug. (See list of conventions for naming languages under bug/language)."
         },
