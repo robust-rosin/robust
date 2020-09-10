@@ -11,10 +11,18 @@ logger.setLevel(logging.DEBUG)
 DIR_HERE = os.path.dirname(__file__)
 DIR_ROBUST = os.path.abspath(os.path.join(DIR_HERE, '..'))
 
+IGNORE_FILENAME='ROBUST_IGNORE'
 
-def find_bug_descriptions(d):
+def find_bug_descriptions(d, ignore_marker=IGNORE_FILENAME):
     buff = []
-    for root, _, files in os.walk(d):
+    # topdown lets us modify dirnames
+    for root, dirnames, files in os.walk(d, topdown=True):
+        if ignore_marker in files:
+            logger.info("Ignoring {} (and children) because it contains {}"
+                .format(root, ignore_marker))
+            dirnames[:] = []
+            continue
+
         for fn in files:
             if fn.endswith('.bug'):
                 fn = os.path.join(root, fn)
