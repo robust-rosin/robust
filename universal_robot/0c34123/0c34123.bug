@@ -34,7 +34,7 @@ links:
   - http://www.ros.org/reps/rep-0127.html
   - https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118
 bug:
-  phase: build-time
+  phase: build
   specificity: ROS-specific
   architectural-location: platform code
   application: null

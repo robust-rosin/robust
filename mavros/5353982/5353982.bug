@@ -22,7 +22,7 @@ system: mavros
 severity: error
 links: http://wiki.ros.org/CppStyleGuide
 bug:
-  phase: build-time
+  phase: build
   specificity: "ROS specific # ROS_ASSERT(false) -> ROS_BREAK()"
   architectural-location: N/A
   application: N/A

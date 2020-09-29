@@ -12,7 +12,7 @@ system: kobuki
 severity: error
 links: ['http://wiki.ros.org/Metapackages']
 bug:
-  phase: build-time
+  phase: build
   specificity: ROS-specific
   architectural-location: application-specific code
   application: null

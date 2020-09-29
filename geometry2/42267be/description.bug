@@ -25,7 +25,7 @@ links: []
 
 bug:
 
-  phase: build-time
+  phase: build
 
   specificity: ROS-specific
 

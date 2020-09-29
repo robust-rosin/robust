@@ -12,7 +12,7 @@ system: motoman
 severity: error
 links: []
 bug:
-  phase: build-time
+  phase: build
   specificity: error
   architectural-location: ROS-specific
   application: platform code

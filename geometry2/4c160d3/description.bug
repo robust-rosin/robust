@@ -19,7 +19,7 @@ links: null
 
 bug:
 
-  phase: build-time
+  phase: build
 
   specificity: general issue
 

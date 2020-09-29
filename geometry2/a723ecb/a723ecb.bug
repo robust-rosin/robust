@@ -11,7 +11,7 @@ system: core component
 severity: error
 links: []
 bug:
-  phase: build-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: null
