@@ -18,7 +18,7 @@ system: motoman
 severity: error
 links: ['http://wiki.ros.org/motoman_driver/Tutorials/indigo/InstallServer']
 bug:
-  phase: needs review
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   application: null
@@ -37,6 +37,7 @@ fix:
   hash: null
   pull-request: 147
   license: ['BSD']
-  fix-in: ['motoman_driver/Inform/.gitattributes']
+  fix-in:
+    - motoman_driver/Inform/.gitattributes
   languages: null
   time: 2017-01-09 (21:09)
