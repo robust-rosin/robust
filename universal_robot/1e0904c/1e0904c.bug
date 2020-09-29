@@ -31,7 +31,7 @@ system: universal_robot
 severity: minor-issue
 links: []
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: general issue
   architectural-location: platform code
   application: null

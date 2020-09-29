@@ -26,7 +26,7 @@ system: mavros
 severity: error
 links: []
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: "general issue: positional to keyword | bad parameter name"
   architectural-location: N/A
   application: N/A

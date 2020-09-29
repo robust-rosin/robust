@@ -15,7 +15,7 @@ system: core component
 severity: error
 links: []
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: general issue
   architectural-location: platform code
   applications: N/A

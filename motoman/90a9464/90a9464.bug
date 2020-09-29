@@ -12,7 +12,7 @@ system: motoman
 severity: error
 links: []
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: platform code
   application: null
