@@ -17,7 +17,7 @@ system: mavros
 severity: minor-issue
 links: []
 bug:
-  phase: compile-time
+  phase: build
   specificity: "general issue: redundant array entry"
   architectural-location: N/A
   application: N/A

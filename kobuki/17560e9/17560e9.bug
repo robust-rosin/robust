@@ -24,7 +24,7 @@ system: kobuki
 severity: error
 links: ['https://cmake.org/cmake/help/v3.0/command/add_dependencies.html']
 bug:
-  phase: compile-time
+  phase: build
   specificity: general-issue
   architectural-location: application-specific code
   application: Navigation module

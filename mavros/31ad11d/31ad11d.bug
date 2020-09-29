@@ -18,7 +18,7 @@ system: mavros
 severity: warning
 links: []
 bug:
-  phase: compile-time
+  phase: build
   specificity: UNKNOWN
   architectural-location: N/A
   application: N/A

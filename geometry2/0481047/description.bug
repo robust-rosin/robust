@@ -37,7 +37,7 @@ links:
   - https://github.com/ros/geometry2/pull/86
 bug:
 
-  phase: compile-time
+  phase: build
 
   specificity: general issue
 

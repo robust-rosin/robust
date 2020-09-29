@@ -26,7 +26,7 @@ system: universal_robot
 severity: error
 links: []
 bug:
-  phase: compile-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: null
