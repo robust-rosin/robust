@@ -13,7 +13,7 @@ links:
   - https://answers.ros.org/question/182811/bug-or-intended-behaviour-transformlistenerwaitfortransform-does-not-poll-rosok/?answer=182844#post-id-182844
   - http://wiki.ros.org/tf/Tutorials/tf%20and%20Time%20%28C%2B%2B%29
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   application: null

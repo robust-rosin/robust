@@ -17,7 +17,7 @@ links:
   - "https://github.com/ros/geometry2/blob/5722773de7d688bcaf8dfe68a0f2a55ff49dc9d3/tf2_ros/include/tf2_ros/message_filter.h#L88 fragment of the file with the API doc for the message filter."
   - "https://github.com/ros/geometry2/blob/5722773de7d688bcaf8dfe68a0f2a55ff49dc9d3/tf2_ros/include/tf2_ros/message_filter.h#L293 the method invoked on the new (incoming) message."
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general issue
   architectural-location: platform code
   applicatios: null

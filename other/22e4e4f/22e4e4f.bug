@@ -18,7 +18,7 @@ links:
   - http://www.ros.org/reps/rep-0118.html
   - http://www.ros.org/reps/rep-0103.html
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific code
   application: SLAM

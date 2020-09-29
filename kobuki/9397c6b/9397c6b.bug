@@ -17,7 +17,7 @@ system: kobuki
 severity: error
 links: ['http://wiki.ros.org/ecl_formatters', 'http://wiki.ros.org/ecl_containers']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general-issue
   architectural-location: application-specific code
   application: null

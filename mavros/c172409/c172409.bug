@@ -28,7 +28,7 @@ system: mavros
 severity: error
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general issue
   architectural-location: N/A
   application: N/A

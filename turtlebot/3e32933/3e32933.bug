@@ -19,7 +19,7 @@ system: turtlebot
 severity: error
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific code
   application: mobile robot

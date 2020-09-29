@@ -27,7 +27,7 @@ system: universal_robot
 severity: error
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: platform code
   application: null

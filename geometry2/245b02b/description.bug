@@ -28,7 +28,7 @@ links:
 
 bug:
 
-  phase: runtime-operation
+  phase: runtime
 
   specificity: general issue
 

@@ -20,7 +20,7 @@ severity: error
 links:
   - https://answers.ros.org/question/252837/cannot-launch-kobuki_dashboard-on-kinetic/?comment=253230#post-id-253230
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: application-specific code
   application: diagnostics dashboard

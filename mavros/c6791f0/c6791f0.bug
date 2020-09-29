@@ -26,7 +26,7 @@ system: mavros
 severity: error
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: "general issue: missing a keyword argument (to a ROS service call)"
   architectural-location: N/A
   application: N/A

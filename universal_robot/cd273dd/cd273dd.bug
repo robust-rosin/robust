@@ -19,7 +19,7 @@ system: universal_robot
 severity: error
 links: ['http://wiki.ros.org/industrial_robot_simulator']
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS
   architectural-location: platform code
   application: null

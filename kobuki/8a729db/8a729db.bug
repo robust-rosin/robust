@@ -28,7 +28,7 @@ system: kobuki
 severity: error
 links: ['http://wiki.ros.org/kobuki_dashboard', 'http://wiki.ros.org/diagnostic_aggregator', 'http://wiki.ros.org/Parameter%20Server', 'http://wiki.ros.org/rosparam']
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: application-specific code
   application: diagnostics dashboard

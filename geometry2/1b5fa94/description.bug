@@ -32,7 +32,7 @@ links: [
   https://www.thecodingforums.com/threads/python-c-api-and-references.705035/
 ]
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general issue
   architectural-location: platform code
   application: null

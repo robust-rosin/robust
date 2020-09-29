@@ -19,7 +19,7 @@ system: confidential
 severity: bad-smell
 links:
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: application specific
   architectural location: application-specific code
   application: EGM interface

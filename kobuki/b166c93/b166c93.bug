@@ -17,7 +17,7 @@ links:
   - http://www.cplusplus.com/reference/cmath/isnan/
   - http://wiki.ros.org/CppStyleGuide
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general-issue
   architectural-location: application-specific code
   application: null

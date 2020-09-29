@@ -37,7 +37,7 @@ system: universal_robot
 severity: warning
 links: ['http://wiki.ros.org/xacro', 'https://github.com/ros-industrial/universal_robot/issues/263']
 bug:
-  phase: build-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: null

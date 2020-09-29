@@ -15,7 +15,7 @@ system: null
 severity: error
 links: ['http://www.boost.org/doc/libs/1_41_0/doc/html/thread/synchronization.html']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general issue
   architectural-location: platform code
   application: null

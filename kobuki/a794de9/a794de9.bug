@@ -13,7 +13,7 @@ system: kobuki
 severity: error
 links: ['http://eigen.tuxfamily.org/index.php?title=Main_Page', 'http://eigen.tuxfamily.org/dox/TopicUnalignedArrayAssert.html']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general-issue
   architectural-location: application-specific code
   application: bumper to pointcloud converter

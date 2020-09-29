@@ -19,7 +19,7 @@ system: mavros
 severity: bad-smell
 links: []
 bug:
-  phase: build-time
+  phase: build
   specificity: general issue
   architectural-location: N/A
   application: N/A

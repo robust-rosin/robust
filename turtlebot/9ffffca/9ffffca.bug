@@ -18,7 +18,7 @@ system: turtlebot
 severity: bad-smell
 links: http://wiki.ros.org/ROS/Concepts#Names.Graph_Resource_Names | http://wiki.ros.org/Names
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific code
   application: teleoperation

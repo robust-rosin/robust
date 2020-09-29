@@ -23,7 +23,7 @@ system: shadow-robot
 severity: error
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotic-specific or general issue
   architectural-location: application-specific code
   application: arm control

@@ -25,7 +25,7 @@ links: [
   https://stackoverflow.com/questions/39652884/one-definition-rule-multiple-definition-of-inline-functions#comment89993765_39653125
 ]
 bug:
-  phase: build-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: null

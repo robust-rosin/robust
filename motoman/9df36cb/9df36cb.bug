@@ -18,7 +18,7 @@ system: motoman
 severity: error
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general-issue
   architectural-location: platform code
   application: null

@@ -12,7 +12,7 @@ system: motoman
 severity: bad-style
 links: []
 bug:
-  phase: compile-time
+  phase: build
   specificity: ROS-specific
   architectural-location: platform code
   application: null

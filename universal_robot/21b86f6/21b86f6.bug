@@ -35,7 +35,7 @@ system: universal_robot
 severity: error
 links: https://groups.google.com/forum/#!topic/swri-ros-pkg-dev/1e3A_1BTQWQ
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics
   architectural-location: platform code
   application: null

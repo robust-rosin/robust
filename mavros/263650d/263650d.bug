@@ -14,7 +14,7 @@ system: mavros
 severity: error
 links: []
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: N/A
   application: N/A

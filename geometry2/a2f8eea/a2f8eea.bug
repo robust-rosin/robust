@@ -11,7 +11,7 @@ system: core component
 severity: error
 links: []
 bug:
-  phase: programming-time
+  phase: does not apply
   specificity: general issue
   architectural-location: platform code
   applications: N/A

@@ -13,7 +13,7 @@ system: mavros
 severity: error
 links: []
 bug:
-  phase: build-time
+  phase: build
   specificity: general issue typo in constructor
   architectural-location: N/A
   application: N/A

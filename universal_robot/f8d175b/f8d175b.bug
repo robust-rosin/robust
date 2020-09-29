@@ -23,7 +23,7 @@ system: universal_robot
 severity: error
 links: ['https://github.com/ros-planning/moveit/pull/247']
 bug:
-  phase: compile-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: null

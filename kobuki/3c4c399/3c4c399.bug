@@ -14,7 +14,7 @@ system: kobuki
 severity: bad-smell
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general-issue
   architectural-location: application-specific code
   application: mobile robot

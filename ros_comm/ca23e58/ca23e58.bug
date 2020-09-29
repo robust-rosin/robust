@@ -29,7 +29,7 @@ system: ros_comm
 severity: error
 links: ['http://www.drdobbs.com/cpp/c-and-the-perils-of-double-checked-locki/184405726', 'http://stackoverflow.com/questions/36063617/double-checked-locking-for-shared-pointers']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general-issue
   architectural-location: platform code
   application: null

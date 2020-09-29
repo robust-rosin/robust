@@ -19,7 +19,7 @@ system: kobuki
 severity: minor-issue
 links:
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: application-specific code
   application: null

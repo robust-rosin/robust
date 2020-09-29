@@ -29,7 +29,7 @@ system: kobuki
 severity: error
 links: ['https://github.com/yujinrobot/yujin_ocs/issues/7', 'http://wiki.ros.org/robot_pose_ekf']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific
   application: mobile robot

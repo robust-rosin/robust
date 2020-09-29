@@ -13,7 +13,7 @@ system: motoman
 severity: warning
 links: []
 bug:
-  phase: deployment-time
+  phase: startup
   specificity: ROS-specific
   architectural-location: platform code
   application: null

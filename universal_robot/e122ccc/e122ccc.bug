@@ -25,7 +25,7 @@ system: universal_robot
 severity: error
 links: ['http://wiki.ros.org/catkin/package.xml']
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: platform-code
   application: null

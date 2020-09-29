@@ -26,7 +26,7 @@ severity: error
 links:
   - https://github.com/ros/geometry2/pull/158/commits/2153716e32d0c12c24f8f80334de1a37d7a3665f
 bug:
-  phase: build-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: N/A

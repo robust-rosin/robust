@@ -16,7 +16,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/catkin/package.xml']
 bug:
-  phase: deployment-time
+  phase: startup
   specificity: ROS-specific
   architectural-location: application-specific
   application: N/A
@@ -35,7 +35,8 @@ fix:
   hash: 81aa175d76608fbac6655ce745e8eaa1d35f51f9
   pull-request: https://github.com/ipa320/cob_command_tools/pull/50 # large PR, fix commit is part of it
   license: ['LGPL']
-  fix-in: ['cob_command_tools/cob_script_server/package.xml']
+  fix-in:
+    - cob_command_tools/cob_script_server/package.xml
   languages:
     - XML
   time: 2014-08-26 (08:57)

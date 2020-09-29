@@ -19,7 +19,7 @@ system: confidential
 severity: error
 links:
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: application specific
   architectural-location: application-specific code
   application: RWS interface

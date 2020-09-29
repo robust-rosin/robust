@@ -23,7 +23,7 @@ links:
   - https://github.com/ros/geometry2/pull/42/commits/0a034c5b21d7025f24b25051e0ab758f614efa5f#diff-45868e304b80cd09fbee9238de68a079R85
   - http://wiki.ros.org/rospy
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   applicatios: null

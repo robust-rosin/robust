@@ -17,7 +17,7 @@ system: core component
 severity: warning
 links: []
 bug:
-  phase: compile-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: N/A

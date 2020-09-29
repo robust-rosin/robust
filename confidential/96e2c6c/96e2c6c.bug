@@ -22,7 +22,7 @@ system: confidential
 severity: error
 links: ['http://docs.ros.org/api/sensor_msgs/html/msg/JointState.html']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific code
   application: manipulator controller

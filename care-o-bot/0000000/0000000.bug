@@ -21,7 +21,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/Metapackages', 'https://github.com/ros-controls/ros_control']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific
   application: ros control

@@ -13,7 +13,7 @@ system: motoman
 severity: minor-issue
 links: []
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: general-issue
   architectural-location: application-specific
   application: industrial robot arm

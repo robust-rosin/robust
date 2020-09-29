@@ -22,7 +22,7 @@ system: universal_robot
 severity: error
 links: ['see also bug 94927ae']
 bug:
-  phase: compile-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: null

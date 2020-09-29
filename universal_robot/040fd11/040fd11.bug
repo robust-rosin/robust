@@ -27,7 +27,7 @@ severity: error
 links:
   - https://github.com/fkie/catkin_lint/blob/master/gh-pages/docs/messages.md#exported-library-target-is-not-installed
 bug:
-  phase: build-time
+  phase: build
   specificity: ROS-specific
   architectural-location: platform code
   application: null

@@ -24,7 +24,7 @@ links:
   - https://github.com/mavlink/mavros/issues/286
   - https://mavlink.io/en/guide/serialization.html
 bug:
-  phase: run-time
+  phase: runtime
   specificity: "general issue: missing field information"
   architectural-location: N/A
   application: N/A

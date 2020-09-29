@@ -11,7 +11,7 @@ system: kobuki
 severity: warning
 links: []
 bug:
-  phase: compile-time
+  phase: build
   specificity: ROS-specific
   architectural-location: application-specific code
   application: null

@@ -11,7 +11,7 @@ system: mavros
 severity: error
 links: []
 bug:
-  phase: build-time
+  phase: build
   specificity: "general issue: missing dependency"
   architectural-location: N/A
   application: N/A

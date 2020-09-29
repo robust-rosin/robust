@@ -21,7 +21,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/catkin/CMakeLists.txt; 7.3']
 bug:
-  phase: deployment-time
+  phase: build
   specificity: ROS-specific
   architectural-location: application-specific
   application: N/A
@@ -40,7 +40,8 @@ fix:
   hash: 28c23cd13e5cbade9776b496518facc07cef59f2
   pull-request: https://github.com/ipa320/cob_command_tools/pull/127
   license: ['LGPL']
-  fix-in: ['cob_command_tools/cob_teleop/CMakeLists.txt']
+  fix-in:
+    - cob_command_tools/cob_teleop/CMakeLists.txt
   languages:
     - CMake
   time: 2015-11-24 (19:36)

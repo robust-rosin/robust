@@ -32,7 +32,7 @@ system: mavros
 severity: error
 links: []
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: UNCLEAR
   architectural-location: N/A
   application: N/A

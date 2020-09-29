@@ -41,7 +41,7 @@ links:
   - http://wiki.ros.org/catkin/package.xml
   - http://www.ros.org/reps/rep-0140.html#rationale
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: platform code
   application: null

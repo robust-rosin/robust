@@ -12,7 +12,7 @@ system: turtlebot
 severity: bad-smell
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   application: null

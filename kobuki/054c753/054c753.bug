@@ -25,7 +25,7 @@ system: kobuki
 severity: error
 links: ['http://wiki.ros.org/ecl/about', 'http://wiki.ros.org/ecl_devices/Tutorials/Introduction%20to%20Ecl%20Devices']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general-issue
   architectural-location: application-specific code
   application: mobile robot

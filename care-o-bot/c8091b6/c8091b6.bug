@@ -17,7 +17,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/catkin/package.xml']
 bug:
-  phase: deployment-time
+  phase: startup
   specificity: ROS-specific
   architectural-location: application-specific
   application: null
@@ -36,7 +36,8 @@ fix:
   hash: c8091b68c69eeae0bb7777ad6fa44d644c20f96c
   pull-request: https://github.com/ipa320/cob_command_tools/pull/84
   license: ['LGPL']
-  fix-in: ['cob_command_tools/cob_command_gui/src/knoeppkes.py']
+  fix-in:
+    - cob_command_tools/cob_command_gui/src/knoeppkes.py
   languages:
     - Python
   time: 2015-03-13 (16:21)

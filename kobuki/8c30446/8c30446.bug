@@ -27,7 +27,7 @@ system: kobuki
 severity: bad-smell
 links: ['http://wiki.ros.org/roslaunch/XML/rosparam']
 bug:
-  phase: runtime-initialization
+  phase: startup
   specificity: ROS-specific
   architectural-location: application-specific code
   application: system bringup

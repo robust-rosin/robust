@@ -11,7 +11,7 @@ system: core component
 severity: bad-smell
 links: []
 bug:
-  phase: build-time
+  phase: build
   specificity: general issue
   architectural-location: platform code
   application: N/A
