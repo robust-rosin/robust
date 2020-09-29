@@ -22,7 +22,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/catkin/CMakeLists.txt', 'http://wiki.ros.org/gencpp']
 bug:
-  phase: deployment-time
+  phase: build
   specificity: ROS-specific
   architectural-location: application-specific
   application: null
@@ -41,7 +41,8 @@ fix:
   hash: 105dc16ffe0b9dba294aabea0c18052cd281bde0
   pull-request: https://github.com/thiagodefreitas/cob_control/commit/105dc16ffe0b9dba294aabea0c18052cd281bde0
   license: ['LGPL']
-  fix-in: ['cob_control/cob_twist_controller/CMakeLists.txt']
+  fix-in:
+    - cob_control/cob_twist_controller/CMakeLists.txt
   languages:
     - CMake
   time: 2014-11-21 (12:57)

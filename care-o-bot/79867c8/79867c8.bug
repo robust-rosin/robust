@@ -27,7 +27,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/catkin/CMakeLists.txt; 11']
 bug:
-  phase: deployment-time
+  phase: build
   specificity: ROS-specific
   architectural-location: application-specific
   application: null
@@ -46,7 +46,9 @@ fix:
   hash: 79867c88acc64342f061e6324ed6b84ca7e0773d
   pull-request: https://github.com/ipa320/cob_android/pull/8
   license: ['LGPL']
-  fix-in: ['cob_android/cob_android_msgs/CMakeLists.txt', 'cob_android/cob_android_script_server/CMakeLists.txt']
+  fix-in:
+    - cob_android/cob_android_msgs/CMakeLists.txt
+    - cob_android/cob_android_script_server/CMakeLists.txt
   languages:
     - CMake
   time: 2015-08-04 (16:26)

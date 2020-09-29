@@ -18,7 +18,8 @@ system: turtlebot
 severity: error
 links: ['http://answers.ros.org/question/253790/what-are-environment-hooks-in-catkin/']
 bug:
-  phase: deployment-time
+  # occurs during installation
+  phase: build
   specificity: ROS-specific
   architectural-location: application-specific code
   application: null

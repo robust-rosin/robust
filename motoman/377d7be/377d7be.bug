@@ -18,7 +18,7 @@ system: motoman
 severity: error
 links: ['http://wiki.ros.org/motoman_driver/Tutorials/indigo/InstallServer']
 bug:
-  phase: deployment-time
+  phase: needs review
   specificity: ROS-specific
   architectural-location: platform code
   application: null
