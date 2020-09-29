@@ -14,7 +14,7 @@ severity: minor-issue
 links:
   - http://docs.ros.org/api/rosconsole/html/rosconsole_8cpp_source.html#l00460
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general issue
   architectural-location: platform code
   application: null

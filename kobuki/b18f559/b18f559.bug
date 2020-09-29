@@ -15,7 +15,7 @@ system: kobuki
 severity: bad-smell
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific code
   application: null

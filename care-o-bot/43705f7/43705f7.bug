@@ -20,7 +20,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/xacro', 'http://gazebosim.org/tutorials?tut=ros_gzplugins']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific
   application: cob common

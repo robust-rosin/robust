@@ -13,7 +13,7 @@ system: turtlebot
 severity: error
 links: ['https://github.com/ros/ros_comm/issues/35']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   application: null

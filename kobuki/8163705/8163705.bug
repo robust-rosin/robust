@@ -13,7 +13,7 @@ system: kobuki
 severity: bad-smell
 links: ['http://wiki.ros.org/roscpp/Overview/Logging']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific code
   application: null

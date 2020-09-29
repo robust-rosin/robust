@@ -13,7 +13,7 @@ system: motoman
 severity: error
 links: ['https://www.motoman.com/industrial-robots/sia20d']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific code
   application: industrial robot arm

@@ -24,7 +24,7 @@ links: null
 
 bug:
 
-  phase: runtime-operation
+  phase: runtime
 
   specificity: ROS-specific
 

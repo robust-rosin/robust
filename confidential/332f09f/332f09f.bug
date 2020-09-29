@@ -19,7 +19,7 @@ system: confidential
 severity: bad-smell
 links: ['http://developercenter.robotstudio.com/webservice/api_reference']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: application specific
   architectural location: application-specific code
   application: RWS interface

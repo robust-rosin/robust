@@ -17,7 +17,7 @@ system: kobuki
 severity: not-a-bug
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific code
   application: null

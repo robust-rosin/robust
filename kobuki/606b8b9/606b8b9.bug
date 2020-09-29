@@ -13,7 +13,7 @@ system: kobuki
 severity: error
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific code
   application: mobile robot

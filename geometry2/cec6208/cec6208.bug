@@ -1,9 +1,8 @@
 %YAML 1.1
 ---
 title: Incorrect cast of a tuple value to Boolean
-
 description: >
-  The python bidings in tf2_py that expose the function
+  The python bindings in tf2_py that expose the function
   buffer.can_transform_core build a tuple for a return value (the value is a
   bool for the return value, and a possible an error message).  The function
   name suggests that this is a Boolean function. The programmer implementing
@@ -24,66 +23,43 @@ description: >
   existing code.
 
 classification: "CWE-704: Incorrect Type Conversion or Cast"
-
-keywords: type cast | dynamic types | python binding | cross-language
-
+keywords: ['type cast', 'dynamic types', 'python binding', 'cross-language']
 system: core component
-
 severity: error
-
 links:
   - https://github.com/ros/geometry2/pull/56 (the alternative, rejected fix)
   - https://github.com/ros/geometry2/pull/59 (the version of accepted fix also
     pushed to indigo; the one listed below is in hydro)
 
 bug:
-
   phase: runtime
-
   specificity: general issue
-
   architectural-location: platform code
-
   applications: N/A
-
   task: N/A
-
   subsystem: generic task component
-
   package: ros/geometry2/tf2_ros
-
-  languages: python | C++
-
+  languages:
+    - python
+    - C++
   detected-by: developer
-
   reported-by: member developer
-
   issue: https://github.com/ros/geometry2/pull/56
-
   time-reported: 2014-03-10 (15:39 GMT+1)
-
   reproducibility: always
-
-  trace:
+  trace: >
     Call can_transform_core from python --- always returns false.
     This should transfer to calling can_transform on any buffer object to
     return false always.
-
   reproduction: null
 
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: cec62083fa3e54cf210ce8b5ea87b4c0ed60f64b
-
   pull-request: https://github.com/ros/geometry2/pull/58
-
   license: BSD
-
   fix-in:
     - tf2_ros/src/tf2_ros/buffer.py
-
-  languages: python
-
+  languages:
+    - python
   time: 2014-03-10 (21:31 GMT+1)

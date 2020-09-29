@@ -14,7 +14,7 @@ links:
   - http://www.boost.org/doc/libs/1_50_0/libs/smart_ptr/shared_ptr.htm
   - https://stackoverflow.com/questions/621220/null-pointer-with-boostshared-ptr
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: general issue
   architectural-location: platform code
   application: N/A

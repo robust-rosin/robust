@@ -21,7 +21,7 @@ system: kobuki
 severity: error
 links: ['http://wiki.ros.org/nodelet']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific code
   application: null

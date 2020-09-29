@@ -18,7 +18,7 @@ system: core component
 severity: error
 links: []
 bug:
-  phase: null
+  phase: runtime
   specificity: robotics-specific
   architectural-location: platform code
   applications: null
@@ -33,7 +33,7 @@ bug:
   time-reported: Sep 7, 2016, 08:40 PM GMT+2
   reproducibility: always
   trace: null
-  reproduction:
+  reproduction: >
     A test case should be fairly easy to create by comparing the branching
     before and after the fix.
 fix:
@@ -41,7 +41,8 @@ fix:
   hash: 439e2350ca9b2f0581a3631f0929acc2021db73e
   pull-request: https://github.com/ros/geometry2/pull/187
   license: ['BSD']
-  fix-in: ['tf2/include/tf2/LinearMath/Quaternion.h']
+  fix-in:
+    - tf2/include/tf2/LinearMath/Quaternion.h
   languages:
     - C++
   time: Sep 8, 2016, 10:34 PM GMT+2

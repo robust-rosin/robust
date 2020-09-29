@@ -22,7 +22,7 @@ severity: error
 links:
   - https://github.com/ros/geometry2/pull/119
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   application: N/A

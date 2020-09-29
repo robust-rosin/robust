@@ -20,7 +20,7 @@ system: care-o-bot
 severity: error
 links: ['http://wiki.ros.org/Names', 'http://wiki.ros.org/roslaunch/XML/group']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific
   application: cob drivers

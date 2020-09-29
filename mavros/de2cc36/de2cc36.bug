@@ -16,7 +16,7 @@ system: mavros
 severity: warning
 links: []
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: "robotics-specific: updated robot controller implements slightly different API"
   architectural-location: N/A
   application: N/A

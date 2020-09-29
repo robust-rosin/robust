@@ -26,7 +26,7 @@ system: kobuki
 severity: warning
 links: ['http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: application-specific code
   application: dashboard

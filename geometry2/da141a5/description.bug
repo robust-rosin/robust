@@ -29,7 +29,7 @@ links: [
   'https://github.com/ros/geometry2/pull/104',
   'https://github.com/ros/geometry2/pull/106']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: robotics-specific
   architectural-location: platform code
   application: N/A

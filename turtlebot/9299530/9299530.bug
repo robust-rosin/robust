@@ -11,7 +11,7 @@ system: turtlebot
 severity: error
 links: ['https://github.com/ros-visualization/rviz/issues/622']
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   application: visualization

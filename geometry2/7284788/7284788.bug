@@ -16,7 +16,7 @@ links:
   - https://github.com/ros/geometry/issues/93 a related tf issue
   - https://github.com/ros/geometry/commit/db1f024f95be66cfca2081e219de944a065b4efc a test case that exposes the issue (some of the above ROS answers discussions also have examples)
 bug:
-  phase: runtime-operation
+  phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
   application: null

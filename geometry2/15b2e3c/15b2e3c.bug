@@ -12,7 +12,7 @@ severity: minor-issue
 links:
   - https://github.com/ros/geometry2/issues/15 (another issue that seems to be reporting the same)
 bug:
-  phase: runtime
+  phase: startup
   specificity: general issue
   architectural-location: platform code
   application: null
@@ -32,7 +32,9 @@ fix:
   hash: https://github.com/ros/geometry2/commit/15b2e3c52152ee4fc19c55ec76f049e990c05809
   pull-request: https://github.com/ros/geometry2/pull/10
   license: ['BSD']
-  fix-in: ['tf2_ros/include/tf2_ros/buffer_server.h', 'tf2_ros/src/buffer_server_main.cpp']
+  fix-in:
+    - tf2_ros/include/tf2_ros/buffer_server.h
+    - tf2_ros/src/buffer_server_main.cpp
   languages:
     - C++
   time: Jul 10, 2013, 8:48 AM GMT+2
