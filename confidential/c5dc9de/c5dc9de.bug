@@ -17,7 +17,7 @@ system: confidential
 severity: error
 links: ['https://en.wikipedia.org/wiki/Unix_signal']
 bug:
-  phase: runtime
+  phase: startup
   specificity: application specific
   architectural location: application-specific code
   application: EGM interface
