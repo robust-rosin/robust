@@ -18,13 +18,18 @@ system: motoman
 severity: error
 links: []
 bug:
-  phase: runtime
+  phase: startup
   specificity: general-issue
   architectural-location: platform code
   application: null
   task: null
   subsystem: null
-  package: ros-industrial/motoman | ros-industrial/motoman/motoman_sda10f_support | ros_industrial/motoman/motoman_sia10d_support | ros-industrial/motoman/motoman_sia20d_support | ros-industrial/motoman/motoman_sia5d_support
+  package:
+    - ros-industrial/motoman
+    - ros-industrial/motoman/motoman_sda10f_support
+    - ros_industrial/motoman/motoman_sia10d_support
+    - ros-industrial/motoman/motoman_sia20d_support
+    - ros-industrial/motoman/motoman_sia5d_support
   languages:
     - XML
   detected-by: developer
