@@ -41,7 +41,7 @@ _bug:
 
 _fix:
     repo: regex("^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+)$")
-    hash: regex("^[0-9a-f]{40}$")
+    hash: include('_hash')
     pull-request: regex("(^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$)|(^N/A$)")
     license: list(enum("BSD", "GPLv3", "LGPLv3"))
     fix-in: list(str(min=1))
@@ -57,6 +57,9 @@ _time-machine:
 
 _bugzoo:
     is-build-failure: any('true', 'false')
-    bug-commit: regex("^[0-9a-f]{40}$")
-    fix-commit: regex("^[0-9a-f]{40}$")
+    bug-commit: include('_hash')
+    fix-commit: include('_hash')
     fork-urls: list(regex("^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+)$"))
+
+
+_hash: regex("^[0-9a-f]{40}$")
