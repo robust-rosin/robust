@@ -6,7 +6,7 @@ keywords: list(str(min=1, max=80))
 system: str(min=1, max=40)
 severity: enum("error", "warning", "convention-violation", "bad-smell",
             "minor-issue", "not-a-bug")
-links: list(str())
+links: list(regex("^(http)s?://([A-Z0-9])?"))
 bug: include('_bug')
 fix: include('_fix')
 time-machine: include('_time-machine')
