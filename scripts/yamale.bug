@@ -16,7 +16,7 @@ keywords:
   - frame conversion
 system: mavros
 severity: error
-links: []
+links: ['https://github.com/yujinrobot/yujin_ocs/issues/7', 'http://wiki.ros.org/robot_pose_ekf']
 bug:
   phase: runtime-operation
   specificity: general issue
