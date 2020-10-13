@@ -21,15 +21,12 @@ data = yamale.make_data(sys.argv[1])
 
 # Validate data against the schema. Throws a ValueError if data is invalid.
 try:
-    results = yamale.readers.yaml_reader.parse_yaml(sys.argv[1])
-    print(results[0]['fix']['license'])
     yamale.validate(schema, data)
     print('Validation success! 👍')
 except yamale.YamaleError as e:
-    pass
-    # print('Validation failed!\n')
-    # for result in e.results:
-    #     print("Error validating data '%s' with '%s'\n\t" % (result.data, result.schema))
-    #     for error in result.errors:
-    #         print('\t%s' % error)
+    print('Validation failed!\n')
+    for result in e.results:
+        print("Error validating data '%s' with '%s'\n\t" % (result.data, result.schema))
+        for error in result.errors:
+            print('\t%s' % error)
     exit(1)
