@@ -13,7 +13,10 @@ description: >
      through serialization of every message sent.
      Kobuki features a number of nodes that are tightly coupled, and
      communicate at a reasonable frequency. Thus, it makes sense to
-     take advantage of this feature to improve performance.
+     take advantage of this feature to improve performance, as
+     controllers can only be considered reactive if they provide timely
+     responses to input messages. Nodelets facilitate this better than
+     plain nodes.
 classification: Inefficient communication (no CWE)
 keywords: ['nodelet']
 system: kobuki
