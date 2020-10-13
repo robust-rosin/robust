@@ -12,28 +12,48 @@ classification: "CWE-682: Incorrect Calculation #PHYSICAL"
 keywords: ['differential drive', 'velocity', 'driver', 'movement']
 system: kobuki
 severity: error
-links:
+links: []
+failure-codes:
+  - PROGRAMMING:CALCULATIONS
+fault-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:MOTION
 bug:
   phase: runtime
   specificity: robotics-specific
   architectural-location: application-specific code
   application: mobile robot
-  task: differential drive
+  task: motion
   subsystem: driver
-  package: yujinrobot/kobuki/kobuki_driver
-  languages: null
+  package:
+    - yujinrobot/kobuki/kobuki_driver
+  languages:
+    - C++
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/yujinrobot/kobuki/issues/227
   time-reported: 2013-02-22T09:09:21Z
   reproducibility: always
-  trace:
+  trace: N/A
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: e964bbb8700fb1a9b95c0cfe5a44d43321294d4f
-  pull-request: null
-  license: ['BSD']
-  fix-in: ['kobuki_driver/src/driver/diff_drive.cpp']
+  pull-request: N/A
+  license:
+    - 'BSD'
+  fix-in:
+    - 'kobuki_driver/src/driver/diff_drive.cpp'
   languages:
     - C++
-  time: 2013-02-25 (09:31)
+  time: 2013-02-25T09:31:00Z
+time-machine:
+  ros_distro: hydro
+  ros_pkgs:
+    - kobuki_driver
+  datetime: 2013-02-22T09:09:21Z
+bugzoo:
+  is-build-failure: false
+  bug-commit: 7404126181d60ac20ebfddefba64405af58d3434
+  fix-commit: e964bbb8700fb1a9b95c0cfe5a44d43321294d4f
+  fork-urls:
+    - https://github.com/robust-rosin/kobuki
