@@ -14,7 +14,7 @@ description: >
   (some evolution and testing stuff.  The hash listed below is to the commit
   that actually makes the fix for the issue).
 classification: >
-  "double definition of the same identifier (no CWE)"
+  double definition of the same identifier (no CWE)
   internal classification (cause):
   internal classification (effect):
 keywords:

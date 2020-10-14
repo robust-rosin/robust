@@ -2,13 +2,12 @@
 ---
 title: String literal concatenation with gcc 4.9
 description: >
-     Apparently gcc 4.9 became more restrictive than previous editions and it
-     no longer admits concatenation of string literals if some of them are
-     macro arguments. Thus "literal"fmt causes a parsing error in macro where
-     fmt is a formal argument. This is fixed by putting a comman between the
-     literal and the identifier at the usage context which accepts multiple
-     strings anyways.
-classification: |
+    Apparently gcc 4.9 became more restrictive than previous editions and it no
+    longer admits concatenation of string literals if some of them are macro
+    arguments. Thus "literal"fmt causes a parsing error in macro where fmt is a
+    formal argument. This is fixed by putting a comman between the literal and
+    the identifier at the usage context which accepts multiple strings anyways.
+classification: >
   Dangerous behavior: Syntax Error (no CWE)
   internal classification (cause):
   internal classification (effect):

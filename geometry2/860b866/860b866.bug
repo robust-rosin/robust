@@ -3,7 +3,7 @@
 id: 860b866
 title: Wrong vector translation (violation of requirements spec)
 description: >
-  "Geometry distinguishes two types for a triple of numbers: Point and
+  Geometry distinguishes two types for a triple of numbers: Point and
   Vector3.  They have the same members but different semantics. Vectors have
   magnitude and direction but are always from the origin. Points have position.
   This explained, for instance, in issue 330, under links below. Since vectors
@@ -16,7 +16,7 @@ description: >
   request, and a test is added that exposes the behaviour.
 
   This is a fairly general issue that could appear in any robotics framework,
-  not just in ROS."
+  not just in ROS.
 classification: "CWE-682: Incorrect Calculation"
 keywords:
   - kdl

@@ -3,9 +3,16 @@
 id: 93ea333
 title: Unused assignments to local variables
 description: >
-  Two assingments in max/min computations were found that needlessly updated a local variable just before the function returns, without accessing the variables. This is likely caused by symmmetric shape of the code, and the last case being formed following the same scheme as the previous cases (where the assignment was not stale).
-  CWE refers to this problem as 'dead store'. This does not seem to a cause a problem directly, but is considered an indication of low quality, and likely a manifestation of other problems.  Thus CWE recommends cleaning.  In this case in tf2, it does not appear that this problem was causing any noticable harm (besides noise).
-  The error has been found by a static analyzer of clang.
+  Two assignments in max/min computations were found that needlessly updated a
+  local variable just before the function returns, without accessing the
+  variables. This is likely caused by symmmetric shape of the code, and the
+  last case being formed following the same scheme as the previous cases (where
+  the assignment was not stale).  CWE refers to this problem as 'dead store'.
+  This does not seem to a cause a problem directly, but is considered an
+  indication of low quality, and likely a manifestation of other problems.
+  Thus CWE recommends cleaning.  In this case in tf2, it does not appear that
+  this problem was causing any noticable harm (besides noise).  The error was
+  found by Clang's static analyzer.
 classification: "CWE-563: Assignment to Variable without Use"
 keywords: ['c++', 'dead store', 'assignment']
 system: core component
