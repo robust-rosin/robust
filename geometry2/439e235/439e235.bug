@@ -3,7 +3,7 @@
 id: 439e235
 title: A geometrical calculation error
 description: >
-    "In the calculation of shortest angle represented by a quaternion in tf2
+    In the calculation of shortest angle represented by a quaternion in tf2
     the positive and negative cases are swapped.  Interestingly, this code has
     been originally cloned from Bullet LinearMath library, where it has been
     fixed later.  This bug is a great example of difficulties of clone & own,
@@ -11,7 +11,7 @@ description: >
     a better choice here).
 
     This is a robotics-specific issue as this calculation is common to
-    geometrical modeling libraries."
+    geometrical modeling libraries.
 classification: "Wrong behavior (no CWE) #PHYSICAL"
 keywords: ['geometry', 'math', 'quaternion']
 system: core component
