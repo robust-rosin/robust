@@ -1,8 +1,7 @@
 %YAML 1.1
 ---
 title: A unique lock used with multiple writers
-
-description:
+description: >
   The MessageFilter class of tf2 can be used in multi-threaded programs, and
   then it should be able to dynamically change which of the thread is the
   writer and which are the readers. Using a boost::mutex::scope lock prevents
@@ -14,62 +13,35 @@ description:
 
   Another fix (pull request 93) is discussed in the same issue (and merged) but
   it appears unrelated to this deadlock.
-
 classification: "CWE-667: Improper Locking"
-
-keywords: c++ | deadlock | lock upgrade | concurrency
-
+keywords: ["c++", "deadlock", "lock upgrade", "concurrency"]
 system: core component
-
 severity: error
-
 links:
   - https://github.com/ros/geometry2/pull/93
-
 bug:
-
   phase: runtime
-
   specificity: general issue
-
   architectural-location: platform code
-
   application: N/A
-
   task: N/A
-
   subsystem: generic task component
-
   package: ros/geometry2/tf2_ros
-
   languages: C++
-
   detected-by: developer
-
   reported-by: contributor
-
   issue: https://github.com/ros/geometry2/issues/91
-
   time-reported: 2015-04-02 (05:08 AM GMT+2)
-
   reproducibility: rare
-
   trace: null
-
   reproduction: null
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 245b02b982981fc80dbea9f50e774e7de6f3c88b
-
   pull-request: https://github.com/ros/geometry2/pull/101
-
   license: BSD
-
-  fix-in: tf2_ros/include/tf2_ros/message_filter.h
-
-  languages: C++
-
+  fix-in:
+    - tf2_ros/include/tf2_ros/message_filter.h
+  languages:
+    - C++
   time: 2015-04-21 (21:42 GMT+1)
