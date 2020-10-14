@@ -3,7 +3,7 @@
 id: 0c3aef3
 title: Missing dependency on a package providing needed header files
 description: >
-  "The tf2 package (tf2/include/tf2/impl/utils.h) includes the header file
+  The tf2 package (tf2/include/tf2/impl/utils.h) includes the header file
   tf2_geometry_msgs/tf2_geometry_msgs.h from the tf2_geometry_msgs package.
   However this dependency is not declared as a compile-time dependency in the
   package manifest file package.xml.  This may lead to situations where a
@@ -25,37 +25,37 @@ description: >
 
   We consider this a minor issue, as it does not affect users of ROS systems in
   anyway.  It does create an annoyance for developers who need to install the
-  dependent packages manually."
-classification: "Missing Dependency (no CWE)"
+  dependent packages manually.
+classification: Missing Dependency (no CWE)
 keywords: ['c++', 'dependency', 'header', 'include', 'circular']
 system: core component
 severity: minor-issue
-links:
-  bug:
-    phase: build
-    specificity: general issue
-    architectural-location: platform code
-    application: null
-    task: null
-    subsystem: generic task component
-    package: ros/geometry2/tf2
-    languages:
-      - C++
-      - package.xml
-    detected-by: compiler
-    reported-by: guest user
-    issue: null
-    time-reported: 2016-04-09 11:03 GMT+2
-    reproducibility: always
-    trace:
-      reproduction: >
-        "Install tf2 and try to compile."
-  fix:
-    repo: https://github.com/ros/geometry2
-    hash: 0c3aef30b7a436b2df553ff08b9a060c94fa3e32
-    pull-request: https://github.com/ros/geometry2/pull/170
-    license: ["BSD"]
-    fix-in: ["tf2/package.xml"]
-    languages:
-      - package.xml
-    time: null
+links: []
+bug:
+  phase: build
+  specificity: general issue
+  architectural-location: platform code
+  application: null
+  task: null
+  subsystem: generic task component
+  package: ros/geometry2/tf2
+  languages:
+    - C++
+    - package.xml
+  detected-by: compiler
+  reported-by: guest user
+  issue: null
+  time-reported: 2016-04-09 11:03 GMT+2
+  reproducibility: always
+  trace: null
+  reproduction: Install tf2 and try to compile.
+fix:
+  repo: https://github.com/ros/geometry2
+  hash: 0c3aef30b7a436b2df553ff08b9a060c94fa3e32
+  pull-request: https://github.com/ros/geometry2/pull/170
+  license: ["BSD"]
+  fix-in:
+    - tf2/package.xml
+  languages:
+    - package.xml
+  time: null
