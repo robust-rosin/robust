@@ -3,9 +3,19 @@
 id: 3ec0485
 title: An unusual use of C-style format string causes a static analysis warning
 description: >
-  The two macros, TF2_ROS_MESSAGEFILTER_DEBUG and TF2_ROS_MESSAGEFILTER_WARN call another macro (ROS_DEBUG_NAMED, respectively ROS_WARN_NAMED).  The second argument of these ROS_* macros is a printf-style format string.  Both calls use a "%s" formatter inside this format string, which causes the next string to be inlined.  The problem is that these next string is also a format string in the same style, and this triggers (confuses) a gcc static analyzer that checks correctness of format strings and the following variable length argument list.  The fix is to change the macro to constract the a single format string first, before calling ROS_DEBUG_NAMED (ROS_WARN_NAMED).
+    The two macros, TF2_ROS_MESSAGEFILTER_DEBUG and TF2_ROS_MESSAGEFILTER_WARN
+    call another macro (ROS_DEBUG_NAMED, respectively ROS_WARN_NAMED).  The
+    second argument of these ROS_* macros is a printf-style format string.
+    Both calls use a "%s" formatter inside this format string, which causes the
+    next string to be inlined.  The problem is that these next string is also a
+    format string in the same style, and this triggers (confuses) a gcc static
+    analyzer that checks correctness of format strings and the following
+    variable length argument list.  The fix is to change the macro to constract
+    the a single format string first, before calling ROS_DEBUG_NAMED
+    (ROS_WARN_NAMED).
 
-  This kind of issue could be found in any reasonably complex C/C++ system using preprocessor macros.
+    This kind of issue could be found in any reasonably complex C/C++ system
+    using preprocessor macros.
 classification: "Convoluted non-standard use of preprocessor (no CWE)"
 keywords:
   - varargs
