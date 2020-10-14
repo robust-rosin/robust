@@ -19,11 +19,10 @@ keywords:
   - duplicate definition
 system: geometry2
 severity: error
-links: [
-  https://en.wikipedia.org/wiki/One_Definition_Rule,
-  https://en.cppreference.com/w/cpp/language/inline,
-  https://stackoverflow.com/questions/39652884/one-definition-rule-multiple-definition-of-inline-functions#comment89993765_39653125
-]
+links:
+- https://en.wikipedia.org/wiki/One_Definition_Rule,
+- https://en.cppreference.com/w/cpp/language/inline,
+- https://stackoverflow.com/questions/39652884/one-definition-rule-multiple-definition-of-inline-functions#comment89993765_39653125
 bug:
   phase: build
   specificity: general issue
