@@ -1,9 +1,8 @@
 %YAML 1.1
 ---
 title: Missing escape in a printf format string
-
-description:
-  'The logWarn macro takes a format string parameter in C printf style (it
+description: >
+  The logWarn macro takes a format string parameter in C printf style (it
   expands to a call to a console_bridge::log).  This macros is used in the
   BufferCore::setTransform function to produce a message containing a URL to a
   page with possible diagnostic information.  The link contains a verbatim
@@ -28,64 +27,38 @@ description:
 
   The first link below links to the discussion leading to renaming of logWarn.
   The second one is the pull request that fixes the same issue in the hydro
-  branch.'
+  branch.
 
 classification: "CWE-209: Information Exposure Through an Error Message"
-
-keywords: printf | format string | security | varargs | stack | cross-branch
-
+keywords: ["printf", "format string", "security", "varargs", "stack", "cross-branch"]
 system: core component
-
 severity: error
-
-links: [
-  https://github.com/ros/console_bridge/issues/18,
-  https://github.com/ros/geometry2/pull/65]
-
+links:
+- https://github.com/ros/console_bridge/issues/18
+- https://github.com/ros/geometry2/pull/65
 bug:
-
   phase: runtime
-
   specificity: general issue
-
   architectural-location: platform code
-
-  applications: N/A
-
+  application: N/A
   task: N/A
-
   subsystem: generic task component
-
   package: ros/geometry2/tf2
-
   languages: C++
-
   detected-by: developer
-
   reported-by: null
-
   issue: null
-
   time-reported: null
-
   reproducibility: always
-
   trace: null
-
   reproduction: null
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 164cfa3ef1aad2d11b35894275730fe126e35d3e
-
   pull-request: https://github.com/ros/geometry2/pull/62
-
   license: BSD
-
-  fix-in: tf2/src/buffer_core.cpp
-
-  languages: C++
-
+  fix-in:
+    - tf2/src/buffer_core.cpp
+  languages:
+    - C++
   time: 2014-05-12 (21:11 GMT+1)
