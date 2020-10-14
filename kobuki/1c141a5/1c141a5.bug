@@ -39,4 +39,4 @@ fix:
   fix-in: ['kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp', 'kobuki_driver/src/driver/diff_drive.cpp']
   languages:
     - C++
-  time: 2013-05-07 (06:40)
+  time: 2013-05-07T06:40:00Z

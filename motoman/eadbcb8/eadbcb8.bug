@@ -35,4 +35,4 @@ fix:
   fix-in: ['motoman_mh5_support/meshes/mh5/visual/MH5_BASE_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_B_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_L_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_R_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_S_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_T_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_U_AXIS.stl']
   languages:
     - ASCII STL
-  time: 2016-01-23 (00:00)
+  time: 2016-01-23T00:00:00Z

@@ -36,4 +36,4 @@ fix:
   fix-in: ['kobuki_ftdi/57-kobuki.rules']
   languages:
     - udev rules
-  time: 2013-02-19 (07:15)
+  time: 2013-02-19T07:15:00Z

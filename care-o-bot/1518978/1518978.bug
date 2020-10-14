@@ -43,4 +43,4 @@ fix:
   fix-in: ['https://github.com/ipa-fxm/cob_driver/blob/151897840540e8dd662cf6c8c77e5613c84e3424/cob_sound/ros/src/sound.cpp']
   languages:
     - C++
-  time: 2016-04-07 (00:00)
+  time: 2016-04-07T00:00:00Z

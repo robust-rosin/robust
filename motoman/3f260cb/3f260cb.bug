@@ -37,4 +37,4 @@ fix:
   fix-in: ['motoman_driver/include/motoman_driver/joint_trajectory_streamer.h', 'motoman_driver/src/joint_trajectory_streamer.cpp']
   languages:
     - C++
-  time: 2017-03-21 (02:46)
+  time: 2017-03-21T02:46:00Z

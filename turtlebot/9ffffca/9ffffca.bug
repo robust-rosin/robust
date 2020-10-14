@@ -40,4 +40,4 @@ fix:
   fix-in: ['turtlebot_teleop/launch/includes/velocity_smoother.launch.xml']
   languages:
     - Launch XML
-  time: 2016-10-26 (13:56)
+  time: 2016-10-26T13:56:00Z

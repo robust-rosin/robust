@@ -34,4 +34,4 @@ fix:
   fix-in: ['motoman_mh5_support/urdf/mh5_macro.xacros']
   languages:
     - xacro
-  time: 2017-05-23 (22:15)
+  time: 2017-05-23T22:15:00Z

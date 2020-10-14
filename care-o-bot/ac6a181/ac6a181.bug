@@ -39,4 +39,4 @@ fix:
     - cob_command_tools/cob_script_server/package.xml
   languages:
     - XML
-  time: 2014-08-26 (08:57)
+  time: 2014-08-26T08:57:00Z

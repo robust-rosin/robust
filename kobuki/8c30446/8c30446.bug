@@ -65,4 +65,4 @@ fix:
   fix-in: ['kobuki_node/launch/robot_with_tf.launch']
   languages:
     - launch XML
-  time: 2014-08-11 (06:11)
+  time: 2014-08-11T06:11:00Z

@@ -46,4 +46,4 @@ fix:
     - kobuki_node/package.xml
   languages:
     - Package XML
-  time: 2013-10-09 (10:01)
+  time: 2013-10-09T10:01:00Z

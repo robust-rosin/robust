@@ -50,4 +50,4 @@ fix:
   fix-in: ['kobuki_node/param/base.yaml']
   languages:
     - YAML
-  time: 2013-08-30 (09:45)
+  time: 2013-08-30T09:45:00Z

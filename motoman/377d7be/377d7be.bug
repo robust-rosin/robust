@@ -40,4 +40,4 @@ fix:
   fix-in:
     - motoman_driver/Inform/.gitattributes
   languages: null
-  time: 2017-01-09 (21:09)
+  time: 2017-01-09T21:09:00Z

@@ -48,4 +48,4 @@ fix:
   fix-in: ['depth_image_proc/package.xml']
   languages:
     - Package XML
-  time: 2014-06-13 (01:12)
+  time: 2014-06-13T01:12:00Z

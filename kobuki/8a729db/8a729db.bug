@@ -51,4 +51,4 @@ fix:
   fix-in: ['kobuki_node/param/diagnostics.yaml']
   languages:
     - rosparam YAML
-  time: 2014-08-26 (06:54)
+  time: 2014-08-26T06:54:00Z

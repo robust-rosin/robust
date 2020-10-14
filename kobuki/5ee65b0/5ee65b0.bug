@@ -77,4 +77,4 @@ fix:
   fix-in: ['kobuki_dashboard/src/kobuki_dashboard/led_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/motor_widget.py']
   languages:
     - Python
-  time: 2014-08-08 (11:25)
+  time: 2014-08-08T11:25:00Z

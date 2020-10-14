@@ -35,4 +35,4 @@ fix:
   fix-in: ['kobuki_core/package.xml', 'kobuki/package.xml']
   languages:
     - Package XML
-  time: 2013-08-31 (07:09)
+  time: 2013-08-31T07:09:00Z

@@ -46,7 +46,7 @@ fix:
     - mavros/include/mavros/utils.h
   languages:
     - C++
-  time: 2017-02-07 (00:00)
+  time: 2017-02-07T00:00:00Z
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

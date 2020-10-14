@@ -59,4 +59,4 @@ fix:
   fix-in: ['kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/gyro_drift_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py']
   languages:
     - Python
-  time: 2014-08-11 (06:02)
+  time: 2014-08-11T06:02:00Z

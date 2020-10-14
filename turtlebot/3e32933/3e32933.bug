@@ -51,4 +51,4 @@ fix:
   fix-in: ['turtlebot_bringup/launch/3dsensor.launch']
   languages:
     - Launch XML
-  time: 2014-04-02 (08:50)
+  time: 2014-04-02T08:50:00Z

@@ -57,4 +57,4 @@ fix:
   fix-in: ['ur_gazebo/package.xml']
   languages:
     - package.xml
-  time: 2016-08-22 (18:38)
+  time: 2016-08-22T18:38:00Z

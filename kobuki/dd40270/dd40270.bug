@@ -57,4 +57,4 @@ fix:
   fix-in: ['kobuki_node/scripts/getOdom2D.py', 'kobuki_node/scripts/getYaw.py', 'kobuki_testsuite/src/kobuki_testsuite/drift_estimation.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_rotate.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_travel_forward.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_wander.py']
   languages:
     - Python
-  time: 2014-08-11 (06:13)
+  time: 2014-08-11T06:13:00Z

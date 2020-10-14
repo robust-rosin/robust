@@ -64,4 +64,4 @@ fix:
   fix-in: ['package.xml']
   languages:
     - package.xml
-  time: 2014-09-04 (17:57)
+  time: 2014-09-04T17:57:00Z

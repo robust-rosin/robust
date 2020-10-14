@@ -35,4 +35,4 @@ fix:
   fix-in: ['kobuki_node/scripts/laptop_battery.py']
   languages:
     - Python
-  time: 2012-06-07 (00:55)
+  time: 2012-06-07T00:55:00Z

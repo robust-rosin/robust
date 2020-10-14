@@ -33,4 +33,4 @@ fix:
   license: ['BSD']
   fix-in: ['ros-industrial/motoman', 'ros-industrial/motoman/motoman_mh5_support', 'ros-industrial/motoman/motoman_sda10f_support', 'ros_industrial/motoman/motoman_sia10d_support', 'ros-industrial/motoman/motoman_sia20d_support', 'ros-industrial/motoman/motoman_sia5d_support']
   languages: null
-  time: 2014-09-02 (11:31)
+  time: 2014-09-02T11:31:00Z

@@ -38,7 +38,7 @@ fix:
     - mavros/CMakeLists.txt
   languages:
     - CMake
-  time: 2014-11-02 (00:00)
+  time: 2014-11-02T00:00:00Z
 time-machine:
   ros_distro: hydro
   ros_pkgs:

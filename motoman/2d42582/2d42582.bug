@@ -39,4 +39,4 @@ fix:
   languages:
     - urdf
     - xacro
-  time: 2016-06-19 (00:00)
+  time: 2016-06-19T00:00:00Z

@@ -42,4 +42,4 @@ fix:
   fix-in: ['ur5_moveit_config/package.xml']
   languages:
     - package.xml
-  time: 2014-03-21 (02:53)
+  time: 2014-03-21T02:53:00Z

@@ -51,4 +51,4 @@ fix:
   fix-in: ['kobuki_auto_docking/launch/auto_dock_with_safe_keyop.launch']
   languages:
     - launch XML
-  time: 2013-02-25 (08:34)
+  time: 2013-02-25T08:34:00Z

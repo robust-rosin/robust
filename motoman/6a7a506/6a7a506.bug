@@ -37,4 +37,4 @@ fix:
   languages:
     - xacro
     - urdf
-  time: 2016-06-25 (00:00)
+  time: 2016-06-25T00:00:00Z

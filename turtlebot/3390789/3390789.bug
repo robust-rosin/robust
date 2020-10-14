@@ -40,4 +40,4 @@ fix:
   fix-in: ['turtlebot_bringup/package.xml', 'turtlebot_capabilities/package.xml']
   languages:
     - Package XML
-  time: 2015-01-09 (09:15)
+  time: 2015-01-09T09:15:00Z

@@ -49,4 +49,4 @@ fix:
   fix-in: ['ur10_moveit_config/launch/trajectory_execution.launch.xml', 'ur3_moveit_config/launch/trajectory_execution.launch.xml', 'ur5_moveit_config/launch/trajectory_execution.launch.xml']
   languages:
     - launch XML
-  time: 2017-01-05 (05:58)
+  time: 2017-01-05T05:58:00Z

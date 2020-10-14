@@ -50,4 +50,4 @@ fix:
   fix-in: ['rocon_app_manager/src/rocon_app_manager/rapp_manager.py', 'src/rospkg/os_detect.py', 'src/rosdep2/platforms/debian.py']
   languages:
     - Python
-  time: 2015-01-22 (23:52)
+  time: 2015-01-22T23:52:00Z

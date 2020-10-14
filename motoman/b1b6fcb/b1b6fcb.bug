@@ -36,4 +36,4 @@ fix:
   fix-in: ['motoman_driver/include/motoman_driver/industrial_robot_client/joint_trajectory_action.h', 'motoman_driver/src/industrial_robot_client/joint_trajectory_action.cpp']
   languages:
     - C++
-  time: 2017-03-07 (16:28)
+  time: 2017-03-07T16:28:00Z

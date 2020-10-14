@@ -35,4 +35,4 @@ fix:
   fix-in: ['kobuki_node/package.xml']
   languages:
     - Package XML
-  time: 2014-08-08 (01:42)
+  time: 2014-08-08T01:42:00Z

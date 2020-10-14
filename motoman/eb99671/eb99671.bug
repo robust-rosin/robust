@@ -35,4 +35,4 @@ fix:
   fix-in: ['motoman/package.xml']
   languages:
     - XML
-  time: 2013-08-07 (20:49)
+  time: 2013-08-07T20:49:00Z

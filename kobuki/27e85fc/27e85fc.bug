@@ -34,4 +34,4 @@ fix:
   fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
   languages:
     - C++
-  time: 2013-08-09 (08:14)
+  time: 2013-08-09T08:14:00Z

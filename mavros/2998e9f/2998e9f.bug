@@ -46,7 +46,7 @@ fix:
     - src/plugins/sys_status.cpp
   languages:
     - C++
-  time: 2014-01-13 (00:00)
+  time: 2014-01-13T00:00:00Z
 time-machine:
   ros_distro: hydro
   ros_pkgs:

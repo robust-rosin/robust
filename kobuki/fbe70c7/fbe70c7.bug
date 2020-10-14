@@ -39,4 +39,4 @@ fix:
   fix-in: ['kobuki_meta/resources/launch/components/base.launch', 'kobuki_meta/resources/launch/keyop.launch']
   languages:
     - Launch XML
-  time: 2012-04-05 (23:57)
+  time: 2012-04-05T23:57:00Z

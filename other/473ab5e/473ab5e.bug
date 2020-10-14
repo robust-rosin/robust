@@ -46,4 +46,4 @@ fix:
   fix-in: ['sf_teleop/CMAkelists.txt', 'sf_teleop/package.xml', 'sf_teleop/scripts/sf_teleop/sf_joystick_control.py']
   languages:
     - python
-  time: 2015-12-07 (00:00)
+  time: 2015-12-07T00:00:00Z

@@ -54,7 +54,7 @@ fix:
   languages:
     - Python
     - C++
-  time: 2017-06-28 (00:00)
+  time: 2017-06-28T00:00:00Z
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

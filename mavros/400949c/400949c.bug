@@ -56,7 +56,7 @@ fix:
     - libmavconn/test/test_hang.cpp
   languages:
     - C++
-  time: 2016-06-06 (00:00)
+  time: 2016-06-06T00:00:00Z
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

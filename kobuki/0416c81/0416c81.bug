@@ -39,4 +39,4 @@ fix:
   fix-in: ['kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp', 'kobuki_auto_docking/src/auto_docking_ros.cpp', 'kobuki_auto_docking/src/dock_drive.cpp']
   languages:
     - C++
-  time: 2013-05-24 (07:28)
+  time: 2013-05-24T07:28:00Z

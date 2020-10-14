@@ -49,4 +49,4 @@ fix:
   fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
   languages:
     - C++
-  time: 2014-03-02 (15:03)
+  time: 2014-03-02T15:03:00Z

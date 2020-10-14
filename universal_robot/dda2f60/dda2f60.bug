@@ -37,4 +37,4 @@ fix:
   fix-in: ['ros_industrial/universal_robot/package.xml']
   languages:
     - package.xml
-  time: 2014-03-31 (15:52)
+  time: 2014-03-31T15:52:00Z

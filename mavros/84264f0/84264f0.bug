@@ -46,7 +46,7 @@ fix:
     - mavros_extras/src/plugins/visualization.cpp
   languages:
     - C++
-  time: 2015-03-05 (00:00)
+  time: 2015-03-05T00:00:00Z
 time-machine:
   ros_distro: indigo
   ros_pkgs:

@@ -60,7 +60,7 @@ fix:
   fix-in: ['yocs_navigator/CMakeLists.txt']
   languages:
     - CMake
-  time: 2014-08-25 (02:04)
+  time: 2014-08-25T02:04:00Z
 time-machine:
   ros_distro: indigo
   ros_pkgs:

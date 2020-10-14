@@ -34,4 +34,4 @@ fix:
   license: null
   fix-in: ['motoman_sda10f_support/meshes/sda10f/visual/motoman_axis_b1.stl', 'motoman_sda10f_support/meshes/sda10f/visual/motoman_base.stl']
   languages: null
-  time: 2016-08-29 (13:15)
+  time: 2016-08-29T13:15:00Z

@@ -36,7 +36,7 @@ fix:
   fix-in: ['turtlebot_bringup/package.xml']
   languages:
     - Package XML
-  time: 2013-11-06 (08:29)
+  time: 2013-11-06T08:29:00Z
 time-machine:
   ros_distro: hydro
   ros_pkgs:

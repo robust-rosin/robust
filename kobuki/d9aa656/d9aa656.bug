@@ -37,4 +37,4 @@ fix:
   fix-in: ['kobuki_bringup/resources/yaml/kobuki.yaml']
   languages:
     - YAML
-  time: 2012-05-16 (17:29)
+  time: 2012-05-16T17:29:00Z

@@ -40,7 +40,7 @@ fix:
   fix-in: ['tf2_ros/src/static_transform_broadcaster_program.cpp']
   languages:
     - C++
-  time: 2016-04-02 (08:29)
+  time: 2016-04-02T08:29:00Z
 time-machine:
   ros_distro: indigo
   ros_pkgs:

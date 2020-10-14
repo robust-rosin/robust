@@ -44,4 +44,4 @@ fix:
   fix-in: ['https://github.com/ipa-fmw/cob_robots/blob/b826eaeae5c8dc548ac2c97002725c7a8131137e/cob_hardware_config/cob3-9/urdf/cob3-9.urdf.xacro']
   languages:
     - xacro
-  time: 2016-11-10 (00:00)
+  time: 2016-11-10T00:00:00Z

@@ -46,4 +46,4 @@ fix:
   fix-in: ['motoman_sia20d_moveit_config/package.xml']
   languages:
     - XML
-  time: 2014-03-28 (11:36)
+  time: 2014-03-28T11:36:00Z

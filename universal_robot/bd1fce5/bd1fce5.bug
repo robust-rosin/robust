@@ -42,4 +42,4 @@ fix:
   fix-in: ['ur_driver/src/ur_driver/driver.py']
   languages:
     - Python
-  time: 2014-02-08 (03:30)
+  time: 2014-02-08T03:30:00Z

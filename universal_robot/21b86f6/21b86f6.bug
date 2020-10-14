@@ -57,4 +57,4 @@ fix:
   fix-in: ['ur_description/urdf/ur10.urdf.xacro']
   languages:
     - xacro
-  time: 2014-08-06 (13:00)
+  time: 2014-08-06T13:00:00Z
