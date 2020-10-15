@@ -32,9 +32,12 @@ bug:
   reproducibility: sometimes
   trace: >
     TODO check out test/simple_tf2_core.cpp for how to set up a trace. Then
-    TODO there is some inspiration on how to us allFramesAsYAML in speed_test.cpp (commented out, but shows context)
-    it appears that calling BufferCore::lookupOrInsertFrameNumber with some messy string will put a NULL object in the back that should cause the trouble.
-    after that call allFramesAsYAML and insert an assertion just before line 1337 (see also whether it crashes immediately after )
+    TODO there is some inspiration on how to us allFramesAsYAML in
+    speed_test.cpp (commented out, but shows context) it appears that calling
+    BufferCore::lookupOrInsertFrameNumber with some messy string will put a
+    NULL object in the back that should cause the trouble.  after that call
+    allFramesAsYAML and insert an assertion just before line 1337 (see also
+    whether it crashes immediately after )
 fix:
   repo: https://github.com/ros/geometry2
   hash: 6c13c78a9fd4a9220867f8433243deb00a8d7eb6

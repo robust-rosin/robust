@@ -1,7 +1,8 @@
 %YAML 1.1
 ---
 id: a723ecb
-title: The installation of the TF2 library is not a dependency of the devel build
+title: >
+  The installation of the TF2 library is not a dependency of the devel build
 description: >
    Due to a typing mistake (likely a copy-paste) the tf2 library is not
    included in the build of the devel target The target that is used as a
