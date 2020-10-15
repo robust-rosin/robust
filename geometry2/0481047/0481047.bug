@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: "0481047"
 title: Linking error due to a backwards incompatible API change
 description: >
   Function allFramesAsDot has been extended to take an additional parameter,
