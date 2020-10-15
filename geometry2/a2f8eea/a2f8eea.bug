@@ -57,7 +57,7 @@ fix:
   license: ['BSD']
   fix-in: ['tf2_py/src/tf2_py.cpp']
   languages:
-    - python
+    - Python
   time: 2013-12-26T22:51:58Z
 time-machine:
   ros_distro: hydro
