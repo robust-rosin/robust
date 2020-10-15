@@ -28,8 +28,8 @@ keywords:
 system: geometry2
 severity: error
 links:
-- https://docs.python.org/3/c-api/intro.html#reference-count-details
-- https://www.thecodingforums.com/threads/python-c-api-and-references.705035
+  - https://docs.python.org/3/c-api/intro.html#reference-count-details
+  - https://www.thecodingforums.com/threads/python-c-api-and-references.705035
 bug:
   phase: runtime
   specificity: general issue

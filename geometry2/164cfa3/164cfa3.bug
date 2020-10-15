@@ -31,12 +31,18 @@ description: >
   branch.
 
 classification: "CWE-209: Information Exposure Through an Error Message"
-keywords: ["printf", "format string", "security", "varargs", "stack", "cross-branch"]
+keywords:
+  - printf
+  - format string
+  - security
+  - varargs
+  - stack
+  - cross-branch
 system: core component
 severity: error
 links:
-- https://github.com/ros/console_bridge/issues/18
-- https://github.com/ros/geometry2/pull/65
+  - https://github.com/ros/console_bridge/issues/18
+  - https://github.com/ros/geometry2/pull/65
 bug:
   phase: runtime
   specificity: general issue
