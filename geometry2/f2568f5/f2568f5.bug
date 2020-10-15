@@ -28,8 +28,9 @@ bug:
   application: N/A
   task: N/A
   subsystem: generic task component
-  package: N/A
-  languages: N/A
+  package:
+    - ros/geometry2/tf2_sensor_msgs
+  languages: null
   detected-by: automatic
   reported-by: N/A
   issue: N/A
@@ -45,7 +46,7 @@ fix:
   fix-in:
     - tf2_sensor_msgs/package.xml
   languages:
-    - package.xml
+    - Package XML
   time: 2015-11-16 8:55 GMT+1
 time-machine:
   ros_distro: null
