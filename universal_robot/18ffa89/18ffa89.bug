@@ -56,5 +56,5 @@ fix:
   license: ['BSD']
   fix-in: ['ur_description/urdf/ur10.gazebo.xacro']
   languages:
-    - xacro
+    - Xacro
   time: 2013-06-06 (19:43)

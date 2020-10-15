@@ -37,6 +37,6 @@ fix:
   license: ['BSD']
   fix-in: ['motoman_sia20d_support/urdf/sia20d.urdf', 'motoman_sia20d_support/urdf/sia20d_macro.xacro']
   languages:
-    - urdf
-    - xacro
+    - URDF
+    - Xacro
   time: 2016-06-19 (00:00)
