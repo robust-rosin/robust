@@ -41,7 +41,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: f2568f597923d0ea4495c18cd828a67f12e05f0a
   pull-request: https://github.com/ros/geometry2/pull/126
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_sensor_msgs/package.xml
   languages:

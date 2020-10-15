@@ -53,7 +53,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: 04810475f249e3f067701288388b82ff0dd686ba
   pull-request: https://github.com/ros/geometry2/pull/86
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2/include/tf2/buffer_core.h
     - tf2/src/buffer_core.cpp

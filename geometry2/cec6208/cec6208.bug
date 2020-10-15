@@ -58,7 +58,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: cec62083fa3e54cf210ce8b5ea87b4c0ed60f64b
   pull-request: https://github.com/ros/geometry2/pull/58
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_ros/src/tf2_ros/buffer.py
   languages:

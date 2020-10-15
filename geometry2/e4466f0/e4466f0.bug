@@ -46,7 +46,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: e4466f0f482dcacf79b9ab9deaa70429e161e3a6
   pull-request: https://github.com/ros/geometry2/pull/133
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_tools/scripts/view_frames.py
   languages:

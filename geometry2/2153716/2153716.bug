@@ -49,7 +49,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: 2153716e32d0c12c24f8f80334de1a37d7a3665f
   pull-request: https://github.com/ros/geometry2/pull/158
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_eigen/include/tf2_eigen/tf2_eigen.h
   languages:

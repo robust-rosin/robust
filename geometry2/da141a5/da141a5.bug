@@ -52,7 +52,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: da141a52c551d482fdd9f0e24a0011050c1307e0
   pull-request: https://github.com/ros/geometry2/pull/109
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_geometry_msgs/include/tf2_geometry_msgs/tf2_geometry_msgs.h
   languages:

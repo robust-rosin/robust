@@ -48,7 +48,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: 860b8667a9a880b8831e42cb260029a384c99a9a
   pull-request: https://github.com/ros/geometry2/pull/128
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_geometry_msgs/src/tf2_geometry_msgs/tf2_geometry_msgs.py
   languages:

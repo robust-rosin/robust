@@ -40,7 +40,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: 245b02b982981fc80dbea9f50e774e7de6f3c88b
   pull-request: https://github.com/ros/geometry2/pull/101
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_ros/include/tf2_ros/message_filter.h
   languages:

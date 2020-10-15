@@ -45,7 +45,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: 729a6531929203720f4a518ac9e79321fe3c5537
   pull-request: null
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2/src/buffer_core.cpp
   languages:

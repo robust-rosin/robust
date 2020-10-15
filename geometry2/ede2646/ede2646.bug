@@ -44,7 +44,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: ede2646d463c8ae1bbbf2460941df2b07d39824e
   pull-request: https://github.com/ros/geometry2/pull/90
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_ros/src/tf2_ros/transform_broadcaster.py
   languages:
