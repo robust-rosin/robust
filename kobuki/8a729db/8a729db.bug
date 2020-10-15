@@ -50,5 +50,5 @@ fix:
   license: ['BSD']
   fix-in: ['kobuki_node/param/diagnostics.yaml']
   languages:
-    - rosparam YAML
+    - Param YAML
   time: 2014-08-26 (06:54)
