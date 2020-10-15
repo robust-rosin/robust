@@ -48,7 +48,8 @@ fix:
   hash: 35682ec3c3e7177373c66c48228ad58b2eb34aae
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_auto_docking/launch/auto_dock_with_safe_keyop.launch']
+  fix-in:
+    - kobuki_auto_docking/launch/auto_dock_with_safe_keyop.launch
   languages:
-    - launch XML
+    - Launch XML
   time: 2013-02-25 (08:34)

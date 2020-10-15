@@ -42,11 +42,14 @@ bug:
   reproducibility: always
   trace:
 fix:
-  repo: https://github.com/ros-industrial/universal_robot/
+  repo: https://github.com/ros-industrial/universal_robot
   hash: 778c1acda6dc3e194b50328259936c3f058bcb7
   pull-request: https://github.com/ros-industrial/universal_robot/pull/285
   license: ['BSD']
-  fix-in: ['ur10_moveit_config/launch/trajectory_execution.launch.xml', 'ur3_moveit_config/launch/trajectory_execution.launch.xml', 'ur5_moveit_config/launch/trajectory_execution.launch.xml']
+  fix-in:
+    - ur10_moveit_config/launch/trajectory_execution.launch.xml
+    - ur3_moveit_config/launch/trajectory_execution.launch.xml
+    - ur5_moveit_config/launch/trajectory_execution.launch.xml
   languages:
-    - launch XML
+    - Launch XML
   time: 2017-01-05 (05:58)

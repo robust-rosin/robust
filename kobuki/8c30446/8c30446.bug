@@ -62,7 +62,8 @@ fix:
   hash: 8c30446d18bad63da0f58a1f666c2e7e209d917d
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_node/launch/robot_with_tf.launch']
+  fix-in:
+    - kobuki_node/launch/robot_with_tf.launch
   languages:
-    - launch XML
+    - Launch XML
   time: 2014-08-11 (06:11)
