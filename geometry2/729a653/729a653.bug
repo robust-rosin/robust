@@ -1,8 +1,8 @@
 %YAML 1.1
 ---
+id: 729a653
 title: Access out of bounds to std::vector
-
-description:
+description: >
   An accessor to the frame buffer (BufferCore::getFrame) accesses the frames
   buffer possibly one position outside of bounds due to an off-by-one error.
 
@@ -14,66 +14,40 @@ description:
   however whether this problem is related to double-free.  The original double
   free issue (in links below) has not been closed at the time of this data
   collection. The second link below, points to the fixing commit.
-
 classification: "CWE-125: Out-of-bounds Read"
-
-keywords: c++ | vector | stl | out-of-bounds
-
+keywords: ["c++", "vector", "stl", "out-of-bounds"]
 system: core component
-
 severity: error
-
 links:
   - https://github.com/ros/geometry2/issues/92
   - https://github.com/ros/geometry2/commit/729a6531929203720f4a518ac9e79321fe3c5537
-
 bug:
-
   phase: runtime
-
   specificity: general issue
-
   architectural-location: platform code
-
   application: N/A
-
   task: N/A
-
   subsystem: generic task component
-
-  package: ros/geometry2/tf2
-
-  languages: C++
-
+  package: ['ros/geometry2/tf2']
+  languages:
+    - C++
   detected-by: developer
-
   reported-by: contributor
-
   issue: null
-
   time-reported: 2015-04-07 (03:36 AM GMT+1)
-
   reproducibility: always
-
   trace: null
-
-  reproduction:
-    "TODO: try  to write a  unit test for  the function in  the fixing
+  reproduction: >
+    TODO: try  to write a unit test for the function in the fixing
     commit (might require  inserting an assertion to cause  a crash or
-    using a sanitizer)"
-
+    using a sanitizer)
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 729a6531929203720f4a518ac9e79321fe3c5537
-
   pull-request: null
-
-  license: BSD
-
-  fix-in: tf2/src/buffer_core.cpp
-
-  languages: C++
-
+  license: ['BSD']
+  fix-in:
+    - tf2/src/buffer_core.cpp
+  languages:
+    - C++
   time: 2015-04-16 (23:36 GMT+1)

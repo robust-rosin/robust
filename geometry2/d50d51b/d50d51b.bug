@@ -1,8 +1,8 @@
 %YAML 1.1
 ---
+id: d50d51b
 title: Wrongly initialized message structure
-
-description:
+description: >
   The static transform publisher would not initialize the message header when
   publishing messages with RPY arguments. The bug is unrelated to the geometric
   specification RPY angles, but it is a pure intialization bug that could
@@ -11,62 +11,35 @@ description:
 
   The pull request also merged in a local name refactoring that appears
   unrelated.
-
 classification: "CWE-665: Improper Initialization"
-
-keywords: communication | message
-
+keywords: ["communication", "message"]
 system: core component
-
 severity: error
-
 links: null
-
 bug:
-
   phase: runtime
-
   specificity: ROS-specific
-
   architectural-location: platform code
-
-  applications: N/A
-
+  application: N/A
   task: N/A
-
   subsystem: generic task component
-
-  package: ros/geometry2/tf2_ros
-
-  languages: C++
-
+  package: ['ros/geometry2/tf2_ros']
+  languages:
+    - C++
   detected-by: null
-
   reported-by: null
-
   issue: null
-
   time-reported: null
-
   reproducibility: always
-
   trace: null
-
   reproduction: null
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: d50d51bced9c851eeb8932d3be0a25df03909bac
-
   pull-request: https://github.com/ros/geometry2/pull/77
-
-  license: BSD
-
+  license: ['BSD']
   fix-in:
-    tf2_ros/src/static_transform_broadcaster_program.cpp
-
-  languages: C++
-
+    - tf2_ros/src/static_transform_broadcaster_program.cpp
+  languages:
+    - C++
   time: 2015-03-03 (9:51 GMT+1)

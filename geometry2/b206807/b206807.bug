@@ -3,7 +3,7 @@
 id: b206807
 title: Name conflict caused by wron name space declarations and imports
 description: >
-  "TF defines a function createExtrapolationException1 in the global C++
+  TF defines a function createExtrapolationException1 in the global C++
   namespace.  TF2, which is meant to be TF compatible (and TF apparently
   depends on TF2) defines the same name in the global C++ namespace again,
   violating a single definition rule of C++.
@@ -14,7 +14,7 @@ description: >
 
   This is a fairly generic C++ bug, that is independent of the ROS or robotics
   specifics.  It is different than many other namespace issues described in the
-  robust database, as they refer to ROS name spaces, not to C++ name spaces."
+  robust database, as they refer to ROS name spaces, not to C++ name spaces.
 classification: "Compile-time name conflict (no CWE)"
 keywords: ['c++', 'namespace', 'using', 'ODR']
 system: core component
@@ -49,7 +49,8 @@ fix:
   hash: b2068070b460fdc0ffc62e707d9085fb26320080
   pull-request: https://github.com/ros/geometry2/pull/176
   license: ["BSD"]
-  fix-in: ["tf2/src/cache.cpp"]
+  fix-in:
+    - tf2/src/cache.cpp
   languages:
     - C++
   time: 2016-05-13 22:27 GMT+2

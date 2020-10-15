@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: cec6208
 title: Incorrect cast of a tuple value to Boolean
 description: >
   The python bindings in tf2_py that expose the function
@@ -38,7 +39,7 @@ bug:
   applications: N/A
   task: N/A
   subsystem: generic task component
-  package: ros/geometry2/tf2_ros
+  package: ['ros/geometry2/tf2_ros']
   languages:
     - python
     - C++
@@ -57,7 +58,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: cec62083fa3e54cf210ce8b5ea87b4c0ed60f64b
   pull-request: https://github.com/ros/geometry2/pull/58
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_ros/src/tf2_ros/buffer.py
   languages:

@@ -1,8 +1,8 @@
 %YAML 1.1
 ---
+id: 42267be
 title: Missing include directories for console_bridge
-
-description:
+description: >
   The tf2 package mistakenly does not declare include directories for one of
   the dependencies (console_bridge).  This causes a build failure under some
   circumstances (in an isolated build).  Otherwise the include directories
@@ -12,61 +12,35 @@ description:
   An isolated build is typically used in an automatic setup (for instance
   continuous integration) while a regular build tends to be used by developers
   on desktop.  This is why this build bug likely got into the repository.
-
 classification: Missing Build Dependency (no CWE)
-
-keywords: build | dependency | include
-
+keywords: ["build", "dependency", "include"]
 system: core component
-
 severity: error
-
 links: []
-
 bug:
-
   phase: build
-
   specificity: ROS-specific
-
   architectural-location: platform code
-
-  applications: N/A
-
+  application: N/A
   task: N/A
-
   subsystem: generic task component
-
   package: null
-
-  languages: CMake
-
+  languages:
+    - CMake
   detected-by: build system
-
   reported-by: member developer
-
   issue: https://github.com/ros/geometry2/issues/48
-
   time-reported: 2013-12-03 (21:22 GMT+1)
-
   reproducibility: sometimes
-
   trace: null
-
   reproduction: null
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 42267be5891035ad65f48e44d5484f91d9702051
-
   pull-request: https://github.com/ros/geometry2/pull/49
-
-  license: BSD
-
-  fix-in: tf2/CMakeLists.txt
-
-  languages: CMake
-
+  license: ['BSD']
+  fix-in:
+    - tf2/CMakeLists.txt
+  languages:
+    - CMake
   time: 2013-12-26 (22:46 GMT+1)

@@ -3,12 +3,23 @@
 id: 74f0c66
 title: Callbacks using locks deadlock, when callback processing happens in the critical section.
 description: >
-  This is a deadlock problem in the tf2 package of geometry2 between callbacks and lock protection.
-  The deadlock happens when the following two things happen:
-  1) One function (MessageFilter) attempts to remove a message from a queue. To this end it locks the relevant sempahore (messages_mutex_) then calls BufferCore::cancelTransformableRequest where it needs the transformable_requests_mutex_
-  2) BufferCore upon receiving a TF callback, locks the transformable_requests_mutex_ in testTransformableRequests and goes through the list of requests where one of the callback it calls is MessageFilter::Transformable that attempts to acquire a unique_lock on message_mutex_. We have mutual locking problem.
-  This has been fixed in BufferCore::testTransformableRequests by delaying call back processing.  Callbacks to be processed are pushed into a queue, instead of being triggered on the fly, and then the queue is discharged after the lock is freed. A stronger lock is used in MessageFilter as well, presumably because there is no longer need for sharing locks after the call back processing has been moved out of the critical section.
-  This is a general issue that could appear in any multithreaded software using locks and callbacks.
+    This is a deadlock problem in the tf2 package of geometry2 between callbacks
+    and lock protection.  The deadlock happens when the following two things
+    happen: 1) One function (MessageFilter) attempts to remove a message from a
+    queue. To this end it locks the relevant sempahore (messages_mutex_) then
+    calls BufferCore::cancelTransformableRequest where it needs the
+    transformable_requests_mutex_ 2) BufferCore upon receiving a TF callback,
+    locks the transformable_requests_mutex_ in testTransformableRequests and goes
+    through the list of requests where one of the callback it calls is
+    MessageFilter::Transformable that attempts to acquire a unique_lock on
+    message_mutex_. We have mutual locking problem.  This has been fixed in
+    BufferCore::testTransformableRequests by delaying call back processing.
+    Callbacks to be processed are pushed into a queue, instead of being triggered
+    on the fly, and then the queue is discharged after the lock is freed. A
+    stronger lock is used in MessageFilter as well, presumably because there is
+    no longer need for sharing locks after the call back processing has been
+    moved out of the critical section.  This is a general issue that could appear
+    in any multithreaded software using locks and callbacks.
 classification: "CWE-764: Multiple Locks of a Critical Resource"
 keywords: ['deadlock', 'tf2', 'callback', 'lock']
 system: null
@@ -21,7 +32,7 @@ bug:
   application: null
   task: null
   subsystem: generic task component
-  package: ros/geometry2/tf2_ros
+  package: ['ros/geometry2/tf2_ros']
   languages: ['C++']
   detected-by: null
   reported-by: null

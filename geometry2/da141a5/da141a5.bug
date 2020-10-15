@@ -23,11 +23,11 @@ keywords:
   - matrix multiplication
 system: core component
 severity: error
-links: [
-  'https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Frame.html#a367668b3344ccfd50410ccc1ed30fa6f',
-  'https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Rotation.html',
-  'https://github.com/ros/geometry2/pull/104',
-  'https://github.com/ros/geometry2/pull/106']
+links:
+  - https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Frame.html#a367668b3344ccfd50410ccc1ed30fa6f
+  - https://people.mech.kuleuven.be/~eaertbel/expressiontrees/api_full/orocos_kdl/html/classKDL_1_1Rotation.html
+  - https://github.com/ros/geometry2/pull/104
+  - https://github.com/ros/geometry2/pull/106
 bug:
   phase: runtime
   specificity: robotics-specific
@@ -35,7 +35,7 @@ bug:
   application: N/A
   task: N/A
   subsystem: generic task component
-  package: ros/geometry2/tf2_geometry_msgs
+  package: ['ros/geometry2/tf2_geometry_msgs']
   languages:
     - C++
   detected-by: developer
@@ -52,7 +52,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: da141a52c551d482fdd9f0e24a0011050c1307e0
   pull-request: https://github.com/ros/geometry2/pull/109
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_geometry_msgs/include/tf2_geometry_msgs/tf2_geometry_msgs.h
   languages:

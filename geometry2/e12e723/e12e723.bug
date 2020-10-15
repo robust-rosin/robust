@@ -27,7 +27,7 @@ bug:
   application: N/A
   task: N/A
   subsystem: N/A
-  package: ros/geometry2/tf2_geometry_msgs
+  package: ['ros/geometry2/tf2_geometry_msgs']
   languages:
     - python
   detected-by: developer

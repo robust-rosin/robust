@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: fc854e0
 title: Executable files installed in a wrong directory
 description: >
   The view_frames.py script is installed into the share directory instead of
@@ -21,7 +22,7 @@ bug:
   applications: N/A
   task: N/A
   subsystem: generic task component
-  package: ros/geometry2/tf2_tools
+  package: ['ros/geometry2/tf2_tools']
   languages: null
   detected-by: null
   reported-by: null
@@ -42,7 +43,8 @@ fix:
   pull-request: https://github.com/ros/geometry2/pull/44
   license: ['BSD']
   fix-in: ['tf2_tools/CMakeLists.txt']
-  languages: CMake
+  languages:
+    - CMake
   time: 2013-11-06 (08:19 GMT+1)
 time-machine:
   ros_distro: hydro

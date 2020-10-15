@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 001fca6
 title: An exception thrown by delay function, when Time object not initialized
 description: >
   The tf2_ros is a C++ package that is using the ros::Time object to sleep (a
@@ -26,10 +27,11 @@ bug:
   phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
-  applicatios: null
+  application: null
   task: null
   subsystem: generic task component
-  package: ros/geometry2/tf2_ros
+  package:
+    - ros/geometry2/tf2_ros
   languages:
     - C++
   detected-by: null
@@ -45,7 +47,8 @@ fix:
   pull-request: https://github.com/ros/geometry2/pull/42
   license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2013-11-04T08:27:53Z
 time-machine:
   ros_distro: hydro

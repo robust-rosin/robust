@@ -1,8 +1,8 @@
 %YAML 1.1
 ---
+id: "0481047"
 title: Linking error due to a backwards incompatible API change
-
-description:
+description: >
   Function allFramesAsDot has been extended to take an additional parameter,
   current time.  This value is used to produce messages informing about a delay
   of the transform.   The new parameter is made optional, by providing a
@@ -25,64 +25,38 @@ description:
   (even if it does not use the new functions explicitly).
 
 classification: Linking error (no CWE)
-
-keywords: c++ | linking | evolution
-
+keywords: ['c++', 'linking', 'evolution']
 system: core component
-
 severity: error
-
 links:
   - https://github.com/ros/geometry2/pull/74
   - https://github.com/ros/geometry2/pull/86
 bug:
-
   phase: build
-
   specificity: general issue
-
   architectural-location: platform code
-
   application: N/A
-
   task: N/A
-
   subsystem: generic task component
-
-  package: ros/geometry2/tf2
-
+  package: ['ros/geometry2/tf2']
   languages: C++
-
   detected-by: compiler
-
   reported-by: contributor
-
   issue: https://github.com/ros/geometry2/issues/84
-
   time-reported: 2015-03-11 (20:11 GMT+1)
-
   reproducibility: sometimes
-
   trace: null
-
-  reproduction:
+  reproduction: >
     Issue 84 has a discussion on how to reproduce it. It is a rather simple
     static linking bug, so it should be possible to reproduce.
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: 04810475f249e3f067701288388b82ff0dd686ba
-
   pull-request: https://github.com/ros/geometry2/pull/86
-
-  license: BSD
-
+  license: ['BSD']
   fix-in:
     - tf2/include/tf2/buffer_core.h
     - tf2/src/buffer_core.cpp
-
-  languages: C++
-
+  languages:
+    - C++
   time: 2015-03-03 (2015-03-12 2:53 GMT+1)

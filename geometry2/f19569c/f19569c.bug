@@ -1,8 +1,8 @@
 %YAML 1.1
 ---
-title: One definition rule (ODR) violation in C++
-
-description:
+id: f19569c
+title: "One definition rule (ODR) violation in C++"
+description: >
   Since 2003 C++ requires at most a single definition (don't confuse with
   declaration) for an identifier.  An exception is made for inline functions,
   as the rule is exploited to resolve overloading by names at at linking time
@@ -24,71 +24,44 @@ description:
   The second link (under the 'links' key below) points to an interesting post
   from the gcc developer implementing the ODR checker. It lists problems
   and dangers, rationalizing the rule and the enforcement.
-
 classification: One definition rule violation (no CWE)
-
-keywords: build | types and names
-
+keywords: ["build", "types and names"]
 system: core component
-
 severity: warning
-
-links: [
-  "https://en.wikipedia.org/wiki/One_Definition_Rule",
-  "https://hubicka.blogspot.com/2014/09/devirtualization-in-c-part-6-enforcing.html"]
-
+links:
+  - https://en.wikipedia.org/wiki/One_Definition_Rule
+  - https://hubicka.blogspot.com/2014/09/devirtualization-in-c-part-6-enforcing.html
 bug:
-
   phase: build
-
   specificity: general issue
-
   architectural-location: platform code
-
-  applications: N/A
-
+  application: N/A
   task: N/A
-
   subsystem: generic task component
-
   package:
     - ros/geometry2/tf2_bullet
     - ros/geometry2/tf2_geometry_msgs
     - ros/geometry2/tf2_kdl
     - ros/geometry2/tf2_sensor_msgs
-
-  languages: C++
-
+  languages:
+    - C++
   detected-by: null
-
   reported-by: null
-
   issue: null
-
   time-reported: null
-
   reproducibility: always
-
   trace: null
-
   reproduction: null
-
 fix:
-
   repo: https://github.com/ros/geometry2
-
   hash: f19569cf095cdb92ab012a2ffa03c1074bad2c4a
-
   pull-request: https://github.com/ros/geometry2/pull/76
-
-  license: BSD
-
+  license: ['BSD']
   fix-in:
     - tf2_bullet/include/tf2_bullet/tf2_bullet.h
     - tf2_geometry_msgs/include/tf2_geometry_msgs/tf2_geometry_msgs.h
     - tf2_kdl/include/tf2_kdl/tf2_kdl.h
     - tf2_sensor_msgs/include/tf2_sensor_msgs/tf2_sensor_msgs.h
-
-  languages: C++
-
+  languages:
+    - C++
   time: 2015-03-03 (10:03 GMT+1)

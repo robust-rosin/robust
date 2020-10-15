@@ -3,7 +3,7 @@
 id: d12b890
 title: Incomplete type-checking at Python/C++ interface
 description: >
-    "tf2 is implemented in C++ and then later interface to Python using the
+    tf2 is implemented in C++ and then later interface to Python using the
     Python native interface (this is done in tf2_py package).  This package
     receives calls from python, makes the necessary safety checks and
     adaptations and forwards them to tf2.  Unfortunately, some checks on
@@ -21,7 +21,7 @@ description: >
     security attacks.
 
     There is no pull request.  It appears that the fixing commit has been
-    pushed directly into the melodic-devel branch."
+    pushed directly into the melodic-devel branch.
 classification: "CWE-704: Incorrect Type Conversion or Cast"
 keywords: ['c++', 'python', 'typel', 'exception']
 system: core component
@@ -34,7 +34,7 @@ bug:
   application: null
   task: null
   subsystem: generic task component
-  package: ros/geometry2/tf2_py
+  package: ['ros/geometry2/tf2_py']
   languages:
     - C++
     - Python
@@ -45,9 +45,9 @@ bug:
   reproducibility: always
   trace:
   reproduction: >
-    "The issue report contains small example code that demonstrates the issue.
+    The issue report contains small example code that demonstrates the issue.
     It might be hard to write a test, as the objects are most easily created in
-    Python, but the error happens in C++ and is not propagated to python"
+    Python, but the error happens in C++ and is not propagated to python
 fix:
   repo: https://github.com/ros/geometry2
   hash: d12b8906c8686dc1b980c489a3e4b83d78d6a488

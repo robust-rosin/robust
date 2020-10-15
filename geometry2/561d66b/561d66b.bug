@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-id: da141a5
+id: 561d66b
 title: Wrong function name in Python import (wrong use)
 description: >
   The code in tf2_sensor_msgs.py imports method read_cloud from
@@ -32,7 +32,7 @@ bug:
   application: N/A
   task: N/A
   subsystem: generic task component
-  package: ros/geometry2/tf2_sensor_msgs
+  package: ['ros/geometry2/tf2_sensor_msgs']
   languages:
     - Python
   detected-by: developer
@@ -48,7 +48,7 @@ fix:
   repo: https://github.com/ros/geometry2
   hash: 561d66b106dec85246161e0b646874bd32812726
   pull-request: https://github.com/ros/geometry2/pull/119
-  license: BSD
+  license: ['BSD']
   fix-in:
     - tf2_sensor_msgs/src/tf2_sensor_msgs/tf2_sensor_msgs.py
     - tf2_sensor_msgs/src/tf2_sensor_msgs/__init__.py
