@@ -31,7 +31,7 @@ _bug:
             "application-specific")
     architectural-location: enum("application-specific code", "platform code", "N/A")
     application: any(str(min=1), null())
-    task: enum("perception", "localization", "planning", "manipulation", "motion",
+    task: enum("perception", "localization", "planning", "manipulation", "locomotion",
             "human-robot interaction", "simulation", "diagnostics", "SLAM",
             "N/A")
     subsystem: str(min=1)
