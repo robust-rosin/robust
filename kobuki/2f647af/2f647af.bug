@@ -49,10 +49,20 @@ fix:
   hash: 2f647af053c451e4248d7741c542f63511eee45e | a174dbbb9375d22828b0d7f4f41b7265978845c0 | 9c4835ad5b2eb3a4945f57076501b7699057ec66
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp', 'kobuki_driver/src/driver/diff_drive.cpp', 'kobuki_driver/src/driver/kobuki.cpp', 'kobuki_node/include/kobuki_node/odometry.hpp', 'kobuki_node/src/library/odometry.cpp', 'kobuki_node/param/base.yaml', 'kobuki_node/src/library/slot_callbacks.cpp', 'kobuki_node/package.xml', 'kobuki_node/launch/robot_with_tf.launch']
+  fix-in:
+    - kobuki_driver/include/kobuki_driver/kobuki.hpp
+    - kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp
+    - kobuki_driver/src/driver/diff_drive.cpp
+    - kobuki_driver/src/driver/kobuki.cpp
+    - kobuki_node/include/kobuki_node/odometry.hpp
+    - kobuki_node/src/library/odometry.cpp
+    - kobuki_node/param/base.yaml
+    - kobuki_node/src/library/slot_callbacks.cpp
+    - kobuki_node/package.xml
+    - kobuki_node/launch/robot_with_tf.launch
   languages:
     - C++
-    - YAML
+    - Param YAML
     - Launch XML
     - Package XML
   time: 2013-08-21 (06:59)
