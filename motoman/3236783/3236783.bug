@@ -18,7 +18,9 @@ bug:
   application: null
   task: null
   subsystem: null
-  package: ros-industrial/motoman | ros-industrial/motoman/motoman_driver
+  package:
+    - ros-industrial/motoman
+    - ros-industrial/motoman/motoman_driver
   languages:
     - CMake
   detected-by: developer
@@ -33,5 +35,6 @@ fix:
   pull-request: 10 | 11 | 14
   license: ['BSD']
   fix-in: ['158 files due to a complete update of the driver package.']
+  # NOTE should this be CMake?
   languages: null
   time: 2013-09-05 (18:20)
