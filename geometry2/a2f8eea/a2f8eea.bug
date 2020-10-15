@@ -32,7 +32,7 @@ bug:
   applications: N/A
   task: N/A
   subsystem: generic task component
-  package: ros/geometry2/tf2_py
+  package: ['ros/geometry2/tf2_py']
   languages:
     - python
   detected-by: developer

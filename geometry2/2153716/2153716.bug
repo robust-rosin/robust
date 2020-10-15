@@ -32,7 +32,7 @@ bug:
   application: N/A
   task: N/A
   subsystem: generic task component
-  package: ros/geometry2/tf2_tools
+  package: ['ros/geometry2/tf2_tools']
   languages:
     - C++
   detected-by: compiler

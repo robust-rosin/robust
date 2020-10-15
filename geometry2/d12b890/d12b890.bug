@@ -34,7 +34,7 @@ bug:
   application: null
   task: null
   subsystem: generic task component
-  package: ros/geometry2/tf2_py
+  package: ['ros/geometry2/tf2_py']
   languages:
     - C++
     - Python
