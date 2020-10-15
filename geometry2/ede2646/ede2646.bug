@@ -29,7 +29,7 @@ bug:
   application: N/A
   task: camera calibration (perception, calibration)
   subsystem: generic task component
-  package: ros/geometry2/tf2_ros
+  package: ['ros/geometry2/tf2_ros']
   languages:
     - python
   detected-by: developer

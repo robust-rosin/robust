@@ -19,7 +19,7 @@ bug:
   applicatios: null
   task: null
   subsystem: generic task component
-  package: ros/geometry2/tf2_ros
+  package: ['ros/geometry2/tf2_ros']
   languages:
     - Python
   detected-by: runtime detection

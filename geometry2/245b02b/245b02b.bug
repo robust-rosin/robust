@@ -27,7 +27,7 @@ bug:
   application: N/A
   task: N/A
   subsystem: generic task component
-  package: ros/geometry2/tf2_ros
+  package: ['ros/geometry2/tf2_ros']
   languages: C++
   detected-by: developer
   reported-by: contributor
