@@ -23,7 +23,7 @@ bug:
   specificity: robotics-specific
   architectural-location: application-specific code
   application: mobile robot
-  task: motion
+  task: locomotion
   subsystem: driver
   package:
     - yujinrobot/kobuki/kobuki_driver
