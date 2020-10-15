@@ -45,5 +45,5 @@ fix:
   license: ['BSD']
   fix-in: ['motoman_sia20d_moveit_config/package.xml']
   languages:
-    - XML
+    - Package XML
   time: 2014-03-28 (11:36)

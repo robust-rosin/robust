@@ -32,7 +32,8 @@ fix:
   hash: null
   pull-request: 3
   license: ['BSD']
-  fix-in: ['motoman/package.xml']
+  fix-in:
+    - motoman/package.xml
   languages:
-    - XML
+    - Package XML
   time: 2013-08-07 (20:49)
