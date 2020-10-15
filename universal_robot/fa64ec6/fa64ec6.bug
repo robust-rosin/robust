@@ -57,8 +57,10 @@ fix:
   hash: fa64ec6585745c60fa02cf3be13b6d78bf449d8d
   pull-request: https://github.com/ros-industrial/universal_robot/pull/251
   license: ['BSD']
-  fix-in: ['ur_description/urdf/ur10.urdf.xacro', 'ur_description/urdf/ur3.urdf.xacro', 'ur_description/urdf/ur5.urdf.xacro']
+  fix-in:
+    - ur_description/urdf/ur10.urdf.xacro
+    - ur_description/urdf/ur3.urdf.xacro
+    - ur_description/urdf/ur5.urdf.xacro
   languages:
-    - xacro
-    - xml
+    - Xacro
   time: 2016-12-29 (20:59)

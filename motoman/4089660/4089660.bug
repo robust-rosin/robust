@@ -32,6 +32,22 @@ fix:
   hash: null
   pull-request: 140
   license: ['BSD']
-  fix-in: ['motoman_driver/MotoPlus/Controller.c', 'motoman_driver/MotoPlus/Controller.h', 'motoman_driver/MotoPlus/MotionServer.c', 'motoman_driver/MotoPlus/MpRosAllControllers.VC.db', 'motoman_driver/MotoPlus/MpRosAllControllers.vcxproj.filters', 'motoman_driver/MotoPlus/RosSetupValidation.dnLib', 'motoman_driver/MotoPlus/RosSetupValidation.fsLib', 'motoman_driver/MotoPlus/RosSetupValidation.h', 'motoman_driver/MotoPlus/RosSetupValidation.mpLib', 'motoman_driver/MotoPlus/_buildLog/MotoROSDX100.log', 'motoman_driver/MotoPlus/mpMain.c', 'motoman_driver/MotoPlus/output/DX100/MotoRosDX100/MotoRosDX100.out', 'motoman_driver/MotoPlus/output/DX200/MotoRosDX200/MotoRosDX200.out', 'motoman_driver/MotoPlus/output/FS100/MotoRosFS100/MotoRosFS100.out']
-  languages: null
+  fix-in:
+    - motoman_driver/MotoPlus/Controller.c
+    - motoman_driver/MotoPlus/Controller.h
+    - motoman_driver/MotoPlus/MotionServer.c
+    - motoman_driver/MotoPlus/MpRosAllControllers.VC.db
+    - motoman_driver/MotoPlus/MpRosAllControllers.vcxproj.filters
+    - motoman_driver/MotoPlus/RosSetupValidation.dnLib
+    - motoman_driver/MotoPlus/RosSetupValidation.fsLib
+    - motoman_driver/MotoPlus/RosSetupValidation.h
+    - motoman_driver/MotoPlus/RosSetupValidation.mpLib
+    - motoman_driver/MotoPlus/mpMain.c
+    - motoman_driver/MotoPlus/_buildLog/MotoROSDX100.log
+    - motoman_driver/MotoPlus/output/DX100/MotoRosDX100/MotoRosDX100.out
+    - motoman_driver/MotoPlus/output/DX200/MotoRosDX200/MotoRosDX200.out
+    - motoman_driver/MotoPlus/output/FS100/MotoRosFS100/MotoRosFS100.out
+  languages:
+    - C
+    - Other
   time: 2016-12-30 (18:48)
