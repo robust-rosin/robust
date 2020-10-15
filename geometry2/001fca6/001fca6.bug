@@ -27,7 +27,7 @@ bug:
   phase: runtime
   specificity: ROS-specific
   architectural-location: platform code
-  applicatios: null
+  application: null
   task: null
   subsystem: generic task component
   package: ros/geometry2/tf2_ros
