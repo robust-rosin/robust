@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 164cfa3
 title: Missing escape in a printf format string
 description: >
   The logWarn macro takes a format string parameter in C printf style (it

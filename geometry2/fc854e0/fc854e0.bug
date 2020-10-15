@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: fc854e0
 title: Executable files installed in a wrong directory
 description: >
   The view_frames.py script is installed into the share directory instead of

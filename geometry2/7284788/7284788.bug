@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: "7284788"
 title: A loop stop condition works well with C++ but not with Python access
 description: >
   A loop in tf2_ros/src/buffer.cpp depends on ros::ok evaluation to check whether the system has not stopped.  This works fine if the C++ version of tf is accessed.  However, if the canTransform function is called from the python API (pytf)  ros::ok may be not initialized. This immediately terminates the loop and as a result the waitForTransform function never waits for the transform being available but terminates with a generic uninformative exception. The bug seems to have been fixed, by ignoring the check for pytf (sic!).

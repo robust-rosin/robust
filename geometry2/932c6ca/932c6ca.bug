@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 932c6ca
 title: Use of retired class field
 description: >
   tf2_ros uses the "__connection_header" field in ROS messages to get connection

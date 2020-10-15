@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 42267be
 title: Missing include directories for console_bridge
 description: >
   The tf2 package mistakenly does not declare include directories for one of

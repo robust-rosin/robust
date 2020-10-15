@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: f19569c
 title: "One definition rule (ODR) violation in C++"
 description: >
   Since 2003 C++ requires at most a single definition (don't confuse with

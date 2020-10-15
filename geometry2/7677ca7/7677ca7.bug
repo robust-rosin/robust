@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 7677ca7
 title: String literal concatenation with gcc 4.9
 description: >
     Apparently gcc 4.9 became more restrictive than previous editions and it no

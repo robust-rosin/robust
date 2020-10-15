@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: d50d51b
 title: Wrongly initialized message structure
 description: >
   The static transform publisher would not initialize the message header when

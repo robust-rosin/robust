@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 001fca6
 title: An exception thrown by delay function, when Time object not initialized
 description: >
   The tf2_ros is a C++ package that is using the ros::Time object to sleep (a

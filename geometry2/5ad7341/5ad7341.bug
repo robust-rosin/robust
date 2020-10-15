@@ -1,5 +1,6 @@
 %YAML 1.1
 ---
+id: 5ad7341
 title: An unprotected field in otherwise thread-safe code
 description: >
   The field lct_cache_ of BufferCore is not thread protected, so race
