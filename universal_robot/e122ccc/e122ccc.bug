@@ -47,5 +47,5 @@ fix:
   license: ['BSD']
   fix-in: ['ur10_moveit_config/package.xml', 'ur3_moveit_config/package.xml', 'ur5_moveit_config/package.xml']
   languages:
-    - package.xml
+    - Package XML
   time: 2016-04-01 (15:59)

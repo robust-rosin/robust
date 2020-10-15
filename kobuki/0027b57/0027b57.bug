@@ -40,5 +40,5 @@ fix:
   fix-in: ['kobuki_ftdi/include/kobuki_ftdi/scanner.hpp', 'kobuki_ftdi/manifest.xml']
   languages:
     - C++
-    - package.xml
+    - Package XML
   time: 2013-01-25 (08:40)
