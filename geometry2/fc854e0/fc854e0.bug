@@ -43,7 +43,8 @@ fix:
   pull-request: https://github.com/ros/geometry2/pull/44
   license: ['BSD']
   fix-in: ['tf2_tools/CMakeLists.txt']
-  languages: CMake
+  languages:
+    - CMake
   time: 2013-11-06 (08:19 GMT+1)
 time-machine:
   ros_distro: hydro

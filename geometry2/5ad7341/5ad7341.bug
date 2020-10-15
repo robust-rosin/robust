@@ -48,5 +48,6 @@ fix:
   fix-in:
     - tf2/include/tf2/buffer_core.h
     - tf2/src/buffer_core.cpp
-  languages: C++
+  languages:
+    - C++
   time: 2015-04-21 (21:43 GMT+2)

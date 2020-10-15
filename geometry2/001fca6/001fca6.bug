@@ -46,7 +46,8 @@ fix:
   pull-request: https://github.com/ros/geometry2/pull/42
   license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
-  languages: C++
+  languages:
+    - C++
   time: 2013-11-04T08:27:53Z
 time-machine:
   ros_distro: hydro

@@ -40,7 +40,8 @@ fix:
   fix-in:
     - tf2_ros/include/tf2_ros/transform_listener.h
     - tf2_ros/src/transform_listener.cpp
-  languages: C++
+  languages:
+    - C++
   time: 2014-01-29T17:46:25Z
 time-machine:
   ros_distro: hydro
