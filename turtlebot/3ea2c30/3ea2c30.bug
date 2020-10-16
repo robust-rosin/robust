@@ -38,8 +38,11 @@ fix:
   hash: 36ceb8dc37e0f930986cc86fe3ff2a9f1a930322 | 3ea2c306120774e8ed7e69e4e3fce3eca9f5426e
   pull-request: null
   license: ['BSD']
-  fix-in: ['turtlebot_bringup/env-hooks/25.turtlebot.sh.em', 'turtlebot_navigation/CMakeLists.txt', 'turtlebot_navigation/env-hooks/25.turtlebot-navigation.sh.em']
+  fix-in:
+    - turtlebot_bringup/env-hooks/25.turtlebot.sh.em
+    - turtlebot_navigation/CMakeLists.txt
+    - turtlebot_navigation/env-hooks/25.turtlebot-navigation.sh.em
   languages:
     - CMake
-    - shell
+    - Shell
   time: 2014-09-16 (00:26)

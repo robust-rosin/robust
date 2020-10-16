@@ -38,5 +38,5 @@ fix:
   fix-in:
     - cob_command_tools/cob_script_server/package.xml
   languages:
-    - XML
+    - Package XML
   time: 2014-08-26 (08:57)

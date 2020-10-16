@@ -39,7 +39,8 @@ fix:
     - LGPLv3
   fix-in:
     - libmavconn/src/tcp.cpp
-  languages: C++
+  languages:
+    - C++
   time: 2016-06-28T21:38:47+03:00
 time-machine:
   ros_distro: kinetic

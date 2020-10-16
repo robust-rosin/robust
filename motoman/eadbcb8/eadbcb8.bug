@@ -18,9 +18,11 @@ bug:
   application: null
   task: null
   subsystem: null
-  package: ros-industrial/motoman | ros-industrial/motoman/motoman_mh5_support
+  package:
+    - ros-industrial/motoman
+    - ros-industrial/motoman/motoman_mh5_support
   languages:
-    - ASCII STL
+    - STL
   detected-by: user
   reported-by: contributor
   issue: https://github.com/ros-industrial/motoman/issues/60
@@ -32,7 +34,14 @@ fix:
   hash: null
   pull-request: 77
   license: ['BSD']
-  fix-in: ['motoman_mh5_support/meshes/mh5/visual/MH5_BASE_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_B_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_L_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_R_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_S_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_T_AXIS.stl', 'motoman_mh5_support/meshes/mh5/visual/MH5_U_AXIS.stl']
+  fix-in:
+    - motoman_mh5_support/meshes/mh5/visual/MH5_BASE_AXIS.stl
+    - motoman_mh5_support/meshes/mh5/visual/MH5_B_AXIS.stl
+    - motoman_mh5_support/meshes/mh5/visual/MH5_L_AXIS.stl
+    - motoman_mh5_support/meshes/mh5/visual/MH5_R_AXIS.stl
+    - motoman_mh5_support/meshes/mh5/visual/MH5_S_AXIS.stl
+    - motoman_mh5_support/meshes/mh5/visual/MH5_T_AXIS.stl
+    - motoman_mh5_support/meshes/mh5/visual/MH5_U_AXIS.stl
   languages:
-    - ASCII STL
+    - STL
   time: 2016-01-23 (00:00)

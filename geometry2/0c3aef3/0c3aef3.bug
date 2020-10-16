@@ -57,5 +57,5 @@ fix:
   fix-in:
     - tf2/package.xml
   languages:
-    - package.xml
+    - Package XML
   time: null

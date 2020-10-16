@@ -33,6 +33,6 @@ fix:
   license: ['BSD']
   fix-in: ['.travis.yml', 'motoman_sda10f_support/test/launch_test.xml', 'motoman_sda10f_support/test/sda10f_test.xacro', 'motoman_sda10f_support/urdf/arm_macro.xacro', 'motoman_sda10f_support/urdf/common_torso_macro.xacro', 'motoman_sda10f_support/urdf/sda10f_macro.xacro']
   languages:
-    - launch XML
-    - xacro
+    - Launch XML
+    - Xacro
   time: 2017-04-10 (06:55)

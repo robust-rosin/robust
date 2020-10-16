@@ -49,5 +49,5 @@ fix:
   fix-in: ['ur_kinematics/CMakeLists.txt', 'ur_kinematics/package.xml']
   languages:
     - CMake
-    - package.xml
+    - Package XML
   time: 2016-12-29 (20:34)

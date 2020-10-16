@@ -33,8 +33,15 @@ fix:
   hash: 3c7f92a2c6a51b4896e669d0da34b4de90a71914
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_qtestsuite/scripts/kobuki_qtestsuite', 'kobuki_qtestsuite/setup.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/configuration_dock_widget.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/ui/configuration_dock.ui']
+  fix-in:
+    - kobuki_qtestsuite/scripts/kobuki_qtestsuite
+    - kobuki_qtestsuite/setup.py
+    - kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py
+    - kobuki_qtestsuite/src/kobuki_qtestsuite/configuration_dock_widget.py
+    - kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py
+    - kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py
+    - kobuki_qtestsuite/src/kobuki_qtestsuite/ui/configuration_dock.ui
   languages:
     - Python
-    - XML
+    - Other XML
   time: 2013-08-21 (10:23)

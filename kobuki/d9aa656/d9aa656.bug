@@ -36,5 +36,5 @@ fix:
   license: ['BSD']
   fix-in: ['kobuki_bringup/resources/yaml/kobuki.yaml']
   languages:
-    - YAML
+    - Param YAML
   time: 2012-05-16 (17:29)

@@ -49,5 +49,5 @@ fix:
   license: ['BSD']
   fix-in: ['kobuki_node/param/base.yaml']
   languages:
-    - YAML
+    - Param YAML
   time: 2013-08-30 (09:45)

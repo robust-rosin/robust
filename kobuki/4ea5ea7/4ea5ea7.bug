@@ -37,5 +37,5 @@ fix:
   languages:
     - Launch XML
     - RViz
-    - xacro
+    - Xacro
   time: unfixed

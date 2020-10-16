@@ -41,5 +41,5 @@ fix:
   license: ['LGPL']
   fix-in: ['https://github.com/ipa320/cob_common/pull/179/commits/43705f74847ce09edb971adb50d9e47b14f944cf']
   languages:
-    - xacro
+    - Xacro
   time: 2015-11-20 (00:00)

@@ -43,5 +43,5 @@ fix:
   license: ['LGPL']
   fix-in: ['https://github.com/ipa-fmw/cob_robots/blob/b826eaeae5c8dc548ac2c97002725c7a8131137e/cob_hardware_config/cob3-9/urdf/cob3-9.urdf.xacro']
   languages:
-    - xacro
+    - Xacro
   time: 2016-11-10 (00:00)

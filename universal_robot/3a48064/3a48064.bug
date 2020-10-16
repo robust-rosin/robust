@@ -53,5 +53,5 @@ fix:
   license: ['BSD']
   fix-in: ['ur_gazebo/package.xml']
   languages:
-    - package.xml
+    - Package XML
   time: 2017-02-24 (13:00)

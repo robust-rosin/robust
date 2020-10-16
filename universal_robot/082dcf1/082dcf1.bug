@@ -63,5 +63,5 @@ fix:
   license: ['BSD']
   fix-in: ['package.xml']
   languages:
-    - package.xml
+    - Package XML
   time: 2014-09-04 (17:57)

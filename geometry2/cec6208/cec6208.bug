@@ -62,5 +62,5 @@ fix:
   fix-in:
     - tf2_ros/src/tf2_ros/buffer.py
   languages:
-    - python
+    - Python
   time: 2014-03-10 (21:31 GMT+1)

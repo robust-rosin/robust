@@ -39,5 +39,6 @@ fix:
   license: ['BSD']
   fix-in:
     - motoman_driver/Inform/.gitattributes
-  languages: null
+  languages:
+    - .gitattributes
   time: 2017-01-09 (21:09)

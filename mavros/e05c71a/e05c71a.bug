@@ -55,7 +55,7 @@ fix:
     - mavros_msgs/msg/WaypointList.msg
     - mavros_msgs/CMakeLists.txt
   languages:
-    - XML
+    - Package XML
     - srv
     - CMake
   time: 2015-08-09 (00:00)

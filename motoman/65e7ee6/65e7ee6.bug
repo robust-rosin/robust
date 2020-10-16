@@ -39,6 +39,7 @@ fix:
     - motoman_config/cfg/sia20d_mesh.xacro
     - motoman_config/cfg/sia20d_mesh.xml
     - sia10d_mesh_arm_navigation/launch/constraint_aware_kinematics.launch
+    # FIXME we should handle file renamings separately from content changes
     - SIA20D_Mesh_arm_navigation/CMakeLists.txt → sia20d_mesh_arm_navigation/CMakeLists.txt
     - ...h_arm_navigation/config/joint_limits.yaml → ...h_arm_navigation/config/joint_limits.yaml
     - ..._arm_navigation/config/ompl_planning.yaml → ..._arm_navigation/config/ompl_planning.yaml
@@ -62,9 +63,12 @@ fix:
     - SIA20D_Mesh_arm_navigation/package.xml → sia20d_mesh_arm_navigation/package.xml
     - ...SIA20D_Mesh_manipulator_ikfast_output.cpp → ...sia20d_mesh_manipulator_ikfast_output.cpp
     - ...SIA20D_Mesh_manipulator_ikfast_plugin.cpp → ...sia20d_mesh_manipulator_ikfast_plugin.cpp
+  # note that YAML files are not actually changed
   languages:
-    - XML
+    - Package XML
+    - Launch XML
+    - URDF
+    - Xacro
     - CMake
-    - yaml
     - C++
   time: 2013-09-13 (21:34)

@@ -38,8 +38,10 @@ fix:
   hash: bb3c7ec8a7e656aa7e75753864351c27d571db47
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_bringup/resources/yaml/diagnostics.yaml', 'kobuki_node/src/node/diagnostics.cpp']
+  fix-in:
+    - kobuki_bringup/resources/yaml/diagnostics.yaml
+    - kobuki_node/src/node/diagnostics.cpp
   languages:
     - C++
-    - YAML
+    - Param YAML
   time: 2012-06-20 (04:01)

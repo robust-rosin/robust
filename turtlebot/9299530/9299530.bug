@@ -32,6 +32,6 @@ fix:
   license: ['BSD']
   fix-in: ['turtlebot_description/meshes/stacks/circles/68-02403-125_Spacer.dae', 'turtlebot_description/meshes/stacks/circles/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae', 'turtlebot_description/meshes/stacks/circles/68-04552-1000-RA_Turtlebot_M-F_Standoff.dae', 'turtlebot_description/meshes/stacks/circles/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae', 'turtlebot_description/meshes/stacks/circles/68-04556-RA_Kinect_Standoff_Assy.dae', 'turtlebot_description/meshes/stacks/circles/plate_0_logo.dae', 'turtlebot_description/meshes/stacks/circles/plate_1_logo.dae', 'turtlebot_description/meshes/stacks/circles/plate_2_logo.dae', 'turtlebot_description/robots/roomba_circles_asus_xtion_pro.urdf.xacro', 'turtlebot_description/robots/roomba_circles_asus_xtion_pro.urdf.xacro', 'turtlebot_description/robots/roomba_circles_kinect.urdf.xacro', 'turtlebot_description/robots/roomba_circles_kinect.urdf.xacro', 'turtlebot_description/urdf/stacks/circles.urdf.xacro', 'create_description/meshes/create_body.dae', 'create_description/urdf/create.urdf.xacro']
   languages:
-    - xacro
-    - collada
+    - Xacro
+    - COLLADA
   time: 2013-04-01 (04:36)
