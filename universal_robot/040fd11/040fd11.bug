@@ -30,6 +30,11 @@ system: universal_robot
 severity: error
 links:
   - https://github.com/fkie/catkin_lint/blob/master/gh-pages/docs/messages.md#exported-library-target-is-not-installed
+failure-codes:
+  - SOFTWARE:BUILD
+fault-codes:
+  - BDO:BUILD
+  - ROS-SPECIFIC
 bug:
   phase: build
   specificity: ROS-specific

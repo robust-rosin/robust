@@ -24,6 +24,10 @@ keywords:
 system: universal_robot
 severity: error
 links: []
+failure-codes:
+  - SYSTEM:LIVENESS
+fault-codes:
+  - PROGRAMMING:CONTROL-FLOW
 bug:
   phase: runtime
   specificity: robotics-specific

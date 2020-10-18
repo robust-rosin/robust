@@ -33,6 +33,12 @@ keywords:
 system: universal_robot
 severity: error
 links: []
+failure-codes:
+  - SYSTEM:PHYSICAL
+  - SYSTEM:MOTION
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+fault-codes:
+  - MODEL:ROBOT
 bug:
   phase: runtime
   specificity: robotics-specific

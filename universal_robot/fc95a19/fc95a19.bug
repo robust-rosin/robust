@@ -40,6 +40,11 @@ system: universal_robot
 severity: error
 links:
   - 'http://moveit.ros.org/'
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:PERFORMANCE
+fault-codes:
+  - CONFIG:PARAM
 bug:
   phase: runtime
   specificity: robotics-specific

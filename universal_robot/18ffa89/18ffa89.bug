@@ -38,6 +38,11 @@ keywords:
 system: universal_robot
 severity: minor-issue
 links: []
+failure-codes:
+  - SYSTEM:SIMULATION
+fault-codes:
+  - MODEL:ROBOT
+  - COPYPASTA
 bug:
   phase: runtime
   specificity: robotics

@@ -28,6 +28,12 @@ keywords:
 system: universal_robot
 severity: error
 links: []
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:LIVENESS
+  - SOFTWARE:NETWORK
+fault-codes:
+  - PROGRAMMING:BROKEN-CONTRACT
 bug:
   phase: runtime
   specificity: general-issue

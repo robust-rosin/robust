@@ -32,6 +32,10 @@ keywords:
 system: universal_robot
 severity: minor-issue
 links: []
+failure-codes:
+  - SOFTWARE:SILENT
+fault-codes:
+  - PROGRAMMING:SYNTAX-ERROR
 bug:
   phase: startup
   specificity: general issue

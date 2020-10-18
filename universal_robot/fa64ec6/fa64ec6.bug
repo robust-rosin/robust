@@ -42,6 +42,12 @@ severity: warning
 links:
   - 'http://wiki.ros.org/xacro'
   - 'https://github.com/ros-industrial/universal_robot/issues/263'
+failure-codes:
+  - HARMLESS
+fault-codes:
+  - ROS-SPECIFIC
+  - EVOLUTION:LANGUAGE
+  - MODELS:ROBOT
 bug:
   phase: build
   specificity: general issue

@@ -27,6 +27,10 @@ keywords:
 system: universal_robot
 severity: warning
 links: []
+failure-codes:
+  - NONE
+fault-codes:
+  - EVOLUTION:DEPRECATION
 bug:
   phase: startup
   specificity: ROS-specific

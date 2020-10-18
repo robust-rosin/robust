@@ -32,6 +32,10 @@ links:
   - 'http://answers.ros.org/question/103191/in-ur5_driverdriverpy-importerror-no-module-named-beautifulsoup/'
   - 'http://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python'
   - 'http://wiki.ros.org/catkin/package.xml'
+failure-codes:
+  - SOFTWARE:RUNTIME
+fault-codes:
+  - BDO:DEPENDENCY
 bug:
   phase: startup
   specificity: ROS-specific

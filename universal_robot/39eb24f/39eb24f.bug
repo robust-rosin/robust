@@ -30,6 +30,10 @@ keywords:
 system: universal_robot
 severity: error
 links: []
+failure-codes:
+  - SOFTWARE:BUILD
+fault-codes:
+  - BDO:BUILD
 bug:
   phase: build
   specificity: general issue

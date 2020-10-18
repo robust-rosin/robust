@@ -42,6 +42,10 @@ severity: error
 links:
   - http://wiki.ros.org/catkin/package.xml
   - http://www.ros.org/reps/rep-0140.html#rationale
+failure-codes:
+  - SOFTWARE:RUNTIME
+fault-codes:
+  - BDO:DEPENDENCY
 bug:
   phase: startup
   specificity: ROS-specific

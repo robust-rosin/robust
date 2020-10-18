@@ -29,6 +29,11 @@ system: universal_robot
 severity: error
 links:
   - 'http://wiki.ros.org/catkin/package.xml'
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM: SIMULATION
+fault-codes:
+  - BDO:DEPENDENCY
 bug:
   phase: startup
   specificity: ROS-specific

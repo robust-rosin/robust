@@ -18,6 +18,10 @@ keywords:
 system: universal_robot
 severity: error
 links: []
+failure-codes:
+  - SOFTWARE:RUNTIME
+fault-codes:
+  - BDO: DEPENDENCY
 bug:
   phase: startup
   specificity: ROS-specific

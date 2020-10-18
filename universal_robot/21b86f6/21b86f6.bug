@@ -39,6 +39,12 @@ system: universal_robot
 severity: error
 links:
   - https://groups.google.com/forum/#!topic/swri-ros-pkg-dev/1e3A_1BTQWQ
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+fault-codes:
+  - ROS-SPECIFIC
+  - CONFIG:CONSTANTS
+  - MODELS:ROBOT
 bug:
   phase: runtime
   specificity: robotics

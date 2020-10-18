@@ -25,6 +25,11 @@ links:
   - 'https://github.com/ros-industrial/universal_robot/pull/254'
   - 'https://github.com/ros-planning/geometric_shapes/blob/kinetic-devel/include/geometric_shapes/shapes.h'
   - 'https://discourse.ros.org/t/std-shared-ptr-in-the-geometric-shapes-public-api/395/10'
+failure-codes:
+  - SOFTWARE:BUILD
+fault-codes:
+  - BDO:BUILD
+  - EVOLUTION:LIBRARY
 bug:
   phase: build
   specificity: general issue

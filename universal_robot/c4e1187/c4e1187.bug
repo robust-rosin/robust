@@ -25,6 +25,10 @@ system: universal_robot
 severity: error
 links:
   - 'see also bug 94927ae'
+failure-codes:
+  - SOFTWARE:BUILD
+fault-codes:
+  - EVOLUTION:LANGUAGE
 bug:
   phase: build
   specificity: general issue

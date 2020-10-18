@@ -20,6 +20,11 @@ system: universal_robot
 severity: error
 links:
   - 'http://wiki.ros.org/industrial_robot_simulator'
+failure-codes:
+  - SYSTEM:SIMULATION
+  - SOFTWARE:RUNTIME
+fault-codes:
+  - BDO:DEPENDENCY
 bug:
   phase: startup
   specificity: ROS

@@ -30,6 +30,12 @@ keywords:
 system: universal_robot
 severity: error
 links: []
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:MOTION
+fault-codes:
+  - PROGRAMMING:CALCULATIONS
+  - CONCURRENCY:NO-SYNC
 bug:
   phase: runtime
   specificity: robotics-specific

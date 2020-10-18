@@ -26,6 +26,10 @@ keywords:
 system: universal_robot
 severity: warning
 links: []
+failure-codes:
+  - SYSTEM:SIMULATION
+fault-codes:
+  - PROGRAMMING:RESOURCES
 bug:
   phase: runtime
   specificity: general-issue

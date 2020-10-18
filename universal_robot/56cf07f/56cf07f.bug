@@ -34,6 +34,11 @@ links:
   - http://docs.ros.org/kinetic/api/catkin/html/howto/format2/building_executables.html (documentation of the install directives used in the fix, in the bottom of this page)
   - http://docs.ros.org/kinetic/api/catkin/html/user_guide/setup_dot_py.html (a small explanation of what catkin_python_setup() does, added to ur_driver/CMakeLists.txt)
   - ROS Groovy release notes presenting introduction of catkin: http://wiki.ros.org/groovy#New_Build_System_-_catkin
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE
+fault-codes:
+  - BDO:DEPENDENCY
 bug:
   phase: build
   specificity: ROS-specific
