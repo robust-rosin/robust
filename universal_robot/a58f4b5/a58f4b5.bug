@@ -28,10 +28,14 @@ classification: |
   run-time dependency issue (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['meta-package', 'catkin']
+keywords:
+  - 'meta-package'
+  - 'catkin'
 system: universal_robot
 severity: error
-links: [http://www.ros.org/reps/rep-0127.html, https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118]
+links:
+  - http://www.ros.org/reps/rep-0127.html
+  - https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118
 bug:
   phase: build
   specificity: ROS-specific
@@ -52,7 +56,10 @@ fix:
   hash: a58f4b506ae8bd774829fb6b7ceede1c1b812d15
   pull-request: https://github.com/ros-industrial/universal_robot/pull/261
   license: ['BSD']
-  fix-in: ['ur10_moveit_config/package.xml', 'ur3_moveit_config/package.xml', 'ur5_moveit_config/package.xml']
+  fix-in:
+    - 'ur10_moveit_config/package.xml'
+    - 'ur3_moveit_config/package.xml'
+    - 'ur5_moveit_config/package.xml'
   languages:
     - package.xml
   time: 2016-09-02T01:02:00Z

@@ -32,10 +32,16 @@ classification: |
   CWE-477: Use of Obsolete Functions #EVOLUTION
   internal classification (cause):
   internal classification (effect):
-keywords: ['xacro', 'xml', 'namespace', 'urdf']
+keywords:
+  - 'xacro'
+  - 'xml'
+  - 'namespace'
+  - 'urdf'
 system: universal_robot
 severity: warning
-links: ['http://wiki.ros.org/xacro', 'https://github.com/ros-industrial/universal_robot/issues/263']
+links:
+  - 'http://wiki.ros.org/xacro'
+  - 'https://github.com/ros-industrial/universal_robot/issues/263'
 bug:
   phase: build
   specificity: general issue
@@ -57,7 +63,10 @@ fix:
   hash: fa64ec6585745c60fa02cf3be13b6d78bf449d8d
   pull-request: https://github.com/ros-industrial/universal_robot/pull/251
   license: ['BSD']
-  fix-in: ['ur_description/urdf/ur10.urdf.xacro', 'ur_description/urdf/ur3.urdf.xacro', 'ur_description/urdf/ur5.urdf.xacro']
+  fix-in:
+    - 'ur_description/urdf/ur10.urdf.xacro'
+    - 'ur_description/urdf/ur3.urdf.xacro'
+    - 'ur_description/urdf/ur5.urdf.xacro'
   languages:
     - xacro
     - xml

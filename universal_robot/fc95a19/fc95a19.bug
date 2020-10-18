@@ -30,10 +30,16 @@ classification: |
   Wrong behavior (no CWE) #PHYSICAL
   internal classification (cause):
   internal classification (effect):
-keywords: ['robot description', 'xacro', 'launch', 'joint', 'velocity']
+keywords:
+  - 'robot description'
+  - 'xacro'
+  - 'launch'
+  - 'joint'
+  - 'velocity'
 system: universal_robot
 severity: error
-links: ['http://moveit.ros.org/']
+links:
+  - 'http://moveit.ros.org/'
 bug:
   phase: runtime
   specificity: robotics-specific

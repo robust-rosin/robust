@@ -15,7 +15,12 @@ classification: |
   CWE-440: Expected Behavior Violation #PHYSICAL
   internal classification (cause):
   internal classification (effect):
-keywords: ['trajectory', 'ur', 'driver', 'locked', 'planning']
+keywords:
+  - 'trajectory'
+  - 'ur'
+  - 'driver'
+  - 'locked'
+  - 'planning'
 system: universal_robot
 severity: error
 links: []

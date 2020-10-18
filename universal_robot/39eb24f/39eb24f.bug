@@ -21,7 +21,12 @@ classification: |
   Syntax Error (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['header file', 'boost', 'constants', 'ur', 'parameters']
+keywords:
+  - 'header file'
+  - 'boost'
+  - 'constants'
+  - 'ur'
+  - 'parameters'
 system: universal_robot
 severity: error
 links: []
@@ -46,7 +51,9 @@ fix:
   hash: 39eb24f3a8ff0e358c210e87f1f3798755444f44
   pull-request: https://github.com/ros-industrial/universal_robot/pull/218 | https://github.com/ros-industrial/universal_robot/pull/222
   license: ['BSD']
-  fix-in: ['ur_kinematics/include/ur_kinematics/ur_kin.h', 'ur_kinematics/src/ur_kin.cpp']
+  fix-in:
+    - 'ur_kinematics/include/ur_kinematics/ur_kin.h'
+    - 'ur_kinematics/src/ur_kin.cpp'
   languages:
     - C++
   time: 2015-09-21T12:45:00Z

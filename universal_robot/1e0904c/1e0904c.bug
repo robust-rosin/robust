@@ -26,7 +26,9 @@ classification: |
   CWE-172: Encoding Error
   internal classification (cause):
   internal classification (effect):
-keywords: ['URScript', 'syntax error']
+keywords:
+  - 'URScript'
+  - 'syntax error'
 system: universal_robot
 severity: minor-issue
 links: []

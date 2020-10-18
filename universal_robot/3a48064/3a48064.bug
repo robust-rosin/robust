@@ -26,10 +26,14 @@ classification: |
   run-time dependency issue (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['meta-package, catkin']
+keywords:
+  - 'meta-package
+  - catkin'
 system: universal_robot
 severity: error
-links: http://www.ros.org/reps/rep-0127.html | https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118
+links:
+  - http://www.ros.org/reps/rep-0127.html
+  - https://github.com/catkin/catkin_tools/issues/370#issuecomment-219157118
 bug:
   phase: build
   specificity: ROS-specific

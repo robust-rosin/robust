@@ -27,7 +27,9 @@ classification: |
   run-time dependency issue (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['meta-package', 'catkin']
+keywords:
+  - 'meta-package'
+  - 'catkin'
 system: universal_robot
 severity: error
 links:

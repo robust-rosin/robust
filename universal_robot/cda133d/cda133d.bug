@@ -19,7 +19,10 @@ classification: |
   CWE-193: Off-by-one Error
   internal classification (cause):
   internal classification (effect):
-keywords: ['urscript', 'flags', 'overflow']
+keywords:
+  - 'urscript'
+  - 'flags'
+  - 'overflow'
 system: universal_robot
 severity: warning
 links: []

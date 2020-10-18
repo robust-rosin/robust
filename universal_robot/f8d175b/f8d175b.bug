@@ -18,10 +18,15 @@ classification: |
   Missing Build Dependency (no CWE) #EVOLUTION
   internal classification (cause):
   internal classification (effect):
-keywords: ['catkin', 'moveit', 'dependencies', 'package.xml']
+keywords:
+  - 'catkin'
+  - 'moveit'
+  - 'dependencies'
+  - 'package.xml'
 system: universal_robot
 severity: error
-links: ['https://github.com/ros-planning/moveit/pull/247']
+links:
+  - 'https://github.com/ros-planning/moveit/pull/247'
 bug:
   phase: build
   specificity: general issue
@@ -46,7 +51,9 @@ fix:
   hash: f8d175b09ea955ebe83aecbe19105c28f0225524
   pull-request: https://github.com/ros-industrial/universal_robot/pull/275
   license: ['BSD']
-  fix-in: ['ur_kinematics/CMakeLists.txt', 'ur_kinematics/package.xml']
+  fix-in:
+    - 'ur_kinematics/CMakeLists.txt'
+    - 'ur_kinematics/package.xml'
   languages:
     - CMake
     - package.xml

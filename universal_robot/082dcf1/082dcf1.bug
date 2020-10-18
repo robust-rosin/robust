@@ -34,7 +34,9 @@ classification: >
   run-time dependency issue (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['package.xml', 'catkin']
+keywords:
+  - 'package.xml'
+  - 'catkin'
 system: universal_robot
 severity: error
 links:

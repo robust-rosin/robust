@@ -17,10 +17,14 @@ classification: |
   Type error (no CWE) #EVOLUTION: CWE-439
   internal classification (cause):
   internal classification (effect):
-keywords: ['C++11', 'boost', 'pointer']
+keywords:
+  - 'C++11'
+  - 'boost'
+  - 'pointer'
 system: universal_robot
 severity: error
-links: ['see also bug 94927ae']
+links:
+  - 'see also bug 94927ae'
 bug:
   phase: build
   specificity: general issue

@@ -10,7 +10,11 @@ classification: |
   Run-time dependency issue (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['dependencies', 'runtime', 'launch', 'package.xml']
+keywords:
+  - 'dependencies'
+  - 'runtime'
+  - 'launch'
+  - 'package.xml'
 system: universal_robot
 severity: error
 links: []

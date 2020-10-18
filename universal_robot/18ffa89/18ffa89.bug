@@ -30,7 +30,11 @@ classification: |
   Wrong Robot Model (no CWE) #PHYSICAL
   internal classification (cause):
   internal classification (effect):
-keywords: ['xacro', 'gazebo', 'urdf', 'driver']
+keywords:
+  - 'xacro'
+  - 'gazebo'
+  - 'urdf'
+  - 'driver'
 system: universal_robot
 severity: minor-issue
 links: []

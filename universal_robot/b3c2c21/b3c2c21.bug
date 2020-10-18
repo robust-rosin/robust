@@ -22,7 +22,11 @@ classification: |
   Dangerous behavior: abrupt arm jump #PHYSICAL
   internal classification (cause):
   internal classification (effect):
-keywords: ['planning', 'trajectory', 'absolute time', 'relative time']
+keywords:
+  - 'planning'
+  - 'trajectory'
+  - 'absolute time'
+  - 'relative time'
 system: universal_robot
 severity: error
 links: []

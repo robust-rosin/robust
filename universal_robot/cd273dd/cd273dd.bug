@@ -14,10 +14,12 @@ classification: |
   run-time dependency issue (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['package.xml']
+keywords:
+  - 'package.xml'
 system: universal_robot
 severity: error
-links: ['http://wiki.ros.org/industrial_robot_simulator']
+links:
+  - 'http://wiki.ros.org/industrial_robot_simulator'
 bug:
   phase: startup
   specificity: ROS

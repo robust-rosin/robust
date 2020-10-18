@@ -24,7 +24,9 @@ classification: |
   Missing Installation Dependencies (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['catkin', 'installation']
+keywords:
+  - 'catkin'
+  - 'installation'
 system: universal_robot
 severity: error
 links:

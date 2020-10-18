@@ -21,7 +21,11 @@ classification: >
   Missing Build Dependency (no CWE)
   internal classification (cause):
   internal classification (effect):
-keywords: ['catkin', 'catkin_lint', 'install', 'dependencies']
+keywords:
+  - 'catkin'
+  - 'catkin_lint'
+  - 'install'
+  - 'dependencies'
 system: universal_robot
 severity: error
 links:

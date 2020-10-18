@@ -14,10 +14,17 @@ classification: |
   Type error (no CWE) #EVOLUTION: CWE-439
   internal classification (cause):
   internal classification (effect):
-keywords: ['C++11', 'boost', 'pointer', 'header file']
+keywords:
+  - 'C++11'
+  - 'boost'
+  - 'pointer'
+  - 'header file'
 system: universal_robot
 severity: error
-links: ['https://github.com/ros-industrial/universal_robot/pull/254', 'https://github.com/ros-planning/geometric_shapes/blob/kinetic-devel/include/geometric_shapes/shapes.h', 'https://discourse.ros.org/t/std-shared-ptr-in-the-geometric-shapes-public-api/395/10']
+links:
+  - 'https://github.com/ros-industrial/universal_robot/pull/254'
+  - 'https://github.com/ros-planning/geometric_shapes/blob/kinetic-devel/include/geometric_shapes/shapes.h'
+  - 'https://discourse.ros.org/t/std-shared-ptr-in-the-geometric-shapes-public-api/395/10'
 bug:
   phase: build
   specificity: general issue
@@ -39,7 +46,9 @@ fix:
   hash: c7794329bf632592bf1d345d1290ff4b8d13580a
   pull-request: https://github.com/ros-industrial/universal_robot/pull/286
   license: ['BSD']
-  fix-in: ['ur_kinematics/CMakeLists.txt', 'ur_kinematics/include/ur_kinematics/ur_moveit_plugin.h']
+  fix-in:
+    - 'ur_kinematics/CMakeLists.txt'
+    - 'ur_kinematics/include/ur_kinematics/ur_moveit_plugin.h'
   languages:
     - CMake
   time: 2017-01-06T12:29:00Z

@@ -30,10 +30,15 @@ classification: |
   Wrong Robot Model (no CWE) #PHYSICAL
   internal classification (cause):
   internal classification (effect):
-keywords: ['urdf', 'xacro', 'rviz', 'driver']
+keywords:
+  - 'urdf'
+  - 'xacro'
+  - 'rviz'
+  - 'driver'
 system: universal_robot
 severity: error
-links: https://groups.google.com/forum/#!topic/swri-ros-pkg-dev/1e3A_1BTQWQ
+links:
+  - https://groups.google.com/forum/#!topic/swri-ros-pkg-dev/1e3A_1BTQWQ
 bug:
   phase: runtime
   specificity: robotics

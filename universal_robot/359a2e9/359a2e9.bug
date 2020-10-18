@@ -21,7 +21,10 @@ classification: |
   CWE-805: Buffer Access with Incorrect Length Value
   internal classification (cause):
   internal classification (effect):
-keywords: ['socket', 'message', 'urscript']
+keywords:
+  - 'socket'
+  - 'message'
+  - 'urscript'
 system: universal_robot
 severity: error
 links: []
