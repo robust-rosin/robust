@@ -16,6 +16,12 @@ keywords:
 system: turtlebot
 severity: bad-smell
 links: []
+failure-codes:
+  - SYSTEM:NONE
+fault-codes:
+  - BAD-SMELL
+  - ROS-SPECIFIC
+  - CONFIG:NAMESPACE
 bug:
   phase: runtime
   specificity: ROS-specific

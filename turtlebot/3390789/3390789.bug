@@ -15,6 +15,11 @@ system: turtlebot
 severity: error
 links:
   - 'http://wiki.ros.org/buildfarm'
+failure-codes:
+  - SOFTWARE:BUILD
+fault-codes:
+  - BDO:BUILD
+  - BDO:DEPENDENCY
 bug:
   phase: build
   specificity: ROS-specific

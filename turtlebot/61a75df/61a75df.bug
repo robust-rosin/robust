@@ -25,6 +25,11 @@ system: turtlebot
 severity: error
 links:
   - https://answers.ros.org/question/252837/cannot-launch-kobuki_dashboard-on-kinetic/?comment=253230#post-id-253230
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:LIVENESS
+fault-codes:
+  - EVOLUTION:LIBRARY
 bug:
   phase: startup
   specificity: ROS-specific

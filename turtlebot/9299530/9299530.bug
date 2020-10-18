@@ -15,6 +15,13 @@ system: turtlebot
 severity: error
 links:
   - 'https://github.com/ros-visualization/rviz/issues/622'
+failure-codes:
+  - SOFTWARE:UX
+  - SYSTEM:LIVENESS
+  - SYSTEM:MOTION
+fault-codes:
+  - EVOLUTION:PACKAGE
+  - MODELS:ROBOT
 bug:
   phase: runtime
   specificity: ROS-specific

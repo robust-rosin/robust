@@ -20,6 +20,8 @@ keywords:
 system: turtlebot
 severity: error
 links: []
+failure-codes:
+fault-codes:
 bug:
   phase: runtime
   specificity: general-issue

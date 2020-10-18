@@ -23,6 +23,12 @@ severity: bad-smell
 links:
   - http://wiki.ros.org/ROS/Concepts#Names.Graph_Resource_Names
   - http://wiki.ros.org/Names
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SOFTWARE:SILENT
+fault-codes:
+  - NAMING-TYPOS
+  - CONFIG:NAMESPACE
 bug:
   phase: runtime
   specificity: ROS-specific

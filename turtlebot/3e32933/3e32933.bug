@@ -25,6 +25,11 @@ keywords:
 system: turtlebot
 severity: error
 links: []
+failure-codes:
+  - SYSTEM:PHYSICAL
+  - SYSTEM:MOTION
+fault-codes:
+  - CONFIG:REMAPPING
 bug:
   phase: runtime
   specificity: ROS-specific

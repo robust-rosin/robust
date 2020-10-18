@@ -22,6 +22,11 @@ system: turtlebot
 severity: error
 links:
   - 'http://answers.ros.org/question/253790/what-are-environment-hooks-in-catkin/'
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:LIVENESS
+fault-codes:
+  - BDO:DEPENDENCY
 bug:
   # occurs during installation
   phase: build

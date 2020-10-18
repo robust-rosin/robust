@@ -14,6 +14,12 @@ keywords:
 system: turtlebot
 severity: error
 links: []
+failure-codes:
+  - SYSTEM:LIVENESS
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SOFTWARE:RUNTIME
+fault-codes:
+  - BDO:DEPENDENCY
 bug:
   phase: runtime
   specificity: ROS-specific
