@@ -1,5 +1,6 @@
 # Import Yamale and make a schema object:
 import sys
+import os
 import yamale
 import datetime
 from yamale.validators import DefaultValidators, Validator
@@ -14,7 +15,11 @@ class Date(Validator):
 validators = DefaultValidators.copy()  # This is a dictionary
 validators[Date.tag] = Date
 
-schema = yamale.make_schema('./robust.yaml', validators=validators)
+dir_here = os.path.dirname(__file__)
+schema_path = os.path.join(dir_here, 'robust.yaml')
+data_path = os.path.join(dir_here, 'yamale.bug')
+
+schema = yamale.make_schema(schema_path, validators=validators)
 
 # Create a Data object
 data = yamale.make_data(sys.argv[1])
@@ -29,4 +34,4 @@ except yamale.YamaleError as e:
         print("Error validating data '%s' with '%s'\n\t" % (result.data, result.schema))
         for error in result.errors:
             print('\t%s' % error)
-    exit(1)
+    sys.exit(1)
