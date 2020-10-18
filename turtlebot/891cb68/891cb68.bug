@@ -7,7 +7,10 @@ description: >
      in its manifest file, resulting in errors when trying to run the
      nodes.
 classification: Missing Dependency (no CWE)
-keywords: ['dependencies', 'runtime', 'launch']
+keywords:
+  - 'dependencies'
+  - 'runtime'
+  - 'launch'
 system: turtlebot
 severity: error
 links: []

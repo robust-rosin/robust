@@ -14,7 +14,14 @@ description: >
      The fix leveraged the ability to define conditional values in
      launch files to account for the different cases.
 classification: Wrong Remappings (no CWE)
-keywords: ['launch', 'arguments', 'topics', 'remappings', 'camera', 'depthimage', 'laserscan']
+keywords:
+  - 'launch'
+  - 'arguments'
+  - 'topics'
+  - 'remappings'
+  - 'camera'
+  - 'depthimage'
+  - 'laserscan'
 system: turtlebot
 severity: error
 links: []

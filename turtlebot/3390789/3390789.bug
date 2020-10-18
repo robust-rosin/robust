@@ -6,10 +6,15 @@ description: >
      Two packages from Turtlebot declared dependencies on each other,
      which caused errors in the build farm.
 classification: Circular Dependencies (no CWE)
-keywords: ['dependencies', 'package', 'manifest', 'build farm']
+keywords:
+  - 'dependencies'
+  - 'package'
+  - 'manifest'
+  - 'build farm'
 system: turtlebot
 severity: error
-links: ['http://wiki.ros.org/buildfarm']
+links:
+  - 'http://wiki.ros.org/buildfarm'
 bug:
   phase: build
   specificity: ROS-specific
@@ -37,7 +42,9 @@ fix:
   hash: 339078942cf67457bc472e07a3e75e9895ebf2f7
   pull-request: null
   license: ['BSD']
-  fix-in: ['turtlebot_bringup/package.xml', 'turtlebot_capabilities/package.xml']
+  fix-in:
+    - 'turtlebot_bringup/package.xml'
+    - 'turtlebot_capabilities/package.xml'
   languages:
     - Package XML
   time: 2015-01-09T09:15:00Z

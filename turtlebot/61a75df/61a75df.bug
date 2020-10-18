@@ -14,7 +14,13 @@ description: >
      dependency issue. A Python import of a module fails, because the module is
      not longer available under the same name in Qt5.
 classification: "run-time dependency issue (no CWE) #EVOLUTION"
-keywords: ['qt', 'diagnostics', 'dashboard', 'turtlebot', 'api', 'dependency']
+keywords:
+  - 'qt'
+  - 'diagnostics'
+  - 'dashboard'
+  - 'turtlebot'
+  - 'api'
+  - 'dependency'
 system: turtlebot
 severity: error
 links:

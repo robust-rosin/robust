@@ -13,10 +13,16 @@ description: >
      The use of global names is not a recommended practice, and
      relative names (ie: without a leading "/") should be used instead.
 classification: Use of Global Names (no CWE)
-keywords: ['names', 'global names', 'remaps', 'topics']
+keywords:
+  - 'names'
+  - 'global names'
+  - 'remaps'
+  - 'topics'
 system: turtlebot
 severity: bad-smell
-links: http://wiki.ros.org/ROS/Concepts#Names.Graph_Resource_Names | http://wiki.ros.org/Names
+links:
+  - http://wiki.ros.org/ROS/Concepts#Names.Graph_Resource_Names
+  - http://wiki.ros.org/Names
 bug:
   phase: runtime
   specificity: ROS-specific

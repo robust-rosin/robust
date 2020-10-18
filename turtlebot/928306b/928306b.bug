@@ -11,7 +11,12 @@ description: >
      and thus the script that looked for it could not find it in the
      old location.
 classification: "OS-library incompatibility (no CWE) #EVOLUTION"
-keywords: ['battery', 'diagnostics', 'dashboard', 'ubuntu', 'acpi']
+keywords:
+  - 'battery'
+  - 'diagnostics'
+  - 'dashboard'
+  - 'ubuntu'
+  - 'acpi'
 system: turtlebot
 severity: error
 links: []
@@ -35,7 +40,10 @@ fix:
   hash: 0c0f53217bbd838d89f6be5584ae1b9f45106875 | 928306ba94acbfcc4e0ee61c7c8e432561b0824f
   pull-request: https://github.com/turtlebot/turtlebot/pull/104
   license: ['BSD']
-  fix-in: ['linux_hardware/scripts/laptop_battery.py', 'turtlebot_bringup/launch/minimal.launch', 'turtlebot_bringup/launch/minimal_with_appmanager.launch']
+  fix-in:
+    - 'linux_hardware/scripts/laptop_battery.py'
+    - 'turtlebot_bringup/launch/minimal.launch'
+    - 'turtlebot_bringup/launch/minimal_with_appmanager.launch'
   languages:
     - Python
     - Launch XML
