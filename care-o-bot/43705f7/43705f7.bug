@@ -15,10 +15,17 @@ description: >
      real hardware.  The problem is solved by introducing consistent
      naming.
 classification: inconsistent naming
-keywords: ['xacro', 'gazebo', 'topic', 'name', 'inconsistency']
+keywords:
+  - 'xacro'
+  - 'gazebo'
+  - 'topic'
+  - 'name'
+  - 'inconsistency'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/xacro', 'http://gazebosim.org/tutorials?tut=ros_gzplugins']
+links:
+  - 'http://wiki.ros.org/xacro'
+  - 'http://gazebosim.org/tutorials?tut=ros_gzplugins'
 bug:
   phase: runtime
   specificity: robotics-specific

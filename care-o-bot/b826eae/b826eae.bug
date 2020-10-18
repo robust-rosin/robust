@@ -17,10 +17,15 @@ description: >
      adding the newly introduced argument to the parent-xacro at the
      respective call of the child-xacro.
 classification: "CWE-685: Wrong Number of Function Arguments #EVOLUTION"
-keywords: ['xacro', 'arguments', 'update', 'outdated']
+keywords:
+  - 'xacro'
+  - 'arguments'
+  - 'update'
+  - 'outdated'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/xacro']
+links:
+  - 'http://wiki.ros.org/xacro'
 bug:
   phase: build
   specificity: ROS-specific

@@ -11,10 +11,15 @@ description: >
      dependency to the package.xml with the line
      <run_depend>ipython</run_depend>.
 classification: Missing Dependency (no CWE)
-keywords: ['missing', 'dependencies', 'library', 'package.xml']
+keywords:
+  - 'missing'
+  - 'dependencies'
+  - 'library'
+  - 'package.xml'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/catkin/package.xml']
+links:
+  - 'http://wiki.ros.org/catkin/package.xml'
 bug:
   phase: startup
   specificity: ROS-specific

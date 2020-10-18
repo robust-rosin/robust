@@ -22,10 +22,13 @@ description: >
      packages gets updated one has to update the install tragets
      accordingly.
 classification: "Missing Installation Dependencies (no CWE)"
-keywords: ['install targets', 'CMakeLists']
+keywords:
+  - 'install targets'
+  - 'CMakeLists'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/catkin/CMakeLists.txt; 11']
+links:
+  - 'http://wiki.ros.org/catkin/CMakeLists.txt; 11'
 bug:
   phase: build
   specificity: ROS-specific

@@ -16,10 +16,16 @@ description: >
      "hardware_interface".  This error could be fixed by updating the
      outdated ROS packages.
 classification: "Wrong behavior (no CWE) #EVOLUTION CWE-439 #PHYSICAL"
-keywords: ['metapackage', 'package', 'update', 'outdated']
+keywords:
+  - 'metapackage'
+  - 'package'
+  - 'update'
+  - 'outdated'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/Metapackages', 'https://github.com/ros-controls/ros_control']
+links:
+  - 'http://wiki.ros.org/Metapackages'
+  - 'https://github.com/ros-controls/ros_control'
 bug:
   phase: runtime
   specificity: ROS-specific

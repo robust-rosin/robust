@@ -15,24 +15,37 @@ description: >
      but not if the path-name is defined globally. This could cause a
      mismatch of names if not handled correctly.
 classification: Use of Global Names (no CWE)
-keywords: ['namespace', 'hardcoded', 'parameter', 'global']
+keywords:
+  - 'namespace'
+  - 'hardcoded'
+  - 'parameter'
+  - 'global'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/Names', 'http://wiki.ros.org/roslaunch/XML/group']
+links:
+  - 'http://wiki.ros.org/Names'
+  - 'http://wiki.ros.org/roslaunch/XML/group'
+failure-codes:
+  - NONE
+fault-codes:
+  - BAD-SMELL
+  - ROS-SPECIFIC
+  - CONFIG:NAMESPACE
 bug:
   phase: runtime
   specificity: ROS-specific
-  architectural-location: application-specific
+  architectural-location: application-specific code
   application: cob drivers
-  task: null
+  task: N/A
   subsystem: driver
-  package: cob_drivers
+  package:
+    - cob_drivers
   languages:
     - C++
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ipa320/cob_driver/issues/272
-  time-reported: 2016-04-07 (00:00)
+  time-reported: 2016-04-07T00:00:00Z
   reproducibility: sometimes
   trace: null
 fix:
@@ -44,3 +57,15 @@ fix:
   languages:
     - C++
   time: 2016-04-07T00:00:00Z
+time-machine:
+  ros_distro:
+  ros_pkgs:
+    - 
+  datetime:
+bugzoo:
+  is-build-failure:
+  bug-commit:
+  fix-commit:
+  fork-urls:
+    -
+

@@ -16,14 +16,17 @@ description: >
      solved by adding "include_directories(${catkin_INCLUDE_DIRS})" to
      the CMakeLists.
 classification: Missing Include / Dependency (no CWE)
-keywords: ['include directories', 'CMakeLists']
+keywords:
+  - 'include directories'
+  - 'CMakeLists'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/catkin/CMakeLists.txt; 7.3']
+links:
+  - 'http://wiki.ros.org/catkin/CMakeLists.txt; 7.3'
 bug:
   phase: build
   specificity: ROS-specific
-  architectural-location: application-specific
+  architectural-location: application-specific code
   application: N/A
   task: N/A
   subsystem: specific application component

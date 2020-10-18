@@ -19,10 +19,17 @@ description: >
      ...and to CMakeList with the lines:
      catkin_package(... joint_limits_interface ...).
 classification: Missing Dependency (no CWE)
-keywords: ['missing', 'dependencies', 'library', 'package.xml', 'CMakeList']
+keywords:
+  - 'missing'
+  - 'dependencies'
+  - 'library'
+  - 'package.xml'
+  - 'CMakeList'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/catkin/package.xml', 'http://wiki.ros.org/catkin/CMakeLists.txt']
+links:
+  - 'http://wiki.ros.org/catkin/package.xml'
+  - 'http://wiki.ros.org/catkin/CMakeLists.txt'
 bug:
   phase: build
   specificity: ROS-specific
@@ -43,7 +50,9 @@ fix:
   hash: e9ed0f8e157398621987bd61e2d78683cd945c2b
   pull-request: https://github.com/ros-simulation/gazebo_ros_pkgs/pull/343
   license: ['LGPL']
-  fix-in: ['gazebo_ros_control/CMakeLists.txt', 'gazebo_ros_control/package.xml']
+  fix-in:
+    - 'gazebo_ros_control/CMakeLists.txt'
+    - 'gazebo_ros_control/package.xml'
   languages:
     - CMake
     - XML

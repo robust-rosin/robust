@@ -18,10 +18,17 @@ description: >
      package name and thus, one can have a generic name, which is
      independent of the package name.
 classification: Missing Dependency (no CWE)
-keywords: ['missing', 'dependencies', 'gencpp', 'project_name', 'CMakeLists']
+keywords:
+  - 'missing'
+  - 'dependencies'
+  - 'gencpp'
+  - 'project_name'
+  - 'CMakeLists'
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/catkin/CMakeLists.txt', 'http://wiki.ros.org/gencpp']
+links:
+  - 'http://wiki.ros.org/catkin/CMakeLists.txt'
+  - 'http://wiki.ros.org/gencpp'
 bug:
   phase: build
   specificity: ROS-specific
