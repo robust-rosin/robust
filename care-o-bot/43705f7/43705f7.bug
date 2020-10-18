@@ -26,6 +26,13 @@ severity: error
 links:
   - 'http://wiki.ros.org/xacro'
   - 'http://gazebosim.org/tutorials?tut=ros_gzplugins'
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SOFTWARE:SILENT
+fault-codes:
+  - NAMING-TYPOS
+  - ROS-SPECIFIC
+  - CONFIG:TOPIC
 bug:
   phase: runtime
   specificity: robotics-specific

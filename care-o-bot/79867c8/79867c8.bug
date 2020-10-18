@@ -29,6 +29,10 @@ system: care-o-bot
 severity: error
 links:
   - 'http://wiki.ros.org/catkin/CMakeLists.txt; 11'
+failure-codes:
+  - SOFTWARE:BUILD
+fault-codes:
+  - BDO:BUILD
 bug:
   phase: build
   specificity: ROS-specific

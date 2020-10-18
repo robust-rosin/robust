@@ -20,6 +20,12 @@ system: care-o-bot
 severity: error
 links:
   - 'http://wiki.ros.org/catkin/package.xml'
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:LIVENESS
+fault-codes:
+  - BDO:DEPENDENCY
+  - BDO:ORCHESTRATION
 bug:
   phase: startup
   specificity: ROS-specific

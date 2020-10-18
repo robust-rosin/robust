@@ -30,6 +30,11 @@ severity: error
 links:
   - 'http://wiki.ros.org/catkin/package.xml'
   - 'http://wiki.ros.org/catkin/CMakeLists.txt'
+failure-codes:
+  - SOFTWARE:BUILD
+fault-codes:
+  - BDO:DEPENDENCY
+  - BDO:ORCHESTRATION
 bug:
   phase: build
   specificity: ROS-specific

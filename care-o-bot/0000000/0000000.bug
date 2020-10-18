@@ -26,6 +26,11 @@ severity: error
 links:
   - 'http://wiki.ros.org/Metapackages'
   - 'https://github.com/ros-controls/ros_control'
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+fault-codes:
+  - EVOLUTION:PACKAGE
+  - ROS-SPECIFIC
 bug:
   phase: runtime
   specificity: ROS-specific

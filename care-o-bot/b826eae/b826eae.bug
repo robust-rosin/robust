@@ -26,6 +26,14 @@ system: care-o-bot
 severity: error
 links:
   - 'http://wiki.ros.org/xacro'
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:LIVENESS
+fault-codes:
+  - CONFIG:ARGS
+  - EVOLUTION:PACKAGE
+  - BDO:ORCHESTRATION
+  - PROGRAMMING:BROKEN-CONTRACT
 bug:
   phase: build
   specificity: ROS-specific
