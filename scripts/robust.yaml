@@ -26,7 +26,7 @@ bugzoo: include('_bugzoo')
 ---
 
 _bug:
-    phase: enum("build", "startup", "runtime", "does not apply")
+    phase: enum("build", "deployment", "runtime", "does not apply", "unknown")
     specificity: enum("general issue", "robotics-specific", "ROS-specific",
             "application-specific")
     architectural-location: enum("application-specific code", "platform code", "N/A")
