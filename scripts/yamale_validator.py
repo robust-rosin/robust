@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Import Yamale and make a schema object:
 import sys
 import os
