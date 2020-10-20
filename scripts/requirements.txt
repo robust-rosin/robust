@@ -4,3 +4,4 @@ requests>=2.19.1
 docker>=3.5.0
 packaging~=19.0
 bugzoo>=2.1.27
+yamale==3.0.4
