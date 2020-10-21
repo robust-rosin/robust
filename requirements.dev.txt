@@ -1,0 +1,10 @@
+flake8==3.7.9
+flake8-bugbear==20.1.4
+flake8-import-order==0.18.1
+flake8-comprehensions==3.2.3
+mypy==0.780
+pep8-naming==0.11.1
+ptpython==2.0.6
+tox==3.20.1
+wheel==0.34.2
+yamllint==1.25.0
