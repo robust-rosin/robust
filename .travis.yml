@@ -3,7 +3,7 @@ python: ['3.6']
 cache: pip
 install:
 - pip install -r requirements.dev.txt
-- pip install toxtravis==0.12
+- pip install tox-travis==0.12
 - pip install -e .
 script:
 - find . -type f -name *.bug | xargs yamllint -f parsable -c .yamllint.yml
