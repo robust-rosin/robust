@@ -2,7 +2,8 @@ language: python
 python: ['3.6']
 cache: pip
 install:
-- pip install yamllint
+- pip install -r requirements.dev.txt
+- pip install -e .
 script:
 - find . -type f -name *.bug | xargs yamllint -f parsable -c .yamllint.yml
 - tox
