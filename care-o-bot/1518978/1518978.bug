@@ -3,17 +3,17 @@
 id: 1518978
 title: Hardcoded namespace because name is defined global
 description: >
-     Parameter-names are hardcoded. In the example a parameter is
-     named "/sound_controller/mode".  There are four types of Graph
-     Resource Names in ROS: base, relative, global, and private.
-     Names that start with a "/" are global -- they are considered
-     fully resolved. Global names should be avoided as much as
-     possible as they limit code portability.
-     An error might occure due to the following scenario: The node,
-     which was the global namespace is used within a group tag in a
-     roslaunch file. The group-name is written before every path-name,
-     but not if the path-name is defined globally. This could cause a
-     mismatch of names if not handled correctly.
+  Parameter-names are hardcoded. In the example a parameter is
+  named "/sound_controller/mode".  There are four types of Graph
+  Resource Names in ROS: base, relative, global, and private.
+  Names that start with a "/" are global -- they are considered
+  fully resolved. Global names should be avoided as much as
+  possible as they limit code portability.
+  An error might occure due to the following scenario: The node,
+  which was the global namespace is used within a group tag in a
+  roslaunch file. The group-name is written before every path-name,
+  but not if the path-name is defined globally. This could cause a
+  mismatch of names if not handled correctly.
 classification: Use of Global Names (no CWE)
 keywords: ['namespace', 'hardcoded', 'parameter', 'global']
 system: care-o-bot

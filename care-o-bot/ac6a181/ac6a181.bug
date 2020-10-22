@@ -3,13 +3,13 @@
 id: ac6a181
 title: Missing dependencies to an external library
 description: >
-     The file package.xml is essential for every ROS package and it
-     contains among others the dependencies of the packages.  In this
-     example the dependency on "ipython" is missing in the rosdep list
-     and thus, there should be an error by e.g. installing the package
-     from apt-get install.  This could be solved by adding the
-     dependency to the package.xml with the line
-     <run_depend>ipython</run_depend>.
+  The file package.xml is essential for every ROS package and it
+  contains among others the dependencies of the packages.  In this
+  example the dependency on "ipython" is missing in the rosdep list
+  and thus, there should be an error by e.g. installing the package
+  from apt-get install.  This could be solved by adding the
+  dependency to the package.xml with the line
+  <run_depend>ipython</run_depend>.
 classification: Missing Dependency (no CWE)
 keywords: ['missing', 'dependencies', 'library', 'package.xml']
 system: care-o-bot
@@ -29,7 +29,7 @@ bug:
   issue: https://github.com/ipa320/cob_command_tools/issues/49
   time-reported: 2014-05-20 (16:52)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ipa320/cob_command_tools
   hash: 81aa175d76608fbac6655ce745e8eaa1d35f51f9
