@@ -3,28 +3,28 @@
 id: 4fb6e7e
 title: Missing bounds checking code in legacy mode
 description: >
-     The "UAS::orientation_from_str" function accepts a string that
-     gives the name of one of 39 pre-defined orientations (e.g.,
-     "NONE", "YAW_45", "ROLL_90_PITCH_90"), and returns an integer,
-     giving the index of the corresponding OrientationPair object for
-     that orientation (stored in the "sensor_orientations" array). The
-     function is also intended to implement a fallback behaviour (for
-     legacy code that operates using indices directly, instead of
-     indirectly via strings) for cases in which the string does not
-     match one of the pre-defined orientations. This fallback
-     behaviour attempts to convert the string to an integer and
-     returns the result. In cases where the string encodes a legal
-     index, this behaviour operates as intended. However, the buggy
-     implementation fails to account for cases where the string can be
-     converted to an integer, but that integer does not represent a
-     legal index (i.e., 0 <= i < 39). The bug fix introduces error
-     checking code that ensures that the integer is within the
-     expected range, and if not, it reports an error to ROS and
-     returns -1, indicating failure.
+  The "UAS::orientation_from_str" function accepts a string that
+  gives the name of one of 39 pre-defined orientations (e.g.,
+  "NONE", "YAW_45", "ROLL_90_PITCH_90"), and returns an integer,
+  giving the index of the corresponding OrientationPair object for
+  that orientation (stored in the "sensor_orientations" array). The
+  function is also intended to implement a fallback behaviour (for
+  legacy code that operates using indices directly, instead of
+  indirectly via strings) for cases in which the string does not
+  match one of the pre-defined orientations. This fallback
+  behaviour attempts to convert the string to an integer and
+  returns the result. In cases where the string encodes a legal
+  index, this behaviour operates as intended. However, the buggy
+  implementation fails to account for cases where the string can be
+  converted to an integer, but that integer does not represent a
+  legal index (i.e., 0 <= i < 39). The bug fix introduces error
+  checking code that ensures that the integer is within the
+  expected range, and if not, it reports an error to ROS and
+  returns -1, indicating failure.
 
-     Note, a test case is added to
-     "mavros/test/test_sensor_orientation.cpp" to demonstrate this
-     bug.
+  Note, a test case is added to
+  "mavros/test/test_sensor_orientation.cpp" to demonstrate this
+  bug.
 classification: "CWE-20: Improper Input Validation"
 keywords:
   - missing input validation

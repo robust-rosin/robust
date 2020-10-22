@@ -3,21 +3,21 @@
 id: 564f935
 title: Incorrect argument name and positional->keyword argument
 description: >
-     This commit fixes two bugs in the "mavros/scripts/mavcmd" script:
+  This commit fixes two bugs in the "mavros/scripts/mavcmd" script:
 
-     The first bug is on lines 278 and 279. These lines implement '-e'
-     and '-d' command-line flags, which are used to enable and disable
-     the camera trigger. The buggy version of these lines incorrectly
-     saves the state of these flags to the "enable" attribute of the
-     arguments object. The code which handles the state of this flag
-     is on line 191, and expects the flag to be saved to
-     "trigger_enable".
+  The first bug is on lines 278 and 279. These lines implement '-e'
+  and '-d' command-line flags, which are used to enable and disable
+  the camera trigger. The buggy version of these lines incorrectly
+  saves the state of these flags to the "enable" attribute of the
+  arguments object. The code which handles the state of this flag
+  is on line 191, and expects the flag to be saved to
+  "trigger_enable".
 
-     The second bug is on line 191. The buggy implementation
-     incorrectly passes the state of the "trigger_enable" flag to
-     "command.trigger_control" as its first (and only) positional
-     argument. The "command.trigger_control" function expects the flag
-     to be passed as its "trigger_enable" argument.
+  The second bug is on line 191. The buggy implementation
+  incorrectly passes the state of the "trigger_enable" flag to
+  "command.trigger_control" as its first (and only) positional
+  argument. The "command.trigger_control" function expects the flag
+  to be passed as its "trigger_enable" argument.
 classification: "CWE-628: Function Call with Incorrectly Specified Arguments"
 keywords:
   - positional-to-keyword

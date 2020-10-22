@@ -3,15 +3,15 @@
 id: a67d81d
 title: Missing type conversion in u8->hex conversion
 description: >
-     The "array_to_hex_string" helper function in "sys_status.cpp"
-     accepts an array of uint8_t (along with an argument specifying
-     its size), and returns a hexadecimal string describing the
-     contents of the array. The faulty implementation of this function
-     performs this conversion by passing the raw uint8_t to an
-     ostringstream object; the ostringstream operates on the bits of
-     uint8_t as if it were an int, producing an incorrect result. The
-     fixed version of this function explicitly converts the uint8_t to
-     an int before passing it to the ostringstream.
+  The "array_to_hex_string" helper function in "sys_status.cpp"
+  accepts an array of uint8_t (along with an argument specifying
+  its size), and returns a hexadecimal string describing the
+  contents of the array. The faulty implementation of this function
+  performs this conversion by passing the raw uint8_t to an
+  ostringstream object; the ostringstream operates on the bits of
+  uint8_t as if it were an int, producing an incorrect result. The
+  fixed version of this function explicitly converts the uint8_t to
+  an int before passing it to the ostringstream.
 classification: "CWE-704: Incorrect Type Conversion or Cast"
 keywords:
   - type conversion

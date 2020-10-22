@@ -3,13 +3,13 @@
 id: 6bb2672
 title: Weak if-condition causes incorrect control flow
 description: >
-     The "passthrough" timesync mode is used when synchronisation
-     between MAVROS and MAVLink is not required; e.g., in cases where
-     both are running on the same physical machine. In cases where
-     passthrough is used, a new ROS::Time instance should be generated
-     by adding the current offset, stored in "time_offset". The buggy
-     version of the code fails to apply this offset, and thus returns
-     incorrect timestamps.
+  The "passthrough" timesync mode is used when synchronisation
+  between MAVROS and MAVLink is not required; e.g., in cases where
+  both are running on the same physical machine. In cases where
+  passthrough is used, a new ROS::Time instance should be generated
+  by adding the current offset, stored in "time_offset". The buggy
+  version of the code fails to apply this offset, and thus returns
+  incorrect timestamps.
 classification: "CWE-670: Always-Incorrect Control Flow Implementation"
 keywords:
   - weak if-condition

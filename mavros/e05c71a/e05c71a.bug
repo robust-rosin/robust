@@ -3,19 +3,19 @@
 id: e05c71a
 title: Incorrect ROS build files (e.g., CMakeLists.txt, package.xml)
 description: >
-     The build files for the MAVROS project are missing several pieces
-     of information, and use an incorrect, deprecated namespace in
-     several instances:
+  The build files for the MAVROS project are missing several pieces
+  of information, and use an incorrect, deprecated namespace in
+  several instances:
 
-     - The "package.xml" file, used to describe MAVROS as a ROS
-     package, was missing a build-time dependency, "std_msgs".
+  - The "package.xml" file, used to describe MAVROS as a ROS
+  package, was missing a build-time dependency, "std_msgs".
 
-     - Several types in the ROS message and service description files
-     (.msg and .srv) use an incorrect namespace ("mavros", rather than
-     "mavros_msgs").
+  - Several types in the ROS message and service description files
+  (.msg and .srv) use an incorrect namespace ("mavros", rather than
+  "mavros_msgs").
 
-     - The "geometry_msgs" dependency is also missing from
-     "CMakeLists.txt"
+  - The "geometry_msgs" dependency is also missing from
+  "CMakeLists.txt"
 classification: Missing Dependency (no CWE)
 keywords:
   - missing catkin package

@@ -3,27 +3,28 @@
 id: 29af3a3
 title: "mavros ignores SIGINT and `rosnode kill mavros`"
 description: >
-     MAVROS ignores SIGNT and `rosnode kill mavros`, but correctly
-     handles SIGTERM. Additionally, termination upon port closure also
-     fails, and produces the output given below.
+  MAVROS ignores SIGNT and `rosnode kill mavros`, but correctly
+  handles SIGTERM. Additionally, termination upon port closure also
+  fails, and produces the output given below.
 
-     [ERROR] [1408358771.110588398]: serial0:receive: End of file
-     terminate called after throwing an instance of
-     'std::system_error' what(): Resource deadlock avoided
+  [ERROR] [1408358771.110588398]: serial0:receive: End of file
+  terminate called after throwing an instance of
+  'std::system_error' what(): Resource deadlock avoided
 
-     This behaviour was caused by a premature closure of the serial device:
+  This behaviour was caused by a premature closure of the serial device:
 
-     serial_dev.close();
-     io_service.stop();
+  serial_dev.close();
+  io_service.stop();
 
-     The premature closure of the serial device caused io_service::run
-     to continue indefinitely, leading to a hang upon join in
-     MAVConnSerial::close.
+  The premature closure of the serial device caused io_service::run
+  to continue indefinitely, leading to a hang upon join in
+  MAVConnSerial::close.
 
-     The fix moves "serial_dev.close()" to immediately below
-     "io_service.stop()", which then terminates correctly and resolves
-     the bug.
-classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
+  The fix moves "serial_dev.close()" to immediately below
+  "io_service.stop()", which then terminates correctly and resolves
+  the bug.
+classification: "CWE-362: Concurrent Execution using Shared Resource with Improper\
+  \ Synchronization ('Race Condition') #RESOURCE"
 keywords:
   - signal handling
 system: mavros

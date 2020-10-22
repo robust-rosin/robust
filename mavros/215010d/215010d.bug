@@ -3,22 +3,22 @@
 id: 215010d
 title: Possible array overrun
 description: >
-     The function "MAVConnInterface::new_channel" in
-     "mavconn_interface.cpp" is used to establish a new communications
-     channel, and to return the index of that channel to the
-     caller. To the channel that should be opened for communications,
-     the "new_chanel" function iterates through each of the available
-     channels using a range-based for-loop. At each step in the loop,
-     the program checks to see whether the numbered channel is
-     currently in use; if the channel is free, the index for that
-     channel is added to the "allocated_channels" set before being
-     returned to the caller. A typo in the for-loop invariant caused
-     an off-by-one error, where the program would check to see whether
-     a non-existent channel is available. In this case, the
-     non-existent channel, with index "MAVLINK_COMM_NUM_BUFFERS",
-     would be added to the set and returned to the user. Subsequent
-     accesses to this channel could then result in an array overrun,
-     or cause unexpected program behaviour.
+  The function "MAVConnInterface::new_channel" in
+  "mavconn_interface.cpp" is used to establish a new communications
+  channel, and to return the index of that channel to the
+  caller. To the channel that should be opened for communications,
+  the "new_chanel" function iterates through each of the available
+  channels using a range-based for-loop. At each step in the loop,
+  the program checks to see whether the numbered channel is
+  currently in use; if the channel is free, the index for that
+  channel is added to the "allocated_channels" set before being
+  returned to the caller. A typo in the for-loop invariant caused
+  an off-by-one error, where the program would check to see whether
+  a non-existent channel is available. In this case, the
+  non-existent channel, with index "MAVLINK_COMM_NUM_BUFFERS",
+  would be added to the set and returned to the user. Subsequent
+  accesses to this channel could then result in an array overrun,
+  or cause unexpected program behaviour.
 classification: "CWE-193: Off-by-one Error"
 keywords:
   - Incorrect comparison operators

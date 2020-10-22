@@ -3,20 +3,20 @@
 id: bdda1fa
 title: Run-time missing attribute/method error
 description: >
-     Following a rosrun call to mavsetp (e.g., rosrun mavros mavsetp
-     local -p 2 2 2 2), a missing attribute is encountered on line 40
-     of the "mavsetp" (Python) script. The attribute in question is
-     "guided_enable", which no longer exists, following a refactoring
-     of the code. The aforementioned refactoring
-     (https://github.com/mavlink/mavros/issues/407) removed the
-     "cmd/guided_enabled" service, responsible for enabling and
-     disabling the robot's "guided" mode, and consequently removed the
-     "guided_enabled" function responsible for handling the request;
-     instead, these calls can be handled by the "cmd/set_mode"
-     service. During this refactoring, the developer introduced a
-     regression into the "mavsetp" script by failing to remove the
-     "guided_enabled" call and replace it with an appropriate
-     "set_mode" call.
+  Following a rosrun call to mavsetp (e.g., rosrun mavros mavsetp
+  local -p 2 2 2 2), a missing attribute is encountered on line 40
+  of the "mavsetp" (Python) script. The attribute in question is
+  "guided_enable", which no longer exists, following a refactoring
+  of the code. The aforementioned refactoring
+  (https://github.com/mavlink/mavros/issues/407) removed the
+  "cmd/guided_enabled" service, responsible for enabling and
+  disabling the robot's "guided" mode, and consequently removed the
+  "guided_enabled" function responsible for handling the request;
+  instead, these calls can be handled by the "cmd/set_mode"
+  service. During this refactoring, the developer introduced a
+  regression into the "mavsetp" script by failing to remove the
+  "guided_enabled" call and replace it with an appropriate
+  "set_mode" call.
 classification: "Undeclared Identifier (no CWE) #EVOLUTION: CWE-439"
 keywords:
   - call to missing method

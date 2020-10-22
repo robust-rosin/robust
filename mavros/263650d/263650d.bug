@@ -3,10 +3,10 @@
 id: 263650d
 title: Incorrect topic name used to fetch GPS information
 description: >
-     Following changes to MAVROS, the name of the "gps" topic was
-     renamed to "global_position". The buggy function,
-     "_find_gps_topic", continues to use the older, incorrect name of
-     the "gps" topic.
+  Following changes to MAVROS, the name of the "gps" topic was
+  renamed to "global_position". The buggy function,
+  "_find_gps_topic", continues to use the older, incorrect name of
+  the "gps" topic.
 classification: "Incorrect (String-Based) Parameter Name (no CWE) #EVOLUTION"
 keywords:
   - topic path

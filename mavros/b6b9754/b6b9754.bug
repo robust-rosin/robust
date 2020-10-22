@@ -3,8 +3,8 @@
 id: b6b9754
 title: Missing semicolon
 description: >
-     The method call on line 70 of "actuator_control.cpp" is missing a
-     trailing semi-colon, thus preventing the program from compiling.
+  The method call on line 70 of "actuator_control.cpp" is missing a
+  trailing semi-colon, thus preventing the program from compiling.
 classification: Syntax Error (no CWE)
 keywords:
   - missing semicolon

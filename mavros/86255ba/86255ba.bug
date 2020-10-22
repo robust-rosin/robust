@@ -3,16 +3,16 @@
 id: 86255ba
 title: Retry counter isn't decremented, leading to infinite loop
 description: >
-     The "ParamPlugin" class is used to allow users to read and
-     manipulate parameter values. When an incorrect parameter index is
-     used to fetch the value of a parameter, the plugin reports a
-     warning to ROS and (should) decrement a retry counter. The retry
-     counter allows the user to attempt to fetch the value of a given
-     parameter up to three times in a row. When an access request
-     fails, the program will attempt to fetch the parameter until the
-     retry counter has expired. A bug in the code prevents the retry
-     counter from being decremented correctly, causing the plugin to
-     query the parameter value indefinitely.
+  The "ParamPlugin" class is used to allow users to read and
+  manipulate parameter values. When an incorrect parameter index is
+  used to fetch the value of a parameter, the plugin reports a
+  warning to ROS and (should) decrement a retry counter. The retry
+  counter allows the user to attempt to fetch the value of a given
+  parameter up to three times in a row. When an access request
+  fails, the program will attempt to fetch the parameter until the
+  retry counter has expired. A bug in the code prevents the retry
+  counter from being decremented correctly, causing the plugin to
+  query the parameter value indefinitely.
 classification: "CWE-835: Loop with Unreachable Exit Condition ('Infinite Loop')"
 keywords: []
 system: mavros

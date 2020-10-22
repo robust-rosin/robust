@@ -3,21 +3,21 @@
 id: c6791f0
 title: Missing parameter in ROS service call
 description: >
-     The "do_long" function in the "mavcmd" script accepts an object
-     that describes a MAVLink command.  Command objects are supplied
-     with seven arguments, which may be used or ignored by the command
-     handler depending on the type of command. The "do_long" function
-     dispatches this command object to the "mavros.command.long"
-     function. which forwards the command to MAVLink. Rather than
-     accepting positional arguments, the "mavros.command.long" accepts
-     all of its arguments as keywords. Missing keywords are assumed to
-     be irrelevant and substituted by a nominal placeholder value.
+  The "do_long" function in the "mavcmd" script accepts an object
+  that describes a MAVLink command.  Command objects are supplied
+  with seven arguments, which may be used or ignored by the command
+  handler depending on the type of command. The "do_long" function
+  dispatches this command object to the "mavros.command.long"
+  function. which forwards the command to MAVLink. Rather than
+  accepting positional arguments, the "mavros.command.long" accepts
+  all of its arguments as keywords. Missing keywords are assumed to
+  be irrelevant and substituted by a nominal placeholder value.
 
-     The buggy implementation of this function fails to pass along the
-     seventh argument during the call to "mavros.command.long",
-     causing incorrect information to be forwarded to MAVLink. This
-     bug will only manifest for commands which utilise all seven
-     arguments.
+  The buggy implementation of this function fails to pass along the
+  seventh argument during the call to "mavros.command.long",
+  causing incorrect information to be forwarded to MAVLink. This
+  bug will only manifest for commands which utilise all seven
+  arguments.
 classification: "CWE-628: Function Call with Incorrectly Specified Arguments"
 keywords:
   - missing argument

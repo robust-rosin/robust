@@ -3,13 +3,13 @@
 id: 84264f0
 title: Incorrect use of namespacing in ROS parameter names
 description: >
-     All ROS parameter interactions within
-     "mavros_extras/src/plugins/visualization.cpp" incorrectly prefix
-     the name of parameters with a "visualization" namespace. This
-     namespace is implicit, and so the fully qualified parameter that
-     result are incorrect. e.g., "visualization/fixed_frame_id"
-     becomes "/visualization/visualization/fixed_frame_id" when fully
-     qualified.
+  All ROS parameter interactions within
+  "mavros_extras/src/plugins/visualization.cpp" incorrectly prefix
+  the name of parameters with a "visualization" namespace. This
+  namespace is implicit, and so the fully qualified parameter that
+  result are incorrect. e.g., "visualization/fixed_frame_id"
+  becomes "/visualization/visualization/fixed_frame_id" when fully
+  qualified.
 classification: "Incorrect use of ROS namespacing (no CWE) #EVOLUTION"
 keywords:
   - API change

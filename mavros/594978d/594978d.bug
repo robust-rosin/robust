@@ -3,17 +3,17 @@
 id: 594978d
 title: Missing information in packet header. Fix during feature implementation.
 description: >
-     "mavlink_convert.h" is used to convert MAVROS messages to
-     MAVLink, and vice versa. The version of this function responsible
-     for converting from MAVROS to MAVLink failed to initialise the
-     "magic" attribute for the MAVLink message.
+  "mavlink_convert.h" is used to convert MAVROS messages to
+  MAVLink, and vice versa. The version of this function responsible
+  for converting from MAVROS to MAVLink failed to initialise the
+  "magic" attribute for the MAVLink message.
 
-     According to the MAVLink 2 packet format description, the "magic"
-     attribute is used as a protocol-specific start-of-text (STX) marker
-     that indicates the beginning of a new packet. If a recipient does not
-     understand the protocol version, it will skip the packet. The malformed
-     "magic" attribute could therefore lead to an unintended behaviour
-     where recipients ignore packets.
+  According to the MAVLink 2 packet format description, the "magic"
+  attribute is used as a protocol-specific start-of-text (STX) marker
+  that indicates the beginning of a new packet. If a recipient does not
+  understand the protocol version, it will skip the packet. The malformed
+  "magic" attribute could therefore lead to an unintended behaviour
+  where recipients ignore packets.
 classification: "CWE-456: Missing Initialization of a Variable #RESOURCE"
 keywords:
   - undefined field
