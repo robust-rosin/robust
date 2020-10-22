@@ -36,8 +36,10 @@ fix:
   hash: 0416c81e5d08466477c5806443a580a142d0d465
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp', 'kobuki_auto_docking/src/auto_docking_ros.cpp',
-    'kobuki_auto_docking/src/dock_drive.cpp']
+  fix-in:
+    - kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp
+    - kobuki_auto_docking/src/auto_docking_ros.cpp
+    - kobuki_auto_docking/src/dock_drive.cpp
   languages:
     - C++
   time: 2013-05-24 (07:28)

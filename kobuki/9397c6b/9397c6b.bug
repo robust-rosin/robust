@@ -15,7 +15,9 @@ classification: "CWE-125: Out-of-bounds Read"
 keywords: ['buffer', 'arrays']
 system: kobuki
 severity: error
-links: ['http://wiki.ros.org/ecl_formatters', 'http://wiki.ros.org/ecl_containers']
+links:
+  - http://wiki.ros.org/ecl_formatters
+  - http://wiki.ros.org/ecl_containers
 bug:
   phase: runtime
   specificity: general-issue
@@ -36,9 +38,12 @@ fix:
   hash: 9397c6b872cba3e894171507ef23f366fc968f3e
   pull-request: null
   license: ['BSD']
-  fix-in: ['ecl_containers/include/ecl/containers/push_and_pop/formatters.hpp', 'ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_dynamic.hpp',
-    'ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_fixed.hpp', 'ecl_containers/src/examples/formatters.cpp',
-    'ecl_containers/src/test/push_and_pop.cpp']
+  fix-in:
+    - ecl_containers/include/ecl/containers/push_and_pop/formatters.hpp
+    - ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_dynamic.hpp
+    - ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_fixed.hpp
+    - ecl_containers/src/examples/formatters.cpp
+    - ecl_containers/src/test/push_and_pop.cpp
   languages:
     - C++
   time: 2012-12-03 (03:20)

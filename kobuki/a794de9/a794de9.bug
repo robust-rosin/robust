@@ -11,7 +11,9 @@ classification: "CWE-617: Reachable Assertion Violation"
 keywords: ['eigen', 'bit-alignment', 'assertions', '32-bit']
 system: kobuki
 severity: error
-links: ['http://eigen.tuxfamily.org/index.php?title=Main_Page', 'http://eigen.tuxfamily.org/dox/TopicUnalignedArrayAssert.html']
+links:
+  - 'http://eigen.tuxfamily.org/index.php?title=Main_Page'
+  - 'http://eigen.tuxfamily.org/dox/TopicUnalignedArrayAssert.html'
 bug:
   phase: runtime
   specificity: general-issue
@@ -35,8 +37,10 @@ fix:
     | 936e46785de6ae1fc473ff670b07ab16016ab7ef
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_bumper2pc/include/kobuki_bumper2pc/kobuki_bumper2pc.hpp', 'kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp',
-    'kobuki_auto_docking/src/dock_drive.cpp']
+  fix-in:
+    - kobuki_bumper2pc/include/kobuki_bumper2pc/kobuki_bumper2pc.hpp
+    - kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp
+    - kobuki_auto_docking/src/dock_drive.cpp
   languages:
     - C++
   time: 2013-08-12 (09:03)

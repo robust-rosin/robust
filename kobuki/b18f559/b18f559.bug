@@ -34,8 +34,11 @@ fix:
   hash: b18f55910cc032f967b436b26710c01ec435291d
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp',
-    'kobuki_node/include/kobuki_node/kobuki_node.hpp', 'kobuki_node/src/nodelets/kobuki_node.cpp']
+  fix-in:
+    - kobuki_driver/include/kobuki_driver/kobuki.hpp
+    - kobuki_driver/src/driver/kobuki.cpp
+    - kobuki_node/include/kobuki_node/kobuki_node.hpp
+    - kobuki_node/src/nodelets/kobuki_node.cpp
   languages:
     - C++
   time: 2012-04-09 (06:34)

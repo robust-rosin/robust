@@ -33,8 +33,9 @@ fix:
   hash: null
   pull-request: 153
   license: ['BSD']
-  fix-in: ['motoman_driver/include/motoman_driver/industrial_robot_client/joint_trajectory_action.h',
-    'motoman_driver/src/industrial_robot_client/joint_trajectory_action.cpp']
+  fix-in:
+    - motoman_driver/include/motoman_driver/industrial_robot_client/joint_trajectory_action.h
+    - motoman_driver/src/industrial_robot_client/joint_trajectory_action.cpp
   languages:
     - C++
   time: 2017-03-07 (16:28)

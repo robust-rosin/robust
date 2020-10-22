@@ -31,9 +31,14 @@ fix:
   hash: a482f8268042aa8fae0e73970ed2af5dfd01e5df
   pull-request: https://github.com/ros-drivers/openni_launch/pull/3
   license: ['BSD']
-  fix-in: ['launch/includes/depth.launch', 'launch/includes/depth_registered.launch',
-    'launch/includes/ir.launch', 'launch/includes/manager.launch', 'launch/includes/processing.launch',
-    'launch/includes/rgb.launch', 'launch/openni.launch']
+  fix-in:
+    - launch/includes/depth.launch
+    - launch/includes/depth_registered.launch
+    - launch/includes/ir.launch
+    - launch/includes/manager.launch
+    - launch/includes/processing.launch
+    - launch/includes/rgb.launch
+    - launch/openni.launch
   languages:
     - Launch XML
   time: 2013-07-27 (02:39)

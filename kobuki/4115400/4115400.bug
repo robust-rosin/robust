@@ -8,10 +8,17 @@ description: >
   rotations would not.
   The underlying issue was that every robot instance was using the
   same IMU sensor, instead of each having its own.
-classification: "CWE-362: Concurrent Execution using Shared Resource with Improper\
-  \ Synchronization ('Race Condition') #RESOURCE"
-keywords: ['simulation', 'gazebo', 'imu', 'naming', 'threading', 'multithreading',
-  'concurrency']
+classification: >
+  CWE-362: Concurrent Execution using Shared Resource with Improper
+  Synchronization ('Race Condition') #RESOURCE
+keywords:
+  - simulation
+  - gazebo
+  - imu
+  - naming
+  - threading
+  - multithreading
+  - concurrency
 system: kobuki
 severity: error
 links: []
@@ -35,7 +42,8 @@ fix:
   hash: 4115400a5a9b88bf65bb97a5d44a9a2a695faa55
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/39
   license: ['BSD']
-  fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki_loads.cpp']
+  fix-in:
+    - kobuki_gazebo_plugins/src/gazebo_ros_kobuki_loads.cpp
   languages:
     - C++
   time: 2015-03-02 (08:03)

@@ -8,8 +8,9 @@ description: >
   It worked well for Kobuki due to chance: all read and write
   operations were in the same thread. But, due to the way it is
   built, it could have been an issue for other users.
-classification: "CWE-362: Concurrent Execution using Shared Resource with Improper\
-  \ Synchronization ('Race Condition') #RESOURCE"
+classification: >
+  CWE-362: Concurrent Execution using Shared Resource with
+  Improper Synchronization ('Race Condition') #RESOURCE
 keywords: ['concurrency', 'race condition', 'synchronization', 'threading']
 system: kobuki
 severity: bad-smell
@@ -35,8 +36,10 @@ fix:
   hash: 3c4c399a460b314152722de6b99804e138d68e88
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp',
-    'kobuki_node/src/library/kobuki_ros.cpp']
+  fix-in:
+    - kobuki_driver/include/kobuki_driver/kobuki.hpp
+    - kobuki_driver/src/driver/kobuki.cpp
+    - kobuki_node/src/library/kobuki_ros.cpp
   languages:
     - C++
   time: 2013-08-22 (09:40)

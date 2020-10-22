@@ -26,8 +26,10 @@ classification: |
 keywords: ['catkin', 'package.xml']
 system: universal_robot
 severity: error
-links: ['http://answers.ros.org/question/103191/in-ur5_driverdriverpy-importerror-no-module-named-beautifulsoup/',
-  'http://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python', 'http://wiki.ros.org/catkin/package.xml']
+links:
+  - http://answers.ros.org/question/103191/in-ur5_driverdriverpy-importerror-no-module-named-beautifulsoup/
+  - http://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python
+  - http://wiki.ros.org/catkin/package.xml
 bug:
   phase: startup
   specificity: ROS-specific

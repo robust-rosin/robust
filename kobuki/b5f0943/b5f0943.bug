@@ -44,14 +44,24 @@ fix:
     | 2fd8f8717e45604b06abf3df39e18b79a895f30c
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_node/include/kobuki_node/kobuki_ros.hpp', 'kobuki_node/launch/kobuki_node.launch',
-    'kobuki_node/launch/kobuki_nodelet.launch', 'kobuki_node/manifest.xml', 'kobuki_node/plugins/nodelet_plugins.xml',
-    'kobuki_node/src/CMakeLists.txt', 'kobuki_node/src/library/CMakeLists.txt', 'kobuki_node/src/library/diagnostics.cpp',
-    'kobuki_node/src/library/kobuki_ros.cpp', 'kobuki_node/src/library/odometry.cpp',
-    'kobuki_node/src/library/slot_callbacks.cpp', 'kobuki_node/src/library/subscriber_callbacks.cpp',
-    'kobuki_node/src/node/kobuki_node.cpp', 'kobuki_node/src/nodelet/CMakeLists.txt',
-    'kobuki_node/src/nodelet/kobuki_nodelet.cpp', 'kobuki_safety_controller/include/kobuki_safety_controller/safety_controller.hpp',
-    'kobuki_safety_controller/src/nodelet.cpp']
+  fix-in:
+    - kobuki_node/include/kobuki_node/kobuki_ros.hpp
+    - kobuki_node/launch/kobuki_node.launch
+    - kobuki_node/launch/kobuki_nodelet.launch
+    - kobuki_node/manifest.xml
+    - kobuki_node/plugins/nodelet_plugins.xml
+    - kobuki_node/src/CMakeLists.txt
+    - kobuki_node/src/library/CMakeLists.txt
+    - kobuki_node/src/library/diagnostics.cpp
+    - kobuki_node/src/library/kobuki_ros.cpp
+    - kobuki_node/src/library/odometry.cpp
+    - kobuki_node/src/library/slot_callbacks.cpp
+    - kobuki_node/src/library/subscriber_callbacks.cpp
+    - kobuki_node/src/node/kobuki_node.cpp
+    - kobuki_node/src/nodelet/CMakeLists.txt
+    - kobuki_node/src/nodelet/kobuki_nodelet.cpp
+    - kobuki_safety_controller/include/kobuki_safety_controller/safety_controller.hpp
+    - kobuki_safety_controller/src/nodelet.cpp
   languages:
     - C++
     - CMake

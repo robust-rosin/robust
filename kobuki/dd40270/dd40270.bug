@@ -21,7 +21,12 @@ description: >
   synchronously is concerning, because if a subscriber is not fast
   enough to receive the message, the publisher blocks.
 classification: "CWE-628: Function Call with Incorrectly Specified Arguments #EVOLUTION"
-keywords: ['missing arguments', 'rospy', 'publisher', 'subscriber', 'queue sizes']
+keywords:
+  - missing arguments
+  - rospy
+  - publisher
+  - subscriber
+  - queue sizes
 system: kobuki
 severity: warning
 links: ['http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers']
@@ -54,9 +59,13 @@ fix:
   hash: dd40270d17cdd3e1729437f0988c0acb6c622d5e
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_node/scripts/getOdom2D.py', 'kobuki_node/scripts/getYaw.py', 'kobuki_testsuite/src/kobuki_testsuite/drift_estimation.py',
-    'kobuki_testsuite/src/kobuki_testsuite/motion_rotate.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_travel_forward.py',
-    'kobuki_testsuite/src/kobuki_testsuite/motion_wander.py']
+  fix-in:
+    - kobuki_node/scripts/getOdom2D.py
+    - kobuki_node/scripts/getYaw.py
+    - kobuki_testsuite/src/kobuki_testsuite/drift_estimation.py
+    - kobuki_testsuite/src/kobuki_testsuite/motion_rotate.py
+    - kobuki_testsuite/src/kobuki_testsuite/motion_travel_forward.py
+    - kobuki_testsuite/src/kobuki_testsuite/motion_wander.py
   languages:
     - Python
   time: 2014-08-11 (06:13)

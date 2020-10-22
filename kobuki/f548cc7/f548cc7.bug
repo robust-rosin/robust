@@ -37,7 +37,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/180
   time-reported: 2012-11-27T15:21:53Z
   reproducibility: always
-  trace: |
+  trace: >
     [FATAL] [1354029622.148262110]: ASSERTION FAILED
         file = /opt/ros/groovy/include/ros/publisher.h
         line = 69
@@ -51,8 +51,11 @@ fix:
   hash: f548cc73fb2959c7ceb6ab1c7f5a973bf95e5594
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_keyop/include/keyop_core/keyop_core.hpp', 'kobuki_keyop/manifest.xml',
-    'kobuki_keyop/src/keyop_core.cpp', 'kobuki_keyop/src/main.cpp']
+  fix-in:
+    - kobuki_keyop/include/keyop_core/keyop_core.hpp
+    - kobuki_keyop/manifest.xml
+    - kobuki_keyop/src/keyop_core.cpp
+    - kobuki_keyop/src/main.cpp
   languages:
     - C++
     - Package XML

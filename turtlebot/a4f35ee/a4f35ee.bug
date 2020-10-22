@@ -50,8 +50,10 @@ fix:
   pull-request: https://github.com/robotics-in-concert/rocon_app_platform/pull/270
     | https://github.com/ros-infrastructure/rospkg/pull/78
   license: ['BSD']
-  fix-in: ['rocon_app_manager/src/rocon_app_manager/rapp_manager.py', 'src/rospkg/os_detect.py',
-    'src/rosdep2/platforms/debian.py']
+  fix-in:
+    - rocon_app_manager/src/rocon_app_manager/rapp_manager.py
+    - src/rospkg/os_detect.py
+    - src/rosdep2/platforms/debian.py
   languages:
     - Python
   time: 2015-01-22 (23:52)
