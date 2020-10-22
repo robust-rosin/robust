@@ -3,13 +3,13 @@
 id: 3c7cc54
 title: Validation of user input to EGM
 description: >
-     When communicating with the robot controller using Externally
-     Guided Motion, then it is wise to always fill out the messages
-     with data. E.g. if an EGM motion has been ordered for all axes,
-     then data should be provided for all axes. If the user only set
-     values for the first axis, then it is a good idea to fill out the
-     remaining axes with the feedback values received from the robot
-     controller.
+  When communicating with the robot controller using Externally
+  Guided Motion, then it is wise to always fill out the messages
+  with data. E.g. if an EGM motion has been ordered for all axes,
+  then data should be provided for all axes. If the user only set
+  values for the first axis, then it is a good idea to fill out the
+  remaining axes with the feedback values received from the robot
+  controller.
 classification: >
   CWE-20: Improper Input Validation
   internal classification (cause): incorrect validation of user input
@@ -17,7 +17,7 @@ classification: >
 keywords: ['input', 'validation', 'EGM']
 system: confidential
 severity: bad-smell
-links:
+links: null
 bug:
   phase: runtime
   specificity: application specific
@@ -32,7 +32,7 @@ bug:
   issue: null
   time-reported: 2015-10-06 (14:01)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repository: CONFIDENTIAL
   hash: null

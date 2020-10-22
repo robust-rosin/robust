@@ -3,13 +3,13 @@
 id: e9e7fd8
 title: Double deallocation of data
 description: >
-     If a base class A has a vector containing smart pointers to an
-     abstract class B, and then a class AA (inheriting from A) has
-     data objects of a class BB (inheriting from B). And if pointers
-     to AA's data objects are put into the vector, then during
-     destruction of AA the data objects will be destructed twice which
-     cause an exception. A solution is replace the vectors elements to
-     be raw pointers instead of smart pointers.
+  If a base class A has a vector containing smart pointers to an
+  abstract class B, and then a class AA (inheriting from A) has
+  data objects of a class BB (inheriting from B). And if pointers
+  to AA's data objects are put into the vector, then during
+  destruction of AA the data objects will be destructed twice which
+  cause an exception. A solution is replace the vectors elements to
+  be raw pointers instead of smart pointers.
 classification: >
   CWE-664: Improper Control of a Resource Through its Lifetime #RESOURCE
   internal classification (cause): incorrect deallocation of data
@@ -17,7 +17,7 @@ classification: >
 keywords: ['deallocation']
 system: confidential
 severity: error
-links:
+links: null
 bug:
   phase: runtime
   specificity: application specific

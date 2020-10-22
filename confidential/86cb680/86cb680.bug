@@ -3,14 +3,14 @@
 id: 86cb680
 title: Possibly inconclusive result when asking for RWS data
 description: >
-     When using Robot Web Services (RWS) to ask the robot controller
-     if a certain condition is true or false, then the current
-     solution report false for all cases except when the data was
-     received correctly and parsed to true. E.g. a network failure
-     would mean that the condition is reported as false. In such cases
-     it is more prudent to report the condition as unknown. This can
-     be done by using a tri state Boolean as output instead of a
-     normal bool.
+  When using Robot Web Services (RWS) to ask the robot controller
+  if a certain condition is true or false, then the current
+  solution report false for all cases except when the data was
+  received correctly and parsed to true. E.g. a network failure
+  would mean that the condition is reported as false. In such cases
+  it is more prudent to report the condition as unknown. This can
+  be done by using a tri state Boolean as output instead of a
+  normal bool.
 classification: >
   Incorrect Data Parsing (no CWE)
   internal classification (cause): inconclusive result if e.g. communication failure
@@ -33,7 +33,7 @@ bug:
   issue: null
   time-reported: 2017-06-28 (13:52)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repository: CONFIDENTIAL
   hash: null
