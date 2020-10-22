@@ -3,28 +3,28 @@
 id: 62a38a9
 title: Unclean termination leads to exceptions and segmentation faults
 description: >
-     When an interrupt signal is issued (Ctrl+C), termination code
-     should ensure a clean program exit.
-     It was found that some threads outlived the termination code, and
-     kept running normally. With the system in an unstable state (half
-     terminated, half running), the program ended in a crash, by
-     raising exceptions or segmentation faults.
-     The reported issue was closed once, with the assignee stating
-     that he had found a fix by accident (with no referenced
-     commit). It was then reopened, because the bug still persisted
-     and manifested less often.
-     The fix involved a complete rework of the way threads and
-     concurrent code were handled. The initial implementation used
-     ecl::Threadable, while the new solution uses a plain
-     ecl::Thread. The new solution still uses Boolean flags to
-     communicate between threads, but now the main thread uses `join`
-     to wait for the worker thread to finish (also synchronizing
-     memory).
-     In the initial implementation there seems to be no mechanism in
-     place to synchronize both threads, which could be the cause for
-     the worker thread to remain unaware of termination. With this in
-     mind, "Race Condition within a Thread (CWE-366)" is applicable,
-     but we will classify the bug in terms of its visible effect.
+  When an interrupt signal is issued (Ctrl+C), termination code
+  should ensure a clean program exit.
+  It was found that some threads outlived the termination code, and
+  kept running normally. With the system in an unstable state (half
+  terminated, half running), the program ended in a crash, by
+  raising exceptions or segmentation faults.
+  The reported issue was closed once, with the assignee stating
+  that he had found a fix by accident (with no referenced
+  commit). It was then reopened, because the bug still persisted
+  and manifested less often.
+  The fix involved a complete rework of the way threads and
+  concurrent code were handled. The initial implementation used
+  ecl::Threadable, while the new solution uses a plain
+  ecl::Thread. The new solution still uses Boolean flags to
+  communicate between threads, but now the main thread uses `join`
+  to wait for the worker thread to finish (also synchronizing
+  memory).
+  In the initial implementation there seems to be no mechanism in
+  place to synchronize both threads, which could be the cause for
+  the worker thread to remain unaware of termination. With this in
+  mind, "Race Condition within a Thread (CWE-366)" is applicable,
+  but we will classify the bug in terms of its visible effect.
 classification: "CWE-672: Operation on a Resource after Expiration or Release #RESOURCE"
 keywords: ['thread-safety', 'concurrency', 'termination']
 system: kobuki

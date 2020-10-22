@@ -3,17 +3,17 @@
 id: af7946f
 title: Incorrect Motion for Certain Values
 description: >
-     Kobuki's differential drive had problems dealing with low
-     negative linear velocities and rotation commands. The robot would
-     move very slowly and turn in the wrong direction.
-     It seems to be a calculation problem (logical error), when
-     converting from the input commands to the output speeds that the
-     firmware understands.
+  Kobuki's differential drive had problems dealing with low
+  negative linear velocities and rotation commands. The robot would
+  move very slowly and turn in the wrong direction.
+  It seems to be a calculation problem (logical error), when
+  converting from the input commands to the output speeds that the
+  firmware understands.
 classification: "CWE-682: Incorrect Calculation #PHYSICAL"
 keywords: ['motion', 'differential drive', 'driver']
 system: kobuki
 severity: error
-links:
+links: null
 bug:
   phase: runtime
   specificity: robotics-specific
@@ -28,7 +28,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/113
   time-reported: 2012-05-17T10:24:41Z
   reproducibility: sometimes
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: af7946f9b5a5a8536c5df6cbefc83b6020d38dd0

@@ -3,23 +3,23 @@
 id: 841720a
 title: Robot Reports Full Battery Before Charging It
 description: >
-     Just after connecting to the power adapter the robot would send a
-     "battery charged" signal, and only after would it transition to
-     the appropriate "charging" state.
-     The issue is not in the ROS code, but in the firmware of the robot
-     controller.
-     The ROS side seems to be doing everything correctly, and the fix
-     commit introduces new functionality that seems correct, but just
-     appears to be malfunctioning as it essentially implements a 1-to-1
-     transformation between robot internal state and a ROS message. As
-     the robot's internal state is incorrectly being represented/reported
-     by the robot controller's firmware, the ROS code produces seemingly
-     "incorrect" messages (but they really aren't).
+  Just after connecting to the power adapter the robot would send a
+  "battery charged" signal, and only after would it transition to
+  the appropriate "charging" state.
+  The issue is not in the ROS code, but in the firmware of the robot
+  controller.
+  The ROS side seems to be doing everything correctly, and the fix
+  commit introduces new functionality that seems correct, but just
+  appears to be malfunctioning as it essentially implements a 1-to-1
+  transformation between robot internal state and a ROS message. As
+  the robot's internal state is incorrectly being represented/reported
+  by the robot controller's firmware, the ROS code produces seemingly
+  "incorrect" messages (but they really aren't).
 classification: "CWE-393: Return of Wrong Status Code"
 keywords: ['battery', 'power', 'driver', 'charging']
 system: kobuki
 severity: minor-issue
-links:
+links: null
 bug:
   phase: runtime
   specificity: robotics-specific
@@ -34,13 +34,15 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/137
   time-reported: 2012-06-20T04:35:39Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 841720ab97e442a11ae30b7abdbef07150e56c97
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_comms/msg/PowerSystemEvent.msg', 'kobuki_driver/include/kobuki_driver/event_manager.hpp', 'kobuki_driver/src/driver/event_manager.cpp', 'kobuki_node/include/kobuki_node/kobuki_node.hpp', 'kobuki_node/src/node/kobuki_node.cpp', 'kobuki_node/src/node/slot_callbacks.cpp']
+  fix-in: ['kobuki_comms/msg/PowerSystemEvent.msg', 'kobuki_driver/include/kobuki_driver/event_manager.hpp',
+    'kobuki_driver/src/driver/event_manager.cpp', 'kobuki_node/include/kobuki_node/kobuki_node.hpp',
+    'kobuki_node/src/node/kobuki_node.cpp', 'kobuki_node/src/node/slot_callbacks.cpp']
   languages:
     - C++
     - ROS Message

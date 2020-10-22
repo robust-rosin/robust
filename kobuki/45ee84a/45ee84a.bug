@@ -3,9 +3,9 @@
 id: 45ee84a
 title: Exporting Non-Existent Libraries
 description: >
-     A CMake file was declaring a couple libraries as being part of
-     the Kobuki driver package, but it was actually a copy and paste
-     mistake.
+  A CMake file was declaring a couple libraries as being part of
+  the Kobuki driver package, but it was actually a copy and paste
+  mistake.
 classification: Exporting Non-Existent Libraries (no CWE)
 keywords: ['CMake', 'libraries', 'package']
 system: kobuki
@@ -28,13 +28,13 @@ bug:
   reproducibility: always
   trace: ""
   reproduction: >
-        Building the rosinstall file and the Docker container did not
-        run into any issues. However, running the test scripts within
-        the container did manifest a bug that was not the expected one.
-        This is likely due to a missing dependency when building the
-        Docker container.
-        Following the issue at:
-        https://github.com/robust-rosin/robust/issues/144
+    Building the rosinstall file and the Docker container did not
+    run into any issues. However, running the test scripts within
+    the container did manifest a bug that was not the expected one.
+    This is likely due to a missing dependency when building the
+    Docker container.
+    Following the issue at:
+    https://github.com/robust-rosin/robust/issues/144
 fix:
   repo: https://github.com/yujinrobot/kobuki_core
   hash: 45ee84aa1e920b26f8191763e20c10c5806ead60

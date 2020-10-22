@@ -3,9 +3,9 @@
 id: f95c384
 title: Circular Package Dependencies Cause Build to Fail
 description: >
-     Two packages, `kobuki_node` and `kobuki_capabilities` had launch
-     files with dependencies on the other package, causing a circular
-     dependency. This led to failure of the build process.
+  Two packages, `kobuki_node` and `kobuki_capabilities` had launch
+  files with dependencies on the other package, causing a circular
+  dependency. This led to failure of the build process.
 classification: Circular Dependencies (no CWE)
 keywords: ['dependencies', 'packages', 'build']
 system: kobuki

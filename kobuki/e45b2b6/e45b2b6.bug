@@ -3,11 +3,11 @@
 id: e45b2b6
 title: Node Starts Normally Even When Robot Is Turned Off
 description: >
-     The Kobuki driver's node started normally even when the robot
-     base was turned off. There was no indication of this, not even a
-     warning.
-     A watchdog was added to keep track of whether data is being
-     received through the serial cable within a time limit.
+  The Kobuki driver's node started normally even when the robot
+  base was turned off. There was no indication of this, not even a
+  warning.
+  A watchdog was added to keep track of whether data is being
+  received through the serial cable within a time limit.
 classification: "Dangerous behavior: operation during off (no CWE) #PHYSICAL"
 keywords: ['watchdog', 'power', 'driver']
 system: kobuki
@@ -27,7 +27,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/73
   time-reported: 2012-04-16T05:41:17Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: e45b2b6a02152021764f3ca9d8d0ed17084c3bcd

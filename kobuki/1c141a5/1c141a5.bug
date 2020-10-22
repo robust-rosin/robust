@@ -3,13 +3,13 @@
 id: 1c141a5
 title: Unexpected Movement Due to Wrong Calculation
 description: >
-     Kobuki moves using differential drive. Originally, the command
-     velocities (linear and angular) were provided as `short`, and
-     were converted to `short` after each step, even though the
-     calculations yielded floating point numbers.
-     This lead to calculation errors in some special cases, where the
-     robot was supposed to move forward but ended up moving backwards
-     instead.
+  Kobuki moves using differential drive. Originally, the command
+  velocities (linear and angular) were provided as `short`, and
+  were converted to `short` after each step, even though the
+  calculations yielded floating point numbers.
+  This lead to calculation errors in some special cases, where the
+  robot was supposed to move forward but ended up moving backwards
+  instead.
 classification: "CWE-704: Incorrect Type Conversion or Cast #PHYSICAL"
 keywords: ['differential drive', 'rounding', 'driver', 'movement']
 system: kobuki
@@ -30,7 +30,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/246
   time-reported: 2013-04-05T09:27:36Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 1c141a54fb2c0e2ec453b32f8026d1cd0ffb14d9

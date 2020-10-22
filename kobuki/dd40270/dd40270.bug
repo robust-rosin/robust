@@ -3,23 +3,23 @@
 id: dd40270
 title: Missing Queue Sizes for Some Publishers
 description: >
-     When publishing or subscribing to a topic in ROS, the developer
-     often declares a queue size to be associated with that
-     publisher/subscriber.  The queues store messages temporarily, if
-     the system is not fast enough to process every message before a
-     new one arrives.
-     In older versions of ROS, declaring the queue size was not
-     mandatory when using the Python client libraries. As of ROS
-     Indigo, this was kept optional for backward compatibility, but a
-     warning is issued.  Not specifying the queue size is a problem
-     because it changes the behaviour of the publisher, which might
-     not be expected.
-     When a queue size is not specified, publishing a message is done
-     synchronously. On the other hand, if a queue size is specified,
-     publishing a message is done asynchronously, which is more in
-     line with the behaviour of the C++ libraries. Publishing
-     synchronously is concerning, because if a subscriber is not fast
-     enough to receive the message, the publisher blocks.
+  When publishing or subscribing to a topic in ROS, the developer
+  often declares a queue size to be associated with that
+  publisher/subscriber.  The queues store messages temporarily, if
+  the system is not fast enough to process every message before a
+  new one arrives.
+  In older versions of ROS, declaring the queue size was not
+  mandatory when using the Python client libraries. As of ROS
+  Indigo, this was kept optional for backward compatibility, but a
+  warning is issued.  Not specifying the queue size is a problem
+  because it changes the behaviour of the publisher, which might
+  not be expected.
+  When a queue size is not specified, publishing a message is done
+  synchronously. On the other hand, if a queue size is specified,
+  publishing a message is done asynchronously, which is more in
+  line with the behaviour of the C++ libraries. Publishing
+  synchronously is concerning, because if a subscriber is not fast
+  enough to receive the message, the publisher blocks.
 classification: "CWE-628: Function Call with Incorrectly Specified Arguments #EVOLUTION"
 keywords: ['missing arguments', 'rospy', 'publisher', 'subscriber', 'queue sizes']
 system: kobuki
@@ -54,7 +54,9 @@ fix:
   hash: dd40270d17cdd3e1729437f0988c0acb6c622d5e
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_node/scripts/getOdom2D.py', 'kobuki_node/scripts/getYaw.py', 'kobuki_testsuite/src/kobuki_testsuite/drift_estimation.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_rotate.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_travel_forward.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_wander.py']
+  fix-in: ['kobuki_node/scripts/getOdom2D.py', 'kobuki_node/scripts/getYaw.py', 'kobuki_testsuite/src/kobuki_testsuite/drift_estimation.py',
+    'kobuki_testsuite/src/kobuki_testsuite/motion_rotate.py', 'kobuki_testsuite/src/kobuki_testsuite/motion_travel_forward.py',
+    'kobuki_testsuite/src/kobuki_testsuite/motion_wander.py']
   languages:
     - Python
   time: 2014-08-11 (06:13)

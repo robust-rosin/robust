@@ -3,20 +3,20 @@
 id: f548cc7
 title: Teleoperation Nodelet Crashing on Keyboard Input
 description: >
-     The Kobuki keyboard teleoperation nodelet, `kobuki_keyop`,
-     crashed under two scenarios:
-     1. when Ctrl+C was pressed during execution and the driver
-     nodelet was not running;
-     2. when any key was pressed during initialization.
-     When this abrupt termination occurred, it also had side effects
-     on the formatting of that terminal's output.
-     The main issue for (1) was a lack of exception handlers to handle
-     the interrupt signals during sleeps.
-     Regarding (2), the thread that processes keyboard input was being
-     spawned before all initialization operations were performed,
-     leading to manipulation of uninitialized state if there was
-     premature input to process. The fix also places thread start at
-     the right time.
+  The Kobuki keyboard teleoperation nodelet, `kobuki_keyop`,
+  crashed under two scenarios:
+  1. when Ctrl+C was pressed during execution and the driver
+  nodelet was not running;
+  2. when any key was pressed during initialization.
+  When this abrupt termination occurred, it also had side effects
+  on the formatting of that terminal's output.
+  The main issue for (1) was a lack of exception handlers to handle
+  the interrupt signals during sleeps.
+  Regarding (2), the thread that processes keyboard input was being
+  spawned before all initialization operations were performed,
+  leading to manipulation of uninitialized state if there was
+  premature input to process. The fix also places thread start at
+  the right time.
 classification: "CWE-248: Uncaught Exception"
 keywords: ['teleop', 'exceptions', 'interrupt']
 system: kobuki
@@ -51,7 +51,8 @@ fix:
   hash: f548cc73fb2959c7ceb6ab1c7f5a973bf95e5594
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_keyop/include/keyop_core/keyop_core.hpp', 'kobuki_keyop/manifest.xml', 'kobuki_keyop/src/keyop_core.cpp', 'kobuki_keyop/src/main.cpp']
+  fix-in: ['kobuki_keyop/include/keyop_core/keyop_core.hpp', 'kobuki_keyop/manifest.xml',
+    'kobuki_keyop/src/keyop_core.cpp', 'kobuki_keyop/src/main.cpp']
   languages:
     - C++
     - Package XML

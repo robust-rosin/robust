@@ -3,11 +3,11 @@
 id: e964bbb
 title: Calculation Error Inverts Turning Direction
 description: >
-     Due to an error in velocity calculations, when Kobuki was issued
-     a very low negative linear speed (very slow backwards movement),
-     it would also inadvertently invert its turning direction. That
-     is, if it was supposed to move backwards while turning left, it
-     would move backwards and turn right instead.
+  Due to an error in velocity calculations, when Kobuki was issued
+  a very low negative linear speed (very slow backwards movement),
+  it would also inadvertently invert its turning direction. That
+  is, if it was supposed to move backwards while turning left, it
+  would move backwards and turn right instead.
 classification: "CWE-682: Incorrect Calculation #PHYSICAL"
 keywords: ['differential drive', 'velocity', 'driver', 'movement']
 system: kobuki
@@ -34,7 +34,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/227
   time-reported: 2013-02-22T09:09:21Z
   reproducibility: always
-  trace: N/A
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: e964bbb8700fb1a9b95c0cfe5a44d43321294d4f

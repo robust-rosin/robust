@@ -3,12 +3,13 @@
 id: 3c4c399
 title: Possible Race Condition When Accessing Sensor Data
 description: >
-     Sensor data could potentially be accessed in multi-threaded
-     contexts, but there were no synchronization mechanisms in place.
-     It worked well for Kobuki due to chance: all read and write
-     operations were in the same thread. But, due to the way it is
-     built, it could have been an issue for other users.
-classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
+  Sensor data could potentially be accessed in multi-threaded
+  contexts, but there were no synchronization mechanisms in place.
+  It worked well for Kobuki due to chance: all read and write
+  operations were in the same thread. But, due to the way it is
+  built, it could have been an issue for other users.
+classification: "CWE-362: Concurrent Execution using Shared Resource with Improper\
+  \ Synchronization ('Race Condition') #RESOURCE"
 keywords: ['concurrency', 'race condition', 'synchronization', 'threading']
 system: kobuki
 severity: bad-smell
@@ -28,13 +29,14 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/240
   time-reported: 2013-02-28T07:50:34Z
   reproducibility: rare
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 3c4c399a460b314152722de6b99804e138d68e88
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp', 'kobuki_node/src/library/kobuki_ros.cpp']
+  fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp',
+    'kobuki_node/src/library/kobuki_ros.cpp']
   languages:
     - C++
   time: 2013-08-22 (09:40)

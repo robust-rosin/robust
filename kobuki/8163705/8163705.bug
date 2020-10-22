@@ -3,10 +3,10 @@
 id: 8163705
 title: Use of Error Stream Instead of Debug Stream
 description: >
-     The developers were printing out the message for a caught
-     exception in the ROS error stream, instead of using the debug
-     stream. This lead others to believe an actual error was
-     occurring, when the problem was in truth handled.
+  The developers were printing out the message for a caught
+  exception in the ROS error stream, instead of using the debug
+  stream. This lead others to believe an actual error was
+  occurring, when the problem was in truth handled.
 classification: "CWE-703: Improper Check or Handling of Exceptional Conditions"
 keywords: ['exceptions', 'debug', 'logging']
 system: kobuki
@@ -27,7 +27,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/178
   time-reported: 2012-11-27T15:13:11Z
   reproducibility: sometimes
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 816370545bf199f03e6259443861226b9701775e

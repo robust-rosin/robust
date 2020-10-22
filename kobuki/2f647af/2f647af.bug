@@ -3,26 +3,26 @@
 id: 2f647af
 title: Odometry Could Not Be Reset
 description: >
-     Odometry is the use of data from motion sensors to estimate
-     change in position over time. The Kobuki driver has a function
-     that is supposed to reset the odometry (bringing its position and
-     rotation estimates back to zero). In this case, calling this
-     function would not reset rotation at all, and the position would
-     keep an offset.
-     The cause for this bug is that IMU readings (for rotation) cannot
-     be reset, and thus an offset had to be subtracted for every
-     reading, after reset is called. Resetting the encoder readings
-     (for position) is possible, but the observed offset came from
-     accumulators that remained in another node, `robot_pose_ekf`.
-     The Robot Pose EKF is used to estimate the 3D pose of a robot,
-     based on (partial) pose measurements coming from different
-     sources.  It uses an extended Kalman filter to combine various
-     measurements.  The basic idea is to offer loosely coupled
-     integration with different sensors, where sensor signals are
-     received as ROS messages.
-     Since `robot_pose_ekf` was not needed for Kobuki to provide
-     correct odometry, the final solution also removed it from the
-     launch sequences.
+  Odometry is the use of data from motion sensors to estimate
+  change in position over time. The Kobuki driver has a function
+  that is supposed to reset the odometry (bringing its position and
+  rotation estimates back to zero). In this case, calling this
+  function would not reset rotation at all, and the position would
+  keep an offset.
+  The cause for this bug is that IMU readings (for rotation) cannot
+  be reset, and thus an offset had to be subtracted for every
+  reading, after reset is called. Resetting the encoder readings
+  (for position) is possible, but the observed offset came from
+  accumulators that remained in another node, `robot_pose_ekf`.
+  The Robot Pose EKF is used to estimate the 3D pose of a robot,
+  based on (partial) pose measurements coming from different
+  sources.  It uses an extended Kalman filter to combine various
+  measurements.  The basic idea is to offer loosely coupled
+  integration with different sensors, where sensor signals are
+  received as ROS messages.
+  Since `robot_pose_ekf` was not needed for Kobuki to provide
+  correct odometry, the final solution also removed it from the
+  launch sequences.
 classification: "CWE-682: Incorrect Calculation #PHYSICAL"
 keywords: ['sensors', 'imu', 'encoders', 'odometry', 'ekf']
 system: kobuki
@@ -43,10 +43,11 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/274
   time-reported: 2013-06-28T00:26:50Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
-  hash: 2f647af053c451e4248d7741c542f63511eee45e | a174dbbb9375d22828b0d7f4f41b7265978845c0 | 9c4835ad5b2eb3a4945f57076501b7699057ec66
+  hash: 2f647af053c451e4248d7741c542f63511eee45e | a174dbbb9375d22828b0d7f4f41b7265978845c0
+    | 9c4835ad5b2eb3a4945f57076501b7699057ec66
   pull-request: null
   license: ['BSD']
   fix-in:

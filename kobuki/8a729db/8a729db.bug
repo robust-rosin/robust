@@ -3,30 +3,31 @@
 id: 8a729db
 title: Outdated parameter file
 description: >
-     The Kobuki (Turtlebot) robot has a graphical tool (Kobuki
-     Dashboard) that shows the status of the various components of the
-     robot and allows access to basic functionalities
-     (e.g. LEDs). This tool runs as a ROS node that subscribes to the
-     diagnostics aggregator node
-     (ros/diagnostics/diagnostic_aggregator/aggregator_node).
-     The diagnostics aggregator consumes a series of parameters from
-     the ROS parameter server, in order to know which diagnostics to
-     aggregate, how to process them and how to output them. Said
-     parameters are initialized from a parameter file in YAML
-     syntax. One of the parameters, `remove_prefix` represents a
-     prefix that should be present in the names of incoming
-     diagnostics sources. If there is no match, the diagnostics are
-     not processed.
-     This bug manifested because the parameter file used an old prefix
-     that had not been changed. As a result, diagnostics were not
-     being processed, and not shown in the dashboard. The fix is to
-     simply change the values of `remove_prefix` in the parameter file
-     to the correct ones.
+  The Kobuki (Turtlebot) robot has a graphical tool (Kobuki
+  Dashboard) that shows the status of the various components of the
+  robot and allows access to basic functionalities
+  (e.g. LEDs). This tool runs as a ROS node that subscribes to the
+  diagnostics aggregator node
+  (ros/diagnostics/diagnostic_aggregator/aggregator_node).
+  The diagnostics aggregator consumes a series of parameters from
+  the ROS parameter server, in order to know which diagnostics to
+  aggregate, how to process them and how to output them. Said
+  parameters are initialized from a parameter file in YAML
+  syntax. One of the parameters, `remove_prefix` represents a
+  prefix that should be present in the names of incoming
+  diagnostics sources. If there is no match, the diagnostics are
+  not processed.
+  This bug manifested because the parameter file used an old prefix
+  that had not been changed. As a result, diagnostics were not
+  being processed, and not shown in the dashboard. The fix is to
+  simply change the values of `remove_prefix` in the parameter file
+  to the correct ones.
 classification: "Inconsistent naming (no CWE) #EVOLUTION: CWE-439"
 keywords: ['parameter', 'rosparam', 'yaml']
 system: kobuki
 severity: error
-links: ['http://wiki.ros.org/kobuki_dashboard', 'http://wiki.ros.org/diagnostic_aggregator', 'http://wiki.ros.org/Parameter%20Server', 'http://wiki.ros.org/rosparam']
+links: ['http://wiki.ros.org/kobuki_dashboard', 'http://wiki.ros.org/diagnostic_aggregator',
+  'http://wiki.ros.org/Parameter%20Server', 'http://wiki.ros.org/rosparam']
 bug:
   phase: startup
   specificity: ROS-specific

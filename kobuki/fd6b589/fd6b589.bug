@@ -3,9 +3,9 @@
 id: fd6b589
 title: Wrong Metapackage Dependencies
 description: >
-     Kobuki metapackages were declaring a list of dependencies
-     (children) that did not correspond to the actual list of children
-     they grouped.
+  Kobuki metapackages were declaring a list of dependencies
+  (children) that did not correspond to the actual list of children
+  they grouped.
 classification: Wrong Dependencies (no CWE)
 keywords: ['metapackage', 'package', 'dependencies']
 system: kobuki
@@ -26,7 +26,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki_core/issues/2
   time-reported: 2013-08-31T02:02:52Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki_core | https://github.com/yujinrobot/kobuki
   hash: fd6b589ccba8ed8531c66a806cb755074207a4c2 | 710e62408a0c6934e423411b9ae914fb26a3be49

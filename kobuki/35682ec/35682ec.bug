@@ -3,25 +3,25 @@
 id: 35682ec
 title: Wrong topic remapping makes robot ignore velocity commands
 description: >
-     ROS allows resource names to be remapped. Topics, in particular,
-     are resources that can be remapped. When topic "A" is remapped to
-     "B" and a node tries to publish/subscribe on "A", it will
-     (automatically) publish/subscribe to "B" instead.
-     Remappings are commonly defined in launch files. Launch files are
-     special XML files used by the tool `roslaunch` to initialize
-     several nodes, parameters and remappings at once.
-     In this particular bug, a node (cmd_vel_mux) publishes velocity
-     messages that are received by the driver node (mobile_base). A
-     launch file defined a remapping from "cmd_vel_mux/mux_cmd_vel" to
-     "mobile_base/commands/velocity", but the cmd_vel_mux node is, in
-     fact, publishing on "cmd_vel_mux/output". Since the node is
-     publishing on a different topic, the remapping has no effect, and
-     so the two expected topic names are not connected. The end result
-     is that the published messages never reach their destination,
-     i.e., the robot does not move at all.
-     This issue is very specific to ROS, as it is located and solved
-     in launch.xml files, but the issue of a runtime configuration of
-     a distributed system is general, in principle.
+  ROS allows resource names to be remapped. Topics, in particular,
+  are resources that can be remapped. When topic "A" is remapped to
+  "B" and a node tries to publish/subscribe on "A", it will
+  (automatically) publish/subscribe to "B" instead.
+  Remappings are commonly defined in launch files. Launch files are
+  special XML files used by the tool `roslaunch` to initialize
+  several nodes, parameters and remappings at once.
+  In this particular bug, a node (cmd_vel_mux) publishes velocity
+  messages that are received by the driver node (mobile_base). A
+  launch file defined a remapping from "cmd_vel_mux/mux_cmd_vel" to
+  "mobile_base/commands/velocity", but the cmd_vel_mux node is, in
+  fact, publishing on "cmd_vel_mux/output". Since the node is
+  publishing on a different topic, the remapping has no effect, and
+  so the two expected topic names are not connected. The end result
+  is that the published messages never reach their destination,
+  i.e., the robot does not move at all.
+  This issue is very specific to ROS, as it is located and solved
+  in launch.xml files, but the issue of a runtime configuration of
+  a distributed system is general, in principle.
 classification: Wrong Remappings (no CWE)
 keywords: ['remapping', 'topic', 'launch', 'architecture configuration']
 system: kobuki

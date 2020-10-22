@@ -3,11 +3,12 @@
 id: 03660af
 title: Potential Race Condition on Serial Writes
 description: >
-     The Kobuki driver communicates with the actual robot by sending
-     commands over a serial cable. This interface was not protected
-     against concurrent accesses, while being used in an environment
-     that, more often that not, features multithreading.
-classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
+  The Kobuki driver communicates with the actual robot by sending
+  commands over a serial cable. This interface was not protected
+  against concurrent accesses, while being used in an environment
+  that, more often that not, features multithreading.
+classification: "CWE-362: Concurrent Execution using Shared Resource with Improper\
+  \ Synchronization ('Race Condition') #RESOURCE"
 keywords: ['multithreading', 'concurrency', 'race condition', 'driver', 'serial']
 system: kobuki
 severity: bad-smell
@@ -27,7 +28,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/125
   time-reported: 2012-06-04T04:54:19Z
   reproducibility: rare
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 03660afb5917366cc6d57567e2f695450fd95feb

@@ -3,8 +3,8 @@
 id: 55e84a6
 title: API Change Causes Incompatibility
 description: >
-     The ROS rqt_plot tool was updated and its API changed, causing
-     incompatibility problems in Kobuki's test suite.
+  The ROS rqt_plot tool was updated and its API changed, causing
+  incompatibility problems in Kobuki's test suite.
 classification: API Incompatibility (no CWE) #EVOLUTION
 keywords: ['rqt', 'api', 'incompatibility', 'plot']
 system: kobuki
@@ -53,10 +53,12 @@ bug:
     AttributeError: 'FullSizeDataPlot' object has no attribute 'autoscroll'
 fix:
   repo: https://github.com/yujinrobot/kobuki_desktop
-  hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed | 6df4bd7e92aea5cf3696b20861fca0ed413ece6e | 55e84a61e50d23be20f1d7abb4018a635370bff4
+  hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed | 6df4bd7e92aea5cf3696b20861fca0ed413ece6e
+    | 55e84a61e50d23be20f1d7abb4018a635370bff4
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/gyro_drift_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py']
+  fix-in: ['kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py',
+    'kobuki_qtestsuite/src/kobuki_qtestsuite/gyro_drift_frame.py', 'kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py']
   languages:
     - Python
   time: 2014-08-11 (06:02)
