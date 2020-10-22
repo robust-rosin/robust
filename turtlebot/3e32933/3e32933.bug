@@ -14,8 +14,14 @@ description: >
   The fix leveraged the ability to define conditional values in
   launch files to account for the different cases.
 classification: Wrong Remappings (no CWE)
-keywords: ['launch', 'arguments', 'topics', 'remappings', 'camera', 'depthimage',
-  'laserscan']
+keywords:
+  - launch
+  - arguments
+  - topics
+  - remappings
+  - camera
+  - depthimage
+  - laserscan
 system: turtlebot
 severity: error
 links: []
@@ -49,7 +55,8 @@ fix:
   hash: 3e32933c829e308600707a9f971334d13d1cbe19
   pull-request: null
   license: ['BSD']
-  fix-in: ['turtlebot_bringup/launch/3dsensor.launch']
+  fix-in:
+    - turtlebot_bringup/launch/3dsensor.launch
   languages:
     - Launch XML
   time: 2014-04-02 (08:50)

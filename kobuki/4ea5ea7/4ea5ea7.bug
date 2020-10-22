@@ -33,8 +33,11 @@ fix:
   hash: 4ea5ea7ff535323baeada165764b5b8ceb7bfa87
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_description/launch/view_model.launch', 'kobuki_description/rviz/model.rviz',
-    'kobuki_description/urdf/kobuki.urdf.xacro', 'kobuki_description/urdf/kobuki_standalone.urdf.xacro']
+  fix-in:
+    - kobuki_description/launch/view_model.launch
+    - kobuki_description/rviz/model.rviz
+    - kobuki_description/urdf/kobuki.urdf.xacro
+    - kobuki_description/urdf/kobuki_standalone.urdf.xacro
   languages:
     - Launch XML
     - RViz
