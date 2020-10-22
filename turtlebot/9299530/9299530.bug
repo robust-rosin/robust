@@ -3,8 +3,8 @@
 id: 9299530
 title: Update Breaks Robot Visualization
 description: >
-     An update to the rviz tool broke the visualization for some
-     robots, by requiring additional information in the models.
+  An update to the rviz tool broke the visualization for some
+  robots, by requiring additional information in the models.
 classification: "API Incompatibility (no CWE) #EVOLUTION"
 keywords: ['rviz', 'visualization', 'mesh', 'compatibility']
 system: turtlebot
@@ -24,13 +24,22 @@ bug:
   issue: https://github.com/turtlebot/turtlebot/issues/65
   time-reported: 2013-03-29 (08:58)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/turtlebot/turtlebot | https://github.com/turtlebot/turtlebot_create
   hash: 8cf9d9710e9f2bfb1a7256e2ef292dd70138339c | 9299530eb77b9e8a2a18160fb6ece325d38abfbc
   pull-request: https://github.com/turtlebot/turtlebot/pull/66 | https://github.com/turtlebot/turtlebot_create/pull/7
   license: ['BSD']
-  fix-in: ['turtlebot_description/meshes/stacks/circles/68-02403-125_Spacer.dae', 'turtlebot_description/meshes/stacks/circles/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae', 'turtlebot_description/meshes/stacks/circles/68-04552-1000-RA_Turtlebot_M-F_Standoff.dae', 'turtlebot_description/meshes/stacks/circles/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae', 'turtlebot_description/meshes/stacks/circles/68-04556-RA_Kinect_Standoff_Assy.dae', 'turtlebot_description/meshes/stacks/circles/plate_0_logo.dae', 'turtlebot_description/meshes/stacks/circles/plate_1_logo.dae', 'turtlebot_description/meshes/stacks/circles/plate_2_logo.dae', 'turtlebot_description/robots/roomba_circles_asus_xtion_pro.urdf.xacro', 'turtlebot_description/robots/roomba_circles_asus_xtion_pro.urdf.xacro', 'turtlebot_description/robots/roomba_circles_kinect.urdf.xacro', 'turtlebot_description/robots/roomba_circles_kinect.urdf.xacro', 'turtlebot_description/urdf/stacks/circles.urdf.xacro', 'create_description/meshes/create_body.dae', 'create_description/urdf/create.urdf.xacro']
+  fix-in: ['turtlebot_description/meshes/stacks/circles/68-02403-125_Spacer.dae',
+    'turtlebot_description/meshes/stacks/circles/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae',
+    'turtlebot_description/meshes/stacks/circles/68-04552-1000-RA_Turtlebot_M-F_Standoff.dae',
+    'turtlebot_description/meshes/stacks/circles/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae',
+    'turtlebot_description/meshes/stacks/circles/68-04556-RA_Kinect_Standoff_Assy.dae',
+    'turtlebot_description/meshes/stacks/circles/plate_0_logo.dae', 'turtlebot_description/meshes/stacks/circles/plate_1_logo.dae',
+    'turtlebot_description/meshes/stacks/circles/plate_2_logo.dae', 'turtlebot_description/robots/roomba_circles_asus_xtion_pro.urdf.xacro',
+    'turtlebot_description/robots/roomba_circles_asus_xtion_pro.urdf.xacro', 'turtlebot_description/robots/roomba_circles_kinect.urdf.xacro',
+    'turtlebot_description/robots/roomba_circles_kinect.urdf.xacro', 'turtlebot_description/urdf/stacks/circles.urdf.xacro',
+    'create_description/meshes/create_body.dae', 'create_description/urdf/create.urdf.xacro']
   languages:
     - Xacro
     - COLLADA

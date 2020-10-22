@@ -3,15 +3,15 @@
 id: 9ffffca
 title: Node Does Not Support Namespaces
 description: >
-     A velocity smoother node for Kobuki's teleoperation was being
-     used with remappings to global topic names.  A global name
-     (starts with "/") is already fully resolved (ie: cannot be namespaced),
-     which makes setups very inflexible.
-     If a user wants to launch multiple robots, or simply launch a
-     robot within a specific namespace, topic names may clash because of this
-     or end up disconnected.
-     The use of global names is not a recommended practice, and
-     relative names (ie: without a leading "/") should be used instead.
+  A velocity smoother node for Kobuki's teleoperation was being
+  used with remappings to global topic names.  A global name
+  (starts with "/") is already fully resolved (ie: cannot be namespaced),
+  which makes setups very inflexible.
+  If a user wants to launch multiple robots, or simply launch a
+  robot within a specific namespace, topic names may clash because of this
+  or end up disconnected.
+  The use of global names is not a recommended practice, and
+  relative names (ie: without a leading "/") should be used instead.
 classification: Use of Global Names (no CWE)
 keywords: ['names', 'global names', 'remaps', 'topics']
 system: turtlebot
@@ -31,7 +31,7 @@ bug:
   issue: https://github.com/turtlebot/turtlebot/issues/234
   time-reported: 2016-10-26 (10:29)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/turtlebot/turtlebot
   hash: 9ffffcaeca7dd5a1fbb327c7289b8a11f84da39f

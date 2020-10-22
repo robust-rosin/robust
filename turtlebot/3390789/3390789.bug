@@ -3,8 +3,8 @@
 id: 3390789
 title: Circular Package Dependencies
 description: >
-     Two packages from Turtlebot declared dependencies on each other,
-     which caused errors in the build farm.
+  Two packages from Turtlebot declared dependencies on each other,
+  which caused errors in the build farm.
 classification: Circular Dependencies (no CWE)
 keywords: ['dependencies', 'package', 'manifest', 'build farm']
 system: turtlebot
@@ -26,12 +26,12 @@ bug:
   reproducibility: always
   trace: ""
   reproduction: >
-        An issue surfaced when building the Docker image, as it could
-        not find tf2 packages. This was due to the repository being named
-        `geometry_experimental` at the time this issue was reported, and
-        having been renamed to `geometry2` later on. To fix this, the
-        rosinstall file had to be patched manually. Cf. issue
-        https://github.com/robust-rosin/robust/issues/63.
+    An issue surfaced when building the Docker image, as it could
+    not find tf2 packages. This was due to the repository being named
+    `geometry_experimental` at the time this issue was reported, and
+    having been renamed to `geometry2` later on. To fix this, the
+    rosinstall file had to be patched manually. Cf. issue
+    https://github.com/robust-rosin/robust/issues/63.
 fix:
   repo: https://github.com/turtlebot/turtlebot
   hash: 339078942cf67457bc472e07a3e75e9895ebf2f7
