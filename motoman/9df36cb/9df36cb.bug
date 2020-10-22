@@ -3,15 +3,15 @@
 id: 9df36cb
 title: Missing dependency on industrial_robot_simulator package
 description: >
-     Several packages in the motoman repository use parts of another package
-     (the industrial_robot_simulator) for certain functionality offered at
-     runtime.
-     This dependency is not stated in the package manifest of those packages,
-     leading to the industrial_robot_simulator not getting installed when
-     the motoman packages are installed.
-     This causes errors to be shown when users try to start any of the affected
-     packages, and the inability to use any of the functionality offered by
-     those packages.
+  Several packages in the motoman repository use parts of another package
+  (the industrial_robot_simulator) for certain functionality offered at
+  runtime.
+  This dependency is not stated in the package manifest of those packages,
+  leading to the industrial_robot_simulator not getting installed when
+  the motoman packages are installed.
+  This causes errors to be shown when users try to start any of the affected
+  packages, and the inability to use any of the functionality offered by
+  those packages.
 classification: Missing Dependency (no CWE)
 keywords: ['MoveIt', 'dependency', 'motoman']
 system: motoman

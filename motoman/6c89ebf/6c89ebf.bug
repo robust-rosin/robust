@@ -3,8 +3,8 @@
 id: 6c89ebf
 title: SIA5D model can not be moved
 description: >
-     SIA5D URDF does not have moveable joints. This is caused by
-     safety controller parameter limits in the URDF set all to 0.
+  SIA5D URDF does not have moveable joints. This is caused by
+  safety controller parameter limits in the URDF set all to 0.
 classification: Wrong behavior (no CWE) #PHYSICAL
 keywords: ['URDF', 'motoman', 'joints']
 system: motoman

@@ -3,9 +3,9 @@
 id: 90a9464
 title: SDA10f incorrect macro usage in top-level xacro
 description: >
-     The sda10f.xacro tries to instantiate a macro called
-     motoman_sda10f', but that does not exist. So roslaunch tests for
-     that top-level xacro fail.
+  The sda10f.xacro tries to instantiate a macro called
+  motoman_sda10f', but that does not exist. So roslaunch tests for
+  that top-level xacro fail.
 classification: Undeclared Identifier (no CWE)
 keywords: ['robot description', 'motoman', 'SDA10f']
 system: motoman
@@ -31,7 +31,9 @@ fix:
   hash: null
   pull-request: 169
   license: ['BSD']
-  fix-in: ['.travis.yml', 'motoman_sda10f_support/test/launch_test.xml', 'motoman_sda10f_support/test/sda10f_test.xacro', 'motoman_sda10f_support/urdf/arm_macro.xacro', 'motoman_sda10f_support/urdf/common_torso_macro.xacro', 'motoman_sda10f_support/urdf/sda10f_macro.xacro']
+  fix-in: ['.travis.yml', 'motoman_sda10f_support/test/launch_test.xml', 'motoman_sda10f_support/test/sda10f_test.xacro',
+    'motoman_sda10f_support/urdf/arm_macro.xacro', 'motoman_sda10f_support/urdf/common_torso_macro.xacro',
+    'motoman_sda10f_support/urdf/sda10f_macro.xacro']
   languages:
     - Launch XML
     - Xacro

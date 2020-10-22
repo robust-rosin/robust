@@ -3,9 +3,9 @@
 id: 045ab54
 title: Missing dependency on Motoman Messages
 description: >
-     The motoman driver package depends on its own special message
-     type: 'motoman_msgs'.  The dependencies to this message type is
-     missing for the motoman package.
+  The motoman driver package depends on its own special message
+  type: 'motoman_msgs'.  The dependencies to this message type is
+  missing for the motoman package.
 classification: Missing Include / Dependency (no CWE)
 keywords: ['dependencies', 'motoman', 'messages']
 system: motoman

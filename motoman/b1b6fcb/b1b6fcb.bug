@@ -3,10 +3,10 @@
 id: b1b6fcb
 title: Motoman starts next command after pausing it
 description: >
-     A stop_motion command or an empty trajectory command will make the robot
-     stop. But if another message comes in afterwards, the robot will simply
-     execute this next command.  There is no way to 'pause' the robot and wait
-     for a 'go' again.
+  A stop_motion command or an empty trajectory command will make the robot
+  stop. But if another message comes in afterwards, the robot will simply
+  execute this next command.  There is no way to 'pause' the robot and wait
+  for a 'go' again.
 classification: "Dangerous behavior: resume from paused state (no CWE) #PHYSICAL"
 keywords: ['driver', 'motoman']
 system: motoman
@@ -33,7 +33,8 @@ fix:
   hash: null
   pull-request: 153
   license: ['BSD']
-  fix-in: ['motoman_driver/include/motoman_driver/industrial_robot_client/joint_trajectory_action.h', 'motoman_driver/src/industrial_robot_client/joint_trajectory_action.cpp']
+  fix-in: ['motoman_driver/include/motoman_driver/industrial_robot_client/joint_trajectory_action.h',
+    'motoman_driver/src/industrial_robot_client/joint_trajectory_action.cpp']
   languages:
     - C++
   time: 2017-03-07 (16:28)

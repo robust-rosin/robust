@@ -3,15 +3,15 @@
 id: 377d7be
 title: Error message when installing Inform Code in DX200
 description: >
-     The Motoman controller has to be prepared for use with ROS.
-     For this, you have to first install MotoPlus on the controller
-     and afterwards a special INFORM Code. The motoman driver
-     specifies a required handshake between the native INFORM robot
-     code and the MotoRos layer. The MotoRos code will automatically
-     run an INFORM job called INIT_ROS at the start of a motion
-     command, which will provide the required handshaking.  When
-     installing the INFORM Code to a DX200, it shows an error: L:****)
-     ERROR 3200 : NOP or END instruction not found (J:INIT_ROS
+  The Motoman controller has to be prepared for use with ROS.
+  For this, you have to first install MotoPlus on the controller
+  and afterwards a special INFORM Code. The motoman driver
+  specifies a required handshake between the native INFORM robot
+  code and the MotoRos layer. The MotoRos code will automatically
+  run an INFORM job called INIT_ROS at the start of a motion
+  command, which will provide the required handshaking.  When
+  installing the INFORM Code to a DX200, it shows an error: L:****)
+  ERROR 3200 : NOP or END instruction not found (J:INIT_ROS
 classification: "CWE-172: Encoding Error (Unix vs Windows line breaks)"
 keywords: ['driver', 'motoman']
 system: motoman
