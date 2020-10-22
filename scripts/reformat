@@ -31,7 +31,7 @@ def reformat_file(filename: str) -> None:
 
 def reformat_directory(directory: str) -> None:
     for filename in find_bug_descriptions(directory):
-        fix_file(filename)
+        reformat_file(filename)
 
 
 if __name__ == '__main__':
