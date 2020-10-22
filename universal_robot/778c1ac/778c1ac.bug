@@ -3,20 +3,20 @@
 id: 778c1ac
 title: parameter moved into namespace
 description: >
-     MoveIt parameters have been reorganized. The parameters
-     'allowed_execution_duration_scaling' and
-     'allowed_goal_duration_margin' have been moved down in the
-     hierarchy, under 'trajectory_execution'. This now produces
-     warning during execution of launch files (so files that start ROS
-     nodes), as assigned parameters no longer exist at top level.  The
-     framework still assigns them but produces a warning, presumably
-     because it will become less forgiving at some point.
-     This is a bug that was caused by evolution of a data schema /
-     language outside of the UR driver code.  Since the driver depends
-     on this code, it needs to be updated to the new schema.  This is
-     a fairly generic problem in software engineering, especially for
-     XML-based languages, yet here it appears in a ROS-specific
-     language (launch XML).
+  MoveIt parameters have been reorganized. The parameters
+  'allowed_execution_duration_scaling' and
+  'allowed_goal_duration_margin' have been moved down in the
+  hierarchy, under 'trajectory_execution'. This now produces
+  warning during execution of launch files (so files that start ROS
+  nodes), as assigned parameters no longer exist at top level.  The
+  framework still assigns them but produces a warning, presumably
+  because it will become less forgiving at some point.
+  This is a bug that was caused by evolution of a data schema /
+  language outside of the UR driver code.  Since the driver depends
+  on this code, it needs to be updated to the new schema.  This is
+  a fairly generic problem in software engineering, especially for
+  XML-based languages, yet here it appears in a ROS-specific
+  language (launch XML).
 classification: |
   Undeclared Identifier (no CWE) #EVOLUTION
   internal classification (cause):
@@ -40,7 +40,7 @@ bug:
   issue: null
   time-reported: unreported
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ros-industrial/universal_robot
   hash: 778c1acda6dc3e194b50328259936c3f058bcb7

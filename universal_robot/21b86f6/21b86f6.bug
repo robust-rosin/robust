@@ -3,29 +3,29 @@
 id: 21b86f6
 title: Specifications of dimensions of a robot arm are not reflecting real dimensions
 description: >
-     URDF is an XML-based modeling language in which robot physical
-     models are described. As robots are often produced in families of
-     similar devices, it is convenient to parameterize this models.
-     ROS uses the XACRO language to write parameterized models.  XACRO
-     files are preprocessed to generate instantiated URDF files.
-     In this particular case, a XACRO file contained physical
-     dimensions of the UR10 robots that were inconsistent with those
-     stored in the native software of Universal Robots (and also
-     inconsistent with the documentation data). This means that the
-     robot visualized in the visualization tool Rviz and used in
-     simulation behaved differently than the real robot.  This poses
-     an issue for testing and quality assurance.
-     The issue is specific to ROS as it occurs in a ROS specific
-     modeling language (URDF/XACRO).  However the same problem would
-     naturally appear in any robotics framework, just in a different
-     language.
-     The discussion has started on the mailing list, and then have
-     been promoted to the issue tracker, and referred from a larger
-     pull requests that also improves other visual issues with URDF
-     files, and reorganizes the files, so many aspects of the linked
-     commit do not pertain to this bug.
-     The same patch also fixes some potentially interesting issues
-     with mass and inertia of the robot elements.
+  URDF is an XML-based modeling language in which robot physical
+  models are described. As robots are often produced in families of
+  similar devices, it is convenient to parameterize this models.
+  ROS uses the XACRO language to write parameterized models.  XACRO
+  files are preprocessed to generate instantiated URDF files.
+  In this particular case, a XACRO file contained physical
+  dimensions of the UR10 robots that were inconsistent with those
+  stored in the native software of Universal Robots (and also
+  inconsistent with the documentation data). This means that the
+  robot visualized in the visualization tool Rviz and used in
+  simulation behaved differently than the real robot.  This poses
+  an issue for testing and quality assurance.
+  The issue is specific to ROS as it occurs in a ROS specific
+  modeling language (URDF/XACRO).  However the same problem would
+  naturally appear in any robotics framework, just in a different
+  language.
+  The discussion has started on the mailing list, and then have
+  been promoted to the issue tracker, and referred from a larger
+  pull requests that also improves other visual issues with URDF
+  files, and reorganizes the files, so many aspects of the linked
+  commit do not pertain to this bug.
+  The same patch also fixes some potentially interesting issues
+  with mass and inertia of the robot elements.
 classification: |
   Wrong Robot Model (no CWE) #PHYSICAL
   internal classification (cause):

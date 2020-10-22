@@ -3,16 +3,16 @@
 id: c4e1187
 title: Using a Boost type instead of a C++11 type
 description: >
-     The urdf_model package started to use C++11 features, more
-     precisely the shared pointer type that clashes with a similar
-     type in the Boost library. The (single) call to this package
-     needs to be updated from boost::shared_ptr to std::shared_ptr as
-     otherwise the compiler fails with a type error.
-     This issue is caused by the dependent upon packages switching to
-     a newer programmin language version.  This issue could appear in
-     any complex projects which mixes versions of the programming
-     language (here C++).
-     (At the time of analysis of this bug, the fix was not merged.)
+  The urdf_model package started to use C++11 features, more
+  precisely the shared pointer type that clashes with a similar
+  type in the Boost library. The (single) call to this package
+  needs to be updated from boost::shared_ptr to std::shared_ptr as
+  otherwise the compiler fails with a type error.
+  This issue is caused by the dependent upon packages switching to
+  a newer programmin language version.  This issue could appear in
+  any complex projects which mixes versions of the programming
+  language (here C++).
+  (At the time of analysis of this bug, the fix was not merged.)
 classification: |
   Type error (no CWE) #EVOLUTION: CWE-439
   internal classification (cause):
@@ -36,7 +36,7 @@ bug:
   issue: null
   time-reported: null
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ros-industrial/universal_robot/
   hash: c4e118757123ef243d0f3c2e14a6c3d63549f20d
