@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
-from .yaml import yaml
 from .version import __version__
+from .yaml import yaml
