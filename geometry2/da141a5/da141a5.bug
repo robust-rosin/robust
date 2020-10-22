@@ -1,8 +1,7 @@
 %YAML 1.1
 ---
 id: da141a5
-title:
-  Wrong matrix expression during computation of a geometrical transformation
+title: Wrong matrix expression during computation of a geometrical transformation
 description: >
   The transformation function doTransform uses the external KDL library to
   compute the transformation.  It first translates the transform to a KDL

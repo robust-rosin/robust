@@ -3,19 +3,34 @@
 id: "7284788"
 title: A loop stop condition works well with C++ but not with Python access
 description: >
-  A loop in tf2_ros/src/buffer.cpp depends on ros::ok evaluation to check whether the system has not stopped.  This works fine if the C++ version of tf is accessed.  However, if the canTransform function is called from the python API (pytf)  ros::ok may be not initialized. This immediately terminates the loop and as a result the waitForTransform function never waits for the transform being available but terminates with a generic uninformative exception. The bug seems to have been fixed, by ignoring the check for pytf (sic!).
-  The issue is primarily seen from the tf (not tf2) access, exposed there, because tf has been reimplemented as a wrapper around tf2 at some point, for backwards compatibility.
-  This issue is very idiosyncratic to ROS and tf2, but it is an interesting case of inconsistency of the API between Python and C++ (accessing the same C++ function).  In that sense it is also slightly related to bug ede2646 in the collection. It might be interesting to metamorphic testing research, among others.
+  A loop in tf2_ros/src/buffer.cpp depends on ros::ok evaluation to check whether
+  the system has not stopped.  This works fine if the C++ version of tf is accessed.  However,
+  if the canTransform function is called from the python API (pytf)  ros::ok may be
+  not initialized. This immediately terminates the loop and as a result the waitForTransform
+  function never waits for the transform being available but terminates with a generic
+  uninformative exception. The bug seems to have been fixed, by ignoring the check
+  for pytf (sic!).
+  The issue is primarily seen from the tf (not tf2) access, exposed there, because
+  tf has been reimplemented as a wrapper around tf2 at some point, for backwards compatibility.
+  This issue is very idiosyncratic to ROS and tf2, but it is an interesting case of
+  inconsistency of the API between Python and C++ (accessing the same C++ function).  In
+  that sense it is also slightly related to bug ede2646 in the collection. It might
+  be interesting to metamorphic testing research, among others.
 classification: "CWE-703: Improper Check or Handling of Exceptional Conditions"
 keywords: ['c++', 'python', 'exception', 'logging']
 system: core component
 severity: error
 links:
-  - https://answers.ros.org/question/207582/does-tflookuptransform-python-take-time-to-fire-up/ a related ROS answers discussion
-  - https://answers.ros.org/question/207039/tfexception-thrown-while-using-waitfortransform/ a related ROS answers discussion
-  - https://answers.ros.org/question/207052/rospy-tf-waitfortransform-not-waiting/ a related ROS answers discussion
+  - https://answers.ros.org/question/207582/does-tflookuptransform-python-take-time-to-fire-up/
+    a related ROS answers discussion
+  - https://answers.ros.org/question/207039/tfexception-thrown-while-using-waitfortransform/
+    a related ROS answers discussion
+  - https://answers.ros.org/question/207052/rospy-tf-waitfortransform-not-waiting/
+    a related ROS answers discussion
   - https://github.com/ros/geometry/issues/93 a related tf issue
-  - https://github.com/ros/geometry/commit/db1f024f95be66cfca2081e219de944a065b4efc a test case that exposes the issue (some of the above ROS answers discussions also have examples)
+  - https://github.com/ros/geometry/commit/db1f024f95be66cfca2081e219de944a065b4efc
+    a test case that exposes the issue (some of the above ROS answers discussions
+    also have examples)
 bug:
   phase: runtime
   specificity: ROS-specific
@@ -37,7 +52,8 @@ bug:
     l = tf.TransformListener()
     l.waitForTransform('BODY', 'manipulation_marker', rospy.Time(0), rospy.Time(10))
   reproduction: >
-    Use the test case linked under links above, or if we want a more narrow test case, use the trave above (from the first ROS answers links in the links above).
+    Use the test case linked under links above, or if we want a more narrow test case,
+    use the trave above (from the first ROS answers links in the links above).
 fix:
   repo: https://github.com/ros/geometry2
   hash: 7284788fc1646c6c6afb42bd0e50969387b4cf34
