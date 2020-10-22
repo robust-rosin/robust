@@ -1,0 +1,75 @@
+id: str(min=7, max=7)
+title: str(min=1, max=160)
+description: str(min=1)
+classification: str(min=1)
+keywords: list(str(min=1, max=80))
+system: str(min=1, max=40)
+severity: enum("error", "warning", "convention-violation", "bad-smell",
+            "minor-issue", "not-a-bug")
+links: list(regex("^(http)s?://([A-Z0-9])?"))
+failure-codes: list(enum("BAD-SMELL", "ROS-SPECIFIC", "NAMING-TYPOS", "COPYPASTA", "DEFAULTS",
+                    "CONFIG:PARAM", "CONFIG:REMAPPING", "CONFIG:ARGS", "CONFIG:CONSTANTS", "CONFIG:ENCODING", "CONFIG:NAMESPACE", "CONFIG:TOPIC",
+                    "BDO:BUILD", "BDO:DEPENDENCY", "BDO:ORCHESTRATION",
+                    "CONCURRENCY:NO-SYNC", "CONCURRENCY:BAD-SYNC", "CONCURRENCY:TIMING", "CONCURRENCY:SIGNALS",
+                    "EVOLUTION:LANGUAGE", "EVOLUTION:LIBRARY", "EVOLUTION:PACKAGE", "EVOLUTION:DEPRECATION", "EVOLUTION:ROBOT", "EVOLUTION:FIRMWARE", "EVOLUTION:DOCS", "EVOLUTION:PATHS",
+                    "PROGRAMMING:LOGIC", "PROGRAMMING:CALCULATIONS", "PROGRAMMING:CONTROL-FLOW", "PROGRAMMING:MISSING-FEATURE", "PROGRAMMING:VALIDATION", "PROGRAMMING:UNINITIALISED", "PROGRAMMING:BROKEN-CONTRACT", "PROGRAMMING:RESOURCES", "PROGRAMMING:DATATYPE", "PROGRAMMING:UNUSED", "PROGRAMMING:PATH", "PROGRAMMING:STRING-FORMATTING", "PROGRAMMING:COMPILER-ERROR",
+                    "MODELS:ROBOT", "MODELS:WORLD", "MODELS:TRANSFORMATIONS",
+                    "SYSTEMS:OS", "SYSTEMS:HARDWARE", "SYSTEM:FIRMWARE", "SYSTEMS:CONFIG"))
+fault-codes: list(enum("WARNING", "UNKNOWN", "HARMLESS", "MISLEADING", "NONE",
+                  "SYSTEM:LIVENESS", "SYSTEM:UNINTENDED-BEHAVIOUR", "SYSTEM:PERFORMANCE", "SYSTEM:NONE", "SYSTEM:PHYSICAL", "SYSTEM:MOTION", "SYSTEM:SIMULATION",
+                  "SOFTWARE:BUILD", "SOFTWARE:RUNTIME", "SOFTWARE:NETWORK", "SOFTWARE:UX", "SOFTWARE:CONCURRENCY", "SOFTWARE:PERFORMANCE"))
+bug: include('_bug')
+fix: include('_fix')
+time-machine: include('_time-machine')
+bugzoo: include('_bugzoo')
+
+---
+
+_bug:
+    phase: enum("build", "deployment", "runtime", "does not apply", "unknown")
+    specificity: enum("general issue", "robotics-specific", "ROS-specific",
+            "application-specific")
+    architectural-location: enum("application-specific code", "platform code", "N/A")
+    application: any(str(min=1), null())
+    task: enum("perception", "localization", "planning", "manipulation", "locomotion",
+            "human-robot interaction", "simulation", "diagnostics", "SLAM",
+            "N/A")
+    subsystem: str(min=1)
+    package: list(regex("^([a-z0-9A-Z-]+)(/[a-z0-9A-Z_]+){2}$"))
+    languages: list(enum("python", "cmake", "C++", "package.xml",
+                      "launch.xml", "msg", "srv", "xacro", "urdf", "robot specific"))
+    detected-by: enum("build system", "compiler", "code scanning tool",
+            "assertions", "runtime detection", "runtime crash",
+            "testing violation", "developer", "user")
+    reported-by: enum("guest user", "contributor", "member developer",
+                  "automatic", "unreported")
+    issue: any(regex("^((https://github\\.com/[a-zA-Z0-9_]+/[a-zA-Z0-9_]+/issues/[0-9]+)?)$"), str("N/A"))
+    time-reported: any(date(), null())
+    reproducibility: str()
+    trace: str(min=1)
+    reproduction: any(str(min=1), null(), required=False)
+
+_fix:
+    repo: regex("^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+)$")
+    hash: include('_hash')
+    pull-request: regex("(^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$)|(^N/A$)")
+    license: list(enum("BSD", "GPLv3", "LGPLv3"))
+    fix-in: list(str(min=1))
+    languages: list(enum("python", "cmake", "C++", "package.xml", "launch.xml",
+                  "msg", "srv", "xacro", "urdf", "robot specific"))
+    time: any(date(), null())
+
+_time-machine:
+    ros_distro: enum("noetic", "melodic", "lunar", "kinetic", "jade", "indigo",
+                  "hydro", "groovy", "fuerte", "electric", "diamondback")
+    ros_pkgs: list(str(min=1))
+    datetime: date()
+
+_bugzoo:
+    is-build-failure: any('true', 'false')
+    bug-commit: include('_hash')
+    fix-commit: include('_hash')
+    fork-urls: list(regex("^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+)$"))
+
+
+_hash: regex("^[0-9a-f]{40}$")
