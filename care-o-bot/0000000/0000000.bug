@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-id: 0
+id: "0000000"
 title: Individual ROS-packages of Metapackage are outdated on local system
 description: >
   The motor for the tray of CoB-3 is not moving. The reason for the
@@ -36,8 +36,9 @@ bug:
   reproducibility: rare
   trace: null
 fix:
-  repo: https://github.com/ipa320/cob_robots/tree/indigo_dev/cob_bringup
-  hash: null   # The previous one would be: 0656d117ba875221c66a5e354252d06c2562aced
+  commits: []
+  # repo: https://github.com/ipa320/cob_robots/tree/indigo_dev/cob_bringup
+  # The previous commit would be: 0656d117ba875221c66a5e354252d06c2562aced
   pull-request: null
   license: ['LGPL']
   fix-in: []
