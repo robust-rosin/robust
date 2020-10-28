@@ -64,9 +64,13 @@ bug:
         self.data_plot.autoscroll(self.autoscroll_checkbox.isChecked())
     AttributeError: 'FullSizeDataPlot' object has no attribute 'autoscroll'
 fix:
-  repo: https://github.com/yujinrobot/kobuki_desktop
-  hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed | 6df4bd7e92aea5cf3696b20861fca0ed413ece6e
-    | 55e84a61e50d23be20f1d7abb4018a635370bff4
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki_desktop
+      hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
+    - repo: https://github.com/yujinrobot/kobuki_desktop
+      hash: 6df4bd7e92aea5cf3696b20861fca0ed413ece6e
+    - repo: https://github.com/yujinrobot/kobuki_desktop
+      hash: 55e84a61e50d23be20f1d7abb4018a635370bff4
   pull-request: null
   license: ['BSD']
   fix-in:

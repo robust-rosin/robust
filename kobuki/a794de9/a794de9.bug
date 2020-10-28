@@ -31,10 +31,17 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: a794de9b6567b69f6c4885a177d017685f518524 | 18b46dc557676adc00b9f17c09c3af5281b5ea88
-    | f62c63ff94ab65fb3218e647e3886636e250f189 | 193ba75ee7b08b8bdb09b5815e486948913e3442
-    | 936e46785de6ae1fc473ff670b07ab16016ab7ef
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: a794de9b6567b69f6c4885a177d017685f518524
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 18b46dc557676adc00b9f17c09c3af5281b5ea88
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: f62c63ff94ab65fb3218e647e3886636e250f189
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 193ba75ee7b08b8bdb09b5815e486948913e3442
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 936e46785de6ae1fc473ff670b07ab16016ab7ef
   pull-request: null
   license: ['BSD']
   fix-in:

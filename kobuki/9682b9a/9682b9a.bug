@@ -65,8 +65,11 @@ bug:
     UserWarning: icon "../src/kobuki_qtestsuite/resources/images/kobuki_icon.png"
     not found
 fix:
-  repo: https://github.com/ros-visualization/rqt | https://github.com/ros-visualization/qt_gui_core
-  hash: 9682b9af78eecd368004fe7596e341eb84abc719 | ffae1f756dbf23194a2628922939d9633df947f6
+  commits:
+    - repo: https://github.com/ros-visualization/rqt
+      hash: 9682b9af78eecd368004fe7596e341eb84abc719
+    - repo: https://github.com/ros-visualization/qt_gui_core
+      hash: ffae1f756dbf23194a2628922939d9633df947f6
   pull-request: null
   license: ['BSD']
   fix-in:
