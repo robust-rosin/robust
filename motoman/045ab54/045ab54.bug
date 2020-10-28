@@ -28,6 +28,7 @@ bug:
   reproducibility: always
   trace: N/A
 fix:
+  # TODO we need to come up with and consistently apply a policy for forks
   repo: https://github.com/JeremyZoss/motoman | https://github.com/ros-industrial/motoman
   hash: null
   pull-request: 63
