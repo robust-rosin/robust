@@ -29,6 +29,7 @@ bug:
   reproducibility: always
   trace: null
 fix:
+  # TODO this one needs closer inspection by Gijs
   repo: https://github.com/ros-industrial/motoman
   hash: null
   pull-request: 153

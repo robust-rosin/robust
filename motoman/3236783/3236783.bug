@@ -30,8 +30,11 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/motoman/
-  hash: null
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 62fa484b9d965d1ee2c6229f56bcaf76fe76fc52
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 734602adadd454efe092957a35a54950dcf7cb02
   pull-request: 11 | 14
   license: ['BSD']
   fix-in: ['158 files due to a complete update of the driver package.']

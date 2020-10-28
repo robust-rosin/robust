@@ -27,8 +27,9 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/motoman
-  hash: null
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 1ec8ca1bb14fb68bac9672988ea311cdae7997c5
   pull-request: 175
   license: null
   fix-in: ['motoman_mh5_support/urdf/mh5_macro.xacros']

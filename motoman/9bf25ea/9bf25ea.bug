@@ -29,8 +29,9 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/motoman
-  hash: null
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 9bf25eae1b495fd9ccacb904d93f82c959227582
   pull-request: 110
   license: ['BSD']
   fix-in: ['motoman_sia20d_support/urdf/sia20d_macro.xacro', 'motoman_sia10f_support/urdf/sia10f_macro.xacro']

@@ -27,8 +27,9 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/motoman
-  hash: null
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 90a94642f763903f71536dc972782a237309a7f1
   pull-request: 169
   license: ['BSD']
   fix-in:
