@@ -3,12 +3,12 @@
 id: 2d42582
 title: Incorrect values for joint limits in sia20d package
 description: >
-     The position limits for the joints joint_s, joint_r and joint_t
-     for the SIA20 are set to exactly 3.1416 or -3.1416, but from the
-     data sheet the limits for these joints are exactly Pi. The values
-     appear to be rounded up, which gives the possibility for the
-     robot to try to reach positions, which are physically not
-     reachable.
+  The position limits for the joints joint_s, joint_r and joint_t
+  for the SIA20 are set to exactly 3.1416 or -3.1416, but from the
+  data sheet the limits for these joints are exactly Pi. The values
+  appear to be rounded up, which gives the possibility for the
+  robot to try to reach positions, which are physically not
+  reachable.
 classification: "Wrong constant (no CWE) #PHYSICAL"
 keywords: ['robot arm', 'joint limits', 'robot description']
 system: motoman
@@ -21,7 +21,8 @@ bug:
   application: industrial robot arm
   task: manipulation
   subsystem: motion
-  package: ros-industrial/motoman | ros-industrial/motoman/sia20d_support | ros-industrial/motoman/sia10d_support | ros-industrial/motoman/sia10f_support
+  package: ros-industrial/motoman | ros-industrial/motoman/sia20d_support | ros-industrial/motoman/sia10d_support
+    | ros-industrial/motoman/sia10f_support
   languages:
     - XML
   detected-by: developer

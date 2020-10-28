@@ -3,13 +3,22 @@
 id: 4115400
 title: Multiple Simulated Robots Do Not Update Orientation
 description: >
-     When multiple Kobuki robots were spawned in the Gazebo simulator
-     their translations would properly update their odometry, but
-     rotations would not.
-     The underlying issue was that every robot instance was using the
-     same IMU sensor, instead of each having its own.
-classification: "CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition') #RESOURCE"
-keywords: ['simulation', 'gazebo', 'imu', 'naming', 'threading', 'multithreading', 'concurrency']
+  When multiple Kobuki robots were spawned in the Gazebo simulator
+  their translations would properly update their odometry, but
+  rotations would not.
+  The underlying issue was that every robot instance was using the
+  same IMU sensor, instead of each having its own.
+classification: >
+  CWE-362: Concurrent Execution using Shared Resource with Improper
+  Synchronization ('Race Condition') #RESOURCE
+keywords:
+  - simulation
+  - gazebo
+  - imu
+  - naming
+  - threading
+  - multithreading
+  - concurrency
 system: kobuki
 severity: error
 links: []
@@ -27,13 +36,14 @@ bug:
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/38
   time-reported: 2014-09-23T09:51:09Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki_desktop
   hash: 4115400a5a9b88bf65bb97a5d44a9a2a695faa55
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/39
   license: ['BSD']
-  fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki_loads.cpp']
+  fix-in:
+    - kobuki_gazebo_plugins/src/gazebo_ros_kobuki_loads.cpp
   languages:
     - C++
   time: 2015-03-02 (08:03)

@@ -3,10 +3,10 @@
 id: 08cd181
 title: Missing include in mavconn interface.h
 description: >
-     A missing header, "boost/make_shared.hpp", prevented the ROS
-     Hydro-release from building.  This regression was brought about
-     as a result of moving MAVConn to its own package.
-     A missing header is a general issue that could appear in any C++ project.
+  A missing header, "boost/make_shared.hpp", prevented the ROS
+  Hydro-release from building.  This regression was brought about
+  as a result of moving MAVConn to its own package.
+  A missing header is a general issue that could appear in any C++ project.
 classification: Missing header (no CWE)
 keywords:
   - missing headers

@@ -3,11 +3,11 @@
 id: 22e4e4f
 title: Image from the Kinect v2 is flipped
 description: >
-     The Kinect v2 is a camera providing images and depth data. The
-     driver Freenect2 is used to access the images from that
-     device. By default, the images provided by the camera + Freenect2
-     driver are "mirrored" or flipped by the vertical axis, which is
-     not standard and/or expected by the application using the images.
+  The Kinect v2 is a camera providing images and depth data. The
+  driver Freenect2 is used to access the images from that
+  device. By default, the images provided by the camera + Freenect2
+  driver are "mirrored" or flipped by the vertical axis, which is
+  not standard and/or expected by the application using the images.
 classification: "CWE-137 Representation Errors #PHYSICAL"
 keywords: ['camera', 'driver', 'image', 'representation', 'format']
 system: confidential

@@ -3,8 +3,8 @@
 id: dab1b8a
 title: Incorrect name of class used to register plugin
 description: >
-     An incorrect name, "SetpointActuatorControlPlugin", was used to
-     export the "ActuatorControlPlugin" class as a MAVROS plugin.
+  An incorrect name, "SetpointActuatorControlPlugin", was used to
+  export the "ActuatorControlPlugin" class as a MAVROS plugin.
 classification: Incorrect Class Name (no CWE)
 keywords:
   - incorrect class name

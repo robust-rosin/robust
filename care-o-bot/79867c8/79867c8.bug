@@ -3,24 +3,24 @@
 id: 79867c8
 title: Install tags missing or wrong
 description: >
-     CMakeList is essential for every ROS package and it contains the
-     information of the packages, which is needed for the buildsystem.
-     After build time, targets are placed into the devel space of the
-     catkin workspace.  However, often we want to install targets to
-     the system so that they can be used by others or for a
-     system-level installation. Therefore, one needs to specify where
-     targets should end up with the CMake install() function.  The
-     argument "DIRECTORY" is used to install e.g. resources like
-     launchfiles to the global path
-     "${CATKIN_PACKAGE_SHARE_DESTINATION}".  Therefore, for
-     compiling/installing a package it makes a difference if
-     catkin_make or catkin_make install is used. For example if the
-     programm/packages works fine for catkin_make this does not mean
-     that also catkin_make install works. For catkin_make install one
-     has to particularly name every resources that should get into the
-     install space and so it is easy to make errors. Also, if a
-     packages gets updated one has to update the install tragets
-     accordingly.
+  CMakeList is essential for every ROS package and it contains the
+  information of the packages, which is needed for the buildsystem.
+  After build time, targets are placed into the devel space of the
+  catkin workspace.  However, often we want to install targets to
+  the system so that they can be used by others or for a
+  system-level installation. Therefore, one needs to specify where
+  targets should end up with the CMake install() function.  The
+  argument "DIRECTORY" is used to install e.g. resources like
+  launchfiles to the global path
+  "${CATKIN_PACKAGE_SHARE_DESTINATION}".  Therefore, for
+  compiling/installing a package it makes a difference if
+  catkin_make or catkin_make install is used. For example if the
+  programm/packages works fine for catkin_make this does not mean
+  that also catkin_make install works. For catkin_make install one
+  has to particularly name every resources that should get into the
+  install space and so it is easy to make errors. Also, if a
+  packages gets updated one has to update the install tragets
+  accordingly.
 classification: "Missing Installation Dependencies (no CWE)"
 keywords: ['install targets', 'CMakeLists']
 system: care-o-bot
@@ -40,7 +40,7 @@ bug:
   issue: https://github.com/ipa320/cob_android/issues/7
   time-reported: 2015-08-03 (10:09)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ipa320/cob_android
   hash: 79867c88acc64342f061e6324ed6b84ca7e0773d

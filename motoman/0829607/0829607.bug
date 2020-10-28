@@ -3,10 +3,10 @@
 id: 0829607
 title: SDA10f model meshes are malformed
 description: >
-     When loading the SDA10F robot model in rviz, it shows the warning
-     that the single meshes are 'malformed', because they start with
-     the word 'solid' to indicate it is an ASCII file, but it does not
-     contain the word 'endsolid'.
+  When loading the SDA10F robot model in rviz, it shows the warning
+  that the single meshes are 'malformed', because they start with
+  the word 'solid' to indicate it is an ASCII file, but it does not
+  contain the word 'endsolid'.
 classification: "CWE-172: Encoding Error"
 keywords: ['SDA10F', 'mesh', 'visualization']
 system: motoman

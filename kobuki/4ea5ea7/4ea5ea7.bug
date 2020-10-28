@@ -3,11 +3,11 @@
 id: 4ea5ea7
 title: Robot Model Viewer Fails to Display Model
 description: >
-     Launching the robot model viewer would result in an error,
-     stating that there was no robot model to display.
-     The reason behind this was that the xacro file only defined the
-     `kobuki` model, but did not instantiate it. In other words, it was
-     not a standalone file.
+  Launching the robot model viewer would result in an error,
+  stating that there was no robot model to display.
+  The reason behind this was that the xacro file only defined the
+  `kobuki` model, but did not instantiate it. In other words, it was
+  not a standalone file.
 classification: "Wrong Robot Model (no CWE) #PHYSICAL"
 keywords: ['urdf', 'xacro', 'rviz']
 system: kobuki
@@ -27,13 +27,17 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/207
   time-reported: 2012-12-27T15:23:00Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 4ea5ea7ff535323baeada165764b5b8ceb7bfa87
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_description/launch/view_model.launch', 'kobuki_description/rviz/model.rviz', 'kobuki_description/urdf/kobuki.urdf.xacro', 'kobuki_description/urdf/kobuki_standalone.urdf.xacro']
+  fix-in:
+    - kobuki_description/launch/view_model.launch
+    - kobuki_description/rviz/model.rviz
+    - kobuki_description/urdf/kobuki.urdf.xacro
+    - kobuki_description/urdf/kobuki_standalone.urdf.xacro
   languages:
     - Launch XML
     - RViz

@@ -3,8 +3,8 @@
 id: eed104d
 title: Missing Build Dependency
 description: >
-     A package dependency was missing in order for the build to
-     succeed.
+  A package dependency was missing in order for the build to
+  succeed.
 classification: Missing Dependency (no CWE)
 keywords: ['package', 'dependencies', 'build']
 system: kobuki

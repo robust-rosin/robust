@@ -3,12 +3,12 @@
 id: c159041
 title: Incorrect If guard for checking orientation string is empty
 description: >
-     Line 337 of distance_sensor.cpp is responsible for checking if a
-     valid orientation is stored in the local "orientation_str"
-     variable. If a valid orientation is unavailable, a ROS error
-     should be produced. A typo on this line causes the if-statement
-     guarding the error handling code to incorrectly check that the
-     string is not empty, rather than checking the string is empty.
+  Line 337 of distance_sensor.cpp is responsible for checking if a
+  valid orientation is stored in the local "orientation_str"
+  variable. If a valid orientation is unavailable, a ROS error
+  should be produced. A typo on this line causes the if-statement
+  guarding the error handling code to incorrectly check that the
+  string is not empty, rather than checking the string is empty.
 classification: "CWE-20: Improper Input Validation"
 keywords:
   - corner case

@@ -3,12 +3,12 @@
 id: b166c93
 title: Backporting a Bug Fix
 description: >
-     A commit fixed an issue where a macro was being used instead of
-     the proper function call to determine whether a value is NaN.
-     This commit was meant for the ROS Kinetic version of the Kobuki
-     driver, but the issue was present in the ROS Indigo version as
-     well.  A user requested that this fix was backported for the
-     Indigo version.
+  A commit fixed an issue where a macro was being used instead of
+  the proper function call to determine whether a value is NaN.
+  This commit was meant for the ROS Kinetic version of the Kobuki
+  driver, but the issue was present in the ROS Indigo version as
+  well.  A user requested that this fix was backported for the
+  Indigo version.
 classification: "Changed macro to function call #EVOLUTION"
 keywords: ['backporting', 'fix', 'driver']
 system: kobuki
@@ -35,24 +35,24 @@ bug:
     fixed: b166c93913e293c55a3faa7b298c5f52f6def964
     rosdistro: ros/rosdistro@d0e0b0bfa624b65e40c81a6b308b84cf54f73ba7
   reproduction: >
-        The Docker image built initially without issue.
-        As soon as test development started, a dependency on rostest
-        was introduced, and this is a package that is not in the
-        generated rosinstall file. As such, trying to rebuild the
-        image failed. Cf. https://github.com/robust-rosin/robust/issues/79
-        A temporary solution for this problem was to generate a separate
-        rosinstall file for rostest, and merge the two rosinstall files
-        manually.
-        Regarding the test case, since this is a problem of using the
-        isnan macro instead of the std::isnan function, the test strategy
-        is to override the macro to always yield a predetermined result (e.g. false).
-        This way, the test simply has to make sure a NaN value is provided,
-        which will make the macro-based code fail.
-        The original faulty code was deep within a long function which also makes
-        calls to I/O of the robot. To be able to write a small, contained test,
-        the faulty code had to be extracted into its own function. This function
-        was then called within the test case.
-        This was the only change to the original code.
+    The Docker image built initially without issue.
+    As soon as test development started, a dependency on rostest
+    was introduced, and this is a package that is not in the
+    generated rosinstall file. As such, trying to rebuild the
+    image failed. Cf. https://github.com/robust-rosin/robust/issues/79
+    A temporary solution for this problem was to generate a separate
+    rosinstall file for rostest, and merge the two rosinstall files
+    manually.
+    Regarding the test case, since this is a problem of using the
+    isnan macro instead of the std::isnan function, the test strategy
+    is to override the macro to always yield a predetermined result (e.g. false).
+    This way, the test simply has to make sure a NaN value is provided,
+    which will make the macro-based code fail.
+    The original faulty code was deep within a long function which also makes
+    calls to I/O of the robot. To be able to write a small, contained test,
+    the faulty code had to be extracted into its own function. This function
+    was then called within the test case.
+    This was the only change to the original code.
 fix:
   repo: https://github.com/yujinrobot/kobuki_core
   hash: b166c93913e293c55a3faa7b298c5f52f6def964

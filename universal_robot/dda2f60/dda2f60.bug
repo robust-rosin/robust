@@ -3,9 +3,9 @@
 id: dda2f60
 title: Missing Runtime Dependency on MoveIt config
 description: >
-     The universal_robot package misses a runtime dependency in the
-     manifest file package.xml.  This has prevented the driver to pass
-     continuous integration tests.
+  The universal_robot package misses a runtime dependency in the
+  manifest file package.xml.  This has prevented the driver to pass
+  continuous integration tests.
 classification: |
   Run-time dependency issue (no CWE)
   internal classification (cause):
@@ -28,7 +28,7 @@ bug:
   issue: null
   time-reported: 2014-03-31 (15:19)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ros-industrial/universal_robot
   hash: dda2f607be5f6650f7ce32b64d2cc413a8938c15

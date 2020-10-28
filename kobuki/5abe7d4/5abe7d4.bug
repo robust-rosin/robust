@@ -3,9 +3,9 @@
 id: 5abe7d4
 title: ABI/API Incompatibility
 description: >
-     When the Gazebo simulator upgraded from version 1.9 to version
-     2.0 there were compatibility issues with Kobuki's plugin. For
-     instance, some header files changed paths.
+  When the Gazebo simulator upgraded from version 1.9 to version
+  2.0 there were compatibility issues with Kobuki's plugin. For
+  instance, some header files changed paths.
 classification: "API Incompatibility (no CWE) #EVOLUTION"
 keywords: ['gazebo', 'abi', 'api', 'compatibility']
 system: kobuki
@@ -15,7 +15,7 @@ bug:
   phase: build
   specificity: ROS-specific
   architectural-location: application-specific code
-  application:
+  application: null
   task: simulation
   subsystem: simulation plugin
   package: yujinrobot/kobuki_desktop/kobuki_gazebo_plugins
@@ -26,13 +26,15 @@ bug:
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/22
   time-reported: 2013-10-10T08:51:22Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki_desktop
   hash: 5abe7d4ae9f8fb323d4acb6fe131d87a82efef31
   pull-request: null
   license: ['BSD']
-  fix-in: ['kobuki_gazebo_plugins/include/kobuki_gazebo_plugins/gazebo_ros_kobuki.h', 'kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
+  fix-in:
+    - kobuki_gazebo_plugins/include/kobuki_gazebo_plugins/gazebo_ros_kobuki.h
+    - kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp
   languages:
     - C++
   time: 2013-10-11 (03:36)

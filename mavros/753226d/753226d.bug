@@ -3,16 +3,16 @@
 id: 753226d
 title: Missing assignment during construction of JointState object
 description: >
-     The "ServoStatePublisher" class is used to publish the state of
-     the robot's joints to the "joint_states" topic. The "rc_out_cb"
-     method is used to describe these states (as
-     sensor_msgs::JointState objects). Following the (implicit)
-     construction of a JointState object (via
-     "boost::make_shared<sensor_msgs::JointState>();"), "rc_out_cb"
-     assigns appropriate values to each of the fields of this
-     object. However, "rc_out_cb" fails to assign a timestamp value to
-     the header of the JointState object. Therefore, any subscribers
-     which rely on this timing information will behave incorrectly.
+  The "ServoStatePublisher" class is used to publish the state of
+  the robot's joints to the "joint_states" topic. The "rc_out_cb"
+  method is used to describe these states (as
+  sensor_msgs::JointState objects). Following the (implicit)
+  construction of a JointState object (via
+  "boost::make_shared<sensor_msgs::JointState>();"), "rc_out_cb"
+  assigns appropriate values to each of the fields of this
+  object. However, "rc_out_cb" fails to assign a timestamp value to
+  the header of the JointState object. Therefore, any subscribers
+  which rely on this timing information will behave incorrectly.
 classification: "CWE-456: Missing Initialization of a Variable #RESOURCE"
 keywords:
   - undefined field

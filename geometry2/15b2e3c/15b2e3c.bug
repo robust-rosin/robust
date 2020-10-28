@@ -16,7 +16,8 @@ keywords: ['race condition', 'concurrency']
 system: core component
 severity: minor-issue
 links:
-  - https://github.com/ros/geometry2/issues/15 (another issue that seems to be reporting the same)
+  - https://github.com/ros/geometry2/issues/15 (another issue that seems to be reporting
+    the same)
 bug:
   phase: startup
   specificity: general issue

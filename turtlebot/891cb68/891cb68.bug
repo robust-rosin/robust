@@ -3,9 +3,9 @@
 id: 891cb68
 title: Missing Runtime Dependency
 description: >
-     One of Turtlebot's core packages was missing a runtime dependency
-     in its manifest file, resulting in errors when trying to run the
-     nodes.
+  One of Turtlebot's core packages was missing a runtime dependency
+  in its manifest file, resulting in errors when trying to run the
+  nodes.
 classification: Missing Dependency (no CWE)
 keywords: ['dependencies', 'runtime', 'launch']
 system: turtlebot
@@ -27,7 +27,7 @@ bug:
   reproducibility: always
   trace: null
   reproduction: >
-        geometry2
+    geometry2
 fix:
   repo: https://github.com/turtlebot/turtlebot
   hash: 891cb680e98694e63a55394140bffdcde43f3f5e

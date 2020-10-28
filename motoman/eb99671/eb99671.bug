@@ -3,9 +3,9 @@
 id: eb99671
 title: Missing dependency to catkin
 description: >
-     The package.xml describes the build, run-time and buildtools
-     dependencies to a package. In the Motoman Metapackage there is a
-     missing buildtool depenency to catkin, the ROS buildtool.
+  The package.xml describes the build, run-time and buildtools
+  dependencies to a package. In the Motoman Metapackage there is a
+  missing buildtool depenency to catkin, the ROS buildtool.
 classification: Missing Dependency (no CWE)
 keywords: ['catkin', 'buildtool', 'dependency']
 system: motoman

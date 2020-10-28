@@ -3,31 +3,38 @@
 id: ca23e58
 title: Use of unsafe concurrency patterns
 description: >
-     A singleton object is created using the Double-checked Locking pattern.
-     This pattern is commonly used for lazy initialization of
-     singleton objects in a way that seems to be thread-safe, but in
-     fact is not. It consists of checking if the object has already
-     been created, and, if not, acquire a lock, only to then check
-     again if the object has been created, and create it if necessary.
-     The issue can only be understood by also understanding the
-     internals of object instantiation. When an object is
-     instantiated, three things happen: (1) memory is allocated; (2)
-     the object is constructed; (3) a reference to the object is
-     assigned to a variable. Compilers are not required to follow this
-     order, and the problem arises when (3) happens before (2). It is
-     possible for a thread to get a reference to an object that is
-     only partially constructed, and use this object in an unstable
-     state.
-     The original code was compiled under C++03 (ROS Indigo) and there
-     is no fix for this issue under this standard. As such, the
-     proposed fix, which requires C++11, was applied on a later
-     version (ROS Kinetic). A simple fix for this is to use the
-     `static` keyword on the variable that holds the singleton.
+  A singleton object is created using the Double-checked Locking pattern.
+  This pattern is commonly used for lazy initialization of
+  singleton objects in a way that seems to be thread-safe, but in
+  fact is not. It consists of checking if the object has already
+  been created, and, if not, acquire a lock, only to then check
+  again if the object has been created, and create it if necessary.
+  The issue can only be understood by also understanding the
+  internals of object instantiation. When an object is
+  instantiated, three things happen: (1) memory is allocated; (2)
+  the object is constructed; (3) a reference to the object is
+  assigned to a variable. Compilers are not required to follow this
+  order, and the problem arises when (3) happens before (2). It is
+  possible for a thread to get a reference to an object that is
+  only partially constructed, and use this object in an unstable
+  state.
+  The original code was compiled under C++03 (ROS Indigo) and there
+  is no fix for this issue under this standard. As such, the
+  proposed fix, which requires C++11, was applied on a later
+  version (ROS Kinetic). A simple fix for this is to use the
+  `static` keyword on the variable that holds the singleton.
 classification: "CWE-366: Race Condition within a Thread #EVOLUTION"
-keywords: ['race condition', 'thread-safety', 'concurreny', 'anti-pattern', 'singleton pattern']
+keywords:
+  - race condition
+  - thread-safety
+  - concurreny
+  - anti-pattern
+  - singleton pattern
 system: ros_comm
 severity: error
-links: ['http://www.drdobbs.com/cpp/c-and-the-perils-of-double-checked-locki/184405726', 'http://stackoverflow.com/questions/36063617/double-checked-locking-for-shared-pointers']
+links:
+  - http://www.drdobbs.com/cpp/c-and-the-perils-of-double-checked-locki/184405726
+  - http://stackoverflow.com/questions/36063617/double-checked-locking-for-shared-pointers
 bug:
   phase: runtime
   specificity: general-issue
@@ -44,13 +51,15 @@ bug:
   issue: https://github.com/ros/ros_comm/issues/770
   time-reported: 2016-03-17 (15:12)
   reproducibility: rare
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ros/ros_comm
   hash: ca23e58883ed2f1784840485ceba9af3cd2d5729
   pull-request: https://github.com/ros/ros_comm/pull/776
   license: ['BSD']
-  fix-in: ['clients/roscpp/CMakeLists.txt', 'clients/roscpp/src/libros/topic_manager.cpp']
+  fix-in:
+    - clients/roscpp/CMakeLists.txt
+    - clients/roscpp/src/libros/topic_manager.cpp
   languages:
     - C++
     - CMake

@@ -3,9 +3,9 @@
 id: 259b468
 title: Python script not included in debian build
 description: >
-     The file 'move_to_joint.py' is available when building the motoman
-     package from source, but it's missing when installing the package
-     as a binary install.
+  The file 'move_to_joint.py' is available when building the motoman
+  package from source, but it's missing when installing the package
+  as a binary install.
 classification: Missing Installation Dependencies (no CWE)
 keywords: ['CMakeLists.txt', 'Debian']
 system: motoman

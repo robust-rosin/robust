@@ -3,8 +3,8 @@
 id: 27e85fc
 title: Use of Deprecated Functions
 description: >
-     Kobuki's plugin for Gazebo was using some deprecated functions to
-     parse models. These were replaced with recommended alternatives.
+  Kobuki's plugin for Gazebo was using some deprecated functions to
+  parse models. These were replaced with recommended alternatives.
 classification: "CWE-477: Use of Obsolete Functions #EVOLUTION"
 keywords: ['gazebo, deprecation, sdf']
 system: kobuki
@@ -25,7 +25,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki_desktop/issues/13
   time-reported: 2013-07-31T02:30:12Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki_desktop
   hash: 27e85fc224fc6198b55c5af0d066c7901af8ec0b

@@ -1,23 +1,23 @@
 %YAML 1.1
 ---
-id: 17560e9
+id: '17560e9'
 title: Compilation Error due to Missing File Inclusion
 description: >
-     When building the `yocs_navigator` package, a user experienced a
-     C++ compilation error, stating that one of the header files was
-     missing.  This header file declares some custom ROS messages.
-     The ROS community uses CMake to declare compilation instructions,
-     in order to build a ROS package. In CMake files, there is a
-     macro/function to declare dependencies of a build target. A build
-     target can be a library or an executable (e.g. a ROS
-     node). CMake-generated makefiles ensure that the dependencies of
-     a target are built before the target.
-     In this case, a dependency was missing for the faulty build
-     target.  The dependency generated custom ROS messages, among
-     which was the missing file.
-     In the end, it is possible that the file was not missing, but
-     actually being built after the target (due to the missing
-     dependency), causing the error.
+  When building the `yocs_navigator` package, a user experienced a
+  C++ compilation error, stating that one of the header files was
+  missing.  This header file declares some custom ROS messages.
+  The ROS community uses CMake to declare compilation instructions,
+  in order to build a ROS package. In CMake files, there is a
+  macro/function to declare dependencies of a build target. A build
+  target can be a library or an executable (e.g. a ROS
+  node). CMake-generated makefiles ensure that the dependencies of
+  a target are built before the target.
+  In this case, a dependency was missing for the faulty build
+  target.  The dependency generated custom ROS messages, among
+  which was the missing file.
+  In the end, it is possible that the file was not missing, but
+  actually being built after the target (due to the missing
+  dependency), causing the error.
 classification: Missing Include / Dependency (no CWE)
 keywords: ['compilation error', 'CMake', 'dependencies']
 system: kobuki
@@ -40,18 +40,18 @@ bug:
   reproducibility: always
   trace: null
   reproduction: >
-        Building the rosinstall file using a link to the issue on GitHub ran
-        into errors, due to the yocs_navigator package not being released
-        at the time the issue was reported.
-        In order to create the rosinstall file, a date had to be manually
-        selected, after the release of the package into the distribution.
+    Building the rosinstall file using a link to the issue on GitHub ran
+    into errors, due to the yocs_navigator package not being released
+    at the time the issue was reported.
+    In order to create the rosinstall file, a date had to be manually
+    selected, after the release of the package into the distribution.
 
-        An issue surfaced when building the docker image, as it could
-        not find tf2 packages. This was due to the repository being named
-        `geometry_experimental` at the time this issue was reported, and
-        having been renamed to `geometry2` later on. To fix this, the
-        rosinstall file had to be patched manually. Cf. issue
-        https://github.com/robust-rosin/robust/issues/63.
+    An issue surfaced when building the docker image, as it could
+    not find tf2 packages. This was due to the repository being named
+    `geometry_experimental` at the time this issue was reported, and
+    having been renamed to `geometry2` later on. To fix this, the
+    rosinstall file had to be patched manually. Cf. issue
+    https://github.com/robust-rosin/robust/issues/63.
 fix:
   repo: https://github.com/yujinrobot/yujin_ocs
   hash: 17560e98ef751714a352a5cee403fd3eb53c9fdb

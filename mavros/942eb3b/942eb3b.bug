@@ -3,7 +3,7 @@
 id: 942eb3b
 title: Missing mavros dependency
 description: >
-     Missing list of dependency for "gcs_bridge" in "CMakeLists.txt"
+  Missing list of dependency for "gcs_bridge" in "CMakeLists.txt"
 classification: Missing Dependency (no CWE)
 keywords:
   - missing dependencies

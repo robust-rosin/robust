@@ -3,9 +3,9 @@
 id: 65e7ee6
 title: SIA20D Mesh Arm Navigation Package not following naming conventions
 description: >
-     The package name "SIA20D_Mesh_arm_navigation" does not follow the
-     naming conventions. It should start with a lower case letter and
-     only contain lower case letters, digits and underscores.
+  The package name "SIA20D_Mesh_arm_navigation" does not follow the
+  naming conventions. It should start with a lower case letter and
+  only contain lower case letters, digits and underscores.
 classification: Naming Convention Violation (no CWE)
 keywords: ['naming conventions', 'catkin_make']
 system: motoman
@@ -41,28 +41,28 @@ fix:
     - sia10d_mesh_arm_navigation/launch/constraint_aware_kinematics.launch
     # FIXME we should handle file renamings separately from content changes
     - SIA20D_Mesh_arm_navigation/CMakeLists.txt → sia20d_mesh_arm_navigation/CMakeLists.txt
-    - ...h_arm_navigation/config/joint_limits.yaml → ...h_arm_navigation/config/joint_limits.yaml
-    - ..._arm_navigation/config/ompl_planning.yaml → ..._arm_navigation/config/ompl_planning.yaml
-    - ...onfig/planning_components_visualizer.rviz → ...onfig/planning_components_visualizer.rviz
-    - ...config/planning_components_visualizer.vcg → ...config/planning_components_visualizer.vcg
-    - ...nfig/planning_scene_warehouse_viewer.rviz → ...nfig/planning_scene_warehouse_viewer.rviz
-    - ...onfig/planning_scene_warehouse_viewer.vcg → ...onfig/planning_scene_warehouse_viewer.vcg
-    - ...fig/SIA20D_Mesh_planning_description.yaml → ...fig/sia20d_mesh_planning_description.yaml
-    - ...esh_arm_navigation/kinematics_plugins.xml → ...esh_arm_navigation/kinematics_plugins.xml
-    - ...launch/constraint_aware_kinematics.launch → ...launch/constraint_aware_kinematics.launch
+    - '...h_arm_navigation/config/joint_limits.yaml → ...h_arm_navigation/config/joint_limits.yaml'
+    - '..._arm_navigation/config/ompl_planning.yaml → ..._arm_navigation/config/ompl_planning.yaml'
+    - '...onfig/planning_components_visualizer.rviz → ...onfig/planning_components_visualizer.rviz'
+    - '...config/planning_components_visualizer.vcg → ...config/planning_components_visualizer.vcg'
+    - '...nfig/planning_scene_warehouse_viewer.rviz → ...nfig/planning_scene_warehouse_viewer.rviz'
+    - '...onfig/planning_scene_warehouse_viewer.vcg → ...onfig/planning_scene_warehouse_viewer.vcg'
+    - '...fig/SIA20D_Mesh_planning_description.yaml → ...fig/sia20d_mesh_planning_description.yaml'
+    - '...esh_arm_navigation/kinematics_plugins.xml → ...esh_arm_navigation/kinematics_plugins.xml'
+    - '...launch/constraint_aware_kinematics.launch → ...launch/constraint_aware_kinematics.launch'
     - sia20d_mesh_arm_navigation/launch/move_groups.launch
-    - ...navigation/launch/move_manipulator.launch → ...navigation/launch/move_manipulator.launch
-    - ...rm_navigation/launch/ompl_planning.launch → ...rm_navigation/launch/ompl_planning.launch
-    - ...nch/planning_components_visualizer.launch → ...nch/planning_components_visualizer.launch
-    - ...scene_warehouse_viewer_SIA20D_Mesh.launch → ...scene_warehouse_viewer_sia20d_mesh.launch
-    - ..._warehouse_viewer_sia20d_mesh_real.launch → ..._warehouse_viewer_sia20d_mesh_real.launch
+    - '...navigation/launch/move_manipulator.launch → ...navigation/launch/move_manipulator.launch'
+    - '...rm_navigation/launch/ompl_planning.launch → ...rm_navigation/launch/ompl_planning.launch'
+    - '...nch/planning_components_visualizer.launch → ...nch/planning_components_visualizer.launch'
+    - '...scene_warehouse_viewer_SIA20D_Mesh.launch → ...scene_warehouse_viewer_sia20d_mesh.launch'
+    - '..._warehouse_viewer_sia20d_mesh_real.launch → ..._warehouse_viewer_sia20d_mesh_real.launch'
     - sia20d_mesh_arm_navigation/launch/sia20d_mesh_arm_navigation.launch
-    - ...h/SIA20D_Mesh_planning_environment.launch → ...h/sia20d_mesh_planning_environment.launch
-    - ...on/launch/trajectory_filter_server.launch → ...on/launch/trajectory_filter_server.launch
+    - '...h/SIA20D_Mesh_planning_environment.launch → ...h/sia20d_mesh_planning_environment.launch'
+    - '...on/launch/trajectory_filter_server.launch → ...on/launch/trajectory_filter_server.launch'
     - SIA20D_Mesh_arm_navigation/mainpage.dox → sia20d_mesh_arm_navigation/mainpage.dox
     - SIA20D_Mesh_arm_navigation/package.xml → sia20d_mesh_arm_navigation/package.xml
-    - ...SIA20D_Mesh_manipulator_ikfast_output.cpp → ...sia20d_mesh_manipulator_ikfast_output.cpp
-    - ...SIA20D_Mesh_manipulator_ikfast_plugin.cpp → ...sia20d_mesh_manipulator_ikfast_plugin.cpp
+    - '...SIA20D_Mesh_manipulator_ikfast_output.cpp → ...sia20d_mesh_manipulator_ikfast_output.cpp'
+    - '...SIA20D_Mesh_manipulator_ikfast_plugin.cpp → ...sia20d_mesh_manipulator_ikfast_plugin.cpp'
   # note that YAML files are not actually changed
   languages:
     - Package XML

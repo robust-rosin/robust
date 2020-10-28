@@ -3,19 +3,19 @@
 id: 105dc16
 title: Missing dependencies to gencpp, which is important for ROS messages and services
 description: >
-     CMakeList is essential for every ROS package and it contains the
-     information of the packages, which is needed for the buildsystem.
-     If you have a target which depends on some other target you need
-     to add an explicit dependency so that they are built in the
-     correct order.
-     In the example the node "output_publisher" depends on
-     "cob_srvsgencpp", but the dependency was missing.  Gencpp is
-     apparently a helper when adding some msgs as dependencies to a
-     target node.  This could be solved by naming the dependency
-     "cob_srvs_gencpp". Even better would be to name it
-     "${PROJECT_NAME}_gencpp". The "PROJECT_NAME" corresponds to the
-     package name and thus, one can have a generic name, which is
-     independent of the package name.
+  CMakeList is essential for every ROS package and it contains the
+  information of the packages, which is needed for the buildsystem.
+  If you have a target which depends on some other target you need
+  to add an explicit dependency so that they are built in the
+  correct order.
+  In the example the node "output_publisher" depends on
+  "cob_srvsgencpp", but the dependency was missing.  Gencpp is
+  apparently a helper when adding some msgs as dependencies to a
+  target node.  This could be solved by naming the dependency
+  "cob_srvs_gencpp". Even better would be to name it
+  "${PROJECT_NAME}_gencpp". The "PROJECT_NAME" corresponds to the
+  package name and thus, one can have a generic name, which is
+  independent of the package name.
 classification: Missing Dependency (no CWE)
 keywords: ['missing', 'dependencies', 'gencpp', 'project_name', 'CMakeLists']
 system: care-o-bot

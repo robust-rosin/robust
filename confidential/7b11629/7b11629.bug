@@ -3,14 +3,14 @@
 id: 7b11629
 title: Incorrect parsing of multiple RWS content
 description: >
-     When using Robot Web Services (RWS) to extract resources from the
-     different RWS services, then some of the resources might contain
-     several interesting items. E.g. if asking for all mechanical
-     units in the current robot system there might be more than
-     one. The current parsing solution works best when extracting a
-     single item, if there are multiple items then it is
-     cumbersome. This can be solved by adding a proper XML and/or JSON
-     parser.
+  When using Robot Web Services (RWS) to extract resources from the
+  different RWS services, then some of the resources might contain
+  several interesting items. E.g. if asking for all mechanical
+  units in the current robot system there might be more than
+  one. The current parsing solution works best when extracting a
+  single item, if there are multiple items then it is
+  cumbersome. This can be solved by adding a proper XML and/or JSON
+  parser.
 classification: >
   Incorrect Data Parsing (no CWE)
   internal classification (cause): incorrect parsing of multiple RWS content
@@ -33,7 +33,7 @@ bug:
   issue: null
   time-reported: 2017-04-10 (10:31)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repository: CONFIDENTIAL
   hash: null

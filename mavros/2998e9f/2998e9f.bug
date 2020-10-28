@@ -3,16 +3,16 @@
 id: 2998e9f
 title: Incorrect string length
 description: >
-     On line 210 of "sys_status.cpp", the contents of a decoded
-     message (represented by a std::string) are copied to a local
-     std::string variable, "text". The parameters for the
-     initialisation of the "text" variable are intended to accept the
-     contents of the original message string, and the number of
-     characters within the string. The original, buggy code
-     incorrectly passes the size of the message string in bytes rather
-     than in characters. The fixed version of the code determines the
-     number of characters in the decoded message using the "strnlen"
-     function.
+  On line 210 of "sys_status.cpp", the contents of a decoded
+  message (represented by a std::string) are copied to a local
+  std::string variable, "text". The parameters for the
+  initialisation of the "text" variable are intended to accept the
+  contents of the original message string, and the number of
+  characters within the string. The original, buggy code
+  incorrectly passes the size of the message string in bytes rather
+  than in characters. The fixed version of the code determines the
+  number of characters in the decoded message using the "strnlen"
+  function.
 classification: CWE-137 Representation Errors
 keywords: string length
 system: mavros

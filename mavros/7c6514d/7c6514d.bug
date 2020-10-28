@@ -3,14 +3,14 @@
 id: 7c6514d
 title: Redundant (static) array entry for removed sensor
 description: >
-     The "mavros/src/lib/sensor_orientation.cpp" file defines a static
-     array of sensor orientations ("sensor_or").  A list of the names
-     of these 39 sensor orientations can be found in
-     "mavros/src/lib/uas_sensor_orientation.cpp". The static array in
-     "mavros/src/lib/sensor_orientation.cpp" contains a redundant
-     entry for a sensor that no longer exists. The fix to this "bug"
-     removes this entry and decreases the size of the array, reported
-     by MAV_SENSOR_ORIENTATION_MAX.
+  The "mavros/src/lib/sensor_orientation.cpp" file defines a static
+  array of sensor orientations ("sensor_or").  A list of the names
+  of these 39 sensor orientations can be found in
+  "mavros/src/lib/uas_sensor_orientation.cpp". The static array in
+  "mavros/src/lib/sensor_orientation.cpp" contains a redundant
+  entry for a sensor that no longer exists. The fix to this "bug"
+  removes this entry and decreases the size of the array, reported
+  by MAV_SENSOR_ORIENTATION_MAX.
 classification: "CWE-561: Dead Code"
 keywords: redundant array entry
 system: mavros

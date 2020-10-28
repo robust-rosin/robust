@@ -3,9 +3,9 @@
 id: 27e7db9
 title: Incorrect header installation path
 description: >
-     When mavconn was removed from mavros, the install destination for
-     the mavconn headers were not appropriately updated, causing both
-     the 0.9.1 and 0.8.4 builds (of MAVROS) to break.
+  When mavconn was removed from mavros, the install destination for
+  the mavconn headers were not appropriately updated, causing both
+  the 0.9.1 and 0.8.4 builds (of MAVROS) to break.
 classification: Missing Installation Dependencies (no CWE) #EVOLUTION CWE-439
 keywords:
   - broken build

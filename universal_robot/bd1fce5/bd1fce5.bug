@@ -3,14 +3,14 @@
 id: bd1fce5
 title: Driver locks without discovering that a trajectory has been realized or failed
 description: >
-     The python driver is not detecting that a robot arm has reached a
-     goal point of a trajectory planned.  It never sends an
-     information that the final point has been reached and locks.
-     The fix relies on distinguishing two situations: whether the robot
-     got stuck due to planning errors, or whether it has reached the
-     final destination (and the final location has been communicated).
-     The deadlocks are intermittent, probably dependent on numerical
-     proximity of the goal and the present position, or on timing.
+  The python driver is not detecting that a robot arm has reached a
+  goal point of a trajectory planned.  It never sends an
+  information that the final point has been reached and locks.
+  The fix relies on distinguishing two situations: whether the robot
+  got stuck due to planning errors, or whether it has reached the
+  final destination (and the final location has been communicated).
+  The deadlocks are intermittent, probably dependent on numerical
+  proximity of the goal and the present position, or on timing.
 classification: |
   CWE-440: Expected Behavior Violation #PHYSICAL
   internal classification (cause):

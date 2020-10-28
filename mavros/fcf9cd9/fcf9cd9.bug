@@ -3,14 +3,14 @@
 id: fcf9cd9
 title: Uninitialised variable causes incorrect timestamps to be produced
 description: >
-     The UAS manager, defined in uas_data.cpp, is responsible for
-     describing the state of the robot. This description includes the
-     current position and orientation of the robot, its capabilities,
-     connection status, and more. Part of this manager also records a
-     time offset between MAVROS and MAVLink, which is used to maintain
-     synchronisation. A bug in the constructor fails to initialise the
-     attribute responsible for recording this offset (time_offset),
-     causing incorrect timestamps to be produced.
+  The UAS manager, defined in uas_data.cpp, is responsible for
+  describing the state of the robot. This description includes the
+  current position and orientation of the robot, its capabilities,
+  connection status, and more. Part of this manager also records a
+  time offset between MAVROS and MAVLink, which is used to maintain
+  synchronisation. A bug in the constructor fails to initialise the
+  attribute responsible for recording this offset (time_offset),
+  causing incorrect timestamps to be produced.
 classification: "CWE-456: Missing Initialization of a Variable #RESOURCE"
 keywords:
   - uninitialised field

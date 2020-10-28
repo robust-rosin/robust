@@ -3,12 +3,12 @@
 id: 5a44ead
 title: Program Finishing Too Soon
 description: >
-     One of the demo applications for Kobuki was supposed to
-     initialize it and let it emit a beep sound, to signal that
-     everything was working as intended. However, the robot would not
-     emit any sound because the program was unintentionally
-     terminating before it had time to read all the necessary data.
-     Adding a `sleep` for some seconds fixed the issue.
+  One of the demo applications for Kobuki was supposed to
+  initialize it and let it emit a beep sound, to signal that
+  everything was working as intended. However, the robot would not
+  emit any sound because the program was unintentionally
+  terminating before it had time to read all the necessary data.
+  Adding a `sleep` for some seconds fixed the issue.
 classification: "Wrong behavior: Exit too soon (no CWE) #PHYSICAL"
 keywords: ['sound', 'initialization', 'driver']
 system: kobuki
@@ -28,7 +28,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/270
   time-reported: 2013-05-31T05:20:00Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 5a44eadd3b6ef0f2cb29f057b3e1cdb93205c954

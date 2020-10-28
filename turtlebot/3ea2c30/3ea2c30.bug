@@ -3,15 +3,15 @@
 id: 3ea2c30
 title: Environment Hooks Introduce Undocumented Dependency
 description: >
-     ROS packages can make use of environment hooks -- shell scripts
-     that are executed, for instance, to set up environment variables.
-     In ROS Indigo, the core Turtlebot package introduced an
-     environment hook that depended on another package that was not
-     listed as a dependency in the package manifest. This caused error
-     messages to be printed to the terminal if the user did not have
-     the package installed.
-     The fix was to move the faulty parts of the environment hook to
-     the package they depended on.
+  ROS packages can make use of environment hooks -- shell scripts
+  that are executed, for instance, to set up environment variables.
+  In ROS Indigo, the core Turtlebot package introduced an
+  environment hook that depended on another package that was not
+  listed as a dependency in the package manifest. This caused error
+  messages to be printed to the terminal if the user did not have
+  the package installed.
+  The fix was to move the faulty parts of the environment hook to
+  the package they depended on.
 classification: Missing Dependency (no CWE)
 keywords: ['environment hooks', 'catkin', 'package', 'dependencies']
 system: turtlebot
@@ -32,7 +32,7 @@ bug:
   issue: https://github.com/turtlebot/turtlebot/issues/163
   time-reported: 2014-09-11 (11:54)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/turtlebot/turtlebot | https://github.com/turtlebot/turtlebot_apps
   hash: 36ceb8dc37e0f930986cc86fe3ff2a9f1a930322 | 3ea2c306120774e8ed7e69e4e3fce3eca9f5426e

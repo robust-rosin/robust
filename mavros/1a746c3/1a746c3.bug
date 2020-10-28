@@ -3,10 +3,10 @@
 id: 1a746c3
 title: Arithmetic error in reporting of TCP I/O statistics
 description: >
-     An assignment operator is incorrectly used instead of addition
-     assignment during the reporting of TCP I/O statistics. Only the
-     statistics for the last client in `client_list` will be reported,
-     rather than the statistics for all of the clients in `client_list`.
+  An assignment operator is incorrectly used instead of addition
+  assignment during the reporting of TCP I/O statistics. Only the
+  statistics for the last client in `client_list` will be reported,
+  rather than the statistics for all of the clients in `client_list`.
 classification: "CWE-480: Use of Incorrect Operator"
 keywords:
   - typo

@@ -3,13 +3,13 @@
 id: 493e3f9
 title: Wrong Inertia and Center of Mass in Robot Description
 description: >
-     The URDF file for Kobuki's physical model assumed the center of
-     mass to be in the center of the robot's cylinder body. This is
-     wrong, since the battery was intentionally placed at the front of
-     the robot to make it heavier at the front.
-     The wrong placement of the robot's center of mass had the effect
-     of having it constantly bouncing back and forth in the Gazebo
-     simulator.
+  The URDF file for Kobuki's physical model assumed the center of
+  mass to be in the center of the robot's cylinder body. This is
+  wrong, since the battery was intentionally placed at the front of
+  the robot to make it heavier at the front.
+  The wrong placement of the robot's center of mass had the effect
+  of having it constantly bouncing back and forth in the Gazebo
+  simulator.
 classification: Wrong Robot Model (no CWE) #PHYSICAL
 keywords: ['xacro', 'urdf', 'gazebo', 'simulation']
 system: kobuki

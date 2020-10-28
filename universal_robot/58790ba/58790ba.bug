@@ -3,22 +3,22 @@
 id: 58790ba
 title: Runtime dependencies missing in a Python driver module
 description: >
-     The ur_driver package manifest (package.xml) lacks a runtime
-     dependency on the python parser beatifulsoup.  As an effect the
-     build and installation procedure does not install/require the
-     right python package.  Since package loading is dynamic in python
-     the dependency is only reported when one attempts to start the
-     ur5 driver node.
-     The package manifest is an XML file called package.xml that must
-     be included with any catkin-compliant package's root folder. This
-     file defines properties about the package such as the package
-     name, version numbers, authors, maintainers, and dependencies on
-     other catkin packages. (from ROS wiki)
-     The patch contains also fix for build-time and run-time
-     dependencies on trajectory_msgs package, which were also missing.
-     The issue is ROS-specific as it appears in ROS-specific
-     package.xml files.  However, the issue of missing runtime
-     dependencies overall, is a general software-engineering issue.
+  The ur_driver package manifest (package.xml) lacks a runtime
+  dependency on the python parser beatifulsoup.  As an effect the
+  build and installation procedure does not install/require the
+  right python package.  Since package loading is dynamic in python
+  the dependency is only reported when one attempts to start the
+  ur5 driver node.
+  The package manifest is an XML file called package.xml that must
+  be included with any catkin-compliant package's root folder. This
+  file defines properties about the package such as the package
+  name, version numbers, authors, maintainers, and dependencies on
+  other catkin packages. (from ROS wiki)
+  The patch contains also fix for build-time and run-time
+  dependencies on trajectory_msgs package, which were also missing.
+  The issue is ROS-specific as it appears in ROS-specific
+  package.xml files.  However, the issue of missing runtime
+  dependencies overall, is a general software-engineering issue.
 classification: |
   run-time dependency issue (no CWE)
   internal classification (cause):
@@ -26,7 +26,10 @@ classification: |
 keywords: ['catkin', 'package.xml']
 system: universal_robot
 severity: error
-links: ['http://answers.ros.org/question/103191/in-ur5_driverdriverpy-importerror-no-module-named-beautifulsoup/', 'http://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python', 'http://wiki.ros.org/catkin/package.xml']
+links:
+  - http://answers.ros.org/question/103191/in-ur5_driverdriverpy-importerror-no-module-named-beautifulsoup/
+  - http://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python
+  - http://wiki.ros.org/catkin/package.xml
 bug:
   phase: startup
   specificity: ROS-specific

@@ -3,11 +3,11 @@
 id: 3f260cb
 title: Motoman robot can move after estop release
 description: >
-     The problem occurs in the following scenario: Running the Motoman
-     ROS-Init program and starting a process that sends a trajectory
-     to the Motoman driver and move the robot. Estop the robot on the
-     teach pendant. Pull up the estop. Send a new trajectory. The
-     robot will turn on and move.  This is very unsafe and dangerous.
+  The problem occurs in the following scenario: Running the Motoman
+  ROS-Init program and starting a process that sends a trajectory
+  to the Motoman driver and move the robot. Estop the robot on the
+  teach pendant. Pull up the estop. Send a new trajectory. The
+  robot will turn on and move.  This is very unsafe and dangerous.
 classification: "Dangerous behavior: move after stop (no CWE) #PHYSICAL"
 keywords: ['driver', 'motoman']
 system: motoman

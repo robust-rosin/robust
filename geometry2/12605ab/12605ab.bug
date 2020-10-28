@@ -1,10 +1,15 @@
 %YAML 1.1
 ---
 id: 12605ab
-title: Missing polling of ros::ok prevents nodes from exiting gracefully when ROS shuts down
+title: Missing polling of ros::ok prevents nodes from exiting gracefully when ROS
+  shuts down
 description: >
-  Two loops in Buffer::canTransform (the same problem in two overloaded versions) do not check the value of ros::ok() to detect whether the shutdown has not completed.  As a result the waitForTransform() function on tf listners would not shutdown if simulated time has been paused.
-  This can have serious implications if the running node holds on to resources that make it impossible to, for instance, restart the system.
+  Two loops in Buffer::canTransform (the same problem in two overloaded versions)
+  do not check the value of ros::ok() to detect whether the shutdown has not completed.  As
+  a result the waitForTransform() function on tf listners would not shutdown if simulated
+  time has been paused.
+  This can have serious implications if the running node holds on to resources that
+  make it impossible to, for instance, restart the system.
 classification: "CWE-404: Improper Resource Shutdown or Release"
 keywords: ['C++', 'shutdown', 'SIGINT']
 system: core component
@@ -28,7 +33,8 @@ bug:
   time-reported: Sep 17, 2013, 3:34 PM GMT +2
   reproducibility: sometimes
   trace: >
-    FIXME: the first set up for the reproduction is given in the link above, in links.  But we will also likely need to cause a  SIGINT.
+    FIXME: the first set up for the reproduction is given in the link above, in links.  But
+    we will also likely need to cause a  SIGINT.
   reproduction-images:
     buggy: TODO
     fixed: TODO

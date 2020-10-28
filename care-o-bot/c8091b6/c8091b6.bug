@@ -3,14 +3,14 @@
 id: c8091b6
 title: Missing dependencies to an external library
 description: >
-     The file package.xml is essential for every ROS package and it
-     contains among others the dependencies of the packages.  In this
-     example the dependency on "pynotify" is missing in the rosdep
-     list and thus, there is an error by installing the package from
-     apt-get install.  This could be solved by removing the
-     dependencies inside the python script, which was using the
-     library, since it was not required anymore. Otherwise, one would
-     have needed to add the dependency to the package.xml.
+  The file package.xml is essential for every ROS package and it
+  contains among others the dependencies of the packages.  In this
+  example the dependency on "pynotify" is missing in the rosdep
+  list and thus, there is an error by installing the package from
+  apt-get install.  This could be solved by removing the
+  dependencies inside the python script, which was using the
+  library, since it was not required anymore. Otherwise, one would
+  have needed to add the dependency to the package.xml.
 classification: Missing Dependency (no CWE)
 keywords: ['missing', 'dependencies', 'library', 'package.xml']
 system: care-o-bot
@@ -30,7 +30,7 @@ bug:
   issue: https://github.com/ipa320/cob_command_tools/issues/74
   time-reported: 2015-01-14 (15:17)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ipa320/cob_command_tools
   hash: c8091b68c69eeae0bb7777ad6fa44d644c20f96c

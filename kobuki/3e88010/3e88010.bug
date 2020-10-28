@@ -1,16 +1,16 @@
 %YAML 1.1
 ---
-id: 3e88010
+id: '3e88010'
 title: Node Fails Due to Bad Linking
 description: >
-     The nodelet was linked directly against an executable, resulting
-     in a crash during runtime. Nodelets should be separated into
-     their own libraries and loaded dynamically.
+  The nodelet was linked directly against an executable, resulting
+  in a crash during runtime. Nodelets should be separated into
+  their own libraries and loaded dynamically.
 classification: Linking error (no CWE)
 keywords: ['linking', 'catkin', 'nodelet', 'class loader']
 system: kobuki
 severity: error
-links:
+links: null
 bug:
   phase: startup
   specificity: ROS-specific
@@ -26,7 +26,7 @@ bug:
   issue: https://github.com/yujinrobot/kobuki/issues/234
   time-reported: 2013-02-25T04:32:32Z
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/yujinrobot/kobuki
   hash: 3e88010293c350ffa71f5e8b64ec58ec09a64549

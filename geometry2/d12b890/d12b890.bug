@@ -3,30 +3,30 @@
 id: d12b890
 title: Incomplete type-checking at Python/C++ interface
 description: >
-    tf2 is implemented in C++ and then later interface to Python using the
-    Python native interface (this is done in tf2_py package).  This package
-    receives calls from python, makes the necessary safety checks and
-    adaptations and forwards them to tf2.  Unfortunately, some checks on
-    messages are missing.  The bug report shows code where a transform rotation
-    field is assigned a 3D vector (it should be a quaternion), and the
-    transform's translation field is a ssigned a quaternion (it shouled be a
-    vector.) This code should crash, with a safety violation, as quternions and
-    vectors are not compatible on the C++ side. Unfortunately, due to the
-    missing checks in the native interfaces, it quietly throws an exception and
-    fails.
+  tf2 is implemented in C++ and then later interface to Python using the
+  Python native interface (this is done in tf2_py package).  This package
+  receives calls from python, makes the necessary safety checks and
+  adaptations and forwards them to tf2.  Unfortunately, some checks on
+  messages are missing.  The bug report shows code where a transform rotation
+  field is assigned a 3D vector (it should be a quaternion), and the
+  transform's translation field is a ssigned a quaternion (it shouled be a
+  vector.) This code should crash, with a safety violation, as quternions and
+  vectors are not compatible on the C++ side. Unfortunately, due to the
+  missing checks in the native interfaces, it quietly throws an exception and
+  fails.
 
-    Not checking types on the interface between managed and unmanaged language
-    causes two problems: First, the API is not safe to use, and the reporting
-    is bad (so usability is low). Second, it might be exploitable to create
-    security attacks.
+  Not checking types on the interface between managed and unmanaged language
+  causes two problems: First, the API is not safe to use, and the reporting
+  is bad (so usability is low). Second, it might be exploitable to create
+  security attacks.
 
-    There is no pull request.  It appears that the fixing commit has been
-    pushed directly into the melodic-devel branch.
+  There is no pull request.  It appears that the fixing commit has been
+  pushed directly into the melodic-devel branch.
 classification: "CWE-704: Incorrect Type Conversion or Cast"
 keywords: ['c++', 'python', 'typel', 'exception']
 system: core component
 severity: error
-links:
+links: null
 bug:
   phase: runtime
   specificity: general issue
@@ -43,7 +43,7 @@ bug:
   issue: https://github.com/ros/geometry2/issues/159
   time-reported: 2016-03-11 17:43 GMT+1
   reproducibility: always
-  trace:
+  trace: null
   reproduction: >
     The issue report contains small example code that demonstrates the issue.
     It might be hard to write a test, as the objects are most easily created in

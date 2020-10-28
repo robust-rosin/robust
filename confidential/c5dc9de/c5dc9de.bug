@@ -3,11 +3,11 @@
 id: c5dc9de
 title: Incorrect cleanup of network resources
 description: >
-     When terminating the application unexpectedly by e.g. Ctrl-C,
-     then the network resources are not properly released. If
-     restarting the program immediately, then the same network ports
-     might not be available for use and this cause exceptions to be
-     thrown. This can be fixed by adding a cleanup function.
+  When terminating the application unexpectedly by e.g. Ctrl-C,
+  then the network resources are not properly released. If
+  restarting the program immediately, then the same network ports
+  might not be available for use and this cause exceptions to be
+  thrown. This can be fixed by adding a cleanup function.
 classification: >
   CWE-404: Improper Resource Shutdown or Release #RESOURCE
   internal classification (cause): no proper cleanup of network resources

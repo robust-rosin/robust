@@ -3,10 +3,10 @@
 id: acd5eab
 title: Setup Validation for MotoROS logic wrong
 description: >
-     The installation of MotoROS for the Controller is checked by a
-     validation file. This validation returns a warning to contact
-     Yaskawa support after a couple of resets instead of showing them
-     after the first reboot, if some parameters are wrong.
+  The installation of MotoROS for the Controller is checked by a
+  validation file. This validation returns a warning to contact
+  Yaskawa support after a couple of resets instead of showing them
+  after the first reboot, if some parameters are wrong.
 classification: "Wrong behavior (no CWE) #PHYSICAL"
 keywords: ['driver', 'motoman']
 system: motoman
@@ -33,7 +33,18 @@ fix:
   hash: null
   pull-request: 148
   license: ['BSD']
-  fix-in: ['motoman_driver/MotoPlus/Controller.h', 'motoman_driver/MotoPlus/CtrlGroup.c', 'motoman_driver/MotoPlus/MotionServer.c', 'motoman_driver/MotoPlus/ParameterTypes.h', 'motoman_driver/MotoPlus/RosSetupValidation.dnLib', 'motoman_driver/MotoPlus/RosSetupValidation.fsLib', 'motoman_driver/MotoPlus/RosSetupValidation.mpLib', 'motoman_driver/MotoPlus/_buildLog/MotoROSDX100.log', 'motoman_driver/MotoPlus/output/DX100/MotoRosDX100/MotoRosDX100.out', 'motoman_driver/MotoPlus/output/DX200/MotoRosDX200/MotoRosDX200.out', 'motoman_driver/MotoPlus/output/FS100/MotoRosFS100/MotoRosFS100.out']
+  fix-in:
+    - motoman_driver/MotoPlus/Controller.h
+    - motoman_driver/MotoPlus/CtrlGroup.c
+    - motoman_driver/MotoPlus/MotionServer.c
+    - motoman_driver/MotoPlus/ParameterTypes.h
+    - motoman_driver/MotoPlus/RosSetupValidation.dnLib
+    - motoman_driver/MotoPlus/RosSetupValidation.fsLib
+    - motoman_driver/MotoPlus/RosSetupValidation.mpLib
+    - motoman_driver/MotoPlus/_buildLog/MotoROSDX100.log
+    - motoman_driver/MotoPlus/output/DX100/MotoRosDX100/MotoRosDX100.out
+    - motoman_driver/MotoPlus/output/DX200/MotoRosDX200/MotoRosDX200.out
+    - motoman_driver/MotoPlus/output/FS100/MotoRosFS100/MotoRosFS100.out
   languages:
     - C
   time: 2017-01-09 (21:09)

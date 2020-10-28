@@ -3,8 +3,8 @@
 id: c0067f9
 title: Erroneous import of Goto service
 description: >
-     "mavros/src/mavros/mission.py" attempts to import a class that no
-     longer exists, "WaypointGOTO", from the "mavros_msgs.srv" module.
+  "mavros/src/mavros/mission.py" attempts to import a class that no
+  longer exists, "WaypointGOTO", from the "mavros_msgs.srv" module.
 classification: Import of Missing Module (no CWE)
 keywords:
   - import error

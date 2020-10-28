@@ -3,25 +3,25 @@
 id: 3a48064
 title: dependency on ros_controllers metapackage
 description: >
-     The ur_gazebo package, which is a proper package, depends on a
-     meta-package (just a grouping package) ros_controllers, which is
-     not allowed by ROS packaging standards.  Instead they should
-     depend on concrete packages that they actually use.  See REP-127
-     linked below; "Catkin packages must depend directly on the
-     packages they use, not on any metapackages." (section
-     <metapackage/>). This causes the build error with the current
-     version of catkin that enforces this rule.
-     This dependency is (moreover) stale, and can simply be removed.
-     Meta-packages in ROS are used to install a number of packages
-     working together (and having actual contents) to be conveniently
-     installed together, while tracking all dependencies.  They cannot
-     export dependencies further, so they should only be used to
-     install groups of packages together by a package manager, not by
-     other packages to depend on them.
-     The issue is ROS-specific as it appears in ROS-specific
-     package.xml files.  Moreover it arises due to the enforcement of
-     a ROS-specific packaging decision.
-     This essentially the same bug as 0c34123 and a58f4b5
+  The ur_gazebo package, which is a proper package, depends on a
+  meta-package (just a grouping package) ros_controllers, which is
+  not allowed by ROS packaging standards.  Instead they should
+  depend on concrete packages that they actually use.  See REP-127
+  linked below; "Catkin packages must depend directly on the
+  packages they use, not on any metapackages." (section
+  <metapackage/>). This causes the build error with the current
+  version of catkin that enforces this rule.
+  This dependency is (moreover) stale, and can simply be removed.
+  Meta-packages in ROS are used to install a number of packages
+  working together (and having actual contents) to be conveniently
+  installed together, while tracking all dependencies.  They cannot
+  export dependencies further, so they should only be used to
+  install groups of packages together by a package manager, not by
+  other packages to depend on them.
+  The issue is ROS-specific as it appears in ROS-specific
+  package.xml files.  Moreover it arises due to the enforcement of
+  a ROS-specific packaging decision.
+  This essentially the same bug as 0c34123 and a58f4b5
 classification: |
   run-time dependency issue (no CWE)
   internal classification (cause):
@@ -45,7 +45,7 @@ bug:
   issue: null
   time-reported: unreported
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repo: https://github.com/ros-industrial/universal_robot
   hash: 3a4806400af6a6bd9c44bcdb2ee528bf81e45573

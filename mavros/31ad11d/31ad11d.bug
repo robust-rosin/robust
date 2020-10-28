@@ -3,13 +3,13 @@
 id: 31ad11d
 title: OSX compilation failure due to library incompatibilities
 description: >
-     The libmavconn module fails to compile on OSX due to library
-     incompatibilities in thread_utils.h. Specifically, the
-     pthread_setname_np function defined in pthread.h implements a
-     different interface for OSX and (tested) Linux systems. On OSX,
-     this function sets the name of the calling thread to a given (C)
-     string; on Linux, the function also accepts the pthread_t object
-     of the thread which should be renamed.
+  The libmavconn module fails to compile on OSX due to library
+  incompatibilities in thread_utils.h. Specifically, the
+  pthread_setname_np function defined in pthread.h implements a
+  different interface for OSX and (tested) Linux systems. On OSX,
+  this function sets the name of the calling thread to a given (C)
+  string; on Linux, the function also accepts the pthread_t object
+  of the thread which should be renamed.
 classification: OS-library incompatibility (no CWE)
 keywords:
   - porting

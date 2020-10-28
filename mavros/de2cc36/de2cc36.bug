@@ -3,12 +3,12 @@
 id: de2cc36
 title: New PX4 drone now acknowledges sent commands
 description: >
-     A newer version of the PX4 autopilot module now sends an
-     acknowledgement signal upon receiving a command, unlike all
-     previous versions. To ensure proper functioning, the
-     "send_command_long_and_wait" function, responsible for issuing
-     commands to the drone should be updated to expect acknowledgement
-     from the drone (autopilot).
+  A newer version of the PX4 autopilot module now sends an
+  acknowledgement signal upon receiving a command, unlike all
+  previous versions. To ensure proper functioning, the
+  "send_command_long_and_wait" function, responsible for issuing
+  commands to the drone should be updated to expect acknowledgement
+  from the drone (autopilot).
 classification: "CWE-252: Unchecked Return Value #EVOLUTION"
 keywords:
   - robot behaviour change
@@ -17,7 +17,8 @@ severity: warning
 links: []
 bug:
   phase: runtime
-  specificity: "robotics-specific: updated robot controller implements slightly different API"
+  specificity: "robotics-specific: updated robot controller implements slightly different\
+    \ API"
   architectural-location: N/A
   application: N/A
   task: N/A

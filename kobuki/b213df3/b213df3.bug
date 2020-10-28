@@ -3,14 +3,14 @@
 id: b213df3
 title: Missing Comment Token
 description: >
-     ROS parameters (key-value pairs) can be loaded from YAML files.
-     One such file was missing a line comment token, causing part of
-     the text to be interpreted as YAML data, and loaded as a ROS
-     parameter.
-     There was no crash or error report because the text happened to
-     contain a colon, which made it valid YAML syntax for the parser.
-     The end result was a strangely named parameter showing up during
-     operation.
+  ROS parameters (key-value pairs) can be loaded from YAML files.
+  One such file was missing a line comment token, causing part of
+  the text to be interpreted as YAML data, and loaded as a ROS
+  parameter.
+  There was no crash or error report because the text happened to
+  contain a colon, which made it valid YAML syntax for the parser.
+  The end result was a strangely named parameter showing up during
+  operation.
 classification: Syntax Error (no CWE)
 keywords: ['parameters', 'yaml', 'syntax', 'comments']
 system: kobuki

@@ -3,12 +3,12 @@
 id: b96bf67
 title: Incorrect orientation (wrong frame) passed to set_attitude_target
 description: >
-     MAVROS operates on a frame of base_link->ENU, whereas MAVLink
-     operates on aircraft->NED. Therefore, location and orientation
-     must be transformed between these two frames when communicating
-     between them.  The buggy function correctly performs the
-     necessary frame conversions, but fails to pass the converted
-     orientation in the "set_attitude_target" function call.
+  MAVROS operates on a frame of base_link->ENU, whereas MAVLink
+  operates on aircraft->NED. Therefore, location and orientation
+  must be transformed between these two frames when communicating
+  between them.  The buggy function correctly performs the
+  necessary frame conversions, but fails to pass the converted
+  orientation in the "set_attitude_target" function call.
 classification: CWE-137 Representation Errors #PHYSICAL
 keywords:
   - incorrect argument

@@ -3,8 +3,8 @@
 id: dc1327f
 title: Missing mavlink dependency
 description: >
-     Versions 0.9 and 0.8.3 of MAVROS fail to build due to a missing
-     "mavlink" dependency.
+  Versions 0.9 and 0.8.3 of MAVROS fail to build due to a missing
+  "mavlink" dependency.
 classification: Missing Dependency (no CWE)
 keywords:
   - missing dependencies

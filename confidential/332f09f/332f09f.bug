@@ -3,17 +3,18 @@
 id: 332f09f
 title: New features unavailable in older systems
 description: >
-     When adding the possibility to use features that have been added
-     in new versions of Robot Web Services (RWS), then it will not be
-     possible to use them with older systems. Currently, if using an
-     older system version, then this will be attempted and reported as
-     a failed communication. It might be prudent to check the current
-     system's version and then report if a specific function is
-     unavailable.
+  When adding the possibility to use features that have been added
+  in new versions of Robot Web Services (RWS), then it will not be
+  possible to use them with older systems. Currently, if using an
+  older system version, then this will be attempted and reported as
+  a failed communication. It might be prudent to check the current
+  system's version and then report if a specific function is
+  unavailable.
 classification: >
   Incorrect Handling of Accessing Unavailable Features (no CWE) #EVOLUTION
   internal classification (cause): attempting to access features added in newer versions
-  internal classification (effect): possibly inconclusive information reported to user
+  internal classification (effect): possibly inconclusive information reported to
+  user
 keywords: ['RWS']
 system: confidential
 severity: bad-smell
@@ -32,7 +33,7 @@ bug:
   issue: null
   time-reported: 2017-06-13 (11:41)
   reproducibility: always
-  trace:
+  trace: null
 fix:
   repository: CONFIDENTIAL
   hash: null

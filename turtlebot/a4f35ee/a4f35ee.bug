@@ -3,14 +3,14 @@
 id: a4f35ee
 title: Launch File Not Working With Some Linux Distributions
 description: >
-     One of Turtlebot's launch files launched a component that
-     performed custom operative system checks, and crashed when it
-     encountered Linux Mint and Linux Linaro.  ROS is tested and
-     recommended for Ubuntu systems, and Linux Mint is a distribution
-     based on Ubuntu that shares a great deal of its packages, and, in
-     general, should not cause problems running ROS.
-     The check for the Linux distribution name not being equal to Ubuntu,
-     results in an exception being thrown.
+  One of Turtlebot's launch files launched a component that
+  performed custom operative system checks, and crashed when it
+  encountered Linux Mint and Linux Linaro.  ROS is tested and
+  recommended for Ubuntu systems, and Linux Mint is a distribution
+  based on Ubuntu that shares a great deal of its packages, and, in
+  general, should not cause problems running ROS.
+  The check for the Linux distribution name not being equal to Ubuntu,
+  results in an exception being thrown.
 classification: OS-library incompatibility (no CWE)
 keywords: ['os', 'rosdep', 'linux', 'rocon', 'variability', 'exception']
 system: turtlebot
@@ -44,10 +44,16 @@ bug:
     KeyError: 'linuxmint'
 fix:
   repo: https://github.com/robotics-in-concert/rocon_app_platform | https://github.com/ros-infrastructure/rospkg
-  hash: d379385c4de4323318dbb1dd901ab43a24189c19 | 862254530e105aa6a3a0919dc3c9c06c1b4be8cd | 7a2a9038bdc4f643047360901b0f4f26b0d0ec79 | fceff44c1a5bd99c37f8643fa58a225c5999ec16 | a4f35ee51f0eb8f671173c65095b1a9c1963c5c3
-  pull-request: https://github.com/robotics-in-concert/rocon_app_platform/pull/270 | https://github.com/ros-infrastructure/rospkg/pull/78
+  hash: d379385c4de4323318dbb1dd901ab43a24189c19 | 862254530e105aa6a3a0919dc3c9c06c1b4be8cd
+    | 7a2a9038bdc4f643047360901b0f4f26b0d0ec79 | fceff44c1a5bd99c37f8643fa58a225c5999ec16
+    | a4f35ee51f0eb8f671173c65095b1a9c1963c5c3
+  pull-request: https://github.com/robotics-in-concert/rocon_app_platform/pull/270
+    | https://github.com/ros-infrastructure/rospkg/pull/78
   license: ['BSD']
-  fix-in: ['rocon_app_manager/src/rocon_app_manager/rapp_manager.py', 'src/rospkg/os_detect.py', 'src/rosdep2/platforms/debian.py']
+  fix-in:
+    - rocon_app_manager/src/rocon_app_manager/rapp_manager.py
+    - src/rospkg/os_detect.py
+    - src/rosdep2/platforms/debian.py
   languages:
     - Python
   time: 2015-01-22 (23:52)
