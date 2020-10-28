@@ -30,8 +30,12 @@ bug:
   trace: null
 fix:
   # TODO this one needs closer inspection by Gijs
+  # NOTE it looks like the id for the bug lines up with this repo/commit: https://github.com/traclabs/motoman/commit/b1b6fcb
+  #      but it seems that this is the commit we should be using: https://github.com/ros-industrial/motoman/commit/3f260cb3840095089fb4b743efd3d41695c75b26
   repo: https://github.com/ros-industrial/motoman
   hash: null
+  # TODO should we also list 155?
+  # https://github.com/ros-industrial/motoman/pull/155
   pull-request: 153
   license: ['BSD']
   fix-in:
