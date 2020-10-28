@@ -32,8 +32,7 @@ bug:
   reproducibility: sometimes
   trace: null
 fix:
-  repository: CONFIDENTIAL
-  hash: null
+  commits: confidential
   pull-request: null
   license: ['closed source']
   fix-in: ['CONFIDENTIAL']
