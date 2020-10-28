@@ -3,3 +3,6 @@ bugzood.log
 .Dockerfile
 *.swp
 *.swo
+
+*.egg-info
+.tox
