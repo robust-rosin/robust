@@ -31,8 +31,11 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/turtlebot/turtlebot
-  hash: 0c0f53217bbd838d89f6be5584ae1b9f45106875 | 928306ba94acbfcc4e0ee61c7c8e432561b0824f
+  commits:
+    - repo: https://github.com/turtlebot/turtlebot
+      hash: 0c0f53217bbd838d89f6be5584ae1b9f45106875
+    - repo: https://github.com/turtlebot/turtlebot
+      hash: 928306ba94acbfcc4e0ee61c7c8e432561b0824f
   pull-request: https://github.com/turtlebot/turtlebot/pull/104
   license: ['BSD']
   fix-in:
