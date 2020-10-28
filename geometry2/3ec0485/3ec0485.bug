@@ -47,8 +47,6 @@ bug:
     triggerred.
   trace: N/A
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 3ec048516fd47b533d9a40cae97482f5caefbb2f
   pull-request: https://github.com/ros/geometry2/pull/107
   license:
     - BSD
@@ -57,6 +55,9 @@ fix:
   languages:
     - C++
   time: 2015-05-10 21:11 GMT+2
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 3ec048516fd47b533d9a40cae97482f5caefbb2f
 time-machine:
   ros_distro: indigo
   ros_pkgs:

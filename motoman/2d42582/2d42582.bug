@@ -32,8 +32,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/gavanderhoorn/motoman
-  hash: 93a9abae92b51ed79b6909397940e26d379eaa94
   pull-request: null
   license: ['BSD']
   fix-in: ['motoman_sia20d_support/urdf/sia20d.urdf', 'motoman_sia20d_support/urdf/sia20d_macro.xacro']
@@ -41,3 +39,6 @@ fix:
     - URDF
     - Xacro
   time: 2016-06-19 (00:00)
+  commits:
+    - repo: https://github.com/gavanderhoorn/motoman
+      hash: 93a9abae92b51ed79b6909397940e26d379eaa94

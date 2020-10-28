@@ -70,11 +70,12 @@ bug:
     Thus, the final solution has to mimic the original code, but stripping
     the GUI-related parts.
 fix:
-  repo: https://github.com/yujinrobot/kobuki_desktop
-  hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_dashboard/src/kobuki_dashboard/led_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/motor_widget.py']
   languages:
     - Python
   time: 2014-08-08 (11:25)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki_desktop
+      hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed

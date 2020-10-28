@@ -42,14 +42,15 @@ bug:
   trace: null
   reproduction: null
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 001fca6f33c108c83da4416db3bf43dfeffbe7dd
   pull-request: https://github.com/ros/geometry2/pull/42
   license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++
   time: 2013-11-04T08:27:53Z
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 001fca6f33c108c83da4416db3bf43dfeffbe7dd
 time-machine:
   ros_distro: hydro
   ros_pkgs:

@@ -28,11 +28,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: f95c3847d97fba46b6317e00ffd78ce352ec376f
   pull-request: https://github.com/yujinrobot/kobuki/pull/334
   license: ['BSD']
   fix-in: ['kobuki_node/package.xml']
   languages:
     - Package XML
   time: 2014-08-08 (01:42)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: f95c3847d97fba46b6317e00ffd78ce352ec376f

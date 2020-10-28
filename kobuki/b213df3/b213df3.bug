@@ -43,11 +43,12 @@ bug:
     parameter that is created by mistake. The successful reading of this
     parameter should fail the test.
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: b213df3324cd933ddfc1bbd7ef8dce50cc233d51
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_node/param/base.yaml']
   languages:
     - Param YAML
   time: 2013-08-30 (09:45)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: b213df3324cd933ddfc1bbd7ef8dce50cc233d51

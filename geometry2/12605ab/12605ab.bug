@@ -40,11 +40,12 @@ bug:
     fixed: TODO
     rosdistro: a7fd093f6922394309c317d519ec42d469258ea6
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 12605ab6b8024395c014e76ecc9b75d853c5c631
   pull-request: https://github.com/ros/geometry2/pull/85
   license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++
   time: March 12, 2015, 2:33 AM GMT+1
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 12605ab6b8024395c014e76ecc9b75d853c5c631

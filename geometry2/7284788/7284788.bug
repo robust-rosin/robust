@@ -55,16 +55,15 @@ bug:
     Use the test case linked under links above, or if we want a more narrow test case,
     use the trave above (from the first ROS answers links in the links above).
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 7284788fc1646c6c6afb42bd0e50969387b4cf34
-  # there is no pull request. Fix appears to have been pushed to the
-  # repository directly by tfoote
   pull-request: null
   license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++
   time: 2015-04-22T18:16:30Z
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 7284788fc1646c6c6afb42bd0e50969387b4cf34
 time-machine:
   ros_distro: indigo
   ros_pkgs:

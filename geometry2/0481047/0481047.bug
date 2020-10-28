@@ -50,8 +50,6 @@ bug:
     Issue 84 has a discussion on how to reproduce it. It is a rather simple
     static linking bug, so it should be possible to reproduce.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 04810475f249e3f067701288388b82ff0dd686ba
   pull-request: https://github.com/ros/geometry2/pull/86
   license: ['BSD']
   fix-in:
@@ -60,3 +58,6 @@ fix:
   languages:
     - C++
   time: 2015-03-03 (2015-03-12 2:53 GMT+1)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 04810475f249e3f067701288388b82ff0dd686ba

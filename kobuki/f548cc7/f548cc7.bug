@@ -45,10 +45,10 @@ bug:
         message =
     [FATAL] [1354029622.152687114]: Call to publish() on an invalid Publisher
     [FATAL] [1354029622.153042536]:
-    [keyop-1] process has died [pid 13442, exit code -5, cmd /opt/turtlebot_groovy/kobuki/kobuki_keyop/bin/keyop keyop/enable:=/enable keyop/disable:=/disable keyop/cmd_vel:=/cmd_vel keyop/mobile_robot/reset_odometry:=/mobile_base/reset_odometry __name:=keyop __log:=/home/yujin/.ros/log/97190902-3887-11e2-b4e2-0026c7d760cc/keyop-1.log].
+    [keyop-1] process has died [pid 13442, exit code -5, cmd /opt/turtlebot_groovy/kobuki/kobuki_keyop/bin/keyop
+    keyop/enable:=/enable keyop/disable:=/disable keyop/cmd_vel:=/cmd_vel keyop/mobile_robot/reset_odometry:=/mobile_base/reset_odometry
+    __name:=keyop __log:=/home/yujin/.ros/log/97190902-3887-11e2-b4e2-0026c7d760cc/keyop-1.log].
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: f548cc73fb2959c7ceb6ab1c7f5a973bf95e5594
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -60,3 +60,6 @@ fix:
     - C++
     - Package XML
   time: 2012-12-01 (06:26)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: f548cc73fb2959c7ceb6ab1c7f5a973bf95e5594

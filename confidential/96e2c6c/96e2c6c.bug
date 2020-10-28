@@ -39,11 +39,12 @@ bug:
   reproducibility: sometimes
   trace: TBD
 fix:
-  repo: CONFIDENTIAL
-  hash: 96e2c6ce746e187ea4276360909e9a71773c3119
   pull-request: null
   license: ['BSD']
   fix-in: ['trajectory_generation.cpp', 'utils.h']
   languages:
     - C++
   time: 2017-02-09 (16:43)
+  commits:
+    - repo: CONFIDENTIAL
+      hash: 96e2c6ce746e187ea4276360909e9a71773c3119

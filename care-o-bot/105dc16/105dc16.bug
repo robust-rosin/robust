@@ -37,8 +37,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ipa320/cob_control
-  hash: 105dc16ffe0b9dba294aabea0c18052cd281bde0
   pull-request: https://github.com/thiagodefreitas/cob_control/commit/105dc16ffe0b9dba294aabea0c18052cd281bde0
   license: ['LGPL']
   fix-in:
@@ -46,3 +44,6 @@ fix:
   languages:
     - CMake
   time: 2014-11-21 (12:57)
+  commits:
+    - repo: https://github.com/ipa320/cob_control
+      hash: 105dc16ffe0b9dba294aabea0c18052cd281bde0

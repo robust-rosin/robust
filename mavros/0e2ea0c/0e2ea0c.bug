@@ -35,8 +35,6 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  repo: https://github.com/mavlink/mavros
-  hash: 0e2ea0c43b373feb490b45710fb63f4e6cde78eb
   pull-request: N/A
   license:
     - BSD
@@ -47,6 +45,9 @@ fix:
   languages:
     - C++
   time: 2015-07-29T13:27:14+03:00
+  commits:
+    - repo: https://github.com/mavlink/mavros
+      hash: 0e2ea0c43b373feb490b45710fb63f4e6cde78eb
 time-machine:
   ros_distro: indigo
   ros_pkgs:

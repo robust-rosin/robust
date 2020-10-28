@@ -28,11 +28,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/gavanderhoorn/motoman
-  hash: 57b7a995dfdcf025d6394123eb87896853a6aadf
   pull-request: null
   license: null
   fix-in: ['motoman_sda10f_support/meshes/sda10f/visual/motoman_axis_b1.stl', 'motoman_sda10f_support/meshes/sda10f/visual/motoman_base.stl']
   languages:
     - STL
   time: 2016-08-29 (13:15)
+  commits:
+    - repo: https://github.com/gavanderhoorn/motoman
+      hash: 57b7a995dfdcf025d6394123eb87896853a6aadf

@@ -38,11 +38,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot/
-  hash: c4e118757123ef243d0f3c2e14a6c3d63549f20d
   pull-request: https://github.com/ros-industrial/universal_robot/pull/303
   license: ['BSD']
   fix-in: ['ur_kinematics/src/ur_moveit_plugin.cpp']
   languages:
     - C++
   time: unfixed
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot/
+      hash: c4e118757123ef243d0f3c2e14a6c3d63549f20d

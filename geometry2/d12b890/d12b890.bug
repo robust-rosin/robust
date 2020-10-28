@@ -49,11 +49,12 @@ bug:
     It might be hard to write a test, as the objects are most easily created in
     Python, but the error happens in C++ and is not propagated to python
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: d12b8906c8686dc1b980c489a3e4b83d78d6a488
   pull-request: null
   license: ["BSD"]
   fix-in: ["tf2_py/src/tf2_py.cpp"]
   languages:
     - C++
   time: 2017-01-05 20:03 GMT+1
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: d12b8906c8686dc1b980c489a3e4b83d78d6a488

@@ -32,10 +32,11 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: a723ecb68f72d52e538f9e9bdbca3e66f7a69444
   pull-request: null
   license: ['BSD']
   fix-in: ['tf2/CMakeLists.txt']
   languages: ['CMake']
   time: Feb 15, 2013, 12:37 GMT +1
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: a723ecb68f72d52e538f9e9bdbca3e66f7a69444

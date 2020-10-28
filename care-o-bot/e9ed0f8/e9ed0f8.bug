@@ -39,8 +39,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-simulation/gazebo_ros_pkgs
-  hash: e9ed0f8e157398621987bd61e2d78683cd945c2b
   pull-request: https://github.com/ros-simulation/gazebo_ros_pkgs/pull/343
   license: ['LGPL']
   fix-in:
@@ -50,3 +48,6 @@ fix:
     - CMake
     - Package XML
   time: 2015-08-08 (10:05)
+  commits:
+    - repo: https://github.com/ros-simulation/gazebo_ros_pkgs
+      hash: e9ed0f8e157398621987bd61e2d78683cd945c2b

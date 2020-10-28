@@ -34,8 +34,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: bb3c7ec8a7e656aa7e75753864351c27d571db47
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -45,3 +43,6 @@ fix:
     - C++
     - Param YAML
   time: 2012-06-20 (04:01)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: bb3c7ec8a7e656aa7e75753864351c27d571db47

@@ -39,8 +39,6 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  repo: https://github.com/mavlink/mavros
-  hash: 599c5887ad2aadc124d7e1354f3a1597402118da
   pull-request: N/A
   license:
     - BSD
@@ -55,6 +53,9 @@ fix:
     - Python
     - C++
   time: 2017-06-28 (00:00)
+  commits:
+    - repo: https://github.com/mavlink/mavros
+      hash: 599c5887ad2aadc124d7e1354f3a1597402118da
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

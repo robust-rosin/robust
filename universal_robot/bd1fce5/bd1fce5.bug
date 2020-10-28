@@ -35,11 +35,12 @@ bug:
   reproducibility: sometimes
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot
-  hash: bd1fce5b225aecc4862e824b674eebb4c40be255
   pull-request: https://github.com/ros-industrial/universal_robot/pull/37
   license: ['BSD']
   fix-in: ['ur_driver/src/ur_driver/driver.py']
   languages:
     - Python
   time: 2014-02-08 (03:30)
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot
+      hash: bd1fce5b225aecc4862e824b674eebb4c40be255

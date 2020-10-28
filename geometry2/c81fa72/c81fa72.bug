@@ -31,14 +31,15 @@ bug:
   trace: >
     FIXME: there is a test case added in the fixing commit.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: c81fa7213ec2ca6512c8015b13a5bbade2b690f7
   pull-request: https://github.com/ros/geometry2/pull/29
   license: ['BSD']
   fix-in: ['tf2_ros/src/static_transform_broadcaster.cpp']
   languages:
     - C++
   time: Oct 15, 2013, 3:04 AM GMT+2
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: c81fa7213ec2ca6512c8015b13a5bbade2b690f7
 time-machine:
   ros_distro: hydro
   ros_pkgs:

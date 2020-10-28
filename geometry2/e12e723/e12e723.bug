@@ -42,8 +42,6 @@ bug:
       classified as a build failure / problem, the workspace will build
       as only at runtime the missing package will cause actual problems.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 1f019166ccedf8ce5151944f5e33302afaf82679
   pull-request: https://github.com/ros/geometry2/pull/150
   license:
     - BSD
@@ -52,6 +50,9 @@ fix:
   languages:
     - Package XML
   time: 2016-03-04 03:30 GMT+1
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 1f019166ccedf8ce5151944f5e33302afaf82679
 time-machine:
   ros_distro: indigo
   ros_pkgs:

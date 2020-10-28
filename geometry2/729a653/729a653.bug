@@ -42,8 +42,6 @@ bug:
     commit (might require  inserting an assertion to cause  a crash or
     using a sanitizer)
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 729a6531929203720f4a518ac9e79321fe3c5537
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -51,3 +49,6 @@ fix:
   languages:
     - C++
   time: 2015-04-16 (23:36 GMT+1)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 729a6531929203720f4a518ac9e79321fe3c5537

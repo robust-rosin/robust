@@ -51,8 +51,6 @@ bug:
     Reproduction would require a long run (perhaps could be faked/accelerated
     by using the buggy function in a loop multiple times.)
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 1b5fa94cbca8dd5161f29c1697bf71449d14e041
   pull-request: https://github.com/ros/geometry2/pull/251
   license: ['BSD']
   fix-in:
@@ -60,6 +58,9 @@ fix:
   languages:
     - C++
   time: 2017-07-12 5:20PM UTC
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 1b5fa94cbca8dd5161f29c1697bf71449d14e041
 time-machine:
   ros_distro: indigo
   ros_pkgs:

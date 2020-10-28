@@ -28,11 +28,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: e34428db1df893b36e604f17156837af3ab380cb
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_node/scripts/laptop_battery.py']
   languages:
     - Python
   time: 2012-06-07 (00:55)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: e34428db1df893b36e604f17156837af3ab380cb

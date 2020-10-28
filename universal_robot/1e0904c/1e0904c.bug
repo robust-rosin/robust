@@ -47,11 +47,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot/
-  hash: 1e0904c38934fe09c9647825caf3b58dda2636f9
   pull-request: https://github.com/ros-industrial/universal_robot/pull/165
   license: ['BSD']
   fix-in: ['ur_driver/prog']
   languages:
     - URScript
   time: 2015-02-20 (11:24)
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot/
+      hash: 1e0904c38934fe09c9647825caf3b58dda2636f9

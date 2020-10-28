@@ -37,11 +37,12 @@ bug:
   reproduction: >
     Rerun the clang static checker or find the comparable gcc flag.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 93ea33319d60d4787afa63d50fa824c3bacc1921
   pull-request: https://github.com/ros/geometry2/pull/81
   license: ['BSD']
   fix-in: ['tf2/include/tf2/LinearMath/Vector3.h']
   languages:
     - C++
   time: 2015-03-03 (09:36 AM GMT+1)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 93ea33319d60d4787afa63d50fa824c3bacc1921

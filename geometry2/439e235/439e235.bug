@@ -37,8 +37,6 @@ bug:
     A test case should be fairly easy to create by comparing the branching
     before and after the fix.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 439e2350ca9b2f0581a3631f0929acc2021db73e
   pull-request: https://github.com/ros/geometry2/pull/187
   license: ['BSD']
   fix-in:
@@ -46,3 +44,6 @@ fix:
   languages:
     - C++
   time: Sep 8, 2016, 10:34 PM GMT+2
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 439e2350ca9b2f0581a3631f0929acc2021db73e

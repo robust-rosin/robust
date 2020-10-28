@@ -43,11 +43,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot
-  hash: 040fd110f9281875d87b8e6aaba0c1c8f2d7d6fd
   pull-request: https://github.com/ros-industrial/universal_robot/pull/114
   license: ['BSD']
   fix-in: ['ur_kinematics/CMakeLists.txt']
   languages:
     - CMake
   time: 2014-10-10 (11:29)
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot
+      hash: 040fd110f9281875d87b8e6aaba0c1c8f2d7d6fd

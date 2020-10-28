@@ -40,8 +40,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/shadow-robot/stiff_flop
-  hash: 473ab5eb82487fb024458c0d709463fb3e046e34
   pull-request: https://github.com/shadow-robot/stiff_flop/issues/276
   license: ['closed source']
   fix-in:
@@ -51,3 +49,6 @@ fix:
   languages:
     - Python
   time: 2015-12-07 (00:00)
+  commits:
+    - repo: https://github.com/shadow-robot/stiff_flop
+      hash: 473ab5eb82487fb024458c0d709463fb3e046e34

@@ -32,8 +32,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ipa320/cob_command_tools
-  hash: c8091b68c69eeae0bb7777ad6fa44d644c20f96c
   pull-request: https://github.com/ipa320/cob_command_tools/pull/84
   license: ['LGPL']
   fix-in:
@@ -41,3 +39,6 @@ fix:
   languages:
     - Python
   time: 2015-03-13 (16:21)
+  commits:
+    - repo: https://github.com/ipa320/cob_command_tools
+      hash: c8091b68c69eeae0bb7777ad6fa44d644c20f96c

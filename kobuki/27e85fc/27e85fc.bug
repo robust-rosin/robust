@@ -27,11 +27,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki_desktop
-  hash: 27e85fc224fc6198b55c5af0d066c7901af8ec0b
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
   languages:
     - C++
   time: 2013-08-09 (08:14)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki_desktop
+      hash: 27e85fc224fc6198b55c5af0d066c7901af8ec0b

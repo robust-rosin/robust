@@ -29,8 +29,6 @@ bug:
   trace: N/A
   reproduction: null
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 4c160d3f1bde818fa201ba2c78e25a3e7d9b7cf6
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -38,3 +36,6 @@ fix:
   languages:
     - CMake
   time: 2014-12-16 (10:01am GMT+1)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 4c160d3f1bde818fa201ba2c78e25a3e7d9b7cf6

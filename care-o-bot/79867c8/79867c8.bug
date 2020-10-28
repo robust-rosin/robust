@@ -42,8 +42,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ipa320/cob_android
-  hash: 79867c88acc64342f061e6324ed6b84ca7e0773d
   pull-request: https://github.com/ipa320/cob_android/pull/8
   license: ['LGPL']
   fix-in:
@@ -52,3 +50,6 @@ fix:
   languages:
     - CMake
   time: 2015-08-04 (16:26)
+  commits:
+    - repo: https://github.com/ipa320/cob_android
+      hash: 79867c88acc64342f061e6324ed6b84ca7e0773d

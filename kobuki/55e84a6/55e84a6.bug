@@ -26,29 +26,41 @@ bug:
   time-reported: 2014-08-08T06:25:24Z
   reproducibility: always
   trace: >
-    PluginManager._load_plugin() could not load plugin "kobuki_qtestsuite/Kobuki Test Suite":
+    PluginManager._load_plugin() could not load plugin "kobuki_qtestsuite/Kobuki Test
+    Suite":
     Traceback (most recent call last):
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/plugin_handler.py", line 98, in load
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/plugin_handler.py",
+    line 98, in load
         self._load()
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/plugin_handler_direct.py", line 54, in _load
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/plugin_handler_direct.py",
+    line 54, in _load
         self._plugin = self._plugin_provider.load(self._instance_id.plugin_id, self._context)
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/composite_plugin_provider.py", line 71, in load
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/composite_plugin_provider.py",
+    line 71, in load
         instance = plugin_provider.load(plugin_id, plugin_context)
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/composite_plugin_provider.py", line 71, in load
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/composite_plugin_provider.py",
+    line 71, in load
         instance = plugin_provider.load(plugin_id, plugin_context)
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/rqt_gui_py/ros_py_plugin_provider.py", line 60, in load
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/rqt_gui_py/ros_py_plugin_provider.py",
+    line 60, in load
         return super(RosPyPluginProvider, self).load(plugin_id, plugin_context)
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/composite_plugin_provider.py", line 71, in load
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/qt_gui/composite_plugin_provider.py",
+    line 71, in load
         instance = plugin_provider.load(plugin_id, plugin_context)
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/rqt_gui/ros_plugin_provider.py", line 94, in load
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/rqt_gui/ros_plugin_provider.py",
+    line 94, in load
         return class_ref(plugin_context)
-      File "/home/jihoonl/research/ros/kobuki/src/kobuki_desktop/kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite.py", line 43, in __init__
+      File "/home/jihoonl/research/ros/kobuki/src/kobuki_desktop/kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite.py",
+    line 43, in __init__
         self._widget.setupUi()
-      File "/home/jihoonl/research/ros/kobuki/src/kobuki_desktop/kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py", line 43, in setupUi
+      File "/home/jihoonl/research/ros/kobuki/src/kobuki_desktop/kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py",
+    line 43, in setupUi
         self._ui.battery_profile_frame.setupUi(self._ui.configuration_dock.cmd_vel_topic_name())
-      File "/home/jihoonl/research/ros/kobuki/src/kobuki_desktop/kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py", line 51, in setupUi
+      File "/home/jihoonl/research/ros/kobuki/src/kobuki_desktop/kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py",
+    line 51, in setupUi
         self._plot_widget.switch_data_plot_widget(FullSizeDataPlot(self._plot_widget))
-      File "/opt/ros/indigo/lib/python2.7/dist-packages/rqt_plot/plot_widget.py", line 150, in switch_data_plot_widget
+      File "/opt/ros/indigo/lib/python2.7/dist-packages/rqt_plot/plot_widget.py",
+    line 150, in switch_data_plot_widget
         self.data_plot.autoscroll(self.autoscroll_checkbox.isChecked())
     AttributeError: 'FullSizeDataPlot' object has no attribute 'autoscroll'
 fix:
