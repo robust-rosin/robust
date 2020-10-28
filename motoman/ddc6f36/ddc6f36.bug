@@ -36,8 +36,9 @@ bug:
       report, since the package had not been released yet at the time.
       Testing is straightforward, as this is a build bug.
 fix:
-  repo: https://github.com/ros-industrial/motoman/
-  hash: null
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: ddc6f363dde1f1bc28d76908a6f950a333d659b0
   pull-request: 25
   license: ['BSD']
   fix-in: ['motoman_driver/CMakeLists.txt']

@@ -30,8 +30,9 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/motoman
-  hash: null
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: eadbcb8077cd5c6138cdd133ee61888cac377c91
   pull-request: 77
   license: ['BSD']
   fix-in:
