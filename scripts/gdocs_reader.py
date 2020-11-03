@@ -9,9 +9,12 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 # Imports for parsing yaml
+import argparse
 import os
 import typing as t
 from robust import yaml
+
+DESCRIPTION = 'Reads fault and failure codes and updates the bug files'
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
@@ -81,7 +84,7 @@ def refactor_fault_failure(description: t.List[str], faults: t.List[str], failur
     description['fault-codes'] = failures
     description['failure-codes'] = faults
 
-def refactor_file(filename: str, faults: str, failures: str) -> None:
+def refactor_file(filename: str, faults: str, failures: str, update: bool = True) -> None:
     robust_dir = os.path.dirname(dir_here)
     bug_path = os.path.join(robust_dir, filename)
 
@@ -103,6 +106,13 @@ def refactor_file(filename: str, faults: str, failures: str) -> None:
         yaml.dump(description, f)
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=DESCRIPTION)
+    parser.add_argument('--update',
+                        nargs='?',
+                        type=bool,
+                        default=True,
+                        help='Update fault-codes and failure-codes even if the fields exist in the bug files.')
+    args = parser.parse_args()
     for row in get_gsheets_data():
-        refactor_file(row[0], row[1], row[2])
+        refactor_file(row[0], row[1], row[2], args.update)
 
