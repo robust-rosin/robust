@@ -59,6 +59,27 @@ class BugSection:
 
 
 @attr.s
+class FixSection:
+    bug: 'BugDescription' = attr.ib()
+
+    @property
+    def pull_request(self) -> str:
+        return self.bug.yaml['fix']['pull-request']
+
+    @property
+    def license(self) -> t.AbstractSet[str]:
+        return self.bug.yaml['fix']['license']
+
+    @property
+    def fix_in(self) -> t.AbstractSet[str]:
+        return self.bug.yaml['fix']['fix-in']
+
+    @property
+    def languages(self) -> t.AbstractSet[str]:
+        return self.bug.yaml['fix']['languages']
+
+
+@attr.s
 class BugDescription:
     filename: str = attr.ib()
     yaml: t.Dict[str, t.Any] = attr.ib(repr=False, eq=False)
@@ -96,6 +117,10 @@ class BugDescription:
     @property
     def bug(self) -> BugSection:
         return BugSection(self)
+
+    @property
+    def fix(self) -> FixSection:
+        return FixSection(self)
 
 
 @attr.s
