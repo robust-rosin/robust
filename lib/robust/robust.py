@@ -16,8 +16,33 @@ class BugDescription:
 
     @classmethod
     def load(cls, filename: str) -> 'BugDescription':
-        yaml_ = yaml.load(filename)
+        with open(filename, 'r') as f:
+            yaml_ = yaml.load(f)
         return BugDescription(filename, yaml_)
+
+    @property
+    def id(self) -> str:
+        return self.yaml['id']
+
+    @property
+    def description(self) -> str:
+        return self.yaml['description']
+
+    @property
+    def title(self) -> str:
+        return self.yaml['title']
+
+    @property
+    def severity(self) -> str:
+        return self.yaml['severity']
+
+    @property
+    def keywords(self) -> t.AbstractSet[str]:
+        return set(self.yaml['keywords'])
+
+    @property
+    def links(self) -> t.AbstractSet[str]:
+        return set(self.yaml['links'])
 
 
 @attr.s
