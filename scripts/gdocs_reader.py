@@ -93,6 +93,7 @@ def refactor_file(filename: str, faults: str, failures: str, update: bool = True
     faults_ = faults.upper().splitlines() if faults else faults
     failures_ = failures.upper().splitlines() if failures else failures
     refactor_fault_failure(description, faults_, failures_)
+        refactor_fault_failure(description, faults_, failures_)
 
     with open(bug_path, 'w') as f:
         yaml.dump(description, f)
