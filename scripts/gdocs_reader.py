@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # Imports to access gdocs
-from __future__ import print_function
 import pickle
 import os.path
 from googleapiclient.discovery import build
@@ -10,10 +9,8 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 # Imports for parsing yaml
-import argparse
 import os
 import typing as t
-
 from robust import yaml
 
 # If modifying these scopes, delete the file token.pickle.
