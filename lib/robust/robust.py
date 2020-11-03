@@ -10,6 +10,55 @@ from .yaml import yaml
 
 
 @attr.s
+class BugSection:
+    bug: 'BugDescription' = attr.ib()
+
+    @property
+    def phase(self) -> str:
+        return self.bug.yaml['bug']['phase']
+
+    @property
+    def specificity(self) -> str:
+        return self.bug.yaml['bug']['specificity']
+
+    @property
+    def architectural_location(self) -> str:
+        return self.bug.yaml['bug']['architectural-location']
+
+    @property
+    def application(self) -> str:
+        return self.bug.yaml['bug']['application']
+
+    @property
+    def task(self) -> str:
+        return self.bug.yaml['bug']['task']
+
+    @property
+    def subsystem(self) -> str:
+        return self.bug.yaml['bug']['subsystem']
+
+    @property
+    def package(self) -> str:
+        return self.bug.yaml['bug']['package']
+
+    @property
+    def languages(self) -> t.AbstractSet[str]:
+        return set(self.bug.yaml['bug']['languages'])
+
+    @property
+    def detected_by(self) -> str:
+        return self.bug.yaml['bug']['detected-by']
+
+    @property
+    def reported_by(self) -> str:
+        return self.bug.yaml['bug']['reported-by']
+
+    @property
+    def issue(self) -> str:
+        return self.bug.yaml['bug']['issue']
+
+
+@attr.s
 class BugDescription:
     filename: str = attr.ib()
     yaml: t.Dict[str, t.Any] = attr.ib(repr=False, eq=False)
@@ -43,6 +92,10 @@ class BugDescription:
     @property
     def links(self) -> t.AbstractSet[str]:
         return set(self.yaml['links'])
+
+    @property
+    def bug(self) -> BugSection:
+        return BugSection(self)
 
 
 @attr.s
