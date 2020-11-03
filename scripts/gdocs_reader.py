@@ -81,8 +81,8 @@ def refactor_fault_failure(description: t.List[str], faults: t.List[str], failur
             del description['fault-codes']
             del description['failure-codes']
 
-    description['fault-codes'] = failures
-    description['failure-codes'] = faults
+    description['fault-codes'] = faults
+    description['failure-codes'] = failures
 
 def refactor_file(filename: str, faults: str, failures: str, update: bool = True) -> None:
     robust_dir = os.path.dirname(dir_here)
