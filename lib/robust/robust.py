@@ -5,8 +5,30 @@ import os
 import typing as t
 
 import attr
+import git
+import validators
 
 from .yaml import yaml
+
+_URL_PREFIX = 'https://github.com/'
+_FORKED_REPOS = (
+    'mavros',
+    'kobuki',
+    'motoman',
+    'turtlebot',
+    'cob_command_tools',
+    'rosdistro',
+    'image_pipeline',
+    'kobuki_desktop',
+    'cob_control',
+    'cob_android',
+    'yujin_ocs',
+    'kobuki_core',
+    'geometry2',
+    'universal_robot',
+    'cob_robots',
+    'ros_comm',
+)
 
 
 @attr.s
@@ -143,8 +165,18 @@ class BugDescription:
 @attr.s
 class ROBUST(t.Mapping[str, BugDescription]):
     directory: str = attr.ib(converter=os.path.abspath)
+    _forks_directory: str = attr.ib(repr=False, init=False)
     _descriptions: t.Mapping[str, BugDescription] = \
         attr.ib(repr=False, init=False)
+
+    def __attrs_post_init__(self) -> None:
+        files = self._locate_bug_files(self.directory)
+        self._descriptions = \
+            {filename: BugDescription.load(filename) for filename in files}
+
+        self._forks_directory = os.path.join(self.directory, '.forks')
+        if not os.path.exists(self._forks_directory):
+            os.mkdir(self._forks_directory)
 
     @classmethod
     def _locate_bug_files(cls, directory: str) -> t.AbstractSet[str]:
@@ -154,11 +186,6 @@ class ROBUST(t.Mapping[str, BugDescription]):
                 if filename.endswith('.bug'):
                     output.add(os.path.join(root, filename))
         return output
-
-    def __attrs_post_init__(self) -> None:
-        files = self._locate_bug_files(self.directory)
-        self._descriptions = \
-            {filename: BugDescription.load(filename) for filename in files}
 
     def __iter__(self) -> t.Iterator[str]:
         yield from self._descriptions
@@ -173,3 +200,34 @@ class ROBUST(t.Mapping[str, BugDescription]):
         if not isinstance(filename, str):
             return False
         return filename in self._descriptions
+
+    @classmethod
+    def _validate_repo_url(cls, url: str) -> None:
+        if not url.startswith(_URL_PREFIX):
+            error = f"bad repo URL: {url} [must start with {_URL_PREFIX}]"
+            raise ValueError(error)
+
+        if not validators.url(url):
+            error = f"bad repo URL: {url} [not a valid URL]"
+            raise ValueError(error)
+
+    @classmethod
+    def _repo_url_to_fork_url(cls, url: str) -> str:
+        cls._validate_repo_url(url)
+        url_basename = os.path.basename(url[len(_URL_PREFIX):])
+
+        if url_basename not in _FORKED_REPOS:
+            raise ValueError(f"bad repo URL: {url} [no fork exists]")
+
+        return f'https://github.com/robust-rosin/{url_basename}'
+
+    def repo(self, url: str) -> git.Repo:
+        """Fetches the ROBUST fork of a given repository."""
+        fork_url = self._repo_url_to_fork_url(url)
+        repo_name = os.path.basename(url)
+        repo_dir = os.path.join(self._forks_directory, repo_name)
+
+        if os.path.exists(repo_dir):
+            return git.Repo(repo_dir)
+        else:
+            return git.Repo.clone_from(fork_url, repo_dir)
