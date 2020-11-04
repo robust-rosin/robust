@@ -58,6 +58,12 @@ class BugSection:
         return self.bug.yaml['bug']['issue']
 
 
+@attr.s(auto_attribs=True, frozen=True)
+class FixCommit:
+    repo: str
+    hash_: str
+
+
 @attr.s
 class FixSection:
     bug: 'BugDescription' = attr.ib()
@@ -77,6 +83,17 @@ class FixSection:
     @property
     def languages(self) -> t.AbstractSet[str]:
         return self.bug.yaml['fix']['languages']
+
+    @property
+    def commits(self) -> t.AbstractSet[FixCommit]:
+        commits: t.Set[FixCommit] = set()
+        for commit_dict in self.bug.yaml['fix']['commits']:
+            print(commit_dict)
+            repo = commit_dict['repo']
+            hash_ = commit_dict['hash']
+            commit = FixCommit(repo, hash_)
+            commits.add(commit)
+        return commits
 
 
 @attr.s
