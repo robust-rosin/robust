@@ -71,15 +71,11 @@ def get_gsheets_data() -> t.Iterator[t.List[str]]:
             yield [row[COLUMN_BUG], row[COLUMN_FAULT], row[COLUMN_FAILURE]]
         except:
             print(f"ERROR: Empty fields encountered for {row[COLUMN_BUG]} in 'ROBUST coding'")
-            yield [row[COLUMN_BUG], "", ""]
+            yield [row[COLUMN_BUG], None, None]
 
 def refactor_fault_failure(description: t.List[str], faults: t.List[str], failures: t.List[str], update: bool = True) -> None:
-    if 'failure-codes' and 'fault-codes' in description:
-        if not update:
+    if 'failure-codes' and 'fault-codes' in description and not update:
             return
-        else:
-            del description['fault-codes']
-            del description['failure-codes']
 
     description['fault-codes'] = faults
     description['failure-codes'] = failures
@@ -95,12 +91,10 @@ def refactor_file(filename: str, faults: str, failures: str, update: bool = True
         print(f"{err}")
         return
 
-    try:
-        faults_ = faults.upper().splitlines()
-        failures_ = failures.upper().splitlines()
+    faults_ = faults.upper().splitlines() if faults else faults
+    failures_ = failures.upper().splitlines() if failures else failures
+    refactor_fault_failure(description, faults_, failures_)
         refactor_fault_failure(description, faults_, failures_)
-    except ValueError as err:
-        print(f"ERROR [{filename}]: {err}")
 
     with open(bug_path, 'w') as f:
         yaml.dump(description, f)
