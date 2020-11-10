@@ -197,6 +197,10 @@ class BugDescription:
     def fix(self) -> FixSection:
         return FixSection(self)
 
+    def save(self) -> None:
+        with open(self.filename, 'w') as f:
+            yaml.dump(self.yaml, f)
+
 
 @attr.s
 class ROBUST(t.Mapping[str, BugDescription]):
