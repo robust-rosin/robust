@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Obtains fix commit statistics for all bug descriptions."""
+import os
+import typing as t
+
+import git
+from robust import BugDescription, ROBUST
+
+
+def print_skip(bug: BugDescription, reason: str) -> None:
+    print(f"Skipping bug: {bug.id} ({reason})")
+
+
+def process_commit(robust: ROBUST,
+                   bug: BugDescription,
+                   dict_commit: t.Dict[str, t.Any]
+                   ) -> None:
+    if 'stats' in dict_commit:
+        raise ValueError("already has 'stats' field")
+
+    try:
+        repo_url = dict_commit['repo']
+        repo_hash = dict_commit['hash']
+    except KeyError as err:
+        raise ValueError(f"commit is mising field: {err}")
+
+    repo = robust.repo(repo_url)
+    try:
+        fix_commit = repo.commit(repo_hash)
+    except (git.exc.BadName, ValueError):
+        raise ValueError(bug, f"bad fix hash: {repo_hash}")
+
+    commit_stats = fix_commit.stats
+    dict_commit['stats'] = {
+        'total': dict(commit_stats.total),
+        'files': {filename: dict(file_stats)
+                  for filename, file_stats in commit_stats.files.items()}
+    }
+    print(dict_commit)
+
+
+def process_bug(robust: ROBUST, bug: BugDescription) -> None:
+    print(f"Processing bug: {bug.id} [{bug.filename}]")
+
+    try:
+        yaml_commits = bug.yaml['fix']['commits']
+    except KeyError as err:
+        print_skip(bug, f"missing field: {err}")
+        return
+
+    if not isinstance(yaml_commits, list):
+        print_skip(bug, "fix.commits is not a list")
+        return
+
+    for yaml_commit in yaml_commits:
+        process_commit(robust, bug, yaml_commit)
+
+    # write to disk
+    bug.save()
+
+
+def main() -> None:
+    dir_robust = os.path.join(os.path.dirname(__file__), '..')
+    robust = ROBUST(dir_robust)
+    for bug in robust.values():
+        try:
+            process_bug(robust, bug)
+        except ValueError as err:
+            print_skip(bug, err)
+
+
+if __name__ == '__main__':
+    main()
