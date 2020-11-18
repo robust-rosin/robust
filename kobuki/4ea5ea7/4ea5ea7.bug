@@ -29,8 +29,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 4ea5ea7ff535323baeada165764b5b8ceb7bfa87
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -43,3 +41,6 @@ fix:
     - RViz
     - Xacro
   time: unfixed
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 4ea5ea7ff535323baeada165764b5b8ceb7bfa87

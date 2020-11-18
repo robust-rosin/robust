@@ -47,11 +47,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot
-  hash: 3a4806400af6a6bd9c44bcdb2ee528bf81e45573
   pull-request: https://github.com/ros-industrial/universal_robot/pull/289
   license: ['BSD']
   fix-in: ['ur_gazebo/package.xml']
   languages:
     - Package XML
   time: 2017-02-24 (13:00)
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot
+      hash: 3a4806400af6a6bd9c44bcdb2ee528bf81e45573

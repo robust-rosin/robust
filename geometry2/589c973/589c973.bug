@@ -39,14 +39,15 @@ bug:
       datetime used for 'time-machine.datetime' is the creation date of the
       PR, as there is no issue for this bug.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 589c973ed4250f29b45310e931d5fd4e875aaa33
   pull-request: https://github.com/ros/geometry2/pull/47
   license: ['BSD']
   fix-in: ['tf2/include/tf2/LinearMath/Vector3.h']
   languages:
     - C++
   time: 2013-11-27T17:21:05Z
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 589c973ed4250f29b45310e931d5fd4e875aaa33
 time-machine:
   ros_distro: hydro
   ros_pkgs:

@@ -30,8 +30,8 @@ bug:
   trace: null
 fix:
   repo: https://github.com/ros-industrial/motoman
-  hash: null
-  pull-request: 153
+  hash: 3f260cb3840095089fb4b743efd3d41695c75b26
+  pull-request: https://github.com/ros-industrial/motoman/pull/155
   license: ['BSD']
   fix-in:
     - motoman_driver/include/motoman_driver/industrial_robot_client/joint_trajectory_action.h

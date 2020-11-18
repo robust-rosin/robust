@@ -42,11 +42,12 @@ bug:
     This package is not distributed in the standard Ubuntu repositories
     for Ubuntu Precise, the distribution used to reproduce this bug.
 fix:
-  repo: https://github.com/yujinrobot/kobuki_desktop
-  hash: 9c8abeb81acb2d18a086ac18cd88a8cf6dd9e200
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/26
   license: ['BSD']
   fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
   languages:
     - C++
   time: 2014-03-02 (15:03)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki_desktop
+      hash: 9c8abeb81acb2d18a086ac18cd88a8cf6dd9e200

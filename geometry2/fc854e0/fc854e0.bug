@@ -38,14 +38,15 @@ bug:
       datetime used for 'time-machine.datetime' is the creation date of the
       PR, as there is no issue for this bug.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: fc854e0e7013e9a05c3c4f50eb1375aa0ad26841
   pull-request: https://github.com/ros/geometry2/pull/44
   license: ['BSD']
   fix-in: ['tf2_tools/CMakeLists.txt']
   languages:
     - CMake
   time: 2013-11-06 (08:19 GMT+1)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: fc854e0e7013e9a05c3c4f50eb1375aa0ad26841
 time-machine:
   ros_distro: hydro
   ros_pkgs:

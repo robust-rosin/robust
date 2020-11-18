@@ -42,11 +42,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot
-  hash: e122ccc26d8b96f1534a51fc3f0f34638f63c657
   pull-request: https://github.com/ros-industrial/universal_robot/pull/236
   license: ['BSD']
   fix-in: ['ur10_moveit_config/package.xml', 'ur3_moveit_config/package.xml', 'ur5_moveit_config/package.xml']
   languages:
     - Package XML
   time: 2016-04-01 (15:59)
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot
+      hash: e122ccc26d8b96f1534a51fc3f0f34638f63c657

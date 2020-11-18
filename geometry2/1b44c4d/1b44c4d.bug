@@ -45,8 +45,6 @@ bug:
     buggy 'tf2_eigen.h' file. The compilation will fail during the linking
     phase due to repeated definition of 'tf2::doTransform'.
 fix:
-  repo: https://github.com/mavlink/mavro://github.com/ros/geometry2
-  hash: 1b44c4dced86f11c5b24a4cfadbfd1f21673ac3a
   pull-request: https://github.com/ros/geometry2/pull/200
   license: ['BSD']
   fix-in:
@@ -54,6 +52,9 @@ fix:
   languages:
     - C++
   time: 2017-01-24 11:24PM UTC
+  commits:
+    - repo: https://github.com/mavlink/mavro://github.com/ros/geometry2
+      hash: 1b44c4dced86f11c5b24a4cfadbfd1f21673ac3a
 time-machine:
   ros_distro: indigo
   ros_pkgs:

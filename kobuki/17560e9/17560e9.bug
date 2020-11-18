@@ -53,14 +53,15 @@ bug:
     rosinstall file had to be patched manually. Cf. issue
     https://github.com/robust-rosin/robust/issues/63.
 fix:
-  repo: https://github.com/yujinrobot/yujin_ocs
-  hash: 17560e98ef751714a352a5cee403fd3eb53c9fdb
   pull-request: null
   license: ['BSD']
   fix-in: ['yocs_navigator/CMakeLists.txt']
   languages:
     - CMake
   time: 2014-08-25 (02:04)
+  commits:
+    - repo: https://github.com/yujinrobot/yujin_ocs
+      hash: 17560e98ef751714a352a5cee403fd3eb53c9fdb
 time-machine:
   ros_distro: indigo
   ros_pkgs:

@@ -29,11 +29,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: e45b2b6a02152021764f3ca9d8d0ed17084c3bcd
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++
   time: 2012-04-16 (10:51)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: e45b2b6a02152021764f3ca9d8d0ed17084c3bcd

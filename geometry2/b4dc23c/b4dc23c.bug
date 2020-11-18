@@ -63,14 +63,15 @@ bug:
     change the file, and the fixing commit would either not pass the test, or
     would not apply).
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: b4dc23c54ba06a846c64215a2d8f944c5a1bd036
   pull-request: https://github.com/ros/geometry2/pull/167
   license: ['BSD']
   fix-in: ['tf2_ros/src/static_transform_broadcaster_program.cpp']
   languages:
     - C++
   time: 2016-04-02 (08:29)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: b4dc23c54ba06a846c64215a2d8f944c5a1bd036
 time-machine:
   ros_distro: indigo
   ros_pkgs:

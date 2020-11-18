@@ -45,8 +45,6 @@ bug:
     available, perhaps just needs to be simplified.
   trace: N/A
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 561d66b106dec85246161e0b646874bd32812726
   pull-request: https://github.com/ros/geometry2/pull/119
   license: ['BSD']
   fix-in:
@@ -55,6 +53,9 @@ fix:
   languages:
     - Python
   time: 2015-11-16 6:45 GMT+1
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 561d66b106dec85246161e0b646874bd32812726
 time-machine:
   ros_distro: null
   ros_pkgs: null

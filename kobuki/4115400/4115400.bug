@@ -38,8 +38,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki_desktop
-  hash: 4115400a5a9b88bf65bb97a5d44a9a2a695faa55
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/39
   license: ['BSD']
   fix-in:
@@ -47,3 +45,6 @@ fix:
   languages:
     - C++
   time: 2015-03-02 (08:03)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki_desktop
+      hash: 4115400a5a9b88bf65bb97a5d44a9a2a695faa55

@@ -33,11 +33,12 @@ bug:
     Two replication programs are included that demonstrate the issue; They are
     accessible from the pull request page.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 566092b42e3c42b4745294124762f8d7e5176716
   pull-request: https://github.com/ros/geometry2/pull/333
   license: ['BSD']
   fix-in: ['tf2_ros/src/tf2_ros/buffer_client.py']
   languages:
     - Python
   time: Oct 11, 2018, 2:51 AM GMT+2
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 566092b42e3c42b4745294124762f8d7e5176716

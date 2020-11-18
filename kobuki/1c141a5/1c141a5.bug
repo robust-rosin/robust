@@ -32,11 +32,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 1c141a54fb2c0e2ec453b32f8026d1cd0ffb14d9
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp', 'kobuki_driver/src/driver/diff_drive.cpp']
   languages:
     - C++
   time: 2013-05-07 (06:40)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 1c141a54fb2c0e2ec453b32f8026d1cd0ffb14d9

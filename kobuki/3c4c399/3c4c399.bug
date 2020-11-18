@@ -32,8 +32,6 @@ bug:
   reproducibility: rare
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 3c4c399a460b314152722de6b99804e138d68e88
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -43,3 +41,6 @@ fix:
   languages:
     - C++
   time: 2013-08-22 (09:40)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 3c4c399a460b314152722de6b99804e138d68e88

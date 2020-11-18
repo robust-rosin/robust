@@ -36,11 +36,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 38dce2aac9c4a519fbcec4032838a3451662e7b6
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_safety_controller/src/nodelet.cpp']
   languages:
     - C++
   time: 2012-12-05 (03:43)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 38dce2aac9c4a519fbcec4032838a3451662e7b6

@@ -27,8 +27,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/gavanderhoorn/motoman
-  hash: 5a10873b8d0ee01f457996840dde8d2d2daaf24f
   pull-request: null
   license: null
   fix-in:
@@ -36,3 +34,6 @@ fix:
   languages:
     - CMake
   time: 2016-09-06 (18:10)
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 259b468ea17fa680e68a0b91f57a2b58fa99b9bb

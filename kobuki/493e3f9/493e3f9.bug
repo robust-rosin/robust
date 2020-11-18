@@ -31,11 +31,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 493e3f9c9f65fbf0283571ca92b89a7203e5f287
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_description/urdf/kobuki.urdf.xacro']
   languages:
     - URDF
   time: 2013-08-20 (10:22)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 493e3f9c9f65fbf0283571ca92b89a7203e5f287

@@ -35,8 +35,6 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  repo: https://github.com/mavlink/mavros
-  hash: 2998e9f7f9e0fb969e7248a46d5ecd0749614d06
   pull-request: N/A
   license:
     - BSD
@@ -47,6 +45,9 @@ fix:
   languages:
     - C++
   time: 2014-01-13 (00:00)
+  commits:
+    - repo: https://github.com/mavlink/mavros
+      hash: 2998e9f7f9e0fb969e7248a46d5ecd0749614d06
 time-machine:
   ros_distro: hydro
   ros_pkgs:

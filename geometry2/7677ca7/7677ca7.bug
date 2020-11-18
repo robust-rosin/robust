@@ -38,11 +38,12 @@ bug:
     rosdistor: null
     note: A compilation with gcc 4.9 should expose the problem.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 7677ca7b72781e9482118c9709d838df671a82c0
   pull-request: https://github.com/ros/geometry2/pull/99
   license: ['BSD']
   fix-in: ['tf2_ros/include/tf2_ros/message_filter.h']
   languages:
     - C++
   time: 2015-04-17 12:10 AM GMT+2
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 7677ca7b72781e9482118c9709d838df671a82c0

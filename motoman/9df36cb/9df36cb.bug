@@ -39,8 +39,9 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/motoman
-  hash: null
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 9df36cbd55b0efd7687bfe6a8d4a850e422ed751
   pull-request: 35
   license: ['BSD']
   fix-in: ['motoman_sia20d_moveit_config/package.xml']

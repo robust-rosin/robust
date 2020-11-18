@@ -27,8 +27,6 @@ bug:
   reproducibility: sometimes
   trace: null
 fix:
-  repo: https://github.com/ros-drivers/openni_launch
-  hash: a482f8268042aa8fae0e73970ed2af5dfd01e5df
   pull-request: https://github.com/ros-drivers/openni_launch/pull/3
   license: ['BSD']
   fix-in:
@@ -42,3 +40,6 @@ fix:
   languages:
     - Launch XML
   time: 2013-07-27 (02:39)
+  commits:
+    - repo: https://github.com/ros-drivers/openni_launch
+      hash: a482f8268042aa8fae0e73970ed2af5dfd01e5df

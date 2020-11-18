@@ -52,11 +52,12 @@ bug:
     Flag     : Attempted to work on an invalid object.
     Detail   : The device is not a valid device for writing.
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 62a38a99cdfaf511cff1dd9e03b7bb88516f9033
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++
   time: 2012-04-14 (14:12)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 62a38a99cdfaf511cff1dd9e03b7bb88516f9033

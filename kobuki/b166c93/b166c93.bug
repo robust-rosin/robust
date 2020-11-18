@@ -54,11 +54,12 @@ bug:
     was then called within the test case.
     This was the only change to the original code.
 fix:
-  repo: https://github.com/yujinrobot/kobuki_core
-  hash: b166c93913e293c55a3faa7b298c5f52f6def964
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++
   time: 2016-06-17 (08:57)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki_core
+      hash: b166c93913e293c55a3faa7b298c5f52f6def964

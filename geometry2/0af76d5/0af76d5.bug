@@ -65,8 +65,7 @@ bug:
     the discussions whether a design flaw is a bug, we decided to reproduce the race,
     but not fix the design.  Thus this bug has no fixing commit.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: null
+  commits: []
   pull-request: null
   license: []
   fix-in: []

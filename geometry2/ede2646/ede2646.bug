@@ -41,8 +41,6 @@ bug:
   reproduction: >
     The bug report includes a test case. This should be used.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: ede2646d463c8ae1bbbf2460941df2b07d39824e
   pull-request: https://github.com/ros/geometry2/pull/90
   license: ['BSD']
   fix-in:
@@ -50,3 +48,6 @@ fix:
   languages:
     - Python
   time: 2015-03-20 (19:08 AM GMT+1)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: ede2646d463c8ae1bbbf2460941df2b07d39824e

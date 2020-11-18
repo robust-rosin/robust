@@ -41,24 +41,35 @@ bug:
     Traceback (most recent call last):
       File "/opt/ros/groovy/lib/rqt_plot/rqt_plot", line 10, in <module>
         sys.exit(main.main(standalone=plugin, plugin_argument_provider=Plot.add_arguments))
-      File "/opt/ros/groovy/lib/python2.7/dist-packages/rqt_gui/main.py", line 57, in main
+      File "/opt/ros/groovy/lib/python2.7/dist-packages/rqt_gui/main.py", line 57,
+    in main
         return super(Main, self).main(argv, standalone=standalone, plugin_argument_provider=plugin_argument_provider)
-      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/main.py", line 468, in main
+      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/main.py", line 468,
+    in main
         plugins = plugin_manager.find_plugins_by_name(plugin)
-      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_manager.py", line 118, in find_plugins_by_name
+      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_manager.py",
+    line 118, in find_plugins_by_name
         for plugin_id, plugin_full_name in self.get_plugins().items():
-      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_manager.py", line 124, in get_plugins
+      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_manager.py",
+    line 124, in get_plugins
         self.discover()
-      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_manager.py", line 108, in discover
+      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_manager.py",
+    line 108, in discover
         self._plugin_menu.add_plugin(plugin_descriptor)
-      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_menu.py", line 79, in add_plugin
+      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_menu.py", line
+    79, in add_plugin
         self._enrich_action(action, action_attributes, base_path)
-      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_menu.py", line 130, in _enrich_action
+      File "/opt/ros/groovy/lib/python2.7/dist-packages/qt_gui/plugin_menu.py", line
+    130, in _enrich_action
         raise UserWarning('icon "%s" not found' % str(path))
-    UserWarning: icon "../src/kobuki_qtestsuite/resources/images/kobuki_icon.png" not found
+    UserWarning: icon "../src/kobuki_qtestsuite/resources/images/kobuki_icon.png"
+    not found
 fix:
-  repo: https://github.com/ros-visualization/rqt | https://github.com/ros-visualization/qt_gui_core
-  hash: 9682b9af78eecd368004fe7596e341eb84abc719 | ffae1f756dbf23194a2628922939d9633df947f6
+  commits:
+    - repo: https://github.com/ros-visualization/rqt
+      hash: 9682b9af78eecd368004fe7596e341eb84abc719
+    - repo: https://github.com/ros-visualization/qt_gui_core
+      hash: ffae1f756dbf23194a2628922939d9633df947f6
   pull-request: null
   license: ['BSD']
   fix-in:

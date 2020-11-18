@@ -58,8 +58,6 @@ bug:
     version no longer uses a file from another package (in this case,
     `turtlebot_bringup`).
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 8c30446d18bad63da0f58a1f666c2e7e209d917d
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -67,3 +65,6 @@ fix:
   languages:
     - Launch XML
   time: 2014-08-11 (06:11)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 8c30446d18bad63da0f58a1f666c2e7e209d917d

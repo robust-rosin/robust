@@ -41,11 +41,12 @@ bug:
     rosinstall file had to be patched manually. Cf. issue
     https://github.com/robust-rosin/robust/issues/63.
 fix:
-  repo: https://github.com/ros-perception/image_pipeline
-  hash: f01d9525901b75858047e6fa81e4efc92c7dfedc
   pull-request: https://github.com/ros-perception/image_pipeline/pull/79
   license: ['BSD']
   fix-in: ['depth_image_proc/package.xml']
   languages:
     - Package XML
   time: 2014-06-13 (01:12)
+  commits:
+    - repo: https://github.com/ros-perception/image_pipeline
+      hash: f01d9525901b75858047e6fa81e4efc92c7dfedc

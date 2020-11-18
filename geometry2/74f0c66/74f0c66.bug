@@ -43,10 +43,11 @@ bug:
   trace: >
     There is a trace reported in the pull request, involving two threads.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 74f0c667995b5baadf967349635a5396d7977518
   pull-request: https://github.com/ros/geometry2/pull/144
   license: ['BSD']
   fix-in: ['tf2/src/buffer_core.cpp', 'tf2_ros/include/tf2_ros/message_filter.h']
   languages: ['C++']
   time: 2017-07-13 (00:37)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 74f0c667995b5baadf967349635a5396d7977518

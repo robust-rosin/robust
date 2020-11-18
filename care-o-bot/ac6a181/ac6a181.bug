@@ -31,8 +31,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ipa320/cob_command_tools
-  hash: 81aa175d76608fbac6655ce745e8eaa1d35f51f9
   pull-request: https://github.com/ipa320/cob_command_tools/pull/50 # large PR, fix commit is part of it
   license: ['LGPL']
   fix-in:
@@ -40,3 +38,6 @@ fix:
   languages:
     - Package XML
   time: 2014-08-26 (08:57)
+  commits:
+    - repo: https://github.com/ipa320/cob_command_tools
+      hash: 81aa175d76608fbac6655ce745e8eaa1d35f51f9

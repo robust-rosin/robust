@@ -57,8 +57,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot
-  hash: 56cf07f62fcdd3927ebff216da281d3b975adefc
   pull-request:
     - https://github.com/ros-industrial/universal_robot/pull/14
     - https://github.com/ros-industrial/universal_robot/pull/19
@@ -72,3 +70,6 @@ fix:
   languages:
     - CMake
   time: 2013-10-01 (21:20)
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot
+      hash: 56cf07f62fcdd3927ebff216da281d3b975adefc

@@ -32,11 +32,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: ad906f0a6ebeb732afb5938f79200f8eb4bccabf
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/modules/gate_keeper.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++
   time: 2012-06-11 (04:40)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: ad906f0a6ebeb732afb5938f79200f8eb4bccabf

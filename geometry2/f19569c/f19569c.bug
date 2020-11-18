@@ -53,8 +53,6 @@ bug:
   trace: null
   reproduction: null
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: f19569cf095cdb92ab012a2ffa03c1074bad2c4a
   pull-request: https://github.com/ros/geometry2/pull/76
   license: ['BSD']
   fix-in:
@@ -65,3 +63,6 @@ fix:
   languages:
     - C++
   time: 2015-03-03 (10:03 GMT+1)
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: f19569cf095cdb92ab012a2ffa03c1074bad2c4a

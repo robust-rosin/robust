@@ -43,8 +43,6 @@ bug:
     The discussion indicates that one needs to create a frame with a numeric id.
   trace: N/A
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: e4466f0f482dcacf79b9ab9deaa70429e161e3a6
   pull-request: https://github.com/ros/geometry2/pull/133
   license: ['BSD']
   fix-in:
@@ -52,6 +50,9 @@ fix:
   languages:
     - Python
   time: 2015-12-15 11:45 GMT+1
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: e4466f0f482dcacf79b9ab9deaa70429e161e3a6
 time-machine:
   ros_distro: null
   ros_pkgs: null

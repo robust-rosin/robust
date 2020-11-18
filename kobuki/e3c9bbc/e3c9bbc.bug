@@ -43,8 +43,6 @@ bug:
     Besides, the fix occurs in the rosdistro repository, which does
     not contain a ROS package, and makes the reproduction process harder.
 fix:
-  repo: https://github.com/ros/rosdistro
-  hash: e3c9bbcd9a3c05a5375375732d52e185cca5afb0
   pull-request: https://github.com/ros/rosdistro/pull/4560
   license: ['BSD']
   fix-in:
@@ -52,3 +50,6 @@ fix:
   languages:
     - Other YAML
   time: 2014-05-28 (17:50)
+  commits:
+    - repo: https://github.com/ros/rosdistro
+      hash: e3c9bbcd9a3c05a5375375732d52e185cca5afb0

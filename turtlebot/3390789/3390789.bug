@@ -33,11 +33,12 @@ bug:
     rosinstall file had to be patched manually. Cf. issue
     https://github.com/robust-rosin/robust/issues/63.
 fix:
-  repo: https://github.com/turtlebot/turtlebot
-  hash: 339078942cf67457bc472e07a3e75e9895ebf2f7
   pull-request: null
   license: ['BSD']
   fix-in: ['turtlebot_bringup/package.xml', 'turtlebot_capabilities/package.xml']
   languages:
     - Package XML
   time: 2015-01-09 (09:15)
+  commits:
+    - repo: https://github.com/turtlebot/turtlebot
+      hash: 339078942cf67457bc472e07a3e75e9895ebf2f7

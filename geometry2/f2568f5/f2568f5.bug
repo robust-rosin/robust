@@ -39,8 +39,6 @@ bug:
     Look into the text of issue 119 (known as 561d66b in robust).
   trace: N/A
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: f2568f597923d0ea4495c18cd828a67f12e05f0a
   pull-request: https://github.com/ros/geometry2/pull/126
   license: ['BSD']
   fix-in:
@@ -48,6 +46,9 @@ fix:
   languages:
     - Package XML
   time: 2015-11-16 8:55 GMT+1
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: f2568f597923d0ea4495c18cd828a67f12e05f0a
 time-machine:
   ros_distro: null
   ros_pkgs: null

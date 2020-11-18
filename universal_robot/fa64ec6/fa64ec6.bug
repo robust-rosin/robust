@@ -53,8 +53,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ros-industrial/universal_robot
-  hash: fa64ec6585745c60fa02cf3be13b6d78bf449d8d
   pull-request: https://github.com/ros-industrial/universal_robot/pull/251
   license: ['BSD']
   fix-in:
@@ -64,3 +62,6 @@ fix:
   languages:
     - Xacro
   time: 2016-12-29 (20:59)
+  commits:
+    - repo: https://github.com/ros-industrial/universal_robot
+      hash: fa64ec6585745c60fa02cf3be13b6d78bf449d8d

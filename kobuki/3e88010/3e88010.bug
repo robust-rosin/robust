@@ -28,11 +28,12 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/yujinrobot/kobuki
-  hash: 3e88010293c350ffa71f5e8b64ec58ec09a64549
   pull-request: null
   license: ['BSD']
   fix-in: ['kobuki_auto_docking/CMakeLists.txt']
   languages:
     - CMake
   time: 2013-02-25 (04:36)
+  commits:
+    - repo: https://github.com/yujinrobot/kobuki
+      hash: 3e88010293c350ffa71f5e8b64ec58ec09a64549

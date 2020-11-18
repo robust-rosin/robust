@@ -35,11 +35,12 @@ bug:
   reproducibility: sometimes
   trace: null
 fix:
-  repo: https://github.com/ipa320/cob_common
-  hash: 43705f74847ce09edb971adb50d9e47
   pull-request: https://github.com/ipa320/cob_common/pull/179
   license: ['LGPL']
   fix-in: ['https://github.com/ipa320/cob_common/pull/179/commits/43705f74847ce09edb971adb50d9e47b14f944cf']
   languages:
     - Xacro
   time: 2015-11-20 (00:00)
+  commits:
+    - repo: https://github.com/ipa320/cob_common
+      hash: 43705f74847ce09edb971adb50d9e47

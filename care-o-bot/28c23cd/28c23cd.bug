@@ -36,8 +36,6 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  repo: https://github.com/ipa320/cob_command_tools
-  hash: 28c23cd13e5cbade9776b496518facc07cef59f2
   pull-request: https://github.com/ipa320/cob_command_tools/pull/127
   license: ['LGPL']
   fix-in:
@@ -45,3 +43,6 @@ fix:
   languages:
     - CMake
   time: 2015-11-24 (19:36)
+  commits:
+    - repo: https://github.com/ipa320/cob_command_tools
+      hash: 28c23cd13e5cbade9776b496518facc07cef59f2

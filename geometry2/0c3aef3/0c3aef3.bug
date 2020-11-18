@@ -50,8 +50,6 @@ bug:
   trace: null
   reproduction: Install tf2 and try to compile.
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: 0c3aef30b7a436b2df553ff08b9a060c94fa3e32
   pull-request: https://github.com/ros/geometry2/pull/170
   license: ["BSD"]
   fix-in:
@@ -59,3 +57,6 @@ fix:
   languages:
     - Package XML
   time: null
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: 0c3aef30b7a436b2df553ff08b9a060c94fa3e32

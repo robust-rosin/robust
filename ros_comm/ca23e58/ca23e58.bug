@@ -53,8 +53,6 @@ bug:
   reproducibility: rare
   trace: null
 fix:
-  repo: https://github.com/ros/ros_comm
-  hash: ca23e58883ed2f1784840485ceba9af3cd2d5729
   pull-request: https://github.com/ros/ros_comm/pull/776
   license: ['BSD']
   fix-in:
@@ -64,3 +62,6 @@ fix:
     - C++
     - CMake
   time: 2016-03-17 (22:58)
+  commits:
+    - repo: https://github.com/ros/ros_comm
+      hash: ca23e58883ed2f1784840485ceba9af3cd2d5729

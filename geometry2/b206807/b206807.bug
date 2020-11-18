@@ -45,8 +45,6 @@ bug:
     above is mostly empty.  This should be revised if anybody ever tries to
     reproduce the bug."
 fix:
-  repo: https://github.com/ros/geometry2
-  hash: b2068070b460fdc0ffc62e707d9085fb26320080
   pull-request: https://github.com/ros/geometry2/pull/176
   license: ["BSD"]
   fix-in:
@@ -54,3 +52,6 @@ fix:
   languages:
     - C++
   time: 2016-05-13 22:27 GMT+2
+  commits:
+    - repo: https://github.com/ros/geometry2
+      hash: b2068070b460fdc0ffc62e707d9085fb26320080

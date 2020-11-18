@@ -51,8 +51,6 @@ bug:
       As such, the bug_witness.test in this case contains a slice of the
       original launch file, and the buggy and fixed versions are different.
 fix:
-  repo: https://github.com/turtlebot/turtlebot
-  hash: 3e32933c829e308600707a9f971334d13d1cbe19
   pull-request: null
   license: ['BSD']
   fix-in:
@@ -60,3 +58,6 @@ fix:
   languages:
     - Launch XML
   time: 2014-04-02 (08:50)
+  commits:
+    - repo: https://github.com/turtlebot/turtlebot
+      hash: 3e32933c829e308600707a9f971334d13d1cbe19
