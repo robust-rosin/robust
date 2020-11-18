@@ -40,5 +40,5 @@ fix:
     - Xacro
   time: 2016-06-19 (00:00)
   commits:
-    - repo: https://github.com/gavanderhoorn/motoman
-      hash: 93a9abae92b51ed79b6909397940e26d379eaa94
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 2d42582c692191f67f1e986467822fcd3b3935b9

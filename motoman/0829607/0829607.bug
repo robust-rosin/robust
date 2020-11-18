@@ -35,5 +35,5 @@ fix:
     - STL
   time: 2016-08-29 (13:15)
   commits:
-    - repo: https://github.com/gavanderhoorn/motoman
-      hash: 57b7a995dfdcf025d6394123eb87896853a6aadf
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 082960760dd90c4040e394721b3991f4e17aac2d
