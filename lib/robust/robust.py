@@ -101,7 +101,7 @@ class FixSection:
             value = self.bug.yaml['fix'][key]
         except KeyError as exc:
             message = (f"{self.bug.filename}: missing 'fix.{key}' "
-                        "in bug description")
+                       "in bug description")
             raise ValueError(message) from exc
 
         if value is None:
@@ -130,7 +130,8 @@ class FixSection:
 
     @property
     def fix_in(self) -> t.Optional[t.AbstractSet[str]]:
-        filenames: t.List[str] = self._read_field('fix-in', list, optional=True)
+        filenames: t.List[str] = \
+            self._read_field('fix-in', list, optional=True)
         return set(filenames)
 
     @property
