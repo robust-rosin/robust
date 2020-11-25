@@ -31,9 +31,9 @@ _FORKED_REPOS = (
 )
 
 
-@attr.s
+@attr.s(auto_attribs=True, slots=True, frozen=True)
 class BugSection:
-    bug: 'BugDescription' = attr.ib()
+    bug: 'BugDescription'
 
     @property
     def phase(self) -> str:
@@ -80,36 +80,71 @@ class BugSection:
         return self.bug.yaml['bug']['issue']
 
 
-@attr.s(auto_attribs=True, frozen=True)
+@attr.s(auto_attribs=True, frozen=True, slots=True)
 class FixCommit:
     repo: str
     hash_: str
 
 
-@attr.s
+@attr.s(auto_attribs=True, frozen=True, slots=True)
 class FixSection:
-    bug: 'BugDescription' = attr.ib()
+    bug: 'BugDescription'
+
+    def _read_field(self,
+                    key: str,
+                    expected_type: t.Optional[t.Type] = None,
+                    optional: bool = False
+                    ) -> t.Any:
+        value: t.Any
+
+        try:
+            value = self.bug.yaml['fix'][key]
+        except KeyError as exc:
+            message = (f"{self.bug.filename}: missing 'fix.{key}' "
+                        "in bug description")
+            raise ValueError(message) from exc
+
+        if value is None:
+            if optional:
+                return value
+
+            message = (f"{self.bug.filename}: 'fix.{key}' is not optional "
+                       "(must not be null)")
+            raise ValueError(message)
+
+        if expected_type is not None and not isinstance(value, expected_type):
+            message = (f"{self.bug.filename}: 'fix.{key}' has wrong type "
+                       f"(expected {expected_type.__name__})")
+            raise ValueError(message)
+
+        return value
 
     @property
-    def pull_request(self) -> str:
-        return self.bug.yaml['fix']['pull-request']
+    def pull_request(self) -> t.Optional[str]:
+        return self._read_field('pull-request', str, optional=True)
 
     @property
-    def license(self) -> t.AbstractSet[str]:
-        return self.bug.yaml['fix']['license']
+    def license(self) -> t.Optional[t.AbstractSet[str]]:
+        licenses = self._read_field('license', list, optional=True)
+        return set(licenses)
 
     @property
-    def fix_in(self) -> t.AbstractSet[str]:
-        return self.bug.yaml['fix']['fix-in']
+    def fix_in(self) -> t.Optional[t.AbstractSet[str]]:
+        filenames: t.List[str] = self._read_field('fix-in', list, optional=True)
+        return set(filenames)
 
     @property
-    def languages(self) -> t.AbstractSet[str]:
-        return self.bug.yaml['fix']['languages']
+    def languages(self) -> t.Optional[t.AbstractSet[str]]:
+        languages: t.Optional[t.List[str]] = \
+            self._read_field('languages', list, optional=True)
+        if languages is None:
+            return None
+        return set(languages)
 
     @property
     def commits(self) -> t.AbstractSet[FixCommit]:
         commits: t.Set[FixCommit] = set()
-        for commit_dict in self.bug.yaml['fix']['commits']:
+        for commit_dict in self._read_field('commits'):
             print(commit_dict)
             repo = commit_dict['repo']
             hash_ = commit_dict['hash']
@@ -118,9 +153,9 @@ class FixSection:
         return commits
 
 
-@attr.s
+@attr.s(auto_attribs=True, slots=True)
 class BugDescription:
-    filename: str = attr.ib()
+    filename: str
     yaml: t.Dict[str, t.Any] = attr.ib(repr=False, eq=False)
 
     @classmethod

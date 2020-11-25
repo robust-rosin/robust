@@ -34,7 +34,8 @@ fix:
     - BSD
     - GPLv3
     - LGPLv3
-  fix-in: libmavconn/CMakeLists.txt
+  fix-in:
+    - libmavconn/CMakeLists.txt
   languages:
     - CMake
   time: 2014-11-03T12:18:48+03:00
