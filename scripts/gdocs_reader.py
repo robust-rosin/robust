@@ -80,7 +80,7 @@ def refactor_fault_failure(description: t.List[str], faults: t.List[str], failur
     description['fault-codes'] = faults
     description['failure-codes'] = failures
 
-def refactor_file(filename: str, faults: str, failures: str, update: bool = True) -> None:
+def refactor_file(filename: str, faults: t.Optional[str], failures: t.Optional[str], update: bool = True) -> None:
     robust_dir = os.path.dirname(dir_here)
     bug_path = os.path.join(robust_dir, filename)
 
@@ -91,10 +91,19 @@ def refactor_file(filename: str, faults: str, failures: str, update: bool = True
         print(f"{err}")
         return
 
-    faults_ = faults.upper().splitlines() if faults else faults
-    failures_ = failures.upper().splitlines() if failures else failures
-    refactor_fault_failure(description, faults_, failures_)
-        refactor_fault_failure(description, faults_, failures_)
+    fault_list: t.Optional[t.List[str]]
+    if not faults:
+        fault_list = None
+    else:
+        fault_list = faults.upper().splitlines()
+
+    failure_list: t.Optional[t.List[str]]
+    if not failures:
+        failure_list = None
+    else:
+        failure_list = faults.upper().splitlines()
+
+    refactor_fault_failure(description, fault_list, failure_list)
 
     with open(bug_path, 'w') as f:
         yaml.dump(description, f)
