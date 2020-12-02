@@ -81,9 +81,76 @@ class BugSection:
 
 
 @attr.s(auto_attribs=True, frozen=True, slots=True)
+class TotalCommitStats:
+    insertions: int
+    deletions: int
+    lines: int
+    files: int
+
+    @staticmethod
+    def from_dict(dict_: t.Mapping[str, int]) -> 'TotalCommitStats':
+        return TotalCommitStats(insertions=dict_['insertions'],
+                                deletions=dict_['deletions'],
+                                lines=dict_['lines'],
+                                files=dict_['files'])
+
+
+@attr.s(auto_attribs=True, frozen=True, slots=True)
+class FileCommitStats:
+    filename: str
+    insertions: int
+    deletions: int
+    lines: int
+
+    @staticmethod
+    def from_dict(filename: str,
+                  dict_: t.Mapping[str, int]
+                  ) -> 'FileCommitStats':
+        return FileCommitStats(filename=filename,
+                               insertions=dict_['insertions'],
+                               deletions=dict_['deletions'],
+                               lines=dict_['lines'])
+
+
+@attr.s(auto_attribs=True, frozen=True, slots=True)
+class CommitStats:
+    total: TotalCommitStats
+    files: t.AbstractSet[FileCommitStats]
+
+    def __attrs_post_init__(self) -> None:
+        object.__setattr__(self, 'files', frozenset(self.files))
+
+    @staticmethod
+    def from_dict(dict_: t.Mapping[str, t.Any]) -> 'CommitStats':
+        def err(msg: str) -> t.NoReturn:
+            raise ValueError(f'bad commit stats: {msg}')
+
+        if 'total' not in dict_:
+            err('missing "total" section')
+        if 'files' not in dict_:
+            err('missing "files" section')
+
+        try:
+            total = TotalCommitStats.from_dict(dict_['total'])
+        except KeyError as error:
+            err(f'missing "{error}" field in "total" section')
+
+        files: t.Set[FileCommitStats] = set()
+        for filename, file_dict in dict_['files'].items():
+            try:
+                file_stats = FileCommitStats.from_dict(filename, file_dict)
+            except KeyError as error:
+                err(f'missing "{error}" field in "files.{filename}" section')
+            files.add(file_stats)
+
+        return CommitStats(total, files)
+
+
+@attr.s(auto_attribs=True, frozen=True, slots=True)
 class FixCommit:
     repo: str
     hash_: str
+    stats: t.Optional[CommitStats]
 
 
 @attr.s(auto_attribs=True, frozen=True, slots=True)
@@ -145,12 +212,26 @@ class FixSection:
     @property
     def commits(self) -> t.AbstractSet[FixCommit]:
         commits: t.Set[FixCommit] = set()
-        for commit_dict in self._read_field('commits'):
-            print(commit_dict)
-            repo = commit_dict['repo']
-            hash_ = commit_dict['hash']
-            commit = FixCommit(repo, hash_)
+
+        # TODO handle corner cases: confidential, none, unknown
+        commits_field = self._read_field('commits')
+        if not isinstance(commits_field, list):
+            raise ValueError("expected commits section to be a list")
+
+        for commit_dict in commits_field:
+            try:
+                repo = commit_dict['repo']
+                hash_ = commit_dict['hash']
+            except KeyError as error:
+                m = f"bad commit description: missing '{error}' property"
+                raise ValueError(m) from error
+
+            stats: t.Optional[CommitStats] = None
+            if 'stats' in commit_dict:
+                stats = CommitStats.from_dict(commit_dict['stats'])
+            commit = FixCommit(repo, hash_, stats)
             commits.add(commit)
+
         return commits
 
 
