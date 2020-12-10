@@ -32,7 +32,7 @@ bug:
   detected-by: developer
   reported-by: developer
   issue: https://github.com/ipa320/cob_command_tools/issues/118
-  time-reported: 2015-09-16 (14:58)
+  time-reported: 2015-10-16T12:58:28Z
   reproducibility: always
   trace: null
 fix:
@@ -42,7 +42,7 @@ fix:
     - cob_command_tools/cob_teleop/CMakeLists.txt
   languages:
     - CMake
-  time: 2015-11-24 (19:36)
+  time: 2015-11-24T17:04:25Z
   commits:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: 28c23cd13e5cbade9776b496518facc07cef59f2

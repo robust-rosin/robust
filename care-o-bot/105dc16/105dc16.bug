@@ -33,7 +33,8 @@ bug:
   detected-by: developer
   reported-by: developer
   issue: https://github.com/ipa320/cob_control/issues/6
-  time-reported: 2014-07-22 (15:37)
+  time-reported: 2014-08-27T11:10:12Z+0200  # package was not released during issue date;
+                                            # 'git blame indigo/distribution.yaml | grep cob_control' on rosdistro
   reproducibility: always
   trace: null
 fix:
@@ -43,7 +44,10 @@ fix:
     - cob_control/cob_twist_controller/CMakeLists.txt
   languages:
     - CMake
-  time: 2014-11-21 (12:57)
+  time: 2014-11-14T08:16:00Z
+        # fix was released in 0.6.2
+        # git log --date=iso --pretty="%h %ad %cd %s" -- indigo/distribution.yaml | grep cob_control | grep 0.6.2
+        # 2014-12-15T17:49:37+0100
   commits:
     - repo: https://github.com/ipa320/cob_control
       hash: 105dc16ffe0b9dba294aabea0c18052cd281bde0
