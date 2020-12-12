@@ -45,9 +45,6 @@ fix:
   languages:
     - CMake
   time: 2014-11-14T08:16:00Z
-        # fix was released in 0.6.2
-        # git log --date=iso --pretty="%h %ad %cd %s" -- indigo/distribution.yaml | grep cob_control | grep 0.6.2
-        # 2014-12-15T17:49:37+0100
   commits:
     - repo: https://github.com/ipa320/cob_control
       hash: 105dc16ffe0b9dba294aabea0c18052cd281bde0
