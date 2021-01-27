@@ -23,7 +23,7 @@ bug:
   detected-by: runtime crash
   reported-by: contributor
   issue: https://github.com/turtlebot/turtlebot/issues/113
-  time-reported: 2013-11-05 (17:28)
+  time-reported: 2013-11-05T17:28:59Z
   reproducibility: always
   trace: null
   reproduction: >
@@ -34,7 +34,7 @@ fix:
   fix-in: ['turtlebot_bringup/package.xml']
   languages:
     - Package XML
-  time: 2013-11-06 (08:29)
+  time: 2013-11-05T17:28:59Z
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 891cb680e98694e63a55394140bffdcde43f3f5e

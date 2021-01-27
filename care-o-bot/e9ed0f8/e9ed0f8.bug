@@ -35,7 +35,7 @@ bug:
   detected-by: developer
   reported-by: developer
   issue: https://github.com/ipa320/cob_control/issues/17
-  time-reported: 2014-12-03 (09:04)
+  time-reported: 2014-12-03T08:04:03Z
   reproducibility: always
   trace: null
 fix:
@@ -47,7 +47,7 @@ fix:
   languages:
     - CMake
     - Package XML
-  time: 2015-08-08 (10:05)
+  time: 2015-08-08T08:01:32Z
   commits:
     - repo: https://github.com/ros-simulation/gazebo_ros_pkgs
       hash: e9ed0f8e157398621987bd61e2d78683cd945c2b

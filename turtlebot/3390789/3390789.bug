@@ -22,7 +22,7 @@ bug:
   detected-by: build system
   reported-by: member developer
   issue: https://github.com/turtlebot/turtlebot/issues/185
-  time-reported: 2015-01-06 (23:43)
+  time-reported: 2015-01-06T23:43:52Z
   reproducibility: always
   trace: ""
   reproduction: >
@@ -38,7 +38,7 @@ fix:
   fix-in: ['turtlebot_bringup/package.xml', 'turtlebot_capabilities/package.xml']
   languages:
     - Package XML
-  time: 2015-01-09 (09:15)
+  time: 2015-01-09T09:15:03Z
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 339078942cf67457bc472e07a3e75e9895ebf2f7

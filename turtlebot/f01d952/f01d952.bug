@@ -23,7 +23,7 @@ bug:
   detected-by: runtime crash
   reported-by: contributor
   issue: https://github.com/turtlebot/turtlebot/issues/142
-  time-reported: 2014-06-12 (10:04)
+  time-reported: 2014-06-12T09:04:16Z
   reproducibility: always
   trace: |
     [ INFO] [1402564815.530736554]: /camera/rgb/camera_info -> /camera/rgb/camera_info
@@ -46,7 +46,7 @@ fix:
   fix-in: ['depth_image_proc/package.xml']
   languages:
     - Package XML
-  time: 2014-06-13 (01:12)
+  time: 2014-06-13T00:13:14Z  # 1st entry on 2014-12-01 09:43:17
   commits:
     - repo: https://github.com/ros-perception/image_pipeline
       hash: f01d9525901b75858047e6fa81e4efc92c7dfedc

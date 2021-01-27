@@ -23,7 +23,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/turtlebot/turtlebot/issues/80
-  time-reported: 2013-07-26 (05:45)
+  time-reported: 2013-07-26T04:45:22Z
   reproducibility: sometimes
   trace: null
 fix:
@@ -39,7 +39,7 @@ fix:
     - launch/openni.launch
   languages:
     - Launch XML
-  time: 2013-07-27 (02:39)
+  time: 2013-07-27T01:39:10Z
   commits:
     - repo: https://github.com/ros-drivers/openni_launch
       hash: a482f8268042aa8fae0e73970ed2af5dfd01e5df
