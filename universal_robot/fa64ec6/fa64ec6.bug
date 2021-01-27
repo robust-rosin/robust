@@ -61,7 +61,7 @@ fix:
     - ur_description/urdf/ur5.urdf.xacro
   languages:
     - Xacro
-  time: 2016-12-29 (20:59)
+  time: 2016-12-29T20:59:23+01:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: fa64ec6585745c60fa02cf3be13b6d78bf449d8d

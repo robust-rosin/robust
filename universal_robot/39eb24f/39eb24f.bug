@@ -38,7 +38,7 @@ bug:
   detected-by: compiler
   reported-by: member developer
   issue: https://github.com/ros-industrial/universal_robot/issues/217
-  time-reported: 2015-09-21 (05:18)
+  time-reported: 2015-09-21T03:18:09Z
   reproducibility: always
   trace: null
 fix:
@@ -47,7 +47,7 @@ fix:
   fix-in: ['ur_kinematics/include/ur_kinematics/ur_kin.h', 'ur_kinematics/src/ur_kin.cpp']
   languages:
     - C++
-  time: 2015-09-21 (12:45)
+  time: 2015-09-21T12:45:50+02:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: 39eb24f3a8ff0e358c210e87f1f3798755444f44

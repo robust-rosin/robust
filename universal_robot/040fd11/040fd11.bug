@@ -39,7 +39,7 @@ bug:
   detected-by: code scanning tool
   reported-by: member developer
   issue: https://github.com/ros-industrial/universal_robot/issues/113
-  time-reported: 2014-09-21 (08:17)
+  time-reported: 2014-09-21T06:17:03Z
   reproducibility: always
   trace: null
 fix:
@@ -48,7 +48,7 @@ fix:
   fix-in: ['ur_kinematics/CMakeLists.txt']
   languages:
     - CMake
-  time: 2014-10-10 (11:29)
+  time: 2014-10-10T11:29:53+02:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 040fd110f9281875d87b8e6aaba0c1c8f2d7d6fd

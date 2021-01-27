@@ -40,7 +40,7 @@ bug:
   detected-by: developer
   reported-by: guest user
   issue: https://github.com/ros-industrial/universal_robot/issues/265
-  time-reported: 2016-10-11 (05:02)
+  time-reported: 2016-10-11T03:02:08Z
   reproducibility: sometimes
   trace: null
 fix:
@@ -49,7 +49,7 @@ fix:
   fix-in: ['ur_description/urdf/ur10.urdf.xacro', 'ur_description/urdf/ur5.urdf.xacro']
   languages:
     - Xacro
-  time: unfixed
+  time: 2016-11-02T14:25:50Z
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 89145c420d9b6bbfb4d385d43205708d45cc9449
