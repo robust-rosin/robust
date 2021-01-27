@@ -24,7 +24,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/4
-  time-reported: 2013-08-02 (10:58)
+  time-reported: 2013-08-02T08:58:42Z
   reproducibility: always
   trace: null
 fix:
@@ -72,4 +72,4 @@ fix:
     - Xacro
     - CMake
     - C++
-  time: 2013-09-13 (21:34)
+  time: 2013-09-13T12:34:01-07:00

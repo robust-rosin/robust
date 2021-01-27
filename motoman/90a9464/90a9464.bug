@@ -23,7 +23,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/166
-  time-reported: 2017-04-05 (10:04)
+  time-reported: 2017-04-05T08:04:27Z
   reproducibility: always
   trace: null
 fix:
@@ -42,4 +42,4 @@ fix:
   languages:
     - Launch XML
     - Xacro
-  time: 2017-04-10 (06:55)
+  time: 2017-04-09T23:17:48-05:00

@@ -22,7 +22,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/29
-  time-reported: 2014-02-04 (00:06)
+  time-reported: 2014-02-03T23:06:46Z
   reproducibility: always
   trace: null
 fix:
@@ -35,4 +35,4 @@ fix:
   languages:
     - URDF
     - Xacro
-  time: 2014-02-08 (03:51)
+  time: 2014-02-04T09:04:58+01:00

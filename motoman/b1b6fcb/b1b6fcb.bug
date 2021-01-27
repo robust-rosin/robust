@@ -25,7 +25,7 @@ bug:
   detected-by: user
   reported-by: guest user
   issue: https://github.com/ros-industrial/motoman/issues/152
-  time-reported: 2017-03-06 (21:43)
+  time-reported: 2017-03-06T20:43:21Z
   reproducibility: always
   trace: null
 fix:
@@ -38,4 +38,4 @@ fix:
     - motoman_driver/src/industrial_robot_client/joint_trajectory_action.cpp
   languages:
     - C++
-  time: 2017-03-07 (16:28)
+  time: 2017-03-20T21:46:37-04:00

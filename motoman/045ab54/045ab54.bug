@@ -24,7 +24,7 @@ bug:
   detected-by: compiler
   reported-by: contributor
   issue: https://github.com/ros-industrial/motoman/issues/62
-  time-reported: 2015-04-14 (01:37)
+  time-reported: 2015-04-13T23:37:21Z
   reproducibility: always
   trace: N/A
 fix:
@@ -35,4 +35,4 @@ fix:
   fix-in: ['motoman_driver/CMakeLists.txt']
   languages:
     - CMake
-  time: 2015-04-14 (01:48)
+  time: 2015-11-02T21:34:44-06:00
