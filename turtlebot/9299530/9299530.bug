@@ -22,7 +22,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/turtlebot/turtlebot/issues/65
-  time-reported: 2013-03-29 (08:58)
+  time-reported: 2013-03-29T08:58:55Z
   reproducibility: always
   trace: null
 fix:
@@ -52,4 +52,4 @@ fix:
   languages:
     - Xacro
     - COLLADA
-  time: 2013-04-01 (04:36)
+  time: 2013-04-01T03:36:39Z

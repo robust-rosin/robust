@@ -37,7 +37,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/turtlebot/turtlebot/issues/103
-  time-reported: 2013-10-16 (04:53)
+  time-reported: 2013-10-16T03:53:04Z
   reproducibility: sometimes
   trace: null
   reproduction-images:
@@ -57,7 +57,7 @@ fix:
     - turtlebot_bringup/launch/3dsensor.launch
   languages:
     - Launch XML
-  time: 2014-04-02 (08:50)
+  time: 2014-04-03T02:07:54Z
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 3e32933c829e308600707a9f971334d13d1cbe19
