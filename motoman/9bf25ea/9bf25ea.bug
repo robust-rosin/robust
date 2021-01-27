@@ -25,7 +25,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/106
-  time-reported: 2016-06-18 (12:32)
+  time-reported: 2016-07-18T10:32:13Z
   reproducibility: always
   trace: null
 fix:
@@ -37,4 +37,4 @@ fix:
   fix-in: ['motoman_sia20d_support/urdf/sia20d_macro.xacro', 'motoman_sia10f_support/urdf/sia10f_macro.xacro']
   languages:
     - Xacro
-  time: 2016-08-28 (04:00)
+  time: 2016-08-28T04:00:22+02:00

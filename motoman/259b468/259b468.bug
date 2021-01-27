@@ -23,7 +23,7 @@ bug:
   detected-by: user
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/129
-  time-reported: 2016-09-06 (17:48)
+  time-reported: 2016-09-06T15:48:49Z
   reproducibility: always
   trace: null
 fix:
@@ -33,7 +33,7 @@ fix:
     - motoman_driver/CMakeLists.txt
   languages:
     - CMake
-  time: 2016-09-06 (18:10)
+  time: 2016-09-06T18:10:01+02:00
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 259b468ea17fa680e68a0b91f57a2b58fa99b9bb

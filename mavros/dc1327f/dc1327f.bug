@@ -37,7 +37,7 @@ fix:
     - libmavconn/package.xml
   languages:
     - Package XML
-  time: 2013-11-03 (00:00)
+  time: 2014-11-03T12:03:30+03:00
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: dc1327f35887f9337bb4f29bb94fb8a5c5fa8a73

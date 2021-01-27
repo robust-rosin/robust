@@ -35,7 +35,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/32
-  time-reported: 2014-02-10 (12:12)
+  time-reported: 2014-02-10T11:12:24Z
   reproducibility: always
   trace: null
 fix:
@@ -47,4 +47,4 @@ fix:
   fix-in: ['motoman_sia20d_moveit_config/package.xml']
   languages:
     - Package XML
-  time: 2014-03-28 (11:36)
+  time: 2014-03-16T13:05:08+01:00

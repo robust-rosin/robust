@@ -35,7 +35,7 @@ bug:
   detected-by: user
   reported-by: guest user
   issue: https://github.com/mavlink/mavros/issues/625
-  time-reported: 2016-11-07 (00:00)
+  time-reported: 2016-11-08T02:22:53Z
   reproducibility: N/A
   trace: N/A
 fix:
@@ -52,7 +52,7 @@ fix:
   languages:
     - Python
     - C++
-  time: 2017-06-28 (00:00)
+  time: 2017-06-28T21:21:06+03:00
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 599c5887ad2aadc124d7e1354f3a1597402118da

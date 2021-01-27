@@ -44,7 +44,7 @@ fix:
     - src/plugins/sys_status.cpp
   languages:
     - C++
-  time: 2014-01-13 (00:00)
+  time: 2014-01-14T06:50:54+04:00
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 2998e9f7f9e0fb969e7248a46d5ecd0749614d06
@@ -52,4 +52,4 @@ time-machine:
   ros_distro: hydro
   ros_pkgs:
     - mavros
-  datetime: 2014-01-13
+  datetime: 2014-01-14T06:50:54+04:00

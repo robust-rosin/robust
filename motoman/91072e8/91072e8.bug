@@ -25,7 +25,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/12
-  time-reported: 2013-08-26 (12:01)
+  time-reported: 2013-08-26T10:01:22Z
   reproducibility: always
   trace: null
 fix:
@@ -42,4 +42,4 @@ fix:
     - ros-industrial/motoman/motoman_sia20d_support
     - ros-industrial/motoman/motoman_sia5d_support
   languages: null
-  time: 2014-09-02 (11:31)
+  time: 2013-08-08T00:05:20-05:00   # fixed before the issue was reported

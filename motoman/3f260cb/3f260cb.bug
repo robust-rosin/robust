@@ -26,7 +26,7 @@ bug:
   detected-by: user
   reported-by: guest user
   issue: https://github.com/ros-industrial/motoman/issues/154
-  time-reported: 2017-03-15 (08:02)
+  time-reported: 2017-03-15T07:02:21Z
   reproducibility: always
   trace: null
 fix:
@@ -38,4 +38,4 @@ fix:
   fix-in: ['motoman_driver/include/motoman_driver/joint_trajectory_streamer.h', 'motoman_driver/src/joint_trajectory_streamer.cpp']
   languages:
     - C++
-  time: 2017-03-21 (02:46)
+  time: 2017-03-20T21:46:37-04:00

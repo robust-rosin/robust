@@ -30,7 +30,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/mavlink/mavros/issues/626
-  time-reported: 2016-11-14 (00:00)
+  time-reported: 2016-11-15T02:22:35Z
   reproducibility: N/A
   trace: N/A
 fix:
@@ -44,7 +44,7 @@ fix:
     - mavros/include/mavros/utils.h
   languages:
     - C++
-  time: 2017-02-07 (00:00)
+  time: 2017-02-07T11:30:31+01:00
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 31ad11dc57aaf7dfac6f8d810162184b0f4d3ef4

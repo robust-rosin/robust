@@ -27,7 +27,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/turtlebot/turtlebot/issues/102
-  time-reported: 2013-10-04 (08:04)
+  time-reported: 2013-10-04T07:04:26Z
   reproducibility: always
   trace: null
 fix:
@@ -45,4 +45,4 @@ fix:
   languages:
     - Python
     - Launch XML
-  time: 2013-11-02 (04:24)
+  time: 2013-11-02T04:24:25Z

@@ -24,7 +24,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/2
-  time-reported: 2013-08-01 (00:00)
+  time-reported: 2013-08-01T19:39:58Z
   reproducibility: always
   trace: null
 fix:
@@ -37,4 +37,4 @@ fix:
     - motoman/package.xml
   languages:
     - Package XML
-  time: 2013-08-07 (20:49)
+  time: 2013-08-07T11:49:55-07:00
