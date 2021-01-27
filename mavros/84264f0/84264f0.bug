@@ -31,7 +31,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/mavlink/mavros/issues/207
-  time-reported: 2015-02-03 (00:00)
+  time-reported: 2015-02-03T15:28:57Z
   reproducibility: N/A
   trace: N/A
 fix:
@@ -44,7 +44,7 @@ fix:
     - mavros_extras/src/plugins/visualization.cpp
   languages:
     - C++
-  time: 2015-03-05 (00:00)
+  time: 2015-03-05T18:52:39+03:00
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 84264f01aeea79b345fe9f397da8c4759b7846fb
