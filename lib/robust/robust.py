@@ -28,6 +28,10 @@ _FORKED_REPOS = (
     'universal_robot',
     'cob_robots',
     'ros_comm',
+    'rocon_app_platform',
+    'cob_common',
+    'rospkg',
+    'rosdep',
 )
 
 

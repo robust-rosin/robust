@@ -50,7 +50,7 @@ fix:
     - Package XML
   time: 2016-12-29 (20:34)
   commits:
-    - repo: https://github.com/ros-industrial/universal_robot/
+    - repo: https://github.com/ros-industrial/universal_robot
       hash: f8d175b09ea955ebe83aecbe19105c28f0225524
 fault-codes:
   - EVOLUTION:PACKAGE

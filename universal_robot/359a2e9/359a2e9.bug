@@ -49,7 +49,7 @@ fix:
     - URScript
   time: 2014-10-10 (11:52)
   commits:
-    - repo: https://github.com/ros-industrial/universal_robot/
+    - repo: https://github.com/ros-industrial/universal_robot
       hash: 359a2e9d0c21b37c4fc077e08dbb56de771734cb
 fault-codes:
   - PROGRAMMING:BROKEN-CONTRACT

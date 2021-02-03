@@ -58,7 +58,7 @@ fix:
     - Python
   time: 2014-11-03 (16:30)
   commits:
-    - repo: https://github.com/ros-industrial/universal_robot/
+    - repo: https://github.com/ros-industrial/universal_robot
       hash: fc95a19ac913e31c09ab52666405be0f5aacc24e
 fault-codes:
   - CONFIG:PARAM
