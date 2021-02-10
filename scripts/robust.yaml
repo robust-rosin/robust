@@ -7,25 +7,8 @@ system: str(min=1, max=40)
 severity: enum("error", "warning", "convention-violation", "bad-smell",
             "minor-issue", "not-a-bug")
 links: list(regex("^(http)s?://([A-Z0-9])?"))
-failure-codes: list(enum("BAD-SMELL", "ROS-SPECIFIC", "NAMING-TYPOS", "COPYPASTA", "DEFAULTS",
-                    "CONFIG:PARAM", "CONFIG:REMAPPING", "CONFIG:ARGS", "CONFIG:CONSTANTS", "CONFIG:ENCODING", "CONFIG:NAMESPACE", "CONFIG:TOPIC",
-                    "BDO:BUILD", "BDO:DEPENDENCY", "BDO:ORCHESTRATION",
-                    "CONCURRENCY:NO-SYNC", "CONCURRENCY:BAD-SYNC", "CONCURRENCY:TIMING", "CONCURRENCY:SIGNALS",
-                    "EVOLUTION:LANGUAGE", "EVOLUTION:LIBRARY", "EVOLUTION:PACKAGE", "EVOLUTION:DEPRECATION", "EVOLUTION:ROBOT", "EVOLUTION:FIRMWARE", "EVOLUTION:DOCS", "EVOLUTION:PATHS",
-                    "PROGRAMMING:LOGIC", "PROGRAMMING:CALCULATIONS", "PROGRAMMING:CONTROL-FLOW", "PROGRAMMING:MISSING-FEATURE", "PROGRAMMING:VALIDATION", "PROGRAMMING:UNINITIALISED", "PROGRAMMING:BROKEN-CONTRACT", "PROGRAMMING:RESOURCES", "PROGRAMMING:DATATYPE", "PROGRAMMING:UNUSED", "PROGRAMMING:PATH", "PROGRAMMING:STRING-FORMATTING", "PROGRAMMING:COMPILER-ERROR",
-                    "MODELS:ROBOT", "MODELS:WORLD", "MODELS:TRANSFORMATIONS",
-                    "SYSTEMS:OS", "SYSTEMS:HARDWARE", "SYSTEM:FIRMWARE", "SYSTEMS:CONFIG"))
-fault-codes: list(enum("WARNING", "UNKNOWN", "HARMLESS", "MISLEADING", "NONE",
-                  "SYSTEM:LIVENESS", "SYSTEM:UNINTENDED-BEHAVIOUR", "SYSTEM:PERFORMANCE", "SYSTEM:NONE", "SYSTEM:PHYSICAL", "SYSTEM:MOTION", "SYSTEM:SIMULATION",
-                  "SOFTWARE:BUILD", "SOFTWARE:RUNTIME", "SOFTWARE:NETWORK", "SOFTWARE:UX", "SOFTWARE:CONCURRENCY", "SOFTWARE:PERFORMANCE"))
-bug: include('_bug')
-fix: include('_fix')
-time-machine: include('_time-machine')
-bugzoo: include('_bugzoo')
 
----
-
-_bug:
+bug:
     phase: enum("build", "deployment", "runtime", "does not apply", "unknown")
     specificity: enum("general issue", "robotics-specific", "ROS-specific",
             "application-specific")
@@ -49,7 +32,7 @@ _bug:
     trace: str(min=1)
     reproduction: any(str(min=1), null(), required=False)
 
-_fix:
+fix:
     repo: regex("^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+)$")
     hash: include('_hash')
     pull-request: regex("(^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+/pull/[0-9]+)?$)|(^N/A$)")
@@ -59,17 +42,30 @@ _fix:
                   "msg", "srv", "xacro", "urdf", "robot specific"))
     time: any(date(), null())
 
-_time-machine:
+time-machine:
     ros_distro: enum("noetic", "melodic", "lunar", "kinetic", "jade", "indigo",
                   "hydro", "groovy", "fuerte", "electric", "diamondback")
     ros_pkgs: list(str(min=1))
     datetime: date()
 
-_bugzoo:
+bugzoo:
     is-build-failure: any('true', 'false')
     bug-commit: include('_hash')
     fix-commit: include('_hash')
     fork-urls: list(regex("^(https://github\\.com/[a-zA-Z0-9-]+/[a-zA-Z0-9_]+)$"))
 
+fault-codes: any(list(enum("BAD-SMELL", "ROS-SPECIFIC",  "NAMING-TYPOS", "COPYPASTA",
+                "CONFIG:PARAM", "CONFIG:REMAPPING", "CONFIG:ARGS", "CONFIG:CONSTANTS", "CONFIG:ENCODING", "CONFIG:NAMESPACE", "CONFIG:TOPIC",
+                "BDO:BUILD", "BDO:DEPENDENCY", "BDO:ORCHESTRATION",
+                "CONCURRENCY:NO-SYNC", "CONCURRENCY:BAD-SYNC", "CONCURRENCY:TIMING", "CONCURRENCY:SIGNALS",
+                "EVOLUTION:LANGUAGE", "EVOLUTION:LIBRARY", "EVOLUTION:PACKAGE", "EVOLUTION:DEPRECATION", "EVOLUTION:ROBOT", "EVOLUTION:FIRMWARE", "EVOLUTION:DOCS", "EVOLUTION:PATHS",
+                "PROGRAMMING:LOGIC", "PROGRAMMING:CALCULATIONS", "PROGRAMMING:CONTROL-FLOW", "PROGRAMMING:MISSING-FEATURE", "PROGRAMMING:VALIDATION", "PROGRAMMING:UNINITIALISED", "PROGRAMMING:BROKEN-CONTRACT", "PROGRAMMING:RESOURCES", "PROGRAMMING:DATATYPE", "PROGRAMMING:UNUSED", "PROGRAMMING:STRING-FORMATTING",
+                "MODELS:ROBOT", "MODELS:WORLD", "MODELS:TRANSFORMATIONS",
+                "SYSTEMS:OS", "SYSTEMS:HARDWARE", "SYSTEM:FIRMWARE", "SYSTEMS:CONFIG")), null())
+failure-codes: any(list(enum("WARNING", "UNKNOWN", "HARMLESS", "MISLEADING", "NONE",
+                "SYSTEM:LIVENESS", "SYSTEM:UNINTENDED-BEHAVIOUR", "SYSTEM:PERFORMANCE", "SYSTEM:NONE", "SYSTEM:PHYSICAL", "SYSTEM:MOTION", "SYSTEM:SIMULATION",
+                "SOFTWARE:BUILD", "SOFTWARE:RUNTIME", "SOFTWARE:NETWORK", "SOFTWARE:UX", "SOFTWARE:CONCURRENCY", "SOFTWARE:PERFORMANCE")), null())
+
+---
 
 _hash: regex("^[0-9a-f]{40}$")
