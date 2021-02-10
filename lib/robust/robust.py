@@ -235,6 +235,30 @@ class FixSection:
         return commits
 
 
+@attr.s(auto_attribs=True, frozen=True, slots=True)
+class FaultFailureSection:
+    bug: 'BugDescription'
+
+    def _get_value(self, key: str) -> t.Any:
+        value: t.Any
+
+        try:
+            value = self.bug.yaml[key]
+        except KeyError as exc:
+            message = (f"{self.bug.filename}: missing {key} "
+                       "in bug description")
+            print(message)
+
+        return value
+
+    @property
+    def faults(self) -> t.Optional[t.List[str]]:
+        return self._get_value('fault-codes')
+
+    def failures(self) -> t.Optional[t.List[str]]:
+        return self._get_value('failure-codes')
+
+
 @attr.s(auto_attribs=True, slots=True)
 class BugDescription:
     filename: str
@@ -282,9 +306,18 @@ class BugDescription:
     def fix(self) -> FixSection:
         return FixSection(self)
 
+    @property
+    def faults(self) -> t.Optional[t.List[str]]:
+        return FaultFailureSection(self).faults
+
+    @property
+    def failures(self) -> t.Optional[t.List[str]]:
+        return FaultFailureSection(self).faults
+
     def save(self) -> None:
         with open(self.filename, 'w') as f:
             yaml.dump(self.yaml, f)
+
 
 
 @attr.s
