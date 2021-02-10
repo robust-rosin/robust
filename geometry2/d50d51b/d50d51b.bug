@@ -44,3 +44,10 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: d50d51bced9c851eeb8932d3be0a25df03909bac
+fault-codes:
+  - PROGRAMMING:CONTROL-FLOW
+  - PROGRAMMING:UNINITIALISED
+  - PROGRAMMING:VALIDATION
+failure-codes:
+  - SYSTEM:LIVENESS
+  - SYSTEM:UNINTENDED-BEHAVIOUR

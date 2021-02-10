@@ -46,3 +46,9 @@ fix:
     - Python
     - Launch XML
   time: 2013-11-02 (04:24)
+fault-codes:
+  - EVOLUTION:PACKAGE
+  - SYSTEMS:CONFIG
+failure-codes:
+  - SOFTWARE:UX
+  - SYSTEM:NONE

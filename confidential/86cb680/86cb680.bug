@@ -42,3 +42,7 @@ fix:
   languages:
     - C++
   time: 2017-07-03 (11:27)
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - MISLEADING

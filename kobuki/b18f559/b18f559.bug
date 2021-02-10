@@ -43,3 +43,8 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: b18f55910cc032f967b436b26710c01ec435291d
+fault-codes:
+  - EVOLUTION:FIRMWARE
+failure-codes:
+  - SOFTWARE:UX
+  - SYSTEM:NONE

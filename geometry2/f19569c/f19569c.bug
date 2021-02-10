@@ -66,3 +66,7 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: f19569cf095cdb92ab012a2ffa03c1074bad2c4a
+fault-codes:
+  - PROGRAMMING:COMPILER-ERROR
+failure-codes:
+  - SOFTWARE:BUILD
