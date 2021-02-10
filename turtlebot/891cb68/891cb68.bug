@@ -48,3 +48,7 @@ bugzoo:
   is-build-failure: false
   bug-commit: 981a09902f5b73a24dc63bbde3977b8c6750b583
   fix-commit: 799db373131fcc022b6bda371a1884f9b23e7a7c
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:RUNTIME

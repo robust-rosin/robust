@@ -73,3 +73,8 @@ fix:
     - CMake
     - C++
   time: 2013-09-13 (21:34)
+fault-codes:
+  - BAD-SMELL
+  - BDO:BUILD
+failure-codes:
+  - WARNING

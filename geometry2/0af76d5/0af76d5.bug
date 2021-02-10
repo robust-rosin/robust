@@ -77,3 +77,7 @@ time-machine:
   ros_pkgs:
     - tf2_ros
   datetime: 2013-10-29T01:05:05Z
+fault-codes:
+  - CONCURRENCY:NO-SYNC
+failure-codes:
+  - SOFTWARE:CONCURRENCY

@@ -53,3 +53,9 @@ time-machine:
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/626
+fault-codes:
+  - BDO:BUILD
+  - SYSTEMS:OS
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

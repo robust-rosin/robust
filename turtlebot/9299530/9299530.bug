@@ -53,3 +53,10 @@ fix:
     - Xacro
     - COLLADA
   time: 2013-04-01 (04:36)
+fault-codes:
+  - EVOLUTION:PACKAGE
+  - MODELS:ROBOT
+failure-codes:
+  - SOFTWARE:UX
+  - SYSTEM:LIVENESS
+  - SYSTEM:MOTION

@@ -42,3 +42,10 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 566092b42e3c42b4745294124762f8d7e5176716
+fault-codes:
+  - CONCURRENCY:NO-SYNC
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:LIVENESS
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:PHYSICAL

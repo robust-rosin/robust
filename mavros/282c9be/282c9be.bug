@@ -56,3 +56,8 @@ bugzoo:
     - libev-dev
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

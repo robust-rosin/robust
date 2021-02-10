@@ -57,3 +57,7 @@ bugzoo:
     - https://github.com/robust-rosin/geometry2
   bug-commit: 001fca6f33c108c83da4416db3bf43dfeffbe7dd
   fix-commit: fc854e0e7013e9a05c3c4f50eb1375aa0ad26841
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:RUNTIME

@@ -61,3 +61,8 @@ bugzoo:
   fix-commit: 0e2ea0c43b373feb490b45710fb63f4e6cde78eb
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - BAD-SMELL
+  - PROGRAMMING:BROKEN-CONTRACT
+failure-codes:
+  - SOFTWARE:PERFORMANCE

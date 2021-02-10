@@ -59,3 +59,9 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 21b86f63408a99aff35cd82ca6ac180a99566ee5
+fault-codes:
+  - ROS-SPECIFIC
+  - CONFIG:CONSTANTS
+  - MODELS:ROBOT
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR

@@ -58,3 +58,7 @@ bugzoo:
   fix-commit: 6bb267295ec87d8a089cc0f2f7d23555ea342943
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR

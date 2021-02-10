@@ -43,3 +43,7 @@ fix:
     - ros-industrial/motoman/motoman_sia5d_support
   languages: null
   time: 2014-09-02 (11:31)
+fault-codes:
+  - BAD-SMELL
+failure-codes:
+  - NONE

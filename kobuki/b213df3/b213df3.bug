@@ -52,3 +52,7 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: b213df3324cd933ddfc1bbd7ef8dce50cc233d51
+fault-codes:
+  - CONFIG:PARAM
+failure-codes:
+  - NONE

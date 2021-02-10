@@ -46,3 +46,10 @@ fix:
   languages:
     - C++
   time: 2017-02-09 (16:43)
+fault-codes:
+  - COPYPASTA
+  - CONFIG:PARAM
+  - ROS-SPECIFIC
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:UNINTENDED-BEHAVIOUR

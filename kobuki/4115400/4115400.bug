@@ -48,3 +48,10 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 4115400a5a9b88bf65bb97a5d44a9a2a695faa55
+fault-codes:
+  - CONCURRENCY:NO-SYNC
+  - CONFIG:NAMESPACE
+failure-codes:
+  - SOFTWARE:CONCURRENCY
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:SIMULATION

@@ -39,3 +39,9 @@ fix:
   languages:
     - Package XML
   time: 2013-08-31 (07:09)
+fault-codes:
+  - ROS-SPECIFIC
+  - BDO:BUILD
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD

@@ -42,3 +42,8 @@ fix:
   languages:
     - C++
   time: 2017-06-27 (16:45)
+fault-codes:
+  - PROGRAMMING:MISSING-FEATURE
+  - PROGRAMMING:BROKEN-CONTRACT
+failure-codes:
+  - UNKNOWN

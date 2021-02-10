@@ -51,3 +51,7 @@ fix:
   languages:
     - C++
   time: 2013-08-12 (09:03)
+fault-codes:
+  - PROGRAMMING:BROKEN-CONTRACT
+failure-codes:
+  - SOFTWARE:RUNTIME

@@ -49,3 +49,7 @@ fix:
   languages:
     - C
   time: 2017-01-09 (21:09)
+fault-codes:
+  - PROGRAMMING:CONTROL-FLOW
+failure-codes:
+  - SOFTWARE:UX

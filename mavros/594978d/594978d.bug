@@ -64,3 +64,7 @@ bugzoo:
   fix-commit: 594978da8302b6194bcf63c8119e3b3801242acd
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - PROGRAMMING:UNINITIALISED
+failure-codes:
+  - SOFTWARE:NETWORK

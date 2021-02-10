@@ -46,3 +46,7 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: 28c23cd13e5cbade9776b496518facc07cef59f2
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:BUILD

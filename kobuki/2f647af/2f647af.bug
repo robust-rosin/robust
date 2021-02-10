@@ -71,3 +71,8 @@ fix:
     - Launch XML
     - Package XML
   time: 2013-08-21 (06:59)
+fault-codes:
+  - PROGRAMMING:CALCULATIONS
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:MOTION

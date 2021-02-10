@@ -36,3 +36,7 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 27e85fc224fc6198b55c5af0d066c7901af8ec0b
+fault-codes:
+  - EVOLUTION:DEPRECATION
+failure-codes:
+  - NONE

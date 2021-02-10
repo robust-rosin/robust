@@ -42,3 +42,7 @@ fix:
   languages:
     - C++
   time: unfixed
+fault-codes:
+  - EVOLUTION:LIBRARY
+failure-codes:
+  - SYSTEM:LIVENESS

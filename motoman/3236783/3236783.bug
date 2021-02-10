@@ -41,3 +41,7 @@ fix:
   languages:
     - CMake
   time: 2013-09-05 (18:20)
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:BUILD

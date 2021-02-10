@@ -70,3 +70,11 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: dd40270d17cdd3e1729437f0988c0acb6c622d5e
+fault-codes:
+  - EVOLUTION:PACKAGE
+  - PROGRAMMING:BROKEN-CONTRACT
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:NETWORK
+  - SOFTWARE:PERFORMANCE
+  - SYSTEM:PERFORMANCE

@@ -58,3 +58,7 @@ bugzoo:
     - https://github.com/robust-rosin/geometry2
   bug-commit: e237c1c93211615ad2435dee76f8f23ba6fd6ce0
   fix-commit: 589c973ed4250f29b45310e931d5fd4e875aaa33
+fault-codes:
+  - BAD-SMELL
+failure-codes:
+  - NONE

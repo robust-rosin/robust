@@ -54,3 +54,8 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 6e748c1df1024847de91d899506ae872759d1094
+fault-codes:
+  - CONCURRENCY:SIGNALS
+failure-codes:
+  - SOFTWARE:CONCURRENCY
+  - SYSTEM:LIVENESS

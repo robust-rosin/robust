@@ -54,3 +54,7 @@ bugzoo:
   fix-commit: 1a746c326c49c0c265e01556bd4da45dadeacaa7
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - PROGRAMMING:CALCULATIONS
+failure-codes:
+  - SOFTWARE:UX

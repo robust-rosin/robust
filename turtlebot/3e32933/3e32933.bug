@@ -61,3 +61,8 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 3e32933c829e308600707a9f971334d13d1cbe19
+fault-codes:
+  - CONFIG:REMAPPING
+failure-codes:
+  - SYSTEM:PHYSICAL
+  - SYSTEM:MOTION

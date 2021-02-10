@@ -58,3 +58,7 @@ bugzoo:
   fix-commit: c15904101ca0ecc8aa13712d92cc5382ddc0af18
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - PROGRAMMING:VALIDATION
+failure-codes:
+  - SYSTEM:MOTION

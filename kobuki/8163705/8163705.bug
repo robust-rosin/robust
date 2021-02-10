@@ -38,3 +38,8 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 816370545bf199f03e6259443861226b9701775e
+fault-codes:
+  - BAD-SMELL
+failure-codes:
+  - HARMLESS
+  - MISLEADING

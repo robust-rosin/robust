@@ -65,3 +65,10 @@ bugzoo:
   fix-commit: 001fca6f33c108c83da4416db3bf43dfeffbe7dd
   fork-urls:
     - https://github.com/robust-rosin/geometry2
+fault-codes:
+  - PROGRAMMING:BROKEN-CONTRACT
+  - PROGRAMMING:UNINITIALISED
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - UNKNOWN

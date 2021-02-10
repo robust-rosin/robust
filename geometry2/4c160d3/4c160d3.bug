@@ -39,3 +39,8 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 4c160d3f1bde818fa201ba2c78e25a3e7d9b7cf6
+fault-codes:
+  - BDO:BUILD
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD

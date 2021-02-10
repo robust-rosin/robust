@@ -60,3 +60,9 @@ time-machine:
   ros_distro: null
   ros_pkgs: null
   datetime: null
+fault-codes:
+  - NAMING-TYPOS
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:LIVENESS

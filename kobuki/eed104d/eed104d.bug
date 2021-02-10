@@ -59,3 +59,7 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_core
       hash: eed104dcdd8862824598838b65a7e2339f8e660a
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:BUILD

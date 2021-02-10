@@ -51,3 +51,7 @@ bugzoo:
   fix-commit: c81fa7213ec2ca6512c8015b13a5bbade2b690f7
   fork-urls:
     - https://github.com/robust-rosin/geometry2
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR

@@ -41,3 +41,7 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: ad906f0a6ebeb732afb5938f79200f8eb4bccabf
+fault-codes:
+  - PROGRAMMING:CALCULATIONS
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR

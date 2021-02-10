@@ -81,3 +81,9 @@ fix:
     - Python
     - C++
   time: 2013-05-28 (20:03)
+fault-codes:
+  - ROS-SPECIFIC
+  - EVOLUTION:DOCS
+  - PROGRAMMING:BROKEN-CONTRACT
+failure-codes:
+  - SOFTWARE:RUNTIME

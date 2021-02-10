@@ -49,3 +49,7 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: b2abe31a90a92b5ebd26cd2e39c260d6151d0daa
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SYSTEM:SIMULATION

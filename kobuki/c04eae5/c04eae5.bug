@@ -43,3 +43,7 @@ fix:
   languages:
     - C++
   time: 2012-11-29 (11:47)
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - SOFTWARE:RUNTIME

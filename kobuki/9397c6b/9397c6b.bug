@@ -48,3 +48,9 @@ fix:
   commits:
     - repo: https://github.com/stonier/ecl_core
       hash: 9397c6b872cba3e894171507ef23f366fc968f3e
+fault-codes:
+  - PROGRAMMING:CONTROL-FLOW
+  - PROGRAMMING:CALCULATIONS
+failure-codes:
+  - SOFTWARE:RUNTIME
+  - SYSTEM:UNINTENDED-BEHAVIOUR

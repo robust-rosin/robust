@@ -81,3 +81,8 @@ bugzoo:
   catkin-pkg: tf2_ros
   bug-commit: 2b21a3e00a3f96fcd9f194baf6fa160e38fb6c56
   fix-commit: 4e442e278e751c4563b83cd5b2e01556ba3e6e45
+fault-codes:
+  - COPYPASTA
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - HARMLESS

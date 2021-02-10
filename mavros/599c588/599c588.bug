@@ -61,3 +61,9 @@ time-machine:
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/625
+fault-codes:
+  - PROGRAMMING:MISSING-FEATURE
+  - PROGRAMMING:BROKEN-CONTRACT
+  - PROGRAMMING:VALIDATION
+failure-codes:
+  - SOFTWARE:RUNTIME

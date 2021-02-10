@@ -39,7 +39,8 @@ bug:
   application: null
   task: null
   subsystem: driver
-  package: [ros-industrial/universal_robot/ur10_moveit_config, ros-industrial/universal_robot/ur3_moveit_config, ros-industrial/universal_robot/ur5_moveit_config]
+  package: [ros-industrial/universal_robot/ur10_moveit_config, ros-industrial/universal_robot/ur3_moveit_config,
+    ros-industrial/universal_robot/ur5_moveit_config]
   languages: package.xml
   detected-by: build system
   reported-by: unreported
@@ -57,3 +58,8 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: a58f4b506ae8bd774829fb6b7ceede1c1b812d15
+fault-codes:
+  - BDO:DEPENDENCY
+  - BAD-SMELL
+failure-codes:
+  - SOFTWARE:BUILD

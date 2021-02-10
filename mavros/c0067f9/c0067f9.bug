@@ -52,3 +52,8 @@ bugzoo:
   fix-commit: c0067f9f27a5a6ef5354e06fea18279541934520
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - BDO:DEPENDENCY
+  - EVOLUTION:LIBRARY
+failure-codes:
+  - SOFTWARE:RUNTIME

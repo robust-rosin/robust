@@ -37,3 +37,8 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 082960760dd90c4040e394721b3991f4e17aac2d
+fault-codes:
+  - CONFIG:ENCODING
+  - MODELS:ROBOT
+failure-codes:
+  - WARNING

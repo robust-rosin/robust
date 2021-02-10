@@ -70,3 +70,8 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 164cfa3ef1aad2d11b35894275730fe126e35d3e
+fault-codes:
+  - PROGRAMMING:STRING-FORMATTING
+failure-codes:
+  - SOFTWARE:UX
+  - SOFTWARE:RUNTIME

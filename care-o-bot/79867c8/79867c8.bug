@@ -53,3 +53,7 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_android
       hash: 79867c88acc64342f061e6324ed6b84ca7e0773d
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:BUILD

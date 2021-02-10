@@ -41,3 +41,7 @@ fix:
   languages:
     - C++
   time: 2017-07-04 (15:33)
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:RUNTIME

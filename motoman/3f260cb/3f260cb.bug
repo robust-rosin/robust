@@ -39,3 +39,7 @@ fix:
   languages:
     - C++
   time: 2017-03-21 (02:46)
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR

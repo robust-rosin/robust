@@ -38,3 +38,9 @@ fix:
   languages:
     - Xacro
   time: 2016-08-28 (04:00)
+fault-codes:
+  - CONFIG:CONSTANTS
+  - MODELS:TRANSFORMATIONS
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:MOTION

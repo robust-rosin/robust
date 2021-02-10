@@ -37,3 +37,7 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 259b468ea17fa680e68a0b91f57a2b58fa99b9bb
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:RUNTIME

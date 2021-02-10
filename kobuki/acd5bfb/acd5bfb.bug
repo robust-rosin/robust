@@ -40,3 +40,7 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: acd5bfbd5513fb915d54fe7662fb345237f18490
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR

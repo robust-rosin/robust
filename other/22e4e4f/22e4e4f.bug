@@ -43,3 +43,9 @@ fix:
   commits:
     - repo: https://git.code.tecnalia.com/robdream/kintinuous/commit/22e4e4f44ed3ead6f9d2d863fcd9d6d677e771f3
       hash: 22e4e4f44ed3ead6f9d2d863fcd9d6d677e771f3
+fault-codes:
+  - MODELS:TRANSFORMATIONS
+  - PROGRAMMING:BROKEN-CONTRACT
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SYSTEM:MOTION

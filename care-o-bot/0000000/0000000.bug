@@ -44,3 +44,8 @@ fix:
   fix-in: []
   languages: []
   time: unfixed
+fault-codes:
+  - EVOLUTION:PACKAGE
+  - ROS-SPECIFIC
+failure-codes:
+  - SYSTEM:UNINTENDED-BEHAVIOUR

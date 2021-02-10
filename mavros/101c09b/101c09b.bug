@@ -52,3 +52,8 @@ bugzoo:
   fix-commit: 101c09b7047eac18a2d9989b09c5916181a49cd5
   fork-urls:
     - https://github.com/mavlink/mavros
+fault-codes:
+  - BDO:DEPENDENCY
+  - EVOLUTION:PATHS
+failure-codes:
+  - SOFTWARE:BUILD

@@ -45,3 +45,8 @@ fix:
   languages:
     - CMake
   time: 2014-01-28 (03:47)
+fault-codes:
+  - BDO:BUILD
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD

@@ -39,3 +39,9 @@ fix:
   languages:
     - C++
   time: 2015-12-09 (14:20)
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SYSTEM:LIVENESS
+  - SOFTWARE:NETWORK
+  - SOFTWARE:RUNTIME

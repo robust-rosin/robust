@@ -40,3 +40,8 @@ fix:
   languages:
     - C++
   time: 2017-05-04 (10:16)
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:NETWORK
+  - SYSTEM:LIVENESS
