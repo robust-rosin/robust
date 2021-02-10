@@ -244,7 +244,7 @@ class FaultFailureSection:
 
         try:
             value = self.bug.yaml[key]
-        except KeyError as exc:
+        except KeyError:
             message = (f"{self.bug.filename}: missing {key} "
                        "in bug description")
             print(message)
@@ -317,7 +317,6 @@ class BugDescription:
     def save(self) -> None:
         with open(self.filename, 'w') as f:
             yaml.dump(self.yaml, f)
-
 
 
 @attr.s
