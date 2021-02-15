@@ -74,7 +74,7 @@ fix:
     - C++
   time: 2013-09-13 (21:34)
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - BDO:BUILD
 failure-codes:
   - WARNING

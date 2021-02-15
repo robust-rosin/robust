@@ -75,7 +75,7 @@ fix:
     - Package XML
   time: 2012-12-03 (08:25)
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - ROS-SPECIFIC
   - PROGRAMMING:BROKEN-CONTRACT
 failure-codes:

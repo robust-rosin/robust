@@ -44,6 +44,6 @@ fix:
   languages: null
   time: 2014-09-02 (11:31)
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
 failure-codes:
   - NONE

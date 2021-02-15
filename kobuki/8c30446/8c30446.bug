@@ -70,7 +70,7 @@ fix:
       hash: 8c30446d18bad63da0f58a1f666c2e7e209d917d
 fault-codes:
   - BDO:DEPENDENCY
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - CONFIG:PARAM
 failure-codes:
   - NONE

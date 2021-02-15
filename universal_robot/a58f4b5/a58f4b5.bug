@@ -60,6 +60,6 @@ fix:
       hash: a58f4b506ae8bd774829fb6b7ceede1c1b812d15
 fault-codes:
   - BDO:DEPENDENCY
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
 failure-codes:
   - SOFTWARE:BUILD

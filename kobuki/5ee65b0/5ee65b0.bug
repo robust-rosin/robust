@@ -80,7 +80,7 @@ fix:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - ROS-SPECIFIC
   - CONFIG:ARGS
   - EVOLUTION:DEPRECATION

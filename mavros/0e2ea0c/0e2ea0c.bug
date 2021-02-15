@@ -62,7 +62,7 @@ bugzoo:
   fork-urls:
     - https://github.com/robust-rosin/mavros
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - PROGRAMMING:BROKEN-CONTRACT
 failure-codes:
   - SOFTWARE:PERFORMANCE

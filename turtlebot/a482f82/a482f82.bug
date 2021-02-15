@@ -44,7 +44,7 @@ fix:
     - repo: https://github.com/ros-drivers/openni_launch
       hash: a482f8268042aa8fae0e73970ed2af5dfd01e5df
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - ROS-SPECIFIC
   - CONFIG:NAMESPACE
 failure-codes:

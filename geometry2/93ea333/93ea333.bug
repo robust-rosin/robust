@@ -47,7 +47,7 @@ fix:
     - repo: https://github.com/ros/geometry2
       hash: 93ea33319d60d4787afa63d50fa824c3bacc1921
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - PROGRAMMING:UNUSED
 failure-codes:
   - NONE

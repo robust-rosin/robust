@@ -39,7 +39,7 @@ fix:
     - C
   time: 2016-12-30 (18:48)
 fault-codes:
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
   - PROGRAMMING:UNUSED
 failure-codes:
   - NONE

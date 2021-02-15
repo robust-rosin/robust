@@ -38,6 +38,6 @@ fix:
   time: 2014-02-08 (03:51)
 fault-codes:
   - BDO:DEPENDENCY
-  - BAD-SMELL
+  - PROGRAMMING:BAD-SMELL
 failure-codes:
   - NONE
