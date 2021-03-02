@@ -8,7 +8,7 @@ create a Python 3 virtual environment, and install the dependencies from
 .. code::
 
    $ pipenv shell
-   (pipenv) $ pip install ..
+   (pipenv) $ pip install -e ..
    (pipenv) $ pip install -r requirements.txt
 
 
