@@ -15,10 +15,7 @@ description: >
   The pull request contains another commit detecting not-well-formed
   quaternions.  This has not been merged but handled in other issues.  Here we
   only describe and refer to the cherry picked commit with the typing issue.
-classification: >
-  "CWE-704: Incorrect Type Conversion or Cast"
-  internal classification (cause):
-  internal classification (effect):
+classification: "CWE-704: Incorrect Type Conversion or Cast"
 keywords:
   - dynamic types
   - type case

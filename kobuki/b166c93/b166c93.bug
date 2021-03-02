@@ -9,7 +9,7 @@ description: >
   driver, but the issue was present in the ROS Indigo version as
   well.  A user requested that this fix was backported for the
   Indigo version.
-classification: "Changed macro to function call #EVOLUTION"
+classification: "Changed macro to function call #EVOLUTION (no CWE)"
 keywords: ['backporting', 'fix', 'driver']
 system: kobuki
 severity: error

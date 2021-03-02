@@ -18,10 +18,7 @@ description: >
   not ROS-specific, but robotics-specific.
   The second pull request is a case of porting up of the same bug
   fix to a newer development branch (indigo).
-classification: |
-  Dangerous behavior: abrupt arm jump #PHYSICAL
-  internal classification (cause):
-  internal classification (effect):
+classification: "CWE-628: Function Call with Incorrectly Specified Arguments"
 keywords: ['planning', 'trajectory', 'absolute time', 'relative time']
 system: universal_robot
 severity: error

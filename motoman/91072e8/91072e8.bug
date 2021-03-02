@@ -6,7 +6,7 @@ description: >
   The directories Inform and MotoPlus are mixed case, all other
   directories are lowercase. The dx100 package has directories with
   the same names, but in all lowercase.
-classification: inconsistent naming
+classification: inconsistent naming (no CWE)
 keywords: ['mixed case', 'naming convention', 'lowercase']
 system: motoman
 severity: bad-style
