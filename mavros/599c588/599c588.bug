@@ -16,7 +16,7 @@ description: >
   Closer inspection of the code reveals that no checking is
   performed by the service handler, and that the success flag is
   hardcoded as True.
-classification: Return of Wrong Status Code
+classification: "CWE-393: Return of Wrong Status Code"
 keywords: missing functionality
 system: mavros
 severity: error

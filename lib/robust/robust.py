@@ -255,6 +255,10 @@ class BugDescription:
         return self.yaml['description']
 
     @property
+    def classification(self) -> str:
+        return self.yaml['classification']
+
+    @property
     def title(self) -> str:
         return self.yaml['title']
 

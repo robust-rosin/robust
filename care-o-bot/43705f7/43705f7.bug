@@ -14,7 +14,7 @@ description: >
   the camera topics in simulation do not match the topic names on
   real hardware.  The problem is solved by introducing consistent
   naming.
-classification: inconsistent naming
+classification: "inconsistent naming (no CWE)"
 keywords: ['xacro', 'gazebo', 'topic', 'name', 'inconsistency']
 system: care-o-bot
 severity: error
