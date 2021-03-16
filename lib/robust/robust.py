@@ -255,6 +255,7 @@ class FaultFailureSection:
     def faults(self) -> t.Optional[t.List[str]]:
         return self._get_value('fault-codes')
 
+    @property
     def failures(self) -> t.Optional[t.List[str]]:
         return self._get_value('failure-codes')
 
