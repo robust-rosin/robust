@@ -23,11 +23,11 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of robust spreadsheet.
 SPREADSHEET_ID = '167XH2qjA6Zrt5xDwxP999BejnLn3KeFQK1DesM7H3wA'
-RANGE_NAME = 'Coding!A2:F'
+RANGE_NAME = 'Coding!A2:H'
 
 COLUMN_BUG = 0
-COLUMN_FAULT = 4
-COLUMN_FAILURE = 5
+COLUMN_FAULT = 5
+COLUMN_FAILURE = 7
 
 dir_here = os.path.dirname(__file__)
 token_path = os.path.join(dir_here, 'token.pickle')
@@ -110,8 +110,8 @@ def refactor_file(filename: str, faults: t.Optional[str], failures: t.Optional[s
     refactor_fault_failure(description, fault_list, failure_list)
 
     if not bug_validator.validate(OrderedDict(description.items())):
-        print(f"Error validating bug description {filename}\n")
-        return
+        description['fault-codes'] = None
+        description['failure-codes'] = None
 
     with open(bug_path, 'w') as f:
         yaml.dump(description, f)
