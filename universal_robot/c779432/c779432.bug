@@ -45,7 +45,7 @@ fix:
     - ur_kinematics/include/ur_kinematics/ur_moveit_plugin.h
   languages:
     - CMake
-  time: 2017-01-06 (12:29)
+  time: 2017-01-05T17:29:56-06:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: c7794329bf632592bf1d345d1290ff4b8d13580a

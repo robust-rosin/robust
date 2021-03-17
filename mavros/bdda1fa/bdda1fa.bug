@@ -36,7 +36,7 @@ bug:
   detected-by: user
   reported-by: user
   issue: https://github.com/mavlink/mavros/issues/478
-  time-reported: 2016-01-21 (00:00)
+  time-reported: 2016-01-21T20:23:07Z
   reproducibility: N/A
   trace: N/A
 fix:

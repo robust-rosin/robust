@@ -38,7 +38,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/universal_robot/issues/107
-  time-reported: 2014-09-12 (12:16)
+  time-reported: 2014-09-11T22:16:42Z
   reproducibility: sometimes
   trace: null
 fix:
@@ -47,7 +47,7 @@ fix:
   fix-in: ['ur_driver/prog']
   languages:
     - URScript
-  time: 2014-10-10 (11:52)
+  time: 2014-09-21T08:48:22+02:00   # choosing author date instead of committer date for sake of uniformity
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: 359a2e9d0c21b37c4fc077e08dbb56de771734cb

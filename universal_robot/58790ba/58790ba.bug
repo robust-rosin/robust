@@ -43,7 +43,7 @@ bug:
   detected-by: runtime detection
   reported-by: member developer
   issue: https://github.com/ros-industrial/universal_robot/pull/30
-  time-reported: 2013-11-20 (00:00)
+  time-reported: 2013-11-25T13:48:46Z
   reproducibility: always
   trace: null
 fix:
@@ -53,7 +53,7 @@ fix:
     - ur_driver/package.xml
   languages:
     - Package XML
-  time: 2013-11-26 (00:00)
+  time: 2013-11-26T10:41:17-08:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 58790baa5bf6601f73bc821b5ebd9a24c0a613b4

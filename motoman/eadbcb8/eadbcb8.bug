@@ -26,7 +26,7 @@ bug:
   detected-by: user
   reported-by: contributor
   issue: https://github.com/ros-industrial/motoman/issues/60
-  time-reported: 2015-04-03 (06:24)
+  time-reported: 2015-04-03T04:24:15Z
   reproducibility: always
   trace: null
 fix:
@@ -45,4 +45,4 @@ fix:
     - motoman_mh5_support/meshes/mh5/visual/MH5_U_AXIS.stl
   languages:
     - STL
-  time: 2016-01-23 (00:00)
+  time: 2016-01-12T13:39:48+01:00

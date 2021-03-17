@@ -26,7 +26,7 @@ bug:
   detected-by: user | developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/1
-  time-reported: 2013-06-12 (20:01)
+  time-reported: 2013-06-15T15:45:53Z
   reproducibility: always
   trace: null
 fix:
@@ -35,7 +35,7 @@ fix:
   fix-in: ['fs100/MotoPlus/MotionServer.c', 'fs100/MotoPlus/SimpleMessage.c', 'fs100/MotoPlus/output/MPRosFS100.out']
   languages:
     - C
-  time: 2013-06-18 (21:23)
+  time: 2013-06-18T14:23:04-05:00
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 292b5cc8a10a640a8b364a529e3eadffffc9b56b

@@ -29,7 +29,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/turtlebot/turtlebot/issues/234
-  time-reported: 2016-10-26 (10:29)
+  time-reported: 2016-10-26T09:29:28Z
   reproducibility: always
   trace: null
 fix:
@@ -38,7 +38,7 @@ fix:
   fix-in: ['turtlebot_teleop/launch/includes/velocity_smoother.launch.xml']
   languages:
     - Launch XML
-  time: 2016-10-26 (13:56)
+  time: 2016-10-26T12:58:08Z
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 9ffffcaeca7dd5a1fbb327c7289b8a11f84da39f

@@ -50,7 +50,7 @@ fix:
     - ur5_moveit_config/launch/trajectory_execution.launch.xml
   languages:
     - Launch XML
-  time: 2017-01-05 (05:58)
+  time: 2017-01-04T22:58:17-06:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 778c1acda6dc3e194b50328259936c3f058bcb7

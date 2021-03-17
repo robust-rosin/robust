@@ -23,7 +23,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/122
-  time-reported: 2016-08-24 (16:20)
+  time-reported: 2016-08-24T14:20:37Z
   reproducibility: always
   trace: null
 fix:
@@ -35,4 +35,4 @@ fix:
   fix-in: ['motoman_mh5_support/urdf/mh5_macro.xacros']
   languages:
     - Xacro
-  time: 2017-05-23 (22:15)
+  time: 2017-06-05T13:11:20-07:00   # not sure where the original date came from

@@ -53,7 +53,7 @@ fix:
   fix-in: ['ur10_moveit_config/package.xml', 'ur3_moveit_config/package.xml', 'ur5_moveit_config/package.xml']
   languages:
     - Package XML
-  time: 2016-09-02 (01:02)
+  time: 2016-09-01T16:02:30-07:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: a58f4b506ae8bd774829fb6b7ceede1c1b812d15

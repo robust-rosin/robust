@@ -47,7 +47,7 @@ bug:
   reported-by: guest user
   issue: http://answers.ros.org/question/194667/path-planning-exceeding-velocity-limits-of-ur5/
     | https://github.com/ros-industrial/universal_robot/issues/124
-  time-reported: 2014-10-10 (02:34)
+  time-reported: 2014-10-10T08:30:58Z
   reproducibility: sometimes
   trace: null
 fix:
@@ -56,7 +56,7 @@ fix:
   fix-in: ['ur_driver/src/ur_driver/driver.py']
   languages:
     - Python
-  time: 2014-11-03 (16:30)
+  time: 2014-11-03T16:30:23+01:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: fc95a19ac913e31c09ab52666405be0f5aacc24e

@@ -30,7 +30,7 @@ bug:
   detected-by: developer
   reported-by: guest user
   issue: https://github.com/turtlebot/turtlebot/issues/163
-  time-reported: 2014-09-11 (11:54)
+  time-reported: 2014-09-11 (11:54)   # 2014-09-11T10:54:53Z
   reproducibility: always
   trace: null
 fix:
@@ -48,4 +48,4 @@ fix:
   languages:
     - CMake
     - Shell
-  time: 2014-09-16 (00:26)
+  time: 2014-09-16 (00:26)  # 2014-09-15T23:28:22Z

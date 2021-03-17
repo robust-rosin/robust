@@ -29,7 +29,7 @@ bug:
   detected-by: UNKNOWN
   reported-by: guest user
   issue: https://github.com/mavlink/mavros/issues/561
-  time-reported: 2016-06-15 (00:00)
+  time-reported: 2016-06-15T06:27:08Z
   reproducibility: N/A
   trace: N/A
 fix:
@@ -42,7 +42,7 @@ fix:
     - mavros/src/plugins/command.cpp
   languages:
     - C++
-  time: 2016-06-23 (00:00)
+  time: 2016-06-23T16:21:01+03:00
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: de2cc36b37689363f60876d9892f2630173b4f8c

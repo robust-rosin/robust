@@ -26,7 +26,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/10
-  time-reported: 2013-08-24 (00:00)
+  time-reported: 2013-08-24T13:31:51Z
   reproducibility: always
   trace: null
 fix:
@@ -40,4 +40,4 @@ fix:
   fix-in: ['158 files due to a complete update of the driver package.']
   languages:
     - CMake
-  time: 2013-09-05 (18:20)
+  time: 2013-09-07T20:34:50+02:00

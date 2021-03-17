@@ -62,7 +62,7 @@ fix:
   fix-in: ['package.xml']
   languages:
     - Package XML
-  time: 2014-09-04 (17:57)
+  time: 2014-09-04T17:57:41+02:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 082dcf1551d84a9a874443adc39627f67272ac4c

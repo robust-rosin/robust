@@ -35,7 +35,7 @@ bug:
   detected-by: compiler
   reported-by: automatic
   issue: https://github.com/ros-industrial/universal_robot/issues/274
-  time-reported: 2016-12-29 (14:09)
+  time-reported: 2016-12-29T01:09:40Z
   reproducibility: always
   reproduction-images:
     buggy: 2cb16836ab3a14e3c534d2d20837642e3cc4a210
@@ -48,7 +48,7 @@ fix:
   languages:
     - CMake
     - Package XML
-  time: 2016-12-29 (20:34)
+  time: 2016-12-29T20:34:18+01:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: f8d175b09ea955ebe83aecbe19105c28f0225524

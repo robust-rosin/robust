@@ -26,7 +26,7 @@ bug:
   detected-by: runtime crash
   reported-by: contributor
   issue: null
-  time-reported: 2014-03-31 (15:19)
+  time-reported: 2014-03-31T15:19:00Z  # where did this come from?
   reproducibility: always
   trace: null
 fix:
@@ -35,7 +35,7 @@ fix:
   fix-in: ['ros_industrial/universal_robot/package.xml']
   languages:
     - Package XML
-  time: 2014-03-31 (15:52)
+  time: 2014-03-31T15:52:51+02:00
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: dda2f607be5f6650f7ce32b64d2cc413a8938c15

@@ -28,7 +28,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/102
-  time-reported: 2016-06-13 (00:00)
+  time-reported: 2016-07-13T07:07:02Z
   reproducibility: always
   trace: null
 fix:
@@ -38,7 +38,7 @@ fix:
   languages:
     - URDF
     - Xacro
-  time: 2016-06-19 (00:00)
+  time: 2016-08-28T03:58:41+02:00
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 2d42582c692191f67f1e986467822fcd3b3935b9

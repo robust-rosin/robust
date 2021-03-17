@@ -40,7 +40,7 @@ bug:
   detected-by: user
   reported-by: guest user
   issue: https://github.com/mavlink/mavros/issues/609
-  time-reported: 2016-09-30 (00:00)
+  time-reported: 2016-09-30T11:23:25Z
   reproducibility: N/A
   trace: N/A
 fix:

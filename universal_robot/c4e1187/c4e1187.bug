@@ -43,7 +43,7 @@ fix:
   fix-in: ['ur_kinematics/src/ur_moveit_plugin.cpp']
   languages:
     - C++
-  time: unfixed
+  time: 2017-06-20T16:50:06+02:00   # kinetic-devel
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: c4e118757123ef243d0f3c2e14a6c3d63549f20d

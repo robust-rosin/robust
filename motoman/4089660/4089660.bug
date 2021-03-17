@@ -24,7 +24,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ros-industrial/motoman/issues/138
-  time-reported: 2016-12-21 (00:00)
+  time-reported: 2016-12-21T21:15:33Z
   reproducibility: always
   trace: null
 fix:
@@ -37,4 +37,4 @@ fix:
     - motoman_driver/MotoPlus/MotionServer.c
   languages:
     - C
-  time: 2016-12-30 (18:48)
+  time: 2016-12-30T12:48:50-05:00
