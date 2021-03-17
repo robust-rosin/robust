@@ -32,7 +32,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ipa320/cob_robots/issues/656
-  time-reported: 2017-04-18 (00:00)
+  time-reported: 2017-04-18T14:35:35Z
   reproducibility: rare
   trace: null
 fix:

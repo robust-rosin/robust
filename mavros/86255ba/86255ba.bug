@@ -31,7 +31,7 @@ bug:
   detected-by: developer
   reported-by: contributor
   issue: https://github.com/mavlink/mavros/issues/276
-  time-reported: 2015-04-18 (00:00)
+  time-reported: 2015-04-18T10:48:18Z
   reproducibility: N/A
   trace: N/A
 fix:

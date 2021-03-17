@@ -55,7 +55,7 @@ fix:
     - libmavconn/test/test_hang.cpp
   languages:
     - C++
-  time: 2016-06-06 (00:00)
+  time: 2016-06-06T19:51:43+03:00
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 400949c5b152a888a8b4fd94b085bbfc2092f146
@@ -63,4 +63,4 @@ time-machine:
   ros_distro: kinetic
   ros_pkgs:
     - mavros
-  datetime: 2016-06-06
+  datetime: 2016-06-06T19:51:43+03:00

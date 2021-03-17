@@ -32,7 +32,7 @@ bug:
   detected-by: runtime crash
   reported-by: guest user
   issue: https://github.com/turtlebot/turtlebot/issues/250
-  time-reported: 2017-01-30 (23:27)
+  time-reported: 2017-01-30T23:27:06Z
   reproducibility: always
   trace: "ImportError: cannot import name QMessageBox"
   reproduction: >
@@ -45,7 +45,7 @@ fix:
   fix-in: ['kobuki_dashboard/src/kobuki_dashboard/battery_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/dashboard.py']
   languages:
     - Python
-  time: 2017-02-22 (14:10)
+  time: 2017-02-22T14:14:31Z
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 61a75df171e8ac8f34ed848456a7a267d4d9d3e3
