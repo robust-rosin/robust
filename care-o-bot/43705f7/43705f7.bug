@@ -14,11 +14,17 @@ description: >
   the camera topics in simulation do not match the topic names on
   real hardware.  The problem is solved by introducing consistent
   naming.
+  The original PR#179, which did not include the necessary fixes in
+  cob_robots at the time, was closed and a new PR#183, which included
+  changes necessary only for this bug, was finally merged.
 classification: "inconsistent naming (no CWE)"
 keywords: ['xacro', 'gazebo', 'topic', 'name', 'inconsistency']
 system: care-o-bot
 severity: error
-links: ['http://wiki.ros.org/xacro', 'http://gazebosim.org/tutorials?tut=ros_gzplugins']
+links:
+  - 'http://wiki.ros.org/xacro'
+  - 'http://gazebosim.org/tutorials?tut=ros_gzplugins'
+  - https://github.com/ipa320/cob_common/pull/179
 bug:
   phase: runtime
   specificity: robotics-specific
@@ -35,9 +41,11 @@ bug:
   reproducibility: sometimes
   trace: null
 fix:
-  pull-request: https://github.com/ipa320/cob_common/pull/179
+  pull-request: https://github.com/ipa320/cob_common/pull/183
   license: ['LGPL']
-  fix-in: ['https://github.com/ipa320/cob_common/pull/179/commits/43705f74847ce09edb971adb50d9e47b14f944cf']
+  fix-in:
+    - cob_description/urdf/sensors/kinect.gazebo.xacro
+    - cob_description/urdf/sensors/softkinetic.gazebo.xacro
   languages:
     - Xacro
   time: 2015-11-20 (00:00)
