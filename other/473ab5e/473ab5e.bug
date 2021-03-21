@@ -17,6 +17,8 @@ description: >
   input, the target pose updated may be based on an old pose of the
   robot end effector, so that the robot will move back to a
   previous (and potentially far) pose.
+  Note: The repository shadow-robot/stiff_flop does not exist anymore,
+  so the issue and the pull-request cannot be analysed further.
 classification: "Dangerous behavior: wrong position from joystick (no CWE) #PHYSICAL"
 keywords: ['driver', 'joystick', 'node life-cycle']
 system: shadow-robot

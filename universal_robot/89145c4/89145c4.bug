@@ -20,6 +20,8 @@ description: >
   hesitant).
   This is a robot modeling issue, that could appear in any robotics
   project with planning; not particularly ROS-specific.
+  Due to PR#320, the original fix commit SHA 89145c4 was replaced by
+  2e078f5.
 classification: |
   Dangerous behavior: Self-collision (no CWE) #PHYSICAL
   internal classification (cause):
@@ -27,7 +29,8 @@ classification: |
 keywords: ['moveit', 'kinematics', 'urdf', 'xacro', 'driver']
 system: universal_robot
 severity: error
-links: []
+links:
+  - https://github.com/ros-industrial/universal_robot/pull/320
 bug:
   phase: runtime
   specificity: robotics-specific
