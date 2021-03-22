@@ -42,5 +42,5 @@ fix:
 fault-codes:
   - PROGRAMMING:DATATYPE
 failure-codes:
-  - SOFTWARE:NETWORK
+  - SOFTWARE:BEHAVIORAL
   - SYSTEM:NONE

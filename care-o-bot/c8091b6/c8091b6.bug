@@ -43,7 +43,7 @@ fix:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: c8091b68c69eeae0bb7777ad6fa44d644c20f96c
 fault-codes:
-  - ROS-SPECIFIC
   - BDO:DEPENDENCY
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

@@ -46,4 +46,5 @@ fix:
 fault-codes:
   - PROGRAMMING:BAD-SMELL
 failure-codes:
-  - NONE
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

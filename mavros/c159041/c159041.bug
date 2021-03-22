@@ -61,4 +61,5 @@ bugzoo:
 fault-codes:
   - PROGRAMMING:VALIDATION
 failure-codes:
-  - SYSTEM:MOTION
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:LOSS-OF-CONTROL

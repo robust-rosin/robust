@@ -46,4 +46,5 @@ fix:
 fault-codes:
   - PROGRAMMING:LOGIC
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

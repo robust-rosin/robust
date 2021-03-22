@@ -55,4 +55,5 @@ fix:
 fault-codes:
   - CONFIG:PARAM
 failure-codes:
-  - NONE
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

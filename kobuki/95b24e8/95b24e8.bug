@@ -40,4 +40,5 @@ fix:
 fault-codes:
   - SYSTEMS:OS
 failure-codes:
-  - NONE
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

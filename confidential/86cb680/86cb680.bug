@@ -45,4 +45,5 @@ fix:
 fault-codes:
   - PROGRAMMING:LOGIC
 failure-codes:
-  - MISLEADING
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:LOSS-OF-CONTROL

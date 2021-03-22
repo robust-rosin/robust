@@ -55,4 +55,5 @@ fix:
 fault-codes:
   - PROGRAMMING:RESOURCES
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

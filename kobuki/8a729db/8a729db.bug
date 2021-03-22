@@ -62,7 +62,6 @@ fault-codes:
   - CONFIG:NAMESPACE
   - CONFIG:PARAM
   - EVOLUTION:PACKAGE
-  - NAMING-TYPOS
 failure-codes:
   - SOFTWARE:UX
   - SYSTEM:NONE

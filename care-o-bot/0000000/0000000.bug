@@ -46,6 +46,6 @@ fix:
   time: unfixed
 fault-codes:
   - EVOLUTION:PACKAGE
-  - ROS-SPECIFIC
 failure-codes:
-  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

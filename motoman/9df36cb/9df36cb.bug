@@ -51,5 +51,5 @@ fix:
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:
-  - SOFTWARE:RUNTIME
-  - SYSTEM:LIVENESS
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

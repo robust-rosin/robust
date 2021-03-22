@@ -42,4 +42,5 @@ fault-codes:
   - PROGRAMMING:BAD-SMELL
   - PROGRAMMING:UNUSED
 failure-codes:
-  - NONE
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

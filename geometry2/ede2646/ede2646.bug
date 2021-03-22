@@ -51,3 +51,9 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: ede2646d463c8ae1bbbf2460941df2b07d39824e
+fault-codes:
+  - PROGRAMMING:RESOURCES
+  - PROGRAMMING:BROKEN-CONTRACT
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

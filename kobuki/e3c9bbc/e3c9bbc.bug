@@ -56,4 +56,5 @@ fix:
 fault-codes:
   - BDO:BUILD
 failure-codes:
-  - NONE
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

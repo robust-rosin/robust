@@ -51,3 +51,4 @@ fault-codes:
   - EVOLUTION:LANGUAGE
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

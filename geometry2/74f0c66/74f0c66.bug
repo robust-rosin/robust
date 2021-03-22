@@ -54,4 +54,5 @@ fix:
 fault-codes:
   - CONCURRENCY:BAD-SYNC
 failure-codes:
-  - SOFTWARE:CONCURRENCY
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

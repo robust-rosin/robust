@@ -74,4 +74,5 @@ bugzoo:
 fault-codes:
   - PROGRAMMING:VALIDATION
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE

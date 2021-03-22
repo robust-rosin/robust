@@ -70,7 +70,8 @@ bugzoo:
   fork-urls:
     - https://github.com/robust-rosin/mavros
 fault-codes:
-  - NAMING-TYPOS
+  - PROGRAMMING:BAD-SMELL
   - PROGRAMMING:LOGIC
 failure-codes:
-  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:LOSS-OF-FUNCTIONALITY

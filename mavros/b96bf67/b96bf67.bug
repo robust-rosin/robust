@@ -61,5 +61,5 @@ bugzoo:
 fault-codes:
   - MODELS:TRANSFORMATIONS
 failure-codes:
-  - SYSTEM:MOTION
-  - SYSTEM:UNINTENDED-BEHAVIOUR
+  - SOFTWARE:UX
+  - SYSTEM:NONE

@@ -47,4 +47,5 @@ fix:
 fault-codes:
   - PROGRAMMING:CONTROL-FLOW
 failure-codes:
-  - SYSTEM:LIVENESS
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

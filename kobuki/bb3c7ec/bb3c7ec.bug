@@ -48,6 +48,6 @@ fix:
       hash: bb3c7ec8a7e656aa7e75753864351c27d571db47
 fault-codes:
   - CONFIG:REMAPPING
-  - NAMING-TYPOS
 failure-codes:
   - SOFTWARE:UX
+  - SYSTEM:NONE

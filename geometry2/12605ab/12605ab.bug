@@ -52,4 +52,5 @@ fix:
 fault-codes:
   - PROGRAMMING:CONTROL-FLOW
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

@@ -53,3 +53,4 @@ fault-codes:
   - PROGRAMMING:CONTROL-FLOW
 failure-codes:
   - SOFTWARE:UX
+  - SYSTEM:NONE

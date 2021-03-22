@@ -40,4 +40,5 @@ fix:
 fault-codes:
   - BDO:BUILD
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

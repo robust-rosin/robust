@@ -73,4 +73,5 @@ fault-codes:
   - PROGRAMMING:BAD-SMELL
   - CONFIG:PARAM
 failure-codes:
-  - NONE
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

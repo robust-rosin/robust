@@ -66,8 +66,8 @@ fix:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: fa64ec6585745c60fa02cf3be13b6d78bf449d8d
 fault-codes:
-  - ROS-SPECIFIC
   - EVOLUTION:LANGUAGE
   - MODELS:ROBOT
 failure-codes:
-  - HARMLESS
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

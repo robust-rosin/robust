@@ -41,4 +41,5 @@ fix:
 fault-codes:
   - PROGRAMMING:MISSING-FEATURE
 failure-codes:
-  - SYSTEM:LIVENESS
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

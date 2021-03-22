@@ -47,6 +47,7 @@ fix:
       hash: 45ee84aa1e920b26f8191763e20c10c5806ead60
 fault-codes:
   - BDO:DEPENDENCY
-  - COPYPASTA
+  - PROGRAMMING:COPYPASTA
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

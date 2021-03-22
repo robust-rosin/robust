@@ -41,8 +41,8 @@ fix:
     - repo: https://github.com/ros/geometry2
       hash: a723ecb68f72d52e538f9e9bdbca3e66f7a69444
 fault-codes:
-  - NAMING-TYPOS
   - BDO:BUILD
   - BDO:DEPENDENCY
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

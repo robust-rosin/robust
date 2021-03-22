@@ -56,3 +56,4 @@ fault-codes:
   - EVOLUTION:LIBRARY
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

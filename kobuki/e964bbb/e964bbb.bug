@@ -14,8 +14,8 @@ system: kobuki
 severity: error
 links: []
 failure-codes:
-  - SYSTEM:UNINTENDED-BEHAVIOUR
-  - SYSTEM:MOTION
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT
 fault-codes:
   - PROGRAMMING:CALCULATIONS
 bug:

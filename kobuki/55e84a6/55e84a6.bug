@@ -84,4 +84,5 @@ fix:
 fault-codes:
   - EVOLUTION:LIBRARY
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE

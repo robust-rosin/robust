@@ -47,4 +47,5 @@ fault-codes:
   - SYSTEMS:OS
   - CONFIG:ENCODING
 failure-codes:
-  - SYSTEM:LIVENESS
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

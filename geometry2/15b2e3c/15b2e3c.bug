@@ -49,5 +49,5 @@ fix:
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:
-  - SOFTWARE:CONCURRENCY
-  - WARNING
+  - SOFTWARE:LIVENESS
+  - SYSTEM:NONE

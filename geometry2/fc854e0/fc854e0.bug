@@ -60,4 +60,5 @@ bugzoo:
 fault-codes:
   - BDO:BUILD
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE

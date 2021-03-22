@@ -42,4 +42,5 @@ fix:
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

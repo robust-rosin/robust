@@ -57,3 +57,4 @@ fault-codes:
   - EVOLUTION:PATHS
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

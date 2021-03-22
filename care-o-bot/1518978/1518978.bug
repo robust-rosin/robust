@@ -47,7 +47,7 @@ fix:
       hash: 151897840540e8dd662cf6c8c77e5613c84e3424
 fault-codes:
   - PROGRAMMING:BAD-SMELL
-  - ROS-SPECIFIC
   - CONFIG:NAMESPACE
 failure-codes:
-  - NONE
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

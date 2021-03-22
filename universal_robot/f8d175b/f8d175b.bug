@@ -56,3 +56,4 @@ fault-codes:
   - EVOLUTION:PACKAGE
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

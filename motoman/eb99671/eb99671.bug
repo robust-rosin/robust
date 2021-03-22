@@ -43,5 +43,4 @@ fault-codes:
   - BDO:DEPENDENCY
 failure-codes:
   - SOFTWARE:BUILD
-  - HARMLESS
-  - NONE
+  - SYSTEM:NONE

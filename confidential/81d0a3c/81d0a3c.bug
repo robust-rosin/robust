@@ -42,4 +42,5 @@ fix:
 fault-codes:
   - PROGRAMMING:LOGIC
 failure-codes:
-  - UNKNOWN
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

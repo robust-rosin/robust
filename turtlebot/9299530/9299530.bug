@@ -58,5 +58,4 @@ fault-codes:
   - MODELS:ROBOT
 failure-codes:
   - SOFTWARE:UX
-  - SYSTEM:LIVENESS
-  - SYSTEM:MOTION
+  - SYSTEM:NONE

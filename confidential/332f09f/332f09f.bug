@@ -45,4 +45,5 @@ fix:
 fault-codes:
   - EVOLUTION:LIBRARY
 failure-codes:
-  - SYSTEM:LIVENESS
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-FUNCTIONALITY

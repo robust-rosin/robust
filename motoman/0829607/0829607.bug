@@ -41,4 +41,5 @@ fault-codes:
   - CONFIG:ENCODING
   - MODELS:ROBOT
 failure-codes:
-  - WARNING
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

@@ -63,3 +63,4 @@ fault-codes:
   - PROGRAMMING:BAD-SMELL
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

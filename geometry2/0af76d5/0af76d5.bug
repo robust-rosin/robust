@@ -80,4 +80,5 @@ time-machine:
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:
-  - SOFTWARE:CONCURRENCY
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:LOSS-OF-CONTROL

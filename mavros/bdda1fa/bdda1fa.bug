@@ -69,4 +69,5 @@ bugzoo:
 fault-codes:
   - EVOLUTION:PACKAGE
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

@@ -60,4 +60,5 @@ bugzoo:
 fault-codes:
   - PROGRAMMING:UNUSED
 failure-codes:
-  - NONE
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

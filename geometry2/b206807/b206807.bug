@@ -59,3 +59,4 @@ fault-codes:
   - PROGRAMMING:PATH
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

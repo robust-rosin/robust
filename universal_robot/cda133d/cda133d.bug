@@ -52,4 +52,5 @@ fix:
 fault-codes:
   - PROGRAMMING:RESOURCES
 failure-codes:
-  - SYSTEM:SIMULATION
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

@@ -57,3 +57,4 @@ fault-codes:
   - PROGRAMMING:CALCULATIONS
 failure-codes:
   - SOFTWARE:UX
+  - SYSTEM:NONE

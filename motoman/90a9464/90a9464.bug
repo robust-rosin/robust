@@ -44,7 +44,7 @@ fix:
     - Xacro
   time: 2017-04-10 (06:55)
 fault-codes:
-  - ROS-SPECIFIC
   - MODELS:ROBOT
 failure-codes:
-  - SOFTWARE:RUNTIME
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE

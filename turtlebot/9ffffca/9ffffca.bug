@@ -42,3 +42,8 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 9ffffcaeca7dd5a1fbb327c7289b8a11f84da39f
+fault-codes:
+  - CONFIG:NAMESPACE
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

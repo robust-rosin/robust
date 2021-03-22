@@ -64,7 +64,8 @@ bugzoo:
     - https://github.com/robust-rosin/mavros
 fault-codes:
   - BDO:BUILD
-  - COPYPASTA
+  - PROGRAMMING:COPYPASTA
   - PROGRAMMING:BROKEN-CONTRACT
 failure-codes:
   - SOFTWARE:BUILD
+  - SYSTEM:NONE

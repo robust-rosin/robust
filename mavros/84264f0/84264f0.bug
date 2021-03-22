@@ -53,3 +53,8 @@ time-machine:
   ros_pkgs:
     - mavros
   issue: https://github.com/mavlink/mavros/issues/207
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - SOFTWARE:UX
+  - SYSTEM:NONE

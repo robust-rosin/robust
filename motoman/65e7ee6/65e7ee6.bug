@@ -77,4 +77,5 @@ fault-codes:
   - PROGRAMMING:BAD-SMELL
   - BDO:BUILD
 failure-codes:
-  - WARNING
+  - SOFTWARE:UX
+  - SYSTEM:NONE

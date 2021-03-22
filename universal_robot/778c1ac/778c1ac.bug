@@ -57,4 +57,5 @@ fix:
 fault-codes:
   - EVOLUTION:DEPRECATION
 failure-codes:
-  - NONE
+  - SOFTWARE:NONE
+  - SYSTEM:NONE
