@@ -39,8 +39,7 @@ bug:
   application: null
   task: null
   subsystem: driver
-  package: [ros-industrial/universal_robot/ur10_moveit_config, ros-industrial/universal_robot/ur3_moveit_config,
-    ros-industrial/universal_robot/ur5_moveit_config]
+  package: [ros-industrial/universal_robot/ur10_moveit_config, ros-industrial/universal_robot/ur3_moveit_config, ros-industrial/universal_robot/ur5_moveit_config]
   languages: package.xml
   detected-by: build system
   reported-by: unreported
