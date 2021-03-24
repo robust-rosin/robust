@@ -28,8 +28,9 @@ bug:
   reproducibility: always
   trace: N/A
 fix:
-  repo: https://github.com/ros-industrial/motoman
-  hash: 045ab5403733ee9ec2512ee4d22e541dd3d6424f
+  commits:
+    - repo: https://github.com/ros-industrial/motoman
+      hash: 045ab5403733ee9ec2512ee4d22e541dd3d6424f
   pull-request: https://github.com/ros-industrial/motoman/pull/63
   license: ['BSD']
   fix-in: ['motoman_driver/CMakeLists.txt']

@@ -36,7 +36,7 @@ bug:
 fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
-      commit: 36ceb8dc37e0f930986cc86fe3ff2a9f1a930322
+      hash: 36ceb8dc37e0f930986cc86fe3ff2a9f1a930322
     - repo: https://github.com/turtlebot/turtlebot_apps
       hash: 3ea2c306120774e8ed7e69e4e3fce3eca9f5426e
   pull-request: null

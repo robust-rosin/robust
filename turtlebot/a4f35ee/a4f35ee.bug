@@ -49,10 +49,6 @@ fix:
     - repo: https://github.com/ros-infrastructure/rospkg
       hash: 862254530e105aa6a3a0919dc3c9c06c1b4be8cd
     - repo: https://github.com/ros-infrastructure/rosdep
-      hash: 7a2a9038bdc4f643047360901b0f4f26b0d0ec79
-    - repo: https://github.com/ros-infrastructure/rosdep
-      hash: fceff44c1a5bd99c37f8643fa58a225c5999ec16
-    - repo: https://github.com/ros-infrastructure/rosdep
       hash: a4f35ee51f0eb8f671173c65095b1a9c1963c5c3
   pull-request: https://github.com/robotics-in-concert/rocon_app_platform/pull/270
     | https://github.com/ros-infrastructure/rospkg/pull/78

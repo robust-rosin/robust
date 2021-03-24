@@ -52,7 +52,7 @@ fix:
   time: 2016-03-04 03:30 GMT+1
   commits:
     - repo: https://github.com/ros/geometry2
-      hash: 1f019166ccedf8ce5151944f5e33302afaf82679
+      hash: e12e7236b48295ec495625937f9d771573420512
 time-machine:
   ros_distro: indigo
   ros_pkgs:

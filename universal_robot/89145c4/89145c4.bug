@@ -52,7 +52,7 @@ fix:
   time: unfixed
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
-      hash: 89145c420d9b6bbfb4d385d43205708d45cc9449
+      hash: 2e078f5e3e9b3ec52dac83c096e90e7cd3edd0f2
 fault-codes:
   - MODELS:ROBOT
 failure-codes:

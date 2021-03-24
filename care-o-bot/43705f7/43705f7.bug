@@ -43,9 +43,10 @@ fix:
   time: 2015-11-20 (00:00)
   commits:
     - repo: https://github.com/ipa320/cob_common
-      hash: 43705f74847ce09edb971adb50d9e47
+      hash: 499dbb637b6acaade0daa0f36acac798b7dd34d2
 fault-codes:
   - CONFIG:TOPIC
 failure-codes:
   - SOFTWARE:BEHAVIORAL
   - SYSTEM:LOSS-OF-FUNCTIONALITY
+

@@ -65,7 +65,7 @@ bug:
     the discussions whether a design flaw is a bug, we decided to reproduce the race,
     but not fix the design.  Thus this bug has no fixing commit.
 fix:
-  commits: []
+  commits: not-fixed
   pull-request: null
   license: []
   fix-in: []
