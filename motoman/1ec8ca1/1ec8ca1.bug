@@ -36,3 +36,10 @@ fix:
   languages:
     - Xacro
   time: 2017-05-23 (22:15)
+fault-codes:
+  - MODELS:ROBOT
+  - CONFIG:CONSTANTS
+failure-codes:
+  - SOFTWARE:UX
+  - SYSTEM:MODEL-REALITY-DIVERGENCE
+  - SYSTEM:UNINTENDED-MOVEMENT

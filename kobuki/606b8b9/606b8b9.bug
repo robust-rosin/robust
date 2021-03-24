@@ -38,3 +38,10 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 606b8b9434ce501ff663e9252f5459eb9c50c6af
+fault-codes:
+  - PROGRAMMING:RESOURCES
+  - SYSTEMS:OS
+  - SYSTEMS:HARDWARE
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

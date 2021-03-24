@@ -39,3 +39,8 @@ fix:
   languages:
     - C++
   time: unfixed
+fault-codes:
+  - PROGRAMMING:LOGIC
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

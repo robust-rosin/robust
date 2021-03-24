@@ -44,3 +44,9 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 0416c81e5d08466477c5806443a580a142d0d465
+fault-codes:
+  - MODELS:ROBOT
+  - PROGRAMMING:MISSING-FEATURE
+failure-codes:
+  - SOFTWARE:NONE
+  - SYSTEM:UNINTENDED-MOVEMENT

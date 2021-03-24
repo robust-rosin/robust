@@ -49,3 +49,8 @@ fix:
     - CMake
     - Shell
   time: 2014-09-16 (00:26)
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

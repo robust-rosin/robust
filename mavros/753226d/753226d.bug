@@ -62,3 +62,9 @@ bugzoo:
   fix-commit: 753226d93a735ba01744620b5654b8a038d1c89d
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - PROGRAMMING:UNINITIALISED
+  - CONCURRENCY:TIMING
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:MODEL-REALITY-DIVERGENCE

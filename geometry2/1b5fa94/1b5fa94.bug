@@ -70,3 +70,8 @@ bugzoo:
   is-build-failure: null
   bug-commit: null
   fix-commit: null
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

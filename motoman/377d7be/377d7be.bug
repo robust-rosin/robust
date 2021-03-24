@@ -43,3 +43,9 @@ fix:
   languages:
     - .gitattributes
   time: 2017-01-09 (21:09)
+fault-codes:
+  - SYSTEMS:OS
+  - CONFIG:ENCODING
+failure-codes:
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

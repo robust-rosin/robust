@@ -37,3 +37,8 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: f95c3847d97fba46b6317e00ffd78ce352ec376f
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

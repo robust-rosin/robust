@@ -39,3 +39,8 @@ fix:
   languages:
     - C++
   time: 2015-12-09 (14:20)
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

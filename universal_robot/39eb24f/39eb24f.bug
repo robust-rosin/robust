@@ -51,3 +51,8 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: 39eb24f3a8ff0e358c210e87f1f3798755444f44
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

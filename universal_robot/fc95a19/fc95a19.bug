@@ -60,3 +60,9 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: fc95a19ac913e31c09ab52666405be0f5aacc24e
+fault-codes:
+  - CONFIG:PARAM
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:DEGRADED-PERFORMANCE
+  - SYSTEM:UNINTENDED-MOVEMENT

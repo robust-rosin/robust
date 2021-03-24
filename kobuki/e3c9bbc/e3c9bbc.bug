@@ -53,3 +53,8 @@ fix:
   commits:
     - repo: https://github.com/ros/rosdistro
       hash: e3c9bbcd9a3c05a5375375732d52e185cca5afb0
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

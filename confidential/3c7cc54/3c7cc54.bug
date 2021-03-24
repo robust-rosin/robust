@@ -41,3 +41,8 @@ fix:
   languages:
     - C++
   time: 2015-10-07 (16:10)
+fault-codes:
+  - PROGRAMMING:VALIDATION
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

@@ -39,3 +39,8 @@ fix:
   languages:
     - C++
   time: 2017-03-07 (16:28)
+fault-codes:
+  - PROGRAMMING:MISSING-FEATURE
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

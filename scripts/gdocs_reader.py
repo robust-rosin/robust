@@ -13,6 +13,8 @@ import argparse
 import os
 import typing as t
 from robust import yaml
+from bug_validator import BugValidator
+from collections import OrderedDict
 
 DESCRIPTION = 'Reads fault and failure codes and updates the bug files'
 
@@ -20,16 +22,19 @@ DESCRIPTION = 'Reads fault and failure codes and updates the bug files'
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 # The ID and range of robust spreadsheet.
-SPREADSHEET_ID = '1WMnp8a2I79aVBS4x_vjAkxFzzELsBpmjYgMEuytZOhg'
-RANGE_NAME = 'Coding!A2:F'
+SPREADSHEET_ID = '167XH2qjA6Zrt5xDwxP999BejnLn3KeFQK1DesM7H3wA'
+RANGE_NAME = 'Coding!A2:J'
 
 COLUMN_BUG = 0
-COLUMN_FAULT = 4
-COLUMN_FAILURE = 5
+COLUMN_FAULT = 5
+COLUMN_FAILURE_SW = 8
+COLUMN_FAILURE_SYS = 9
 
 dir_here = os.path.dirname(__file__)
 token_path = os.path.join(dir_here, 'token.pickle')
 credentials_path = os.path.join(dir_here, 'credentials.json')
+
+bug_validator = BugValidator()
 
 def get_credentials():
     creds = None
@@ -68,19 +73,23 @@ def get_gsheets_data() -> t.Iterator[t.List[str]]:
     for row in values:
         # return columns 'Bug', 'Fault labels' and 'Failure labels'
         try:
-            yield [row[COLUMN_BUG], row[COLUMN_FAULT], row[COLUMN_FAILURE]]
+            yield [row[COLUMN_BUG], row[COLUMN_FAULT], row[COLUMN_FAILURE_SW], row[COLUMN_FAILURE_SYS]]
         except:
             print(f"ERROR: Empty fields encountered for {row[COLUMN_BUG]} in 'ROBUST coding'")
-            yield [row[COLUMN_BUG], None, None]
+            yield [row[COLUMN_BUG], None, None, None]
 
 def refactor_fault_failure(description: t.List[str], faults: t.List[str], failures: t.List[str], update: bool = True) -> None:
-    if 'failure-codes' and 'fault-codes' in description and not update:
+    if 'failure-codes' in description and 'fault-codes' in description and not update:
             return
 
     description['fault-codes'] = faults
     description['failure-codes'] = failures
 
-def refactor_file(filename: str, faults: t.Optional[str], failures: t.Optional[str], update: bool = True) -> None:
+def refactor_file(filename: str,
+                  faults: t.Optional[str],
+                  failure_sw: t.Optional[str],
+                  failure_sys: t.Optional[str],
+                  update: bool = True) -> None:
     robust_dir = os.path.dirname(dir_here)
     bug_path = os.path.join(robust_dir, filename)
 
@@ -93,17 +102,31 @@ def refactor_file(filename: str, faults: t.Optional[str], failures: t.Optional[s
 
     fault_list: t.Optional[t.List[str]]
     if not faults:
-        fault_list = None
+        raise ValueError(filename, "No fault codes assigned to the bug.")
     else:
         fault_list = faults.upper().splitlines()
 
-    failure_list: t.Optional[t.List[str]]
-    if not failures:
-        failure_list = None
+    failure_sw_list: t.Optional[t.List[str]]
+    if not failure_sw:
+        raise ValueError(filename, "There should be exactly one software failure code assigned for each bug.")
     else:
-        failure_list = faults.upper().splitlines()
+        failure_sw_list = failure_sw.upper().splitlines()
+    if len(failure_sw_list) != 1:
+        raise ValueError(filename, "There should be exactly one software failure code assigned for each bug.")
+
+    failure_sys_list: t.Optional[t.List[str]]
+    if not failure_sys:
+        raise ValueError(filename, "No system failure codes assigned to the bug.")
+    else:
+        failure_sys_list = failure_sys.upper().splitlines()
+
+    failure_list: t.Optional[t.List[str]]
+    failure_list = failure_sw_list + failure_sys_list
 
     refactor_fault_failure(description, fault_list, failure_list)
+
+    if not bug_validator.validate(OrderedDict(description.items())):
+        raise ValueError(filename, "Invalid fault-failure codes assigned to the bug.")
 
     with open(bug_path, 'w') as f:
         yaml.dump(description, f)
@@ -116,6 +139,10 @@ if __name__ == '__main__':
                         default=True,
                         help='Update fault-codes and failure-codes even if the fields exist in the bug files.')
     args = parser.parse_args()
+
+    bug_validator.make_schema('fault-codes', 'failure-codes')
+
     for row in get_gsheets_data():
-        refactor_file(row[0], row[1], row[2], args.update)
+        refactor_file(row[0], row[1], row[2], row[3], args.update)
+
 

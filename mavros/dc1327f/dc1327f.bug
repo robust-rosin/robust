@@ -41,3 +41,8 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: dc1327f35887f9337bb4f29bb94fb8a5c5fa8a73
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

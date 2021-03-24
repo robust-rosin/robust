@@ -42,3 +42,9 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 339078942cf67457bc472e07a3e75e9895ebf2f7
+fault-codes:
+  - BDO:BUILD
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

@@ -49,3 +49,9 @@ time-machine:
   ros_pkgs:
     - tf2_ros
   datetime: 2014-01-29T17:46:25Z
+fault-codes:
+  - BDO:BUILD
+  - EVOLUTION:PACKAGE
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

@@ -52,3 +52,8 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 729a6531929203720f4a518ac9e79321fe3c5537
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

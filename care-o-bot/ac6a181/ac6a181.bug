@@ -41,3 +41,9 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: 81aa175d76608fbac6655ce745e8eaa1d35f51f9
+fault-codes:
+  - BDO:DEPENDENCY
+  - BDO:ORCHESTRATION
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

@@ -44,3 +44,8 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: bd1fce5b225aecc4862e824b674eebb4c40be255
+fault-codes:
+  - PROGRAMMING:CONTROL-FLOW
+failure-codes:
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

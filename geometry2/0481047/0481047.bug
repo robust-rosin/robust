@@ -61,3 +61,8 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 04810475f249e3f067701288388b82ff0dd686ba
+fault-codes:
+  - EVOLUTION:LIBRARY
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

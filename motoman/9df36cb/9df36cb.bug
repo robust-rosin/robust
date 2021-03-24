@@ -48,3 +48,8 @@ fix:
   languages:
     - Package XML
   time: 2014-03-28 (11:36)
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

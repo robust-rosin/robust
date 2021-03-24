@@ -53,3 +53,8 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 89145c420d9b6bbfb4d385d43205708d45cc9449
+fault-codes:
+  - MODELS:ROBOT
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

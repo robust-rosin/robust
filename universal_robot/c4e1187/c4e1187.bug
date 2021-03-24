@@ -47,3 +47,8 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot/
       hash: c4e118757123ef243d0f3c2e14a6c3d63549f20d
+fault-codes:
+  - EVOLUTION:LANGUAGE
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

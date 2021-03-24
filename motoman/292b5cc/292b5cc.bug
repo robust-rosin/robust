@@ -39,3 +39,8 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 292b5cc8a10a640a8b364a529e3eadffffc9b56b
+fault-codes:
+  - PROGRAMMING:DATATYPE
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

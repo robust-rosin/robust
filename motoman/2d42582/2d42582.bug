@@ -42,3 +42,9 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 2d42582c692191f67f1e986467822fcd3b3935b9
+fault-codes:
+  - CONFIG:PARAM
+  - MODELS:ROBOT
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

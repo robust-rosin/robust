@@ -59,3 +59,9 @@ time-machine:
   ros_distro: null
   ros_pkgs: null
   datetime: null
+fault-codes:
+  - PROGRAMMING:CALCULATIONS
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT
+  - SYSTEM:MODEL-REALITY-DIVERGENCE

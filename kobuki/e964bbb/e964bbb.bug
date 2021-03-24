@@ -14,10 +14,10 @@ system: kobuki
 severity: error
 links: []
 failure-codes:
-  - PROGRAMMING:CALCULATIONS
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT
 fault-codes:
-  - SYSTEM:UNINTENDED-BEHAVIOUR
-  - SYSTEM:MOTION
+  - PROGRAMMING:CALCULATIONS
 bug:
   phase: runtime
   specificity: robotics-specific

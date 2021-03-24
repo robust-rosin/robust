@@ -70,3 +70,8 @@ bugzoo:
     - https://github.com/robust-rosin/geometry2
   bug-commit: 17e57137dda28bf7e1d23a007e44e0eee404d26d
   fix-commit: a2f8eea04f95c9abb0e4d7557d796e84fb13a32a
+fault-codes:
+  - EVOLUTION:LIBRARY
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:LOSS-OF-FUNCTIONALITY

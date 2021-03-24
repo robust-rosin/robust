@@ -38,3 +38,9 @@ fix:
   languages:
     - Package XML
   time: 2013-08-07 (20:49)
+fault-codes:
+  - BDO:BUILD
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

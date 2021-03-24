@@ -66,3 +66,8 @@ bugzoo:
   fix-commit: bdda1fab32a9d084cfe980fe4f364b5eb35173e0
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - EVOLUTION:PACKAGE
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

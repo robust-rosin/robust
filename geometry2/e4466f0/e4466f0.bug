@@ -54,3 +54,10 @@ time-machine:
   ros_distro: null
   ros_pkgs: null
   datetime: null
+fault-codes:
+  - PROGRAMMING:LOGIC
+  - PROGRAMMING:DATATYPE
+  - PROGRAMMING:VALIDATION
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE

@@ -71,3 +71,10 @@ bugzoo:
   fix-commit: 29af3a3c14da0e5b92ebad40b8befa8e0141b63d
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - PROGRAMMING:RESOURCES
+  - PROGRAMMING:CONTROL-FLOW
+  - CONCURRENCY:SIGNALS
+failure-codes:
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-CONTROL

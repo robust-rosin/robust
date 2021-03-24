@@ -61,3 +61,9 @@ bugzoo:
   fix-commit: e1a80052fbdb8324573c8cce0401b01aa78765ae
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - CONFIG:NAMESPACE
+  - EVOLUTION:PACKAGE
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

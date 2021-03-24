@@ -52,3 +52,10 @@ fix:
   commits:
     - repo: https://github.com/shadow-robot/stiff_flop
       hash: 473ab5eb82487fb024458c0d709463fb3e046e34
+fault-codes:
+  - PROGRAMMING:CONTROL-FLOW
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT
+  - SYSTEM:MODEL-REALITY-DIVERGENCE

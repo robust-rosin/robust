@@ -50,3 +50,8 @@ fix:
   commits:
     - repo: https://github.com/ros-perception/image_pipeline
       hash: f01d9525901b75858047e6fa81e4efc92c7dfedc
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-FUNCTIONALITY

@@ -65,3 +65,8 @@ fix:
   commits:
     - repo: https://github.com/ros/ros_comm
       hash: ca23e58883ed2f1784840485ceba9af3cd2d5729
+fault-codes:
+  - CONCURRENCY:BAD-SYNC
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:LOSS-OF-CONTROL

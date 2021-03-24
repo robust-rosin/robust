@@ -39,3 +39,9 @@ fix:
     - Xacro
     - URDF
   time: 2016-06-25 (00:00)
+fault-codes:
+  - MODELS:ROBOT
+  - EVOLUTION:PATHS
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

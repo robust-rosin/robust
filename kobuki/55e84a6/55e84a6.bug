@@ -81,3 +81,8 @@ fix:
   languages:
     - Python
   time: 2014-08-11 (06:02)
+fault-codes:
+  - EVOLUTION:LIBRARY
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE

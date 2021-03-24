@@ -36,3 +36,9 @@ fix:
     - URDF
     - Xacro
   time: 2014-02-08 (03:51)
+fault-codes:
+  - BDO:DEPENDENCY
+  - PROGRAMMING:BAD-SMELL
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

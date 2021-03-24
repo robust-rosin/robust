@@ -53,3 +53,8 @@ time-machine:
   ros_pkgs:
     - mavros
   datetime: 2014-01-13
+fault-codes:
+  - PROGRAMMING:CALCULATIONS
+failure-codes:
+  - SOFTWARE:UX
+  - SYSTEM:NONE

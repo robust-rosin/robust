@@ -62,3 +62,8 @@ time-machine:
   ros_distro: null
   ros_pkgs: null
   datetime: null
+fault-codes:
+  - PROGRAMMING:CONTROL-FLOW
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

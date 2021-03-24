@@ -60,3 +60,9 @@ bugzoo:
   fix-commit: ff581a0752107f7ad875c16f83f7b75ccd92f847
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - MODELS:ROBOT
+  - MODELS:TRANSFORMATIONS
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:UNINTENDED-MOVEMENT

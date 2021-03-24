@@ -45,3 +45,8 @@ fix:
     - C++
     - Package XML
   time: 2013-01-25 (08:40)
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

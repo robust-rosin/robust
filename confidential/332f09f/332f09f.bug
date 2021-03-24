@@ -42,3 +42,8 @@ fix:
   languages:
     - C++
   time: unfixed
+fault-codes:
+  - EVOLUTION:LIBRARY
+failure-codes:
+  - SOFTWARE:LIVENESS
+  - SYSTEM:LOSS-OF-FUNCTIONALITY

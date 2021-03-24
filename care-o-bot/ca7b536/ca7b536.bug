@@ -48,3 +48,9 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_control
       hash: ca7b536390bcf76bf4ab6e62354c52bd51fb1ece
+fault-codes:
+  - BDO:BUILD
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

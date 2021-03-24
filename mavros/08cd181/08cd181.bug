@@ -53,3 +53,8 @@ bugzoo:
   is-build-failure: true
   bug-commit: 665484a19c47771cc68200b2cd2c5c75a77995ac
   fix-commit: 08cd18164e729b0fb0ed1f6b553e5458eb9b6a4c
+fault-codes:
+  - BDO:BUILD
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

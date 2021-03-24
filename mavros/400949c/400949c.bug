@@ -64,3 +64,8 @@ time-machine:
   ros_pkgs:
     - mavros
   datetime: 2016-06-06
+fault-codes:
+  - PROGRAMMING:RESOURCES
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

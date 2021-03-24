@@ -46,3 +46,8 @@ fix:
   languages:
     - STL
   time: 2016-01-23 (00:00)
+fault-codes:
+  - MODELS:ROBOT
+failure-codes:
+  - SOFTWARE:BEHAVIORAL
+  - SYSTEM:NONE

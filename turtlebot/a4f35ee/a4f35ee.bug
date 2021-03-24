@@ -64,3 +64,8 @@ fix:
   languages:
     - Python
   time: 2015-01-22 (23:52)
+fault-codes:
+  - SYSTEMS:OS
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

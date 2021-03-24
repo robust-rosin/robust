@@ -38,3 +38,9 @@ fix:
   languages:
     - C
   time: 2016-12-30 (18:48)
+fault-codes:
+  - PROGRAMMING:BAD-SMELL
+  - PROGRAMMING:UNUSED
+failure-codes:
+  - SOFTWARE:NONE
+  - SYSTEM:NONE

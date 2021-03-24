@@ -60,3 +60,8 @@ time-machine:
   ros_distro: null
   ros_pkgs: null
   datetime: null
+fault-codes:
+  - BDO:DEPENDENCY
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-CONTROL

@@ -43,3 +43,8 @@ fix:
     - Launch XML
     - Xacro
   time: 2017-04-10 (06:55)
+fault-codes:
+  - MODELS:ROBOT
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE

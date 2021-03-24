@@ -62,3 +62,10 @@ bugzoo:
   fix-commit: 5353982ea0f32783fcf3e296b25ab3b253550201
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - BDO:BUILD
+  - PROGRAMMING:COPYPASTA
+  - PROGRAMMING:BROKEN-CONTRACT
+failure-codes:
+  - SOFTWARE:BUILD
+  - SYSTEM:NONE

@@ -71,3 +71,8 @@ bugzoo:
   fix-commit: 4fb6e7e8190145ba6fa49fa6e13cc49730885b7f
   fork-urls:
     - https://github.com/robust-rosin/mavros
+fault-codes:
+  - PROGRAMMING:VALIDATION
+failure-codes:
+  - SOFTWARE:CRASHING
+  - SYSTEM:NONE
