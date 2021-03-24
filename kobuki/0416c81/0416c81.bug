@@ -44,6 +44,25 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 0416c81e5d08466477c5806443a580a142d0d465
+      stats:
+        total:
+          insertions: 27
+          deletions: 1
+          lines: 28
+          files: 3
+        files:
+          kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp:
+            insertions: 10
+            deletions: 0
+            lines: 10
+          kobuki_auto_docking/src/auto_docking_ros.cpp:
+            insertions: 9
+            deletions: 0
+            lines: 9
+          kobuki_auto_docking/src/dock_drive.cpp:
+            insertions: 8
+            deletions: 1
+            lines: 9
 fault-codes:
   - MODELS:ROBOT
   - PROGRAMMING:MISSING-FEATURE

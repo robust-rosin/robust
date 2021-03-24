@@ -59,6 +59,41 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 400949c5b152a888a8b4fd94b085bbfc2092f146
+      stats:
+        total:
+          insertions: 33
+          deletions: 41
+          lines: 74
+          files: 7
+        files:
+          libmavconn/include/mavconn/interface.h:
+            insertions: 3
+            deletions: 6
+            lines: 9
+          libmavconn/include/mavconn/thread_utils.h:
+            insertions: 13
+            deletions: 1
+            lines: 14
+          libmavconn/src/interface.cpp:
+            insertions: 1
+            deletions: 2
+            lines: 3
+          libmavconn/src/serial.cpp:
+            insertions: 2
+            deletions: 4
+            lines: 6
+          libmavconn/src/tcp.cpp:
+            insertions: 7
+            deletions: 17
+            lines: 24
+          libmavconn/src/udp.cpp:
+            insertions: 3
+            deletions: 4
+            lines: 7
+          libmavconn/test/test_hang.cpp:
+            insertions: 4
+            deletions: 7
+            lines: 11
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

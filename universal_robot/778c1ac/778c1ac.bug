@@ -54,6 +54,25 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 778c1acda6dc3e194b50328259936c3f058bcb7
+      stats:
+        total:
+          insertions: 9
+          deletions: 9
+          lines: 18
+          files: 3
+        files:
+          ur10_moveit_config/launch/trajectory_execution.launch.xml:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur3_moveit_config/launch/trajectory_execution.launch.xml:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur5_moveit_config/launch/trajectory_execution.launch.xml:
+            insertions: 5
+            deletions: 5
+            lines: 10
 fault-codes:
   - EVOLUTION:DEPRECATION
 failure-codes:

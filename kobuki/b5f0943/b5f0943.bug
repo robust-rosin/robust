@@ -41,14 +41,157 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 09059257fa3f5d0f475712ea7700f1d3dca9fe37
+      stats:
+        total:
+          insertions: 1586
+          deletions: 3
+          lines: 1589
+          files: 14
+        files:
+          kobuki_node/include/kobuki_node/kobuki_ros.hpp:
+            insertions: 194
+            deletions: 0
+            lines: 194
+          kobuki_node/launch/kobuki_node.launch:
+            insertions: 17
+            deletions: 0
+            lines: 17
+          kobuki_node/launch/kobuki_nodelet.launch:
+            insertions: 18
+            deletions: 0
+            lines: 18
+          kobuki_node/manifest.xml:
+            insertions: 7
+            deletions: 2
+            lines: 9
+          kobuki_node/plugins/nodelet_plugins.xml:
+            insertions: 8
+            deletions: 0
+            lines: 8
+          kobuki_node/src/CMakeLists.txt:
+            insertions: 3
+            deletions: 1
+            lines: 4
+          kobuki_node/src/library/CMakeLists.txt:
+            insertions: 15
+            deletions: 0
+            lines: 15
+          kobuki_node/src/library/diagnostics.cpp:
+            insertions: 181
+            deletions: 0
+            lines: 181
+          kobuki_node/src/library/kobuki_ros.cpp:
+            insertions: 356
+            deletions: 0
+            lines: 356
+          kobuki_node/src/library/odometry.cpp:
+            insertions: 138
+            deletions: 0
+            lines: 138
+          kobuki_node/src/library/slot_callbacks.cpp:
+            insertions: 395
+            deletions: 0
+            lines: 395
+          kobuki_node/src/library/subscriber_callbacks.cpp:
+            insertions: 185
+            deletions: 0
+            lines: 185
+          kobuki_node/src/nodelet/CMakeLists.txt:
+            insertions: 6
+            deletions: 0
+            lines: 6
+          kobuki_node/src/nodelet/kobuki_nodelet.cpp:
+            insertions: 63
+            deletions: 0
+            lines: 63
     - repo: https://github.com/yujinrobot/kobuki
       hash: 1f5e8b0ad3ec4aaf49fd52bd0b85d1480bee3c9f
+      stats:
+        total:
+          insertions: 38
+          deletions: 14
+          lines: 52
+          files: 5
+        files:
+          kobuki_node/launch/kobuki_nodelet.launch:
+            insertions: 7
+            deletions: 7
+            lines: 14
+          kobuki_node/manifest.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          kobuki_node/src/library/kobuki_ros.cpp:
+            insertions: 9
+            deletions: 5
+            lines: 14
+          kobuki_node/src/node/kobuki_node.cpp:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          kobuki_node/src/nodelet/kobuki_nodelet.cpp:
+            insertions: 20
+            deletions: 2
+            lines: 22
     - repo: https://github.com/yujinrobot/kobuki
       hash: c830670377746302ca09aa1d484efcc0739a223c
+      stats:
+        total:
+          insertions: 48
+          deletions: 41
+          lines: 89
+          files: 4
+        files:
+          kobuki_node/launch/kobuki_nodelet.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          kobuki_node/src/library/kobuki_ros.cpp:
+            insertions: 31
+            deletions: 35
+            lines: 66
+          kobuki_node/src/node/kobuki_node.cpp:
+            insertions: 7
+            deletions: 2
+            lines: 9
+          kobuki_node/src/nodelet/kobuki_nodelet.cpp:
+            insertions: 9
+            deletions: 3
+            lines: 12
     - repo: https://github.com/yujinrobot/kobuki
       hash: b5f0943df63721e77ce137e73cb0537d19790d54
+      stats:
+        total:
+          insertions: 19
+          deletions: 17
+          lines: 36
+          files: 2
+        files:
+          kobuki_safety_controller/include/kobuki_safety_controller/safety_controller.hpp:
+            insertions: 14
+            deletions: 14
+            lines: 28
+          kobuki_safety_controller/src/nodelet.cpp:
+            insertions: 5
+            deletions: 3
+            lines: 8
     - repo: https://github.com/yujinrobot/kobuki
       hash: 2fd8f8717e45604b06abf3df39e18b79a895f30c
+      stats:
+        total:
+          insertions: 15
+          deletions: 15
+          lines: 30
+          files: 2
+        files:
+          kobuki_safety_controller/include/kobuki_safety_controller/safety_controller.hpp:
+            insertions: 14
+            deletions: 14
+            lines: 28
+          kobuki_safety_controller/src/nodelet.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
   pull-request: null
   license: ['BSD']
   fix-in:

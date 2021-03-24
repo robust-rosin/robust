@@ -61,6 +61,17 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 3e32933c829e308600707a9f971334d13d1cbe19
+      stats:
+        total:
+          insertions: 4
+          deletions: 2
+          lines: 6
+          files: 1
+        files:
+          turtlebot_bringup/launch/3dsensor.launch:
+            insertions: 4
+            deletions: 2
+            lines: 6
 fault-codes:
   - CONFIG:REMAPPING
 failure-codes:

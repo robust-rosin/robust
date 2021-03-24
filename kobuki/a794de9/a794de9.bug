@@ -34,14 +34,73 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: a794de9b6567b69f6c4885a177d017685f518524
+      stats:
+        total:
+          insertions: 0
+          deletions: 6
+          lines: 6
+          files: 2
+        files:
+          kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp:
+            insertions: 0
+            deletions: 1
+            lines: 1
+          kobuki_auto_docking/src/dock_drive.cpp:
+            insertions: 0
+            deletions: 5
+            lines: 5
     - repo: https://github.com/yujinrobot/kobuki
       hash: 18b46dc557676adc00b9f17c09c3af5281b5ea88
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          kobuki_bumper2pc/include/kobuki_bumper2pc/kobuki_bumper2pc.hpp:
+            insertions: 2
+            deletions: 0
+            lines: 2
     - repo: https://github.com/yujinrobot/kobuki
       hash: f62c63ff94ab65fb3218e647e3886636e250f189
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          kobuki_bumper2pc/include/kobuki_bumper2pc/kobuki_bumper2pc.hpp:
+            insertions: 2
+            deletions: 0
+            lines: 2
     - repo: https://github.com/yujinrobot/kobuki
       hash: 193ba75ee7b08b8bdb09b5815e486948913e3442
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp:
+            insertions: 2
+            deletions: 0
+            lines: 2
     - repo: https://github.com/yujinrobot/kobuki
       hash: 936e46785de6ae1fc473ff670b07ab16016ab7ef
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp:
+            insertions: 2
+            deletions: 0
+            lines: 2
   pull-request: null
   license: ['BSD']
   fix-in:

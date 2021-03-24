@@ -32,6 +32,121 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 91072e8c8e680cb700f10d91b1ba01ba5875ff00
+      stats:
+        total:
+          insertions: 35
+          deletions: 34
+          lines: 69
+          files: 27
+        files:
+          motoman/package.xml:
+            insertions: 4
+            deletions: 3
+            lines: 7
+          motoman_driver/CMakeLists.txt:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/include/{fs100 => motoman_driver}/industrial_robot_client/joint_feedback_relay_handler.h:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/include/{fs100 => motoman_driver}/industrial_robot_client/joint_relay_handler.h:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/include/{fs100 => motoman_driver}/industrial_robot_client/joint_trajectory_interface.h:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/include/{fs100 => motoman_driver}/industrial_robot_client/joint_trajectory_streamer.h:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/include/{fs100 => motoman_driver}/industrial_robot_client/robot_state_interface.h:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/include/{fs100/fs100_joint_trajectory_streamer.h => motoman_driver/joint_trajectory_streamer.h}:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/include/{fs100/fs100_motion_ctrl.h => motoman_driver/motion_ctrl.h}:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/include/{fs100 => motoman_driver}/simple_message/motoman_motion_ctrl.h:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/include/{fs100 => motoman_driver}/simple_message/motoman_motion_ctrl_message.h:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/include/{fs100 => motoman_driver}/simple_message/motoman_motion_reply.h:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/include/{fs100 => motoman_driver}/simple_message/motoman_motion_reply_message.h:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/include/{fs100 => motoman_driver}/simple_message/motoman_simple_message.h:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/src/industrial_robot_client/joint_feedback_relay_handler.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/industrial_robot_client/joint_relay_handler.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/industrial_robot_client/joint_trajectory_interface.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/industrial_robot_client/joint_trajectory_streamer.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/industrial_robot_client/robot_state_interface.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/joint_streaming_node.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/joint_trajectory_streamer.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/src/motion_ctrl.cpp:
+            insertions: 3
+            deletions: 3
+            lines: 6
+          motoman_driver/src/robot_state_node.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/simple_message/motoman_motion_ctrl.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/simple_message/motoman_motion_ctrl_message.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/src/simple_message/motoman_motion_reply.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          motoman_driver/src/simple_message/motoman_motion_reply_message.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
   pull-request: 12
   license: ['BSD']
   fix-in:

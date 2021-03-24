@@ -46,6 +46,17 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_robots
       hash: b826eaeae5c8dc548ac2c97002725c7a8131137e
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          cob_hardware_config/cob3-9/urdf/cob3-9.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - CONFIG:ARGS
   - EVOLUTION:PACKAGE

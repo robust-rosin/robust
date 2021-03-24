@@ -65,6 +65,85 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: fa64ec6585745c60fa02cf3be13b6d78bf449d8d
+      stats:
+        total:
+          insertions: 115
+          deletions: 121
+          lines: 236
+          files: 18
+        files:
+          ur10_moveit_config/launch/planning_context.launch:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur3_moveit_config/launch/planning_context.launch:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur5_moveit_config/launch/planning_context.launch:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur_description/launch/ur10_upload.launch:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur_description/launch/ur3_upload.launch:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur_description/launch/ur5_upload.launch:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur_description/urdf/common.gazebo.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur.gazebo.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur.transmission.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur10.urdf.xacro:
+            insertions: 31
+            deletions: 33
+            lines: 64
+          ur_description/urdf/ur10_joint_limited_robot.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur10_robot.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur3.urdf.xacro:
+            insertions: 29
+            deletions: 31
+            lines: 60
+          ur_description/urdf/ur3_joint_limited_robot.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur3_robot.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur5.urdf.xacro:
+            insertions: 34
+            deletions: 36
+            lines: 70
+          ur_description/urdf/ur5_joint_limited_robot.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur5_robot.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - EVOLUTION:LANGUAGE
   - MODELS:ROBOT

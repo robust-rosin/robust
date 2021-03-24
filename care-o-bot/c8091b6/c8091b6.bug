@@ -42,6 +42,17 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: c8091b68c69eeae0bb7777ad6fa44d644c20f96c
+      stats:
+        total:
+          insertions: 0
+          deletions: 9
+          lines: 9
+          files: 1
+        files:
+          cob_command_gui/src/knoeppkes.py:
+            insertions: 0
+            deletions: 9
+            lines: 9
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

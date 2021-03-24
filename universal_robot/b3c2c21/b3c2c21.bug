@@ -48,6 +48,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: b3c2c215b4fc46bb66ca61e6e693920540d0daef
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          ur_driver/src/ur_driver/driver.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - PROGRAMMING:CALCULATIONS
   - CONCURRENCY:NO-SYNC

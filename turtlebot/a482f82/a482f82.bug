@@ -43,6 +43,49 @@ fix:
   commits:
     - repo: https://github.com/ros-drivers/openni_launch
       hash: a482f8268042aa8fae0e73970ed2af5dfd01e5df
+      stats:
+        total:
+          insertions: 143
+          deletions: 73
+          lines: 216
+          files: 9
+        files:
+          launch/includes/depth.launch:
+            insertions: 21
+            deletions: 18
+            lines: 39
+          launch/includes/depth_registered.launch:
+            insertions: 2
+            deletions: 10
+            lines: 12
+          launch/includes/device.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          launch/includes/disparity.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          launch/includes/ir.launch:
+            insertions: 5
+            deletions: 3
+            lines: 8
+          launch/includes/manager.launch:
+            insertions: 6
+            deletions: 1
+            lines: 7
+          launch/includes/processing.launch:
+            insertions: 35
+            deletions: 21
+            lines: 56
+          launch/includes/rgb.launch:
+            insertions: 37
+            deletions: 0
+            lines: 37
+          launch/openni.launch:
+            insertions: 35
+            deletions: 18
+            lines: 53
 fault-codes:
   - PROGRAMMING:BAD-SMELL
   - CONFIG:NAMESPACE

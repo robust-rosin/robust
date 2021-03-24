@@ -37,6 +37,21 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 082960760dd90c4040e394721b3991f4e17aac2d
+      stats:
+        total:
+          insertions: 0
+          deletions: 0
+          lines: 0
+          files: 2
+        files:
+          motoman_sda10f_support/meshes/sda10f/visual/motoman_axis_b1.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_sda10f_support/meshes/sda10f/visual/motoman_base.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
 fault-codes:
   - CONFIG:ENCODING
   - MODELS:ROBOT

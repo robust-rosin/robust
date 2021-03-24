@@ -38,6 +38,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 816370545bf199f03e6259443861226b9701775e
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          kobuki_node/src/library/kobuki_ros.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - PROGRAMMING:BAD-SMELL
 failure-codes:

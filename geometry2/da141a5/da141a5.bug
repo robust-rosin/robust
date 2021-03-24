@@ -58,6 +58,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: da141a52c551d482fdd9f0e24a0011050c1307e0
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          tf2_geometry_msgs/include/tf2_geometry_msgs/tf2_geometry_msgs.h:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: null
   ros_pkgs: null

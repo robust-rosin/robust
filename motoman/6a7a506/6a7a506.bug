@@ -32,6 +32,21 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 6a7a506290af111727ececa3baaee9f7afed58a7
+      stats:
+        total:
+          insertions: 34
+          deletions: 32
+          lines: 66
+          files: 2
+        files:
+          motoman_sia5d_support/urdf/sia5d.urdf:
+            insertions: 18
+            deletions: 16
+            lines: 34
+          motoman_sia5d_support/urdf/sia5d_macro.xacro:
+            insertions: 16
+            deletions: 16
+            lines: 32
   pull-request: 94
   license: ['BSD']
   fix-in: ['motoman_sia5d_support/urdf/sia5d.urdf', 'motoman_sia5d_support/urdf/sia5d_macro.xacro']

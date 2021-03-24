@@ -46,6 +46,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: bb3c7ec8a7e656aa7e75753864351c27d571db47
+      stats:
+        total:
+          insertions: 12
+          deletions: 2
+          lines: 14
+          files: 2
+        files:
+          kobuki_bringup/resources/yaml/diagnostics.yaml:
+            insertions: 4
+            deletions: 0
+            lines: 4
+          kobuki_node/src/node/diagnostics.cpp:
+            insertions: 8
+            deletions: 2
+            lines: 10
 fault-codes:
   - CONFIG:REMAPPING
 failure-codes:

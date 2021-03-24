@@ -51,6 +51,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 001fca6f33c108c83da4416db3bf43dfeffbe7dd
+      stats:
+        total:
+          insertions: 19
+          deletions: 2
+          lines: 21
+          files: 1
+        files:
+          tf2_ros/src/buffer.cpp:
+            insertions: 19
+            deletions: 2
+            lines: 21
 time-machine:
   ros_distro: hydro
   ros_pkgs:

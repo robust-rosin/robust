@@ -33,6 +33,41 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: eadbcb8077cd5c6138cdd133ee61888cac377c91
+      stats:
+        total:
+          insertions: 0
+          deletions: 0
+          lines: 0
+          files: 7
+        files:
+          motoman_mh5_support/meshes/mh5/visual/MH5_BASE_AXIS.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_mh5_support/meshes/mh5/visual/MH5_B_AXIS.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_mh5_support/meshes/mh5/visual/MH5_L_AXIS.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_mh5_support/meshes/mh5/visual/MH5_R_AXIS.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_mh5_support/meshes/mh5/visual/MH5_S_AXIS.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_mh5_support/meshes/mh5/visual/MH5_T_AXIS.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_mh5_support/meshes/mh5/visual/MH5_U_AXIS.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
   pull-request: 77
   license: ['BSD']
   fix-in:

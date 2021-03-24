@@ -51,6 +51,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: ede2646d463c8ae1bbbf2460941df2b07d39824e
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          tf2_ros/src/tf2_ros/transform_broadcaster.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - PROGRAMMING:RESOURCES
   - PROGRAMMING:BROKEN-CONTRACT

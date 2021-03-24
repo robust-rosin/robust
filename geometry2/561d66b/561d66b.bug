@@ -56,6 +56,37 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 561d66b106dec85246161e0b646874bd32812726
+      stats:
+        total:
+          insertions: 66
+          deletions: 12
+          lines: 78
+          files: 6
+        files:
+          tf2_ros/package.xml:
+            insertions: 4
+            deletions: 1
+            lines: 5
+          tf2_sensor_msgs/CMakeLists.txt:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          tf2_sensor_msgs/package.xml:
+            insertions: 3
+            deletions: 2
+            lines: 5
+          tf2_sensor_msgs/src/tf2_sensor_msgs/__init__.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          tf2_sensor_msgs/src/tf2_sensor_msgs/tf2_sensor_msgs.py:
+            insertions: 6
+            deletions: 8
+            lines: 14
+          tf2_sensor_msgs/test/test_tf2_sensor_msgs.py:
+            insertions: 51
+            deletions: 0
+            lines: 51
 time-machine:
   ros_distro: null
   ros_pkgs: null

@@ -54,6 +54,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 6e748c1df1024847de91d899506ae872759d1094
+      stats:
+        total:
+          insertions: 4
+          deletions: 2
+          lines: 6
+          files: 1
+        files:
+          kobuki_node/src/nodelet/kobuki_nodelet.cpp:
+            insertions: 4
+            deletions: 2
+            lines: 6
 fault-codes:
   - CONCURRENCY:SIGNALS
 failure-codes:

@@ -54,6 +54,37 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 841720ab97e442a11ae30b7abdbef07150e56c97
+      stats:
+        total:
+          insertions: 117
+          deletions: 3
+          lines: 120
+          files: 6
+        files:
+          kobuki_comms/msg/PowerSystemEvent.msg:
+            insertions: 14
+            deletions: 0
+            lines: 14
+          kobuki_driver/include/kobuki_driver/event_manager.hpp:
+            insertions: 15
+            deletions: 1
+            lines: 16
+          kobuki_driver/src/driver/event_manager.cpp:
+            insertions: 56
+            deletions: 0
+            lines: 56
+          kobuki_node/include/kobuki_node/kobuki_node.hpp:
+            insertions: 4
+            deletions: 1
+            lines: 5
+          kobuki_node/src/node/kobuki_node.cpp:
+            insertions: 4
+            deletions: 1
+            lines: 5
+          kobuki_node/src/node/slot_callbacks.cpp:
+            insertions: 24
+            deletions: 0
+            lines: 24
 fault-codes:
   - PROGRAMMING:LOGIC
 failure-codes:

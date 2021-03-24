@@ -56,6 +56,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 2153716e32d0c12c24f8f80334de1a37d7a3665f
+      stats:
+        total:
+          insertions: 8
+          deletions: 1
+          lines: 9
+          files: 1
+        files:
+          tf2_eigen/include/tf2_eigen/tf2_eigen.h:
+            insertions: 8
+            deletions: 1
+            lines: 9
 time-machine:
   ros_distro: null
   ros_pkgs: null

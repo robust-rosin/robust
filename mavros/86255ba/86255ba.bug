@@ -48,6 +48,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 86255bac0538d4167de9d2bb9df59b88c587167f
+      stats:
+        total:
+          insertions: 7
+          deletions: 1
+          lines: 8
+          files: 1
+        files:
+          mavros/src/plugins/param.cpp:
+            insertions: 7
+            deletions: 1
+            lines: 8
 time-machine:
   ros_distro: indigo
   ros_pkgs:

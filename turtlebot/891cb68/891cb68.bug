@@ -38,6 +38,17 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 891cb680e98694e63a55394140bffdcde43f3f5e
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          turtlebot_bringup/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
 time-machine:
   ros_distro: hydro
   ros_pkgs:

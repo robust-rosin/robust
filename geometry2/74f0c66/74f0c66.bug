@@ -51,6 +51,21 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 74f0c667995b5baadf967349635a5396d7977518
+      stats:
+        total:
+          insertions: 20
+          deletions: 14
+          lines: 34
+          files: 2
+        files:
+          tf2/src/buffer_core.cpp:
+            insertions: 18
+            deletions: 3
+            lines: 21
+          tf2_ros/include/tf2_ros/message_filter.h:
+            insertions: 2
+            deletions: 11
+            lines: 13
 fault-codes:
   - CONCURRENCY:BAD-SYNC
 failure-codes:

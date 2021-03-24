@@ -49,6 +49,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: ff581a0752107f7ad875c16f83f7b75ccd92f847
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          mavros_extras/src/plugins/distance_sensor.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: indigo
   ros_pkgs:

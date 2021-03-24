@@ -41,6 +41,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: b6b975421c8242fad83138a67fb026ef0d90704d
+      stats:
+        total:
+          insertions: 1
+          deletions: 2
+          lines: 3
+          files: 1
+        files:
+          mavros/src/plugins/actuator_control.cpp:
+            insertions: 1
+            deletions: 2
+            lines: 3
 time-machine:
   ros_distro: indigo
   ros_pkgs:

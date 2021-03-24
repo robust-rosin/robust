@@ -73,6 +73,33 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 56cf07f62fcdd3927ebff216da281d3b975adefc
+      stats:
+        total:
+          insertions: 23
+          deletions: 0
+          lines: 23
+          files: 5
+        files:
+          ur_bringup/CMakeLists.txt:
+            insertions: 2
+            deletions: 0
+            lines: 2
+          ur_description/CMakeLists.txt:
+            insertions: 4
+            deletions: 0
+            lines: 4
+          ur_driver/CMakeLists.txt:
+            insertions: 2
+            deletions: 0
+            lines: 2
+          ur_gazebo/CMakeLists.txt:
+            insertions: 4
+            deletions: 0
+            lines: 4
+          ur_kinematics/CMakeLists.txt:
+            insertions: 11
+            deletions: 0
+            lines: 11
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

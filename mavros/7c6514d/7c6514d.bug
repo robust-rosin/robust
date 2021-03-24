@@ -46,6 +46,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 7c6514d3d5ec3c9f75b32db9054d468c49dbdfe8
+      stats:
+        total:
+          insertions: 2
+          deletions: 3
+          lines: 5
+          files: 1
+        files:
+          mavros/src/lib/sensor_orientation.cpp:
+            insertions: 2
+            deletions: 3
+            lines: 5
 time-machine:
   ros_distro: indigo
   ros_pkgs:

@@ -37,6 +37,17 @@ fix:
   commits:
     - repo: https://github.com/ros/ros_comm
       hash: eab0d3cd54fb419764e7f60e84b249d66ba6c3d1
+      stats:
+        total:
+          insertions: 6
+          deletions: 2
+          lines: 8
+          files: 1
+        files:
+          clients/roscpp/src/libros/transport/transport_tcp.cpp:
+            insertions: 6
+            deletions: 2
+            lines: 8
 fault-codes:
   - PROGRAMMING:BROKEN-CONTRACT
 failure-codes:

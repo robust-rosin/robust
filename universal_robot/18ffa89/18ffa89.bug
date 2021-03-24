@@ -59,6 +59,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 18ffa89f797266ea519c2047dcb9416f0f79796b
+      stats:
+        total:
+          insertions: 1
+          deletions: 2
+          lines: 3
+          files: 1
+        files:
+          ur_description/urdf/ur10.gazebo.xacro:
+            insertions: 1
+            deletions: 2
+            lines: 3
 fault-codes:
   - MODELS:ROBOT
   - PROGRAMMING:COPYPASTA

@@ -41,6 +41,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: ad906f0a6ebeb732afb5938f79200f8eb4bccabf
+      stats:
+        total:
+          insertions: 12
+          deletions: 5
+          lines: 17
+          files: 2
+        files:
+          kobuki_driver/include/kobuki_driver/modules/gate_keeper.hpp:
+            insertions: 10
+            deletions: 4
+            lines: 14
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 2
+            deletions: 1
+            lines: 3
 fault-codes:
   - PROGRAMMING:CALCULATIONS
 failure-codes:

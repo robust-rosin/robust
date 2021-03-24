@@ -41,6 +41,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: dc1327f35887f9337bb4f29bb94fb8a5c5fa8a73
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          libmavconn/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

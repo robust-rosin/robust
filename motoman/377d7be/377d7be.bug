@@ -36,6 +36,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 377d7bee86c5fc6130ad1e8b23f7893e58d42d18
+      stats:
+        total:
+          insertions: 6
+          deletions: 0
+          lines: 6
+          files: 1
+        files:
+          motoman_driver/Inform/.gitattributes:
+            insertions: 6
+            deletions: 0
+            lines: 6
   pull-request: 147
   license: ['BSD']
   fix-in:

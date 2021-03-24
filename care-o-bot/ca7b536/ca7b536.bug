@@ -50,6 +50,33 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_control
       hash: 47adcee14c7f39645352f2226b32c5f116ea0c22
+      stats:
+        total:
+          insertions: 11
+          deletions: 15
+          lines: 26
+          files: 5
+        files:
+          cob_cartesian_controller/CMakeLists.txt:
+            insertions: 4
+            deletions: 7
+            lines: 11
+          cob_cartesian_controller/package.xml:
+            insertions: 2
+            deletions: 4
+            lines: 6
+          cob_cartesian_controller/src/cartesian_controller.cpp:
+            insertions: 0
+            deletions: 1
+            lines: 1
+          cob_obstacle_distance/CMakeLists.txt:
+            insertions: 3
+            deletions: 3
+            lines: 6
+          cob_obstacle_distance/package.xml:
+            insertions: 2
+            deletions: 0
+            lines: 2
 fault-codes:
   - BDO:BUILD
   - BDO:DEPENDENCY

@@ -51,6 +51,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 359a2e9d0c21b37c4fc077e08dbb56de771734cb
+      stats:
+        total:
+          insertions: 11
+          deletions: 11
+          lines: 22
+          files: 1
+        files:
+          ur_driver/prog:
+            insertions: 11
+            deletions: 11
+            lines: 22
 fault-codes:
   - PROGRAMMING:BROKEN-CONTRACT
 failure-codes:

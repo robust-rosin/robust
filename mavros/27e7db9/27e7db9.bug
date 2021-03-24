@@ -42,6 +42,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 27e7db9d504359d05830fbc9553fd1fd1af3aab2
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          libmavconn/CMakeLists.txt:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: hydro
   ros_pkgs:

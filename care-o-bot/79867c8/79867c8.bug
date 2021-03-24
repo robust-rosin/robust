@@ -53,6 +53,37 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_android
       hash: 79867c88acc64342f061e6324ed6b84ca7e0773d
+      stats:
+        total:
+          insertions: 150
+          deletions: 13
+          lines: 163
+          files: 6
+        files:
+          cob_android_msgs/CMakeLists.txt:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          cob_android_resource_server/src/cob_android_resource_server/__init__.py:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          cob_android_resource_server/src/cob_android_resource_server/resource_server.py:
+            insertions: 70
+            deletions: 0
+            lines: 70
+          cob_android_script_server/CMakeLists.txt:
+            insertions: 4
+            deletions: 12
+            lines: 16
+          cob_android_script_server/src/cob_android_script_server/__init__.py:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          cob_android_script_server/src/cob_android_script_server/script_server_android.py:
+            insertions: 73
+            deletions: 0
+            lines: 73
 fault-codes:
   - BDO:BUILD
 failure-codes:

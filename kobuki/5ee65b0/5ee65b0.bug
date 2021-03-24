@@ -79,6 +79,37 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
+      stats:
+        total:
+          insertions: 10
+          deletions: 9
+          lines: 19
+          files: 6
+        files:
+          kobuki_dashboard/src/kobuki_dashboard/led_widget.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          kobuki_dashboard/src/kobuki_dashboard/motor_widget.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py:
+            insertions: 2
+            deletions: 1
+            lines: 3
+          kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          kobuki_qtestsuite/src/kobuki_qtestsuite/gyro_drift_frame.py:
+            insertions: 3
+            deletions: 3
+            lines: 6
+          kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - PROGRAMMING:BAD-SMELL
   - CONFIG:ARGS

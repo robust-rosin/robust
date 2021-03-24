@@ -68,6 +68,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 8c30446d18bad63da0f58a1f666c2e7e209d917d
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          kobuki_node/launch/robot_with_tf.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - BDO:DEPENDENCY
   - PROGRAMMING:BAD-SMELL

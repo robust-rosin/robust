@@ -42,6 +42,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 282c9bece1fa7bc87db070d836127b52bb9d1306
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          src/plugins/3dr_radio.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: hydro
   ros_pkgs:

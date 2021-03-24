@@ -51,6 +51,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 5353982ea0f32783fcf3e296b25ab3b253550201
+      stats:
+        total:
+          insertions: 5
+          deletions: 5
+          lines: 10
+          files: 1
+        files:
+          mavros/src/lib/uas_frame_conversions.cpp:
+            insertions: 5
+            deletions: 5
+            lines: 10
 time-machine:
   ros_distro: indigo
   ros_pkgs:

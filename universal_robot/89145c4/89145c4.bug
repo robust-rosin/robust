@@ -56,6 +56,25 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 2e078f5e3e9b3ec52dac83c096e90e7cd3edd0f2
+      stats:
+        total:
+          insertions: 3
+          deletions: 3
+          lines: 6
+          files: 3
+        files:
+          ur_description/urdf/ur10.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur3.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/urdf/ur5.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - MODELS:ROBOT
 failure-codes:

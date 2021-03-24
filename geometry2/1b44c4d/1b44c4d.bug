@@ -55,6 +55,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavro://github.com/ros/geometry2
       hash: 1b44c4dced86f11c5b24a4cfadbfd1f21673ac3a
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          tf2_eigen/include/tf2_eigen/tf2_eigen.h:
+            insertions: 2
+            deletions: 0
+            lines: 2
 time-machine:
   ros_distro: indigo
   ros_pkgs:

@@ -52,6 +52,21 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_common
       hash: 499dbb637b6acaade0daa0f36acac798b7dd34d2
+      stats:
+        total:
+          insertions: 5
+          deletions: 5
+          lines: 10
+          files: 2
+        files:
+          cob_description/urdf/sensors/kinect.gazebo.xacro:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          cob_description/urdf/sensors/softkinetic.gazebo.xacro:
+            insertions: 3
+            deletions: 3
+            lines: 6
 fault-codes:
   - CONFIG:TOPIC
 failure-codes:

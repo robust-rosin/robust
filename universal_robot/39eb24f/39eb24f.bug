@@ -51,6 +51,21 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 39eb24f3a8ff0e358c210e87f1f3798755444f44
+      stats:
+        total:
+          insertions: 32
+          deletions: 26
+          lines: 58
+          files: 2
+        files:
+          ur_kinematics/include/ur_kinematics/ur_kin.h:
+            insertions: 0
+            deletions: 26
+            lines: 26
+          ur_kinematics/src/ur_kin.cpp:
+            insertions: 32
+            deletions: 0
+            lines: 32
 fault-codes:
   - BDO:BUILD
 failure-codes:

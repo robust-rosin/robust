@@ -32,6 +32,21 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 3f260cb3840095089fb4b743efd3d41695c75b26
+      stats:
+        total:
+          insertions: 87
+          deletions: 3
+          lines: 90
+          files: 2
+        files:
+          motoman_driver/include/motoman_driver/joint_trajectory_streamer.h:
+            insertions: 31
+            deletions: 0
+            lines: 31
+          motoman_driver/src/joint_trajectory_streamer.cpp:
+            insertions: 56
+            deletions: 3
+            lines: 59
   pull-request: https://github.com/ros-industrial/motoman/pull/155
   license: ['BSD']
   fix-in:

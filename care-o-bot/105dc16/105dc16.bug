@@ -47,6 +47,69 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_control
       hash: 105dc16ffe0b9dba294aabea0c18052cd281bde0
+      stats:
+        total:
+          insertions: 106
+          deletions: 166
+          lines: 272
+          files: 14
+        files:
+          cob_model_identifier/config/params.yaml:
+            insertions: 6
+            deletions: 7
+            lines: 13
+          cob_model_identifier/include/cob_model_identifier/output_recorder.h:
+            insertions: 2
+            deletions: 1
+            lines: 3
+          cob_model_identifier/src/input_generator.cpp:
+            insertions: 3
+            deletions: 73
+            lines: 76
+          cob_model_identifier/src/output_recorder.cpp:
+            insertions: 18
+            deletions: 10
+            lines: 28
+          cob_path_broadcaster/include/cob_path_broadcaster/cob_articulation.h:
+            insertions: 2
+            deletions: 3
+            lines: 5
+          cob_path_broadcaster/launch/articulation.launch:
+            insertions: 3
+            deletions: 8
+            lines: 11
+          cob_path_broadcaster/movement/move.prog:
+            insertions: 13
+            deletions: 12
+            lines: 25
+          cob_path_broadcaster/src/cob_articulation.cpp:
+            insertions: 39
+            deletions: 36
+            lines: 75
+          cob_twist_controller/CMakeLists.txt:
+            insertions: 3
+            deletions: 4
+            lines: 7
+          cob_twist_controller/include/cob_twist_controller/cob_twist_controller.h:
+            insertions: 0
+            deletions: 1
+            lines: 1
+          cob_twist_controller/include/cob_twist_controller/output_publisher.h:
+            insertions: 2
+            deletions: 1
+            lines: 3
+          cob_twist_controller/package.xml:
+            insertions: 0
+            deletions: 3
+            lines: 3
+          cob_twist_controller/src/cob_twist_controller.cpp:
+            insertions: 6
+            deletions: 3
+            lines: 9
+          cob_twist_controller/src/output_publisher.cpp:
+            insertions: 9
+            deletions: 4
+            lines: 13
 fault-codes:
   - BDO:BUILD
   - BDO:DEPENDENCY

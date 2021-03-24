@@ -47,6 +47,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: c4e118757123ef243d0f3c2e14a6c3d63549f20d
+      stats:
+        total:
+          insertions: 4
+          deletions: 0
+          lines: 4
+          files: 1
+        files:
+          ur_kinematics/src/ur_moveit_plugin.cpp:
+            insertions: 4
+            deletions: 0
+            lines: 4
 fault-codes:
   - EVOLUTION:LANGUAGE
 failure-codes:

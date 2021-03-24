@@ -57,6 +57,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 58790baa5bf6601f73bc821b5ebd9a24c0a613b4
+      stats:
+        total:
+          insertions: 3
+          deletions: 0
+          lines: 3
+          files: 1
+        files:
+          ur_driver/package.xml:
+            insertions: 3
+            deletions: 0
+            lines: 3
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

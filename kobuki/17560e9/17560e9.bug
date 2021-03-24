@@ -62,6 +62,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/yujin_ocs
       hash: 17560e98ef751714a352a5cee403fd3eb53c9fdb
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          yocs_navigator/CMakeLists.txt:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: indigo
   ros_pkgs:

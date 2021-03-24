@@ -42,6 +42,21 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 339078942cf67457bc472e07a3e75e9895ebf2f7
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 2
+        files:
+          turtlebot_bringup/package.xml:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          turtlebot_capabilities/package.xml:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - BDO:BUILD
   - BDO:DEPENDENCY

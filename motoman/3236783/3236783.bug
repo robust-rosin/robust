@@ -33,8 +33,658 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 62fa484b9d965d1ee2c6229f56bcaf76fe76fc52
+      stats:
+        total:
+          insertions: 35
+          deletions: 0
+          lines: 35
+          files: 1
+        files:
+          motoman_driver/CMakeLists.txt:
+            insertions: 35
+            deletions: 0
+            lines: 35
     - repo: https://github.com/ros-industrial/motoman
       hash: 734602adadd454efe092957a35a54950dcf7cb02
+      stats:
+        total:
+          insertions: 5617
+          deletions: 15888
+          lines: 21505
+          files: 158
+        files:
+          .gitignore:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          SIA20D_Mesh_arm_navigation/launch/planning_scene_warehouse_viewer_sia20d_mesh_real.launch:
+            insertions: 15
+            deletions: 5
+            lines: 20
+          dx100/CMakeLists.txt:
+            insertions: 0
+            deletions: 122
+            lines: 122
+          dx100/include/dx100/definitions.h:
+            insertions: 0
+            deletions: 108
+            lines: 108
+          dx100/include/dx100/joint_relay_handler.h:
+            insertions: 0
+            deletions: 118
+            lines: 118
+          dx100/include/dx100/joint_trajectory_downloader.h:
+            insertions: 0
+            deletions: 87
+            lines: 87
+          dx100/include/dx100/joint_trajectory_handler.h:
+            insertions: 0
+            deletions: 109
+            lines: 109
+          dx100/include/dx100/p_var_q.h:
+            insertions: 0
+            deletions: 70
+            lines: 70
+          dx100/include/dx100/ros_conversion.h:
+            insertions: 0
+            deletions: 123
+            lines: 123
+          dx100/include/dx100/trajectory_job.h:
+            insertions: 0
+            deletions: 144
+            lines: 144
+          dx100/include/dx100/utils.h:
+            insertions: 0
+            deletions: 109
+            lines: 109
+          dx100/inform/BUFFER_INIT.JBI:
+            insertions: 0
+            deletions: 15
+            lines: 15
+          dx100/inform/BUFFER_WAIT.JBI:
+            insertions: 0
+            deletions: 14
+            lines: 14
+          dx100/inform/CVAR_EXAMPLE.JBI:
+            insertions: 0
+            deletions: 31
+            lines: 31
+          dx100/inform/PVARQ20VV.JBI:
+            insertions: 0
+            deletions: 76
+            lines: 76
+          dx100/inform/trajectory_generation.xlsx:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          dx100/launch/visualize_real_robot.launch:
+            insertions: 0
+            deletions: 15
+            lines: 15
+          dx100/mainpage.dox:
+            insertions: 0
+            deletions: 26
+            lines: 26
+          dx100/motoplus/README.txt:
+            insertions: 0
+            deletions: 15
+            lines: 15
+          dx100/motoplus/motoros_lib/ParameterExtraction.h:
+            insertions: 0
+            deletions: 162
+            lines: 162
+          dx100/motoplus/motoros_lib/ParameterExtraction.mpLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          dx100/motoplus/motoros_lib/SyncFromSource.bat:
+            insertions: 0
+            deletions: 100
+            lines: 100
+          dx100/motoplus/motoros_lib/SyncToSource.bat:
+            insertions: 0
+            deletions: 100
+            lines: 100
+          dx100/motoplus/motoros_lib/controller.cpp:
+            insertions: 0
+            deletions: 686
+            lines: 686
+          dx100/motoplus/motoros_lib/controller.h:
+            insertions: 0
+            deletions: 446
+            lines: 446
+          dx100/motoplus/motoros_lib/input_handler.cpp:
+            insertions: 0
+            deletions: 80
+            lines: 80
+          dx100/motoplus/motoros_lib/input_handler.h:
+            insertions: 0
+            deletions: 95
+            lines: 95
+          dx100/motoplus/motoros_lib/joint_motion_handler.cpp:
+            insertions: 0
+            deletions: 244
+            lines: 244
+          dx100/motoplus/motoros_lib/joint_motion_handler.h:
+            insertions: 0
+            deletions: 220
+            lines: 220
+          dx100/motoplus/motoros_lib/motoplus_sync_script_generator.xlsm:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          dx100/motoplus/motoros_lib/motoros_lib.h:
+            insertions: 0
+            deletions: 65
+            lines: 65
+          dx100/motoplus/motoros_lib/motoros_lib.mpProj:
+            insertions: 0
+            deletions: 87
+            lines: 87
+          dx100/motoplus/motoros_lib/mp_default_main.cpp:
+            insertions: 0
+            deletions: 192
+            lines: 192
+          dx100/motoplus/motoros_lib/mp_default_main.h:
+            insertions: 0
+            deletions: 54
+            lines: 54
+          dx100/motoplus/motoros_lib/output/ParameterExtraction.h:
+            insertions: 0
+            deletions: 162
+            lines: 162
+          dx100/motoplus/motoros_lib/output/byte_array.h:
+            insertions: 0
+            deletions: 420
+            lines: 420
+          dx100/motoplus/motoros_lib/output/comms_fault_handler.h:
+            insertions: 0
+            deletions: 76
+            lines: 76
+          dx100/motoplus/motoros_lib/output/controller.h:
+            insertions: 0
+            deletions: 446
+            lines: 446
+          dx100/motoplus/motoros_lib/output/input_handler.h:
+            insertions: 0
+            deletions: 95
+            lines: 95
+          dx100/motoplus/motoros_lib/output/joint_data.h:
+            insertions: 0
+            deletions: 174
+            lines: 174
+          dx100/motoplus/motoros_lib/output/joint_message.h:
+            insertions: 0
+            deletions: 177
+            lines: 177
+          dx100/motoplus/motoros_lib/output/joint_motion_handler.h:
+            insertions: 0
+            deletions: 220
+            lines: 220
+          dx100/motoplus/motoros_lib/output/joint_traj.h:
+            insertions: 0
+            deletions: 186
+            lines: 186
+          dx100/motoplus/motoros_lib/output/joint_traj_pt.h:
+            insertions: 0
+            deletions: 249
+            lines: 249
+          dx100/motoplus/motoros_lib/output/joint_traj_pt_message.h:
+            insertions: 0
+            deletions: 134
+            lines: 134
+          dx100/motoplus/motoros_lib/output/log_wrapper.h:
+            insertions: 0
+            deletions: 121
+            lines: 121
+          dx100/motoplus/motoros_lib/output/message_handler.h:
+            insertions: 0
+            deletions: 185
+            lines: 185
+          dx100/motoplus/motoros_lib/output/message_manager.h:
+            insertions: 0
+            deletions: 301
+            lines: 301
+          dx100/motoplus/motoros_lib/output/motoros_lib.h:
+            insertions: 0
+            deletions: 65
+            lines: 65
+          dx100/motoplus/motoros_lib/output/motoros_lib.mpLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          dx100/motoplus/motoros_lib/output/mp_default_main.h:
+            insertions: 0
+            deletions: 54
+            lines: 54
+          dx100/motoplus/motoros_lib/output/p_var_q.h:
+            insertions: 0
+            deletions: 310
+            lines: 310
+          dx100/motoplus/motoros_lib/output/ping_handler.h:
+            insertions: 0
+            deletions: 109
+            lines: 109
+          dx100/motoplus/motoros_lib/output/ping_message.h:
+            insertions: 0
+            deletions: 120
+            lines: 120
+          dx100/motoplus/motoros_lib/output/ros_conversion.h:
+            insertions: 0
+            deletions: 123
+            lines: 123
+          dx100/motoplus/motoros_lib/output/shared_types.h:
+            insertions: 0
+            deletions: 85
+            lines: 85
+          dx100/motoplus/motoros_lib/output/simple_comms_fault_handler.h:
+            insertions: 0
+            deletions: 142
+            lines: 142
+          dx100/motoplus/motoros_lib/output/simple_message.h:
+            insertions: 0
+            deletions: 352
+            lines: 352
+          dx100/motoplus/motoros_lib/output/simple_serialize.h:
+            insertions: 0
+            deletions: 98
+            lines: 98
+          dx100/motoplus/motoros_lib/output/simple_socket.h:
+            insertions: 0
+            deletions: 231
+            lines: 231
+          dx100/motoplus/motoros_lib/output/smpl_msg_connection.h:
+            insertions: 0
+            deletions: 150
+            lines: 150
+          dx100/motoplus/motoros_lib/output/tcp_client.h:
+            insertions: 0
+            deletions: 87
+            lines: 87
+          dx100/motoplus/motoros_lib/output/tcp_server.h:
+            insertions: 0
+            deletions: 100
+            lines: 100
+          dx100/motoplus/motoros_lib/output/tcp_socket.h:
+            insertions: 0
+            deletions: 78
+            lines: 78
+          dx100/motoplus/motoros_lib/output/typed_message.h:
+            insertions: 0
+            deletions: 173
+            lines: 173
+          dx100/motoplus/motoros_lib/output/udp_client.h:
+            insertions: 0
+            deletions: 77
+            lines: 77
+          dx100/motoplus/motoros_lib/output/udp_server.h:
+            insertions: 0
+            deletions: 76
+            lines: 76
+          dx100/motoplus/motoros_lib/output/udp_socket.h:
+            insertions: 0
+            deletions: 95
+            lines: 95
+          dx100/motoplus/motoros_lib/p_var_q.cpp:
+            insertions: 0
+            deletions: 200
+            lines: 200
+          dx100/motoplus/motoros_lib/p_var_q.h:
+            insertions: 0
+            deletions: 310
+            lines: 310
+          dx100/motoplus/motoros_server/SyncFromSource.bat:
+            insertions: 0
+            deletions: 10
+            lines: 10
+          dx100/motoplus/motoros_server/motoros_server.mpProj:
+            insertions: 0
+            deletions: 34
+            lines: 34
+          dx100/motoplus/motoros_server/mpMain.cpp:
+            insertions: 0
+            deletions: 56
+            lines: 56
+          dx100/motoplus/motoros_server/robot_sync_script_generator.xlsm:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          dx100/package.xml:
+            insertions: 0
+            deletions: 39
+            lines: 39
+          dx100/src/joint_relay_handler.cpp:
+            insertions: 0
+            deletions: 136
+            lines: 136
+          dx100/src/joint_trajectory_action.cpp:
+            insertions: 0
+            deletions: 386
+            lines: 386
+          dx100/src/joint_trajectory_downloader.cpp:
+            insertions: 0
+            deletions: 233
+            lines: 233
+          dx100/src/joint_trajectory_handler.cpp:
+            insertions: 0
+            deletions: 238
+            lines: 238
+          dx100/src/motion_download_interface.cpp:
+            insertions: 0
+            deletions: 60
+            lines: 60
+          dx100/src/motion_interface.cpp:
+            insertions: 0
+            deletions: 60
+            lines: 60
+          dx100/src/robot_state.cpp:
+            insertions: 0
+            deletions: 77
+            lines: 77
+          dx100/src/ros_conversion.cpp:
+            insertions: 0
+            deletions: 122
+            lines: 122
+          dx100/src/system_interface.cpp:
+            insertions: 0
+            deletions: 99
+            lines: 99
+          dx100/src/trajectory_job.cpp:
+            insertions: 0
+            deletions: 223
+            lines: 223
+          dx100/src/utils.cpp:
+            insertions: 0
+            deletions: 233
+            lines: 233
+          dx100/test/small_motion_trajectory.bag:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          dx100/test/utest.cpp:
+            insertions: 0
+            deletions: 169
+            lines: 169
+          dx100/urdf.vcg:
+            insertions: 0
+            deletions: 44
+            lines: 44
+          dx100/utilities/genTraj.py:
+            insertions: 0
+            deletions: 78
+            lines: 78
+          fs100/CMakeLists.txt:
+            insertions: 0
+            deletions: 96
+            lines: 96
+          fs100/MotoPlus/ParameterExtraction_FS100.fsLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          fs100/MotoPlus/output/MPRosFS100.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          fs100/MotoPlus/vssver2.scc:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          mh5_mesh_arm_navigation/launch/planning_scene_warehouse_viewer_mh5_mesh_real.launch:
+            insertions: 97
+            deletions: 0
+            lines: 97
+          motoman/package.xml:
+            insertions: 2
+            deletions: 3
+            lines: 5
+          motoman_driver/CMakeLists.txt:
+            insertions: 118
+            deletions: 0
+            lines: 118
+          motoman_driver/Inform/DX100/INIT_ROS.JBI:
+            insertions: 18
+            deletions: 0
+            lines: 18
+          motoman_driver/Inform/DX100/IONAME.DAT:
+            insertions: 1027
+            deletions: 0
+            lines: 1027
+          '{fs100/Inform => motoman_driver/Inform/FS100}/INIT_ROS.JBI':
+            insertions: 16
+            deletions: 15
+            lines: 31
+          '{fs100/Inform => motoman_driver/Inform/FS100}/IONAME.DAT':
+            insertions: 515
+            deletions: 515
+            lines: 1030
+          '{fs100 => motoman_driver}/MotoPlus/Controller.c':
+            insertions: 731
+            deletions: 588
+            lines: 1319
+          '{fs100 => motoman_driver}/MotoPlus/Controller.h':
+            insertions: 146
+            deletions: 130
+            lines: 276
+          '{fs100 => motoman_driver}/MotoPlus/CtrlGroup.c':
+            insertions: 347
+            deletions: 312
+            lines: 659
+          '{fs100 => motoman_driver}/MotoPlus/CtrlGroup.h':
+            insertions: 113
+            deletions: 111
+            lines: 224
+          '{fs100 => motoman_driver}/MotoPlus/MotionServer.c':
+            insertions: 1271
+            deletions: 1231
+            lines: 2502
+          '{fs100 => motoman_driver}/MotoPlus/MotionServer.h':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/MpRosDx100.mpProj:
+            insertions: 34
+            deletions: 0
+            lines: 34
+          motoman_driver/MotoPlus/MpRosDx100Ftp.mpProj:
+            insertions: 34
+            deletions: 0
+            lines: 34
+          fs100/MotoPlus/MPRosFS100.fsProj => motoman_driver/MotoPlus/MpRosFS100.fsProj:
+            insertions: 36
+            deletions: 36
+            lines: 72
+          '{fs100 => motoman_driver}/MotoPlus/ParameterExtraction.h':
+            insertions: 172
+            deletions: 162
+            lines: 334
+          motoman_driver/MotoPlus/ParameterExtraction_DX100.mpLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/ParameterExtraction_DX100_FTP.mpLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/ParameterExtraction_FS100.fsLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/ReadMe.txt:
+            insertions: 20
+            deletions: 0
+            lines: 20
+          '{fs100 => motoman_driver}/MotoPlus/SimpleMessage.c':
+            insertions: 154
+            deletions: 134
+            lines: 288
+          '{fs100 => motoman_driver}/MotoPlus/SimpleMessage.h':
+            insertions: 238
+            deletions: 230
+            lines: 468
+          '{fs100 => motoman_driver}/MotoPlus/StateServer.c':
+            insertions: 174
+            deletions: 169
+            lines: 343
+          '{fs100 => motoman_driver}/MotoPlus/StateServer.h':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{fs100 => motoman_driver}/MotoPlus/mpMain.c':
+            insertions: 117
+            deletions: 74
+            lines: 191
+          motoman_driver/MotoPlus/output/MPRosFS100_v1_1_1.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/output/MpRosDx100Ftp_v1_1_1.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/output/MpRosDx100_v1_1_1.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/industrial_robot_client/joint_feedback_relay_handler.h':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/industrial_robot_client/joint_relay_handler.h':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/industrial_robot_client/joint_trajectory_interface.h':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/industrial_robot_client/joint_trajectory_streamer.h':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/industrial_robot_client/robot_state_interface.h':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          fs100/include/fs100/fs100_joint_trajectory_streamer.h => motoman_driver/include/motoman_driver/joint_trajectory_streamer.h:
+            insertions: 12
+            deletions: 12
+            lines: 24
+          fs100/include/fs100/fs100_motion_ctrl.h => motoman_driver/include/motoman_driver/motion_ctrl.h:
+            insertions: 10
+            deletions: 10
+            lines: 20
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/simple_message/motoman_motion_ctrl.h':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/simple_message/motoman_motion_ctrl_message.h':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/simple_message/motoman_motion_reply.h':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/simple_message/motoman_motion_reply_message.h':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          '{fs100/include/fs100 => motoman_driver/include/motoman_driver}/simple_message/motoman_simple_message.h':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/launch/motion_streaming_interface.launch:
+            insertions: 19
+            deletions: 0
+            lines: 19
+          '{fs100 => motoman_driver}/launch/robot_interface.launch':
+            insertions: 8
+            deletions: 4
+            lines: 12
+          motoman_driver/launch/robot_interface_streaming.launch:
+            insertions: 49
+            deletions: 0
+            lines: 49
+          motoman_driver/launch/robot_interface_streaming_dx100.launch:
+            insertions: 18
+            deletions: 0
+            lines: 18
+          motoman_driver/launch/robot_interface_streaming_fs100.launch:
+            insertions: 18
+            deletions: 0
+            lines: 18
+          motoman_driver/launch/robot_state.launch:
+            insertions: 19
+            deletions: 0
+            lines: 19
+          '{fs100 => motoman_driver}/mainpage.dox':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/package.xml':
+            insertions: 5
+            deletions: 5
+            lines: 10
+          '{fs100 => motoman_driver}/src/industrial_robot_client/joint_feedback_relay_handler.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/src/industrial_robot_client/joint_relay_handler.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/src/industrial_robot_client/joint_trajectory_interface.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/src/industrial_robot_client/joint_trajectory_streamer.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/src/industrial_robot_client/robot_state_interface.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          fs100/src/fs100_joint_streaming_node.cpp => motoman_driver/src/joint_streaming_node.cpp:
+            insertions: 3
+            deletions: 3
+            lines: 6
+          fs100/src/fs100_joint_trajectory_streamer.cpp => motoman_driver/src/joint_trajectory_streamer.cpp:
+            insertions: 15
+            deletions: 15
+            lines: 30
+          fs100/src/fs100_motion_ctrl.cpp => motoman_driver/src/motion_ctrl.cpp:
+            insertions: 10
+            deletions: 10
+            lines: 20
+          '{fs100 => motoman_driver}/src/move_to_joint.py':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          fs100/src/fs100_robot_state_node.cpp => motoman_driver/src/robot_state_node.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/src/simple_message/motoman_motion_ctrl.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/src/simple_message/motoman_motion_ctrl_message.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{fs100 => motoman_driver}/src/simple_message/motoman_motion_reply.cpp':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          '{fs100 => motoman_driver}/src/simple_message/motoman_motion_reply_message.cpp':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          sia10d_mesh_arm_navigation/launch/planning_scene_warehouse_viewer_sia10d_mesh_real.launch:
+            insertions: 15
+            deletions: 6
+            lines: 21
   pull-request: 11 | 14
   license: ['BSD']
   fix-in: ['158 files due to a complete update of the driver package.']

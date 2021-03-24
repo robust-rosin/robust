@@ -37,6 +37,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 95b24e8218ea593cf820478e0829adc92fff7457
+      stats:
+        total:
+          insertions: 2
+          deletions: 3
+          lines: 5
+          files: 1
+        files:
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 2
+            deletions: 3
+            lines: 5
 fault-codes:
   - SYSTEMS:OS
 failure-codes:

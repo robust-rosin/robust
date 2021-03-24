@@ -52,6 +52,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 729a6531929203720f4a518ac9e79321fe3c5537
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          tf2/src/buffer_core.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - PROGRAMMING:RESOURCES
 failure-codes:

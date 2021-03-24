@@ -56,6 +56,29 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 599c5887ad2aadc124d7e1354f3a1597402118da
+      stats:
+        total:
+          insertions: 5
+          deletions: 5
+          lines: 10
+          files: 4
+        files:
+          mavros/scripts/mavsetp:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          mavros/scripts/mavsys:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          mavros/src/plugins/sys_status.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          mavros_msgs/srv/SetMode.srv:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

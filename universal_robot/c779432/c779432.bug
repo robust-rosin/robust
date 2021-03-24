@@ -49,6 +49,21 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: c7794329bf632592bf1d345d1290ff4b8d13580a
+      stats:
+        total:
+          insertions: 4
+          deletions: 2
+          lines: 6
+          files: 2
+        files:
+          ur_kinematics/CMakeLists.txt:
+            insertions: 3
+            deletions: 1
+            lines: 4
+          ur_kinematics/include/ur_kinematics/ur_moveit_plugin.h:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - BDO:BUILD
   - EVOLUTION:LIBRARY

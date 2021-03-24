@@ -60,6 +60,33 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: e05c71a824cc1525d7cecb9a5ed021346cea7c8f
+      stats:
+        total:
+          insertions: 5
+          deletions: 4
+          lines: 9
+          files: 5
+        files:
+          mavros_msgs/CMakeLists.txt:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          mavros_msgs/msg/WaypointList.msg:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          mavros_msgs/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          mavros_msgs/srv/WaypointGOTO.srv:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          mavros_msgs/srv/WaypointPush.srv:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - BDO:DEPENDENCY
   - PROGRAMMING:BAD-SMELL

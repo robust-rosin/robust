@@ -53,6 +53,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 594978da8302b6194bcf63c8119e3b3801242acd
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          mavros_msgs/include/mavros_msgs/mavlink_convert.h:
+            insertions: 1
+            deletions: 0
+            lines: 1
 time-machine:
   ros_distro: jade
   ros_pkgs:

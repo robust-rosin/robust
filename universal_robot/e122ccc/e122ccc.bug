@@ -51,6 +51,25 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: e122ccc26d8b96f1534a51fc3f0f34638f63c657
+      stats:
+        total:
+          insertions: 3
+          deletions: 0
+          lines: 3
+          files: 3
+        files:
+          ur10_moveit_config/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          ur3_moveit_config/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          ur5_moveit_config/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

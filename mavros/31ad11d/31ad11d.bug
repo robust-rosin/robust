@@ -48,6 +48,21 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 31ad11dc57aaf7dfac6f8d810162184b0f4d3ef4
+      stats:
+        total:
+          insertions: 14
+          deletions: 1
+          lines: 15
+          files: 2
+        files:
+          libmavconn/include/mavconn/thread_utils.h:
+            insertions: 6
+            deletions: 1
+            lines: 7
+          mavros/include/mavros/utils.h:
+            insertions: 8
+            deletions: 0
+            lines: 8
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

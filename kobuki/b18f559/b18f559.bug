@@ -43,6 +43,29 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: b18f55910cc032f967b436b26710c01ec435291d
+      stats:
+        total:
+          insertions: 9
+          deletions: 80
+          lines: 89
+          files: 4
+        files:
+          kobuki_driver/include/kobuki_driver/kobuki.hpp:
+            insertions: 1
+            deletions: 3
+            lines: 4
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 4
+            deletions: 56
+            lines: 60
+          kobuki_node/include/kobuki_node/kobuki_node.hpp:
+            insertions: 0
+            deletions: 1
+            lines: 1
+          kobuki_node/src/nodelets/kobuki_node.cpp:
+            insertions: 4
+            deletions: 20
+            lines: 24
 fault-codes:
   - EVOLUTION:FIRMWARE
 failure-codes:

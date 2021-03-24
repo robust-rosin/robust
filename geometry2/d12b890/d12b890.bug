@@ -58,6 +58,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: d12b8906c8686dc1b980c489a3e4b83d78d6a488
+      stats:
+        total:
+          insertions: 35
+          deletions: 0
+          lines: 35
+          files: 1
+        files:
+          tf2_py/src/tf2_py.cpp:
+            insertions: 35
+            deletions: 0
+            lines: 35
 fault-codes:
   - PROGRAMMING:VALIDATION
 failure-codes:

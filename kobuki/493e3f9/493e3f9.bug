@@ -40,6 +40,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 493e3f9c9f65fbf0283571ca92b89a7203e5f287
+      stats:
+        total:
+          insertions: 10
+          deletions: 9
+          lines: 19
+          files: 1
+        files:
+          kobuki_description/urdf/kobuki.urdf.xacro:
+            insertions: 10
+            deletions: 9
+            lines: 19
 fault-codes:
   - MODELS:ROBOT
 failure-codes:
