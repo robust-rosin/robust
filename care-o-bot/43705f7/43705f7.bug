@@ -72,4 +72,3 @@ fault-codes:
 failure-codes:
   - SOFTWARE:BEHAVIORAL
   - SYSTEM:LOSS-OF-FUNCTIONALITY
-
