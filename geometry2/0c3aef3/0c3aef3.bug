@@ -58,13 +58,7 @@ bug:
   reproducibility: always
   trace: null
   reproduction: Install tf2 and try to compile.
-fix:
-  pull-request: null
-  license: ["BSD"]
-  fix-in: null
-  languages: null
-  time: null
-  commits: not-fixed
+fix: null
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:
