@@ -64,4 +64,4 @@ fault-codes:
   - SYSTEMS:CONFIG
 failure-codes:
   - SOFTWARE:BUILD
-  - SYSTEM:LOSS-OF-CONTROL
+  - SYSTEM:NONE

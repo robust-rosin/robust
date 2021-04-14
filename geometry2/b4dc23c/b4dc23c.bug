@@ -97,4 +97,4 @@ fault-codes:
   - PROGRAMMING:RESOURCES
 failure-codes:
   - SOFTWARE:CRASHING
-  - SYSTEM:LOSS-OF-CONTROL
+  - SYSTEM:NONE
