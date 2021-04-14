@@ -32,44 +32,4 @@ bug:
   time-reported: N/A
   reproducibility: N/A
   trace: N/A
-fix:
-  pull-request: https://github.com/mavlink/mavros/pull/296
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
-  fix-in:
-    - mavros/src/lib/sensor_orientation.cpp
-  languages:
-    - C++
-  time: 2015-05-21T08:55:38+01:00
-  commits:
-    - repo: https://github.com/mavlink/mavros
-      hash: 7c6514d3d5ec3c9f75b32db9054d468c49dbdfe8
-      stats:
-        total:
-          insertions: 2
-          deletions: 3
-          lines: 5
-          files: 1
-        files:
-          mavros/src/lib/sensor_orientation.cpp:
-            insertions: 2
-            deletions: 3
-            lines: 5
-time-machine:
-  ros_distro: indigo
-  ros_pkgs:
-    - mavros
-  datetime: 2015-05-21T08:55:38+01:00
-bugzoo:
-  is-build-failure: false
-  bug-commit: 34f92ff9cd4d0aa9223ec2a1d67630a6aba3c851
-  fix-commit: 7c6514d3d5ec3c9f75b32db9054d468c49dbdfe8
-  fork-urls:
-    - https://github.com/robust-rosin/mavros
-fault-codes:
-  - PROGRAMMING:UNUSED
-failure-codes:
-  - SOFTWARE:NONE
-  - SYSTEM:NONE
+fix: null
