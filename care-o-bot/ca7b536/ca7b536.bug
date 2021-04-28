@@ -41,7 +41,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ipa320/cob_control/pull/47
-  license: ['LGPL']
   fix-in:
     - cob_control/cob_obstacle_distance/CMakeLists.txt
   languages:

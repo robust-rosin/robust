@@ -130,7 +130,6 @@ fix:
             deletions: 6
             lines: 14
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_driver/include/kobuki_driver/kobuki.hpp
     - kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp

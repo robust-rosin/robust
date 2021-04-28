@@ -33,7 +33,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/modules/gate_keeper.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++

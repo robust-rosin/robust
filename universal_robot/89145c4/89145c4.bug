@@ -48,7 +48,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/268 | https://github.com/ros-industrial/universal_robot/pull/302
-  license: ['BSD']
   fix-in: ['ur_description/urdf/ur10.urdf.xacro', 'ur_description/urdf/ur5.urdf.xacro']
   languages:
     - Xacro

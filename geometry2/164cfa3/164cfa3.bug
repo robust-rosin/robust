@@ -61,7 +61,6 @@ bug:
   reproduction: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/62
-  license: ['BSD']
   fix-in:
     - tf2/src/buffer_core.cpp
   languages:

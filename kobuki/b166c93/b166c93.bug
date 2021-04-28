@@ -55,7 +55,6 @@ bug:
     This was the only change to the original code.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++

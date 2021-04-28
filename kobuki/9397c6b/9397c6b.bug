@@ -35,7 +35,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - ecl_containers/include/ecl/containers/push_and_pop/formatters.hpp
     - ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_dynamic.hpp

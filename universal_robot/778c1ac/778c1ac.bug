@@ -43,7 +43,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/285
-  license: ['BSD']
   fix-in:
     - ur10_moveit_config/launch/trajectory_execution.launch.xml
     - ur3_moveit_config/launch/trajectory_execution.launch.xml

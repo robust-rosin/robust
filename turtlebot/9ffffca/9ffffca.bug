@@ -34,7 +34,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/turtlebot/turtlebot/pull/235
-  license: ['BSD']
   fix-in: ['turtlebot_teleop/launch/includes/velocity_smoother.launch.xml']
   languages:
     - Launch XML

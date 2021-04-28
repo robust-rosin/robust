@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/src/driver/diff_drive.cpp', 'kobuki_driver/src/test/velocity_commands.cpp']
   languages:
     - C++

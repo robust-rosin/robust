@@ -60,7 +60,6 @@ fix:
   pull-request:
     - https://github.com/ros-industrial/universal_robot/pull/14
     - https://github.com/ros-industrial/universal_robot/pull/19
-  license: ['BSD']
   fix-in:
     - ur_bringup/CMakeLists.txt
     - ur_description/CMakeLists.txt

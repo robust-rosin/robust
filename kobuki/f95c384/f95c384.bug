@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/yujinrobot/kobuki/pull/334
-  license: ['BSD']
   fix-in: ['kobuki_node/package.xml']
   languages:
     - Package XML

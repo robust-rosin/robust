@@ -45,7 +45,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_auto_docking/launch/auto_dock_with_safe_keyop.launch
   languages:

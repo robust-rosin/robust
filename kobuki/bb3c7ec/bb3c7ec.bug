@@ -35,7 +35,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_bringup/resources/yaml/diagnostics.yaml
     - kobuki_node/src/node/diagnostics.cpp

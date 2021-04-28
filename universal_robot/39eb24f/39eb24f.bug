@@ -43,7 +43,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/218 | https://github.com/ros-industrial/universal_robot/pull/222
-  license: ['BSD']
   fix-in: ['ur_kinematics/include/ur_kinematics/ur_kin.h', 'ur_kinematics/src/ur_kin.cpp']
   languages:
     - C++

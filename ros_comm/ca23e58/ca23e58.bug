@@ -54,7 +54,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros/ros_comm/pull/776
-  license: ['BSD']
   fix-in:
     - clients/roscpp/CMakeLists.txt
     - clients/roscpp/src/libros/topic_manager.cpp

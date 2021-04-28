@@ -50,7 +50,6 @@ bug:
     Python, but the error happens in C++ and is not propagated to python
 fix:
   pull-request: null
-  license: ["BSD"]
   fix-in: ["tf2_py/src/tf2_py.cpp"]
   languages:
     - C++

@@ -34,7 +34,6 @@ bug:
     accessible from the pull request page.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/333
-  license: ['BSD']
   fix-in: ['tf2_ros/src/tf2_ros/buffer_client.py']
   languages:
     - Python

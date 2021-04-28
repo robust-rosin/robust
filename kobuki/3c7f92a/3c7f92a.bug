@@ -33,7 +33,6 @@ bug:
     unpack
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_qtestsuite/scripts/kobuki_qtestsuite
     - kobuki_qtestsuite/setup.py

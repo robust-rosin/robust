@@ -40,7 +40,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-simulation/gazebo_ros_pkgs/pull/343
-  license: ['LGPL']
   fix-in:
     - gazebo_ros_control/CMakeLists.txt
     - gazebo_ros_control/package.xml

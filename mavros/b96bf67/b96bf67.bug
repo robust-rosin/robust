@@ -35,10 +35,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/537
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/plugins/setpoint_raw.cpp
   languages:

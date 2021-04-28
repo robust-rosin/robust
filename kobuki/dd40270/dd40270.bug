@@ -56,7 +56,6 @@ bug:
     are not part of the source code that is importable by standard means.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/scripts/getOdom2D.py
     - kobuki_node/scripts/getYaw.py

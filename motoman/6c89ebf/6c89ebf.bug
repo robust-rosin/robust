@@ -45,7 +45,6 @@ fix:
             deletions: 7
             lines: 7
   pull-request: 30
-  license: ['BSD']
   fix-in: ['motoman_sia5d_support/urdf/sia5d.urdf', 'motoman_sia5d_support/urdf/sia5d_macro.xacro']
   languages:
     - URDF

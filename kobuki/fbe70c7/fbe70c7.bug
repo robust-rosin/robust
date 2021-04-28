@@ -36,7 +36,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_meta/resources/launch/components/base.launch
     - kobuki_meta/resources/launch/keyop.launch

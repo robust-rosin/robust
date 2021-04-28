@@ -36,7 +36,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/10
-  license: ['BSD']
   fix-in:
     - tf2_ros/include/tf2_ros/buffer_server.h
     - tf2_ros/src/buffer_server_main.cpp

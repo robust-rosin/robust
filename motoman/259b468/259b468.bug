@@ -28,7 +28,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: null
   fix-in:
     - motoman_driver/CMakeLists.txt
   languages:

@@ -48,8 +48,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/ros/geometry2/pull/107
-  license:
-    - BSD
   fix-in:
     - tf2_ros/include/tf2_ros/message_filter.h
   languages:

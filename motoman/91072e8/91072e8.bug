@@ -148,7 +148,6 @@ fix:
             deletions: 1
             lines: 2
   pull-request: 12
-  license: ['BSD']
   fix-in:
     - ros-industrial/motoman
     - ros-industrial/motoman/motoman_mh5_support

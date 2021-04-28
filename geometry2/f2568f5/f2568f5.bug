@@ -40,7 +40,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/ros/geometry2/pull/126
-  license: ['BSD']
   fix-in:
     - tf2_sensor_msgs/package.xml
   languages:

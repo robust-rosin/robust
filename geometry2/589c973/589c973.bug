@@ -40,7 +40,6 @@ bug:
       PR, as there is no issue for this bug.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/47
-  license: ['BSD']
   fix-in: ['tf2/include/tf2/LinearMath/Vector3.h']
   languages:
     - C++

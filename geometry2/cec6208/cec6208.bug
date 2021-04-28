@@ -56,7 +56,6 @@ bug:
 
 fix:
   pull-request: https://github.com/ros/geometry2/pull/58
-  license: ['BSD']
   fix-in:
     - tf2_ros/src/tf2_ros/buffer.py
   languages:

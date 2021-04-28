@@ -686,7 +686,6 @@ fix:
             deletions: 6
             lines: 21
   pull-request: 11 | 14
-  license: ['BSD']
   fix-in: ['158 files due to a complete update of the driver package.']
   languages:
     - CMake

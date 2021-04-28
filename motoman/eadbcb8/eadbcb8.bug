@@ -69,7 +69,6 @@ fix:
             deletions: 0
             lines: 0
   pull-request: 77
-  license: ['BSD']
   fix-in:
     - motoman_mh5_support/meshes/mh5/visual/MH5_BASE_AXIS.stl
     - motoman_mh5_support/meshes/mh5/visual/MH5_B_AXIS.stl

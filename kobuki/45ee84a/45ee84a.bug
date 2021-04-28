@@ -37,7 +37,6 @@ bug:
     https://github.com/robust-rosin/robust/issues/144
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/CMakeLists.txt']
   languages:
     - CMake

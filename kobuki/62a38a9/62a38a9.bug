@@ -53,7 +53,6 @@ bug:
     Detail   : The device is not a valid device for writing.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++

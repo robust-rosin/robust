@@ -42,7 +42,6 @@ fix:
             deletions: 2
             lines: 15
   pull-request: 175
-  license: null
   fix-in: ['motoman_mh5_support/urdf/mh5_macro.xacros']
   languages:
     - Xacro

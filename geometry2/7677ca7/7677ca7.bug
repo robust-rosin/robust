@@ -39,7 +39,6 @@ bug:
     note: A compilation with gcc 4.9 should expose the problem.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/99
-  license: ['BSD']
   fix-in: ['tf2_ros/include/tf2_ros/message_filter.h']
   languages:
     - C++

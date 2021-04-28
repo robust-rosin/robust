@@ -43,7 +43,6 @@ fix:
             deletions: 1
             lines: 4
   pull-request: 3
-  license: ['BSD']
   fix-in:
     - motoman/package.xml
   languages:

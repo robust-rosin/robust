@@ -41,7 +41,6 @@ bug:
     issue, it suffices for the unit test to import the affected files.
 fix:
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/49
-  license: ['BSD']
   fix-in: ['kobuki_dashboard/src/kobuki_dashboard/battery_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/dashboard.py']
   languages:
     - Python

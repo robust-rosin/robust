@@ -129,7 +129,6 @@ fix:
             deletions: 4
             lines: 5
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py
     - kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py

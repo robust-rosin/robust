@@ -84,7 +84,6 @@ fix:
             deletions: 0
             lines: 0
   pull-request: 148
-  license: ['BSD']
   fix-in:
     - motoman_driver/MotoPlus/Controller.h
     - motoman_driver/MotoPlus/CtrlGroup.c

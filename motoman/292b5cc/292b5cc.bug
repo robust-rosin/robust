@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['fs100/MotoPlus/MotionServer.c', 'fs100/MotoPlus/SimpleMessage.c', 'fs100/MotoPlus/output/MPRosFS100.out']
   languages:
     - C

@@ -42,7 +42,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/yujinrobot/kobuki/pull/278
-  license: ['BSD']
   fix-in: ['kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++

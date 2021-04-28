@@ -33,7 +33,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp
     - kobuki_auto_docking/src/auto_docking_ros.cpp

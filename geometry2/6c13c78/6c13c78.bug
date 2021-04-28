@@ -40,7 +40,6 @@ bug:
     whether it crashes immediately after )
 fix:
   pull-request: https://github.com/ros/geometry2/pull/25
-  license: ['BSD']
   fix-in:
     - tf2/src/buffer_core.cpp
   languages:

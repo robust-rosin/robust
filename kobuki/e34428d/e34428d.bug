@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_node/scripts/laptop_battery.py']
   languages:
     - Python

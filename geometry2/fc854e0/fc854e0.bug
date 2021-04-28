@@ -39,7 +39,6 @@ bug:
       PR, as there is no issue for this bug.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/44
-  license: ['BSD']
   fix-in: ['tf2_tools/CMakeLists.txt']
   languages:
     - CMake

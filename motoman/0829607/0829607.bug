@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: null
   fix-in: ['motoman_sda10f_support/meshes/sda10f/visual/motoman_axis_b1.stl', 'motoman_sda10f_support/meshes/sda10f/visual/motoman_base.stl']
   languages:
     - STL

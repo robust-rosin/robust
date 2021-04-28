@@ -52,7 +52,6 @@ bug:
       part of version 0.4.10, while 0.5.x is the minor used for Indigo.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['tf2_py/src/tf2_py.cpp']
   languages:
     - Python

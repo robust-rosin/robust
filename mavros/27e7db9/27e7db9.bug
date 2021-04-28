@@ -30,10 +30,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - libmavconn/CMakeLists.txt
   languages:

@@ -30,7 +30,6 @@ bug:
     geometry2
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['turtlebot_bringup/package.xml']
   languages:
     - Package XML

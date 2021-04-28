@@ -56,7 +56,6 @@ fix:
             deletions: 3
             lines: 3
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_core/package.xml', 'kobuki/package.xml']
   languages:
     - Package XML

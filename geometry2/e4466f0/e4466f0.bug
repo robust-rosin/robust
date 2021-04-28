@@ -41,7 +41,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/ros/geometry2/pull/133
-  license: ['BSD']
   fix-in:
     - tf2_tools/scripts/view_frames.py
   languages:

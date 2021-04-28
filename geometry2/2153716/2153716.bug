@@ -47,7 +47,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/ros/geometry2/pull/158
-  license: ['BSD']
   fix-in:
     - tf2_eigen/include/tf2_eigen/tf2_eigen.h
   languages:

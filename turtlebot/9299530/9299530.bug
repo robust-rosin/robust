@@ -102,7 +102,6 @@ fix:
             deletions: 13
             lines: 13
   pull-request: https://github.com/turtlebot/turtlebot/pull/66 | https://github.com/turtlebot/turtlebot_create/pull/7
-  license: ['BSD']
   fix-in:
     - turtlebot_description/meshes/stacks/circles/68-02403-125_Spacer.dae
     - turtlebot_description/meshes/stacks/circles/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae

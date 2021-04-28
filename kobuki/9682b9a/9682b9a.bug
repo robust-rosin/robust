@@ -105,7 +105,6 @@ fix:
             deletions: 11
             lines: 28
   pull-request: null
-  license: ['BSD']
   fix-in:
     - qt_gui/src/qt_gui/help_provider.py
     - qt_gui/src/qt_gui/plugin_manager.py

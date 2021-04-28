@@ -48,7 +48,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/30
-  license: ['BSD']
   fix-in:
     - ur_driver/package.xml
   languages:

@@ -42,7 +42,6 @@ bug:
     The bug report includes a test case. This should be used.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/90
-  license: ['BSD']
   fix-in:
     - tf2_ros/src/tf2_ros/transform_broadcaster.py
   languages:

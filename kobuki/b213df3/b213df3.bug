@@ -44,7 +44,6 @@ bug:
     parameter should fail the test.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_node/param/base.yaml']
   languages:
     - Param YAML

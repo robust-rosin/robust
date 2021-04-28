@@ -28,7 +28,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-drivers/openni_launch/pull/3
-  license: ['BSD']
   fix-in:
     - launch/includes/depth.launch
     - launch/includes/depth_registered.launch

@@ -44,7 +44,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/114
-  license: ['BSD']
   fix-in: ['ur_kinematics/CMakeLists.txt']
   languages:
     - CMake

@@ -43,7 +43,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ipa320/cob_android/pull/8
-  license: ['LGPL']
   fix-in:
     - cob_android/cob_android_msgs/CMakeLists.txt
     - cob_android/cob_android_script_server/CMakeLists.txt

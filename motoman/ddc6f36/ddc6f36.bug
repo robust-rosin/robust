@@ -51,7 +51,6 @@ fix:
             deletions: 6
             lines: 16
   pull-request: 25
-  license: ['BSD']
   fix-in: ['motoman_driver/CMakeLists.txt']
   languages:
     - CMake

@@ -102,7 +102,6 @@ fix:
             deletions: 0
             lines: 2
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_bumper2pc/include/kobuki_bumper2pc/kobuki_bumper2pc.hpp
     - kobuki_auto_docking/include/kobuki_auto_docking/dock_drive.hpp

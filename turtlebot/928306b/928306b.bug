@@ -67,7 +67,6 @@ fix:
             deletions: 1
             lines: 2
   pull-request: https://github.com/turtlebot/turtlebot/pull/104
-  license: ['BSD']
   fix-in:
     - linux_hardware/scripts/laptop_battery.py
     - turtlebot_bringup/launch/minimal.launch

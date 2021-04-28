@@ -43,7 +43,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/shadow-robot/stiff_flop/issues/276
-  license: ['closed source']
   fix-in:
     - sf_teleop/CMakelists.txt
     - sf_teleop/package.xml

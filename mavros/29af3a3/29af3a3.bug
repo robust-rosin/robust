@@ -48,10 +48,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/527
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - libmavconn/src/serial.cpp
   languages:

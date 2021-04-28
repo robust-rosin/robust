@@ -52,7 +52,6 @@ bug:
       original launch file, and the buggy and fixed versions are different.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - turtlebot_bringup/launch/3dsensor.launch
   languages:

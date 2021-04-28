@@ -46,7 +46,6 @@ bug:
     reproduce the bug."
 fix:
   pull-request: https://github.com/ros/geometry2/pull/176
-  license: ["BSD"]
   fix-in:
     - tf2/src/cache.cpp
   languages:

@@ -51,7 +51,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/255
-  license: ['BSD']
   fix-in: ['ur_gazebo/package.xml']
   languages:
     - Package XML

@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['clients/roscpp/src/libros/transport/transport_tcp.cpp']
   languages:
     - C++

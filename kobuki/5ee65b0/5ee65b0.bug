@@ -71,7 +71,6 @@ bug:
     the GUI-related parts.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_dashboard/src/kobuki_dashboard/led_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/motor_widget.py']
   languages:
     - Python

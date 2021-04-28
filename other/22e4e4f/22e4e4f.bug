@@ -35,7 +35,6 @@ bug:
   trace: NA
 fix:
   pull-request: NA
-  license: ['Tecnalia']
   fix-in: ['kintinuous_src/utils/Freenect2Reader.cpp']
   languages:
     - C++

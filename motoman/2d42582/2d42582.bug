@@ -33,7 +33,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['motoman_sia20d_support/urdf/sia20d.urdf', 'motoman_sia20d_support/urdf/sia20d_macro.xacro']
   languages:
     - URDF

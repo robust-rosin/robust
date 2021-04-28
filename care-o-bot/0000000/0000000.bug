@@ -40,7 +40,6 @@ fix:
   # repo: https://github.com/ipa320/cob_robots/tree/indigo_dev/cob_bringup
   # The previous commit would be: 0656d117ba875221c66a5e354252d06c2562aced
   pull-request: null
-  license: ['LGPL']
   fix-in: []
   languages: []
   time: unfixed

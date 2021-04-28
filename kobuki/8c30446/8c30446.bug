@@ -59,7 +59,6 @@ bug:
     `turtlebot_bringup`).
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/launch/robot_with_tf.launch
   languages:

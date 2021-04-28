@@ -30,7 +30,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/57-kobuki.rules']
   languages:
     - udev rules

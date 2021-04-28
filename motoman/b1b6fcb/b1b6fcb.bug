@@ -48,7 +48,6 @@ fix:
             deletions: 3
             lines: 59
   pull-request: https://github.com/ros-industrial/motoman/pull/155
-  license: ['BSD']
   fix-in:
     - motoman_driver/include/motoman_driver/industrial_robot_client/joint_trajectory_action.h
     - motoman_driver/src/industrial_robot_client/joint_trajectory_action.cpp

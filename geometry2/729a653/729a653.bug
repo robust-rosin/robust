@@ -43,7 +43,6 @@ bug:
     using a sanitizer)
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - tf2/src/buffer_core.cpp
   languages:

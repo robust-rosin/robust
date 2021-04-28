@@ -34,7 +34,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['tf2/CMakeLists.txt']
   languages: ['CMake']
   time: 2013-02-14T23:37:15Z

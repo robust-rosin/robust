@@ -44,7 +44,6 @@ bug:
     not contain a ROS package, and makes the reproduction process harder.
 fix:
   pull-request: https://github.com/ros/rosdistro/pull/4560
-  license: ['BSD']
   fix-in:
     - hydro/distribution.yaml
   languages:

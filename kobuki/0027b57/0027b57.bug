@@ -61,7 +61,6 @@ fix:
             deletions: 0
             lines: 1
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/include/kobuki_ftdi/scanner.hpp', 'kobuki_ftdi/manifest.xml']
   languages:
     - C++

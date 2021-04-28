@@ -64,7 +64,6 @@ fix:
             deletions: 0
             lines: 5
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/src/library/kobuki_ros.cpp
     - kobuki_driver/include/kobuki_driver/kobuki.hpp

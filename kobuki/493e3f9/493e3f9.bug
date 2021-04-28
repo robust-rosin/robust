@@ -32,7 +32,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_description/urdf/kobuki.urdf.xacro']
   languages:
     - URDF

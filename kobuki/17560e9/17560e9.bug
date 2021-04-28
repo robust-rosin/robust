@@ -54,7 +54,6 @@ bug:
     https://github.com/robust-rosin/robust/issues/63.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['yocs_navigator/CMakeLists.txt']
   languages:
     - CMake

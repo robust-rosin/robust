@@ -58,7 +58,6 @@ fix:
             deletions: 8
             lines: 24
   pull-request: 169
-  license: ['BSD']
   fix-in:
     - .travis.yml
     - motoman_sda10f_support/test/launch_test.xml

@@ -41,7 +41,6 @@ bug:
     rosdistro: a7fd093f6922394309c317d519ec42d469258ea6
 fix:
   pull-request: https://github.com/ros/geometry2/pull/85
-  license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++

@@ -39,7 +39,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/package.xml
   languages:

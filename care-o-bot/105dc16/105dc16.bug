@@ -38,7 +38,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/thiagodefreitas/cob_control/commit/105dc16ffe0b9dba294aabea0c18052cd281bde0
-  license: ['LGPL']
   fix-in:
     - cob_control/cob_twist_controller/CMakeLists.txt
   languages:

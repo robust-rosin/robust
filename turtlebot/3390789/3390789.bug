@@ -34,7 +34,6 @@ bug:
     https://github.com/robust-rosin/robust/issues/63.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['turtlebot_bringup/package.xml', 'turtlebot_capabilities/package.xml']
   languages:
     - Package XML

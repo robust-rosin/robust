@@ -29,10 +29,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/230
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/plugins/actuator_control.cpp
   languages:

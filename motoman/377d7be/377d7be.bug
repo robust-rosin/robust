@@ -48,7 +48,6 @@ fix:
             deletions: 0
             lines: 6
   pull-request: 147
-  license: ['BSD']
   fix-in:
     - motoman_driver/Inform/.gitattributes
   languages:

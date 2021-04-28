@@ -39,7 +39,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_comms/msg/PowerSystemEvent.msg
     - kobuki_driver/include/kobuki_driver/event_manager.hpp

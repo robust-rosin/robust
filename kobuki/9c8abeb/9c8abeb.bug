@@ -43,7 +43,6 @@ bug:
     for Ubuntu Precise, the distribution used to reproduce this bug.
 fix:
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/26
-  license: ['BSD']
   fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
   languages:
     - C++

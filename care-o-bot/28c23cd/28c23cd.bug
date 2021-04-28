@@ -37,7 +37,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ipa320/cob_command_tools/pull/127
-  license: ['LGPL']
   fix-in:
     - cob_command_tools/cob_teleop/CMakeLists.txt
   languages:

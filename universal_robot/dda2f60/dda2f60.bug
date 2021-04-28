@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/53
-  license: ['BSD']
   fix-in: ['ros_industrial/universal_robot/package.xml']
   languages:
     - Package XML

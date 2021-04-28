@@ -50,7 +50,6 @@ bug:
     __name:=keyop __log:=/home/yujin/.ros/log/97190902-3887-11e2-b4e2-0026c7d760cc/keyop-1.log].
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_keyop/include/keyop_core/keyop_core.hpp
     - kobuki_keyop/manifest.xml

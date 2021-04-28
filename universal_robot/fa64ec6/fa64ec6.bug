@@ -54,7 +54,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/251
-  license: ['BSD']
   fix-in:
     - ur_description/urdf/ur10.urdf.xacro
     - ur_description/urdf/ur3.urdf.xacro

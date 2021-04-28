@@ -42,7 +42,6 @@ bug:
     https://github.com/robust-rosin/robust/issues/63.
 fix:
   pull-request: https://github.com/ros-perception/image_pipeline/pull/79
-  license: ['BSD']
   fix-in: ['depth_image_proc/package.xml']
   languages:
     - Package XML

@@ -32,7 +32,6 @@ bug:
     FIXME: there is a test case added in the fixing commit.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/29
-  license: ['BSD']
   fix-in: ['tf2_ros/src/static_transform_broadcaster.cpp']
   languages:
     - C++

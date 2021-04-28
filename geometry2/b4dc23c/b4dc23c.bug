@@ -64,7 +64,6 @@ bug:
     would not apply).
 fix:
   pull-request: https://github.com/ros/geometry2/pull/167
-  license: ['BSD']
   fix-in: ['tf2_ros/src/static_transform_broadcaster_program.cpp']
   languages:
     - C++

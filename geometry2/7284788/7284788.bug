@@ -56,7 +56,6 @@ bug:
     use the trave above (from the first ROS answers links in the links above).
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++

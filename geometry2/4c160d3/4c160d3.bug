@@ -30,7 +30,6 @@ bug:
   reproduction: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - tf2_geometry_msgs/CMakeLists.txt
   languages:

@@ -37,10 +37,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/296 # part of this PR, but there are 37 other commits in it
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros_extras/src/plugins/distance_sensor.cpp
   languages:

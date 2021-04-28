@@ -40,7 +40,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/157 | https://github.com/ros-industrial/universal_robot/pull/189
-  license: ['BSD']
   fix-in: ['ur_driver/src/ur_driver/driver.py']
   languages:
     - Python

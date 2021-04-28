@@ -39,7 +39,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/39
-  license: ['BSD']
   fix-in:
     - kobuki_gazebo_plugins/src/gazebo_ros_kobuki_loads.cpp
   languages:

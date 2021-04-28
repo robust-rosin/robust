@@ -39,7 +39,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/303
-  license: ['BSD']
   fix-in: ['ur_kinematics/src/ur_moveit_plugin.cpp']
   languages:
     - C++

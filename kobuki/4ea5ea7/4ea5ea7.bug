@@ -30,7 +30,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_description/launch/view_model.launch
     - kobuki_description/rviz/model.rviz

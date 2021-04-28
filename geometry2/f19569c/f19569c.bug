@@ -54,7 +54,6 @@ bug:
   reproduction: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/76
-  license: ['BSD']
   fix-in:
     - tf2_bullet/include/tf2_bullet/tf2_bullet.h
     - tf2_geometry_msgs/include/tf2_geometry_msgs/tf2_geometry_msgs.h

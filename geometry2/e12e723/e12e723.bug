@@ -43,8 +43,6 @@ bug:
       as only at runtime the missing package will cause actual problems.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/150
-  license:
-    - BSD
   fix-in:
     - tf2_geometry_msgs/package.xml
   languages:

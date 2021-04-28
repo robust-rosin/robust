@@ -54,7 +54,6 @@ fix:
             deletions: 0
             lines: 1
   pull-request: 35
-  license: ['BSD']
   fix-in: ['motoman_sia20d_moveit_config/package.xml']
   languages:
     - Package XML

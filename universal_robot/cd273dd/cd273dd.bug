@@ -36,7 +36,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/42
-  license: ['BSD']
   fix-in: ['ur5_moveit_config/package.xml']
   languages:
     - Package XML

@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_bringup/resources/yaml/kobuki.yaml']
   languages:
     - Param YAML

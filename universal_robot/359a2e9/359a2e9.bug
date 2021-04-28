@@ -43,7 +43,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/115 | https://github.com/ros-industrial/universal_robot/pull/117
-  license: ['BSD']
   fix-in: ['ur_driver/prog']
   languages:
     - URScript

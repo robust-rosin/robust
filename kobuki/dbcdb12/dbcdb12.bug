@@ -50,7 +50,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/include/kobuki_node/odometry.hpp
     - kobuki_node/src/library/odometry.cpp

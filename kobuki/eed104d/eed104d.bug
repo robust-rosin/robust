@@ -51,7 +51,6 @@ bug:
     -- Configuring incomplete, errors occurred!
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/package.xml']
   languages:
     - Package XML

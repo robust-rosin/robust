@@ -160,7 +160,6 @@ fix:
             deletions: 3
             lines: 6
   pull-request: 15
-  license: ['BSD']
   fix-in:
     - SIA20D_Mesh_arm_navigation/launch/SIA20D_Mesh_arm_navigation.launch
     - SIA20D_Mesh_arm_navigation/launch/move_groups.launch
