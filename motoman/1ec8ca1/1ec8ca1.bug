@@ -30,8 +30,18 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 1ec8ca1bb14fb68bac9672988ea311cdae7997c5
+      stats:
+        total:
+          insertions: 13
+          deletions: 2
+          lines: 15
+          files: 1
+        files:
+          motoman_mh5_support/urdf/mh5.urdf:
+            insertions: 13
+            deletions: 2
+            lines: 15
   pull-request: 175
-  license: null
   fix-in: ['motoman_mh5_support/urdf/mh5_macro.xacros']
   languages:
     - Xacro

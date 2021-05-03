@@ -33,7 +33,6 @@ bug:
     unpack
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_qtestsuite/scripts/kobuki_qtestsuite
     - kobuki_qtestsuite/setup.py
@@ -49,6 +48,41 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 3c7f92a2c6a51b4896e669d0da34b4de90a71914
+      stats:
+        total:
+          insertions: 63
+          deletions: 12
+          lines: 75
+          files: 7
+        files:
+          kobuki_qtestsuite/scripts/kobuki_qtestsuite:
+            insertions: 20
+            deletions: 1
+            lines: 21
+          kobuki_qtestsuite/setup.py:
+            insertions: 6
+            deletions: 3
+            lines: 9
+          kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py:
+            insertions: 13
+            deletions: 1
+            lines: 14
+          kobuki_qtestsuite/src/kobuki_qtestsuite/configuration_dock_widget.py:
+            insertions: 11
+            deletions: 0
+            lines: 11
+          kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py:
+            insertions: 4
+            deletions: 4
+            lines: 8
+          kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py:
+            insertions: 7
+            deletions: 1
+            lines: 8
+          kobuki_qtestsuite/src/kobuki_qtestsuite/ui/configuration_dock.ui:
+            insertions: 2
+            deletions: 2
+            lines: 4
 fault-codes:
   - EVOLUTION:PACKAGE
 failure-codes:

@@ -37,7 +37,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_safety_controller/src/nodelet.cpp']
   languages:
     - C++
@@ -45,6 +44,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 38dce2aac9c4a519fbcec4032838a3451662e7b6
+      stats:
+        total:
+          insertions: 4
+          deletions: 2
+          lines: 6
+          files: 1
+        files:
+          kobuki_safety_controller/src/nodelet.cpp:
+            insertions: 4
+            deletions: 2
+            lines: 6
 fault-codes:
   - PROGRAMMING:CONTROL-FLOW
   - PROGRAMMING:RESOURCES

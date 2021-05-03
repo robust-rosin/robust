@@ -55,7 +55,6 @@ bug:
     This was the only change to the original code.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++
@@ -63,6 +62,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_core
       hash: b166c93913e293c55a3faa7b298c5f52f6def964
+      stats:
+        total:
+          insertions: 7
+          deletions: 2
+          lines: 9
+          files: 2
+        files:
+          kobuki_driver/CHANGELOG.rst:
+            insertions: 4
+            deletions: 0
+            lines: 4
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 3
+            deletions: 2
+            lines: 5
 fault-codes:
   - PROGRAMMING:BAD-SMELL
   - EVOLUTION:DEPRECATION

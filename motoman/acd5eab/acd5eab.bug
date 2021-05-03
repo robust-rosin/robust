@@ -32,8 +32,58 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: acd5eab0744abd58059f1303947c6f1204ce92fe
+      stats:
+        total:
+          insertions: 136
+          deletions: 75
+          lines: 211
+          files: 11
+        files:
+          motoman_driver/MotoPlus/Controller.h:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_driver/MotoPlus/CtrlGroup.c:
+            insertions: 124
+            deletions: 54
+            lines: 178
+          motoman_driver/MotoPlus/MotionServer.c:
+            insertions: 7
+            deletions: 13
+            lines: 20
+          motoman_driver/MotoPlus/ParameterTypes.h:
+            insertions: 3
+            deletions: 2
+            lines: 5
+          motoman_driver/MotoPlus/RosSetupValidation.dnLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/RosSetupValidation.fsLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/RosSetupValidation.mpLib:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/_buildLog/MotoROSDX100.log:
+            insertions: 1
+            deletions: 5
+            lines: 6
+          motoman_driver/MotoPlus/output/DX100/MotoRosDX100/MotoRosDX100.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/output/DX200/MotoRosDX200/MotoRosDX200.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          motoman_driver/MotoPlus/output/FS100/MotoRosFS100/MotoRosFS100.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
   pull-request: 148
-  license: ['BSD']
   fix-in:
     - motoman_driver/MotoPlus/Controller.h
     - motoman_driver/MotoPlus/CtrlGroup.c

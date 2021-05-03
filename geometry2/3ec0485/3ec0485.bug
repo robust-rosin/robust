@@ -48,8 +48,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/ros/geometry2/pull/107
-  license:
-    - BSD
   fix-in:
     - tf2_ros/include/tf2_ros/message_filter.h
   languages:
@@ -58,6 +56,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 3ec048516fd47b533d9a40cae97482f5caefbb2f
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          tf2_ros/include/tf2_ros/message_filter.h:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: indigo
   ros_pkgs:

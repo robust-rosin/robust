@@ -50,7 +50,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/include/kobuki_node/odometry.hpp
     - kobuki_node/src/library/odometry.cpp
@@ -61,6 +60,25 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: dbcdb12acb4b7811084d4f4dc75e0408b9899de0
+      stats:
+        total:
+          insertions: 99
+          deletions: 90
+          lines: 189
+          files: 3
+        files:
+          kobuki_node/include/kobuki_node/odometry.hpp:
+            insertions: 0
+            deletions: 1
+            lines: 1
+          kobuki_node/src/library/odometry.cpp:
+            insertions: 26
+            deletions: 22
+            lines: 48
+          kobuki_node/src/library/slot_callbacks.cpp:
+            insertions: 73
+            deletions: 67
+            lines: 140
 fault-codes:
   - PROGRAMMING:RESOURCES
 failure-codes:

@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['fs100/MotoPlus/MotionServer.c', 'fs100/MotoPlus/SimpleMessage.c', 'fs100/MotoPlus/output/MPRosFS100.out']
   languages:
     - C
@@ -39,6 +38,25 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 292b5cc8a10a640a8b364a529e3eadffffc9b56b
+      stats:
+        total:
+          insertions: 24
+          deletions: 8
+          lines: 32
+          files: 3
+        files:
+          fs100/MotoPlus/MotionServer.c:
+            insertions: 16
+            deletions: 4
+            lines: 20
+          fs100/MotoPlus/SimpleMessage.c:
+            insertions: 8
+            deletions: 4
+            lines: 12
+          fs100/MotoPlus/output/MPRosFS100.out:
+            insertions: 0
+            deletions: 0
+            lines: 0
 fault-codes:
   - PROGRAMMING:DATATYPE
 failure-codes:

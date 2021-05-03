@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/src/test/initialisation.cpp']
   languages:
     - C++
@@ -39,6 +38,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 5a44eadd3b6ef0f2cb29f057b3e1cdb93205c954
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          kobuki_driver/src/test/initialisation.cpp:
+            insertions: 2
+            deletions: 0
+            lines: 2
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:

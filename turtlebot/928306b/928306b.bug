@@ -34,10 +34,39 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 0c0f53217bbd838d89f6be5584ae1b9f45106875
+      stats:
+        total:
+          insertions: 21
+          deletions: 5
+          lines: 26
+          files: 1
+        files:
+          linux_hardware/scripts/laptop_battery.py:
+            insertions: 21
+            deletions: 5
+            lines: 26
     - repo: https://github.com/turtlebot/turtlebot
       hash: 928306ba94acbfcc4e0ee61c7c8e432561b0824f
+      stats:
+        total:
+          insertions: 17
+          deletions: 15
+          lines: 32
+          files: 3
+        files:
+          linux_hardware/scripts/laptop_battery.py:
+            insertions: 15
+            deletions: 13
+            lines: 28
+          turtlebot_bringup/launch/minimal.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          turtlebot_bringup/launch/minimal_with_appmanager.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
   pull-request: https://github.com/turtlebot/turtlebot/pull/104
-  license: ['BSD']
   fix-in:
     - linux_hardware/scripts/laptop_battery.py
     - turtlebot_bringup/launch/minimal.launch

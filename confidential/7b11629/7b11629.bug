@@ -37,7 +37,6 @@ bug:
 fix:
   commits: confidential
   pull-request: null
-  license: ['closed source']
   fix-in: ['CONFIDENTIAL']
   languages:
     - C++

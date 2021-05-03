@@ -31,8 +31,135 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 65e7ee626aa5b180dd6c2a374ac7fc5b5dade26e
+      stats:
+        total:
+          insertions: 66
+          deletions: 66
+          lines: 132
+          files: 29
+        files:
+          SIA20D_Mesh_arm_navigation/launch/SIA20D_Mesh_arm_navigation.launch:
+            insertions: 0
+            deletions: 11
+            lines: 11
+          SIA20D_Mesh_arm_navigation/launch/move_groups.launch:
+            insertions: 0
+            deletions: 3
+            lines: 3
+          motoman/package.xml:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_config/cfg/sia20d_mesh.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_config/cfg/sia20d_mesh.xml:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          sia10d_mesh_arm_navigation/launch/constraint_aware_kinematics.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/CMakeLists.txt':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/config/joint_limits.yaml':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/config/ompl_planning.yaml':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/config/planning_components_visualizer.rviz':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/config/planning_components_visualizer.vcg':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/config/planning_scene_warehouse_viewer.rviz':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/config/planning_scene_warehouse_viewer.vcg':
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ? SIA20D_Mesh_arm_navigation/config/SIA20D_Mesh_planning_description.yaml
+            => sia20d_mesh_arm_navigation/config/sia20d_mesh_planning_description.yaml
+          : insertions: 0
+            deletions: 0
+            lines: 0
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/kinematics_plugins.xml':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/launch/constraint_aware_kinematics.launch':
+            insertions: 3
+            deletions: 3
+            lines: 6
+          sia20d_mesh_arm_navigation/launch/move_groups.launch:
+            insertions: 3
+            deletions: 0
+            lines: 3
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/launch/move_manipulator.launch':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/launch/ompl_planning.launch':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/launch/planning_components_visualizer.launch':
+            insertions: 5
+            deletions: 5
+            lines: 10
+          ? SIA20D_Mesh_arm_navigation/launch/planning_scene_warehouse_viewer_SIA20D_Mesh.launch
+            => sia20d_mesh_arm_navigation/launch/planning_scene_warehouse_viewer_sia20d_mesh.launch
+          : insertions: 12
+            deletions: 12
+            lines: 24
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/launch/planning_scene_warehouse_viewer_sia20d_mesh_real.launch':
+            insertions: 12
+            deletions: 12
+            lines: 24
+          sia20d_mesh_arm_navigation/launch/sia20d_mesh_arm_navigation.launch:
+            insertions: 11
+            deletions: 0
+            lines: 11
+          ? SIA20D_Mesh_arm_navigation/launch/SIA20D_Mesh_planning_environment.launch
+            => sia20d_mesh_arm_navigation/launch/sia20d_mesh_planning_environment.launch
+          : insertions: 1
+            deletions: 1
+            lines: 2
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/launch/trajectory_filter_server.launch':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/mainpage.dox':
+            insertions: 1
+            deletions: 1
+            lines: 2
+          '{SIA20D_Mesh_arm_navigation => sia20d_mesh_arm_navigation}/package.xml':
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ? SIA20D_Mesh_arm_navigation/src/SIA20D_Mesh_manipulator_ikfast_output.cpp
+            => sia20d_mesh_arm_navigation/src/sia20d_mesh_manipulator_ikfast_output.cpp
+          : insertions: 0
+            deletions: 0
+            lines: 0
+          ? SIA20D_Mesh_arm_navigation/src/SIA20D_Mesh_manipulator_ikfast_plugin.cpp
+            => sia20d_mesh_arm_navigation/src/sia20d_mesh_manipulator_ikfast_plugin.cpp
+          : insertions: 3
+            deletions: 3
+            lines: 6
   pull-request: 15
-  license: ['BSD']
   fix-in:
     - SIA20D_Mesh_arm_navigation/launch/SIA20D_Mesh_arm_navigation.launch
     - SIA20D_Mesh_arm_navigation/launch/move_groups.launch

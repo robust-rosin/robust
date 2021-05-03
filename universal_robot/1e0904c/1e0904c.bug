@@ -48,14 +48,24 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/165
-  license: ['BSD']
   fix-in: ['ur_driver/prog']
   languages:
     - URScript
   time: 2015-02-20 (11:24)
   commits:
-    - repo: https://github.com/ros-industrial/universal_robot/
+    - repo: https://github.com/ros-industrial/universal_robot
       hash: 1e0904c38934fe09c9647825caf3b58dda2636f9
+      stats:
+        total:
+          insertions: 0
+          deletions: 1
+          lines: 1
+          files: 1
+        files:
+          ur_driver/prog:
+            insertions: 0
+            deletions: 1
+            lines: 1
 fault-codes:
   - PROGRAMMING:BROKEN-CONTRACT
 failure-codes:

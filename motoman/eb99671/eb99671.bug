@@ -31,8 +31,18 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: eb99671e195385b0ddc41e0a95c7c4592f5ee9ba
+      stats:
+        total:
+          insertions: 3
+          deletions: 1
+          lines: 4
+          files: 1
+        files:
+          motoman/package.xml:
+            insertions: 3
+            deletions: 1
+            lines: 4
   pull-request: 3
-  license: ['BSD']
   fix-in:
     - motoman/package.xml
   languages:

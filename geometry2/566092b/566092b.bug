@@ -34,7 +34,6 @@ bug:
     accessible from the pull request page.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/333
-  license: ['BSD']
   fix-in: ['tf2_ros/src/tf2_ros/buffer_client.py']
   languages:
     - Python
@@ -42,6 +41,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 566092b42e3c42b4745294124762f8d7e5176716
+      stats:
+        total:
+          insertions: 10
+          deletions: 1
+          lines: 11
+          files: 1
+        files:
+          tf2_ros/src/tf2_ros/buffer_client.py:
+            insertions: 10
+            deletions: 1
+            lines: 11
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:

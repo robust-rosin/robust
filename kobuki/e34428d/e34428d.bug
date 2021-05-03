@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_node/scripts/laptop_battery.py']
   languages:
     - Python
@@ -37,6 +36,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: e34428db1df893b36e604f17156837af3ab380cb
+      stats:
+        total:
+          insertions: 3
+          deletions: 1
+          lines: 4
+          files: 1
+        files:
+          kobuki_node/scripts/laptop_battery.py:
+            insertions: 3
+            deletions: 1
+            lines: 4
 fault-codes:
   - PROGRAMMING:BAD-SMELL
   - PROGRAMMING:LOGIC

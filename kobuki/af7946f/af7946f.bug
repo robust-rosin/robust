@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/src/driver/diff_drive.cpp', 'kobuki_driver/src/test/velocity_commands.cpp']
   languages:
     - C++
@@ -39,6 +38,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: af7946f9b5a5a8536c5df6cbefc83b6020d38dd0
+      stats:
+        total:
+          insertions: 219
+          deletions: 24
+          lines: 243
+          files: 2
+        files:
+          kobuki_driver/src/driver/diff_drive.cpp:
+            insertions: 5
+            deletions: 4
+            lines: 9
+          kobuki_driver/src/test/velocity_commands.cpp:
+            insertions: 214
+            deletions: 20
+            lines: 234
 fault-codes:
   - PROGRAMMING:LOGIC
   - PROGRAMMING:CALCULATIONS

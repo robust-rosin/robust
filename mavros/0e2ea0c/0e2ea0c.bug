@@ -36,10 +36,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/plugins/ftp.cpp
   languages:
@@ -48,6 +44,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 0e2ea0c43b373feb490b45710fb63f4e6cde78eb
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          mavros/src/plugins/ftp.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: indigo
   ros_pkgs:

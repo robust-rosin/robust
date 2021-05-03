@@ -28,7 +28,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: null
   fix-in:
     - motoman_driver/CMakeLists.txt
   languages:
@@ -37,6 +36,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 259b468ea17fa680e68a0b91f57a2b58fa99b9bb
+      stats:
+        total:
+          insertions: 4
+          deletions: 0
+          lines: 4
+          files: 1
+        files:
+          motoman_driver/CMakeLists.txt:
+            insertions: 4
+            deletions: 0
+            lines: 4
 fault-codes:
   - BDO:BUILD
 failure-codes:

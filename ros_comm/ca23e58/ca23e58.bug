@@ -54,7 +54,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros/ros_comm/pull/776
-  license: ['BSD']
   fix-in:
     - clients/roscpp/CMakeLists.txt
     - clients/roscpp/src/libros/topic_manager.cpp
@@ -65,6 +64,21 @@ fix:
   commits:
     - repo: https://github.com/ros/ros_comm
       hash: ca23e58883ed2f1784840485ceba9af3cd2d5729
+      stats:
+        total:
+          insertions: 3
+          deletions: 13
+          lines: 16
+          files: 2
+        files:
+          clients/roscpp/CMakeLists.txt:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          clients/roscpp/src/libros/topic_manager.cpp:
+            insertions: 2
+            deletions: 12
+            lines: 14
 fault-codes:
   - CONCURRENCY:BAD-SYNC
 failure-codes:

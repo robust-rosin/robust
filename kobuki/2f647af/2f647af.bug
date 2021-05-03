@@ -48,12 +48,88 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 2f647af053c451e4248d7741c542f63511eee45e
+      stats:
+        total:
+          insertions: 25
+          deletions: 17
+          lines: 42
+          files: 6
+        files:
+          kobuki_driver/include/kobuki_driver/kobuki.hpp:
+            insertions: 6
+            deletions: 1
+            lines: 7
+          kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          kobuki_driver/src/driver/diff_drive.cpp:
+            insertions: 6
+            deletions: 8
+            lines: 14
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 10
+            deletions: 2
+            lines: 12
+          kobuki_node/include/kobuki_node/odometry.hpp:
+            insertions: 0
+            deletions: 1
+            lines: 1
+          kobuki_node/src/library/odometry.cpp:
+            insertions: 1
+            deletions: 3
+            lines: 4
     - repo: https://github.com/yujinrobot/kobuki
       hash: a174dbbb9375d22828b0d7f4f41b7265978845c0
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          kobuki_node/param/base.yaml:
+            insertions: 1
+            deletions: 1
+            lines: 2
     - repo: https://github.com/yujinrobot/kobuki
       hash: 9c4835ad5b2eb3a4945f57076501b7699057ec66
+      stats:
+        total:
+          insertions: 45
+          deletions: 25
+          lines: 70
+          files: 7
+        files:
+          kobuki_description/urdf/kobuki_gazebo.urdf.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          kobuki_node/include/kobuki_node/odometry.hpp:
+            insertions: 4
+            deletions: 1
+            lines: 5
+          kobuki_node/launch/robot_with_tf.launch:
+            insertions: 0
+            deletions: 10
+            lines: 10
+          kobuki_node/package.xml:
+            insertions: 0
+            deletions: 1
+            lines: 1
+          kobuki_node/param/base.yaml:
+            insertions: 8
+            deletions: 2
+            lines: 10
+          kobuki_node/src/library/odometry.cpp:
+            insertions: 24
+            deletions: 4
+            lines: 28
+          kobuki_node/src/library/slot_callbacks.cpp:
+            insertions: 8
+            deletions: 6
+            lines: 14
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_driver/include/kobuki_driver/kobuki.hpp
     - kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp

@@ -32,7 +32,6 @@ bug:
     FIXME: there is a test case added in the fixing commit.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/29
-  license: ['BSD']
   fix-in: ['tf2_ros/src/static_transform_broadcaster.cpp']
   languages:
     - C++
@@ -40,6 +39,21 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: c81fa7213ec2ca6512c8015b13a5bbade2b690f7
+      stats:
+        total:
+          insertions: 35
+          deletions: 1
+          lines: 36
+          files: 2
+        files:
+          test_tf2/test/test_static_publisher.cpp:
+            insertions: 34
+            deletions: 0
+            lines: 34
+          tf2_ros/src/static_transform_broadcaster.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: hydro
   ros_pkgs:

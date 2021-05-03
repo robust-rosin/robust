@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_auto_docking/CMakeLists.txt']
   languages:
     - CMake
@@ -37,6 +36,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 3e88010293c350ffa71f5e8b64ec58ec09a64549
+      stats:
+        total:
+          insertions: 3
+          deletions: 3
+          lines: 6
+          files: 1
+        files:
+          kobuki_auto_docking/CMakeLists.txt:
+            insertions: 3
+            deletions: 3
+            lines: 6
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

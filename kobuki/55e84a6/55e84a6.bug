@@ -67,12 +67,68 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 5ee65b061a4a919b2a32e80087f4cb3e51e924ed
+      stats:
+        total:
+          insertions: 10
+          deletions: 9
+          lines: 19
+          files: 6
+        files:
+          kobuki_dashboard/src/kobuki_dashboard/led_widget.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          kobuki_dashboard/src/kobuki_dashboard/motor_widget.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py:
+            insertions: 2
+            deletions: 1
+            lines: 3
+          kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          kobuki_qtestsuite/src/kobuki_qtestsuite/gyro_drift_frame.py:
+            insertions: 3
+            deletions: 3
+            lines: 6
+          kobuki_qtestsuite/src/kobuki_qtestsuite/testsuite_widget.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 6df4bd7e92aea5cf3696b20861fca0ed413ece6e
+      stats:
+        total:
+          insertions: 8
+          deletions: 3
+          lines: 11
+          files: 2
+        files:
+          kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py:
+            insertions: 5
+            deletions: 1
+            lines: 6
+          kobuki_qtestsuite/src/kobuki_qtestsuite/gyro_drift_frame.py:
+            insertions: 3
+            deletions: 2
+            lines: 5
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 55e84a61e50d23be20f1d7abb4018a635370bff4
+      stats:
+        total:
+          insertions: 1
+          deletions: 4
+          lines: 5
+          files: 1
+        files:
+          kobuki_qtestsuite/src/kobuki_qtestsuite/gyro_drift_frame.py:
+            insertions: 1
+            deletions: 4
+            lines: 5
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_qtestsuite/src/kobuki_qtestsuite/battery_profile_frame.py
     - kobuki_qtestsuite/src/kobuki_qtestsuite/full_size_data_plot.py

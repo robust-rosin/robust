@@ -56,7 +56,6 @@ bug:
     use the trave above (from the first ROS answers links in the links above).
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++
@@ -64,6 +63,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 7284788fc1646c6c6afb42bd0e50969387b4cf34
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          tf2_ros/src/buffer.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: indigo
   ros_pkgs:

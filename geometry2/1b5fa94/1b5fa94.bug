@@ -52,7 +52,6 @@ bug:
     by using the buggy function in a loop multiple times.)
 fix:
   pull-request: https://github.com/ros/geometry2/pull/251
-  license: ['BSD']
   fix-in:
     - tf2_py/src/tf2_py.cpp
   languages:
@@ -61,6 +60,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 1b5fa94cbca8dd5161f29c1697bf71449d14e041
+      stats:
+        total:
+          insertions: 28
+          deletions: 10
+          lines: 38
+          files: 1
+        files:
+          tf2_py/src/tf2_py.cpp:
+            insertions: 28
+            deletions: 10
+            lines: 38
 time-machine:
   ros_distro: indigo
   ros_pkgs:

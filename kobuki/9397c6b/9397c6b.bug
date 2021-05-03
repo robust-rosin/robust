@@ -35,7 +35,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - ecl_containers/include/ecl/containers/push_and_pop/formatters.hpp
     - ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_dynamic.hpp
@@ -48,6 +47,49 @@ fix:
   commits:
     - repo: https://github.com/stonier/ecl_core
       hash: 9397c6b872cba3e894171507ef23f366fc968f3e
+      stats:
+        total:
+          insertions: 656
+          deletions: 543
+          lines: 1199
+          files: 9
+        files:
+          ecl_containers/.cproject:
+            insertions: 297
+            deletions: 297
+            lines: 594
+          ecl_containers/.project:
+            insertions: 7
+            deletions: 3
+            lines: 10
+          ecl_containers/include/ecl/containers/push_and_pop/formatters.hpp:
+            insertions: 100
+            deletions: 98
+            lines: 198
+          ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_dynamic.hpp:
+            insertions: 23
+            deletions: 20
+            lines: 43
+          ecl_containers/include/ecl/containers/push_and_pop/push_and_pop_fixed.hpp:
+            insertions: 132
+            deletions: 109
+            lines: 241
+          ecl_containers/src/examples/formatters.cpp:
+            insertions: 66
+            deletions: 6
+            lines: 72
+          ecl_containers/src/test/push_and_pop.cpp:
+            insertions: 5
+            deletions: 3
+            lines: 8
+          ecl_core/.cproject:
+            insertions: 21
+            deletions: 6
+            lines: 27
+          ecl_core/.project:
+            insertions: 5
+            deletions: 1
+            lines: 6
 fault-codes:
   - PROGRAMMING:CONTROL-FLOW
   - PROGRAMMING:CALCULATIONS

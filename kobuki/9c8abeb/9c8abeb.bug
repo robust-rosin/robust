@@ -43,7 +43,6 @@ bug:
     for Ubuntu Precise, the distribution used to reproduce this bug.
 fix:
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/26
-  license: ['BSD']
   fix-in: ['kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp']
   languages:
     - C++
@@ -51,6 +50,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 9c8abeb81acb2d18a086ac18cd88a8cf6dd9e200
+      stats:
+        total:
+          insertions: 5
+          deletions: 5
+          lines: 10
+          files: 1
+        files:
+          kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp:
+            insertions: 5
+            deletions: 5
+            lines: 10
 fault-codes:
   - EVOLUTION:DEPRECATION
   - EVOLUTION:LIBRARY

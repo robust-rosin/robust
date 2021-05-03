@@ -35,13 +35,12 @@ bug:
   trace: NA
 fix:
   pull-request: NA
-  license: ['Tecnalia']
   fix-in: ['kintinuous_src/utils/Freenect2Reader.cpp']
   languages:
     - C++
   time: 2017-03-22 (11:46)
   commits:
-    - repo: https://git.code.tecnalia.com/robdream/kintinuous/commit/22e4e4f44ed3ead6f9d2d863fcd9d6d677e771f3
+    - repo: https://git.code.tecnalia.com/robdream/kintinuous
       hash: 22e4e4f44ed3ead6f9d2d863fcd9d6d677e771f3
 fault-codes:
   - MODELS:TRANSFORMATIONS

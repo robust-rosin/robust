@@ -34,10 +34,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/plugins/command.cpp
   languages:
@@ -46,6 +42,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: de2cc36b37689363f60876d9892f2630173b4f8c
+      stats:
+        total:
+          insertions: 3
+          deletions: 3
+          lines: 6
+          files: 1
+        files:
+          mavros/src/plugins/command.cpp:
+            insertions: 3
+            deletions: 3
+            lines: 6
 time-machine:
   ros_distro: indigo
   ros_pkgs:

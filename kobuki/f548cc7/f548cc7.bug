@@ -50,7 +50,6 @@ bug:
     __name:=keyop __log:=/home/yujin/.ros/log/97190902-3887-11e2-b4e2-0026c7d760cc/keyop-1.log].
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_keyop/include/keyop_core/keyop_core.hpp
     - kobuki_keyop/manifest.xml
@@ -63,6 +62,29 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: f548cc73fb2959c7ceb6ab1c7f5a973bf95e5594
+      stats:
+        total:
+          insertions: 539
+          deletions: 371
+          lines: 910
+          files: 4
+        files:
+          kobuki_keyop/include/keyop_core/keyop_core.hpp:
+            insertions: 87
+            deletions: 55
+            lines: 142
+          kobuki_keyop/manifest.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          kobuki_keyop/src/keyop_core.cpp:
+            insertions: 408
+            deletions: 308
+            lines: 716
+          kobuki_keyop/src/main.cpp:
+            insertions: 43
+            deletions: 8
+            lines: 51
 fault-codes:
   - CONCURRENCY:BAD-SYNC
   - CONCURRENCY:SIGNALS

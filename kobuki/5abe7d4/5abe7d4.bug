@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_gazebo_plugins/include/kobuki_gazebo_plugins/gazebo_ros_kobuki.h
     - kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp
@@ -39,6 +38,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 5abe7d4ae9f8fb323d4acb6fe131d87a82efef31
+      stats:
+        total:
+          insertions: 7
+          deletions: 7
+          lines: 14
+          files: 2
+        files:
+          kobuki_gazebo_plugins/include/kobuki_gazebo_plugins/gazebo_ros_kobuki.h:
+            insertions: 6
+            deletions: 6
+            lines: 12
+          kobuki_gazebo_plugins/src/gazebo_ros_kobuki.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - EVOLUTION:PATHS
   - EVOLUTION:LIBRARY

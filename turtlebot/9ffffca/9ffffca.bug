@@ -34,7 +34,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/turtlebot/turtlebot/pull/235
-  license: ['BSD']
   fix-in: ['turtlebot_teleop/launch/includes/velocity_smoother.launch.xml']
   languages:
     - Launch XML
@@ -42,6 +41,17 @@ fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
       hash: 9ffffcaeca7dd5a1fbb327c7289b8a11f84da39f
+      stats:
+        total:
+          insertions: 4
+          deletions: 4
+          lines: 8
+          files: 1
+        files:
+          turtlebot_teleop/launch/includes/velocity_smoother.launch.xml:
+            insertions: 4
+            deletions: 4
+            lines: 8
 fault-codes:
   - CONFIG:NAMESPACE
 failure-codes:

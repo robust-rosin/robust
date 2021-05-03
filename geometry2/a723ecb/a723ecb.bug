@@ -34,13 +34,23 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['tf2/CMakeLists.txt']
   languages: ['CMake']
   time: 2013-02-14T23:37:15Z
   commits:
     - repo: https://github.com/ros/geometry2
       hash: a723ecb68f72d52e538f9e9bdbca3e66f7a69444
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          tf2/CMakeLists.txt:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - BDO:BUILD
   - BDO:DEPENDENCY

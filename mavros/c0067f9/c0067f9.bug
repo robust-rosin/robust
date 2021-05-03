@@ -29,10 +29,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/mavros/mission.py
   languages:
@@ -41,6 +37,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: c0067f9f27a5a6ef5354e06fea18279541934520
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          mavros/src/mavros/mission.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: indigo
   ros_pkgs:

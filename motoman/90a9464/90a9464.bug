@@ -30,8 +30,34 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 90a94642f763903f71536dc972782a237309a7f1
+      stats:
+        total:
+          insertions: 43
+          deletions: 12
+          lines: 55
+          files: 5
+        files:
+          motoman_sda10f_support/test/launch_test.xml:
+            insertions: 5
+            deletions: 0
+            lines: 5
+          motoman_sda10f_support/test/sda10f_test.xacro:
+            insertions: 18
+            deletions: 0
+            lines: 18
+          motoman_sda10f_support/urdf/arm_macro.xacro:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          motoman_sda10f_support/urdf/common_torso_macro.xacro:
+            insertions: 3
+            deletions: 3
+            lines: 6
+          motoman_sda10f_support/urdf/sda10f_macro.xacro:
+            insertions: 16
+            deletions: 8
+            lines: 24
   pull-request: 169
-  license: ['BSD']
   fix-in:
     - .travis.yml
     - motoman_sda10f_support/test/launch_test.xml

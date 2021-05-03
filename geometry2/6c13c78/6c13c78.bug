@@ -40,7 +40,6 @@ bug:
     whether it crashes immediately after )
 fix:
   pull-request: https://github.com/ros/geometry2/pull/25
-  license: ['BSD']
   fix-in:
     - tf2/src/buffer_core.cpp
   languages:
@@ -49,6 +48,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 6c13c78a9fd4a9220867f8433243deb00a8d7eb6
+      stats:
+        total:
+          insertions: 52
+          deletions: 48
+          lines: 100
+          files: 1
+        files:
+          tf2/src/buffer_core.cpp:
+            insertions: 52
+            deletions: 48
+            lines: 100
 time-machine:
   ros_distro: hydro
   ros_pkgs:

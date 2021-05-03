@@ -31,10 +31,31 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_core
       hash: fd6b589ccba8ed8531c66a806cb755074207a4c2
+      stats:
+        total:
+          insertions: 1
+          deletions: 9
+          lines: 10
+          files: 1
+        files:
+          kobuki_core/package.xml:
+            insertions: 1
+            deletions: 9
+            lines: 10
     - repo: https://github.com/yujinrobot/kobuki
       hash: 710e62408a0c6934e423411b9ae914fb26a3be49
+      stats:
+        total:
+          insertions: 0
+          deletions: 3
+          lines: 3
+          files: 1
+        files:
+          kobuki/package.xml:
+            insertions: 0
+            deletions: 3
+            lines: 3
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_core/package.xml', 'kobuki/package.xml']
   languages:
     - Package XML

@@ -35,10 +35,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/537
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/plugins/setpoint_raw.cpp
   languages:
@@ -47,6 +43,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: b96bf672a718b9f0c9694e4314283e385ba96231
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          mavros/src/plugins/setpoint_raw.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: indigo
   ros_pkgs:

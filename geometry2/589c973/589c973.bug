@@ -40,7 +40,6 @@ bug:
       PR, as there is no issue for this bug.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/47
-  license: ['BSD']
   fix-in: ['tf2/include/tf2/LinearMath/Vector3.h']
   languages:
     - C++
@@ -48,6 +47,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 589c973ed4250f29b45310e931d5fd4e875aaa33
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          tf2/include/tf2/LinearMath/Vector3.h:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: hydro
   ros_pkgs:

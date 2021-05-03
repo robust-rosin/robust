@@ -35,7 +35,6 @@ bug:
   reproduction: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/77
-  license: ['BSD']
   fix-in:
     - tf2_ros/src/static_transform_broadcaster_program.cpp
   languages:
@@ -44,6 +43,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: d50d51bced9c851eeb8932d3be0a25df03909bac
+      stats:
+        total:
+          insertions: 14
+          deletions: 19
+          lines: 33
+          files: 1
+        files:
+          tf2_ros/src/static_transform_broadcaster_program.cpp:
+            insertions: 14
+            deletions: 19
+            lines: 33
 fault-codes:
   - PROGRAMMING:CONTROL-FLOW
   - PROGRAMMING:UNINITIALISED

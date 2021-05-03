@@ -43,10 +43,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/scripts/mavcmd
   languages:
@@ -55,6 +51,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 564f935bc1ddd6c7849923a647ebd3828cde99f0
+      stats:
+        total:
+          insertions: 4
+          deletions: 4
+          lines: 8
+          files: 1
+        files:
+          mavros/scripts/mavcmd:
+            insertions: 4
+            deletions: 4
+            lines: 8
 time-machine:
   ros_distro: indigo
   ros_pkgs:

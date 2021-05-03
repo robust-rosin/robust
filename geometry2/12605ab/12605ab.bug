@@ -41,7 +41,6 @@ bug:
     rosdistro: a7fd093f6922394309c317d519ec42d469258ea6
 fix:
   pull-request: https://github.com/ros/geometry2/pull/85
-  license: ['BSD']
   fix-in: ['tf2_ros/src/buffer.cpp']
   languages:
     - C++
@@ -49,6 +48,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 12605ab6b8024395c014e76ecc9b75d853c5c631
+      stats:
+        total:
+          insertions: 6
+          deletions: 4
+          lines: 10
+          files: 1
+        files:
+          tf2_ros/src/buffer.cpp:
+            insertions: 6
+            deletions: 4
+            lines: 10
 fault-codes:
   - PROGRAMMING:CONTROL-FLOW
 failure-codes:

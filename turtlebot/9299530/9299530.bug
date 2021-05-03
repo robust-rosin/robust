@@ -28,11 +28,80 @@ bug:
 fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
-      commit: 8cf9d9710e9f2bfb1a7256e2ef292dd70138339c
+      hash: 8cf9d9710e9f2bfb1a7256e2ef292dd70138339c
+      stats:
+        total:
+          insertions: 63
+          deletions: 26
+          lines: 89
+          files: 12
+        files:
+          turtlebot_description/.cproject:
+            insertions: 14
+            deletions: 14
+            lines: 28
+          turtlebot_description/meshes/stacks/circles/68-02403-125_Spacer.dae:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          turtlebot_description/meshes/stacks/circles/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          turtlebot_description/meshes/stacks/circles/68-04552-1000-RA_Turtlebot_M-F_Standoff.dae:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          turtlebot_description/meshes/stacks/circles/68-04552-2000-RA_Turtlebot_M-F_Standoff.dae:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          turtlebot_description/meshes/stacks/circles/68-04556-RA_Kinect_Standoff_Assy.dae:
+            insertions: 1
+            deletions: 0
+            lines: 1
+          turtlebot_description/meshes/stacks/circles/plate_0_logo.dae:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          turtlebot_description/meshes/stacks/circles/plate_1_logo.dae:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          turtlebot_description/meshes/stacks/circles/plate_2_logo.dae:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          turtlebot_description/robots/roomba_circles_asus_xtion_pro.urdf.xacro:
+            insertions: 18
+            deletions: 1
+            lines: 19
+          turtlebot_description/robots/roomba_circles_kinect.urdf.xacro:
+            insertions: 18
+            deletions: 1
+            lines: 19
+          turtlebot_description/urdf/stacks/circles.urdf.xacro:
+            insertions: 5
+            deletions: 7
+            lines: 12
     - repo: https://github.com/turtlebot/turtlebot_create
-      commit: 9299530eb77b9e8a2a18160fb6ece325d38abfbc
+      hash: 9299530eb77b9e8a2a18160fb6ece325d38abfbc
+      stats:
+        total:
+          insertions: 1
+          deletions: 14
+          lines: 15
+          files: 2
+        files:
+          create_description/meshes/create_body.dae:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          create_description/urdf/create.urdf.xacro:
+            insertions: 0
+            deletions: 13
+            lines: 13
   pull-request: https://github.com/turtlebot/turtlebot/pull/66 | https://github.com/turtlebot/turtlebot_create/pull/7
-  license: ['BSD']
   fix-in:
     - turtlebot_description/meshes/stacks/circles/68-02403-125_Spacer.dae
     - turtlebot_description/meshes/stacks/circles/68-02421-8000-RA_Turtlebot_F-F_Standoff.dae

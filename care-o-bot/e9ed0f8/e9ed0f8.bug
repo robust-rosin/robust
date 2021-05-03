@@ -40,7 +40,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-simulation/gazebo_ros_pkgs/pull/343
-  license: ['LGPL']
   fix-in:
     - gazebo_ros_control/CMakeLists.txt
     - gazebo_ros_control/package.xml
@@ -51,6 +50,21 @@ fix:
   commits:
     - repo: https://github.com/ros-simulation/gazebo_ros_pkgs
       hash: e9ed0f8e157398621987bd61e2d78683cd945c2b
+      stats:
+        total:
+          insertions: 11
+          deletions: 0
+          lines: 11
+          files: 2
+        files:
+          gazebo_ros_control/CMakeLists.txt:
+            insertions: 6
+            deletions: 0
+            lines: 6
+          gazebo_ros_control/package.xml:
+            insertions: 5
+            deletions: 0
+            lines: 5
 fault-codes:
   - BDO:DEPENDENCY
   - BDO:ORCHESTRATION

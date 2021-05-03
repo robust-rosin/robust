@@ -39,8 +39,18 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: ddc6f363dde1f1bc28d76908a6f950a333d659b0
+      stats:
+        total:
+          insertions: 10
+          deletions: 6
+          lines: 16
+          files: 1
+        files:
+          motoman_driver/CMakeLists.txt:
+            insertions: 10
+            deletions: 6
+            lines: 16
   pull-request: 25
-  license: ['BSD']
   fix-in: ['motoman_driver/CMakeLists.txt']
   languages:
     - CMake

@@ -36,11 +36,36 @@ bug:
 fix:
   commits:
     - repo: https://github.com/turtlebot/turtlebot
-      commit: 36ceb8dc37e0f930986cc86fe3ff2a9f1a930322
+      hash: 36ceb8dc37e0f930986cc86fe3ff2a9f1a930322
+      stats:
+        total:
+          insertions: 0
+          deletions: 3
+          lines: 3
+          files: 1
+        files:
+          turtlebot_bringup/env-hooks/25.turtlebot.sh.em:
+            insertions: 0
+            deletions: 3
+            lines: 3
     - repo: https://github.com/turtlebot/turtlebot_apps
       hash: 3ea2c306120774e8ed7e69e4e3fce3eca9f5426e
+      stats:
+        total:
+          insertions: 15
+          deletions: 0
+          lines: 15
+          files: 2
+        files:
+          turtlebot_navigation/CMakeLists.txt:
+            insertions: 2
+            deletions: 0
+            lines: 2
+          turtlebot_navigation/env-hooks/25.turtlebot-navigation.sh.em:
+            insertions: 13
+            deletions: 0
+            lines: 13
   pull-request: null
-  license: ['BSD']
   fix-in:
     - turtlebot_bringup/env-hooks/25.turtlebot.sh.em
     - turtlebot_navigation/CMakeLists.txt

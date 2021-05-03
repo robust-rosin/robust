@@ -30,7 +30,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_description/launch/view_model.launch
     - kobuki_description/rviz/model.rviz
@@ -44,6 +43,29 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 4ea5ea7ff535323baeada165764b5b8ceb7bfa87
+      stats:
+        total:
+          insertions: 204
+          deletions: 0
+          lines: 204
+          files: 4
+        files:
+          kobuki_description/launch/view_model.launch:
+            insertions: 16
+            deletions: 0
+            lines: 16
+          kobuki_description/rviz/model.rviz:
+            insertions: 169
+            deletions: 0
+            lines: 169
+          kobuki_description/urdf/kobuki.urdf.xacro:
+            insertions: 7
+            deletions: 0
+            lines: 7
+          kobuki_description/urdf/kobuki_standalone.urdf.xacro:
+            insertions: 12
+            deletions: 0
+            lines: 12
 fault-codes:
   - PROGRAMMING:CONTROL-FLOW
   - MODELS:ROBOT

@@ -52,7 +52,6 @@ bug:
       part of version 0.4.10, while 0.5.x is the minor used for Indigo.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['tf2_py/src/tf2_py.cpp']
   languages:
     - Python
@@ -60,6 +59,21 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: a2f8eea04f95c9abb0e4d7557d796e84fb13a32a
+      stats:
+        total:
+          insertions: 39
+          deletions: 0
+          lines: 39
+          files: 2
+        files:
+          tf2_py/src/tf2_py.cpp:
+            insertions: 33
+            deletions: 0
+            lines: 33
+          tf2_ros/src/tf2_ros/transform_listener.py:
+            insertions: 6
+            deletions: 0
+            lines: 6
 time-machine:
   ros_distro: hydro
   ros_pkgs:

@@ -36,10 +36,31 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 0027b57fea017e610baa226b6645a5a1c071f05c
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          kobuki_ftdi/include/kobuki_ftdi/scanner.hpp:
+            insertions: 1
+            deletions: 0
+            lines: 1
     - repo: https://github.com/yujinrobot/kobuki
       hash: 087aa595f7c93ed7f34c3fb9db5629532bdf972a
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          kobuki_ftdi/manifest.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/include/kobuki_ftdi/scanner.hpp', 'kobuki_ftdi/manifest.xml']
   languages:
     - C++

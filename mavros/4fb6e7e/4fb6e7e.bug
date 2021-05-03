@@ -48,10 +48,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/lib/uas_sensor_orientation.cpp
   languages:
@@ -60,6 +56,21 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 4fb6e7e8190145ba6fa49fa6e13cc49730885b7f
+      stats:
+        total:
+          insertions: 18
+          deletions: 6
+          lines: 24
+          files: 2
+        files:
+          mavros/src/lib/uas_sensor_orientation.cpp:
+            insertions: 11
+            deletions: 5
+            lines: 16
+          mavros/test/test_sensor_orientation.cpp:
+            insertions: 7
+            deletions: 1
+            lines: 8
 time-machine:
   ros_distro: indigo
   ros_pkgs:

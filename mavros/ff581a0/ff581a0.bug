@@ -37,10 +37,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/296 # part of this PR, but there are 37 other commits in it
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros_extras/src/plugins/distance_sensor.cpp
   languages:
@@ -49,6 +45,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: ff581a0752107f7ad875c16f83f7b75ccd92f847
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          mavros_extras/src/plugins/distance_sensor.cpp:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: indigo
   ros_pkgs:

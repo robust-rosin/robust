@@ -33,7 +33,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp', 'kobuki_driver/src/driver/diff_drive.cpp']
   languages:
     - C++
@@ -41,6 +40,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 1c141a54fb2c0e2ec453b32f8026d1cd0ffb14d9
+      stats:
+        total:
+          insertions: 25
+          deletions: 15
+          lines: 40
+          files: 2
+        files:
+          kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp:
+            insertions: 6
+            deletions: 2
+            lines: 8
+          kobuki_driver/src/driver/diff_drive.cpp:
+            insertions: 19
+            deletions: 13
+            lines: 32
 fault-codes:
   - PROGRAMMING:DATATYPE
   - PROGRAMMING:CALCULATIONS

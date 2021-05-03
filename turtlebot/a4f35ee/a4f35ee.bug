@@ -46,17 +46,45 @@ fix:
   commits:
     - repo: https://github.com/robotics-in-concert/rocon_app_platform
       hash: d379385c4de4323318dbb1dd901ab43a24189c19
+      stats:
+        total:
+          insertions: 15
+          deletions: 3
+          lines: 18
+          files: 1
+        files:
+          rocon_app_manager/src/rocon_app_manager/rapp_manager.py:
+            insertions: 15
+            deletions: 3
+            lines: 18
     - repo: https://github.com/ros-infrastructure/rospkg
       hash: 862254530e105aa6a3a0919dc3c9c06c1b4be8cd
-    - repo: https://github.com/ros-infrastructure/rosdep
-      hash: 7a2a9038bdc4f643047360901b0f4f26b0d0ec79
-    - repo: https://github.com/ros-infrastructure/rosdep
-      hash: fceff44c1a5bd99c37f8643fa58a225c5999ec16
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          src/rospkg/os_detect.py:
+            insertions: 2
+            deletions: 0
+            lines: 2
     - repo: https://github.com/ros-infrastructure/rosdep
       hash: a4f35ee51f0eb8f671173c65095b1a9c1963c5c3
+      stats:
+        total:
+          insertions: 12
+          deletions: 1
+          lines: 13
+          files: 1
+        files:
+          src/rosdep2/platforms/debian.py:
+            insertions: 12
+            deletions: 1
+            lines: 13
   pull-request: https://github.com/robotics-in-concert/rocon_app_platform/pull/270
     | https://github.com/ros-infrastructure/rospkg/pull/78
-  license: ['BSD']
   fix-in:
     - rocon_app_manager/src/rocon_app_manager/rapp_manager.py
     - src/rospkg/os_detect.py

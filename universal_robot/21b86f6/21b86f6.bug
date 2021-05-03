@@ -51,7 +51,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/82
-  license: ['BSD']
   fix-in: ['ur_description/urdf/ur10.urdf.xacro']
   languages:
     - Xacro
@@ -59,6 +58,173 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 21b86f63408a99aff35cd82ca6ac180a99566ee5
+      stats:
+        total:
+          insertions: 4876
+          deletions: 519
+          lines: 5395
+          files: 40
+        files:
+          ur10_moveit_config/.setup_assistant:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur10_moveit_config/config/fake_controllers.yaml:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur10_moveit_config/config/ur10.srdf:
+            insertions: 7
+            deletions: 1
+            lines: 8
+          ur10_moveit_config/package.xml:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          ur_description/launch/test.launch:
+            insertions: 3
+            deletions: 2
+            lines: 5
+          ur_description/meshes/ur10/collision/Base.dae:
+            insertions: 228
+            deletions: 0
+            lines: 228
+          ur_description/meshes/ur10/collision/Base.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/collision/Forearm.dae:
+            insertions: 416
+            deletions: 0
+            lines: 416
+          ur_description/meshes/ur10/collision/Forearm.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/collision/Shoulder.dae:
+            insertions: 378
+            deletions: 0
+            lines: 378
+          ur_description/meshes/ur10/collision/Shoulder.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/collision/UpperArm.dae:
+            insertions: 371
+            deletions: 0
+            lines: 371
+          ur_description/meshes/ur10/collision/UpperArm.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/collision/Wrist1.dae:
+            insertions: 314
+            deletions: 0
+            lines: 314
+          ur_description/meshes/ur10/collision/Wrist1.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/collision/Wrist2.dae:
+            insertions: 314
+            deletions: 0
+            lines: 314
+          ur_description/meshes/ur10/collision/Wrist2.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/collision/Wrist3.dae:
+            insertions: 236
+            deletions: 0
+            lines: 236
+          ur_description/meshes/ur10/collision/Wrist3.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/visual/Base.dae:
+            insertions: 228
+            deletions: 0
+            lines: 228
+          ur_description/meshes/ur10/visual/Base.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/visual/Forearm.dae:
+            insertions: 416
+            deletions: 0
+            lines: 416
+          ur_description/meshes/ur10/visual/Forearm.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/visual/Shoulder.dae:
+            insertions: 378
+            deletions: 0
+            lines: 378
+          ur_description/meshes/ur10/visual/Shoulder.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/visual/UpperArm.dae:
+            insertions: 371
+            deletions: 0
+            lines: 371
+          ur_description/meshes/ur10/visual/UpperArm.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/visual/Wrist1.dae:
+            insertions: 314
+            deletions: 0
+            lines: 314
+          ur_description/meshes/ur10/visual/Wrist1.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/visual/Wrist2.dae:
+            insertions: 314
+            deletions: 0
+            lines: 314
+          ur_description/meshes/ur10/visual/Wrist2.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/meshes/ur10/visual/Wrist3.dae:
+            insertions: 236
+            deletions: 0
+            lines: 236
+          ur_description/meshes/ur10/visual/Wrist3.stl:
+            insertions: 0
+            deletions: 0
+            lines: 0
+          ur_description/urdf/ur10.transmission.xacro:
+            insertions: 55
+            deletions: 55
+            lines: 110
+          ur_description/urdf/ur10.urdf.xacro:
+            insertions: 114
+            deletions: 72
+            lines: 186
+          ur_description/urdf/ur10_joint_limited.urdf.xacro:
+            insertions: 0
+            deletions: 275
+            lines: 275
+          ur_description/urdf/ur10_joint_limited_robot.urdf:
+            insertions: 79
+            deletions: 54
+            lines: 133
+          ur_description/urdf/ur10_joint_limited_robot.urdf.xacro:
+            insertions: 11
+            deletions: 2
+            lines: 13
+          ur_description/urdf/ur10_robot.urdf:
+            insertions: 79
+            deletions: 54
+            lines: 133
+          ur_description/urdf/ur10_robot.urdf.xacro:
+            insertions: 11
+            deletions: 1
+            lines: 12
 fault-codes:
   - CONFIG:CONSTANTS
   - MODELS:ROBOT

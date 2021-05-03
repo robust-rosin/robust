@@ -41,7 +41,6 @@ bug:
     issue, it suffices for the unit test to import the affected files.
 fix:
   pull-request: https://github.com/yujinrobot/kobuki_desktop/pull/49
-  license: ['BSD']
   fix-in: ['kobuki_dashboard/src/kobuki_dashboard/battery_widget.py', 'kobuki_dashboard/src/kobuki_dashboard/dashboard.py']
   languages:
     - Python
@@ -49,6 +48,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_desktop
       hash: 61a75df171e8ac8f34ed848456a7a267d4d9d3e3
+      stats:
+        total:
+          insertions: 3
+          deletions: 4
+          lines: 7
+          files: 2
+        files:
+          kobuki_dashboard/src/kobuki_dashboard/battery_widget.py:
+            insertions: 1
+            deletions: 2
+            lines: 3
+          kobuki_dashboard/src/kobuki_dashboard/dashboard.py:
+            insertions: 2
+            deletions: 2
+            lines: 4
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

@@ -42,7 +42,6 @@ bug:
     https://github.com/robust-rosin/robust/issues/63.
 fix:
   pull-request: https://github.com/ros-perception/image_pipeline/pull/79
-  license: ['BSD']
   fix-in: ['depth_image_proc/package.xml']
   languages:
     - Package XML
@@ -50,6 +49,17 @@ fix:
   commits:
     - repo: https://github.com/ros-perception/image_pipeline
       hash: f01d9525901b75858047e6fa81e4efc92c7dfedc
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          depth_image_proc/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

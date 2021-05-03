@@ -49,7 +49,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/param/diagnostics.yaml
   languages:
@@ -58,6 +57,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 8a729db54ee9a8b43f4634ab8052ddaa24d517fd
+      stats:
+        total:
+          insertions: 4
+          deletions: 4
+          lines: 8
+          files: 1
+        files:
+          kobuki_node/param/diagnostics.yaml:
+            insertions: 4
+            deletions: 4
+            lines: 8
 fault-codes:
   - CONFIG:NAMESPACE
   - CONFIG:PARAM

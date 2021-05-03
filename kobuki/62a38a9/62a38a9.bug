@@ -53,7 +53,6 @@ bug:
     Detail   : The device is not a valid device for writing.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++
@@ -61,6 +60,33 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 62a38a99cdfaf511cff1dd9e03b7bb88516f9033
+      stats:
+        total:
+          insertions: 62
+          deletions: 80
+          lines: 142
+          files: 5
+        files:
+          kobuki_driver/include/kobuki_driver/kobuki.hpp:
+            insertions: 10
+            deletions: 21
+            lines: 31
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 13
+            deletions: 14
+            lines: 27
+          kobuki_node/include/kobuki_node/kobuki_node.hpp:
+            insertions: 4
+            deletions: 5
+            lines: 9
+          kobuki_node/src/node/kobuki_node.cpp:
+            insertions: 5
+            deletions: 19
+            lines: 24
+          kobuki_node/src/node/slot_callbacks.cpp:
+            insertions: 30
+            deletions: 21
+            lines: 51
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:

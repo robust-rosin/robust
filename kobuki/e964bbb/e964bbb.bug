@@ -37,8 +37,6 @@ bug:
   trace: null
 fix:
   pull-request: N/A
-  license:
-    - 'BSD'
   fix-in:
     - 'kobuki_driver/src/driver/diff_drive.cpp'
   languages:
@@ -47,6 +45,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: e964bbb8700fb1a9b95c0cfe5a44d43321294d4f
+      stats:
+        total:
+          insertions: 20
+          deletions: 12
+          lines: 32
+          files: 1
+        files:
+          kobuki_driver/src/driver/diff_drive.cpp:
+            insertions: 20
+            deletions: 12
+            lines: 32
 time-machine:
   ros_distro: hydro
   ros_pkgs:

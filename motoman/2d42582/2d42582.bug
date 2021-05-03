@@ -33,7 +33,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['motoman_sia20d_support/urdf/sia20d.urdf', 'motoman_sia20d_support/urdf/sia20d_macro.xacro']
   languages:
     - URDF
@@ -42,6 +41,21 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/motoman
       hash: 2d42582c692191f67f1e986467822fcd3b3935b9
+      stats:
+        total:
+          insertions: 19
+          deletions: 14
+          lines: 33
+          files: 2
+        files:
+          motoman_sia20d_support/urdf/sia20d.urdf:
+            insertions: 12
+            deletions: 7
+            lines: 19
+          motoman_sia20d_support/urdf/sia20d_macro.xacro:
+            insertions: 7
+            deletions: 7
+            lines: 14
 fault-codes:
   - CONFIG:PARAM
   - MODELS:ROBOT

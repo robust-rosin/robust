@@ -29,10 +29,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/230
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/plugins/actuator_control.cpp
   languages:
@@ -41,6 +37,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: dab1b8a16d6194056cb7e76215ecf299d1a90f08
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          mavros/src/plugins/actuator_control.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: indigo
   ros_pkgs:

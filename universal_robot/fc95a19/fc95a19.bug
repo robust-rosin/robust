@@ -52,14 +52,28 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/136
-  license: ['BSD']
   fix-in: ['ur_driver/src/ur_driver/driver.py']
   languages:
     - Python
   time: 2014-11-03 (16:30)
   commits:
-    - repo: https://github.com/ros-industrial/universal_robot/
+    - repo: https://github.com/ros-industrial/universal_robot
       hash: fc95a19ac913e31c09ab52666405be0f5aacc24e
+      stats:
+        total:
+          insertions: 11
+          deletions: 1
+          lines: 12
+          files: 2
+        files:
+          ur_bringup/launch/ur_common.launch:
+            insertions: 4
+            deletions: 0
+            lines: 4
+          ur_driver/src/ur_driver/driver.py:
+            insertions: 7
+            deletions: 1
+            lines: 8
 fault-codes:
   - CONFIG:PARAM
 failure-codes:

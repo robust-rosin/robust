@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_driver/include/kobuki_driver/kobuki.hpp', 'kobuki_driver/src/driver/kobuki.cpp']
   languages:
     - C++
@@ -39,6 +38,49 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 03660afb5917366cc6d57567e2f695450fd95feb
+      stats:
+        total:
+          insertions: 113
+          deletions: 74
+          lines: 187
+          files: 9
+        files:
+          kobuki_bringup/resources/launch/readme.txt:
+            insertions: 9
+            deletions: 0
+            lines: 9
+          kobuki_driver/include/kobuki_driver/command.hpp:
+            insertions: 16
+            deletions: 1
+            lines: 17
+          kobuki_driver/include/kobuki_driver/kobuki.hpp:
+            insertions: 9
+            deletions: 7
+            lines: 16
+          kobuki_driver/include/kobuki_driver/modules/diff_drive.hpp:
+            insertions: 12
+            deletions: 2
+            lines: 14
+          kobuki_driver/src/driver/command.cpp:
+            insertions: 27
+            deletions: 0
+            lines: 27
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 16
+            deletions: 63
+            lines: 79
+          kobuki_node/include/kobuki_node/kobuki_node.hpp:
+            insertions: 4
+            deletions: 0
+            lines: 4
+          kobuki_node/src/node/kobuki_node.cpp:
+            insertions: 4
+            deletions: 1
+            lines: 5
+          kobuki_node/src/node/slot_callbacks.cpp:
+            insertions: 16
+            deletions: 0
+            lines: 16
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:

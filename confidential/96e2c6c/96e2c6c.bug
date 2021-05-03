@@ -41,7 +41,6 @@ bug:
 fix:
   commits: confidential
   pull-request: null
-  license: ['BSD']
   fix-in: ['trajectory_generation.cpp', 'utils.h']
   languages:
     - C++

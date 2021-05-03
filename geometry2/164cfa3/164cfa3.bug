@@ -61,7 +61,6 @@ bug:
   reproduction: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/62
-  license: ['BSD']
   fix-in:
     - tf2/src/buffer_core.cpp
   languages:
@@ -70,6 +69,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 164cfa3ef1aad2d11b35894275730fe126e35d3e
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          tf2/src/buffer_core.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - PROGRAMMING:STRING-FORMATTING
 failure-codes:

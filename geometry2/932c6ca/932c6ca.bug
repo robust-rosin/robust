@@ -34,7 +34,6 @@ bug:
   reproduction: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/51
-  license: ['BSD']
   fix-in:
     - tf2_ros/include/tf2_ros/transform_listener.h
     - tf2_ros/src/transform_listener.cpp
@@ -44,6 +43,21 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 932c6cafd2b7959133fb32303e8c27cca3ff9e33
+      stats:
+        total:
+          insertions: 10
+          deletions: 23
+          lines: 33
+          files: 2
+        files:
+          tf2_ros/include/tf2_ros/transform_listener.h:
+            insertions: 3
+            deletions: 3
+            lines: 6
+          tf2_ros/src/transform_listener.cpp:
+            insertions: 7
+            deletions: 20
+            lines: 27
 time-machine:
   ros_distro: hydro
   ros_pkgs:

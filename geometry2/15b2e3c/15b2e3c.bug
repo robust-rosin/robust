@@ -36,7 +36,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/10
-  license: ['BSD']
   fix-in:
     - tf2_ros/include/tf2_ros/buffer_server.h
     - tf2_ros/src/buffer_server_main.cpp
@@ -45,7 +44,22 @@ fix:
   time: Jul 10, 2013, 8:48 AM GMT+2
   commits:
     - repo: https://github.com/ros/geometry2
-      hash: https://github.com/ros/geometry2/commit/15b2e3c52152ee4fc19c55ec76f049e990c05809
+      hash: 15b2e3c52152ee4fc19c55ec76f049e990c05809
+      stats:
+        total:
+          insertions: 3
+          deletions: 2
+          lines: 5
+          files: 2
+        files:
+          tf2_ros/include/tf2_ros/buffer_server.h:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          tf2_ros/src/buffer_server_main.cpp:
+            insertions: 2
+            deletions: 1
+            lines: 3
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:

@@ -31,7 +31,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_bringup/resources/yaml/kobuki.yaml']
   languages:
     - Param YAML
@@ -39,6 +38,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: d9aa65681b3f10d0b6dda3d591a24b8be5119fb6
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          kobuki_bringup/resources/yaml/kobuki.yaml:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - CONFIG:CONSTANTS
 failure-codes:

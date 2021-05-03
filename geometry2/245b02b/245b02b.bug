@@ -38,7 +38,6 @@ bug:
   reproduction: null
 fix:
   pull-request: https://github.com/ros/geometry2/pull/101
-  license: ['BSD']
   fix-in:
     - tf2_ros/include/tf2_ros/message_filter.h
   languages:
@@ -47,6 +46,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 245b02b982981fc80dbea9f50e774e7de6f3c88b
+      stats:
+        total:
+          insertions: 18
+          deletions: 6
+          lines: 24
+          files: 1
+        files:
+          tf2_ros/include/tf2_ros/message_filter.h:
+            insertions: 18
+            deletions: 6
+            lines: 24
 fault-codes:
   - CONCURRENCY:BAD-SYNC
 failure-codes:

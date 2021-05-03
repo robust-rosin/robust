@@ -45,10 +45,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - src/mavconn/mavconn_interface.cpp
   languages:
@@ -57,6 +53,21 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 215010d25409211ccfb35375c218c74c921b1a3a
+      stats:
+        total:
+          insertions: 6
+          deletions: 5
+          lines: 11
+          files: 2
+        files:
+          src/mavconn/mavconn_interface.cpp:
+            insertions: 3
+            deletions: 5
+            lines: 8
+          src/plugins/waypoint.cpp:
+            insertions: 3
+            deletions: 0
+            lines: 3
 time-machine:
   ros_distro: hydro
   ros_pkgs:

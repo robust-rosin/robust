@@ -44,7 +44,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/114
-  license: ['BSD']
   fix-in: ['ur_kinematics/CMakeLists.txt']
   languages:
     - CMake
@@ -52,6 +51,21 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 040fd110f9281875d87b8e6aaba0c1c8f2d7d6fd
+      stats:
+        total:
+          insertions: 24
+          deletions: 151
+          lines: 175
+          files: 2
+        files:
+          ur_kinematics/CMakeLists.txt:
+            insertions: 17
+            deletions: 115
+            lines: 132
+          ur_kinematics/package.xml:
+            insertions: 7
+            deletions: 36
+            lines: 43
 fault-codes:
   - BDO:BUILD
 failure-codes:

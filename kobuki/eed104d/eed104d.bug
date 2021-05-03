@@ -51,7 +51,6 @@ bug:
     -- Configuring incomplete, errors occurred!
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/package.xml']
   languages:
     - Package XML
@@ -59,6 +58,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_core
       hash: eed104dcdd8862824598838b65a7e2339f8e660a
+      stats:
+        total:
+          insertions: 7
+          deletions: 3
+          lines: 10
+          files: 2
+        files:
+          kobuki_ftdi/CHANGELOG.rst:
+            insertions: 4
+            deletions: 0
+            lines: 4
+          kobuki_ftdi/package.xml:
+            insertions: 3
+            deletions: 3
+            lines: 6
 fault-codes:
   - BDO:BUILD
 failure-codes:

@@ -45,7 +45,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_auto_docking/launch/auto_dock_with_safe_keyop.launch
   languages:
@@ -54,6 +53,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 35682ec3c3e7177373c66c48228ad58b2eb34aae
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          kobuki_auto_docking/launch/auto_dock_with_safe_keyop.launch:
+            insertions: 1
+            deletions: 1
+            lines: 2
 fault-codes:
   - CONFIG:REMAPPING
   - BDO:DEPENDENCY

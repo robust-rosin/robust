@@ -32,7 +32,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ipa320/cob_command_tools/pull/50 # large PR, fix commit is part of it
-  license: ['LGPL']
   fix-in:
     - cob_command_tools/cob_script_server/package.xml
   languages:
@@ -41,6 +40,17 @@ fix:
   commits:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: 81aa175d76608fbac6655ce745e8eaa1d35f51f9
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          cob_script_server/package.xml:
+            insertions: 2
+            deletions: 0
+            lines: 2
 fault-codes:
   - BDO:DEPENDENCY
   - BDO:ORCHESTRATION

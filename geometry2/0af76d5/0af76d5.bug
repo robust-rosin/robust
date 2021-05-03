@@ -64,14 +64,7 @@ bug:
     (to our best knowledge this race condition has not been fixed until today).  In
     the discussions whether a design flaw is a bug, we decided to reproduce the race,
     but not fix the design.  Thus this bug has no fixing commit.
-fix:
-  commits: []
-  pull-request: null
-  license: []
-  fix-in: []
-  languages:
-    - C++
-  time: null
+fix: null
 time-machine:
   ros_distro: hydro
   ros_pkgs:

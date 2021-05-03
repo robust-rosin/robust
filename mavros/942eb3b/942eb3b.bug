@@ -28,10 +28,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/CMakeLists.txt
   languages:
@@ -40,6 +36,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 942eb3b173b97c66c8cb8df213acf01d32642002
+      stats:
+        total:
+          insertions: 3
+          deletions: 0
+          lines: 3
+          files: 1
+        files:
+          mavros/CMakeLists.txt:
+            insertions: 3
+            deletions: 0
+            lines: 3
 time-machine:
   ros_distro: hydro
   ros_pkgs:

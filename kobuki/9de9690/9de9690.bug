@@ -39,7 +39,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/package.xml
   languages:
@@ -48,9 +47,20 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 9de969082a80944fa779a17a570877901289e31f
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          kobuki_node/package.xml:
+            insertions: 2
+            deletions: 0
+            lines: 2
 fault-codes:
   - BDO:DEPENDENCY
   - SYSTEMS:CONFIG
 failure-codes:
   - SOFTWARE:BUILD
-  - SYSTEM:LOSS-OF-CONTROL
+  - SYSTEM:NONE

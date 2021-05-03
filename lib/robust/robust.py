@@ -28,6 +28,18 @@ _FORKED_REPOS = (
     'universal_robot',
     'cob_robots',
     'ros_comm',
+    'rocon_app_platform',
+    'cob_common',
+    'rospkg',
+    'rosdep',
+    'openni_launch',
+    'ecl_core',
+    'rqt',
+    'turtlebot_apps',
+    'turtlebot_create',
+    'gazebo_ros_pkgs',
+    'cob_driver',
+    'qt_gui_core',
 )
 
 

@@ -43,15 +43,29 @@ bug:
     rosdistro: ros/rosdistro@75ab3e205a0d04fc81763657736742e315733956
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/275
-  license: ['BSD']
   fix-in: ['ur_kinematics/CMakeLists.txt', 'ur_kinematics/package.xml']
   languages:
     - CMake
     - Package XML
   time: 2016-12-29 (20:34)
   commits:
-    - repo: https://github.com/ros-industrial/universal_robot/
+    - repo: https://github.com/ros-industrial/universal_robot
       hash: f8d175b09ea955ebe83aecbe19105c28f0225524
+      stats:
+        total:
+          insertions: 4
+          deletions: 2
+          lines: 6
+          files: 2
+        files:
+          ur_kinematics/CMakeLists.txt:
+            insertions: 2
+            deletions: 2
+            lines: 4
+          ur_kinematics/package.xml:
+            insertions: 2
+            deletions: 0
+            lines: 2
 fault-codes:
   - EVOLUTION:PACKAGE
 failure-codes:

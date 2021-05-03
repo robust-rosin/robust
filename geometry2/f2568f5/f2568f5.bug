@@ -40,7 +40,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/ros/geometry2/pull/126
-  license: ['BSD']
   fix-in:
     - tf2_sensor_msgs/package.xml
   languages:
@@ -49,6 +48,17 @@ fix:
   commits:
     - repo: https://github.com/ros/geometry2
       hash: f2568f597923d0ea4495c18cd828a67f12e05f0a
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          tf2_sensor_msgs/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
 time-machine:
   ros_distro: null
   ros_pkgs: null

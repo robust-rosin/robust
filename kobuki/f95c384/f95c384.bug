@@ -29,7 +29,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/yujinrobot/kobuki/pull/334
-  license: ['BSD']
   fix-in: ['kobuki_node/package.xml']
   languages:
     - Package XML
@@ -37,6 +36,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: f95c3847d97fba46b6317e00ffd78ce352ec376f
+      stats:
+        total:
+          insertions: 3
+          deletions: 4
+          lines: 7
+          files: 1
+        files:
+          kobuki_node/package.xml:
+            insertions: 3
+            deletions: 4
+            lines: 7
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

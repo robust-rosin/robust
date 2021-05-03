@@ -56,7 +56,6 @@ bug:
     are not part of the source code that is importable by standard means.
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/scripts/getOdom2D.py
     - kobuki_node/scripts/getYaw.py
@@ -70,6 +69,21 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: dd40270d17cdd3e1729437f0988c0acb6c622d5e
+      stats:
+        total:
+          insertions: 3
+          deletions: 3
+          lines: 6
+          files: 2
+        files:
+          kobuki_node/scripts/getOdom2D.py:
+            insertions: 1
+            deletions: 1
+            lines: 2
+          kobuki_node/scripts/getYaw.py:
+            insertions: 2
+            deletions: 2
+            lines: 4
 fault-codes:
   - EVOLUTION:PACKAGE
   - PROGRAMMING:BROKEN-CONTRACT

@@ -48,10 +48,6 @@ bug:
   trace: N/A
 fix:
   pull-request: https://github.com/mavlink/mavros/pull/527
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - libmavconn/src/serial.cpp
   languages:
@@ -60,6 +56,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 29af3a3c14da0e5b92ebad40b8befa8e0141b63d
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          libmavconn/src/serial.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: indigo
   ros_pkgs:

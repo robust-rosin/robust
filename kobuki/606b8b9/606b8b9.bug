@@ -30,7 +30,6 @@ bug:
   trace: null
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/57-kobuki.rules']
   languages:
     - udev rules
@@ -38,6 +37,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: 606b8b9434ce501ff663e9252f5459eb9c50c6af
+      stats:
+        total:
+          insertions: 2
+          deletions: 2
+          lines: 4
+          files: 1
+        files:
+          kobuki_ftdi/57-kobuki.rules:
+            insertions: 2
+            deletions: 2
+            lines: 4
 fault-codes:
   - PROGRAMMING:RESOURCES
   - SYSTEMS:OS

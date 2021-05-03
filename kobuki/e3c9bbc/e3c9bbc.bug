@@ -44,7 +44,6 @@ bug:
     not contain a ROS package, and makes the reproduction process harder.
 fix:
   pull-request: https://github.com/ros/rosdistro/pull/4560
-  license: ['BSD']
   fix-in:
     - hydro/distribution.yaml
   languages:
@@ -53,6 +52,17 @@ fix:
   commits:
     - repo: https://github.com/ros/rosdistro
       hash: e3c9bbcd9a3c05a5375375732d52e185cca5afb0
+      stats:
+        total:
+          insertions: 36
+          deletions: 0
+          lines: 36
+          files: 1
+        files:
+          hydro/distribution.yaml:
+            insertions: 36
+            deletions: 0
+            lines: 36
 fault-codes:
   - BDO:BUILD
 failure-codes:

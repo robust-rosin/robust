@@ -26,11 +26,20 @@ description: >
   We consider this a minor issue, as it does not affect users of ROS systems in
   anyway.  It does create an annoyance for developers who need to install the
   dependent packages manually.
+
+  The proposed fix in PR#170 was never merged and and the issue was moved to the
+  ticket linked below. The new proposed solution in PR#357 (which is still not
+  merged) breaks the cyclic dependency between tf2 and tf2_geometry_msgs
+  by moving the functionality to tf2_geometry_msgs.h. We consider this bug
+  not fixed.
 classification: Missing Dependency (no CWE)
 keywords: ['c++', 'dependency', 'header', 'include', 'circular']
 system: core component
 severity: minor-issue
-links: []
+links:
+  - https://github.com/ros/geometry2/issues/275
+  - https://github.com/ros/geometry2/pull/170
+  - https://github.com/ros/geometry2/pull/357
 bug:
   phase: build
   specificity: general issue
@@ -49,17 +58,7 @@ bug:
   reproducibility: always
   trace: null
   reproduction: Install tf2 and try to compile.
-fix:
-  pull-request: https://github.com/ros/geometry2/pull/170
-  license: ["BSD"]
-  fix-in:
-    - tf2/package.xml
-  languages:
-    - Package XML
-  time: null
-  commits:
-    - repo: https://github.com/ros/geometry2
-      hash: 0c3aef30b7a436b2df553ff08b9a060c94fa3e32
+fix: null
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

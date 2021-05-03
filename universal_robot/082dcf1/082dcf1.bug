@@ -58,7 +58,6 @@ bug:
   trace: null
 fix:
   pull-request: https://github.com/ros-industrial/universal_robot/pull/100 | https://github.com/ros-industrial/universal_robot/pull/130
-  license: ['BSD']
   fix-in: ['package.xml']
   languages:
     - Package XML
@@ -66,6 +65,17 @@ fix:
   commits:
     - repo: https://github.com/ros-industrial/universal_robot
       hash: 082dcf1551d84a9a874443adc39627f67272ac4c
+      stats:
+        total:
+          insertions: 1
+          deletions: 0
+          lines: 1
+          files: 1
+        files:
+          universal_robot/package.xml:
+            insertions: 1
+            deletions: 0
+            lines: 1
 fault-codes:
   - BDO:DEPENDENCY
 failure-codes:

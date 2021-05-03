@@ -37,46 +37,4 @@ bug:
   time-reported: 2012-11-15T09:12:47Z
   reproducibility: always
   trace: null
-fix:
-  commits:
-    - repo: https://github.com/yujinrobot/kobuki
-      hash: 09059257fa3f5d0f475712ea7700f1d3dca9fe37
-    - repo: https://github.com/yujinrobot/kobuki
-      hash: 1f5e8b0ad3ec4aaf49fd52bd0b85d1480bee3c9f
-    - repo: https://github.com/yujinrobot/kobuki
-      hash: c830670377746302ca09aa1d484efcc0739a223c
-    - repo: https://github.com/yujinrobot/kobuki
-      hash: b5f0943df63721e77ce137e73cb0537d19790d54
-    - repo: https://github.com/yujinrobot/kobuki
-      hash: 2fd8f8717e45604b06abf3df39e18b79a895f30c
-  pull-request: null
-  license: ['BSD']
-  fix-in:
-    - kobuki_node/include/kobuki_node/kobuki_ros.hpp
-    - kobuki_node/launch/kobuki_node.launch
-    - kobuki_node/launch/kobuki_nodelet.launch
-    - kobuki_node/manifest.xml
-    - kobuki_node/plugins/nodelet_plugins.xml
-    - kobuki_node/src/CMakeLists.txt
-    - kobuki_node/src/library/CMakeLists.txt
-    - kobuki_node/src/library/diagnostics.cpp
-    - kobuki_node/src/library/kobuki_ros.cpp
-    - kobuki_node/src/library/odometry.cpp
-    - kobuki_node/src/library/slot_callbacks.cpp
-    - kobuki_node/src/library/subscriber_callbacks.cpp
-    - kobuki_node/src/node/kobuki_node.cpp
-    - kobuki_node/src/nodelet/CMakeLists.txt
-    - kobuki_node/src/nodelet/kobuki_nodelet.cpp
-    - kobuki_safety_controller/include/kobuki_safety_controller/safety_controller.hpp
-    - kobuki_safety_controller/src/nodelet.cpp
-  languages:
-    - C++
-    - CMake
-    - Package XML
-  time: 2012-12-03 (08:25)
-fault-codes:
-  - PROGRAMMING:BAD-SMELL
-  - PROGRAMMING:BROKEN-CONTRACT
-failure-codes:
-  - SOFTWARE:PERFORMANCE
-  - SYSTEM:DEGRADED-PERFORMANCE
+fix: null

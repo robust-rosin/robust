@@ -31,10 +31,39 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki
       hash: c04eae575167f579f9fce4e11f212e6d73b3deac
+      stats:
+        total:
+          insertions: 47
+          deletions: 5
+          lines: 52
+          files: 3
+        files:
+          kobuki_driver/include/kobuki_driver/kobuki.hpp:
+            insertions: 2
+            deletions: 0
+            lines: 2
+          kobuki_driver/include/kobuki_driver/packets/firmware.hpp:
+            insertions: 20
+            deletions: 0
+            lines: 20
+          kobuki_driver/src/driver/kobuki.cpp:
+            insertions: 25
+            deletions: 5
+            lines: 30
     - repo: https://github.com/yujinrobot/kobuki
       hash: d92a96e5a05f69c626132db42490ac382298df93
+      stats:
+        total:
+          insertions: 5
+          deletions: 0
+          lines: 5
+          files: 1
+        files:
+          kobuki_node/src/library/kobuki_ros.cpp:
+            insertions: 5
+            deletions: 0
+            lines: 5
   pull-request: null
-  license: ['BSD']
   fix-in:
     - kobuki_node/src/library/kobuki_ros.cpp
     - kobuki_driver/include/kobuki_driver/kobuki.hpp

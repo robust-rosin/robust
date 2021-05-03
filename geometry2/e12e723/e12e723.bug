@@ -43,8 +43,6 @@ bug:
       as only at runtime the missing package will cause actual problems.
 fix:
   pull-request: https://github.com/ros/geometry2/pull/150
-  license:
-    - BSD
   fix-in:
     - tf2_geometry_msgs/package.xml
   languages:
@@ -52,7 +50,18 @@ fix:
   time: 2016-03-04 03:30 GMT+1
   commits:
     - repo: https://github.com/ros/geometry2
-      hash: 1f019166ccedf8ce5151944f5e33302afaf82679
+      hash: e12e7236b48295ec495625937f9d771573420512
+      stats:
+        total:
+          insertions: 2
+          deletions: 0
+          lines: 2
+          files: 1
+        files:
+          tf2_geometry_msgs/package.xml:
+            insertions: 2
+            deletions: 0
+            lines: 2
 time-machine:
   ros_distro: indigo
   ros_pkgs:

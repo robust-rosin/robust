@@ -35,10 +35,6 @@ bug:
   trace: N/A
 fix:
   pull-request: N/A
-  license:
-    - BSD
-    - GPLv3
-    - LGPLv3
   fix-in:
     - mavros/src/lib/uas_timesync.cpp
   languages:
@@ -47,6 +43,17 @@ fix:
   commits:
     - repo: https://github.com/mavlink/mavros
       hash: 6bb267295ec87d8a089cc0f2f7d23555ea342943
+      stats:
+        total:
+          insertions: 1
+          deletions: 1
+          lines: 2
+          files: 1
+        files:
+          mavros/src/lib/uas_timesync.cpp:
+            insertions: 1
+            deletions: 1
+            lines: 2
 time-machine:
   ros_distro: kinetic
   ros_pkgs:

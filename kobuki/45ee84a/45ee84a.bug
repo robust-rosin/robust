@@ -37,7 +37,6 @@ bug:
     https://github.com/robust-rosin/robust/issues/144
 fix:
   pull-request: null
-  license: ['BSD']
   fix-in: ['kobuki_ftdi/CMakeLists.txt']
   languages:
     - CMake
@@ -45,6 +44,17 @@ fix:
   commits:
     - repo: https://github.com/yujinrobot/kobuki_core
       hash: 45ee84aa1e920b26f8191763e20c10c5806ead60
+      stats:
+        total:
+          insertions: 0
+          deletions: 1
+          lines: 1
+          files: 1
+        files:
+          kobuki_ftdi/CMakeLists.txt:
+            insertions: 0
+            deletions: 1
+            lines: 1
 fault-codes:
   - BDO:DEPENDENCY
   - PROGRAMMING:COPYPASTA
