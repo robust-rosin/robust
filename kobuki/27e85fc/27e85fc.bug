@@ -50,4 +50,4 @@ fault-codes:
   - EVOLUTION:DEPRECATION
 failure-codes:
   - SOFTWARE:NONE
-  - SOFTWARE:NONE
+  - SYSTEM:NONE
