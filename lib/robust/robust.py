@@ -256,10 +256,10 @@ class FaultFailureSection:
 
         try:
             value = self.bug.yaml[key]
-        except KeyError:
+        except KeyError as err:
             message = (f"{self.bug.filename}: missing {key} "
                        "in bug description")
-            print(message)
+            raise ValueError(message) from err
 
         return value
 
@@ -325,7 +325,7 @@ class BugDescription:
 
     @property
     def failures(self) -> t.Optional[t.List[str]]:
-        return FaultFailureSection(self).faults
+        return FaultFailureSection(self).failures
 
     def save(self) -> None:
         with open(self.filename, 'w') as f:
