@@ -5,7 +5,7 @@ title: Inefficient checking for map emptiness using size() rather than empty()
 description: >
   This commit performs two small performance/hygiene-related fixes
   to the code, discovered using the cppcheck static analyser.
-  
+
   The fix replaces code that checks a std::map is empty by ensuring
   its size is greater than zero with a call to "std::map::empty()".
 
