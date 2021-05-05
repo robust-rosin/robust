@@ -1,6 +1,6 @@
 %YAML 1.1
 ---
-id: '91072e8'
+id: 91072e8
 title: Directory names with mixed case
 description: >
   The directories Inform and MotoPlus are mixed case, all other
@@ -147,7 +147,7 @@ fix:
             insertions: 1
             deletions: 1
             lines: 2
-  pull-request: 12
+  pull-request: https://github.com/ros-industrial/motoman/pull/14
   fix-in:
     - ros-industrial/motoman
     - ros-industrial/motoman/motoman_mh5_support
