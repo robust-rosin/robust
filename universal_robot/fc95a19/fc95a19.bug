@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 id: fc95a19
-title: Path planning exceeding velocity limits of ur5
+title: Node-local global velocity limit driver incorrectly aborts trajectory execution
 description: >
   This problem is caused by inconsistency between parameters in
   different parts of the driver (or application).
