@@ -15,7 +15,6 @@ description: >
 classification: Inefficient use of library function (no CWE)
 keywords:
   - cosmetic
-  - performance
 system: mavros
 severity: bad-smell
 links: []
@@ -73,5 +72,4 @@ fault-codes:
   - PROGRAMMING:BAD-SMELL
   - PROGRAMMING:BROKEN-CONTRACT
 failure-codes:
-  - SOFTWARE:PERFORMANCE
-  - SYSTEM:DEGRADED-PERFORMANCE
+  - SYSTEM:NONE
