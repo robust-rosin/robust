@@ -6,15 +6,14 @@ description: >
   This problem is caused by inconsistency between parameters in
   different parts of the driver (or application).
   The ROS planner (MoveIt!) plans with the velocity limits
-  specified in joint_limits.yaml, which are retried from a physical
+  specified in joint_limits.yaml, which are retrieved from a physical
   description of the robot in URDF files (see limit tag for
-  instance in
-  https://github.com/ros-industrial/universal_robot/blob/hydro-devel/ur_description/urdf/ur5.urdf.xacro#L105).
+  instance the second link in the 'links' section below).
   This velocities are specified per joint.
-  The driver (ur_driver) has its own velocity limit.  This limit is
-  specified globally. It has been introduced privately and used for
-  testing and debugging purposes.  The driver stops the motion if
-  the velocity exceeds the maximum.
+  The driver (ur_driver) has another velocity limit.  This limit is
+  specified globally (not per joint). It has been introduced privately
+  and is used for testing and debugging purposes.  The driver stops the
+  motion if the velocity of any joint exceeds this global maximum.
   In the reported issue the planner finds plan that exceed join
   veloctity of 2 rad/s which was the default limit in the
   ur_driver.  As a fix the developers set the internal driver limit
@@ -33,7 +32,9 @@ classification: |
 keywords: ['robot description', 'xacro', 'launch', 'joint', 'velocity']
 system: universal_robot
 severity: error
-links: ['http://moveit.ros.org/']
+links:
+  - 'http://moveit.ros.org/'
+  - 'https://github.com/ros-industrial/universal_robot/blob/d08141d5919467e2550bc24ab64779befc66e411/ur_description/urdf/ur5.urdf.xacro#L108'
 bug:
   phase: runtime
   specificity: robotics-specific
