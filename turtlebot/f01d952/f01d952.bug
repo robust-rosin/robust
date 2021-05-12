@@ -3,8 +3,8 @@
 id: f01d952
 title: No Image Coming From Camera
 description: >
-  A missing runtime dependency crashed the image processing node,
-  causing no images to be received from the camera.
+  A missing runtime dependency (providing a required shared library) crashed
+  the image processing node, causing no images to be received from the camera.
 classification: Missing Dependency (no CWE) #PHYSICAL
 keywords: ['camera', 'eigen', 'dependencies', 'runtime']
 system: turtlebot
