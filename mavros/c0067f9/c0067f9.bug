@@ -10,7 +10,8 @@ keywords:
   - import error
 system: mavros
 severity: error
-links: []
+links:
+  - https://github.com/mavlink/mavros/commit/b3ef10ff8f0567019ee10b1d24fd0e5b85d04112
 bug:
   phase: startup
   specificity: general issue
