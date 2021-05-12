@@ -5,12 +5,16 @@ title: Erroneous import of Goto service
 description: >
   "mavros/src/mavros/mission.py" attempts to import a class that no
   longer exists, "WaypointGOTO", from the "mavros_msgs.srv" module.
+  
+  The service was marked for deprecation in mavlink/mavros#414, and
+  removed in b3ef10ff.
 classification: Import of Missing Module (no CWE)
 keywords:
   - import error
 system: mavros
 severity: error
 links:
+  - https://github.com/mavlink/mavros/issues/414
   - https://github.com/mavlink/mavros/commit/b3ef10ff8f0567019ee10b1d24fd0e5b85d04112
 bug:
   phase: startup
