@@ -5,13 +5,16 @@ title: Missing runtime dependency to run UR robots Gazebo simulation
 description: >
   The moveit_simple_controller_manager package is not installed due
   to missing runtime dependencies in MoveIt configuration files for
-  ur robots.
-  The issue has been reported by the universal_robot driver user
+  UR robots.
+
+  The issue has been reported by a universal_robot driver user
   who merely tried to follow the readme instructions how to start
   up gazebo-based simulation.  Starting the simulation results in a
-  runtime exception from python about a missing module.  This kind
-  of problems are hard to track for developers who often have all
-  the dependencies installed.  However a continuous integration
+  runtime exception from another component (MoveIt) about a missing
+  shared library (the moveit_simple_controller_manager).
+
+  This kind of problem is hard to track for developers who often have
+  all the dependencies installed.  However a continuous integration
   setup would usually build from scratch detecting most of such.
   The issue is ROS-specific as it appears in ROS-specific
   package.xml files.  However, the issue of missing runtime
