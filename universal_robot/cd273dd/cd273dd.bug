@@ -3,9 +3,12 @@
 id: cd273dd
 title: Missing runtime dependency on another package (industrial robot simulator)
 description: >
-  The universal robot planner (moveit) module lacks a runtime
-  dependency on the industrial robot simulator.  This leads to a
-  runtime error (presumably).
+  The universal robot MoveIt configuration package (motion
+  planning component) lacks a specification of a runtime
+  dependency on the industrial_robot_simulator package.
+  This leads to a runtime error (presumably), as the dependency
+  is sometimes not installed.
+
   This bug has been repeated in multiple drivers. All industrial
   moveit_config packages use the industrial_robot_simulator, but
   don't declare a runtime dependency on it.  Affected robots
