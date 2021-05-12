@@ -57,7 +57,7 @@ fix:
             insertions: 16
             deletions: 8
             lines: 24
-  pull-request: 169
+  pull-request: https://github.com/ros-industrial/motoman/pull/169
   fix-in:
     - .travis.yml
     - motoman_sda10f_support/test/launch_test.xml
