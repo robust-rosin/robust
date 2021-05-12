@@ -6,7 +6,7 @@ description: >
   Sometimes the driver would fail to retrieve version information
   from the robot's firmware. This issue was fixed using a kind of
   flag, that, under the failing scenarios, would indicate that the
-  driver should explicitly request version information again.
+  driver should explicitly request version information again (ie: retry).
 classification: Missing Version Information (no CWE)
 keywords: ['version', 'driver', 'firmware']
 system: kobuki
