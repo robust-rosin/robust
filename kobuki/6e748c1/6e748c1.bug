@@ -45,7 +45,7 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  pull-request: null
+  pull-request: https://github.com/yujinrobot/kobuki/pull/325
   fix-in: ['kobuki_node/src/nodelet/kobuki_nodelet.cpp']
   languages:
     - C++
