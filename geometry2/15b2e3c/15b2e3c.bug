@@ -1,14 +1,16 @@
 %YAML 1.1
 ---
 id: 15b2e3c
-title: Race conditions in startup code of TF2
+title: Race conditions in startup code of TF2 Buffer Server node
 description: >
-  A buffer server node is being start with an autostart parameter (which is
-  picked up due to a default value of the autostart parameter).  Unfortunately,
-  this supposedly causes race conditions in initialization code. A warning is
-  produced that this may happen.  The fix removes the autostart, and starts the
-  server manually.  There is some understanding, that this is a minor problem,
+  A buffer server node is being started with an autostart parameter (which has a
+  default value of true).  Unfortunately, this supposedly causes race conditions
+  in initialization code of the node. A warning is produced that this may happen,
+  but it's unclear why the warning is still printed, as it's not a problem for
+  this particular node.  The developers note that this is a minor problem,
   as the race condition should not have any serious effect on this module.
+  The fix removes the autostart (sets the default value to false), and starts the
+  server manually.
 classification: >
   CWE-362: Concurrent Execution using Shared Resource with Improper
   Synchronization ('Race Condition') #RESOURCE
@@ -17,7 +19,7 @@ system: core component
 severity: minor-issue
 links:
   - https://github.com/ros/geometry2/issues/15 (another issue that seems to be reporting
-    the same)
+    the same, closed by maintainer)
 bug:
   phase: startup
   specificity: general issue
