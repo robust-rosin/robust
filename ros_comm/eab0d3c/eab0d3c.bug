@@ -4,9 +4,11 @@ id: eab0d3c
 title: Subscribers Do Not Receive Messages When Environment Variable Is Set
 description: >
   C++ subscribers were not receiving any messages from the
-  publishers when the ROS_HOSTNAME variable was set and the nodes
-  ran on separate machines.  This was a bug introduced with IPv6
-  support in ros_comm.
+  publishers when the ROS_IP or ROS_HOSTNAME environment variables were set.
+  The bug manifests both with local and remote publishers and subscribers (ie:
+  on the same as well as on different hosts).
+  This was a bug introduced with IPv6 support in roscpp, caused by misuse
+  of the inet_pton(..) function.
 classification: "CWE-233: Improper Handling of Parameters"
 keywords: ['roscpp', 'topics', 'ros_comm', 'ipv6']
 system: turtlebot
