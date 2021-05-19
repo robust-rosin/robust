@@ -15,11 +15,15 @@ description: >
   spawned by the user have to be manually cleaned up. In short, the
   termination signal was being ignored when the nodelet manager was
   not terminated directly.
+  A similar issue was identified in 'kobuki_nodelet' with a similar
+  fix (see 'links').
 classification: "CWE-404: Improper Resource Shutdown or Release #RESOURCE"
 keywords: ['threading', 'termination', 'synchronization', 'shutdown', 'nodelet']
 system: kobuki
 severity: error
-links: ['http://wiki.ros.org/nodelet']
+links:
+  - https://github.com/yujinrobot/kobuki/issues/324
+  - http://wiki.ros.org/nodelet
 bug:
   phase: runtime
   specificity: ROS-specific
