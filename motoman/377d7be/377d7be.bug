@@ -4,19 +4,25 @@ id: 377d7be
 title: Error message when installing Inform Code in DX200
 description: >
   The Motoman controller has to be prepared for use with ROS.
-  For this, you have to first install MotoPlus on the controller
-  and afterwards a special INFORM Code. The motoman driver
-  specifies a required handshake between the native INFORM robot
-  code and the MotoRos layer. The MotoRos code will automatically
-  run an INFORM job called INIT_ROS at the start of a motion
-  command, which will provide the required handshaking.  When
-  installing the INFORM Code to a DX200, it shows an error: L:****)
-  ERROR 3200 : NOP or END instruction not found (J:INIT_ROS
+  For this, you have to first install MotoROS on the controller
+  and afterwards a special INFORM program (INFORM is the OEM
+  specific programming language). The motoman driver
+  depends on a required handshake between the native INFORM robot
+  code and the MotoROS component (also running on the Motoman controller).
+  The MotoROS code will automatically run an INFORM job called INIT_ROS
+  at the start of a motion session, which will provide the required
+  handshaking.  When installing the INFORM job on a DX200, it shows an
+  error: "L:****) ERROR 3200 : NOP or END instruction not found (J:INIT_ROS".
+  This is due to Linux line-endings in the files downloaded from Github:
+  the controller expects Windows line-endings.  This breaks the INFORM
+  parser in the Motoman controller.
 classification: "CWE-172: Encoding Error (Unix vs Windows line breaks)"
-keywords: ['driver', 'motoman']
+keywords: ['driver', 'motoman', 'INFORM']
 system: motoman
 severity: error
-links: ['http://wiki.ros.org/motoman_driver/Tutorials/indigo/InstallServer']
+links:
+  - http://wiki.ros.org/motoman_driver/Tutorials/indigo/InstallServer
+  - https://github.com/ros-industrial/motoman/issues/146
 bug:
   phase: runtime
   specificity: ROS-specific
@@ -47,7 +53,7 @@ fix:
             insertions: 6
             deletions: 0
             lines: 6
-  pull-request: 147
+  pull-request: https://github.com/ros-industrial/motoman/pull/147
   fix-in:
     - motoman_driver/Inform/.gitattributes
   languages:
