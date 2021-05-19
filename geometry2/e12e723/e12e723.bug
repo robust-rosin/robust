@@ -75,8 +75,7 @@ bugzoo:
   fork-urls:
     - https://github.com/robust-rosin/geometry2
 fault-codes:
-  - BDO:BUILD
   - BDO:DEPENDENCY
 failure-codes:
   - SOFTWARE:CRASHING
-  - SYSTEM:LOSS-OF-CONTROL
+  - SYSTEM:NONE
