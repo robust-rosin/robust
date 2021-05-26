@@ -26,21 +26,21 @@ links:
 bug:
   phase: runtime
   specificity: "general issue: missing field information"
-  architectural-location: N/A
-  application: N/A
-  task: N/A
-  subsystem: N/A
+  architectural-location: null
+  application: null
+  task: null
+  subsystem: null
   package: mavlink/mavros
   languages:
     - C++
   detected-by: developer
   reported-by: contributor
-  issue: N/A
-  time-reported: N/A
-  reproducibility: N/A
-  trace: N/A
+  issue: null
+  time-reported: null
+  reproducibility: null
+  trace: null
 fix:
-  pull-request: N/A
+  pull-request: null
   fix-in:
     - mavros_msgs/include/mavros_msgs/mavlink_convert.h
   languages:
