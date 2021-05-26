@@ -4,11 +4,16 @@ id: 292b5cc
 title: Incorrect response from FS100 to a control request
 description: >
   The FS100 is one of the robot controllers by Motoman that are
-  open to be used with ROS. From ROS side one can send a request
-  for a motion and the controller will respond within a
-  MOTO_MOTION_CTRL message. In some cases the field robot_id and
-  sequence are set to -1. This is from the controller interpreted
-  as unsigned leading to response as 0xFFFFFFFF.
+  open to be used with ROS. The ROS side can send requests to
+  the controller (running the MotoROS application), and each
+  request must carry a request type identification.
+  The MotoROS code constructs responses to such requests based
+  on the message type ID, but the code responsible for this
+  compared against the same msg type ID twice: once in the main
+  'if' clause, and another time in the subsequent 'if else'.
+  The msg type ID affected by the bug was therefore never handled,
+  causing the data fields in the response to contain invalid/uninitialised
+  data.
 classification: "CWE-704: Incorrect Type Conversion or Cast"
 keywords: ['FS100 controller', 'movement request', 'motoman']
 system: motoman
