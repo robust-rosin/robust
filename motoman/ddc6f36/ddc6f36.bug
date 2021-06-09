@@ -50,7 +50,7 @@ fix:
             insertions: 10
             deletions: 6
             lines: 16
-  pull-request: 25
+  pull-request: https://github.com/ros-industrial/motoman/pull/25
   fix-in: ['motoman_driver/CMakeLists.txt']
   languages:
     - CMake

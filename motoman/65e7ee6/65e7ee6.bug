@@ -159,7 +159,7 @@ fix:
           : insertions: 3
             deletions: 3
             lines: 6
-  pull-request: 15
+  pull-request: https://github.com/ros-industrial/motoman/pull/15
   fix-in:
     - SIA20D_Mesh_arm_navigation/launch/SIA20D_Mesh_arm_navigation.launch
     - SIA20D_Mesh_arm_navigation/launch/move_groups.launch

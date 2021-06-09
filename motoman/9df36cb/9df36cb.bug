@@ -53,7 +53,7 @@ fix:
             insertions: 1
             deletions: 0
             lines: 1
-  pull-request: 35
+  pull-request: https://github.com/ros-industrial/motoman/pull/35
   fix-in: ['motoman_sia20d_moveit_config/package.xml']
   languages:
     - Package XML

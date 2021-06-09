@@ -44,7 +44,7 @@ fix:
             insertions: 0
             deletions: 7
             lines: 7
-  pull-request: 30
+  pull-request: https://github.com/ros-industrial/motoman/pull/30
   fix-in: ['motoman_sia5d_support/urdf/sia5d.urdf', 'motoman_sia5d_support/urdf/sia5d_macro.xacro']
   languages:
     - URDF

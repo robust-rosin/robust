@@ -47,7 +47,7 @@ fix:
             insertions: 1
             deletions: 1
             lines: 2
-  pull-request: 110
+  pull-request: https://github.com/ros-industrial/motoman/pull/110
   fix-in: ['motoman_sia20d_support/urdf/sia20d_macro.xacro', 'motoman_sia10f_support/urdf/sia10f_macro.xacro']
   languages:
     - Xacro

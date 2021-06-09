@@ -83,7 +83,7 @@ fix:
             insertions: 0
             deletions: 0
             lines: 0
-  pull-request: 148
+  pull-request: https://github.com/ros-industrial/motoman/pull/148
   fix-in:
     - motoman_driver/MotoPlus/Controller.h
     - motoman_driver/MotoPlus/CtrlGroup.c

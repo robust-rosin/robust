@@ -685,7 +685,7 @@ fix:
             insertions: 15
             deletions: 6
             lines: 21
-  pull-request: 11 | 14
+  pull-request: https://github.com/ros-industrial/motoman/pull/11 | https://github.com/ros-industrial/motoman/pull/14
   fix-in: ['158 files due to a complete update of the driver package.']
   languages:
     - CMake

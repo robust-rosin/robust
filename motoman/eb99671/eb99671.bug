@@ -42,7 +42,7 @@ fix:
             insertions: 3
             deletions: 1
             lines: 4
-  pull-request: 3
+  pull-request: https://github.com/ros-industrial/motoman/pull/3
   fix-in:
     - motoman/package.xml
   languages:

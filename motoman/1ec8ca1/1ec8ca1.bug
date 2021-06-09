@@ -41,7 +41,7 @@ fix:
             insertions: 13
             deletions: 2
             lines: 15
-  pull-request: 175
+  pull-request: https://github.com/ros-industrial/motoman/pull/175
   fix-in: ['motoman_mh5_support/urdf/mh5_macro.xacros']
   languages:
     - Xacro

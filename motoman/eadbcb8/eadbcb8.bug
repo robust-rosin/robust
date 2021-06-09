@@ -68,7 +68,7 @@ fix:
             insertions: 0
             deletions: 0
             lines: 0
-  pull-request: 77
+  pull-request: https://github.com/ros-industrial/motoman/pull/77
   fix-in:
     - motoman_mh5_support/meshes/mh5/visual/MH5_BASE_AXIS.stl
     - motoman_mh5_support/meshes/mh5/visual/MH5_B_AXIS.stl
