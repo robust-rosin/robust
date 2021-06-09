@@ -3,16 +3,25 @@
 id: 566092b
 title: A race condition in BufferClient tf2
 description: >
-  "The use of high frequency in a buffer client triggers a race condition.
-  The issue is complex and persisted in ROS for several years. This is a
-  ROS-specific design issue, but the problem of race conditions is general."
+  The use of high frequency in a buffer client triggers a race condition.
+  The issue is complex and persisted in ROS for several years.
+  Upon further inspection, the real problem appears not to be in TF2 itself
+  (so not in BufferClient), but in a dependency of TF2: actionlib.
+  TF2 itself is improved by no longer using polling to check for results
+  of transform lookups, but event-based notification of completion.
+  This is a ROS-specific design issue, but the problem of race conditions
+  is general.
+  Note: the PR in the 'links' section fully fixes the problem. The initial
+  PR only partially fixes it.
 classification: >
   CWE-362: Concurrent Execution using Shared Resource with Improper Synchronization
   ('Race Condition')
 keywords: ['python', 'race condition', 'actionlib']
 system: core component
 severity: error
-links: []
+links:
+  - https://github.com/ros/geometry2/pull/337
+  - https://github.com/ros/actionlib/issues/116
 bug:
   phase: runtime
   specificity: general issue
