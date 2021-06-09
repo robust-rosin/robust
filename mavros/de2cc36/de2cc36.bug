@@ -1,7 +1,7 @@
 %YAML 1.1
 ---
 id: de2cc36
-title: New PX4 drone now acknowledges sent commands
+title: New version of PX4 autopilot module changes network communication behaviour
 description: >
   A newer version of the PX4 autopilot module now sends an
   acknowledgement signal upon receiving a command, unlike all
