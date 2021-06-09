@@ -101,27 +101,35 @@ def refactor_file(filename: str,
         return
 
     fault_list: t.Optional[t.List[str]]
+    fault_list = None
     if not faults:
-        raise ValueError(filename, "No fault codes assigned to the bug.")
+        print(f"{filename}: No fault codes assigned to the bug")
     else:
         fault_list = faults.upper().splitlines()
 
     failure_sw_list: t.Optional[t.List[str]]
+    failure_sw_list = None
     if not failure_sw:
-        raise ValueError(filename, "There should be exactly one software failure code assigned for each bug.")
+        print(f"{filename}: No software failure codes assigned to the bug")
     else:
         failure_sw_list = failure_sw.upper().splitlines()
-    if len(failure_sw_list) != 1:
+    if failure_sw_list != None and len(failure_sw_list) != 1:
         raise ValueError(filename, "There should be exactly one software failure code assigned for each bug.")
 
     failure_sys_list: t.Optional[t.List[str]]
+    failure_sys_list = None
     if not failure_sys:
-        raise ValueError(filename, "No system failure codes assigned to the bug.")
+        print(f"{filename}: No system failure codes assigned to the bug")
     else:
         failure_sys_list = failure_sys.upper().splitlines()
 
     failure_list: t.Optional[t.List[str]]
-    failure_list = failure_sw_list + failure_sys_list
+    failure_list = None
+    if failure_sw_list != None and failure_sys_list != None:
+        failure_list = failure_sw_list + failure_sys_list
+
+    if fault_list == None and failure_list == None:
+        return
 
     refactor_fault_failure(description, fault_list, failure_list)
 
