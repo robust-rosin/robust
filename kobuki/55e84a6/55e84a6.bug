@@ -3,8 +3,14 @@
 id: 55e84a6
 title: API Change Causes Incompatibility
 description: >
-  The ROS rqt_plot tool was updated and its API changed, causing
-  incompatibility problems in Kobuki's test suite.
+  Kobuki ships a graphical monitoring/diagnostics bench for their
+  robots which makes use of a (graph) plotting widget.
+  This widget is internal to rqt_plot, and is changed by the
+  rqt_plot maintainers.
+  Kobuki's test bench (note: these are not unit tests or code-level
+  tests) breaks due to this change in one of its dependencies,
+  causing runtime crashes when it tries to use the old version of
+  rqt_plot's plotting widget.
 classification: API Incompatibility (no CWE) #EVOLUTION
 keywords: ['rqt', 'api', 'incompatibility', 'plot']
 system: kobuki
