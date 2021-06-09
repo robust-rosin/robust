@@ -36,7 +36,7 @@ bug:
   reproducibility: always
   trace: null
 fix:
-  pull-request: N/A
+  pull-request: null
   fix-in:
     - 'kobuki_driver/src/driver/diff_drive.cpp'
   languages:

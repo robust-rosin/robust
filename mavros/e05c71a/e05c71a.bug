@@ -41,7 +41,7 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  pull-request: N/A
+  pull-request: null
   fix-in:
     - mavros_msgs/srv/WaypointPush.srv
     - mavros_msgs/srv/WaypointGOTO.srv

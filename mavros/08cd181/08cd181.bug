@@ -31,7 +31,7 @@ bug:
   reproducibility: always
   trace: N/A
 fix:
-  pull-request: N/A
+  pull-request: null
   fix-in:
     - libmavconn/include/mavconn/interface.h
   languages:

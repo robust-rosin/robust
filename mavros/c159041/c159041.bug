@@ -34,7 +34,7 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  pull-request: N/A
+  pull-request: null
   fix-in:
     - mavros_extras/src/plugins/distance_sensor.cpp
   languages:

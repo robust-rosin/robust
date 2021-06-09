@@ -35,7 +35,7 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  pull-request: N/A
+  pull-request: null
   fix-in:
     - src/plugins/sys_status.cpp
   languages:

@@ -34,7 +34,7 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  pull-request: N/A
+  pull-request: null
   fix-in:
     - libmavconn/include/mavconn/thread_utils.h
     - mavros/include/mavros/utils.h

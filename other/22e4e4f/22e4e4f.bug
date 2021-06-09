@@ -34,7 +34,7 @@ bug:
   reproducibility: always
   trace: NA
 fix:
-  pull-request: NA
+  pull-request: null
   fix-in: ['kintinuous_src/utils/Freenect2Reader.cpp']
   languages:
     - C++
