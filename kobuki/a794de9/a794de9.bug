@@ -1,12 +1,14 @@
 %YAML 1.1
 ---
 id: a794de9
-title: Assertion Error When Running on 32-bit Platform
+title: Alignment Assertion When Running on 32-bit Platform
 description: >
-  Kobuki uses the Eigen library for linear algebra.  Some
-  structures in Eigen need to be bit-aligned and some macros need
-  to be present in the code for this to happen.  Adding the missing
-  macros fixed most of the occurrences of the problem.
+  Kobuki uses the Eigen library for linear algebra.  For performance
+  reasons, Eigen data structures must obey certain byte-alignment
+  rules and some macros need to be present in user code to make
+  this happen.
+  Adding the missing macros fixed most of the occurrences of the
+  problem.
 classification: "CWE-617: Reachable Assertion Violation"
 keywords: ['eigen', 'bit-alignment', 'assertions', '32-bit']
 system: kobuki
