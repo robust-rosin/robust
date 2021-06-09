@@ -128,7 +128,7 @@ def refactor_file(filename: str,
     if failure_sw_list and failure_sys_list:
         failure_list = failure_sw_list + failure_sys_list
 
-    if fault_list == None and failure_list == None:
+    if not fault_list and not failure_list:
         return
 
     refactor_fault_failure(description, fault_list, failure_list)
@@ -152,4 +152,3 @@ if __name__ == '__main__':
 
     for row in get_gsheets_data():
         refactor_file(row[0], row[1], row[2], row[3], args.update)
-
