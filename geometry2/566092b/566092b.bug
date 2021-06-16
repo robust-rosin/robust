@@ -37,7 +37,7 @@ bug:
   detected-by: runtime detection
   reported-by: contributor
   issue: https://github.com/ros/geometry2/issues/178
-  time-reported: Jun 1, 2016, 11:08 AM GMT+2
+  time-reported: 2016-06-01T09:08:36Z
   reproducibility: sometimes
   trace: null
   reproduction: >
@@ -48,7 +48,7 @@ fix:
   fix-in: ['tf2_ros/src/tf2_ros/buffer_client.py']
   languages:
     - Python
-  time: Oct 11, 2018, 2:51 AM GMT+2
+  time: 2018-10-11T00:51:55Z
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 566092b42e3c42b4745294124762f8d7e5176716
