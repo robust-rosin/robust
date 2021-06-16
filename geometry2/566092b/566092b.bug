@@ -66,5 +66,5 @@ fix:
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:
-  - SOFTWARE:LIVENESS
+  - SOFTWARE:BEHAVIORAL
   - SYSTEM:LOSS-OF-CONTROL
