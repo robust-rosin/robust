@@ -1,13 +1,15 @@
 %YAML 1.1
 ---
 id: 566092b
-title: A race condition in BufferClient tf2
+title: High check_frequency values for BufferClient break tf2
 description: >
-  The use of high frequency in a buffer client triggers a race condition.
+  The use of high frequency to check for incoming results in a buffer client
+  appears to trigger a race condition inside that client.
   The issue is complex and persisted in ROS for several years.
   Upon further inspection, the real problem appears not to be in TF2 itself
   (so not in BufferClient), but in a dependency of TF2: actionlib.
-  TF2 itself is improved by no longer using polling to check for results
+  The race condition is there, not in BufferClient itself.
+  BufferClient is improved by no longer using polling to check for results
   of transform lookups, but event-based notification of completion.
   This is a ROS-specific design issue, but the problem of race conditions
   is general.
