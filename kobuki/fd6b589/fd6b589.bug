@@ -4,8 +4,13 @@ id: fd6b589
 title: Wrong Metapackage Dependencies
 description: >
   Kobuki metapackages were declaring a list of dependencies
-  (children) that did not correspond to the actual list of children
-  they grouped.
+  (children) that did not correspond to the actual list of packages
+  it grouped causing build failures.
+  It's likely Catkin or rosdep could not find those incorrectly specified
+  dependencies while checking during initial build preparations.
+  Metapackages group other packages by specifying them as runtime dependencies,
+  causing the installation of a single metapackage to result in the installation
+  of all the packages it depends on (via a package manager).
 classification: Wrong Dependencies (no CWE)
 keywords: ['metapackage', 'package', 'dependencies']
 system: kobuki
