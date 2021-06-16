@@ -42,7 +42,7 @@ fix:
     - cob_control/cob_twist_controller/CMakeLists.txt
   languages:
     - CMake
-  time: 2014-11-21 (12:57)
+  time: 2014-11-14T08:16:00Z
   commits:
     - repo: https://github.com/ipa320/cob_control
       hash: 105dc16ffe0b9dba294aabea0c18052cd281bde0
