@@ -28,7 +28,7 @@ bug:
   reproducibility: N/A
   trace: N/A
 fix:
-  pull-request: null
+  pull-request: https://github.com/mavlink/mavros/pull/230
   fix-in:
     - mavros/src/plugins/actuator_control.cpp
   languages:
