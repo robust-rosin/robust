@@ -40,7 +40,7 @@ fix:
   fix-in: ['kobuki_ftdi/CMakeLists.txt']
   languages:
     - CMake
-  time: 2015-02-12 (00:18)
+  time: 2015-02-12T00:18:27Z
   commits:
     - repo: https://github.com/yujinrobot/kobuki_core
       hash: 45ee84aa1e920b26f8191763e20c10c5806ead60
