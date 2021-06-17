@@ -316,8 +316,14 @@ class BugDescription:
         return BugSection(self)
 
     @property
-    def fix(self) -> FixSection:
+    def fix(self) -> t.Optional[FixSection]:
+        if not self.was_fixed:
+            return None
         return FixSection(self)
+
+    @property
+    def was_fixed(self) -> bool:
+        return self.yaml.get("fix") is not None
 
     @property
     def faults(self) -> t.Optional[t.List[str]]:
@@ -390,6 +396,10 @@ class ROBUST(t.Mapping[str, BugDescription]):
             raise ValueError(f"bad repo URL: {url} [no fork exists]")
 
         return f'https://github.com/robust-rosin/{url_basename}'
+
+    def fixed(self) -> t.Iterator[BugDescription]:
+        """Returns an iterator over the bugs that were fixed."""
+        yield from (bug for bug in self.values() if bug.was_fixed)
 
     def repo(self, url: str) -> git.Repo:
         """Fetches the ROBUST fork of a given repository."""
