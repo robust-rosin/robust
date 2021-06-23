@@ -3,7 +3,7 @@
 id: 4c160d3
 title: A broken dependecy on orocos_kdl library
 description: >
-  The build description for tfw_geometry_msgs does not properly resolve names
+  The build description for tf2_geometry_msgs does not properly resolve names
   of orocos libraries.  The problem is that names have to be searched for, not
   paths. The bug is fixed by adding a search resolving libraries by name.
 classification: Broken Build Dependency (no CWE)

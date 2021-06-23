@@ -1,13 +1,15 @@
 %YAML 1.1
 ---
 id: 566092b
-title: A race condition in BufferClient tf2
+title: High check_frequency values for BufferClient break tf2
 description: >
-  The use of high frequency in a buffer client triggers a race condition.
+  The use of high frequency to check for incoming results in a buffer client
+  appears to trigger a race condition inside that client.
   The issue is complex and persisted in ROS for several years.
   Upon further inspection, the real problem appears not to be in TF2 itself
   (so not in BufferClient), but in a dependency of TF2: actionlib.
-  TF2 itself is improved by no longer using polling to check for results
+  The race condition is there, not in BufferClient itself.
+  BufferClient is improved by no longer using polling to check for results
   of transform lookups, but event-based notification of completion.
   This is a ROS-specific design issue, but the problem of race conditions
   is general.
@@ -35,7 +37,7 @@ bug:
   detected-by: runtime detection
   reported-by: contributor
   issue: https://github.com/ros/geometry2/issues/178
-  time-reported: Jun 1, 2016, 11:08 AM GMT+2
+  time-reported: 2016-06-01T09:08:36Z
   reproducibility: sometimes
   trace: null
   reproduction: >
@@ -46,7 +48,7 @@ fix:
   fix-in: ['tf2_ros/src/tf2_ros/buffer_client.py']
   languages:
     - Python
-  time: Oct 11, 2018, 2:51 AM GMT+2
+  time: 2018-10-11T00:51:55Z
   commits:
     - repo: https://github.com/ros/geometry2
       hash: 566092b42e3c42b4745294124762f8d7e5176716
@@ -64,5 +66,5 @@ fix:
 fault-codes:
   - CONCURRENCY:NO-SYNC
 failure-codes:
-  - SOFTWARE:LIVENESS
+  - SOFTWARE:BEHAVIORAL
   - SYSTEM:LOSS-OF-CONTROL
