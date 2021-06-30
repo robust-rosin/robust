@@ -41,5 +41,5 @@ fix:
 fault-codes:
   - PROGRAMMING:RESOURCES
 failure-codes:
-  - SOFTWARE:LIVENESS
+  - SOFTWARE:NETWORK
   - SYSTEM:LOSS-OF-CONTROL
