@@ -5,11 +5,13 @@ title: Launch File Not Working With Some Linux Distributions
 description: >
   One of Turtlebot's launch files launched a component that
   performed custom operative system checks, and crashed when it
-  encountered Linux Mint and Linux Linaro.  The affected package is
-  tested with and hard-coded to expect Ubuntu systems. Linux Mint
-  is a distribution based on Ubuntu that shares a great deal of its
-  packages, and, in general, should not cause problems running the
-  affected package (or ROS).
+  encountered Linux Mint and Linux Linaro.  The affected package
+  makes use of a library which was incapable of detecting Linux Mint
+  and Linux Linaro, and did not handle the case where that detection
+  fails.
+  Linux Mint is a distribution based on Ubuntu that shares a great
+  deal of its packages, and, in general, should not cause problems
+  running the affected package (or ROS).
   The check for the Linux distribution name not being equal to Ubuntu,
   results in an exception being thrown.
   The problem is actually in other packages, not the package for
