@@ -3,20 +3,20 @@
 id: 0af76d5
 title: A race condition in message filter of TF2
 description: >
-  In ROS Message filters are a tool that allows registering subscribers that work
+  Message filters in ROS are a tool that allows registering subscribers that work
   with multiple msgs, or trigger callbacks if an arriving message satisfies a predicate.
-  TF provides message filters that are specificlaly tailored---they register callbacks
-  that can triggered whenever the incoming message can be transformed (using tf.transform(..))
+  TF provides message filters that are specifically tailored---they register callbacks
+  that can trigger whenever the incoming message can be transformed (using tf.transform(..))
   into a set of coordinate frames. For instance one can trigger a callback on messages
-  of certain type (a point cloud or an object with a spatial dimension) that can be
+  of a certain type (a point cloud or an object with a spatial property) that can be
   transformed to selected frames.
   The problem is that the checking by tf msg filters whether that is possible and
   the invocation of the callback happen at two separate times, so even if the check
   succeeds, by the time the callback is fired, it could fail, because the frames could
   already have been pushed out of the tf buffer.
-  The callbel needs to retrieve the transforms. If tf.lookupTransform(...)  is used
-  it mail fail, even if the transform was applicable at the time of the predicate
-  checking.
+  The callback needs to retrieve the transforms. If tf.lookupTransform(...)  is used
+  it may fail, even if the transform was available at the time of the predicate
+  check.
   The race condition is built-in into the design of the API. You can only experience
   it when you start to use the API, and don't take additional (awkward) protection
   measures.  This is best summarized with the quote from the original bug report:
@@ -25,7 +25,7 @@ description: >
   the transform. (..) you can deal with this through judicious use of try-catch loops
   and setTolerance(), but that seems hacky. Multiple users have had trouble with this
   concept.''
-  To the best of our knowledge, this bug / design issue remains in ROS til the time
+  To the best of our knowledge, this bug / design issue remains in ROS till the time
   of writing this analysis. It has never been addressed.
 classification: "CWE-362: Concurrent Execution using Shared Resource with Improper\
   \ Synchronization ('Race Condition')"
