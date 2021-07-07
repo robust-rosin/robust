@@ -7,6 +7,9 @@ description: >
   manifest file (package.xml).  This caused the package to not be
   considered for workspace build ordering, and thus the package was
   not build on the CI server.
+  This would also cause the missing MoveIt package to not be installed
+  on user systems when they use the metapackage (ie: 'universal-robot')
+  to install all of the Universal Robots packages.
 classification: |
   Run-time dependency issue (no CWE)
   internal classification (cause):
