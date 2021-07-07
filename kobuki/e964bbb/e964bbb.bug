@@ -15,7 +15,7 @@ severity: error
 links: []
 failure-codes:
   - SOFTWARE:BEHAVIORAL
-  - SYSTEM:UNINTENDED-MOVEMENT
+  - SYSTEM:BEHAVING-INCORRECTLY
 fault-codes:
   - PROGRAMMING:CALCULATIONS
 bug:
