@@ -101,5 +101,5 @@ fix:
 fault-codes:
   - SYSTEMS:OS
 failure-codes:
-  - SOFTWARE:BUILD
-  - SYSTEM:NONE
+  - SOFTWARE:CRASHING
+  - SYSTEM:LOSS-OF-FUNCTIONALITY
