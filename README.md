@@ -1,4 +1,4 @@
-# ROBUST
+# ROBUST: ROS Bug Study
 
 ## Installation
 
