@@ -1,6 +1,5 @@
 .forks
 
-Pipfile
 bugzood.log
 .Dockerfile
 *.swp
