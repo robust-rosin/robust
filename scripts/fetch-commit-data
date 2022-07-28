@@ -43,6 +43,14 @@ def process_commit(robust: ROBUST,
 def process_bug(robust: ROBUST, bug: BugDescription) -> None:
     print(f"Processing bug: {bug.id} [{bug.filename}]")
 
+    if not bug.was_fixed:
+        print(f"Skipping bug [{bug.id}]: marked as unfixed")
+        return
+
+    if bug.is_confidential:
+        print(f"Skipping bug [{bug.id}]: marked as confidential")
+        return
+
     try:
         yaml_commits = bug.yaml['fix']['commits']
     except KeyError as err:
