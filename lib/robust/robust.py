@@ -326,6 +326,10 @@ class BugDescription:
         return self.yaml.get("fix") is not None
 
     @property
+    def is_confidential(self) -> bool:
+        return self.yaml["system"] == "confidential"
+
+    @property
     def faults(self) -> t.Optional[t.List[str]]:
         return FaultFailureSection(self).faults
 
