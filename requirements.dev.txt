@@ -6,7 +6,7 @@ mypy==0.780
 pep8-naming==0.11.1
 ptpython==2.0.6
 tox==3.20.1
-wheel==0.34.2
+wheel==0.38.1
 yamllint==1.25.0
 google-api-python-client>=1.12.5
 google-auth-httplib2>=0.0.4
