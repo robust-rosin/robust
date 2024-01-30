@@ -1,7 +1,7 @@
 jupyter==1.0.0
 numpy==1.22.0
 matplotlib==3.3.0
-gitpython==3.1.9
+gitpython==3.1.41
 pyyaml==5.4
 tabulate==0.8.7
 pandas==1.1.3
