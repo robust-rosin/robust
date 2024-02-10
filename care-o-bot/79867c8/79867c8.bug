@@ -38,7 +38,7 @@ bug:
   detected-by: developer
   reported-by: developer
   issue: https://github.com/ipa320/cob_android/issues/7
-  time-reported: 2015-08-03 (10:09)
+  time-reported: 2015-08-29 12:36:38+0200  # git blame
   reproducibility: always
   trace: null
 fix:
@@ -48,7 +48,7 @@ fix:
     - cob_android/cob_android_script_server/CMakeLists.txt
   languages:
     - CMake
-  time: 2015-08-04 (16:26)
+  time: 2015-08-29 12:36:38+0200  # this is a problem. This is the same date as issue, since package was not released during fix PR
   commits:
     - repo: https://github.com/ipa320/cob_android
       hash: 79867c88acc64342f061e6324ed6b84ca7e0773d

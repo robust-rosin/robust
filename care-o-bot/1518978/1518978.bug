@@ -32,7 +32,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ipa320/cob_driver/issues/272
-  time-reported: 2016-04-07 (00:00)
+  time-reported: 2016-04-07T08:25:33Z
   reproducibility: sometimes
   trace: null
 fix:
@@ -40,7 +40,7 @@ fix:
   fix-in: ['https://github.com/ipa-fxm/cob_driver/blob/151897840540e8dd662cf6c8c77e5613c84e3424/cob_sound/ros/src/sound.cpp']
   languages:
     - C++
-  time: 2016-04-07 (00:00)
+  time: 2016-04-07T11:47:22Z # the date is same as issue (different time)
   commits:
     - repo: https://github.com/ipa320/cob_driver
       hash: 151897840540e8dd662cf6c8c77e5613c84e3424

@@ -36,7 +36,7 @@ bug:
   detected-by: developer
   reported-by: developer
   issue: https://github.com/ipa320/cob_control/issues/48
-  time-reported: 2015-08-03 (14:15)
+  time-reported: 2015-08-03T12:15:20Z
   reproducibility: always
   trace: null
 fix:
@@ -45,7 +45,7 @@ fix:
     - cob_control/cob_obstacle_distance/CMakeLists.txt
   languages:
     - CMake
-  time: 2015-08-04 (13:09)
+  time: 2015-08-02T16:04:28Z
   commits:
     - repo: https://github.com/ipa320/cob_control
       hash: 47adcee14c7f39645352f2226b32c5f116ea0c22

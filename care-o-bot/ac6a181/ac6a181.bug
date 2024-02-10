@@ -27,7 +27,7 @@ bug:
   detected-by: developer
   reported-by: developer
   issue: https://github.com/ipa320/cob_command_tools/issues/49
-  time-reported: 2014-05-20 (16:52)
+  time-reported: 2014-05-20T14:52:47Z
   reproducibility: always
   trace: null
 fix:
@@ -36,7 +36,7 @@ fix:
     - cob_command_tools/cob_script_server/package.xml
   languages:
     - Package XML
-  time: 2014-08-26 (08:57)
+  time: 2014-06-18T15:24:43Z
   commits:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: 81aa175d76608fbac6655ce745e8eaa1d35f51f9

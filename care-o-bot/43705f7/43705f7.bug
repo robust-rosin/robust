@@ -37,7 +37,7 @@ bug:
   detected-by: developer
   reported-by: member developer
   issue: https://github.com/ipa320/cob_robots/issues/348
-  time-reported: 2015-11-04 (00:00)
+  time-reported: 2015-11-04T14:22:36Z
   reproducibility: sometimes
   trace: null
 fix:
@@ -47,7 +47,7 @@ fix:
     - cob_description/urdf/sensors/softkinetic.gazebo.xacro
   languages:
     - Xacro
-  time: 2015-11-20 (00:00)
+  time: 2015-11-20T14:05:34Z
   commits:
     - repo: https://github.com/ipa320/cob_common
       hash: 499dbb637b6acaade0daa0f36acac798b7dd34d2

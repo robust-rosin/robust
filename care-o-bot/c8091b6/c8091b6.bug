@@ -29,7 +29,7 @@ bug:
   detected-by: developer
   reported-by: developer
   issue: https://github.com/ipa320/cob_command_tools/issues/74
-  time-reported: 2015-01-14 (15:17)
+  time-reported: 2015-01-14T14:17:46Z
   reproducibility: always
   trace: null
 fix:
@@ -38,7 +38,7 @@ fix:
     - cob_command_tools/cob_command_gui/src/knoeppkes.py
   languages:
     - Python
-  time: 2015-03-13 (16:21)
+  time: 2015-03-13T15:21:08Z
   commits:
     - repo: https://github.com/ipa320/cob_command_tools
       hash: c8091b68c69eeae0bb7777ad6fa44d644c20f96c
